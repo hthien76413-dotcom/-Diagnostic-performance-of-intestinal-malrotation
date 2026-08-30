@@ -1,0 +1,99 @@
+{
+ "H": [
+  [
+   "Element",
+   "Modality",
+   "Regular expression (source text)"
+  ],
+  [
+   "Third portion of duodenum / duodenojejunal junction",
+   "Ultrasound",
+   "十二指肠水平段|水平段|十二指肠第三段|第三段|十二指肠空肠曲|屈氏韧带|Treitz|十二指肠悬韧带"
+  ],
+  [
+   "Duodenum mentioned in any form",
+   "Ultrasound",
+   "十二指肠"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "Ultrasound / CT",
+   "肠系膜上动脉|肠系膜上静脉|SMA|SMV|系膜血管"
+  ],
+  [
+   "Explicit vessel inversion",
+   "Ultrasound",
+   "(动静脉|静脉.{0,6}动脉|动脉.{0,6}静脉).{0,12}(换位|反位|倒置|异常关系|关系异常|左侧|右侧)|静脉位于.{0,6}左|动脉.{0,4}右侧"
+  ],
+  [
+   "Whirlpool / swirl / spiral appearance",
+   "All",
+   "漩涡|旋涡|涡流|螺旋"
+  ],
+  [
+   "Enteric fluid administered",
+   "Ultrasound",
+   "饮水|口服.{0,4}(水|液)|注水|胃内注|温开水|生理盐水.{0,6}(灌|注)|水充盈"
+  ],
+  [
+   "Bowel gas explicitly limiting the study",
+   "Ultrasound",
+   "气体干扰|肠气干扰|气体较多|积气.{0,10}(干扰|遮挡)|显示欠清|显示不清|声窗"
+  ],
+  [
+   "Caecal position",
+   "Ultrasound / UGI",
+   "回盲部"
+  ],
+  [
+   "Bedside examination",
+   "Ultrasound",
+   "床旁 (in the examination name)"
+  ],
+  [
+   "Examination type: great-vessel study",
+   "Ultrasound",
+   "腹部大血管 (in the examination name)"
+  ],
+  [
+   "Examination type: gastrointestinal ultrasound",
+   "Ultrasound",
+   "胃肠道 (in the examination name)"
+  ],
+  [
+   "Contrast enhancement",
+   "CT",
+   "增强 (in the examination name)"
+  ],
+  [
+   "Three-dimensional reconstruction",
+   "CT",
+   "三维重建 (in the examination name)"
+  ],
+  [
+   "Duodenojejunal junction",
+   "UGI",
+   "十二指肠空肠曲|屈氏|Treitz|十二指肠.{0,6}空肠"
+  ],
+  [
+   "Corkscrew / spring appearance",
+   "UGI",
+   "弹簧|螺旋|绞索|盘曲"
+  ],
+  [
+   "Jejunal position",
+   "UGI",
+   "空肠.{0,10}(位于|居|偏)"
+  ],
+  [
+   "Whole-gastrointestinal study",
+   "UGI",
+   "全消化道 (in the examination name)"
+  ],
+  [
+   "Barium contrast",
+   "UGI",
+   "钡 (in the examination name)"
+  ]
+ ]
+}

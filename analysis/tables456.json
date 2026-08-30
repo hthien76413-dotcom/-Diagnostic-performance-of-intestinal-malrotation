@@ -1,0 +1,130 @@
+{
+ "T4": [
+  [
+   "Effect",
+   "Unadjusted OR (95% CI)",
+   "Adjusted OR (95% CI)",
+   "p (adjusted)"
+  ],
+  [
+   "Abdominal CT vs UGI series",
+   "0.31 (0.22–0.44)",
+   "0.29 (0.21–0.42)",
+   "<0.001"
+  ],
+  [
+   "Gastrointestinal ultrasound vs UGI series",
+   "0.33 (0.21–0.50)",
+   "0.27 (0.17–0.43)",
+   "<0.001"
+  ],
+  [
+   "Operated 2019–2026 vs 2012–2018",
+   "–",
+   "1.79 (1.20–2.68)",
+   "0.004"
+  ],
+  [
+   "Age 29 days–1 year vs neonate",
+   "–",
+   "1.09 (0.69–1.73)",
+   "0.699"
+  ],
+  [
+   "Age >1 year vs neonate",
+   "–",
+   "3.14 (1.71–5.75)",
+   "<0.001"
+  ]
+ ],
+ "T5": [
+  [
+   "Measure",
+   "All (n=59)",
+   "All three within 48 h (n=47)",
+   "All three within 24 h (n=31)"
+  ],
+  [
+   "UGI contrast series, n/N (%; 95% CI)",
+   "45/59 (76.3; 64.0–85.3)",
+   "39/47 (83.0; 69.9–91.1)",
+   "27/31 (87.1; 71.1–94.9)"
+  ],
+  [
+   "Gastrointestinal ultrasound, n/N (%; 95% CI)",
+   "31/59 (52.5; 40.0–64.7)",
+   "28/47 (59.6; 45.3–72.4)",
+   "20/31 (64.5; 46.9–78.9)"
+  ],
+  [
+   "Abdominal CT, n/N (%; 95% CI)",
+   "28/59 (47.5; 35.3–60.0)",
+   "23/47 (48.9; 35.3–62.8)",
+   "16/31 (51.6; 34.8–68.0)"
+  ],
+  [
+   "Ultrasound whirlpool sign, n/N (%; 95% CI)",
+   "30/59 (50.8; 38.4–63.2)",
+   "27/47 (57.4; 43.3–70.5)",
+   "19/31 (61.3; 43.8–76.3)"
+  ],
+  [
+   "Cochran's Q, p",
+   "0.001",
+   "<0.001",
+   "0.002"
+  ],
+  [
+   "Exact McNemar UGI vs CT: discordant pairs, p",
+   "23/6, p=0.002",
+   "20/4, p=0.002",
+   "12/1, p=0.003"
+  ],
+  [
+   "Exact McNemar UGI vs US: discordant pairs, p",
+   "20/6, p=0.009",
+   "14/3, p=0.013",
+   "8/1, p=0.039"
+  ],
+  [
+   "Exact McNemar CT vs US: discordant pairs, p",
+   "8/11, p=0.648",
+   "4/9, p=0.267",
+   "2/6, p=0.289"
+  ]
+ ],
+ "T6": [
+  [
+   "Modality",
+   "Detection 2012–2018",
+   "Detection 2019–2026",
+   "Era OR (95% CI)",
+   "Era OR after adjustment for examination content",
+   "Content variable OR (95% CI)"
+  ],
+  [
+   "UGI contrast series",
+   "158/205 (77.1%)",
+   "79/96 (82.3%)",
+   "1.38 (0.75–2.56) (p=0.304)",
+   "Not applicable (technique unchanged)",
+   "–"
+  ],
+  [
+   "Abdominal CT",
+   "101/215 (47.0%)",
+   "70/105 (66.7%)",
+   "2.26 (1.39–3.67) (p=0.001)",
+   "1.98 (1.20–3.28) (p=0.008)",
+   "Contrast enhancement 5.53 (2.49–12.27) (p=<0.001)"
+  ],
+  [
+   "Gastrointestinal ultrasound",
+   "16/39 (41.0%)",
+   "49/80 (61.3%)",
+   "2.27 (1.04–4.96) (p=0.039)",
+   "1.56 (0.67–3.62) (p=0.303)",
+   "Vessel-focused examination 3.46 (1.56–7.67) (p=0.002)"
+  ]
+ ]
+}
