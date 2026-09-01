@@ -20,7 +20,7 @@
 
 #FIGP
 
-#N **Figure S1** Report-level detection in the selected subgroup of 59 children who underwent all three examinations preoperatively, shown for the whole subgroup and for the subsets in which all three examinations fell within 48 h and within 24 h. Error bars are Wilson 95% confidence intervals
+#N **Fig. S1 Detection in the selected subgroup receiving all three examinations.** Report-level detection in the 59 children who underwent all three examinations preoperatively, shown for the whole subgroup and for the subsets in which all three fell within 48 h and within 24 h. Error bars are Wilson 95% confidence intervals.
 
 #H1 S2.3 Detection stratified by midgut volvulus and by age category
 
