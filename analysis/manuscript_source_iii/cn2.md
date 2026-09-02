@@ -82,7 +82,7 @@
 
 #N 审稿人 2 当初要求"最好把算法作为补充材料提供"，现在给的是可运行、可复算、且自带验证结果的版本。
 
-#N **3. 标题页（`诊断效能_TitlePage_InsightsIntoImaging.docx`）** —— 已按新标题重做，作者、单位、通讯方式、伦理批件号 2026R018-E01、经费声明、作者贡献全部沿用原稿。补齐了 IiI 需要的 Running title、Article type、字数与图表数、以及 SpringerOpen 体例的 Declarations 分节。**还需你填三处**：Hongqiang Bian 与 Jun Yang 的 ORCID（Springer 对通讯作者一般要求必填）、通讯作者电话、以及 Acknowledgements（没有就删掉）。
+#N **3. 标题页（`诊断效能_TitlePage_InsightsIntoImaging.docx`）** —— 已按新标题重做，作者、单位、通讯方式、伦理批件号 2026R018-E01、经费声明、作者贡献全部沿用原稿。补齐了 IiI 需要的 Running title、Article type、字数与图表数、以及 SpringerOpen 体例的 Declarations 分节。两位作者的 ORCID（Jun Shu 0009-0001-3003-1452、Jun Yang 0009-0006-0669-4340）与通讯作者电话（+86 186 2713 9911）已填入，两个 ORCID 的校验位我都用 ISO 7064 MOD 11-2 算法验过、均正确。Acknowledgements 写为 Not applicable。Hongqiang Bian 未提供 ORCID —— 共同作者非必填，已略去，日后要加随时可补。投稿信的收发信人信息与落款也一并填好，日期暂填 2026 年 9 月 2 日，实际投稿时改一下即可。
 
 #N **4. 版面费** —— 搜索结果显示 IiI 2026 年 APC 为 **€2,890 / £2,490 / US$3,390**（另加当地税）。要点：**ESR 会员没有专项折扣**（学会已不再为会员承担该费用）；**可在投稿过程中申请减免**，由出版社或期刊个案审核，通常两周内答复；若通讯作者单位参加了 Springer Nature 的开放获取协议，可能全额或部分覆盖。这几条我是从搜索摘要读到的，期刊页面本身被本会话的网络策略挡着打不开，**请你在投稿前到期刊 FAQ 页面核实金额**，并顺便查一下华中科技大学／同济医学院是否在 Springer Nature 的机构协议名单内——如果在，这笔钱可能不用自付。
 
@@ -95,7 +95,7 @@
 #N • `Online_Resource_3_CT_and_UGI_content_audit.docx`
 #N • `Figure1_flow.png`、`Figure3_detection.png`、`Figure4_us_audit.png`（正文图 1–3，300 dpi）
 #N • `Figure2_paired.png`（附录 Figure S1）
-#N • `诊断效能_TitlePage_InsightsIntoImaging.docx` —— 已按新标题重做（仅剩 ORCID／电话／致谢三处待填）
+#N • `诊断效能_TitlePage_InsightsIntoImaging.docx` —— 已完成，无待填项
 
 #N • `STROBE_checklist.docx` —— 已逐条填好
 
