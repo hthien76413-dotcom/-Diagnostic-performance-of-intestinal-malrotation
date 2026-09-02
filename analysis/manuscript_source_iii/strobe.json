@@ -1,0 +1,179 @@
+{
+ "STROBE": [
+  [
+   "Item",
+   "Recommendation (STROBE, cohort studies)",
+   "Reported in"
+  ],
+  [
+   "Title and abstract 1(a)",
+   "Indicate the study's design with a commonly used term in the title or the abstract",
+   "Title ('report-level audit'); Abstract, Methods"
+  ],
+  [
+   "Title and abstract 1(b)",
+   "Provide in the abstract an informative and balanced summary of what was done and what was found",
+   "Abstract (Objectives, Methods, Results, Conclusion); Key Points"
+  ],
+  [
+   "Introduction — Background/rationale 2",
+   "Explain the scientific background and rationale for the investigation being reported",
+   "Introduction, paragraphs 1–3"
+  ],
+  [
+   "Introduction — Objectives 3",
+   "State specific objectives, including any prespecified hypotheses",
+   "Introduction, final paragraph; Abstract, Objectives"
+  ],
+  [
+   "Methods — Study design 4",
+   "Present key elements of study design early in the paper",
+   "Methods, 'Design, terminology and what this study can and cannot estimate'"
+  ],
+  [
+   "Methods — Setting 5",
+   "Describe the setting, locations, and relevant dates, including periods of recruitment, exposure, follow-up, and data collection",
+   "Methods, 'Participants, reference standard and index tests' (single tertiary children's hospital, December 2012–June 2026)"
+  ],
+  [
+   "Methods — Participants 6(a)",
+   "Give the eligibility criteria, and the sources and methods of selection of participants",
+   "Methods, 'Participants…' (consecutive children with an operative diagnosis of malrotation; institutional clinical and surgical records database)"
+  ],
+  [
+   "Methods — Participants 6(b)",
+   "For matched studies, give matching criteria and number of exposed and unexposed",
+   "Not applicable (no matching)"
+  ],
+  [
+   "Methods — Variables 7",
+   "Clearly define all outcomes, exposures, predictors, potential confounders, and effect modifiers. Give diagnostic criteria, if applicable",
+   "Methods, 'Design, terminology…' (report-level detection defined); 'Participants…' (volvulus definition); 'Report-content audit and classification' (positivity criteria, content items); Online Resource 1"
+  ],
+  [
+   "Methods — Data sources/measurement 8",
+   "For each variable of interest, give sources of data and details of methods of assessment. Describe comparability of assessment methods if there is more than one group",
+   "Methods, 'Report-content audit and classification'; Online Resource 1, Sections A–J"
+  ],
+  [
+   "Methods — Bias 9",
+   "Describe any efforts to address potential sources of bias",
+   "Methods, 'Design, terminology…' (three stated consequences of the case-only design); Discussion, paragraph on incorporation bias, pathway position and confounding by indication; Table 1 displays confounding by indication rather than adjusting it"
+  ],
+  [
+   "Methods — Study size 10",
+   "Explain how the study size was arrived at",
+   "Methods, 'Participants…' (all consecutive eligible children; no sample-size calculation)"
+  ],
+  [
+   "Methods — Quantitative variables 11",
+   "Explain how quantitative variables were handled in the analyses; if applicable, describe which groupings were chosen and why",
+   "Methods, 'Statistical analysis' (age category ≤28 days / 29 days–1 year / >1 year; era 2012–2018 vs 2019–2026); certainty tiers in 'Report-content audit and classification'"
+  ],
+  [
+   "Methods — Statistical methods 12(a)",
+   "Describe all statistical methods, including those used to control for confounding",
+   "Methods, 'Statistical analysis' (GEE with patient-level clustering; adjustment for era and age category)"
+  ],
+  [
+   "Methods — Statistical methods 12(b)",
+   "Describe any methods used to examine subgroups and interactions",
+   "Methods, 'Statistical analysis' (modality-by-volvulus interaction, non-estimable owing to complete separation; subgroup receiving all three modalities); Online Resource 2"
+  ],
+  [
+   "Methods — Statistical methods 12(c)",
+   "Explain how missing data were addressed",
+   "Results, 'Cohort…' (the 55 children without an index test characterised, not imputed); Discussion, Limitations (informative missingness)"
+  ],
+  [
+   "Methods — Statistical methods 12(d)",
+   "If applicable, explain how loss to follow-up was addressed",
+   "Not applicable (no follow-up; single preoperative index test per modality)"
+  ],
+  [
+   "Methods — Statistical methods 12(e)",
+   "Describe any sensitivity analyses",
+   "Methods, 'Statistical analysis' and 'Report-content audit and classification' (reclassification of possible-tier conclusions; paired analysis restricted to 48 h and 24 h); Online Resource 2"
+  ],
+  [
+   "Results — Participants 13(a)",
+   "Report numbers of individuals at each stage of study",
+   "Results, 'Cohort…'; Fig. 1"
+  ],
+  [
+   "Results — Participants 13(b)",
+   "Give reasons for non-participation at each stage",
+   "Results, 'Cohort…' (the 55 children without an index test, with the imaging they did receive); Fig. 1"
+  ],
+  [
+   "Results — Participants 13(c)",
+   "Consider use of a flow diagram",
+   "Fig. 1"
+  ],
+  [
+   "Results — Descriptive data 14(a)",
+   "Give characteristics of study participants and information on exposures and potential confounders",
+   "Table 1 (overall and by index test received)"
+  ],
+  [
+   "Results — Descriptive data 14(b)",
+   "Indicate number of participants with missing data for each variable of interest",
+   "Results, 'Cohort…'; Table 1 footnote; denominators shown with every rate"
+  ],
+  [
+   "Results — Descriptive data 14(c)",
+   "Summarise follow-up time",
+   "Not applicable"
+  ],
+  [
+   "Results — Outcome data 15",
+   "Report numbers of outcome events or summary measures over time",
+   "Table 2 (detection with denominators); Table 3 (ultrasound report content); Table 4 (change between eras)"
+  ],
+  [
+   "Results — Main results 16(a)",
+   "Give unadjusted estimates and, if applicable, confounder-adjusted estimates and their precision. Make clear which confounders were adjusted for and why they were included",
+   "Results, 'Report-level detection…' (unadjusted and adjusted GEE odds ratios); Online Resource 2, Table S3"
+  ],
+  [
+   "Results — Main results 16(b)",
+   "Report category boundaries when continuous variables were categorized",
+   "Methods, 'Statistical analysis'; Online Resource 2, Table S5"
+  ],
+  [
+   "Results — Main results 16(c)",
+   "If relevant, consider translating estimates of relative risk into absolute risk for a meaningful time period",
+   "Detection rates are reported as absolute proportions with denominators throughout (Table 2, Figs 2–3)"
+  ],
+  [
+   "Results — Other analyses 17",
+   "Report other analyses done — eg analyses of subgroups and interactions, and sensitivity analyses",
+   "Results, 'What the ultrasound reports contained', 'Detection changed over time…', 'The selected subgroup…'; Online Resources 2 and 3"
+  ],
+  [
+   "Discussion — Key results 18",
+   "Summarise key results with reference to study objectives",
+   "Discussion, paragraphs 1–3; Conclusion"
+  ],
+  [
+   "Discussion — Limitations 19",
+   "Discuss limitations of the study, taking into account sources of potential bias or imprecision. Discuss both direction and magnitude of any potential bias",
+   "Discussion, 'Limitations'; and the paragraph on incorporation bias, pathway position and confounding by indication, which states the direction of each"
+  ],
+  [
+   "Discussion — Interpretation 20",
+   "Give a cautious overall interpretation of results considering objectives, limitations, multiplicity of analyses, results from similar studies, and other relevant evidence",
+   "Discussion, paragraphs 2–5; Conclusion (explicit statement that no sensitivity, specificity or ranking is established)"
+  ],
+  [
+   "Discussion — Generalisability 21",
+   "Discuss the generalisability (external validity) of the study results",
+   "Results, 'The selected subgroup, and the populations this cohort does not describe'; Discussion, Limitations (single centre; skew toward severe neonatal disease)"
+  ],
+  [
+   "Other information — Funding 22",
+   "Give the source of funding and the role of the funders for the present study and, if applicable, for the original study on which the present article is based",
+   "Declarations, Funding (and title page)"
+  ]
+ ]
+}

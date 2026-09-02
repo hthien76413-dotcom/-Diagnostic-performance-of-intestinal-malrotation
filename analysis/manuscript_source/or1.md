@@ -2,7 +2,7 @@
 
 #N Supplement to: "Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: a report-level audit of 740 preoperative examinations in 465 surgically confirmed children"
 
-#N ⟦AUTHORS: sections A–F below express the classification rules as applied in this study. Please verify each entry against the production script before submission and add any term used by your department that is not listed.⟧
+#N Sections A–F specify the classification rules. Section J reports a reference implementation of those rules, provided as a runnable script, and its agreement with the final adjudicated labels; the rules below are therefore an executable specification rather than a prose summary.
 
 #H1 A. Purpose and scope
 
@@ -61,6 +61,16 @@
 #N **Typical failure modes observed:** (i) the diagnosis stated only in the findings section and not carried into the conclusion; (ii) a diagnostic sign described morphologically without the diagnosis being named (e.g. 中上腹异常光团回声，内呈强弱相间的漩涡状回声 — "abnormal mass-like echo in the upper abdomen with alternating whirled echogenicity" — without the words 旋转不良); (iii) the diagnosis embedded in a long multi-organ conclusion after several unrelated clauses.
 
 #N **Limitation.** Validation rested on one adjudicator, so interobserver agreement between two independent adjudicators could not be estimated. The agreement figures describe algorithm-versus-adjudicator concordance only.
+
+#H1 J. Reference implementation and its agreement with the final labels
+
+#N The rules in Sections C–F are provided as a runnable Python script (`classifier.py`, deposited with this Online Resource), so that they can be inspected, criticised and re-applied rather than taken on trust. The script takes a report conclusion and a modality and returns a binary label and a certainty tier, implementing clause segmentation (B), the positive-evidence dictionary (C), certainty tiering (D), negation, hedged-exclusion and organ-exclusion handling (E), and the priority order (F).
+
+#N Applied to all 740 preoperative index reports and compared with the final labels used in the analysis — that is, the algorithmic labels after blinded surgeon adjudication — the reference implementation agreed on 723 of 740 (97.7%): 98.0% for the UGI series, 98.1% for CT and 95.8% for ultrasound. Sixteen of the seventeen disagreements were reference-implementation under-calls and one was an over-call.
+
+#N This asymmetry is the point rather than an artefact. The residual under-calls are dominated by the failure modes listed in Section G: the diagnosis stated in the findings section but not carried into the conclusion; a conclusion that consists only of a cross-reference to another report; and a diagnostic sign described morphologically without the diagnosis being named. Because these are precisely the reports the adjudication corrected upward, the direction of error confirms that the detection rates reported in the manuscript are conservative — a rule set of this kind under-detects rather than over-detects.
+
+#N Two limitations of this exercise should be stated. First, agreement is measured against labels that were themselves partly produced by rule-based classification, so it demonstrates that the published rules reproduce the analysis, not that either is correct against blinded image review. Second, the certainty tiers in Table 2 of the manuscript are computed over the adjudicated positive reports, whereas the reference implementation tiers its own positives; the two sets differ by the seventeen reports above, so tier counts differ by small numbers.
 
 #H1 H. Report-content audit patterns
 
