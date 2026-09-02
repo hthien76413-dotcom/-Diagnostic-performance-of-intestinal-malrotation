@@ -43,7 +43,7 @@ def make(src,outfile,figs=None):
         elif ln.startswith('#H1 '): doc.add_heading(ln[4:],level=1)
         elif ln.startswith('#N '): para(ln[3:])
         elif ln.startswith('#FIG'):
-            doc.add_picture(OUT+'Figure2_paired.png',width=Inches(6.2)); doc.paragraphs[-1].alignment=WD_ALIGN_PARAGRAPH.CENTER
+            doc.add_picture(OUT+'FigS1_paired_subgroup.png',width=Inches(6.2)); doc.paragraphs[-1].alignment=WD_ALIGN_PARAGRAPH.CENTER
         elif ln.startswith('#TAB'): table(ln[4:])
         else: para(ln)
     doc.save(OUT+outfile); print('saved',outfile)

@@ -15,7 +15,7 @@ TITLES={
  '4':('Table 4','Change in report-level detection between eras, and the examination-content variables that account for it',
    'Modality-specific logistic models. For ultrasound the content variable is whether the examination was booked and reported under the abdominal great-vessel item rather than the gastrointestinal ultrasound item (great-vessel-coded); this is an ordering and reporting label, not a record of technique. For CT the variable is intravenous contrast enhancement. Attenuation of the era odds ratio after the content variable is added indicates that the temporal change operated through what the examination was rather than through calendar time. The content variables were not randomly assigned and are themselves confounded by indication; these models are explanatory rather than causal.'),
 }
-FIGS={'1':(OUT+'Figure1_flow.png',6.4),'2':(OUT+'Figure3_detection.png',6.4),'3':(OUT+'Figure4_us_audit.png',6.6)}
+FIGS={'1':(OUT+'Fig1_study_flow.png',6.4),'2':(OUT+'Fig2_detection_by_modality.png',6.4),'3':(OUT+'Fig3_ultrasound_report_audit.png',6.6)}
 doc=docx.Document()
 st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font.size=Pt(11)
 for s in doc.sections: s.left_margin=s.right_margin=Inches(1.0)

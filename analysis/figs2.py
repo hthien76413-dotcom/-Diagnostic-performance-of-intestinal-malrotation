@@ -31,7 +31,7 @@ ax.legend(frameon=False,ncol=2,loc='upper center',bbox_to_anchor=(0.5,1.20),font
 ax.grid(axis='y',color='#e2e2e2'); ax.set_axisbelow(True)
 ax.text(0.5,-0.235,'Selected subgroup assembled by diagnostic uncertainty (97% volvulus, 83% neonates, 63% from 2019-2026).\nThis is not a population-level comparison of test accuracy.',
         transform=ax.transAxes,ha='center',fontsize=9.6,style='italic',color='#8a1c1c')
-plt.tight_layout(); plt.savefig(OUT+'Figure2_paired.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'FigS1_paired_subgroup.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
 
 # ---- Figure 4 ----
 u=pd.read_csv('us_audit.csv')
@@ -68,5 +68,5 @@ ax.tick_params(axis='x',pad=4)
 ax.set_ylim(0,118); ax.set_ylabel('Report-level detection (%)')
 ax.set_title('b  Detection conditional on documented content',fontsize=11.5,loc='left',fontweight='bold')
 ax.grid(axis='y',color='#e8e8e8'); ax.set_axisbelow(True)
-plt.tight_layout(); plt.savefig(OUT+'Figure4_us_audit.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'Fig3_ultrasound_report_audit.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
 print('done')

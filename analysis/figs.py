@@ -26,7 +26,7 @@ box(4,26,44,18,'Analysis of report-level detection\n\nEach report classified as 
 ax.text(50,15,'Detection rates are computed among children with surgically confirmed malrotation.\nThe cohort contains no test-negative children, so sensitivity, specificity and predictive values are not estimable.',
         ha='center',va='center',fontsize=9.8,style='italic',color='#444',
         bbox=dict(boxstyle='round,pad=0.6',fc='#fff8e1',ec='#d9b34a'))
-plt.tight_layout(); plt.savefig(OUT+'Figure1_flow.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'Fig1_study_flow.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
 
 # ---------- Figure 3: detection with prominent denominators ----------
 ixf=pd.read_csv('ix_full.csv'); u=pd.read_csv('us_audit.csv')
@@ -48,5 +48,5 @@ ax.set_xlim(0,126); ax.set_xticks(range(0,101,20)); ax.set_xlabel('Report-level 
 ax.grid(axis='x',color='#dddddd'); ax.set_axisbelow(True)
 ax.set_title('Each bar has a DIFFERENT denominator drawn from a DIFFERENT, indication-selected group of children.\nThese are not sensitivities and must not be compared with one another as if they were.',
              fontsize=10.5,color='#8a1c1c',pad=14,fontweight='bold')
-plt.tight_layout(); plt.savefig(OUT+'Figure3_detection.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'Fig2_detection_by_modality.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
 print('fig1, fig3 done')
