@@ -103,9 +103,18 @@ record is now linked to the admission containing that operation (verified for al
   the same interaction restricted to UGI and CT where it is estimable;
 * era-by-content interaction terms.
 
-`firth.py` is a self-contained Jeffreys-penalised logistic fit; running it as a
-script checks the implementation against `statsmodels` on non-separated data
-(coefficients agree to about 0.007).
+`firth.py` is a self-contained Jeffreys-penalised logistic fit reporting profile
+penalised-likelihood intervals and penalised likelihood-ratio p-values, as R's
+`logistf` does. Running it as a script checks it against `statsmodels` on
+non-separated data and prints the separated example.
+
+Do not use its Wald interval for the separated contrast. `firth_check.py` compares
+the fit against `firthlogist`, an independent implementation: the coefficient
+agrees to six decimal places (OR 17.56), but the Wald interval (0.77-401) and the
+profile interval (2.00-2310, penalised LR p=0.006) disagree on whether unity is
+excluded. The profile interval is the correct one and is what the supplement
+reports. R's `logistf` itself could not be installed here because CRAN is blocked
+by the environment's network policy.
 
 `volsign2.py` replaces the volvulus-specific-sign table. The earlier version used
 one pooled sign pattern across all three modalities with no negation handling and

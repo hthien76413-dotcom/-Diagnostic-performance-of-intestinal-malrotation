@@ -69,8 +69,8 @@
   ],
   [
    "Ultrasound detection given midgut volvulus, Firth penalised logistic",
-   "Odds ratio 17.6 (0.77–401)",
-   "–"
+   "Odds ratio 17.6 (2.00–2310, profile penalised likelihood)",
+   "0.006"
   ],
   [
    "Era x examination-content interaction, ultrasound",
