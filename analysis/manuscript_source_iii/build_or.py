@@ -6,7 +6,7 @@ MS='/tmp/claude-0/-home-user--Diagnostic-performance-of-intestinal-malrotation/4
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.json')))
 D.update(json.load(open(AN+'or_tables.json'))); D.update(json.load(open(AN+'or_h.json')))
-D.update(json.load(open(AN+'or3_pooled.json'))); D.update(json.load(open(AN+'or_sens.json')))
+D.update(json.load(open(AN+'or3_pooled.json'))); D.update(json.load(open(AN+'or_sens.json'))); D.update(json.load(open(AN+'or_add.json')))
 TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S1':('Table S2','Distribution of algorithmic labels and certainty tiers, by modality',D['S1']),
      'G':('Table S3','Between-modality comparison of report-level detection (generalised estimating equation)',D['T4']),
@@ -16,7 +16,10 @@ TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S3':('Table S7','Documented content of the CT and upper gastrointestinal series index examinations',D['S3']),
      'S4':('Table S8','Ultrasound temporal model with the era boundary placed at 2019, 2020, 2021 and 2022',D['S4']),
      'S5':('Table S9','Ultrasound content audit taking the earliest rather than the closest preoperative examination episode as the index unit',D['S5']),
-     'S6':('Table S10','Prevalence of midgut volvulus under the primary and the restricted definition',D['S6'])}
+     'S6':('Table S10','Prevalence of midgut volvulus under the primary and the restricted definition',D['S6']),
+     'S11':('Table S11','Average marginal effect of later era, with bootstrap confidence intervals',D['S11']),
+     'S12':('Table S12','Paired differences in detection in the subgroup receiving all three examinations',D['S12']),
+     'S13':('Table S13','Interaction terms, and the separated volvulus contrast under penalised likelihood',D['S13'])}
 def make(src,outfile,figs=None):
     doc=docx.Document()
     st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font.size=Pt(11)

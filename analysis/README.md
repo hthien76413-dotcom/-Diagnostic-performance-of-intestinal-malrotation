@@ -22,6 +22,9 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 tables_final.py # Tables 2 and 4
     python3 or_sens.py     # Online Resource 2 sensitivity analyses (S8-S10)
     python3 revcheck.py    # report-flow, index-unit and volvulus-definition checks
+    python3 volsign2.py    # volvulus-specific sign, harmonised with the main audit rules
+    python3 firth.py       # Firth penalised logistic, with a validation check vs the MLE
+    python3 addstats.py    # bootstrap AME CIs, paired differences, Firth, interaction terms
     python3 audit2.py      # CT / UGI content audit, hedged phrasing
     python3 cert.py        # certainty tiers of positive conclusions
     python3 paired.py      # paired subgroup, timing, McNemar / Cochran Q
@@ -86,3 +89,25 @@ detection 237 / 171 / 65, unadjusted GEE odds ratios 0.31 (0.22-0.44) and
 It differs in the cohort descriptors that depend on age, because each operative
 record is now linked to the admission containing that operation (verified for all
 465). See section 4 of `修改说明_中文.docx`.
+
+## Analyses added after statistical review
+
+`addstats.py` produces Online Resource 2 Tables S11-S13:
+
+* percentile bootstrap CIs for the average marginal effect of era (2,000 resamples
+  of children, seed 20260903), because the manuscript reports the era effect on the
+  risk-difference scale;
+* paired differences in detection with bootstrap CIs for the three-modality
+  subgroup, replacing a p-value-only presentation;
+* a Firth penalised estimate of the separated ultrasound-by-volvulus contrast, plus
+  the same interaction restricted to UGI and CT where it is estimable;
+* era-by-content interaction terms.
+
+`firth.py` is a self-contained Jeffreys-penalised logistic fit; running it as a
+script checks the implementation against `statsmodels` on non-separated data
+(coefficients agree to about 0.007).
+
+`volsign2.py` replaces the volvulus-specific-sign table. The earlier version used
+one pooled sign pattern across all three modalities with no negation handling and
+reported 59/113 for ultrasound, which contradicted the 58/113 in the manuscript;
+the harmonised rule is modality-specific and negation-aware.

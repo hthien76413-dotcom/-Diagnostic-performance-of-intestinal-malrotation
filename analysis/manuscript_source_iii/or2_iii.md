@@ -32,7 +32,7 @@
 
 #TABS2B
 
-#N A volvulus-specific sign was defined as a whirlpool or corkscrew appearance, or an explicit report of a twist. In the subgroup of 57 children with confirmed volvulus who received all three examinations, ultrasound and the UGI series reported such a sign at similar rates and both numerically more often than CT, but no pairwise comparison was robust: under the pre-specified text definition used here, ultrasound versus CT gave p=0.13 and Cochran's Q p=0.12. An earlier version of this analysis, using a narrower sign definition, produced a nominally significant ultrasound-versus-CT difference (p=0.041). Because the result is sensitive to how the sign is defined, it is reported here as exploratory and no claim of a difference between modalities is made.
+#N The sign is modality-specific and uses the same negation-aware rules as the main content audit: a whirlpool or spiral appearance for ultrasound and CT, a corkscrew or spring appearance for the upper gastrointestinal series. The rates are therefore identical in definition to the whirlpool figure quoted in the manuscript (58 of 113). Ultrasound and the UGI series reported such a sign at similar rates and both more often than CT, but the comparison is between different children and is not adjusted; it is reported as exploratory and no claim of a difference between modalities is made. An earlier version of this table applied one pooled sign pattern across all three modalities without negation handling, giving 59/113 for ultrasound; the harmonised rule used here is the one implemented in `Online_Resource_1_classifier.py` and in the audit script.
 
 #N The finding that survives this sensitivity is directional rather than comparative: within ultrasound, the whirlpool sign was both the dominant documented finding and the near-exclusive determinant of a positive report (main manuscript, Table 3), consistent with the whirlpool sign being fundamentally a sign of volvulus rather than of malrotation.
 
@@ -53,3 +53,19 @@
 #TABS6
 
 #N Restricting the definition lowers volvulus prevalence from 86.7% to 82.6% in the cohort and from 95.0% to 87.4% among the children who underwent ultrasound. It does not change the manuscript's claims: the whirlpool sign remains documented in about half of the children with confirmed volvulus under either definition, and the group with malrotation but no volvulus remains too small for any conclusion about ultrasound in uncomplicated malrotation.
+
+#H1 S2.6 Analyses added in response to statistical review
+
+#N **Average marginal effects with confidence intervals.** The manuscript reports the era effect on the risk-difference scale because a conditional odds ratio attenuates when a predictive covariate is added even without mediation. Table S11 gives those marginal effects with percentile bootstrap 95% confidence intervals (2,000 resamples of children, seed fixed). For ultrasound, the crude effect excludes zero and the adjusted effect does not; the two intervals overlap heavily, so the analysis shows that examination type accounts for about half the era difference, not that the remainder is absent.
+
+#TABS11
+
+#N **Paired differences with confidence intervals.** Table S12 replaces the p-value-only presentation of the three-modality subgroup with the paired difference in detection and its bootstrap interval alongside the discordant pairs and the exact McNemar p. The UGI series exceeded both other modalities; ultrasound and CT did not differ. These are within-subgroup differences in what the report said, in 59 children selected by diagnostic uncertainty, and are not differences in accuracy.
+
+#TABS12
+
+#N **The separated contrast, and interaction terms.** The pre-specified modality-by-volvulus interaction cannot be estimated in the three-modality model because no ultrasound examination was positive among the six children without volvulus. Two things can be estimated and are given in Table S13. First, the same interaction restricted to the upper gastrointestinal series and CT, where no separation occurs, shows no evidence of effect modification by volvulus. Second, a Firth penalised logistic model of ultrasound detection on volvulus returns a finite but extremely imprecise odds ratio whose interval includes unity — a formal statement of what six children can support, which is nothing. Table S13 also reports era-by-content interaction terms for ultrasound and CT; neither is significant, so the additive models used in Table 4 are not obviously misspecified.
+
+#TABS13
+
+#N **What was pre-specified and what was not.** Pre-specified: the outcome definition, the modality comparison and its GEE structure, the modality-by-volvulus interaction, the era dichotomy at 2019, and the certainty-tier sensitivity analysis. Decided after inspecting the data: the content-audit patterns (fixed by enumerating the corpus vocabulary, Online Resource 1), the pooling of same-day reports into one index episode, the era boundary sensitivity analysis, the marginal-effect presentation, and every analysis in this section. The paper's claims should be read accordingly: the content rates and the era analysis are descriptive and hypothesis-generating, not confirmatory tests of pre-registered hypotheses.
