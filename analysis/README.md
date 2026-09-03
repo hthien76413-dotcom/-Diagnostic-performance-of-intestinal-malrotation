@@ -1,8 +1,8 @@
 # Re-analysis for the revised manuscript
 
-All figures, tables and in-text numbers in `诊断效能_英文稿_修回版_v3.docx`,
-`Online_Resource_1_NLP_and_report_audit.docx` and
-`Online_Resource_2_and_3_supplementary_tables.docx` are produced by the scripts here
+All figures, tables and in-text numbers in
+`诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx` and the three Online Resources
+are produced by the scripts here
 from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 `诊断效能_手术确诊队列_465例.xlsx` and the adjudicated per-patient matrix
 `诊断效能_逐患者矩阵_当前版v3.xlsx` in the repository root.
@@ -16,7 +16,8 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 core.py        # not run directly; exec'd by the others
     python3 a55b.py        # the 55 children without an index test
     python3 clin.py        # Table 1: characteristics by imaging group
-    python3 usaudit.py     # Table 3: ultrasound report-content audit
+    python3 usaudit.py     # first-pass ultrasound report-content audit (superseded)
+    python3 usaudit2.py    # Table 3: corpus-corrected ultrasound content audit
     python3 audit2.py      # CT / UGI content audit, hedged phrasing
     python3 cert.py        # certainty tiers of positive conclusions
     python3 paired.py      # paired subgroup, timing, McNemar / Cochran Q
@@ -27,15 +28,29 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 final.py       # subgroup detection, sensitivity analyses
     python3 gee.py gee2.py # GEE models and the interaction/separation issue
     python3 tables.py tables2.py or_tables.py   # writes tables*.json
-    python3 figs.py figs2.py                    # writes Figure1-4 PNGs
+    python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
 
 `ALL_RESULTS.txt` is the concatenated console output of the analysis scripts.
 
 ## Building the documents
 
-    cd manuscript_source
-    python3 build.py    # manuscript from part1-4.md + tables*.json + figures
-    python3 build2.py   # Online Resources from or1.md / or23.md
+    cd manuscript_source_iii
+    python3 build_iii.py    # manuscript from p1-3.md + tables*.json + figures
+    python3 build_or.py     # the three Online Resources
+    python3 build_docs.py   # cover letter, submission sheet, Chinese notes
+    python3 wc.py           # main-text word count against the 3,000-word limit
+
+`manuscript_source/` holds the earlier Pediatric Radiology revision sources;
+`or1.md` there is still the source of Online Resource 1.
+
+## Report-content audit patterns
+
+`usaudit2.py` supersedes `usaudit.py`. The first-pass patterns for the third
+portion of the duodenum matched only 水平段 / 第三段 and missed the two commonest
+terms in this corpus, 水平部 and 横部; two reports do document D3, so the audited
+rate is 2/119 (1.7%), not 0/119. Recorded enteric fluid administration is likewise
+2/119, not 1/119. `or_h.json` holds the published pattern table and must stay in
+step with `usaudit2.py`.
 
 ## Validation against the previously submitted version
 

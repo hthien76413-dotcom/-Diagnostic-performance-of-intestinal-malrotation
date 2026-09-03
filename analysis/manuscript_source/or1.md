@@ -78,7 +78,7 @@
 
 #TABH
 
-#N Two properties of this audit should be kept in mind. First, it records what was written, and is a lower bound on what was performed. Second, the whirlpool sign appears in the main manuscript both as an adjudicated study variable (59 of 119 reports) and as a text-pattern variable (57 of 119); the small difference reflects two reports in which the adjudicator recognised a whirlpool described in words the pattern did not capture, and both figures are reported for transparency.
+#N Three properties of this audit should be kept in mind. First, it records what was written, and is a lower bound on what was performed. The D3 pattern accepts the four terms used for the third portion in this corpus (水平部, 水平段, 横部, 第三段); the negative lookbehind excludes 主动脉弓横部, and the enteric-fluid pattern requires a statement that fluid was given, so observed luminal fluid without a stated route was not counted. The main-manuscript variable combines the D3 and duodenojejunal-junction rows (2 and 0 of 119 reports respectively). A pattern for the abdominal aorta as a landmark for the mesenteric-vessel relationship was tested and discarded: of its three matches, two referred to cardiac or renal-vein findings rather than to mesenteric anatomy. Second, the whirlpool sign appears in the main manuscript both as an adjudicated study variable (59 of 119 reports) and as a text-pattern variable (57 of 119); the small difference reflects two reports in which the adjudicator recognised a whirlpool described in words the pattern did not capture, and both figures are reported for transparency.
 
 #H1 I. Distribution of labels by modality
 

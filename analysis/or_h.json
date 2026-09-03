@@ -6,9 +6,14 @@
    "Regular expression (source text)"
   ],
   [
-   "Third portion of duodenum / duodenojejunal junction",
+   "Third portion of duodenum (D3)",
    "Ultrasound",
-   "十二指肠水平段|水平段|十二指肠第三段|第三段|十二指肠空肠曲|屈氏韧带|Treitz|十二指肠悬韧带"
+   "十二指肠水平部|十二指肠水平段|十二指肠横部|十二指肠第三段|(?<![弓])横部|水平部"
+  ],
+  [
+   "Duodenojejunal junction",
+   "Ultrasound",
+   "十二指肠空肠曲|屈氏|Treitz|十二指肠悬韧带"
   ],
   [
    "Duodenum mentioned in any form",
@@ -18,12 +23,12 @@
   [
    "Superior mesenteric artery–vein relationship",
    "Ultrasound / CT",
-   "肠系膜上动脉|肠系膜上静脉|SMA|SMV|系膜血管"
+   "肠系膜上动脉|肠系膜上静脉|系膜血管|SMA|SMV"
   ],
   [
    "Explicit vessel inversion",
    "Ultrasound",
-   "(动静脉|静脉.{0,6}动脉|动脉.{0,6}静脉).{0,12}(换位|反位|倒置|异常关系|关系异常|左侧|右侧)|静脉位于.{0,6}左|动脉.{0,4}右侧"
+   "(?:静脉|动脉)[^。；\\n]{0,10}(?:换位|反位|倒置|关系异常|异常关系)|静脉位于[^。；\\n]{0,8}左|动脉位于[^。；\\n]{0,8}右"
   ],
   [
    "Whirlpool / swirl / spiral appearance",
@@ -33,17 +38,32 @@
   [
    "Enteric fluid administered",
    "Ultrasound",
-   "饮水|口服.{0,4}(水|液)|注水|胃内注|温开水|生理盐水.{0,6}(灌|注)|水充盈"
+   "饮水|口服[^。；\\n]{0,6}(?:水|液|造影剂)|注水|注入|胃内注|温开水|经胃管"
+  ],
+  [
+   "Dynamic (real-time) assessment",
+   "Ultrasound",
+   "动态|实时观察|连续观察"
+  ],
+  [
+   "Graded compression",
+   "Ultrasound",
+   "加压|探头压|压迫探查"
+  ],
+  [
+   "Colour Doppler used",
+   "Ultrasound",
+   "CDFI|彩色多普勒|多普勒"
   ],
   [
    "Bowel gas explicitly limiting the study",
    "Ultrasound",
-   "气体干扰|肠气干扰|气体较多|积气.{0,10}(干扰|遮挡)|显示欠清|显示不清|声窗"
+   "气体干扰|肠气干扰|气体较多|积气[^。；\\n]{0,10}(?:干扰|遮挡)|显示欠清|显示不清|声窗"
   ],
   [
    "Caecal position",
    "Ultrasound / UGI",
-   "回盲部"
+   "回盲"
   ],
   [
    "Bedside examination",

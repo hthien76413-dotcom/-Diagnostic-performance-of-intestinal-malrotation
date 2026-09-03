@@ -34,7 +34,7 @@ c=ixf[ixf['mod']=='CT'].copy(); g=ixf[ixf['mod']=='UGI'].copy()
 def f(d,rx): return d['txt'].astype(str).str.contains(rx,regex=True)
 c['Contrast enhancement']=c['报告名称'].astype(str).str.contains('增强')
 c['Mesenteric whirl']=f(c,r'漩涡|旋涡|涡流|螺旋')
-c['Duodenal position']=f(c,r'十二指肠')
+c['Duodenum mentioned']=f(c,r'十二指肠')
 c['Mesenteric-vessel relationship']=f(c,r'肠系膜上动脉|肠系膜上静脉|系膜血管')
 c['Three-dimensional reconstruction']=c['报告名称'].astype(str).str.contains('三维重建')
 g['Duodenojejunal junction']=f(g,r'十二指肠空肠曲|屈氏|Treitz|十二指肠.{0,6}空肠')
@@ -44,7 +44,7 @@ g['Caecal position']=f(g,r'回盲部')
 g['Whole-gastrointestinal study']=g['报告名称'].astype(str).str.contains('全消化道')
 g['Barium used']=g['报告名称'].astype(str).str.contains('钡')
 S3=[['Modality','Documented content','n (%) of reports','Detection when documented, %','Detection when not documented, %']]
-for d,lab,keys in [(c,'Abdominal CT (n=320)',['Contrast enhancement','Mesenteric whirl','Duodenal position','Mesenteric-vessel relationship','Three-dimensional reconstruction']),
+for d,lab,keys in [(c,'Abdominal CT (n=320)',['Contrast enhancement','Mesenteric whirl','Duodenum mentioned','Mesenteric-vessel relationship','Three-dimensional reconstruction']),
                    (g,'UGI contrast series (n=301)',['Duodenojejunal junction','Corkscrew / spring appearance','Jejunal position','Caecal position','Whole-gastrointestinal study','Barium used'])]:
     for k_ in keys:
         s=d[k_].astype(bool)
