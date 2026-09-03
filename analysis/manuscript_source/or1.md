@@ -72,6 +72,10 @@
 
 #N Two limitations of this exercise should be stated. First, agreement is measured against labels that were themselves partly produced by rule-based classification, so it demonstrates that the published rules reproduce the analysis, not that either is correct against blinded image review. Second, the certainty tiers in Table 2 of the manuscript are computed over the adjudicated positive reports, whereas the reference implementation tiers its own positives; the two sets differ by the seventeen reports above, so tier counts differ by small numbers.
 
+#H1 G2. Cohort retrieval strings
+
+#N Children were retrieved from the institutional surgical records database by matching, case-insensitively, the operative diagnosis field (术中诊断) against `肠旋转不良` or the procedure-name field (手术名称) against `Ladd`. Applied to the 559 operative records of 499 children held for the study period, this returns 503 records in 465 children; every retrieved record was read before inclusion. The 34 children not returned had operative diagnoses unrelated to malrotation (appendicitis, hypertrophic pyloric stenosis, Hirschsprung disease, diaphragmatic and cardiac procedures among them).
+
 #H1 H. Report-content audit patterns
 
 #N Content coding was applied to the concatenated findings and conclusion text of each index unit. The index unit is the examination episode closest to operation: all reports of that modality issued on that calendar day are pooled, because the department routinely issues separate gastrointestinal and great-vessel reports for one ultrasound session. Patterns are given as regular expressions over the source text. Technique elements (duodenal segments, the mesenteric vessels, enteric fluid, dynamic and compression technique, colour Doppler, caecal position) are coded on mention, whether the finding was normal or abnormal, because an examination that states the vessel relationship is normal did assess the vessels. Findings and adequacy statements (the whirlpool sign, limiting bowel gas) are coded clause-by-clause with negation and co-occurrence handling, as noted in the table.

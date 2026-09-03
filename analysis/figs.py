@@ -14,9 +14,9 @@ def box(x,y,w,h,txt,fc='#f4f6f8',ec='#333',fs=10.5,weight='normal'):
     ax.text(x+w/2,y+h/2,txt,ha='center',va='center',fontsize=fs,fontweight=weight,linespacing=1.45)
 def arrow(x1,y1,x2,y2):
     ax.annotate('',xy=(x2,y2),xytext=(x1,y1),arrowprops=dict(arrowstyle='-|>',lw=1.2,color='#333'))
-box(22,88,56,9,'Children undergoing surgery for intestinal malrotation\n1 December 2012 - 30 June 2026',fc='#e8eef5',weight='bold')
-arrow(50,88,50,82.5)
-box(22,73,56,9,'Surgically confirmed intestinal malrotation\nn = 465  (reference standard: operative diagnosis)',fc='#e8eef5',weight='bold')
+box(20,87,60,10,'Operative records searched for a diagnosis naming intestinal\nmalrotation or a Ladd procedure, 1 Dec 2012 - 30 Jun 2026\n559 records in 499 children, all reviewed',fc='#e8eef5',weight='bold')
+arrow(50,87,50,82.5)
+box(22,73,56,9,'Surgically confirmed intestinal malrotation\n503 records in n = 465 children (reference standard)',fc='#e8eef5',weight='bold')
 arrow(50,73,50,67)
 box(4,50,44,17,'At least one preoperative index test\nn = 410  (740 index examinations)\n\nUGI series 301   Abdominal CT 320\nGastrointestinal ultrasound 119\nAll three modalities 59',fc='#eef5ee',fs=10.5)
 arrow(48,58.5,54,58.5)
