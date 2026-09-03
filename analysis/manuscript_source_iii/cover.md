@@ -8,7 +8,7 @@
 
 #N Email: yjun201602@163.com  |  Telephone: +86 186 2713 9911  |  ORCID: 0009-0006-0669-4340
 
-#N 2 September 2026
+#N 3 September 2026
 
 #N The Editor-in-Chief
 #N *Insights into Imaging*
@@ -27,8 +27,7 @@
 
 #N The complete text-classification rule set, the report-content audit patterns, the between-modality models and the subgroup analyses are provided as three Online Resources so that the method can be replicated at other institutions; the audit is inexpensive to repeat wherever routine reports are stored electronically.
 
-#N ⟦OPTIONAL — keep or delete, your call: An earlier version of this work, framed as a comparison of diagnostic performance between the three modalities, was reviewed elsewhere and not accepted. The reviewers' central objection — that a case-only cohort with three different, indication-selected denominators cannot support a comparative accuracy claim — was correct, and the present manuscript is a different study rather than a revision of that one: the research question, the primary analyses and the conclusions have all been rebuilt around what the reports document. We would be glad to supply the earlier reviews and our point-by-point response should that be useful to you.⟧
-
+#N An earlier version of this work, framed as a comparison of diagnostic performance between the three modalities, was reviewed elsewhere and not accepted. The reviewers' central objection — that a case-only cohort with three different, indication-selected denominators cannot support a comparative accuracy claim — was correct, and the present manuscript is a different study rather than a revision of that one: the research question, the primary analyses and the conclusions have all been rebuilt around what the reports document. We would be glad to supply the earlier reviews and our point-by-point response should that be useful to you.
 #N The manuscript is original, is not under consideration elsewhere, and all authors have approved the submission and agree to be accountable for the work. The study was approved by the institutional review board with waiver of informed consent. The authors declare no competing interests. Funding, author contributions and the ethics approval number are given on the title page.
 
 #N Thank you for considering our work.
