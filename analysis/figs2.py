@@ -33,12 +33,14 @@ ax.text(0.5,-0.235,'Selected subgroup assembled by diagnostic uncertainty (97% v
         transform=ax.transAxes,ha='center',fontsize=9.6,style='italic',color='#8a1c1c')
 plt.tight_layout(); plt.savefig(OUT+'FigS1_paired_subgroup.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
 
-# ---- Figure 4 ----
-u=pd.read_csv('us_audit.csv')
-items=[('Third portion of duodenum / DJ junction','d3'),('Enteric fluid administered','fluid'),
-       ('Explicit vessel inversion','inversion'),('Caecal position','cecum'),('Duodenum mentioned at all','duodenum'),
-       ('SMA-SMV relationship','sma_smv'),('Bowel gas limiting study','gas_limit'),('Whirlpool sign','US_whirlpool')]
-fig,axes=plt.subplots(1,2,figsize=(15,5.8),gridspec_kw={'width_ratios':[1.15,1]})
+# ---- Figure 3 (ultrasound report audit) ----
+u=pd.read_csv('us_audit4.csv')
+items=[('Third portion of duodenum / DJ junction','d3_or_djj'),('Explicit vessel inversion','inversion'),
+       ('Graded compression','compress'),('Enteric fluid administered','fluid'),
+       ('Dynamic assessment','dynamic'),('Caecal position','cecum'),
+       ('Duodenum mentioned at all','duodenum'),('SMA-SMV relationship','sma_smv'),
+       ('Bowel gas limiting study','gas_limit'),('Whirlpool sign reported','whirl_pos')]
+fig,axes=plt.subplots(1,2,figsize=(15.6,6.0),gridspec_kw={'width_ratios':[1.12,1]})
 ax=axes[0]
 vals=[u[k].astype(bool).mean()*100 for _,k in items]; ns=[int(u[k].astype(bool).sum()) for _,k in items]
 y=np.arange(len(items))[::-1]
@@ -47,26 +49,24 @@ ax.barh(y,vals,color=cols,height=0.62)
 for yi,v,n in zip(y,vals,ns):
     ax.text(max(v,0)+1.2,yi,f'{n}/119  ({v:.1f}%)',va='center',fontsize=10)
 ax.set_yticks(y); ax.set_yticklabels([l for l,_ in items],fontsize=10.5)
-ax.set_xlim(0,72); ax.set_xlabel('Ultrasound reports documenting the element (%)')
-ax.set_title('a  What the 119 routine ultrasound reports documented',fontsize=11.5,loc='left',fontweight='bold')
+ax.set_xlim(0,72); ax.set_xlabel('Ultrasound examinations documenting the element (%)')
+ax.set_title('a  What the 119 routine ultrasound examinations documented',fontsize=11.5,loc='left',fontweight='bold')
 ax.grid(axis='x',color='#e8e8e8'); ax.set_axisbelow(True)
 ax=axes[1]
-groups=[('Whirlpool\nrecorded','US_whirlpool',True),('Whirlpool\nabsent','US_whirlpool',False),
-        ('SMA-SMV\ndescribed','sma_smv',True),('SMA-SMV\nabsent','sma_smv',False),
-        ('Vessel-\nfocused','vessel_us',True),('Not vessel-\nfocused','vessel_us',False)]
+groups=[('Whirlpool\nreported','whirl_pos',True),('Whirlpool\nnot reported','whirl_pos',False),
+        ('Vessels\naddressed','sma_smv',True),('Vessels\nnot addressed','sma_smv',False),
+        ('Great-vessel\nsession','vessel_us',True),('No great-\nvessel session','vessel_us',False)]
 vals=[];ann=[];err=[[],[]]
 for lab,k,v in groups:
-    s=u[u[k].astype(bool)==v]; kk=int(s['US_detected'].sum()); n=len(s); r=kk/n*100
+    s2=u[u[k].astype(bool)==v]; kk=int(s2['det'].sum()); n=len(s2); r=kk/n*100
     lo,hi=pci(kk,n,method='wilson'); vals.append(r); err[0].append(r-lo*100); err[1].append(hi*100-r); ann.append(f'{kk}/{n}')
-x=np.arange(len(groups))
-cc=['#2C7FB8','#B22222']*3
+x=np.arange(len(groups)); cc=['#2C7FB8','#B22222']*3
 ax.bar(x,vals,0.62,color=cc,edgecolor='white')
 ax.errorbar(x,vals,yerr=err,fmt='none',ecolor='#444',capsize=3,lw=1)
 for xi,v,a,eu in zip(x,vals,ann,err[1]): ax.text(xi,v+eu+3,f'{v:.0f}%\n{a}',ha='center',fontsize=9.5)
-ax.set_xticks(x); ax.set_xticklabels([g[0] for g in groups],fontsize=9.5)
-ax.tick_params(axis='x',pad=4)
+ax.set_xticks(x); ax.set_xticklabels([g[0] for g in groups],fontsize=9.0); ax.tick_params(axis='x',pad=4)
 ax.set_ylim(0,118); ax.set_ylabel('Report-level detection (%)')
 ax.set_title('b  Detection conditional on documented content',fontsize=11.5,loc='left',fontweight='bold')
 ax.grid(axis='y',color='#e8e8e8'); ax.set_axisbelow(True)
 plt.tight_layout(); plt.savefig(OUT+'Fig3_ultrasound_report_audit.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
-print('done')
+print('Fig3 rebuilt')

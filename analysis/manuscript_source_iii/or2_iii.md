@@ -35,3 +35,21 @@
 #N A volvulus-specific sign was defined as a whirlpool or corkscrew appearance, or an explicit report of a twist. In the subgroup of 57 children with confirmed volvulus who received all three examinations, ultrasound and the UGI series reported such a sign at similar rates and both numerically more often than CT, but no pairwise comparison was robust: under the pre-specified text definition used here, ultrasound versus CT gave p=0.13 and Cochran's Q p=0.12. An earlier version of this analysis, using a narrower sign definition, produced a nominally significant ultrasound-versus-CT difference (p=0.041). Because the result is sensitive to how the sign is defined, it is reported here as exploratory and no claim of a difference between modalities is made.
 
 #N The finding that survives this sensitivity is directional rather than comparative: within ultrasound, the whirlpool sign was both the dominant documented finding and the near-exclusive determinant of a positive report (main manuscript, Table 3), consistent with the whirlpool sign being fundamentally a sign of volvulus rather than of malrotation.
+
+#H1 S2.5 Robustness of the three analytic choices a reader is most likely to question
+
+#N **The era boundary.** The primary analysis splits the study period at 2019, but the department attributes the change in practice to growing awareness from about 2021. Table S8 repeats the ultrasound model with the boundary at 2019, 2020, 2021 and 2022. The crude era effect is unstable across boundaries and loses significance at 2021 and 2022; the examination-type effect is stable throughout (odds ratio 3.07–3.85, all p≤0.007) and the adjusted era term is non-significant at every boundary. The temporal claim in the manuscript therefore does not depend on where the boundary is placed, and the crude era difference by itself does not survive a boundary chosen to match the department's own account.
+
+#TABS4
+
+#N Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation. On the risk-difference scale the examination-type variable accounts for roughly half of the era difference at each boundary, not all of it.
+
+#N **The index unit.** The primary analysis takes the examination episode closest to operation. Table S9 repeats the ultrasound content audit taking the earliest preoperative episode instead. No conclusion changes: the duodenal landmarks remain documented in three of 119 examinations either way.
+
+#TABS5
+
+#N **The definition of midgut volvulus.** The primary definition accepts an explicit operative statement of torsion or any documented degree of midgut or mesenteric rotation, with no minimum. Of the 327 children with a stated degree, 308 had a rotation of at least 360° and 19 had 90–270°. Table S10 shows the effect of restricting volvulus to the former.
+
+#TABS6
+
+#N Restricting the definition lowers volvulus prevalence from 86.7% to 82.6% in the cohort and from 95.0% to 87.4% among the children who underwent ultrasound. It does not change the manuscript's claims: the whirlpool sign remains documented in about half of the children with confirmed volvulus under either definition, and the group with malrotation but no volvulus remains too small for any conclusion about ultrasound in uncomplicated malrotation.

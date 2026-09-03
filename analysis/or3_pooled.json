@@ -1,0 +1,88 @@
+{
+ "S3": [
+  [
+   "Modality",
+   "Documented content",
+   "n (%) of reports",
+   "Detection when documented",
+   "Detection when not documented"
+  ],
+  [
+   "Abdominal CT (n=320)",
+   "Contrast enhancement",
+   "52 (16.2)",
+   "44/52 (85%)",
+   "127/268 (47%)"
+  ],
+  [
+   "Abdominal CT (n=320)",
+   "Mesenteric whirl",
+   "116 (36.2)",
+   "114/116 (98%)",
+   "57/204 (28%)"
+  ],
+  [
+   "Abdominal CT (n=320)",
+   "Duodenum mentioned",
+   "73 (22.8)",
+   "43/73 (59%)",
+   "128/247 (52%)"
+  ],
+  [
+   "Abdominal CT (n=320)",
+   "Mesenteric-vessel relationship",
+   "43 (13.4)",
+   "36/43 (84%)",
+   "135/277 (49%)"
+  ],
+  [
+   "Abdominal CT (n=320)",
+   "Three-dimensional reconstruction",
+   "124 (38.8)",
+   "79/124 (64%)",
+   "92/196 (47%)"
+  ],
+  [
+   "Upper gastrointestinal series (n=301)",
+   "Duodenojejunal junction",
+   "154 (51.2)",
+   "153/154 (99%)",
+   "84/147 (57%)"
+  ],
+  [
+   "Upper gastrointestinal series (n=301)",
+   "Corkscrew / spring appearance",
+   "140 (46.5)",
+   "140/140 (100%)",
+   "97/161 (60%)"
+  ],
+  [
+   "Upper gastrointestinal series (n=301)",
+   "Jejunal position",
+   "213 (70.8)",
+   "200/213 (94%)",
+   "37/88 (42%)"
+  ],
+  [
+   "Upper gastrointestinal series (n=301)",
+   "Caecal position",
+   "200 (66.4)",
+   "180/200 (90%)",
+   "57/101 (56%)"
+  ],
+  [
+   "Upper gastrointestinal series (n=301)",
+   "Whole-gastrointestinal study",
+   "286 (95.0)",
+   "224/286 (78%)",
+   "13/15 (87%)"
+  ],
+  [
+   "Upper gastrointestinal series (n=301)",
+   "Barium used",
+   "17 (5.6)",
+   "16/17 (94%)",
+   "221/284 (78%)"
+  ]
+ ]
+}

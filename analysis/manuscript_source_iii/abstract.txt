@@ -2,20 +2,20 @@ Abstract
 
 Objectives Ultrasound is increasingly advocated as first-line for suspected intestinal malrotation, on the strength of sensitivities of 93–97% obtained under dedicated protocols assessing the third portion of the duodenum (D3) and the mesenteric vessels. We audited what routine reports document, and which documented findings accompany a positive report.
 
-Methods Retrospective case-only report audit at one tertiary children's hospital (December 2012–June 2026). Preoperative index reports for gastrointestinal ultrasound, abdominal CT and the upper gastrointestinal (UGI) contrast series were classified for malrotation detection by a rule-based algorithm with blinded surgeon adjudication, and separately audited for documented technical content. Because the cohort was assembled on surgically confirmed disease, the outcome is report-level detection; sensitivity, specificity and comparative accuracy are not estimable.
+Methods Retrospective case-only report audit at one tertiary children's hospital (December 2012–June 2026). For each child and modality the index unit was the preoperative examination episode closest to operation, pooling reports issued the same day. Episodes were classified for malrotation detection by a rule-based algorithm with blinded surgeon adjudication, and separately audited for documented technical content. Because the cohort was assembled on surgically confirmed disease, the outcome is report-level detection among children who received the test; specificity, predictive values and comparative accuracy are not estimable.
 
-Results Among 465 children (median age at operation 13 days; volvulus in 86.7%), 410 had at least one index test (740 examinations). Two ultrasound reports (2/119, 1.7%) documented D3 or the duodenojejunal junction; the mesenteric artery–vein relationship was described in 8.4%, enteric fluid administration in 1.7% and dynamic assessment in 1.7%, whereas a whirlpool sign was recorded in 49.6%. Ultrasound reported malrotation in 59 of 59 examinations documenting a whirlpool and 6 of 60 without one. Detection was 78.7% (237/301) for the UGI series, 53.4% (171/320) for CT and 54.6% (65/119) for ultrasound, on non-comparable denominators. Ultrasound detection rose from 41.0% to 61.3% between eras, an effect abolished by adjusting for a shift toward examinations booked as abdominal great-vessel studies (era odds ratio 2.27 to 1.56; examination-type 3.46).
+Results Among 465 children (median age at operation 13 days; volvulus in 86.7%), 410 had at least one index test (740 examinations from 778 reports). Three of 119 ultrasound examinations (2.5%) documented D3 or the duodenojejunal junction, 12 (10.1%) the superior mesenteric artery–vein relationship and 2 (1.7%) enteric fluid administration, whereas a whirlpool sign was reported in 48.7%. Ultrasound named malrotation in 58 of 58 examinations reporting a whirlpool and 7 of 61 without one, but a whirlpool was reported in only 58 of the 113 children whose operation confirmed volvulus. Detection was 78.7% (237/301) for the UGI series, 53.4% (171/320) for CT and 54.6% (65/119) for ultrasound, on non-comparable denominators. Ultrasound detection rose from 41.0% to 61.3% between eras; adjusting for a shift toward sessions including an abdominal great-vessel study halved that difference (+20.2 to +10.3 percentage points), while the examination-type term stayed between 3.1 and 3.9 wherever the era boundary was placed.
 
-Conclusion Routine ultrasound functioned as a whirlpool-dependent test for volvulus rather than a protocolised assessment of duodenal position. The gap between real-world and published ultrasound performance is a gap in technique and reporting, not an intrinsic limitation of ultrasound.
+Conclusions Routine ultrasound functioned as a whirlpool-dependent test for volvulus rather than a protocolised assessment of duodenal position. Whether supplying the missing technical elements would close the gap to published performance cannot be tested here, but the gap coincides with a measurable deficit in what these examinations recorded.
 
-Critical relevance statement A department adopting an ultrasound-first pathway on the strength of published sensitivities of 93–97% should first audit whether its own reports document the duodenal landmarks that produced those figures; where they do not, the achievable detection rate is far lower and a negative ultrasound cannot exclude malrotation.
+Critical relevance statement A department adopting an ultrasound-first pathway on the strength of published sensitivities of 93–97% should first audit whether its own reports document the duodenal landmarks that produced those figures; in this department they almost never did, and a negative ultrasound did not exclude malrotation.
 
 Keywords: Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report; Quality improvement
 
 Key Points
 
-• Duodenal landmarks appeared in two of 119 routine ultrasound reports.
+• Duodenal landmarks appeared in three of 119 routine ultrasound examinations.
 
-• A recorded whirlpool sign separated positive from negative ultrasound reports.
+• Ultrasound named the diagnosis almost only when a whirlpool sign was reported.
 
-• Detection improved when the examination changed, not as time passed.
+• Improvement over time tracked examination type more closely than calendar era.

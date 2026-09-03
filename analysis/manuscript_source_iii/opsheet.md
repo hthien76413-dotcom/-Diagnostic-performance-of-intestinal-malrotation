@@ -13,7 +13,7 @@
 #N 含作者、单位、ORCID、通讯方式、伦理批件号与全部 Declarations。**这是唯一含作者身份信息的文件**，务必与正文分开上传。
 
 #N **3. Manuscript（盲审正文）** —— `诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx`
-#N 2,998 词，含 4 表 3 图（图已内嵌便于评审阅读）。文中无任何作者身份信息。
+#N 2,997 词，含 4 表 3 图（图已内嵌便于评审阅读）。文中无任何作者身份信息。
 
 #N **4. Figures（单独上传，300 dpi PNG）**
 #N • `Fig1_study_flow.png` → Figure 1（流程图）
@@ -43,7 +43,7 @@
 #N **Abstract**：从正文 Abstract 节整段复制，保持 Objectives / Methods / Results / Conclusion 四段结构不要合并。
 
 #N **Key Points**（系统通常单独设框，三条分别填）：
-#N Duodenal landmarks appeared in two of 119 routine ultrasound reports.
+#N Duodenal landmarks appeared in three of 119 routine ultrasound examinations.
 #N A recorded whirlpool sign separated positive from negative ultrasound reports.
 #N Detection improved when the examination changed, not as time passed.
 
@@ -75,7 +75,7 @@
 #N 以下各项均已核对完毕，上传时确认一遍即可：
 
 #N 1. 盲审正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者、备注）已清空，无需再在 Word 里手动检查。
-#N 2. 正文 2,998 词，未超 3,000 上限。
+#N 2. 正文 2,997 词，未超 3,000 上限。
 #N 3. 摘要为 Objectives / Methods / Results / Conclusion 四段式。
 #N 4. Key Points 三条，每条 10 词，未复用摘要或正文原句。
 #N 5. 图题 ≤15 词、图注 ≤300 词，且都在正文里而非图片文件内。

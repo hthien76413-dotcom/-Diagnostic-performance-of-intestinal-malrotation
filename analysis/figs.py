@@ -21,9 +21,9 @@ arrow(50,73,50,67)
 box(4,50,44,17,'At least one preoperative index test\nn = 410  (740 index examinations)\n\nUGI series 301   Abdominal CT 320\nGastrointestinal ultrasound 119\nAll three modalities 59',fc='#eef5ee',fs=10.5)
 arrow(48,58.5,54,58.5)
 box(54,36,44,31,'None of the three index tests\nn = 55 (11.8%)\n\nbut every one had other preoperative imaging:\n  abdominal / chest radiograph            46\n  contrast enema of the colon             12\n  ultrasound of another region            22\n  CT of another region                      7\n  no in-hospital study                       5\n     (all 5 with documented outside imaging)\n\nOutside or outpatient imaging documented in 33;\nalready reporting malrotation or volvulus in 19',fc='#faf1e8',fs=9.3)
-arrow(26,50,26,44)
-box(4,26,44,18,'Analysis of report-level detection\n\nEach report classified as positive or negative\nby rule-based algorithm + surgeon adjudication\n\nEach report separately audited for\ndocumented technical content',fc='#eef5ee',fs=10)
-ax.text(50,15,'Detection rates are computed among children with surgically confirmed malrotation.\nThe cohort contains no test-negative children, so sensitivity, specificity and predictive values are not estimable.',
+arrow(26,50,26,45.5)
+box(3,24,46,21,'Index unit = examination episode closest to operation\n812 eligible preoperative reports  \u2192  740 episodes\n(same-day reports of one modality pooled; 34 earlier\nrepeat examinations not audited)\n\nEach episode classified as positive or negative by\nrule-based algorithm + surgeon adjudication, and\nseparately audited for documented technical content',fc='#eef5ee',fs=9.3)
+ax.text(50,15,'Detection rates are computed among children with surgically confirmed malrotation who received the test.\nThe cohort contains no test-negative children, so specificity and predictive values are not estimable.',
         ha='center',va='center',fontsize=9.8,style='italic',color='#444',
         bbox=dict(boxstyle='round,pad=0.6',fc='#fff8e1',ec='#d9b34a'))
 plt.tight_layout(); plt.savefig(OUT+'Fig1_study_flow.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
@@ -34,9 +34,7 @@ rows=[]
 for mod,lab,col in [('UGI','UGI contrast series',C['UGI']),('CT','Abdominal CT (all)',C['CT']),('US','Gastrointestinal ultrasound',C['US'])]:
     d=ixf[ixf['mod']==mod]; k=int(d['det'].sum()); n=len(d); lo,hi=pci(k,n,method='wilson')
     rows.append((lab,k,n,k/n*100,lo*100,hi*100,col))
-k=int(u['US_whirlpool'].sum()); n=len(u); lo,hi=pci(k,n,method='wilson')
-rows.append(('Ultrasound: whirlpool sign recorded',k,n,k/n*100,lo*100,hi*100,C['US2']))
-fig,ax=plt.subplots(figsize=(11,5.4))
+fig,ax=plt.subplots(figsize=(11,4.6))
 y=np.arange(len(rows))[::-1]
 for i,(lab,k,n,r,lo,hi,col) in enumerate(rows):
     ax.plot([lo,hi],[y[i],y[i]],color=col,lw=3.2,solid_capstyle='round')

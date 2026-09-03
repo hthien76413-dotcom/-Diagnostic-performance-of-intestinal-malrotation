@@ -16,8 +16,12 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 core.py        # not run directly; exec'd by the others
     python3 a55b.py        # the 55 children without an index test
     python3 clin.py        # Table 1: characteristics by imaging group
-    python3 usaudit.py     # first-pass ultrasound report-content audit (superseded)
-    python3 usaudit2.py    # Table 3: corpus-corrected ultrasound content audit
+    python3 usaudit.py     # first-pass ultrasound content audit (superseded)
+    python3 usaudit4.py    # Table 3: definitive ultrasound content audit
+    python3 temporal2.py   # era models and the CT / UGI audits on pooled episodes
+    python3 tables_final.py # Tables 2 and 4
+    python3 or_sens.py     # Online Resource 2 sensitivity analyses (S8-S10)
+    python3 revcheck.py    # report-flow, index-unit and volvulus-definition checks
     python3 audit2.py      # CT / UGI content audit, hedged phrasing
     python3 cert.py        # certainty tiers of positive conclusions
     python3 paired.py      # paired subgroup, timing, McNemar / Cochran Q
@@ -43,14 +47,34 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 `manuscript_source/` holds the earlier Pediatric Radiology revision sources;
 `or1.md` there is still the source of Online Resource 1.
 
-## Report-content audit patterns
+## The index unit, and the report-content audit patterns
 
-`usaudit2.py` supersedes `usaudit.py`. The first-pass patterns for the third
-portion of the duodenum matched only 水平段 / 第三段 and missed the two commonest
-terms in this corpus, 水平部 and 横部; two reports do document D3, so the audited
-rate is 2/119 (1.7%), not 0/119. Recorded enteric fluid administration is likewise
-2/119, not 1/119. `or_h.json` holds the published pattern table and must stay in
-step with `usaudit2.py`.
+`usaudit4.py` is the definitive audit and supersedes `usaudit.py` and `usaudit2.py`.
+Two things changed and both matter.
+
+**The index unit is an examination episode, not a report.** The department
+routinely issues two reports for one ultrasound session (胃肠道彩超 and
+腹部大血管彩超, minutes apart). Taking "the single report closest to operation"
+picked the negative companion report in three patients, one of which concluded
+腹膜后未见明显异常 while the patient carried a positive, whirlpool-positive label
+from the same session. All reports of a modality issued on the index day are now
+pooled: 812 eligible preoperative reports -> 778 pooled into 740 episodes, with
+the per-modality denominators (301 / 320 / 119) unchanged.
+
+**The patterns were fixed against the corpus vocabulary, not from memory.**
+Corrections made after enumerating every occurrence and inspecting each match:
+D3 needed 水平部 and 横部 (the commonest local terms, missed by the first pass);
+the mesenteric-vessel pattern needed 肠系膜上动、静脉 and 肠系膜上动静脉 and must
+exclude an isolated left-renal-vein measurement; the duodenojejunal junction
+needed the 交界 wording; the UGI pattern 十二指肠.{0,6}空肠 was too loose and is
+now 空肠曲; the whirlpool must not count negated mentions (未见明显旋涡状回声);
+bowel-gas limitation must require a gas term and a limitation term in the same
+clause, or a cardiac report's 肺气严重…显示不清 is counted.
+
+Resulting headline rates: D3 or duodenojejunal junction 3/119 (2.5%), mesenteric
+vessels 12/119 (10.1%), enteric fluid 2/119, whirlpool reported 58/119 (48.7%).
+`or_h.json` holds the published pattern table and must stay in step with
+`usaudit4.py`.
 
 ## Validation against the previously submitted version
 

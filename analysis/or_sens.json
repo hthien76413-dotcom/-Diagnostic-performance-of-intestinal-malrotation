@@ -1,0 +1,93 @@
+{
+ "S4": [
+  [
+   "Era boundary",
+   "Examinations before / after",
+   "Detection before / after",
+   "Era odds ratio",
+   "Era odds ratio adjusted for examination type",
+   "Examination-type odds ratio",
+   "Average marginal effect of later era (crude → adjusted)"
+  ],
+  [
+   "2019",
+   "39 / 80",
+   "16/39 (41.0%) / 49/80 (61.3%)",
+   "2.27 (1.04–4.96), p=0.039",
+   "1.57 (0.68–3.66), p=0.292",
+   "3.35 (1.51–7.44), p=0.003",
+   "+20.2 → +10.3 pp"
+  ],
+  [
+   "2020",
+   "44 / 75",
+   "17/44 (38.6%) / 48/75 (64.0%)",
+   "2.82 (1.31–6.09), p=0.008",
+   "1.92 (0.84–4.43), p=0.124",
+   "3.07 (1.36–6.90), p=0.007",
+   "+25.4 → +15.0 pp"
+  ],
+  [
+   "2021",
+   "62 / 57",
+   "29/62 (46.8%) / 36/57 (63.2%)",
+   "1.95 (0.94–4.06), p=0.074",
+   "1.33 (0.60–2.96), p=0.487",
+   "3.47 (1.56–7.76), p=0.002",
+   "+16.4 → +6.4 pp"
+  ],
+  [
+   "2022",
+   "76 / 43",
+   "40/76 (52.6%) / 25/43 (58.1%)",
+   "1.25 (0.59–2.66), p=0.562",
+   "0.94 (0.42–2.12), p=0.886",
+   "3.85 (1.76–8.43), p=0.001",
+   "+5.5 → -1.3 pp"
+  ]
+ ],
+ "S5": [
+  [
+   "Documented content",
+   "Closest preoperative episode (primary)",
+   "Earliest preoperative episode"
+  ],
+  [
+   "D3 or duodenojejunal junction",
+   "3/119 (2.5%)",
+   "3/119 (2.5%)"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "12/119 (10.1%)",
+   "12/119 (10.1%)"
+  ],
+  [
+   "Enteric fluid administration",
+   "2/119 (1.7%)",
+   "1/119 (0.8%)"
+  ],
+  [
+   "Whirlpool, swirl or spiral appearance reported",
+   "58/119 (48.7%)",
+   "56/119 (47.1%)"
+  ]
+ ],
+ "S6": [
+  [
+   "Definition of midgut volvulus",
+   "Whole cohort (n=465)",
+   "Children who underwent ultrasound (n=119)"
+  ],
+  [
+   "Explicit operative statement of torsion, or any documented degree of rotation (primary)",
+   "403 (86.7%)",
+   "113 (95.0%)"
+  ],
+  [
+   "Restricted to a documented rotation of 360° or more",
+   "384 (82.6%)",
+   "104 (87.4%)"
+  ]
+ ]
+}

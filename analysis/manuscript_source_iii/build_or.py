@@ -6,13 +6,17 @@ MS='/tmp/claude-0/-home-user--Diagnostic-performance-of-intestinal-malrotation/4
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.json')))
 D.update(json.load(open(AN+'or_tables.json'))); D.update(json.load(open(AN+'or_h.json')))
+D.update(json.load(open(AN+'or3_pooled.json'))); D.update(json.load(open(AN+'or_sens.json')))
 TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S1':('Table S2','Distribution of algorithmic labels and certainty tiers, by modality',D['S1']),
      'G':('Table S3','Between-modality comparison of report-level detection (generalised estimating equation)',D['T4']),
      'P':('Table S4','Report-level detection in the selected subgroup receiving all three examinations, overall and restricted to examinations performed close together in time',D['T5']),
      'S2':('Table S5','Report-level detection stratified by midgut volvulus and by age category',D['S2']),
      'S2B':('Table S6','Detection of a volvulus-specific sign among children with surgically confirmed midgut volvulus',D['S2b']),
-     'S3':('Table S7','Documented content of the CT and upper gastrointestinal series index reports',D['S3'])}
+     'S3':('Table S7','Documented content of the CT and upper gastrointestinal series index examinations',D['S3']),
+     'S4':('Table S8','Ultrasound temporal model with the era boundary placed at 2019, 2020, 2021 and 2022',D['S4']),
+     'S5':('Table S9','Ultrasound content audit taking the earliest rather than the closest preoperative examination episode as the index unit',D['S5']),
+     'S6':('Table S10','Prevalence of midgut volvulus under the primary and the restricted definition',D['S6'])}
 def make(src,outfile,figs=None):
     doc=docx.Document()
     st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font.size=Pt(11)
