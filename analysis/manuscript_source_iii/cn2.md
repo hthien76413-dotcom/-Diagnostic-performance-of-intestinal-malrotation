@@ -221,3 +221,34 @@
 #N **这一条实际上加强了论文**：它是「超声在实践中是一个扭转检查」这一核心论点唯一的正式统计支持。但必须按现在的写法呈现——建立在 6 个孩子上的罚似然推断，方向可用，幅度不可用。
 
 #N 正文 **2,998 词**。
+
+#H1 十三、四部分之间的逻辑一致性核查（本次）
+
+#N 逐段核对了引言—结果—讨论—结论的逻辑链条。**讨论里的每一个数字都回查到了结果段，没有出现"讨论中冒出结果未报告的数据"这一类问题。** 查出并改掉 13 处：
+
+#N **两处硬性内部不一致（必改）**
+#N • 结果段写"The three show what the audit detects"，但压缩字数时把 2024 年那一例删掉了，只剩两例——已补回。
+#N • 55 例无索引检查者的年龄与扭转率标的是"(Fig. 1)"，实际这两个数在**表 1 最右列**，图 1 没有——已改为 (Table 1, Fig. 1)，并把该句重写以避免同句两个 none。
+
+#N **三处相关写成因果**
+#N • "Awareness alone **moved** detection from 41% to 61%" → 改为"检出率在科室自述认知提升的同一时期由 41% 升至 61%"，去掉因果动词。
+#N • 表 4 标题 "variables **that account for** it" → "variables **associated with** it"。
+#N • 结论 "technique and reporting content **decide whether** published performance is achievable locally" → 改为"是审计能够测量的东西，也是假定本院能复现文献效能之前第一件该核对的事"。
+
+#N **两处把"无统计学差异"写成"相同"**
+#N • "interaction was not significant, **so the effect did not change** between eras" → "giving **no evidence that** the effect changed…, though these subgroups are small"。
+#N • "**while CT and ultrasound did not differ**" → "while the CT–ultrasound difference was **compatible with zero**, −5.1 (−18.6 to +10.2)"，把附录里已算好的区间填进正文。
+
+#N **三处超出设计**
+#N • Critical relevance 里的"a negative ultrasound did not exclude malrotation"——在全部确诊队列里这是同义反复，而且用了全文明令禁止的准确性语言；改为"45% 的超声检查在确诊患儿中没有写出诊断"。
+#N • Key Point 2 原来单列了一个部分定义性的结论（漩涡征本身就是阳性判据），改为非循环的那一半："确诊扭转的患儿中只有一半记录了漩涡征"。
+#N • Key Point 3 与摘要的"halved"，比调整后区间（含 0）所能支持的更强，改为如实给出 +20.2 → +10.3 并注明区间含 0。
+
+#N **一处目的与分析不对齐**
+#N 引言把问题完全立在"超声报告内容"上，结果却以三模态检出比较开场（表 2、图 2、讨论第四段），读者不知道为什么比较三种检查。已在引言末尾加一句：报告造影与 CT 不是为了排序（本设计做不到），而是为了显示超声在这条路径上的位置。
+
+#N **一处绝对化**：讨论"ours **did not**"（指本院未评估 D3）与自己的结果矛盾（有 3 例做了），改为"ours **almost never** did"。
+
+#N **两处局限性遗漏**：①时代/中介分析属事后决定，检查类型这个变量是看过数据之后才确定的，应作为假设生成看待——已写入局限性；②"未校正多重比较"此前只在方法里出现，已加回局限性。
+
+#N 字数：上述修改净增约 90 词，删的仍是表、图、附录已承载的重复叙述。正文 **2,999 词**。
