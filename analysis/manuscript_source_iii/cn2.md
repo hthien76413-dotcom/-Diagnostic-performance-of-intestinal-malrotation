@@ -272,3 +272,21 @@
 #N **未处理、需你核原文的 5 处**（同样因为网络受限）：`[2]` IMPOWER 注册研究是否支撑「数小时内进展」；`[3]` Yang 2024 是否涉及大龄／延迟诊断；`[9]` Taylor 2011 是否支撑 CT 漩涡征「检出率不高」；`[15–17]` 是否支撑「readers alert to the diagnosis」这一归因；以及全部文献的作者、年份、卷页与 DOI 是否与原文一致。核对报告已在对话中给出。
 
 #N 正文 **2,998 词**。
+
+#H1 十五、参考文献著录信息的外部核对（已完成）
+
+#N 你把 24 条 DOI 导入 Zotero、由 Crossref 抓回权威著录后导出，我逐字段比对（脚本 `refcheck.py`）。
+
+#N **结果：年份、卷、页码、第一作者 —— 24 条中 23 条完全一致；作者人数与 et al 截断规则 24 条全部正确（≤4 位全列，≥5 位列 3 位＋et al）。稿件无需修改。**
+
+#N **上一轮我新加的两条、当时标注「未经核对」的，均确认无误**：Firth 1993 Biometrika 80:27–38；Heinze & Schemper 2002 Stat Med 21:2409–2419。
+
+#N **一条无法确认：[22] Zeger & Liang 1986 Biometrics 42.** Crossref 走的是 JSTOR 记录，只存了起始页 121，没有终止页。稿件写 121–130，起始页一致，终止页无从比对——这是 Crossref 记录不全，不是稿件有错。投稿前请用 PubMed 或 Biometrics 该期目录确认一次终止页。
+
+#N **一条 Crossref 记录本身是错的，不要照它改：[5] Mattioli.** Crossref 把该文全部作者的 given/family 存反了，Zotero 因此显示为「Girolamo, Mattioli, Gallo Emanuela, Wong Michela Cing Yu」。实际是 Girolamo Mattioli、Emanuela Gallo、Michela Cing Yu Wong，**稿件写的 `Mattioli G, Gallo E, Wong MCY` 是对的**。若用 EndNote 套格式输出整段文献表，这一条会被写成「Girolamo M」，需手工改回。
+
+#N **两处此前的疑虑已排除**：[8] 姓氏确为 `Smitthimedhin`（我先前从截图 OCR 提出的拼写疑问是误报）；[19] `von Elm` 小写 v 正确，Zotero 显示的 `Von Elm` 是 Chicago 体例的句首大写，不是数据差异。
+
+#N **期刊缩写**：24 条全部采用 NLM/Index Medicus 标准缩写形式且内部一致（Semin Ultrasound CT MR、Abdom Radiol (NY)、AJR Am J Roentgenol 等）。
+
+#N 至此文献表的机械核对与外部核对都已完成，仅剩 [22] 终止页一处待确认。
