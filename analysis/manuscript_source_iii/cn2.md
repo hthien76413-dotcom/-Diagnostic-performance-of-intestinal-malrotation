@@ -252,3 +252,23 @@
 #N **两处局限性遗漏**：①时代/中介分析属事后决定，检查类型这个变量是看过数据之后才确定的，应作为假设生成看待——已写入局限性；②"未校正多重比较"此前只在方法里出现，已加回局限性。
 
 #N 字数：上述修改净增约 90 词，删的仍是表、图、附录已承载的重复叙述。正文 **2,999 词**。
+
+#H1 十四、引文—参考文献对应关系核查（本次）
+
+#N 用脚本把正文每一处引用标记与文献表逐条比对。**没有遗漏引用、没有未被引用的条目、没有跳号、没有重复**。查出并处理了四类问题。
+
+#N **1. 编号顺序（22 条中 16 条需改号）。** 原文献表既不是按正文首次出现顺序排列，也不是按作者字母顺序——两种标准方案都不符合。已按首次出现顺序重排。改号后引用标记也更紧凑（原 `[5, 6, 13]` 变成 `[5–7]`，原 `[7–9, 12]` 变成 `[11–13]`），正文因此省下 10 词。重排由 `renumber.py` 完成，脚本可重复运行且第二次运行为空操作（已验证）。
+
+#N **2. 一处明确错配：Shimanuki 1996 被用来支撑效能数据。** 原文「series report sensitivities of 93–97%… a systematic review of 17 studies and 2,257 children…」引了 `[7–9, 12]`，但 `[7]` 是 1996 年彩色多普勒漩涡征的**原始描述**，既不是效能研究也不是系统评价。已从该处删除，改引至方法学部分「the whirlpool sign is a sign of volvulus, not of malrotation」——那一句原来**没有任何引用**，而这正是该论断的经典出处。一处删除同时补上了一处缺引。
+
+#N **3. 讨论中的引用簇过宽。** 原文「against sensitivities of 93–97% in children investigated for suspicion `[8, 9, 12, 19]`」把一个区间归给了四篇文献，但 93–97% 的真正出处只有 2025 年那篇多中心研究（原始报告 93%、盲法复阅 97%），系统评价报的是 94%。已拆分为「against 93–97% in the 2025 multicentre series [13] and a pooled 94% in meta-analysis [11]」，各归各的出处。
+
+#N **4. 补了一处必须补的引用：Firth 罚似然。** 正文点名使用了 Firth 方法却没有出处。已新增两条：Firth 1993（方法本身）与 Heinze & Schemper 2002（专门讨论完全分离，正是本文的使用场景）。文献表由 22 条增至 24 条。
+
+#N **⚠️ 这两条新增文献的著录信息需要你核对。** 本环境的网络策略屏蔽了 doi.org、PubMed、Crossref、ScienceDirect 等全部可用于核对的站点（403），我无法验证卷、页、DOI。这两条是我根据既有知识写的，投稿前请用能联网的机器核一遍：
+#N • Firth D (1993) Bias reduction of maximum likelihood estimates. **Biometrika 80:27–38**, doi 10.1093/biomet/80.1.27
+#N • Heinze G, Schemper M (2002) A solution to the problem of separation in logistic regression. **Stat Med 21:2409–2419**, doi 10.1002/sim.1047
+
+#N **未处理、需你核原文的 5 处**（同样因为网络受限）：`[2]` IMPOWER 注册研究是否支撑「数小时内进展」；`[3]` Yang 2024 是否涉及大龄／延迟诊断；`[9]` Taylor 2011 是否支撑 CT 漩涡征「检出率不高」；`[15–17]` 是否支撑「readers alert to the diagnosis」这一归因；以及全部文献的作者、年份、卷页与 DOI 是否与原文一致。核对报告已在对话中给出。
+
+#N 正文 **2,998 词**。
