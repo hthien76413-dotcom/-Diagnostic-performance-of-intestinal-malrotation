@@ -1,6 +1,6 @@
 #T Online Resource 1. Text-classification algorithm and report-content audit
 
-#N Supplement to: "Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: a report-level audit of 740 preoperative examinations in 465 surgically confirmed children"
+#N Supplement to: "Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: an audit of 740 preoperative index examinations in 410 surgically confirmed children"
 
 #N Sections A–F specify the classification rules. Section J reports a reference implementation of those rules, provided as a runnable script, and its agreement with the final adjudicated labels; the rules below are therefore an executable specification rather than a prose summary.
 

@@ -1,6 +1,6 @@
 #T Insights into Imaging 投稿操作单
 
-#N 稿件：Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: a report-level audit of 740 preoperative examinations in 465 surgically confirmed children
+#N 稿件：Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: an audit of 740 preoperative index examinations in 410 surgically confirmed children
 
 #N 投稿系统：Editorial Manager。以下内容可直接复制粘贴。
 
@@ -34,7 +34,7 @@
 
 #N **Article type**：Original Article
 
-#N **Title**：Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: a report-level audit of 740 preoperative examinations in 465 surgically confirmed children
+#N **Title**：Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: an audit of 740 preoperative index examinations in 410 surgically confirmed children
 
 #N **Running title**：Duodenal landmarks in routine malrotation ultrasound reports
 

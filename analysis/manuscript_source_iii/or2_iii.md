@@ -1,6 +1,6 @@
 #T Online Resource 2. Between-modality models, the selected paired subgroup, and detection stratified by volvulus and age
 
-#N Supplement to: "Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: a report-level audit of 740 preoperative examinations in 465 surgically confirmed children"
+#N Supplement to: "Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: an audit of 740 preoperative index examinations in 410 surgically confirmed children"
 
 #H1 S2.1 Between-modality comparison (generalised estimating equation)
 

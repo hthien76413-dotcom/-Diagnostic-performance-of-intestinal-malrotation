@@ -314,3 +314,21 @@
 #N **字数**：润色一度使正文膨胀到 3,158 词，分三轮压回 **2,998 词**，正文声明的字数行已同步更新。
 
 #N **文献顺序未受影响**：重跑 `renumber.py` 报 `renumbered 24 references, 0 changed position`，仍为首次引用顺序，24 条全部被引用。docx 与全文纯文本已按润色稿重新生成。
+
+#H1 十七、投稿信润色，以及三处必须先纠正的事实错误
+
+#N 按与正文相同的标准润色了 cover letter。**但在动笔前把信里的每个数字与现稿逐一比对，发现三处错误——都是正文后来改过、投稿信没跟着改留下的旧数据，属于投稿前必须纠正的硬伤，不是语言问题。**
+
+#N **1. 投稿信引用的标题是旧标题（465 与 410 之误）。** 信里写的是 “…a report-level audit of **740 preoperative examinations in 465 surgically confirmed children**”，而正文标题在「修正索引单位缺陷」那一轮就已改为 “…an audit of **740 preoperative index examinations in 410 surgically confirmed children**”。**465 是全队列人数，其中只有 410 人做过至少一项索引检查、共 740 次**，用 465 去配 740 次检查是错的。更麻烦的是这个旧标题当时只改了正文，**标题页、三份 Online Resource 的 “Supplement to:” 行、投稿操作单全都还是旧版**——投稿系统里标题页与正文标题不一致会直接被编辑退回。已全部改齐（标题页 docx 直接改写、or1/or2/opsheet 源文件同步、三份附件与操作单重新生成）。
+
+#N **2. 时代模型的两个比值是旧值。** 信里写 “era effect fell to a non-significant odds ratio of **1.56**, while the coding indicator carried an odds ratio of **3.46**”。现稿 Table 4 的实际值是**校正后时代 OR 1.57（0.68–3.66）**、**大血管检查指示变量 OR 3.35（1.51–7.44）**，3.46 这个数在全稿任何位置都不存在。同时正文早已把这一段的主口径改到**风险差尺度**（+20.2 → +10.3 个百分点，区间含 0），投稿信仍停留在 OR 口径。已按现稿改写为风险差为主、OR 3.35 为辅。
+
+#N **3. 「detection with such a study was about 70% in both eras」这句在稿中无出处。** 表 2 只有大血管检查的**合计**检出 46/67（69%），并没有按时代拆分过；「两个时代都约 70%」是无法从现有表格核实的说法。已删去，不以任何新数字替代。
+
+#N **另有一处措辞被收紧**：原信 “that improvement **was not a property of calendar time**” 和 “**which is why** detection rose while duodenal documentation did not” 的语气都强于正文所能支持的程度——正文的结论是校正后区间含 0，因此只能说**限定**了时代效应的贡献范围，而非排除了它，且department 的说法只是 “consistent with”。已改为 “bounds the era contribution rather than removing it”，并把因果性的 which is why 改为 so that。
+
+#N **语言层面的润色**（与正文同一标准）：破折号由 6 个减至 **0 个**；删掉 “The central finding is”、“A second finding makes the first actionable”、“The practical message runs the other way”、“Those figures describe what ultrasound achieves… What clinicians act on is…” 等修辞性开场与排比；补全 “— and an incomplete one”、“— measurable by audit, and correctable” 两处破折号后的句子片段；toward 统一为 towards；删去 “replicated at other institutions… inexpensive to repeat” 的语义重复。信长 770 词。
+
+#N **未改动的部分**：收发信人信息、日期（5 September 2026）、投稿声明段、伦理与利益冲突声明、署名，以及**前次审稿披露段**的存留与否——这一段是否保留仍由你决定。
+
+#N **三份 Online Resource 的正文尚未做去 AI 味儿处理**（OR1 有 7 处散文破折号，OR2、OR3 各 1 处），本轮只按你的要求润色了投稿信。需要的话可以照同样标准过一遍。
