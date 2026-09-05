@@ -290,3 +290,27 @@
 #N **期刊缩写**：24 条全部采用 NLM/Index Medicus 标准缩写形式且内部一致（Semin Ultrasound CT MR、Abdom Radiol (NY)、AJR Am J Roentgenol 等）。
 
 #N 至此文献表的机械核对与外部核对都已完成，仅剩 [22] 终止页一处待确认。
+
+#H1 十六、英文润色（覆盖原文，已完成）
+
+#N 在不改变研究事实、数据、医学含义与结论强度的前提下，对全文（摘要、正文、图表题注、附加材料引导句）逐句润色，并**直接覆盖了原稿**（`p1.md`/`p2.md`/`p3.md`，旧版留在 `.bak`）。
+
+#N **为保证「只改语言、不动内容」，先写了一个校验脚本 `polish_check.py`**，在润色前后各抽取一次三类记号做逐一比对：① 全部数字记号（含百分号、小数）；② 全部文献引用标记 `[n]`；③ 一份限定语词表（no evidence、compatible with zero、not estimable、lower bound、not randomised、cannot be separated、not pre-specified、hypothesis-generating、not adjusted for multiplicity、not missing at random、informative missingness、consistent with、associated with 等 19 个）。终检结果：**数字与引用标记完全一致，限定语全部保留**。也就是说没有任何一个数字被改动、没有任何一处引用被增删、没有任何一句谨慎表述被润色成肯定语气。
+
+#N **实际做的修改**（均为语言层面）：
+
+#N • **去掉全部破折号**。原稿大量使用 em dash 制造停顿，这是最典型的机器写作痕迹。全文现有 **0 个破折号**，改为分号、冒号或拆句。
+
+#N • **删掉修辞性开场白**。如 “This frames our most-cited number”、“What they did contain was”、“The informative half is the converse”、“Two cautions apply”、“The three show what the audit detects”、“The central finding is” 等，一律改为直接陈述结论。
+
+#N • **拆掉「不是 X，而是 Y」的对照句式**，这类排比在原稿中反复出现，属于风格性重复而非论证需要。
+
+#N • **消除句子片段**，全部改为完整主谓结构；统一 “towards” 拼写。
+
+#N • **三个结果小标题与一个方法小标题改为描述性写法**：`Report-level detection and certainty of wording` → `Detection and certainty of wording`；`What the ultrasound examinations contained` → `Documented content of ultrasound examinations`；`The selected subgroup, and populations this cohort omits` → `Selected subgroup and populations not represented`；`Design, terminology and what this study can and cannot estimate` → `Design, terminology and estimable quantities`。
+
+#N • **删除重复表述与口语化措辞**，改用规范简洁的医学英语。
+
+#N **字数**：润色一度使正文膨胀到 3,158 词，分三轮压回 **2,998 词**，正文声明的字数行已同步更新。
+
+#N **文献顺序未受影响**：重跑 `renumber.py` 报 `renumbered 24 references, 0 changed position`，仍为首次引用顺序，24 条全部被引用。docx 与全文纯文本已按润色稿重新生成。
