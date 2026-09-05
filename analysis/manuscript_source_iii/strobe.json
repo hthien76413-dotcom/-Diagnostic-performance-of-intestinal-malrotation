@@ -8,7 +8,7 @@
   [
    "Title and abstract 1(a)",
    "Indicate the study's design with a commonly used term in the title or the abstract",
-   "Title ('report-level audit'); Abstract, Methods"
+   "Title ('audit'); Methods, 'Design, terminology and estimable quantities'; Abstract, Methods"
   ],
   [
    "Title and abstract 1(b)",
@@ -28,7 +28,7 @@
   [
    "Methods — Study design 4",
    "Present key elements of study design early in the paper",
-   "Methods, 'Design, terminology and what this study can and cannot estimate'"
+   "Methods, 'Design, terminology and estimable quantities'"
   ],
   [
    "Methods — Setting 5",
@@ -133,7 +133,7 @@
   [
    "Results — Main results 16(a)",
    "Give unadjusted estimates and, if applicable, confounder-adjusted estimates and their precision. Make clear which confounders were adjusted for and why they were included",
-   "Results, 'Report-level detection…' (unadjusted and adjusted GEE odds ratios); Online Resource 2, Table S3"
+   "Results, 'Detection and certainty of wording' (unadjusted and adjusted GEE odds ratios); Online Resource 2, Table S3"
   ],
   [
    "Results — Main results 16(b)",
@@ -148,7 +148,7 @@
   [
    "Results — Other analyses 17",
    "Report other analyses done — eg analyses of subgroups and interactions, and sensitivity analyses",
-   "Results, 'What the ultrasound reports contained', 'Detection changed over time…', 'The selected subgroup…'; Online Resources 2 and 3"
+   "Results, 'Documented content of ultrasound examinations', 'Change in detection over time', 'Selected subgroup and populations not represented'; Online Resources 2 and 3"
   ],
   [
    "Discussion — Key results 18",
@@ -168,7 +168,7 @@
   [
    "Discussion — Generalisability 21",
    "Discuss the generalisability (external validity) of the study results",
-   "Results, 'The selected subgroup, and the populations this cohort does not describe'; Discussion, Limitations (single centre; skew toward severe neonatal disease)"
+   "Results, 'Selected subgroup and populations not represented'; Discussion, Limitations (single centre; skew toward severe neonatal disease)"
   ],
   [
    "Other information — Funding 22",

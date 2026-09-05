@@ -367,3 +367,31 @@
 #N **提醒一点**：Editorial Manager 的投稿流程里有时会有「本文是否曾投稿其他期刊／是否曾被拒」一类的必答问项。删掉投稿信里的披露段，不等于可以在那种问项里否认——**如果系统问到，据实回答即可**，只是不必在投稿信正文中主动展开。正文自始至终未提及前次投稿，无需改动。
 
 #N 已核实：IiI 上传清单中的六类文件均不含前次投稿的回复信（`Response_to_Editor_and_Reviewers.docx` 属于上一轮 Pediatric Radiology 的材料，不在本次上传范围内）。
+
+#H1 二十、投稿前终检（发现并修正 7 处）
+
+#N 这一轮不是重读，而是把稿件里的每个数字重新算了一遍：从原始 Excel 重跑队列流、内容审计、时代模型，把正文、表、摘要三处的每个比例和 Wilson 区间用脚本重算，并逐条核对交叉引用、文献编号、缩略语、盲审泄露与投稿包各文件的一致性。**发现 7 处需要改的地方，其中 2 处是我上一轮润色造成的。**
+
+#N **1.（润色造成的事实丢失）第 55 例那句被我改坏了。** 润色前是「The remaining 55 (11.8%) had none of the three, yet all were imaged before operation: the five with no in-hospital study each had imaging before transfer」，我改成了「…but were all imaged before operation, the five without an in-hospital study before transfer」——后半句变成了没有谓语的残句，「这五例在转院前做过影像」这个事实实际上被删掉了。这条恰是回应上一轮审稿人「55 例没做检查」质疑的直接证据。已改回完整句。
+
+#N **2.（润色造成的立场丢失）「a pathway feature, not a test property」被我删掉了。** 原句是「higher detection in that position (80.4% vs 70.5%) — a pathway feature, not a test property」，我在去破折号时把破折号后的限定一并删了，于是 Results 里出现了一个没有任何保护语的模态间检出率比较——而本文全篇的立论恰恰是不做模态排序。已恢复为「a feature of the pathway rather than of the test」。
+
+#N **3.（真错误）通路位置那两个百分比的分母写错了。** 正文写「the UGI series was the last preoperative test in 75.1% of children who underwent it against 19.2% for CT」。重跑 `order.py` 后确认：75.1% 是 184/245、19.2% 是 48/250，**分母是「做过一项以上索引检查的患儿」，不是做过该项检查的全部 301 / 320 例**。按正文原来的措辞应为 61.1% 和 15.0%。这是审稿人一算就会发现的硬伤。正文与 Discussion 两处均已改为「Among children who underwent more than one index test…」。
+
+#N **4.（一致性）STROBE 清单整体过期。** 它的标题栏还是旧标题（465 例那版），而且「Reported in」列里有 **7 处指向已被我重命名的小标题**（Design, terminology and what this study can and cannot estimate；Report-level detection…；What the ultrasound reports contained；Detection changed over time…；The selected subgroup… 等）。清单是编辑部技术检查时按图索骥用的，指错了很难看。已全部更新，`strobe.json` 与 docx 同步。
+
+#N **5.（一致性）标题页与正文字数不一致**：标题页写 2,997，正文写 2,998。现统一为 **3,000**。
+
+#N **6.（完整性）缩略语表缺 CT。** 表里列了 CI、IQR、OR 这些更常见的缩写却漏了 CT。已补 “CT: Computed tomography”。
+
+#N **7.（字数）修正 3、6 使正文涨到 3,028 词，超过 3,000 上限。** 削回 3,000，删的全是表格已经承载的重复：Table 4 已列出 CT 与 UGI 两个时代的检出率，正文不再复述；Methods 里「The audit is a lower bound on what was performed」与表 3 注脚逐字重复，删正文保注脚；Discussion 第三次复述 41%→61% 改为不带数字的一句；引言里「Over the past decade the field has moved towards ultrasound」这句纯过渡并入下一句。**限定语一句未删**（「not adjusted for multiplicity」我一度削掉，随即恢复）。
+
+#N **核过但没问题的**：队列流（812 份合格报告 → 774 检查次 → 740 索引检查次含 778 份报告，34 份更早报告未纳入；301/320/119/410/465）从原始数据完整重现；表 1 全部百分比、表 2 全部 Wilson 区间、表 3 全部 15 行、表 4 全部比值与边际效应逐一重算一致；正文与表、摘要之间无矛盾；24 条文献全部被引、全部列出、首次引用顺序正确；Table 1–4／Fig. 1–3／Online Resource 1–3 引用与实体一一对应；附加材料表号 S1–S13 连续无重复无遗漏；三张正图重跑后与数据字节一致，均为 300 dpi；正文无任何作者、单位、伦理批件号泄露；Declarations 六项齐全（Funding 与 Author contributions 按盲审要求留在标题页）；破折号仍为 0。
+
+#H1 二十一、两件我无法核实、需要你在投稿系统里确认的格式项
+
+#N **1. 摘要长度。** 结构化摘要现为 **325 词**。之前记录过「官网当前只要求四段式结构、未单列字数上限」，但 ESR 系期刊通常把摘要限在 250 词左右。**期刊页面被本会话网络策略挡着，我无法核实当前要求。** 请你在投稿页面确认；若确有 250 词上限，告诉我一声，我可以把 Methods 段压缩、Results 段只保留超声与漩涡两组数字，十分钟内改到 250 以内。
+
+#N **2. Critical relevance statement 长度。** 现为 **51 词、两句**。ESR 系期刊对这一栏通常要求**一句、不超过 30 词**。同样无法核实。若确有此限，可用这句替换（29 词）：*"Departments adopting ultrasound-first pathways for malrotation should audit whether their own reports document the duodenal landmarks that produced the published sensitivities; in this department they almost never did."*
+
+#N 另外仍未了结的两项文献核对（需联网）：**[22] Zeger & Liang 1986 的终止页**，以及 **5 处引文内容相符性**（[2] IMPOWER「数小时内」、[3] Yang 2024 大龄／延迟、[9] Taylor 2011 CT 漩涡征检出不高、[15–17] readers alert to the diagnosis 的归因）。
