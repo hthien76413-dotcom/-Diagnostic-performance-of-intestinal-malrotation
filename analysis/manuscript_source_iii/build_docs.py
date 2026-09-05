@@ -1,5 +1,20 @@
 import docx, re, sys, io, os
 from docx.shared import Pt, Inches
+
+def _blank_props(doc):
+    """Strip python-docx's default authorship before saving.
+
+    These files go out for double-blind review, so no document property may
+    name an author, a reviser or the generator.
+    """
+    c = doc.core_properties
+    for f in ('author', 'last_modified_by', 'title', 'subject', 'comments',
+              'category', 'keywords', 'content_status', 'identifier',
+              'language', 'version'):
+        setattr(c, f, '')
+    return doc
+
+
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 JOBS=[('cover.md','CoverLetter_InsightsIntoImaging.docx','Times New Roman',11),
       ('opsheet.md','投稿操作单_InsightsIntoImaging.docx','DengXian',10.5),
@@ -27,4 +42,4 @@ for src,dst,font,size in JOBS:
         elif ln.startswith('#N '): para(ln[3:])
         elif ln.startswith('#R '): para(ln[3:],sz=size-1,space_after=3)
         else: para(ln)
-    doc.save(OUT+dst); print('saved',dst)
+    _blank_props(doc).save(OUT+dst); print('saved',dst)

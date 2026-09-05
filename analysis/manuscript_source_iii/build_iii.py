@@ -1,6 +1,21 @@
 import docx, json, re, os
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+def _blank_props(doc):
+    """Strip python-docx's default authorship before saving.
+
+    These files go out for double-blind review, so no document property may
+    name an author, a reviser or the generator.
+    """
+    c = doc.core_properties
+    for f in ('author', 'last_modified_by', 'title', 'subject', 'comments',
+              'category', 'keywords', 'content_status', 'identifier',
+              'language', 'version'):
+        setattr(c, f, '')
+    return doc
+
+
 AN='/tmp/claude-0/-home-user--Diagnostic-performance-of-intestinal-malrotation/4998e6b2-e14c-57b0-80b5-41a1fb987d43/scratchpad/an/'
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.json')))
@@ -56,4 +71,4 @@ for ln in text.split('\n'):
     elif ln.startswith('#TAB'): add_table(ln[4:])
     elif ln.startswith('#FIG'): add_fig(ln[4:])
     else: para(ln)
-doc.save(OUT+'诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx'); print('saved')
+_blank_props(doc).save(OUT+'诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx'); print('saved')

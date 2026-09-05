@@ -1,6 +1,21 @@
 import docx, json, re, os
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+def _blank_props(doc):
+    """Strip python-docx's default authorship before saving.
+
+    These files go out for double-blind review, so no document property may
+    name an author, a reviser or the generator.
+    """
+    c = doc.core_properties
+    for f in ('author', 'last_modified_by', 'title', 'subject', 'comments',
+              'category', 'keywords', 'content_status', 'identifier',
+              'language', 'version'):
+        setattr(c, f, '')
+    return doc
+
+
 AN='/tmp/claude-0/-home-user--Diagnostic-performance-of-intestinal-malrotation/4998e6b2-e14c-57b0-80b5-41a1fb987d43/scratchpad/an/'
 MS='/tmp/claude-0/-home-user--Diagnostic-performance-of-intestinal-malrotation/4998e6b2-e14c-57b0-80b5-41a1fb987d43/scratchpad/ms/'
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
@@ -53,7 +68,7 @@ def make(src,outfile,figs=None):
             doc.add_picture(OUT+'FigS1_paired_subgroup.png',width=Inches(6.2)); doc.paragraphs[-1].alignment=WD_ALIGN_PARAGRAPH.CENTER
         elif ln.startswith('#TAB'): table(ln[4:])
         else: para(ln)
-    doc.save(OUT+outfile); print('saved',outfile)
+    _blank_props(doc).save(OUT+outfile); print('saved',outfile)
 make(MS+'or1.md','Online_Resource_1_NLP_and_report_audit.docx')
 make('or2_iii.md','Online_Resource_2_models_and_subgroups.docx')
 make('or3_iii.md','Online_Resource_3_CT_and_UGI_content_audit.docx')

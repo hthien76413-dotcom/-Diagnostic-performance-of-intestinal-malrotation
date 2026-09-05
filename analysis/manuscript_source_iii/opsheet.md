@@ -13,7 +13,7 @@
 #N 含作者、单位、ORCID、通讯方式、伦理批件号与全部 Declarations。**这是唯一含作者身份信息的文件**，务必与正文分开上传。
 
 #N **3. Manuscript（盲审正文）** —— `诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx`
-#N 2,998 词，含 4 表 3 图（图已内嵌便于评审阅读）。文中无任何作者身份信息。
+#N 3,000 词，含 4 表 3 图（图已内嵌便于评审阅读）。文中无任何作者身份信息。
 
 #N **4. Figures（单独上传，300 dpi PNG）**
 #N • `Fig1_study_flow.png` → Figure 1（流程图）
