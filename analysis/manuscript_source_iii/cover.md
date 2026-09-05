@@ -8,7 +8,7 @@
 
 #N Email: yjun201602@163.com  |  Telephone: +86 186 2713 9911  |  ORCID: 0009-0006-0669-4340
 
-#N 3 September 2026
+#N 5 September 2026
 
 #N The Editor-in-Chief
 #N *Insights into Imaging*
