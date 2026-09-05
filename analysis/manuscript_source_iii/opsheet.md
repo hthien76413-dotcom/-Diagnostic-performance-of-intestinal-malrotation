@@ -44,11 +44,11 @@
 
 #N **Key Points**（系统通常单独设框，三条分别填）：
 #N Duodenal landmarks appeared in three of 119 routine ultrasound examinations.
-#N A recorded whirlpool sign separated positive from negative ultrasound reports.
-#N Detection improved when the examination changed, not as time passed.
+#N A whirlpool sign was recorded in only half the children with confirmed volvulus.
+#N Detection rose with a change in examination type as much as with calendar era.
 
 #N **Critical relevance statement**（若系统单列此栏）：
-#N A department adopting an ultrasound-first pathway on the strength of published sensitivities of 93–97% should first audit whether its own reports document the duodenal landmarks that produced those figures; where they do not, the achievable detection rate is far lower and a negative ultrasound cannot exclude malrotation.
+#N Departments adopting ultrasound-first pathways for malrotation should audit whether their own reports document the duodenal landmarks that produced the published sensitivities; in this department they almost never did.
 
 #N **Corresponding author**：Jun Yang，yjun201602@163.com，+86 186 2713 9911，ORCID 0009-0006-0669-4340
 
@@ -75,9 +75,9 @@
 #N 以下各项均已核对完毕，上传时确认一遍即可：
 
 #N 1. 盲审正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者、备注）已清空，无需再在 Word 里手动检查。
-#N 2. 正文 2,998 词，未超 3,000 上限。
+#N 2. 正文 3,000 词，摘要 248 词，Critical relevance statement 28 词。
 #N 3. 摘要为 Objectives / Methods / Results / Conclusion 四段式。
-#N 4. Key Points 三条，每条 10 词，未复用摘要或正文原句。
+#N 4. Key Points 三条，每条 9–14 词，未复用摘要或正文原句；与正文 Key Points 节逐字一致。
 #N 5. 图题 ≤15 词、图注 ≤300 词，且都在正文里而非图片文件内。
 #N 6. 图片文件名与图号一致，按名字对号入座即可。
 #N 7. Title Page 与系统表单里的 Declarations 完全一致。

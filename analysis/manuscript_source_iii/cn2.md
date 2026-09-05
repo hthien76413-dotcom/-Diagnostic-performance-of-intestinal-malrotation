@@ -395,3 +395,31 @@
 #N **2. Critical relevance statement 长度。** 现为 **51 词、两句**。ESR 系期刊对这一栏通常要求**一句、不超过 30 词**。同样无法核实。若确有此限，可用这句替换（29 词）：*"Departments adopting ultrasound-first pathways for malrotation should audit whether their own reports document the duodenal landmarks that produced the published sensitivities; in this department they almost never did."*
 
 #N 另外仍未了结的两项文献核对（需联网）：**[22] Zeger & Liang 1986 的终止页**，以及 **5 处引文内容相符性**（[2] IMPOWER「数小时内」、[3] Yang 2024 大龄／延迟、[9] Taylor 2011 CT 漩涡征检出不高、[15–17] readers alert to the diagnosis 的归因）。
+
+#H1 二十二、摘要压缩至 250 词以内，Critical relevance statement 换为 28 词单句（已完成）
+
+#N **摘要由 353 词压到 248 词**（按空格分词计，即投稿系统与 Word 的计法；此前记的 325 是只数纯字母词的口径，偏低，容易误判）。**Critical relevance statement 由 51 词两句换成 28 词一句。**
+
+#N **所有研究事实与限定语一句未动**：「specificity, predictive values and comparative accuracy are not estimable」原样保留；时代效应仍写明「an interval including zero」；漩涡征那组对比的两个非循环数字（7/61 与 58/113）全部保留。
+
+#N **压缩的做法**（按删得多少排序）：
+
+#N • **Objectives 54→33 词。** 删掉「assessing the third portion of the duodenum (D3) and the mesenteric vessels」这段技术要素罗列——它在 Results 里原样重复了一遍。D3 的定义相应移到 Results 首次出现处。
+
+#N • **Methods 88→62 词。** 删掉索引单位的定义细节（「with reports issued on the same day pooled」等，正文 Methods 有完整叙述）；「Because the cohort was assembled on surgically confirmed disease」缩为「The cohort being surgically confirmed」。
+
+#N • **Results 162→115 词。** 删掉「(740 examinations from 778 reports)」与「median age at operation 13 days」（均见表 1、图 1）；删掉时代边界稳健性那句「the examination-type term remained between 3.1 and 3.9 at every era boundary tested」（见 Results 正文与 Online Resource 2 表 S8）。
+
+#N • **Conclusions 49→41 词**，仅措辞收紧。
+
+#N **⚠️ 一处需要你确认的内容取舍：摘要不再报 UGI 与 CT 的检出率。** 原摘要写「Detection was 78.7% (237/301) for the UGI series, 53.4% (171/320) for CT and 54.6% (65/119) for ultrasound, on non-comparable denominators」。压到 250 词做不到既保留三个模态又保留全部超声发现，我保留了超声（现写作「Ultrasound reported malrotation in 65 of 119 examinations (54.6%)」并与漩涡征那句合并），把 UGI 与 CT 的数字留给表 2、图 2 和 Results 正文。
+
+#N 理由是这一稿的论点本就是超声报告的内容，而且明说三个分母不可比、不构成排序——上一轮被拒的直接原因正是把它写成了模态间比较。**但这是内容取舍不是单纯删字，如果你希望摘要里保留三个模态的数字，告诉我，我从 Results 别处再削 20 词换回来。**
+
+#N **同时修好的两处副本不一致**：
+
+#N • `abstract.txt`（供投稿系统单独粘贴摘要用）**停留在更早的版本**（还写着 on the strength of、which documented findings accompany a positive report），已改为直接从 `p1.md` 重新生成，不再手工维护。
+
+#N • **投稿操作单里的 Key Points 三条与正文不是同一套文字**：操作单写的是「A recorded whirlpool sign separated positive from negative ultrasound reports」「Detection improved when the examination changed, not as time passed」，正文写的是另外两句。你若照操作单往 Editorial Manager 里填，提交的 Key Points 会与稿件对不上。已按正文逐字同步，Critical relevance statement 与字数核对项一并更新。
+
+#N 复核：摘要 248 词、CRS 28 词、正文仍 3,000 词、标题页与正文字数一致；全文比例与 Wilson 区间 0 处不符；24 条文献全引全列顺序正确；破折号 0；无盲审泄露；STROBE 清单无失效指向；正文、`abstract.txt`、投稿操作单三处的摘要、Key Points、CRS、Keywords 逐字一致。
