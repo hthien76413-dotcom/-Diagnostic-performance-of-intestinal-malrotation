@@ -23,7 +23,7 @@
   [
    "Superior mesenteric artery–vein relationship",
    "Ultrasound / CT",
-   "肠系膜上动、?静脉|肠系膜上动静脉|肠系膜上动脉|肠系膜上静脉|肠系膜血管|系膜血管|SMA|SMV  —  excluding matches whose only context is 左肾静脉 / 胡桃夹 / 肾静脉受压 with no whirlpool term"
+   "肠系膜上动、?静脉|肠系膜上动静脉|肠系膜上动脉|肠系膜上静脉|肠系膜血管|系膜血管|SMA|SMV; excluding matches whose only context is 左肾静脉 / 胡桃夹 / 肾静脉受压 with no whirlpool term"
   ],
   [
    "Explicit vessel inversion",
@@ -33,7 +33,7 @@
   [
    "Whirlpool / swirl / spiral appearance",
    "All",
-   "漩涡|旋涡|涡流|螺旋  —  counted only where no negation (未见|未探及|未显示|未发现|无明显|不明显|未闻) occurs in the 12 characters preceding the match within the same clause"
+   "漩涡|旋涡|涡流|螺旋; counted only where no negation (未见|未探及|未显示|未发现|无明显|不明显|未闻) occurs in the 12 characters preceding the match within the same clause"
   ],
   [
    "Enteric fluid administered",

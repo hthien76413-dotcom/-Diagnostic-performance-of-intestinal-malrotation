@@ -332,3 +332,28 @@
 #N **未改动的部分**：收发信人信息、日期（5 September 2026）、投稿声明段、伦理与利益冲突声明、署名，以及**前次审稿披露段**的存留与否——这一段是否保留仍由你决定。
 
 #N **三份 Online Resource 的正文尚未做去 AI 味儿处理**（OR1 有 7 处散文破折号，OR2、OR3 各 1 处），本轮只按你的要求润色了投稿信。需要的话可以照同样标准过一遍。
+
+#H1 十八、三份 Online Resource 的英文润色（已完成）
+
+#N 按与正文、投稿信相同的标准润色了三份附加材料。附件里有大量**中文原文词表、正则表达式和脚本名**，这些是数据不是文字，动一个字符规则就变了，因此单写了一个校验脚本 `polish_check_or.py`，比正文那一版多查两类记号：
+
+#N • **全部 CJK 字符串**（词典条目、否定线索、正则里的中文）逐串比对；
+#N • **全部反引号代码片段**（`classifier.py`、`Online_Resource_1_classifier.py` 等）逐个比对；
+#N 外加数字与 23 个限定语（uninterpretable、does not converge、cannot be estimated、not sensitivities、no directional conclusion、exploratory、conservative、not confirmatory 等）。
+
+#N 终检结果：**数字、中文原文、代码片段与限定语完全一致**。词表、正则、脚本名一个字符都没动。
+
+#N **散文破折号：OR1 由 9 处、OR2 由 2 处、OR3 由 2 处，全部降为 0。** 表格里还剩 2 个破折号，都在正则 `十二指肠[-—与和]?空肠交界` 的字符类内部，是数据，必须保留。另有 2 处原本用 `  —  ` 分隔「正则 — 说明」的表格注解，与正则内的破折号混在一列容易误读，已改为分号（`analysis/or_h.json`）。
+
+#N **删掉的 AI 味儿写法**：
+
+#N • **OR1**「**This asymmetry is the point rather than an artefact.**」——典型的修辞性断言开场，已删，直接陈述残余漏判的成因与方向。
+#N • **OR1** 小标题「G. Validation, **and the errors we found**」改为「G. Validation and adjudication」。
+#N • **OR1**「so that they can be inspected, criticised and **taken on trust**」的说教口吻，压缩为「inspected and re-applied」。
+#N • **OR1**「the sensitivity analysis in Table 2 **exists because of it**」口语化，改为「is the reason for the sensitivity analysis in Table 2」。
+#N • **OR1** 三处 `Definite — no qualifier` 式的定义破折号改为冒号；失败模式举例里包夹中文原文的一对破折号改为括号；「compared with the final labels — that is, … —」改为括号。
+#N • **OR2** 小标题「S2.5 Robustness of the three analytic choices **a reader is most likely to question**」这种对读者喊话的写法，改为「S2.5 Sensitivity to the three principal analytic choices」。
+#N • **OR2** Firth 那段包夹结论的一对破折号改为逗号从句，「must be a profile interval, **not a Wald one**」改为「rather than a Wald one, because…」。
+#N • **OR3**「a report describing a mesenteric whirl is, **unsurprisingly**, a report likely to conclude…」删去 unsurprisingly 并消除 a report…a report 的重复；「the value of the tabulation is in showing how often each element was documented **at all**」改为规范表述；「**Two observations are worth noting**」改为「Two features of these reports bear on the ultrasound findings」，并把包夹 the duodenojejunal junction 的一对破折号改为同位语。
+
+#N 三份附件已重新生成。至此正文、投稿信、三份附加材料的语言标准一致。
