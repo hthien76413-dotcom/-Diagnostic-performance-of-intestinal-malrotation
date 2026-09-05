@@ -27,8 +27,6 @@
 
 #N The complete text-classification rule set, the report-content audit patterns, the between-modality models and the subgroup analyses are provided as three Online Resources, so that the method can be replicated wherever routine reports are stored electronically.
 
-#N An earlier version of this work, framed as a comparison of diagnostic performance between the three modalities, was reviewed elsewhere and not accepted. The reviewers' central objection was that a case-only cohort with three different, indication-selected denominators cannot support a comparative accuracy claim. We accept that objection. The present manuscript is a different study rather than a revision of that one: the research question, the primary analyses and the conclusions have been rebuilt around what the reports document. We would be glad to supply the earlier reviews and our point-by-point response if that would be useful.
-
 #N The manuscript is original, is not under consideration elsewhere, and all authors have approved the submission and agree to be accountable for the work. The study was approved by the institutional review board with waiver of informed consent. The authors declare no competing interests. Funding, author contributions and the ethics approval number are given on the title page.
 
 #N Thank you for considering our work.

@@ -357,3 +357,13 @@
 #N • **OR3**「a report describing a mesenteric whirl is, **unsurprisingly**, a report likely to conclude…」删去 unsurprisingly 并消除 a report…a report 的重复；「the value of the tabulation is in showing how often each element was documented **at all**」改为规范表述；「**Two observations are worth noting**」改为「Two features of these reports bear on the ultrasound findings」，并把包夹 the duodenojejunal junction 的一对破折号改为同位语。
 
 #N 三份附件已重新生成。至此正文、投稿信、三份附加材料的语言标准一致。
+
+#H1 十九、投稿信删去前次评审披露段（已完成）
+
+#N 按你的决定，投稿信中「An earlier version of this work… was reviewed elsewhere and not accepted…」整段已删除。投稿信现在不再提及前次投稿、前次评审意见，也不再主动提出可以提供前次审稿意见与逐条回复。信长由 770 词降至 **674 词**。
+
+#N 一并同步了投稿操作单：第一节原写「上传前先决定那段可选的『前次评审披露』是留是删」，已改为日期提示；第五节「投稿信的前次评审披露段：保留」已改为「已删除」。
+
+#N **提醒一点**：Editorial Manager 的投稿流程里有时会有「本文是否曾投稿其他期刊／是否曾被拒」一类的必答问项。删掉投稿信里的披露段，不等于可以在那种问项里否认——**如果系统问到，据实回答即可**，只是不必在投稿信正文中主动展开。正文自始至终未提及前次投稿，无需改动。
+
+#N 已核实：IiI 上传清单中的六类文件均不含前次投稿的回复信（`Response_to_Editor_and_Reviewers.docx` 属于上一轮 Pediatric Radiology 的材料，不在本次上传范围内）。
