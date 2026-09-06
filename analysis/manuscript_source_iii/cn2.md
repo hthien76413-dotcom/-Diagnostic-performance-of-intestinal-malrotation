@@ -618,3 +618,13 @@
 
 #N **重建并核过的文件**：正文、三份 Online Resource、Cover Letter、Title Page（词数 3,000→2,999）、投稿操作单、纯文本全文、Fig 1–3 与 Fig S1。全部 docx 文档属性仍为空。另写了一个退役数值扫描，把 50 多个旧数值（171/320、54.6、+20.2、3.35、2.00 to 2310、726 of 740……）在全部成稿里回扫一遍，**零命中**。
 
+#H1 A12：539 例研究被误写成多中心 —— 意见成立，已改
+
+#N 引言把 Binu 等 2021（引用 [14]）写成 "a multicentre study of 539 children"。**是错的，已改为 "a single-centre study of 539 children"。**
+
+#N **核实经过。** PubMed 与 ScienceDirect 都被本环境的网络策略挡住，读不到原文摘要，所以是靠两条旁证定的：一是两次独立检索都只指向一家机构——Department of Paediatric Surgery, Women's and Children's Hospital, North Adelaide, South Australia；二是本稿引用的 [17]（Hennessey, John, Gent, Goh 2014，同一家机构、同一批作者）标题里就明写 "a single-center retrospective audit"，而 2021 年这篇正是那份 139 例研究的扩大随访。两条对得上。539 这个数字没问题，未动本稿任何研究人数。
+
+#N **顺带核了另外两处"多中心"，都没错**：引用 [13]（Nguyen 2025 AJR）原题即 "a multiinstitutional retrospective review"，正文称其为 2025 multicentre series 属实；引用 [3]（Yang 2024）标题自带 multicenter，是原文题名。
+
+#N 正文仍 2,999 词（multicentre 与 single-centre 都是一个词）。
+
