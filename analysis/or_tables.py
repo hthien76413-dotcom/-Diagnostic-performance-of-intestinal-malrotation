@@ -11,7 +11,10 @@ for mod,lab in [('UGI','UGI contrast series'),('CT','Abdominal CT'),('US','Gastr
     t=tier[tier['mod']==mod]['tier'].value_counts()
     S1.append([lab,str(n),f'{k} ({k/n*100:.1f}%)',f'{n-k} ({(n-k)/n*100:.1f}%)',
                str(int(t.get('definite',0))),str(int(t.get('probable',0))),str(int(t.get('possible',0)))])
-S1.append(['All three','740',f"{int(ixf['det'].sum())}",f"{740-int(ixf['det'].sum())}",'128','168','177'])
+_tot={t:sum(int(r[i]) for r in S1[1:]) for i,t in ((4,'definite'),(5,'probable'),(6,'possible'))}
+S1.append(['All three','740',f"{int(ixf['det'].sum())}",f"{740-int(ixf['det'].sum())}",
+           str(_tot['definite']),str(_tot['probable']),str(_tot['possible'])])
+assert sum(_tot.values())==int(ixf['det'].sum()), 'certainty tiers do not sum to the positives'
 # OR2 stratified
 pat['agegrp']=pd.cut(pat['age_days'],[-1,28,365,1e9],labels=['≤28 days','29 days–1 year','>1 year'])
 ix2=ixf.merge(pat[['科研患者编号','agegrp']],on='科研患者编号',how='left')
@@ -24,11 +27,8 @@ for mod,lab in [('UGI','UGI contrast series'),('CT','Abdominal CT'),('US','Gastr
     for g in ['≤28 days','29 days–1 year','>1 year']:
         s=d[d['agegrp']==g]; k=int(s['det'].sum()); n=len(s)
         lo,hi=pci(k,n,method='wilson'); S2.append([lab,'Age '+g,f'{k}/{n}',f'{k/n*100:.1f} ({lo*100:.1f}–{hi*100:.1f})'])
-# OR2b volvulus-specific sign (published values retained)
-S2b=[['Index test','Volvulus-specific sign / children with confirmed volvulus','Rate % (95% CI)'],
-     ['UGI contrast series','131/268','48.9 (43.0–54.8)'],
-     ['Gastrointestinal ultrasound','59/113','52.2 (43.1–61.2)'],
-     ['Abdominal CT','116/281','41.3 (35.7–47.1)']]
+# OR2b (volvulus-specific sign) is produced by volsign2.py, which applies the
+# modality-specific, negation-aware rules. It is not duplicated here.
 # OR3 CT and UGI content
 c=ixf[ixf['mod']=='CT'].copy(); g=ixf[ixf['mod']=='UGI'].copy()
 def f(d,rx): return d['txt'].astype(str).str.contains(rx,regex=True)
@@ -49,5 +49,5 @@ for d,lab,keys in [(c,'Abdominal CT (n=320)',['Contrast enhancement','Mesenteric
     for k_ in keys:
         s=d[k_].astype(bool)
         S3.append([lab,k_,f'{int(s.sum())} ({s.mean()*100:.1f})',f"{d[s]['det'].mean()*100:.1f}" if s.sum() else '–',f"{d[~s]['det'].mean()*100:.1f}" if (~s).sum() else '–'])
-json.dump({'S1':S1,'S2':S2,'S2b':S2b,'S3':S3},open('or_tables.json','w'),ensure_ascii=False,indent=1)
-for T in (S1,S2,S2b,S3): print('\n'.join(' | '.join(map(str,r)) for r in T)); print('---')
+json.dump({'S1':S1,'S2':S2,'S3':S3},open('or_tables.json','w'),ensure_ascii=False,indent=1)
+for T in (S1,S2,S3): print('\n'.join(' | '.join(map(str,r)) for r in T)); print('---')

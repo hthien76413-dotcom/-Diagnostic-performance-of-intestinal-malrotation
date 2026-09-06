@@ -41,8 +41,8 @@
    "740",
    "470",
    "270",
-   "128",
-   "168",
+   "126",
+   "167",
    "177"
   ]
  ],
@@ -142,28 +142,6 @@
    "Age >1 year",
    "7/15",
    "46.7 (24.8–69.9)"
-  ]
- ],
- "S2b": [
-  [
-   "Index test",
-   "Volvulus-specific sign / children with confirmed volvulus",
-   "Rate % (95% CI)"
-  ],
-  [
-   "UGI contrast series",
-   "131/268",
-   "48.9 (43.0–54.8)"
-  ],
-  [
-   "Gastrointestinal ultrasound",
-   "59/113",
-   "52.2 (43.1–61.2)"
-  ],
-  [
-   "Abdominal CT",
-   "116/281",
-   "41.3 (35.7–47.1)"
   ]
  ],
  "S3": [

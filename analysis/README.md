@@ -38,6 +38,7 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 classifier_agreement.py  # agreement of the published script with the final labels
     python3 or_add.py      # assembles or_add.json; run after addstats.py and volsign2.py
     python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
+    python3 graphabs.py    # the journal graphical abstract (300 dpi RGB TIFF + PNG)
 
 `ALL_RESULTS.txt` is the concatenated console output of the analysis scripts.
 

@@ -628,3 +628,36 @@
 
 #N 正文仍 2,999 词（multicentre 与 single-centre 都是一个词）。
 
+#H1 投稿前最终全面复查
+
+#N 因为这一轮改动很大（三例更正 + 全量重算 + A12），我从头到尾重查了一遍，不只看改动处。**重新从数据算了 124 个正文数字，逐条比对，零不符。** 但另外查出四处问题，都已修。
+
+#N **一、Online Resource 1 表 S1「All three」行算错了。** 三个模态的确定/多考虑/可疑三列分别是 78+33+15=126、76+74+17=167、83+62+32=177，合计 470；那一行却写着 128/168/177，合计 473——正是更正前的旧总数。原因在 `or_tables.py` 第 14 行把这三个数**写死**了，所以三例更正没传导过去。已改为由上面三行求和得出，并加断言：三档之和必须等于阳性总数，不等就直接报错。同一文件里还留着一份早已废弃的 S2b 硬编码值（131/268、59/113、116/281），目前靠加载顺序被 `volsign2.py` 覆盖才没出事——已删除。
+
+#N **二、参考文献 [11] 有一半没有依据。** 讨论里写「The 2021 systematic review reported better performance where the **mesenteric vessels and enteric fluid** were used」。两次独立检索该综述的亚组分析与 meta 回归，列出的调节因素只有三项：**无扭转的旋转不良、新生儿、检查前给肠腔液体**，没有肠系膜血管。ADC 与 PubMed 在本环境都被网络策略挡住，读不到全文，所以按可核实的范围收窄为「better performance where enteric fluid was given before the examination」。这一改反而更有力：该综述自己认定的技术调节因素，我们 119 次检查里只记录到 2 次。
+
+#N **三、Key Points 超了期刊的建议长度。** IiI 要求每条 Key Point 理想上不超过 12 词，原来第二、三条是 13 和 14 词。已改写为 12 和 11 词，且都不是摘要或正文的原句：
+
+#N • Only half the children with confirmed volvulus had a whirlpool sign recorded.（12）
+#N • Detection rose as much with examination type as with calendar era.（11）
+
+#N **四、Methods 里那句双向筛查有歧义。** 原文用冒号引出，读起来像是在定义「两个方向」，实际引出的是筛查结果。改为 "…screened in both directions, returning nine positives whose text matched no diagnostic term or sign pattern and no negative naming the diagnosis."
+
+#N **正文降到 2,994 词**（此前 2,999 卡得太死）。删的是 Limitations 里「Comparisons were not adjusted for multiplicity」——这句 Methods 已写过一次，重复无增益。Title Page 与操作单的词数已同步。
+
+#N **参考文献 [22] 核对完毕。** Zeger SL, Liang KY (1986) Biometrics **42:121–130** 确认无误，这条待办可以关掉。
+
+#H1 补做：Graphical Abstract
+
+#N 复查期刊要求时发现一份**我从没做过的文件**。检索到的两处说法不一致——一处称「所有投稿必交 graphical abstract」，一处称「可选，按期刊模板」；springeropen、journals.myesr.org、i3-journal.org 三个官方页面在本环境全部被网络策略挡住，我无法定论。**但两者都确认 IiI 有这个槽位，已发表的 Original Article 也都带这张图。** 所以不管哪种说法成立，备好都不吃亏。
+
+#N `Graphical_Abstract.tif`（备份 `.png`）：单幅 300 dpi、RGB、LZW 压缩，4052 × 1813 px。matplotlib 默认写出的是 RGBA，带 alpha 通道的 TIFF 常被投稿系统拒收，已在脚本里合成白底转为 RGB。
+
+#N 左栏是「报告记录了什么」，右栏是「诊断有没有被报出来」，两栏合起来就是全文论点：记录下来的是漩涡征，撑起已发表准确度的那几项几乎没有；而检出几乎完全跟着漩涡征走。配色沿用正文 Fig 2–3 的蓝（#2C7FB8）与红（#B22222），两色经色盲安全性校验全部通过（deutan ΔE 21.1、正常视觉 ΔE 29.3、对比度均 ≥3:1），灰色是去强调底色。
+
+#N **图上特意加了一行斜体限定**：Case-only design: every child had surgically confirmed malrotation, so these are report-level detection rates, not sensitivities. Graphical abstract 会脱离正文单独传播，而图里有一个「100%」——不加这句，单独看到的人极可能读成敏感度，那正好推翻全文最核心的告诫。
+
+#N 生成脚本 `analysis/graphabs.py` 已进仓库，数字全部从 `us_audit4.csv` 现算，不写死。
+
+#N **上传前请在 Editorial Manager 里确认这一项是必交还是可选**，以及是否要求套用期刊自己的模板；若要求套模板，把这张图的内容填进去即可。
+

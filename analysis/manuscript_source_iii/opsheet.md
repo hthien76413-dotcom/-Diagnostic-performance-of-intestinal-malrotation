@@ -13,7 +13,7 @@
 #N 含作者、单位、ORCID、通讯方式、伦理批件号与全部 Declarations。**这是唯一含作者身份信息的文件**，务必与正文分开上传。
 
 #N **3. Manuscript（盲审正文）** —— `诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx`
-#N 2,999 词，含 4 表 3 图（图已内嵌便于评审阅读）。文中无任何作者身份信息。
+#N 2,994 词，含 4 表 3 图（图已内嵌便于评审阅读）。文中无任何作者身份信息。
 
 #N **4. Figures（单独上传，300 dpi PNG）**
 #N • `Fig1_study_flow.png` → Figure 1（流程图）
@@ -21,14 +21,18 @@
 #N • `Fig3_ultrasound_report_audit.png` → Figure 3（超声报告内容审计，核心图）
 #N 文件名已与正文图号一一对应，按名字上传即可。
 
-#N **5. Supplementary / Online Resources**
+#N **5. Graphical Abstract** —— `Graphical_Abstract.tif`（备份 `Graphical_Abstract.png`）
+#N 单幅 300 dpi、RGB、LZW 压缩 TIFF，4052 × 1813 px。图上已注明本研究为 case-only 设计、这些是报告层面检出率而非敏感度——单独看到这张图的人不会误读成敏感度。
+#N **投稿前请在系统里确认这一项**：Insights into Imaging 的官方页面（springeropen、journals.myesr.org、i3-journal.org）在制作时均无法访问，检索到的两处说法一处称「所有投稿必交」、一处称「可选、按期刊模板」。文件已备好，无论哪种都能直接上传；若系统要求套用期刊自己的模板，把这张图作为内容填进模板即可。
+
+#N **6. Supplementary / Online Resources**
 #N • `Online_Resource_1_NLP_and_report_audit.docx` —— 算法规则、验证、内容审计正则表
 #N • `Online_Resource_1_classifier.py` —— 规则集的可运行实现（若系统不收 .py，压缩成 zip 或改后缀为 .txt 并在文件名注明）
 #N • `Online_Resource_2_models_and_subgroups.docx` —— GEE 模型、配对亚组、分层分析（内含 Fig. S1）
 #N • `FigS1_paired_subgroup.png` → Fig. S1（附录图，配对亚组）
 #N • `Online_Resource_3_CT_and_UGI_content_audit.docx` —— CT 与造影报告内容审计
 
-#N **6. Reporting checklist** —— `STROBE_checklist.docx`
+#N **7. Reporting checklist** —— `STROBE_checklist.docx`
 
 #H1 二、表单字段（可直接复制）
 
@@ -93,7 +97,7 @@
 #N 以下各项均已核对完毕，上传时确认一遍即可：
 
 #N 1. 盲审正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者、备注）已清空，无需再在 Word 里手动检查。
-#N 2. 正文 2,999 词，摘要 248 词，Critical relevance statement 28 词。
+#N 2. 正文 2,994 词，摘要 248 词，Critical relevance statement 28 词。
 #N 3. 摘要为 Objectives / Methods / Results / Conclusion 四段式。
 #N 4. Key Points 三条，每条 9–14 词，未复用摘要或正文原句；与正文 Key Points 节逐字一致。
 #N 5. 图题 ≤15 词、图注 ≤300 词，且都在正文里而非图片文件内。
