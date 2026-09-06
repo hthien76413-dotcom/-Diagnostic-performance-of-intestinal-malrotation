@@ -9,7 +9,7 @@ exec(open('usaudit4.py').read().split('ROWS=')[0])
 import numpy as np, json, statsmodels.formula.api as smf
 from statsmodels.stats.contingency_tables import mcnemar
 from statsmodels.stats.proportion import proportion_confint as pci
-from firth import firth_logit
+from firth import firth_logit, profile_ci
 rng=np.random.default_rng(20260903)
 B=2000
 
@@ -86,8 +86,13 @@ for k,n,lab in [(int(y[V==1].sum()),int((V==1).sum()),'volvulus present'),
 X=np.column_stack([np.ones(len(us)),V])
 b,se=firth_logit(X,y)
 orv=np.exp(b[1]); lo=np.exp(b[1]-1.96*se[1]); hi=np.exp(b[1]+1.96*se[1])
-print(f'  Firth penalised OR for detection given volvulus: {orv:.2f} ({lo:.2f}-{hi:.2f})')
-FIRTH=(orv,lo,hi)
+print(f'  Firth penalised OR for detection given volvulus: {orv:.2f} (Wald {lo:.2f}-{hi:.1f})')
+# The Wald interval is unreliable under separation; the supplement reports the
+# profile penalised-likelihood interval and the penalised likelihood-ratio p.
+plo,phi,pp=profile_ci(X,y,1)
+plo,phi=np.exp(plo),np.exp(phi)
+print(f'  profile penalised-likelihood 95% CI {plo:.2f}-{phi:.1f} ; penalised LR p = {pp:.4f}')
+FIRTH=(orv,lo,hi); FIRTH_PROFILE=(orv,plo,phi,pp)
 
 # ---------- (4) era x content interaction ----------
 print()
@@ -100,5 +105,5 @@ for lab,d,c in [('Ultrasound: era x great-vessel session',u,'ves'),('CT: era x c
     print(f'  {lab:42s} interaction OR {np.exp(m.params[t]):.2f} ({np.exp(ci[0]):.2f}-{np.exp(ci[1]):.2f}) p={m.pvalues[t]:.3f}')
 
 json.dump({'AME':{k:[v[0],list(v[1]),v[2]] for k,v in AME.items()},
-           'PAIR':PAIR,'FIRTH':list(FIRTH),'INT':INT},
+           'PAIR':PAIR,'FIRTH':list(FIRTH),'FIRTH_PROFILE':list(FIRTH_PROFILE),'INT':INT},
           open('addstats.json','w'),ensure_ascii=False,indent=1)

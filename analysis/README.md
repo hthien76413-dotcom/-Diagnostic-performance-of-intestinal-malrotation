@@ -19,7 +19,6 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 usaudit.py     # first-pass ultrasound content audit (superseded)
     python3 usaudit4.py    # Table 3: definitive ultrasound content audit
     python3 temporal2.py   # era models and the CT / UGI audits on pooled episodes
-    python3 tables_final.py # Tables 2 and 4
     python3 or_sens.py     # Online Resource 2 sensitivity analyses (S8-S10)
     python3 revcheck.py    # report-flow, index-unit and volvulus-definition checks
     python3 volsign2.py    # volvulus-specific sign, harmonised with the main audit rules
@@ -35,6 +34,9 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 final.py       # subgroup detection, sensitivity analyses
     python3 gee.py gee2.py # GEE models and the interaction/separation issue
     python3 tables.py tables2.py or_tables.py   # writes tables*.json
+    python3 tables_final.py # Tables 2 and 4; reads tables123.json, so run it AFTER tables.py
+    python3 classifier_agreement.py  # agreement of the published script with the final labels
+    python3 or_add.py      # assembles or_add.json; run after addstats.py and volsign2.py
     python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
 
 `ALL_RESULTS.txt` is the concatenated console output of the analysis scripts.
@@ -81,10 +83,16 @@ vessels 12/119 (10.1%), enteric fluid 2/119, whirlpool reported 58/119 (48.7%).
 
 ## Validation against the previously submitted version
 
-The rebuilt dataset reproduces exactly: 465 children, 352 male, 301 UGI / 320 CT /
-119 ultrasound index tests, 59 with all three, 410 imaged, 740 index examinations,
-detection 237 / 171 / 65, unadjusted GEE odds ratios 0.31 (0.22-0.44) and
-0.33 (0.21-0.50), Cochran's Q p=0.001 and the three exact McNemar p values.
+The rebuilt dataset reproduced the previously submitted version exactly: 465
+children, 352 male, 301 UGI / 320 CT / 119 ultrasound index tests, 59 with all
+three, 410 imaged, 740 index examinations, detection 237 / 171 / 65, unadjusted
+GEE odds ratios 0.31 (0.22-0.44) and 0.33 (0.21-0.50), Cochran's Q p=0.001 and
+the three exact McNemar p values.
+
+Three of those labels were subsequently corrected (see **Label corrections**
+below), so the current pipeline produces detection 237 / 169 / 64, unadjusted GEE
+odds ratios 0.30 (0.22-0.42) and 0.32 (0.21-0.48), and Cochran's Q p=0.0007. The
+denominators, the cohort counts and the report flow are unchanged.
 
 It differs in the cohort descriptors that depend on age, because each operative
 record is now linked to the admission containing that operation (verified for all
@@ -110,8 +118,8 @@ non-separated data and prints the separated example.
 
 Do not use its Wald interval for the separated contrast. `firth_check.py` compares
 the fit against `firthlogist`, an independent implementation: the coefficient
-agrees to six decimal places (OR 17.56), but the Wald interval (0.77-401) and the
-profile interval (2.00-2310, penalised LR p=0.006) disagree on whether unity is
+agrees to six decimal places (OR 16.94), but the Wald interval (0.74-387) and the
+profile interval (1.93-2229, penalised LR p=0.006) disagree on whether unity is
 excluded. The profile interval is the correct one and is what the supplement
 reports. R's `logistf` itself could not be installed here because CRAN is blocked
 by the environment's network policy.
@@ -120,3 +128,27 @@ by the environment's network policy.
 one pooled sign pattern across all three modalities with no negation handling and
 reported 59/113 for ultrasound, which contradicted the 58/113 in the manuscript;
 the harmonised rule is modality-specific and negation-aware.
+
+## Label corrections
+
+`labelaudit.py` screens every index unit in both directions: positive labels whose
+pooled report text matches no diagnostic term and no modality-specific sign, and
+negative labels whose text names the diagnosis. It found nine of the first kind and
+none of the second. All nine were read against the source reports; three were
+over-calls.
+
+`label_corrections.csv` lists those three with their reasons, and `core.py` applies
+it to the matrix immediately after reading it, asserting that each row still matches
+the value it claims to replace. The raw export `诊断效能_逐患者矩阵_当前版v3.xlsx`
+is never modified, so the correction is visible and reversible.
+
+    4331826   CT_detected  1 -> 0
+    35807877  CT_detected  1 -> 0
+    10140565  US_detected  1 -> 0
+
+Consequences: CT detection 171/320 -> 169/320, ultrasound 64/119; the upper
+gastrointestinal series is unaffected. The crude era effect for ultrasound falls
+just below conventional significance (odds ratio 2.16, 0.99-4.70, p=0.053) while
+its bootstrap marginal effect still excludes zero at +19.0 pp (+0.6 to +37.6);
+both are reported as borderline. `待核标签清单_9例_已裁定.xlsx` is the worksheet the
+adjudication was recorded on.

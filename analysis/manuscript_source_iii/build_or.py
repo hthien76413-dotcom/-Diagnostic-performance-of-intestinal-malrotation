@@ -16,8 +16,8 @@ def _blank_props(doc):
     return doc
 
 
-AN='/tmp/claude-0/-home-user--Diagnostic-performance-of-intestinal-malrotation/4998e6b2-e14c-57b0-80b5-41a1fb987d43/scratchpad/an/'
-MS='/tmp/claude-0/-home-user--Diagnostic-performance-of-intestinal-malrotation/4998e6b2-e14c-57b0-80b5-41a1fb987d43/scratchpad/ms/'
+AN='/home/user/-Diagnostic-performance-of-intestinal-malrotation/analysis/'
+MS='/home/user/-Diagnostic-performance-of-intestinal-malrotation/analysis/manuscript_source/'
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.json')))
 D.update(json.load(open(AN+'or_tables.json'))); D.update(json.load(open(AN+'or_h.json')))

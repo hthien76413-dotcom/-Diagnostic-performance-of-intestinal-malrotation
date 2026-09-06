@@ -8,7 +8,7 @@
 
 #N GEE logistic model with exchangeable working correlation and patient-level clustering (cluster-robust standard errors); 410 children, 740 preoperative index examinations. An odds ratio (OR) below 1 indicates lower report-level detection than the UGI series. These estimates describe indication-driven detection under routine test selection and are **not** estimates of comparative diagnostic accuracy: the modality coefficients absorb the indication for the test, its position in the diagnostic pathway and the content of the examination, which cannot be separated in these data.
 
-#N The pre-specified modality-by-volvulus interaction could not be estimated across all three modalities. No ultrasound examination was positive among the six children without volvulus, so the model exhibits complete separation and does not converge; any p value from such a fit is uninterpretable and none is reported. For the estimable UGI-versus-CT comparison the interaction OR was 0.90 (95% CI 0.33–2.43, p=0.84), that is, the CT-versus-UGI difference did not vary with volvulus.
+#N The pre-specified modality-by-volvulus interaction could not be estimated across all three modalities. No ultrasound examination was positive among the six children without volvulus, so the model exhibits complete separation and does not converge; any p value from such a fit is uninterpretable and none is reported. For the estimable UGI-versus-CT comparison the interaction OR was 0.99 (95% CI 0.36–2.70, p=0.98), that is, the CT-versus-UGI difference did not vary with volvulus.
 
 #H1 S2.2 The selected subgroup receiving all three examinations
 
@@ -38,11 +38,11 @@
 
 #H1 S2.5 Sensitivity to the three principal analytic choices
 
-#N **The era boundary.** The primary analysis splits the study period at 2019, but the department attributes the change in practice to growing awareness from about 2021. Table S8 repeats the ultrasound model with the boundary at 2019, 2020, 2021 and 2022. The crude era effect is unstable across boundaries and loses significance at 2021 and 2022; the examination-type effect is stable throughout (odds ratio 3.07–3.85, all p≤0.007) and the adjusted era term is non-significant at every boundary. The temporal claim in the manuscript therefore does not depend on where the boundary is placed, and the crude era difference alone does not survive a boundary chosen to match the department's own account.
+#N **The era boundary.** The primary analysis splits the study period at 2019, but the department attributes the change in practice to growing awareness from about 2021. Table S8 repeats the ultrasound model with the boundary at 2019, 2020, 2021 and 2022. The crude era effect is unstable across boundaries, reaching conventional significance only with the boundary at 2020 and falling short of it at 2019, 2021 and 2022; the examination-type effect is stable throughout (odds ratio 3.44–4.31, all p≤0.003) and the adjusted era term is non-significant at every boundary. The temporal claim in the manuscript therefore does not depend on where the boundary is placed, and the crude era difference alone does not survive a boundary chosen to match the department's own account.
 
 #TABS4
 
-#N Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation. On the risk-difference scale the examination-type variable accounts for roughly half of the era difference at each boundary, not all of it.
+#N Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation. On the risk-difference scale the examination-type variable accounts for about half of the era difference at the 2019 and 2020 boundaries and for most of it at 2021 and 2022.
 
 #N **The index unit.** The primary analysis takes the examination episode closest to operation. Table S9 repeats the ultrasound content audit taking the earliest preoperative episode instead. No conclusion changes: the duodenal landmarks remain documented in three of 119 examinations either way.
 
@@ -56,7 +56,7 @@
 
 #H1 S2.6 Analyses added in response to statistical review
 
-#N **Average marginal effects with confidence intervals.** The manuscript reports the era effect on the risk-difference scale because a conditional odds ratio attenuates when a predictive covariate is added even without mediation. Table S11 gives those marginal effects with percentile bootstrap 95% confidence intervals (2,000 resamples of children, seed fixed). For ultrasound, the crude effect excludes zero and the adjusted effect does not; the two intervals overlap heavily, so the analysis shows that examination type accounts for about half the era difference, not that the remainder is absent.
+#N **Average marginal effects with confidence intervals.** The manuscript reports the era effect on the risk-difference scale because a conditional odds ratio attenuates when a predictive covariate is added even without mediation. Table S11 gives those marginal effects with percentile bootstrap 95% confidence intervals (2,000 resamples of children, seed fixed). For ultrasound, the crude effect excludes zero only just, its lower bound falling at +0.6 percentage points, and the adjusted effect does not exclude zero; the two intervals overlap heavily, so the analysis shows that examination type accounts for more than half the era difference, not that the remainder is absent.
 
 #TABS11
 
@@ -64,7 +64,7 @@
 
 #TABS12
 
-#N **The separated contrast, and interaction terms.** The pre-specified modality-by-volvulus interaction cannot be estimated in the three-modality model because no ultrasound examination was positive among the six children without volvulus. Two things can be estimated and are given in Table S13. First, the same interaction restricted to the upper gastrointestinal series and CT, where no separation occurs, shows no evidence of effect modification by volvulus. Second, a Firth penalised logistic model of ultrasound detection on volvulus returns a finite estimate. Its interval must be a profile penalised-likelihood interval rather than a Wald one, because under separation the two disagree here: the Wald interval spans 0.77 to 401 and the profile interval 2.00 to 2310 (penalised likelihood-ratio p=0.006). The direction of the contrast is therefore supported, ultrasound having been far more often positive when volvulus was present, while its magnitude is not estimable to any useful precision from six children. The estimate was reproduced to six decimal places by an independent implementation. Table S13 also reports era-by-content interaction terms for ultrasound and CT; neither is significant, so the additive models used in Table 4 are not obviously misspecified.
+#N **The separated contrast, and interaction terms.** The pre-specified modality-by-volvulus interaction cannot be estimated in the three-modality model because no ultrasound examination was positive among the six children without volvulus. Two things can be estimated and are given in Table S13. First, the same interaction restricted to the upper gastrointestinal series and CT, where no separation occurs, shows no evidence of effect modification by volvulus. Second, a Firth penalised logistic model of ultrasound detection on volvulus returns a finite estimate. Its interval must be a profile penalised-likelihood interval rather than a Wald one, because under separation the two disagree here: the Wald interval spans 0.74 to 387 and the profile interval 1.93 to 2229 (penalised likelihood-ratio p=0.006). The direction of the contrast is therefore supported, ultrasound having been far more often positive when volvulus was present, while its magnitude is not estimable to any useful precision from six children. The estimate was reproduced to six decimal places by an independent implementation. Table S13 also reports era-by-content interaction terms for ultrasound and CT; neither is significant, so the additive models used in Table 4 are not obviously misspecified.
 
 #TABS13
 

@@ -6,19 +6,19 @@
   ],
   [
    "Ultrasound, crude",
-   "+20.2 (+1.8 to +38.8)"
+   "+19.0 (+0.6 to +37.6)"
   ],
   [
    "Ultrasound, adjusted for great-vessel session",
-   "+10.3 (-10.3 to +30.1)"
+   "+8.2 (-11.6 to +27.8)"
   ],
   [
    "CT, crude",
-   "+19.7 (+8.0 to +30.8)"
+   "+19.2 (+8.0 to +30.3)"
   ],
   [
    "CT, adjusted for contrast enhancement",
-   "+15.6 (+4.3 to +27.4)"
+   "+15.5 (+4.2 to +27.6)"
   ]
  ],
  "S12": [
@@ -31,10 +31,10 @@
   ],
   [
    "UGI series vs CT",
-   "76.3% vs 47.5%",
-   "+28.8 (+13.6 to +44.1)",
-   "23/6",
-   "0.002"
+   "76.3% vs 45.8%",
+   "+30.5 (+15.3 to +47.5)",
+   "24/6",
+   "0.001"
   ],
   [
    "UGI series vs ultrasound",
@@ -45,10 +45,10 @@
   ],
   [
    "CT vs ultrasound",
-   "47.5% vs 52.5%",
-   "-5.1 (-18.6 to +10.2)",
-   "8/11",
-   "0.648"
+   "45.8% vs 52.5%",
+   "-6.8 (-20.3 to +6.8)",
+   "7/11",
+   "0.481"
   ]
  ],
  "S13": [
@@ -59,8 +59,8 @@
   ],
   [
    "Modality x volvulus interaction, upper gastrointestinal series vs CT (GEE; estimable)",
-   "CT x volvulus odds ratio 0.90 (0.33–2.43)",
-   "0.838"
+   "CT x volvulus odds ratio 0.99 (0.36–2.70)",
+   "0.981"
   ],
   [
    "Modality x volvulus interaction including ultrasound (GEE)",
@@ -69,18 +69,18 @@
   ],
   [
    "Ultrasound detection given midgut volvulus, Firth penalised logistic",
-   "Odds ratio 17.6 (2.00–2310, profile penalised likelihood)",
+   "Odds ratio 16.9 (1.93–2229, profile penalised likelihood)",
    "0.006"
   ],
   [
    "Era x examination-content interaction, ultrasound",
-   "0.90 (0.16–4.92)",
-   "0.903"
+   "1.06 (0.19–5.81)",
+   "0.950"
   ],
   [
    "Era x examination-content interaction, CT",
-   "1.94 (0.32–11.58)",
-   "0.469"
+   "1.52 (0.31–7.34)",
+   "0.603"
   ]
  ],
  "S2b": [

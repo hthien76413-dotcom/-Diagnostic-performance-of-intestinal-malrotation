@@ -81,11 +81,14 @@ if __name__ == '__main__':
     print('  MLE   ', np.round(m.params, 4), 'se', np.round(m.bse, 4))
     print('  Firth ', np.round(b, 4), 'se', np.round(se, 4))
     print('  max |coefficient difference| = %.4f' % np.max(np.abs(b - m.params)))
-    yy = np.r_[np.ones(65), np.zeros(48), np.zeros(6)]
-    xx = np.r_[np.ones(113), np.zeros(6)]
+    # The study's separated contrast: ultrasound detection given operative
+    # volvulus. addstats.py computes it from the data; these counts mirror it.
+    DET_V, N_V, N_NOV = 64, 113, 6
+    yy = np.r_[np.ones(DET_V), np.zeros(N_V-DET_V), np.zeros(N_NOV)]
+    xx = np.r_[np.ones(N_V), np.zeros(N_NOV)]
     XX = np.column_stack([np.ones(len(yy)), xx])
     bb, ss = firth_logit(XX, yy); lo, hi, p = profile_ci(XX, yy, 1)
-    print('check 2 - separated 65/113 vs 0/6')
+    print(f'check 2 - separated {DET_V}/{N_V} vs 0/{N_NOV}')
     print('  OR %.2f' % np.exp(bb[1]))
     print('  Wald    95%% CI %.2f to %.1f' % (np.exp(bb[1]-1.96*ss[1]), np.exp(bb[1]+1.96*ss[1])))
     print('  profile 95%% CI %.2f to %.1f ; penalised LR p = %.4f' % (np.exp(lo), np.exp(hi), p))

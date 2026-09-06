@@ -43,22 +43,22 @@ duration_chronic  152 (50.5%)  148 (46.2%)   53 (44.5%)  21 (38.2%)
   cecum           4 (  3.4%)   early   2.6%  late   3.8%
 
 detection by content:
-  d3=False n=119 detected  54.6%
-  djj=False n=119 detected  54.6%
-  sma_smv=True  n= 10 detected 100.0%
+  d3=False n=119 detected  53.8%
+  djj=False n=119 detected  53.8%
+  sma_smv=True  n= 10 detected  90.0%
   sma_smv=False n=109 detected  50.5%
   whirl_txt=True  n= 57 detected  98.2%
-  whirl_txt=False n= 62 detected  14.5%
+  whirl_txt=False n= 62 detected  12.9%
   fluid=True  n=  1 detected   0.0%
-  fluid=False n=118 detected  55.1%
-  gas_limit=True  n= 26 detected  46.2%
+  fluid=False n=118 detected  54.2%
+  gas_limit=True  n= 26 detected  42.3%
   gas_limit=False n= 93 detected  57.0%
   gi_us=True  n= 68 detected  47.1%
-  gi_us=False n= 51 detected  64.7%
-  bedside=True  n=  9 detected  22.2%
+  gi_us=False n= 51 detected  62.7%
+  bedside=True  n=  9 detected  11.1%
   bedside=False n=110 detected  57.3%
 
-detection by era: early 41.0% (n=39), late 61.3% (n=80)
+detection by era: early 41.0% (n=39), late 60.0% (n=80)
 whirlpool by era: early 41.0%, late 53.8%
 
 US exams per year:
@@ -70,19 +70,19 @@ op_year
 2019      5  0.20  0.80  0.0    0.00
 2020     18  0.67  0.61  0.0    0.06
 2021     14  0.79  0.36  0.0    0.36
-2022     17  0.71  0.29  0.0    0.12
+2022     17  0.65  0.29  0.0    0.12
 2023      7  0.86  0.57  0.0    0.00
 2024     10  0.40  0.40  0.0    0.00
 2025      5  0.20  0.60  0.0    0.00
 2026      4  0.50  0.75  0.0    0.00
 ########## audit2
 === CT audit n=320 ===
-  enhanced    52 ( 16.2%)  det|yes  84.6%  det|no  47.4%
-  whirl      116 ( 36.2%)  det|yes  98.3%  det|no  27.9%
-  duod        72 ( 22.5%)  det|yes  59.7%  det|no  51.6%
-  sma_smv     41 ( 12.8%)  det|yes  85.4%  det|no  48.7%
-  recon3d    124 ( 38.8%)  det|yes  63.7%  det|no  46.9%
-  enhanced n=52 det 84.6% | unenhanced n=268 det 47.4%
+  enhanced    52 ( 16.2%)  det|yes  80.8%  det|no  47.4%
+  whirl      116 ( 36.2%)  det|yes  98.3%  det|no  27.0%
+  duod        72 ( 22.5%)  det|yes  59.7%  det|no  50.8%
+  sma_smv     41 ( 12.8%)  det|yes  80.5%  det|no  48.7%
+  recon3d    124 ( 38.8%)  det|yes  62.9%  det|no  46.4%
+  enhanced n=52 det 80.8% | unenhanced n=268 det 47.4%
   enhanced share by era: early 12.1% late 24.8%
 
 === UGI audit n=301 ===
@@ -96,42 +96,42 @@ op_year
 
 === equivocal (hedged) phrasing in the CONCLUSION of positive index reports ===
   UGI  positive n=237: hedged 152 (64.1%)  unhedged  85 (35.9%)
-  CT   positive n=171: hedged 133 (77.8%)  unhedged  38 (22.2%)
-  US   positive n= 65: hedged  49 (75.4%)  unhedged  16 (24.6%)
+  CT   positive n=169: hedged 132 (78.1%)  unhedged  37 (21.9%)
+  US   positive n= 64: hedged  49 (76.6%)  unhedged  15 (23.4%)
 
 === conclusion mentions malrotation keyword at all, by modality/label ===
   UGI  n=301 concl-keyword 233; det=237; keyword&det 233; keyword&~det 0
-  CT   n=320 concl-keyword 166; det=171; keyword&det 165; keyword&~det 1
-  US   n=119 concl-keyword  61; det=65; keyword&det 60; keyword&~det 1
+  CT   n=320 concl-keyword 166; det=169; keyword&det 165; keyword&~det 1
+  US   n=119 concl-keyword  61; det=64; keyword&det 60; keyword&~det 1
 ########## cert
 === certainty tier of POSITIVE index reports (conclusion wording) ===
 tier  definite  probable  possible
 mod                               
-CT          34        75        62
+CT          33        74        62
 UGI         78        76        83
-US          16        17        32
+US          15        17        32
 tier  definite  probable  possible
 mod                               
-CT        19.9      43.9      36.3
+CT        19.5      43.8      36.7
 UGI       32.9      32.1      35.0
-US        24.6      26.2      49.2
+US        23.4      26.6      50.0
 
-total positives 473
+total positives 470
   UGI: all-positive 237/301=78.7%   excluding "possible" wording 154/301=51.2%
-  CT: all-positive 171/320=53.4%   excluding "possible" wording 109/320=34.1%
-  US: all-positive 65/119=54.6%   excluding "possible" wording 33/119=27.7%
+  CT: all-positive 169/320=52.8%   excluding "possible" wording 107/320=33.4%
+  US: all-positive 64/119=53.8%   excluding "possible" wording 32/119=26.9%
 ########## paired
 paired n=59 ; span median 0.92 d, IQR 0.62-1.62 ; within2d 47 (80%), >2d 12
 
 --- ALL paired (n=59) ---
    UGI        45/ 59 =  76.3% (64.0-85.3)
    US         31/ 59 =  52.5% (40.0-64.7)
-   CT         28/ 59 =  47.5% (35.3-60.0)
+   CT         27/ 59 =  45.8% (33.7-58.3)
    US-whirl   30/ 59 =  50.8% (38.4-63.2)
-   Cochran Q = 13.351, p = 0.0013
-   UGI vs CT_: discordant 23/6, exact McNemar p=0.0023
+   Cochran Q = 14.486, p = 0.0007
+   UGI vs CT_: discordant 24/6, exact McNemar p=0.0014
    UGI vs US_: discordant 20/6, exact McNemar p=0.0094
-   CT_ vs US_: discordant 8/11, exact McNemar p=0.6476
+   CT_ vs US_: discordant 7/11, exact McNemar p=0.4807
 
 --- paired, all three within 2 days (n=47) ---
    UGI        39/ 47 =  83.0% (69.9-91.1)
@@ -179,10 +179,10 @@ paired volvulus cohort n=57
 === examinations and detection by era ===
   UGI  2012-2018: n=205 detected 158 (77.1%)
   UGI  2019-2026: n= 96 detected  79 (82.3%)
-  CT   2012-2018: n=215 detected 101 (47.0%)
-  CT   2019-2026: n=105 detected  70 (66.7%)
+  CT   2012-2018: n=215 detected 100 (46.5%)
+  CT   2019-2026: n=105 detected  69 (65.7%)
   US   2012-2018: n= 39 detected  16 (41.0%)
-  US   2019-2026: n= 80 detected  49 (61.3%)
+  US   2019-2026: n= 80 detected  48 (60.0%)
 
 === cohort size and modality utilisation by era ===
   2012-2018: patients 299 | UGI 205 (69%) | CT 215 (72%) | US 39 (13%)
@@ -199,7 +199,7 @@ paired volvulus cohort n=57
 
   US detection by era within vessel-US label:
     vessel_us=True: early 72.7% (n=11), late 70.0% (n=50)
-    vessel_us=False: early 28.6% (n=28), late 46.7% (n=30)
+    vessel_us=False: early 28.6% (n=28), late 43.3% (n=30)
 
   US whirlpool documented (matrix) by era: early 41.0% late 53.8%
 
@@ -215,35 +215,35 @@ op_year
 2013     35.0  40.0   NaN  0.43  0.90   NaN
 2014     38.0  38.0   NaN  0.42  0.76   NaN
 2015     41.0  36.0   NaN  0.63  0.78   NaN
-2016     43.0  38.0   9.0  0.40  0.71  0.44
+2016     43.0  38.0   9.0  0.37  0.71  0.44
 2017     29.0  27.0  18.0  0.45  0.85  0.22
 2018     27.0  23.0  12.0  0.52  0.65  0.67
 2019     10.0  15.0   5.0  0.80  0.87  0.20
 2020     11.0  17.0  18.0  0.73  0.76  0.67
 2021     18.0  10.0  14.0  0.89  0.80  0.79
-2022     19.0  16.0  17.0  0.47  0.88  0.71
+2022     19.0  16.0  17.0  0.47  0.88  0.65
 2023     13.0  12.0   7.0  0.77  0.83  0.86
-2024     18.0   9.0  10.0  0.50  0.67  0.40
+2024     18.0   9.0  10.0  0.44  0.67  0.40
 2025     10.0  10.0   5.0  0.70  0.90  0.20
 2026      6.0   7.0   4.0  0.50  0.86  0.50
 ########## mediate
 US detection ~ era
-   era_late[T.True]           OR 2.27 (1.04-4.96) p=0.03934
+   era_late[T.True]           OR 2.16 (0.99-4.70) p=0.05328
 US detection ~ era + vessel-US protocol label
-   era_late[T.True]           OR 1.56 (0.67-3.62) p=0.3031
-   vessel_us[T.True]          OR 3.46 (1.56-7.67) p=0.00226
+   era_late[T.True]           OR 1.43 (0.61-3.35) p=0.4086
+   vessel_us[T.True]          OR 3.81 (1.71-8.48) p=0.001061
 US detection ~ vessel-US label alone
-   vessel_us[T.True]          OR 3.91 (1.82-8.39) p=0.0004718
+   vessel_us[T.True]          OR 4.21 (1.95-9.07) p=0.0002436
 US detection ~ era + vessel + neonate
-   era_late[T.True]           OR 1.56 (0.67-3.65) p=0.3016
-   vessel_us[T.True]          OR 3.43 (1.51-7.80) p=0.003278
-   neonate[T.True]            OR 1.04 (0.42-2.58) p=0.9349
+   era_late[T.True]           OR 1.42 (0.61-3.35) p=0.4177
+   vessel_us[T.True]          OR 3.85 (1.68-8.81) p=0.001419
+   neonate[T.True]            OR 0.95 (0.38-2.38) p=0.9181
 
 CT detection ~ era
-   era_late[T.True]           OR 2.26 (1.39-3.67) p=0.001029
+   era_late[T.True]           OR 2.20 (1.36-3.58) p=0.00137
 CT detection ~ era + contrast enhancement
-   era_late[T.True]           OR 1.98 (1.20-3.28) p=0.007927
-   enh                        OR 5.53 (2.49-12.27) p=2.685e-05
+   era_late[T.True]           OR 1.95 (1.19-3.22) p=0.008568
+   enh                        OR 4.21 (2.01-8.81) p=0.0001367
 
 UGI detection ~ era
    era_late[T.True]           OR 1.38 (0.75-2.56) p=0.3037
@@ -259,8 +259,8 @@ last  modality: {'UGI': 184, 'CT': 48, 'US': 39}
 
 === detection when the modality was the LAST preoperative test vs earlier ===
   UGI  last in 184/245 (75%): detection 80.4% when last vs 70.5% when earlier
-  CT   last in 48/250 (19%): detection 47.9% when last vs 54.0% when earlier
-  US   last in 39/106 (37%): detection 53.8% when last vs 58.2% when earlier
+  CT   last in 48/250 (19%): detection 45.8% when last vs 53.5% when earlier
+  US   last in 39/106 (37%): detection 53.8% when last vs 56.7% when earlier
 
 ultrasound was the FIRST index test in 47/119 (39%) of children who had one
    2012-2018: 9/39 (23%)
@@ -275,15 +275,15 @@ ultrasound was the FIRST index test in 47/119 (39%) of children who had one
      volvulus- 25/33 = 75.8% (59.0-87.2)
   CT:
      age <=28d   103/222 = 46.4% (40.0-53.0)
-     age 29d-1y  22/44 = 50.0% (35.8-64.2)
-     age >1y     46/54 = 85.2% (73.4-92.3)
-     volvulus+ 149/281 = 53.0% (47.2-58.8)
-     volvulus- 22/39 = 56.4% (41.0-70.7)
+     age 29d-1y  21/44 = 47.7% (33.8-62.1)
+     age >1y     45/54 = 83.3% (71.3-91.0)
+     volvulus+ 148/281 = 52.7% (46.8-58.4)
+     volvulus- 21/39 = 53.8% (38.6-68.4)
   US:
-     age <=28d   51/90 = 56.7% (46.4-66.4)
+     age <=28d   50/90 = 55.6% (45.3-65.4)
      age 29d-1y  7/14 = 50.0% (26.8-73.2)
      age >1y     7/15 = 46.7% (24.8-69.9)
-     volvulus+ 65/113 = 57.5% (48.3-66.2)
+     volvulus+ 64/113 = 56.6% (47.4-65.4)
      volvulus- 0/6 = 0.0% (0.0-39.0)
 
 === children >1 year (the "older child" group) ===
@@ -292,7 +292,7 @@ ultrasound was the FIRST index test in 47/119 (39%) of children who had one
   n=62 (13.3%); median age 75 d; neonates 24 (39%)
 
 === US sensitivity: excluding pyloric-only examinations ===
-  all US 65/119 = 54.6% (45.7-63.3)
+  all US 64/119 = 53.8% (44.8-62.5)
   excl. pyloric-only 64/114 = 56.1% (47.0-64.9)
   gastrointestinal-US label only 32/68 = 47.1% (35.7-58.8)
   vessel-US label 43/61 = 70.5% (58.1-80.4)
@@ -300,22 +300,22 @@ ultrasound was the FIRST index test in 47/119 (39%) of children who had one
 === whirlpool documented vs detection (US) ===
   whirlpool documented 59/119 = 49.6% (40.8-58.4)
   detection | whirlpool documented: 59/59 = 100.0% (93.9-100.0)
-  detection | whirlpool NOT documented: 6/60 = 10.0% (4.7-20.1)
+  detection | whirlpool NOT documented: 5/60 = 8.3% (3.6-18.1)
 
 === overall single-modality rates (verification) ===
   UGI: 237/301 = 78.7% (73.8-83.0)
-  CT: 171/320 = 53.4% (48.0-58.8)
-  US: 65/119 = 54.6% (45.7-63.3)
-  CT enhanced: 44/52 = 84.6% (72.5-92.0) ; unenhanced: 127/268 = 47.4% (41.5-53.4)
-  Fisher OR 6.11 p=5.58e-07
+  CT: 169/320 = 52.8% (47.3-58.2)
+  US: 64/119 = 53.8% (44.8-62.5)
+  CT enhanced: 42/52 = 80.8% (68.1-89.2) ; unenhanced: 127/268 = 47.4% (41.5-53.4)
+  Fisher OR 4.66 p=7.52e-06
 === unadjusted ===
-  C(modality)[T.CT]                             OR 0.31 (0.22-0.44)  p=8.09e-12
-  C(modality)[T.US]                             OR 0.33 (0.21-0.50)  p=2.58e-07
+  C(modality)[T.CT]                             OR 0.30 (0.22-0.42)  p=3.08e-12
+  C(modality)[T.US]                             OR 0.32 (0.21-0.48)  p=1.19e-07
 === adjusted (era, neonate) ===
-  C(modality)[T.CT]                             OR 0.30 (0.21-0.42)  p=4.56e-12
-  C(modality)[T.US]                             OR 0.27 (0.17-0.43)  p=2.27e-08
-  era_late[T.True]                              OR 1.90 (1.28-2.83)  p=0.00146
-  neonate[T.True]                               OR 0.55 (0.37-0.81)  p=0.00281
+  C(modality)[T.CT]                             OR 0.29 (0.21-0.41)  p=1.66e-12
+  C(modality)[T.US]                             OR 0.26 (0.17-0.41)  p=1e-08
+  era_late[T.True]                              OR 1.87 (1.26-2.76)  p=0.0019
+  neonate[T.True]                               OR 0.57 (0.39-0.84)  p=0.00475
 === interaction ===
   C(modality)[T.CT]                             OR nan (nan-nan)  p=nan
   C(modality)[T.US]                             OR nan (nan-nan)  p=nan
@@ -326,30 +326,30 @@ ultrasound was the FIRST index test in 47/119 (39%) of children who had one
   C(modality)[T.US]:volvulus[T.True]            OR nan (nan-nan)  p=nan
 interaction terms: ['C(modality)[T.CT]:volvulus[T.True]', 'C(modality)[T.US]:volvulus[T.True]']
 Traceback (most recent call last):
-  File "/tmp/claude-0/-home-user--Diagnostic-performance-of-intestinal-malrotation/4998e6b2-e14c-57b0-80b5-41a1fb987d43/scratchpad/an/gee.py", line 21, in <module>
+  File "/home/user/-Diagnostic-performance-of-intestinal-malrotation/analysis/gee.py", line 21, in <module>
     w=m3.wald_test(R,scalar=True)
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/usr/local/lib/python3.11/dist-packages/statsmodels/base/model.py", line 2101, in wald_test
     raise ValueError(
 ValueError: r_matrix performs f_test for using dimensions that are asymptotically non-normal
 === UGI vs CT interaction with volvulus (no separation) ===
-  C(modality)[T.CT]                          OR 0.32 (0.13-0.81)  p=0.01583
-  volvulus[T.True]                           OR 1.66 (0.71-3.89)  p=0.2459
-  era_late[T.True]                           OR 1.79 (1.17-2.72)  p=0.006761
-  neonate[T.True]                            OR 0.41 (0.26-0.64)  p=7.268e-05
-  C(modality)[T.CT]:volvulus[T.True]         OR 0.90 (0.33-2.43)  p=0.8385
+  C(modality)[T.CT]                          OR 0.29 (0.11-0.74)  p=0.009492
+  volvulus[T.True]                           OR 1.63 (0.69-3.82)  p=0.265
+  era_late[T.True]                           OR 1.78 (1.17-2.70)  p=0.007068
+  neonate[T.True]                            OR 0.43 (0.28-0.67)  p=0.0001469
+  C(modality)[T.CT]:volvulus[T.True]         OR 0.99 (0.36-2.70)  p=0.9808
   n obs 621
 
 === adjusted incl. age group instead of neonate ===
-  C(modality)[T.CT]                          OR 0.29 (0.21-0.42)  p=3.786e-12
-  C(modality)[T.US]                          OR 0.27 (0.17-0.43)  p=3.041e-08
-  era_late[T.True]                           OR 1.79 (1.20-2.68)  p=0.004421
-  C(agegrp, Treatment(reference="neonate"))[T.1-12mo] OR 1.09 (0.69-1.73)  p=0.699
-  C(agegrp, Treatment(reference="neonate"))[T.>1y] OR 3.14 (1.71-5.75)  p=0.0002195
+  C(modality)[T.CT]                          OR 0.29 (0.20-0.40)  p=1.381e-12
+  C(modality)[T.US]                          OR 0.26 (0.17-0.42)  p=1.378e-08
+  era_late[T.True]                           OR 1.75 (1.18-2.62)  p=0.005797
+  C(agegrp, Treatment(reference="neonate"))[T.1-12mo] OR 1.05 (0.67-1.65)  p=0.8222
+  C(agegrp, Treatment(reference="neonate"))[T.>1y] OR 3.02 (1.64-5.54)  p=0.0003696
 
 === adjusted + volvulus main effect ===
-  C(modality)[T.CT]                          OR 0.30 (0.21-0.42)  p=4.447e-12
-  C(modality)[T.US]                          OR 0.26 (0.16-0.41)  p=1.038e-08
-  era_late[T.True]                           OR 1.96 (1.32-2.91)  p=0.0008601
-  neonate[T.True]                            OR 0.50 (0.34-0.75)  p=0.0008467
-  volvulus[T.True]                           OR 1.78 (1.00-3.16)  p=0.04881
+  C(modality)[T.CT]                          OR 0.29 (0.20-0.41)  p=1.672e-12
+  C(modality)[T.US]                          OR 0.25 (0.16-0.40)  p=4.47e-09
+  era_late[T.True]                           OR 1.93 (1.30-2.85)  p=0.001074
+  neonate[T.True]                            OR 0.52 (0.35-0.77)  p=0.001289
+  volvulus[T.True]                           OR 1.83 (1.02-3.26)  p=0.04162

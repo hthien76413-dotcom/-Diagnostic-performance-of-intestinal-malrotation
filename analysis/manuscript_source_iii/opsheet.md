@@ -13,7 +13,7 @@
 #N 含作者、单位、ORCID、通讯方式、伦理批件号与全部 Declarations。**这是唯一含作者身份信息的文件**，务必与正文分开上传。
 
 #N **3. Manuscript（盲审正文）** —— `诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx`
-#N 3,000 词，含 4 表 3 图（图已内嵌便于评审阅读）。文中无任何作者身份信息。
+#N 2,999 词，含 4 表 3 图（图已内嵌便于评审阅读）。文中无任何作者身份信息。
 
 #N **4. Figures（单独上传，300 dpi PNG）**
 #N • `Fig1_study_flow.png` → Figure 1（流程图）
@@ -93,13 +93,13 @@
 #N 以下各项均已核对完毕，上传时确认一遍即可：
 
 #N 1. 盲审正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者、备注）已清空，无需再在 Word 里手动检查。
-#N 2. 正文 3,000 词，摘要 248 词，Critical relevance statement 28 词。
+#N 2. 正文 2,999 词，摘要 248 词，Critical relevance statement 28 词。
 #N 3. 摘要为 Objectives / Methods / Results / Conclusion 四段式。
 #N 4. Key Points 三条，每条 9–14 词，未复用摘要或正文原句；与正文 Key Points 节逐字一致。
 #N 5. 图题 ≤15 词、图注 ≤300 词，且都在正文里而非图片文件内。
 #N 6. 图片文件名与图号一致，按名字对号入座即可。
 #N 7. Title Page 与系统表单里的 Declarations 完全一致。
-#N 8. 投稿信日期已设为 2026 年 9 月 3 日。
+#N 8. 投稿信日期已设为 2026 年 9 月 5 日。
 
 #H1 七、投稿后的预期
 

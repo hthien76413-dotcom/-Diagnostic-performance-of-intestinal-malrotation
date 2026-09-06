@@ -21,26 +21,26 @@
   [
    "Abdominal CT",
    "320",
-   "171 (53.4%)",
-   "149 (46.6%)",
-   "34",
-   "75",
+   "169 (52.8%)",
+   "151 (47.2%)",
+   "33",
+   "74",
    "62"
   ],
   [
    "Gastrointestinal ultrasound",
    "119",
-   "65 (54.6%)",
-   "54 (45.4%)",
-   "16",
+   "64 (53.8%)",
+   "55 (46.2%)",
+   "15",
    "17",
    "32"
   ],
   [
    "All three",
    "740",
-   "473",
-   "267",
+   "470",
+   "270",
    "128",
    "168",
    "177"
@@ -86,14 +86,14 @@
   [
    "Abdominal CT",
    "Midgut volvulus present",
-   "149/281",
-   "53.0 (47.2–58.8)"
+   "148/281",
+   "52.7 (46.8–58.4)"
   ],
   [
    "Abdominal CT",
    "Midgut volvulus absent",
-   "22/39",
-   "56.4 (41.0–70.7)"
+   "21/39",
+   "53.8 (38.6–68.4)"
   ],
   [
    "Abdominal CT",
@@ -104,20 +104,20 @@
   [
    "Abdominal CT",
    "Age 29 days–1 year",
-   "22/44",
-   "50.0 (35.8–64.2)"
+   "21/44",
+   "47.7 (33.8–62.1)"
   ],
   [
    "Abdominal CT",
    "Age >1 year",
-   "46/54",
-   "85.2 (73.4–92.3)"
+   "45/54",
+   "83.3 (71.3–91.0)"
   ],
   [
    "Gastrointestinal ultrasound",
    "Midgut volvulus present",
-   "65/113",
-   "57.5 (48.3–66.2)"
+   "64/113",
+   "56.6 (47.4–65.4)"
   ],
   [
    "Gastrointestinal ultrasound",
@@ -128,8 +128,8 @@
   [
    "Gastrointestinal ultrasound",
    "Age ≤28 days",
-   "51/90",
-   "56.7 (46.4–66.4)"
+   "50/90",
+   "55.6 (45.3–65.4)"
   ],
   [
    "Gastrointestinal ultrasound",
@@ -178,7 +178,7 @@
    "Abdominal CT (n=320)",
    "Contrast enhancement",
    "52 (16.2)",
-   "84.6",
+   "80.8",
    "47.4"
   ],
   [
@@ -186,28 +186,28 @@
    "Mesenteric whirl",
    "116 (36.2)",
    "98.3",
-   "27.9"
+   "27.0"
   ],
   [
    "Abdominal CT (n=320)",
    "Duodenum mentioned",
    "72 (22.5)",
    "59.7",
-   "51.6"
+   "50.8"
   ],
   [
    "Abdominal CT (n=320)",
    "Mesenteric-vessel relationship",
    "41 (12.8)",
-   "85.4",
+   "80.5",
    "48.7"
   ],
   [
    "Abdominal CT (n=320)",
    "Three-dimensional reconstruction",
    "124 (38.8)",
-   "63.7",
-   "46.9"
+   "62.9",
+   "46.4"
   ],
   [
    "UGI contrast series (n=301)",

@@ -9,7 +9,9 @@ def fit(d,extra=None):
     return m,100*(m.predict(b).mean()-m.predict(a).mean())
 def f(m,t):
     ci=m.conf_int().loc[t]
-    return f'{np.exp(m.params[t]):.2f} ({np.exp(ci[0]):.2f}–{np.exp(ci[1]):.2f}), p={m.pvalues[t]:.3f}'
+    pv = m.pvalues[t]
+    ps = 'p<0.001' if pv < 0.001 else f'p={pv:.3f}'
+    return f'{np.exp(m.params[t]):.2f} ({np.exp(ci[0]):.2f}–{np.exp(ci[1]):.2f}), {ps}'
 S4=[['Era boundary','Examinations before / after','Detection before / after','Era odds ratio',
      'Era odds ratio adjusted for examination type','Examination-type odds ratio',
      'Average marginal effect of later era (crude → adjusted)']]

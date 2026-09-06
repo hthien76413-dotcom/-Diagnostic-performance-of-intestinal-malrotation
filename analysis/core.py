@@ -5,6 +5,15 @@ x = pd.ExcelFile(BASE+'全部肠旋转不良数据.xlsx')
 coh = pd.read_excel(BASE+'诊断效能_手术确诊队列_465例.xlsx', sheet_name='患者队列_465例')
 ops = pd.read_excel(BASE+'诊断效能_手术确诊队列_465例.xlsx', sheet_name='手术记录明细_503条')
 mat = pd.read_excel(BASE+'诊断效能_逐患者矩阵_当前版v3.xlsx')
+# Corrections agreed after the two-directional label audit (labelaudit.py).
+# The raw export is left untouched; every correction is listed, with its reason,
+# in label_corrections.csv, and each was checked against the source reports.
+_fix = pd.read_csv('label_corrections.csv')
+for _r in _fix.itertuples():
+    _m = mat['科研患者编号'] == _r.科研患者编号
+    assert _m.sum() == 1 and mat.loc[_m, _r.column].iloc[0] == _r.old, \
+        f'label_corrections.csv no longer matches the matrix at {_r.科研患者编号}'
+    mat.loc[_m, _r.column] = _r.new
 coh['op_dt']=pd.to_datetime(coh['首次手术日期及时间']); ids=set(coh['科研患者编号'])
 ops['op_dt']=pd.to_datetime(ops['手术日期及时间'])
 ops['dx']=ops['术中诊断'].fillna('').astype(str); ops['pr']=ops['手术经过'].fillna('').astype(str)

@@ -53,15 +53,16 @@ def lg(f,d,k):
     return f'{np.exp(m.params[k]):.2f} ({np.exp(ci.loc[k,0]):.2f}–{np.exp(ci.loc[k,1]):.2f})', ('<0.001' if m.pvalues[k]<0.001 else f'{m.pvalues[k]:.3f}')
 c=ixf[ixf['mod']=='CT'].copy(); c['enh']=c['报告名称'].astype(str).str.contains('增强').astype(int)
 g=ixf[ixf['mod']=='UGI'].copy(); u['det']=u['US_detected']
+def pf(p): return 'p<0.001' if p=='<0.001' else f'p={p}'
 T6=[['Modality','Detection 2012–2018','Detection 2019–2026','Era OR (95% CI)','Era OR after adjustment for examination content','Content variable OR (95% CI)']]
 def dr(d):
     e=d[~d['era_late'].astype(bool)]; l=d[d['era_late'].astype(bool)]
     return f"{int(e['det'].sum())}/{len(e)} ({e['det'].mean()*100:.1f}%)", f"{int(l['det'].sum())}/{len(l)} ({l['det'].mean()*100:.1f}%)"
 a,b=dr(g); e1,p1=lg('det ~ era_late',g,'era_late[T.True]')
-T6.append(['UGI contrast series',a,b,f'{e1} (p={p1})','Not applicable (technique unchanged)','–'])
+T6.append(['UGI contrast series',a,b,f'{e1} ({pf(p1)})','Not applicable (technique unchanged)','–'])
 a,b=dr(c); e1,p1=lg('det ~ era_late',c,'era_late[T.True]'); e2,p2=lg('det ~ era_late + enh',c,'era_late[T.True]'); e3,p3=lg('det ~ era_late + enh',c,'enh')
-T6.append(['Abdominal CT',a,b,f'{e1} (p={p1})',f'{e2} (p={p2})',f'Contrast enhancement {e3} (p={p3})'])
+T6.append(['Abdominal CT',a,b,f'{e1} ({pf(p1)})',f'{e2} ({pf(p2)})',f'Contrast enhancement {e3} ({pf(p3)})'])
 a,b=dr(u); e1,p1=lg('det ~ era_late',u,'era_late[T.True]'); e2,p2=lg('det ~ era_late + vessel_us',u,'era_late[T.True]'); e3,p3=lg('det ~ era_late + vessel_us',u,'vessel_us[T.True]')
-T6.append(['Gastrointestinal ultrasound',a,b,f'{e1} (p={p1})',f'{e2} (p={p2})',f'Vessel-focused examination {e3} (p={p3})'])
+T6.append(['Gastrointestinal ultrasound',a,b,f'{e1} ({pf(p1)})',f'{e2} ({pf(p2)})',f'Vessel-focused examination {e3} ({pf(p3)})'])
 json.dump({'T4':T4,'T5':T5,'T6':T6},open('tables456.json','w'),ensure_ascii=False,indent=1)
 for T in (T4,T5,T6): print('\n'.join(' | '.join(map(str,r)) for r in T)); print('---')
