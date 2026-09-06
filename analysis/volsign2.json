@@ -1,0 +1,24 @@
+{
+ "S2b": [
+  [
+   "Index test",
+   "Volvulus-specific sign / children with confirmed midgut volvulus",
+   "Rate % (95% CI)"
+  ],
+  [
+   "Upper gastrointestinal series",
+   "129/268",
+   "48.1 (42.2–54.1)"
+  ],
+  [
+   "Gastrointestinal ultrasound",
+   "58/113",
+   "51.3 (42.2–60.3)"
+  ],
+  [
+   "Abdominal CT",
+   "104/281",
+   "37.0 (31.6–42.8)"
+  ]
+ ]
+}

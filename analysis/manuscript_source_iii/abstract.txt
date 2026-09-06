@@ -1,0 +1,19 @@
+Abstract
+
+Objectives Ultrasound is increasingly advocated as first-line for suspected intestinal malrotation, on the basis of sensitivities of 93–97% obtained under dedicated protocols. We audited what routine reports document and whether the diagnosis was reported.
+
+Methods Retrospective case-only report audit at one tertiary children's hospital (December 2012–June 2026). Preoperative examination episodes closest to operation were classified for detection by a rule-based algorithm with blinded surgical adjudication, and separately audited for documented technical content. The cohort being surgically confirmed, the outcome is report-level detection among children who underwent the test; specificity, predictive values and comparative accuracy are not estimable.
+
+Results Among 465 children (volvulus in 86.7%), 410 underwent at least one index test. Three of 119 ultrasound examinations (2.5%) documented the third portion of the duodenum or the duodenojejunal junction, 12 (10.1%) the mesenteric artery–vein relationship and 2 (1.7%) enteric fluid; a whirlpool sign was reported in 48.7%. Ultrasound reported malrotation in 64 of 119 examinations (53.8%): in 58 of 58 recording a whirlpool and 6 of 61 without one, whereas a whirlpool appeared in only 58 of 113 children with confirmed volvulus. Ultrasound detection rose from 41.0% to 60.0% between eras; adjusting for a shift towards great-vessel sessions reduced the difference from +19.0 to +8.2 percentage points, an interval including zero.
+
+Conclusions Routine ultrasound functioned as a whirlpool-dependent test for volvulus rather than a protocolised assessment of duodenal position. Whether supplying the missing elements would close the gap to published performance cannot be tested here, but it coincides with a measurable documentation deficit.
+
+Critical relevance statement Departments adopting ultrasound-first pathways for malrotation should audit whether their own reports document the duodenal landmarks that produced the published sensitivities; in this department they almost never did.
+
+Keywords: Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report; Quality improvement
+
+Key Points
+
+• Duodenal landmarks appeared in three of 119 routine ultrasound examinations.
+• Only half the children with confirmed volvulus had a whirlpool sign recorded.
+• Detection rose as much with examination type as with calendar era.

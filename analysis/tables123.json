@@ -1,0 +1,295 @@
+{
+ "T1": [
+  [
+   "Characteristic",
+   "All children",
+   "Received UGI series",
+   "Received CT",
+   "Received ultrasound",
+   "Received none of the three"
+  ],
+  [
+   "Children, n",
+   "465",
+   "301",
+   "320",
+   "119",
+   "55"
+  ],
+  [
+   "Age at operation, median (IQR), days",
+   "13 (7–85)",
+   "12 (8–35)",
+   "11 (6–47)",
+   "10 (5–27)",
+   "63 (4–932)"
+  ],
+  [
+   "Neonate ≤28 days, n (%)",
+   "302 (64.9)",
+   "216 (71.8)",
+   "222 (69.4)",
+   "90 (75.6)",
+   "23 (41.8)"
+  ],
+  [
+   "Age >1 year, n (%)",
+   "93 (20.0)",
+   "45 (15.0)",
+   "54 (16.9)",
+   "15 (12.6)",
+   "16 (29.1)"
+  ],
+  [
+   "Male, n (%)",
+   "352 (75.7)",
+   "226 (75.1)",
+   "250 (78.1)",
+   "94 (79.0)",
+   "39 (70.9)"
+  ],
+  [
+   "Operated 2019–2026, n (%)",
+   "166 (35.7)",
+   "96 (31.9)",
+   "105 (32.8)",
+   "80 (67.2)",
+   "19 (34.5)"
+  ],
+  [
+   "Midgut volvulus at operation, n (%)",
+   "403 (86.7)",
+   "268 (89.0)",
+   "281 (87.8)",
+   "113 (95.0)",
+   "42 (76.4)"
+  ],
+  [
+   "Vomiting documented, n (%)",
+   "441 (94.8)",
+   "288 (95.7)",
+   "308 (96.2)",
+   "113 (95.0)",
+   "50 (90.9)"
+  ],
+  [
+   "Bilious vomiting documented, n (%)",
+   "219 (47.1)",
+   "166 (55.1)",
+   "165 (51.6)",
+   "58 (48.7)",
+   "12 (21.8)"
+  ],
+  [
+   "Abdominal distension, n (%)",
+   "183 (39.4)",
+   "119 (39.5)",
+   "137 (42.8)",
+   "57 (47.9)",
+   "24 (43.6)"
+  ],
+  [
+   "Blood in stool, n (%)",
+   "113 (24.3)",
+   "64 (21.3)",
+   "88 (27.5)",
+   "32 (26.9)",
+   "11 (20.0)"
+  ],
+  [
+   "Abdominal pain, n (%)",
+   "72 (15.5)",
+   "33 (11.0)",
+   "46 (14.4)",
+   "10 (8.4)",
+   "13 (23.6)"
+  ],
+  [
+   "Recurrent/intermittent symptoms, n (%)",
+   "221 (47.5)",
+   "152 (50.5)",
+   "148 (46.2)",
+   "53 (44.5)",
+   "21 (38.2)"
+  ],
+  [
+   "Shock or poor perfusion, n (%)",
+   "11 (2.4)",
+   "3 (1.0)",
+   "6 (1.9)",
+   "3 (2.5)",
+   "4 (7.3)"
+  ]
+ ],
+ "T2": [
+  [
+   "Index test",
+   "Positive/total",
+   "Detection rate, % (95% CI)",
+   "Definite wording, n (%)",
+   "Probable wording, n (%)",
+   "Possible wording, n (%)",
+   "Detection excluding possible wording, %"
+  ],
+  [
+   "UGI contrast series",
+   "237/301",
+   "78.7 (73.8–83.0)",
+   "78 (32.9)",
+   "76 (32.1)",
+   "83 (35.0)",
+   "51.2"
+  ],
+  [
+   "Abdominal CT (all)",
+   "169/320",
+   "52.8 (47.3–58.2)",
+   "33 (19.5)",
+   "74 (43.8)",
+   "62 (36.7)",
+   "33.4"
+  ],
+  [
+   "Gastrointestinal ultrasound",
+   "64/119",
+   "53.8 (44.8–62.5)",
+   "15 (23.4)",
+   "17 (26.6)",
+   "32 (50.0)",
+   "26.9"
+  ],
+  [
+   "  CT, contrast-enhanced",
+   "42/52",
+   "80.8 (68.1–89.2)",
+   "–",
+   "–",
+   "–",
+   "–"
+  ],
+  [
+   "  CT, unenhanced",
+   "127/268",
+   "47.4 (41.5–53.4)",
+   "–",
+   "–",
+   "–",
+   "–"
+  ],
+  [
+   "  Ultrasound, whirlpool sign recorded",
+   "59/119",
+   "49.6 (40.8–58.4)",
+   "–",
+   "–",
+   "–",
+   "–"
+  ]
+ ],
+ "T3": [
+  [
+   "Documented content of the ultrasound report",
+   "n (%) of 119 reports",
+   "2012–2018 (n=39), %",
+   "2019–2026 (n=80), %",
+   "Detection when documented, %",
+   "Detection when not documented, %"
+  ],
+  [
+   "Third portion of duodenum or duodenojejunal junction",
+   "0 (0.0)",
+   "0.0",
+   "0.0",
+   "–",
+   "53.8"
+  ],
+  [
+   "Duodenum mentioned in any form",
+   "6 (5.0)",
+   "7.7",
+   "3.8",
+   "33.3",
+   "54.9"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "10 (8.4)",
+   "5.1",
+   "10.0",
+   "90.0",
+   "50.5"
+  ],
+  [
+   "Explicit statement of vessel inversion",
+   "1 (0.8)",
+   "0.0",
+   "1.2",
+   "100.0",
+   "53.4"
+  ],
+  [
+   "Enteric fluid administered",
+   "1 (0.8)",
+   "0.0",
+   "1.2",
+   "0.0",
+   "54.2"
+  ],
+  [
+   "Caecal position",
+   "4 (3.4)",
+   "2.6",
+   "3.8",
+   "75.0",
+   "53.0"
+  ],
+  [
+   "Whirlpool, swirl or spiral appearance",
+   "57 (47.9)",
+   "41.0",
+   "51.2",
+   "98.2",
+   "12.9"
+  ],
+  [
+   "Bowel gas explicitly limiting the study",
+   "26 (21.8)",
+   "20.5",
+   "22.5",
+   "42.3",
+   "57.0"
+  ],
+  [
+   "Recorded as abdominal great-vessel study",
+   "61 (51.3)",
+   "28.2",
+   "62.5",
+   "70.5",
+   "36.2"
+  ],
+  [
+   "Recorded as gastrointestinal ultrasound",
+   "68 (57.1)",
+   "74.4",
+   "48.8",
+   "47.1",
+   "62.7"
+  ],
+  [
+   "Performed at the bedside",
+   "9 (7.6)",
+   "0.0",
+   "11.2",
+   "11.1",
+   "57.3"
+  ],
+  [
+   "Whirlpool sign (adjudicated variable)",
+   "59 (49.6)",
+   "41.0",
+   "53.8",
+   "100.0",
+   "8.3"
+  ]
+ ]
+}

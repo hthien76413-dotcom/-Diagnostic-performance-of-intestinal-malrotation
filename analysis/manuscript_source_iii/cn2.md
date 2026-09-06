@@ -1,0 +1,675 @@
+#T Insights into Imaging 投稿版说明（中文）
+
+#H1 一、按 IiI 要求做的格式改造
+
+#N 1. **摘要改为 Objectives – Methods – Results – Conclusions** 四段式（IiI 对 Original Article 的强制要求），共 275 词。
+#N 2. **新增 Key Points 三条**（IiI 要求，且规定不得照抄摘要或正文原句，已逐句另写）。
+#N 3. **新增 Critical relevance statement** 一句（ESR 系期刊近年对 Original Article 的常见要求；若你拿到的 PDF 中未要求，删掉即可）。
+#N 4. 章节名 "Materials and methods" 改为 **Methods**；正文顺序改为 Introduction – Methods – Results – Discussion（含 Limitations）– Conclusion。
+#N 5. **Declarations 改为 SpringerOpen/IiI 体例**：Acknowledgements、Funding、Competing interests、Ethics approval and consent to participate、Consent for publication、Availability of data and materials、Authors' contributions，并新增 **Abbreviations** 段。
+#N 6. 参考文献格式无需改动 —— 原本就是 Springer 编号体例，与 IiI 一致。
+
+#H1 二、为压字数做的结构调整
+
+#N 正文从 5,714 词压到 **3,259 词**（不含摘要、Key Points、图表注、参考文献、Declarations）。做法不是删证据，而是把三块内容整体移入附录：
+
+#N • **GEE 模型表**（原表 4）→ Online Resource 2，正文只保留两个关键 OR 与一句话定性
+#N • **配对亚组表 + 配对图**（原表 5、原图 2）→ Online Resource 2，正文压缩为一段
+#N • **扭转/年龄分层、扭转特异征象**（原 OR2）→ 并入 Online Resource 2
+
+#N 正文因此为 **4 表 3 图**：
+
+#N 表 1 队列特征（含按检查分组，展示适应证混杂）／表 2 报告级检出 + 措辞确定性／**表 3 超声报告内容审计（核心）**／表 4 年代变化及其内容学解释
+#N 图 1 流程图／图 2 各模态检出（分母醒目标注）／**图 3 超声内容审计与条件检出（核心）**
+
+#N 三个附录：OR1 算法与审计正则表；OR2 模型、配对亚组、分层分析；OR3 CT 与造影报告内容审计。
+
+#H1 三、字数已按官方上限定稿
+
+#N 已确认 **Original Article 正文上限 3,000 词**（不含参考文献与图表图例）。正文现为 **2,998 词**，卡在上限内。
+
+#N 从 3,259 词删到 2,998 词，删的全部是附录里已有的重复细节，没有删任何一条回应评审意见的实质内容。核对过的关键数据全部保留：仅 2/119（1.7%）记录 D3 或十二指肠空肠曲、SMA-SMV 8.4%、漩涡征 59/59 与 6/60、三模态检出 78.7%／53.4%／54.6%、年代 OR 2.27→1.56 与检查类型 OR 3.46、造影末位检查 75.1% 与 80.4% vs 70.5%、配对亚组 96.6% 扭转、算法一致性 92%／kappa 0.83、完全分离导致模型不收敛、STROBE 与不适用 STARD 的声明。
+
+#N 摘要保持 275 词未动 —— 官网当前只要求四段式结构、未单列字数上限，因此不做硬性截断。
+
+#N **一个需要留意的口径问题**：官方表述是"正文，不含参考文献和图表图例"，没有明说摘要是否计入。按中文"正文"的通常含义和该刊英文原文（word count excluding abstract, figure/table legends, references）判断，摘要不计入，所以 2,998 是安全的。但如果投稿系统的字数校验把摘要也算进去（2,998 + 275 = 3,273，会超），告诉我一声，我可以把"选择性亚组"整段和 Discussion 第四段整体移入附录，十分钟内再削约 250 词。
+
+#H1 三之二、其他已确认并已执行的格式要求
+
+#N • **Key Points 每条不超过约 12 词** —— 原三条为 15–16 词，已重写为各 10 词，且未复用摘要或正文的任何句子（该刊明文禁止照抄）。
+#N • **图题 ≤15 词、图注 ≤300 词，且必须放在正文而非图片文件内** —— 已改为"粗体短标题 + 图注"结构（标题 9–12 词、图注 49–55 词），分图用 a／b 标注；附录 Fig. S1 同步。
+#N • 图表数量：正文 4 表 3 图。同刊 Educational Review 的配额是 5 表 12 图，Original Article 不太可能比这更紧，故无需削减。
+
+#H1 三之三、"检查类型"变量的表述已收紧
+
+#N 原稿在正文和投稿信里把这个变量称作 "mesenteric-vessel-focused examination"（血管导向检查），这个说法暗含了操作意图与技术，超出了数据能支持的范围。数据里实际有的只是**开单/报告项目名称**："腹部大血管彩超（含腹膜后）" 与 "胃肠道彩超"。
+
+#N 全文已统一改为 **great-vessel-coded**（按大血管项目开单并报告），并在方法学里一次性定义清楚，表 4 脚注中明确写出"这是开单与报告的标签，不是操作技术的记录"。投稿信同步修改，并删掉了原来"documented shift"里那个站不住的 documented。
+
+#N 同时补入一条新发现（这条其实加强了全文论点）：这次开单方式的转变**提高的是漩涡征的记录率**（胃肠道项目 35.8% → 大血管项目 63.0%），**但没有提高十二指肠评估**（9.4% → 2.2%，反而更低）。也就是说，这十年的改善发生在"把中肠扭转查得更准"的方向上，而不是"把肠旋转不良这个解剖异常查出来"的方向上——十二指肠解剖评估从头到尾都是空白。Results 与 Discussion 各加了一句。
+
+#N 表 4 里一处 "(p=<0.001)" 的排版错误一并修正为 "(p<0.001)"。
+
+#N 正文经过增删后为 **2,995 词**，仍在 3,000 上限内。
+
+#H1 三之四、超声科的答复已写入稿件（原 ⟦AUTHORS⟧ 待确认项已关闭）
+
+#N 超声科的答复是：**2012–2026 年间没有更换设备、没有更换报告医师、也没有下发过检查规范修订**；2021 年以后的变化来自**对肠旋转不良这个病的认知加深、理念改变**。
+
+#N 这个答复的价值比"查到一份修订文件"更大，因为它**直接排除了两个最致命的竞争解释**——审稿人一定会问"是不是新机器多普勒更灵敏""是不是来了专职小儿超声医师"，现在这两条都可以正面否掉。
+
+#N 更重要的是，它和数据高度自洽：认知提升会同时带来①超声开单率上升（占手术患儿 13%→48%）、②按大血管项目开单的比例上升（28%→63%）、③漩涡征记录率上升（41%→54%）——但**不会**带来十二指肠评估的增加（任何提及：胃肠道项目 7.4% vs 大血管项目 1.6%）。因为传开的认知是"肠旋转不良要看漩涡征"，而不是那套 D3／十二指肠空肠曲的解剖学方案。这正是全文论点本身，现在由操作者的自述提供了佐证。
+
+#N 已写入正文两处：
+
+#N • **Methods**：删除 ⟦AUTHORS⟧ 占位符，改为"科室答复无设备、人员、规范变更，将 2021 年后的变化归因于对该病认知的加深"，并注明**这是回溯性陈述而非当时的记录**（这一句必须留着，否则等于把口述当成文献证据）。
+#N • **Discussion**：在时间趋势段加入科室自述，并点明"这份认知附着在漩涡征上而非十二指肠解剖，所以连改善本身也是朝查扭转的方向走的"；结论段的建议改为"仅靠认知就把检出率从 41% 推到 61%，但十二指肠仍无人评估——结构化报告的作用是把认知带来的零散进步固定下来"。
+
+#N 投稿信同步加入这段。正文 **2,997 词**，仍在 3,000 内。
+
+#N 一点提醒：2024–25 年大血管开单占比回落到 40–60%、检出率同步跌到 20–40%。如果认知驱动的说法成立，这可能反映人员流动或注意力衰减，是"认知不牢靠、需要结构化报告固定"的佐证。但这两年样本只有 5 例和 10 例，噪声太大，我**没有**写进论文。若你确认那期间确有人员变动且愿意承担被质疑样本量的风险，可以再议。
+
+#H1 三之五、四项收尾工作已完成
+
+#N **1. STROBE checklist（`STROBE_checklist.docx`）** —— 22 大项 34 条全部逐条填好，定位到章节而非页码（页码会随期刊模板变动）。开头加了一段说明：本研究按 STROBE 队列研究报告，**明确不套用 STARD**，因为队列里没有阴性对照，不符合诊断准确性研究的定义。这一句放在 checklist 里很重要——编辑扫一眼就知道你们不是漏填 STARD，而是有意识地不用。
+
+#N **2. Online Resource 1 的规则字典已变成可运行代码并通过验证**（`Online_Resource_1_classifier.py`）。我把附录 C–F 节的规则写成 Python，跑完全部 740 份索引报告，与最终采用的判读标签比对：
+
+#N • 总体一致 **723/740（97.7%）**；造影 98.0%、CT 98.1%、超声 95.8%
+#N • 17 处不一致中 **16 处是规则漏判、仅 1 处多判** —— 方向和论文声称的"判读偏保守"完全吻合，等于给这个说法提供了可复算的证据
+
+#N 过程中查出并修正了两个真问题：否定词表漏了"未探及"（导致把一份明确写"未探及肠旋转不良征象"的报告judged为阳性）；以及我原先把"空肠位置"当成了阳性判据，而论文写明的造影判据只有十二指肠空肠曲异位和弹簧征——已删除，与正文一致。附录新增 J 节报告这个验证结果，并注明两点局限：比对的"金标准"本身部分来自规则分类，因此只能证明发表的规则能复现分析、不能证明规则本身对；以及表 2 的确定性分级是在裁定后的阳性集上算的，与规则自身的阳性集差这 17 份。
+
+#N 审稿人 2 当初要求"最好把算法作为补充材料提供"，现在给的是可运行、可复算、且自带验证结果的版本。
+
+#N **3. 标题页（`诊断效能_TitlePage_InsightsIntoImaging.docx`）** —— 已按新标题重做，作者、单位、通讯方式、伦理批件号 2026R018-E01、经费声明、作者贡献全部沿用原稿。补齐了 IiI 需要的 Running title、Article type、字数与图表数、以及 SpringerOpen 体例的 Declarations 分节。两位作者的 ORCID（Jun Shu 0009-0001-3003-1452、Jun Yang 0009-0006-0669-4340）与通讯作者电话（+86 186 2713 9911）已填入，两个 ORCID 的校验位我都用 ISO 7064 MOD 11-2 算法验过、均正确。Acknowledgements 写为 Not applicable。Hongqiang Bian 未提供 ORCID —— 共同作者非必填，已略去，日后要加随时可补。投稿信的收发信人信息与落款也一并填好，日期暂填 2026 年 9 月 2 日，实际投稿时改一下即可。
+
+#N **4. 版面费** —— 搜索结果显示 IiI 2026 年 APC 为 **€2,890 / £2,490 / US$3,390**（另加当地税）。要点：**ESR 会员没有专项折扣**（学会已不再为会员承担该费用）；**可在投稿过程中申请减免**，由出版社或期刊个案审核，通常两周内答复；若通讯作者单位参加了 Springer Nature 的开放获取协议，可能全额或部分覆盖。这几条我是从搜索摘要读到的，期刊页面本身被本会话的网络策略挡着打不开，**请你在投稿前到期刊 FAQ 页面核实金额**，并顺便查一下华中科技大学／同济医学院是否在 Springer Nature 的机构协议名单内——如果在，这笔钱可能不用自付。
+
+#H1 四、投稿件清单
+
+#N • `诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx` —— 正文（盲审版，作者信息已移除）
+#N • `CoverLetter_InsightsIntoImaging.docx` —— 投稿信
+#N • `Online_Resource_1_NLP_and_report_audit.docx`
+#N • `Online_Resource_2_models_and_subgroups.docx`
+#N • `Online_Resource_3_CT_and_UGI_content_audit.docx`
+#N • `Fig1_study_flow.png`、`Fig2_detection_by_modality.png`、`Fig3_ultrasound_report_audit.png`（正文图 1–3，300 dpi）
+#N • `FigS1_paired_subgroup.png`（附录 Figure S1）
+#N • `诊断效能_TitlePage_InsightsIntoImaging.docx` —— 已完成，无待填项
+
+#N • `STROBE_checklist.docx` —— 已逐条填好
+
+#N • `Online_Resource_1_classifier.py` —— 规则集的可运行实现，随 Online Resource 1 一并提交
+#N • 保留 `Response_to_Editor_and_Reviewers.docx` 备查（投 IiI 不需提交，仅在编辑索要前刊评审意见时使用）
+
+#H1 五、投稿信里的一个选择
+
+#N Cover letter 倒数第三段是**可选的"前次评审披露"段**，我用 ⟦AUTHORS…⟧ 标出了。学界惯例是不强制披露被拒历史，但主动说明"这已是换了研究问题的另一篇文章，并可提供前次评审意见"通常会被编辑视为加分。你自行决定保留或删除。
+
+#H1 六、按编辑部意见的第二轮全文核查（本次）
+
+#N 把编辑部三份意见（Section Editor 三点、Reviewer 1 五点、Reviewer 2 十大点＋细则＋文献要求）逐条对照现稿重新过了一遍，查出并修正了下面几处。
+
+#N **1. 一个真错误：D3 的记录率原来写错了。** 原先的正则只覆盖"水平段／第三段"，漏掉了中文报告里最常用的**"水平部"和"横部"**。重跑语料后确认有 **2 份**报告确实写了十二指肠水平部／横部，因此"0/119"是错的，正确值是 **2/119（1.7%）**；十二指肠空肠曲仍为 0。同时"肠腔内液体"由 1 份更正为 **2 份**（一份口服造影剂 240 ml，一份经胃管注入 50 ml 生理盐水）。摘要、Key Point 1、Results、Discussion 两处、Conclusion、图 3 注、表 3、投稿信全部已按 2/119 改写。
+
+#N 反向也做了防错：另有一份写"十二指肠球部、降部均可见液体充盈"的报告，只描述了看到液体、没有写明是谁给的，未计入"给予肠腔内液体"；"腹主动脉"一项 3 处匹配中有 2 处是心脏／胡桃夹，整行删除。
+
+#N 这两份报告本身很说明问题：2018 年那份口服造影剂后写"横部走行于肠系膜上动脉前方，略呈螺旋状走行"，报告阳性；2024 年那份写"水平部未见明显充盈，请结合其他检查"，报告阴性。也就是说，一旦真的去看了这段解剖，检查就触及了关键结构——但 13.5 年里只发生过两次。这段已写进 Results。
+
+#N **2. 新增了三项技术要素的审计**（Reviewer 2 第 3 点点名要求的）：动态实时观察 2/119、加压探查 1/119、彩色多普勒 115/119。表 3、图 3、Online Resource 1 的模式表同步更新。
+
+#N **3. 补回了两处遗漏。** 一是**每次检查的正式申请指征无法从归档系统调取**这一句（Reviewer 2 第 7 点），此前压缩字数时被删掉了，现放回 Methods，并说明因此只能用表 1 展示指征混杂而非调整它。二是 **2025 年多中心研究"D3 显示是诊断肠旋转不良最准确的征象"**这一结论（Reviewer 2 文献要求），现明确写入 Discussion 第二段并归因到文献 [12]。
+
+#N **4. Online Resource 3 的一处标签不准。** CT 那一行原写 "Duodenal position"，但模式实际上只匹配"十二指肠"三个字的任何提及，改为 "Duodenum mentioned" 并加注说明它不代表评估了十二指肠位置。
+
+#N **5. 字数。** 上述增补约 120 词，为守住 3,000 上限，删掉的全是附录或正文他处已有的重复细节（55 例无索引检查者的影像分项——因 Fig. 1 已画出、与 Limitations 重复的人群说明、Methods 与 Limitations 重复的剂量与多重比较句、Results 中与表 1／表 4 重复的数值）。Reviewer 1 第 1 点最直接的反驳句（5 例院外已有影像、其中 3 例已报出肠旋转不良或扭转）核查后原样保留。现正文 **2,998 词（含各级标题）／2,926 词（不含标题）**，摘要 285 词。
+
+#H1 七、仍需作者确认的内容
+
+#N 无。超声科的答复已写入 Methods，前次评审披露段按你的决定保留，推荐审稿人一栏该刊非必填故留空。
+
+#H1 八、按严格审稿标准自查后的第三轮修改（本次）
+
+#N 以期刊审稿人的标准把全文重新审了一遍，列出 9 条"可能导致拒稿"的严重问题、14 条一般问题和 10 条语言问题，然后逐条改掉。下面是实质性的部分。
+
+#N **1. 一个真的分析缺陷：索引检查的选取规则挑错了报告。** 原规则取"距手术最近的一份报告"。但本院一次超声往往出两份报告（胃肠道彩超 + 腹部大血管彩超），两份只差几分钟。有 3 例患儿因此被选中的是那份阴性的配套报告——其中一份写着"腹膜后未见明显异常"，却在患者层面被标为阳性并记录了漩涡征，导致表 3 里"漩涡征 57（文本）vs 59（裁定）"的差异，而原表注把这个差异解释成"裁定者识别出模式没抓到的措辞"，**那个解释是错的**。
+
+#N 改法：索引单位由"一份报告"改为"距手术最近的那一次检查（同一天同一模态的所有报告合并）"。740 这个总数不变（造影 301／CT 320／超声 119 全部不变），但内容审计的口径正确了：文本漩涡征与裁定变量在 119 例中 118 例一致，唯一的不符是漩涡征记录在另一天的那次超声上。
+
+#N **2. 因此几个数字变了。** D3 或十二指肠空肠曲由 2/119 改为 **3/119（2.5%）**；肠系膜上动静脉关系由 8.4% 改为 **10.1%（12 例）**；漩涡征由 59 改为 **58（48.7%）**。造影的十二指肠空肠曲由 54.5% 改为 51.2%（原模式 `十二指肠.{0,6}空肠` 过宽，会匹配"十二指肠圈…空肠位于右中腹"这类只讲空肠位置的句子，已收紧为 `空肠曲` 等）。
+
+#N **3. 又查出三处模式缺陷，都改了。** ①`肠系膜上动、静脉` 和 `肠系膜上动静脉`（本院最常用的合写形式）原来匹配不到；②有一例"左肾静脉走行于腹主动脉与肠系膜上动脉之间"（胡桃夹测量）被误计为评估了系膜血管，已排除；③漩涡征原来不做否定判断，一份写"未见明显旋涡状回声"的报告被计为"记录了漩涡征"，现改为在同一小句内、匹配词前 12 字内出现否定词则不计。另外"肠气影响显示"原来靠 `显示不清` 这类泛词，把一例"肺气严重，肺动脉分支远段显示不清"（心脏超声）算了进去，现改为要求同一小句内同时出现气体词与受限词。
+
+#N **4. 一个必须承认的循环论证风险。** 超声阳性判据之一就是漩涡征，所以"记录漩涡征的 58 例全部阳性"有定义使然的成分。正文现在①把两条阳性判据写进 Methods（原来只写了"modality-appropriate sign"，而 Results 却引用了"两条判据"）；②明说这一对比部分是定义性的；③把论证重心移到两个非循环的数字上——**没有漩涡征的 61 例中只有 7 例（11.5%）报出诊断**，以及**术中确诊扭转的 113 例中只有 58 例（51.3%）记录了漩涡征**。后者原来埋在附录里，现在进了正文和摘要，它是对"不是没看、是当时没东西可看"这一替代解释最直接的反驳。
+
+#N **5. "sensitivity 不可估计"这句话原来自相矛盾，而且不对。** 摘要和结论说 sensitivity 不可估，方法却只说 specificity 和预测值不可估。严格讲，在全部确诊的队列里 P(阳性|有病) 是可估的，受限的是外推性。现已统一为："可估的是接受该检查的确诊患儿中的检出率；不可估的是特异度、预测值和模态间排序。"这样 Discussion 里 54.6% 与 93–97% 的比较才不与前文冲突，并明说这个差值同时包含病例构成差异与技术差异、本研究无法拆分。
+
+#N **6. 时代分析的三处过度解读全部收回。** ①"abolished"改为按风险差表述的"减半"（+20.2 → +10.3 个百分点）；②补充平均边际效应，并说明 logistic 条件 OR 的非塌缩性——加入一个强预测协变量本身就会让 OR 向 1 收缩，不能只凭 OR 衰减讲中介；③补做 2019/2020/2021/2022 四个切点的敏感性分析（附录表 S8）：检查类型的 OR 在 3.07–3.85 之间、始终显著，而年代 OR 在 1.25–2.82 之间大幅摆动，调整后每个切点都不显著。这反而比原来更有说服力，而且正面回应了"机制说是 2021 年，为什么按 2019 切"这个问题。Key Point 3 和结论里的因果措辞也改成了描述性的。
+
+#N **7. 补报了 812 → 740 的流程。** 符合条件的术前报告 812 份，合并同日报告后 778 份归入 740 次索引检查，另有 34 次更早的重复检查未纳入审计。这一步原来完全没写。同时补做"取最早一次检查"的敏感性分析（表 S9），结论不变。
+
+#N **8. 扭转的定义补了阈值信息。** 原文只写"有记录的旋转度数"，没说最低多少度。实际规则不设阈值：327 例有度数记录者中 308 例 ≥360°、19 例为 90–270°。已写入正文，并给出限定为 ≥360° 的敏感性分析（表 S10，患病率 86.7% → 82.6%，结论不变）。
+
+#N **9. 表 2 和图 2 里各有一行放错了。** "Ultrasound, whirlpool sign recorded 59/119 (49.6%)"被放在"检出率"那一列，但它是漩涡征的**记录率**，与正文的 100% 直接冲突。两处都已删除。
+
+#N **10. 其他已改：** 参考文献 10、11、13、17 原来在正文中从未被引用（Springer 会直接报错），现已在引言中各自归位；缩略语表里的 CTDIvol 全文未出现，已删；配对亚组的比较组"the rest"含糊，实为"其余 351 名已影像患儿"，已写明；标题的"740 examinations in 465 children"改为 410（740 次检查来自 410 名患儿）；摘要小标题 Conclusion 改为 **Conclusions**；超声开单项目的重叠数（28 例同时按胃肠道和大血管开单）写进表 3 注；表 3 中分母小于 10 的行不再给百分比，改为 n/N。
+
+#N **11. 字数。** 上述增补约 460 词，为守住 3,000 上限，删去的全是表格、图和附录已经承载的重复叙述。现正文 **2,997 词**，摘要 335 词。
+
+#H1 九、队列检索策略（已按你提供的口径补入，并核对过）
+
+#N 你给的检索口径是：**术中诊断含「肠旋转不良」或术式含「Ladd 手术」**。我把它回放到原始数据上核对了一遍，结果完全对得上，因此正文里给的是可复现的确切数字：
+
+#N • 研究期内院内手术记录共 **559 条、涉及 499 名患儿**，全部逐份复核；
+#N • 符合上述检索条件的为 **503 条、465 名患儿**，即最终队列；
+#N • 未被检出的 34 名患儿，术中诊断确与肠旋转不良无关（阑尾炎、先天性肥厚性幽门狭窄、先天性巨结肠、膈疝、心脏及神经外科手术等）。
+
+#N 反向核对也做了：队列内 503 条记录**无一条**不满足该检索条件，也没有满足条件却被排除的患儿。
+
+#N 这三个数字已写进 Methods（Participants 段）和图 1 的顶部两个方框，确切检索字段与字符串写进 Online Resource 1 新增的 G2 节。至此正文再无待补项。
+
+#H1 十、统计学审稿意见的处理（本次）
+
+#N 按医学统计学审稿人的标准把 Methods 与 Results 又过了一遍，对着 `analysis/` 里的实际代码逐条核，并重跑了 GEE 与区间估计。查出 6 处必须改，另补了 4 项分析。
+
+#N **1. 附录与正文对同一个量给了两个数（已统一）。** 正文说「术中确诊扭转的 113 例中 58 例（51.3%）记录漩涡征」，而 OR2 的扭转特异征象表还是 **59/113（52.2%）**。原因是那张表由旧脚本用**裁定变量**加一条跨模态、**不做否定判断**的正则生成。已改用与正文完全相同的、按模态区分且带否定作用域的规则重算：造影 129/268（48.1%）、超声 **58/113（51.3%）**、CT 104/281（37.0%），并在附录注明旧定义给 59 的原因。
+
+#N **2. 两个 Wilson 区间算错（已改）。** 3/119 写的是 0.9–7.1，正确为 **0.9–7.2**；7/61 写的是 5.7–22.0，正确为 **5.7–21.8**。这两个是当时手算填进去的，不是从代码取的。
+
+#N **3.「调整后不变」与附录数字不符（已改）。** 附录里未调整 CT 0.31、超声 0.33，调整后 0.29 和 **0.27**——超声系数移动约 18%，不能说 unchanged。正文现在把四个数都写出来。
+
+#N **4. 同一模型里两个重要系数从未报告（已补）。** 调整后 GEE 还给出 **>1 岁 vs 新生儿 OR 3.14（1.71–5.75）** 和 **后期 OR 1.79（1.20–2.68）**，两个都显著，之前正文一次没提。现已写入 Results，并与「本队列以重症新生儿为主」这条局限呼应。
+
+#N **5.「交互项不可估计」说得太宽（已改）。** 三模态模型确实全部不收敛；但**造影 vs CT 的扭转交互是可估的**，结果是 OR 0.90（0.33–2.43），p=0.84——即在不存在完全分离的那一半里没有效应修饰。这个结果原来在任何地方都没出现。另外对被分离的超声对比补做了 **Firth 罚似然**：OR 17.6（0.77–401），区间跨过 1——这才是「6 个孩子能支撑什么」的正式表述，比一句「不可估」有说服力得多。
+
+#N **6. GEE 的缺失机制假设未交代（已补）。** 模型把「某患儿没做某项检查」当作缺失观测；GEE 在 MCAR 下才相合，而全文核心论证之一恰恰是检查选择强烈依赖指征与年代（非 MCAR）。Methods 现在明说：这些系数描述的是**已接受该检查者中的报告行为**，不是「若人人都做三项会怎样」。
+
+#N **7.「pre-specified」与附录自述矛盾（已改）。** Methods 原来称内容模式和交互项是 pre-specified，而 OR1 写明模式是遍历语料后才定稿的。现在 OR2 新增一段，逐项列出**哪些事先设定**（结局定义、GEE 结构、交互项、2019 年代切点、确定性分级敏感性分析）、**哪些事后决定**（内容模式、合并索引单位、切点敏感性分析、边际效应，以及本节全部分析），并声明后者属描述性/产生假设。
+
+#H1 十一、新增的四项分析（附录表 S11–S13）
+
+#N **① 平均边际效应的自助法 95% 置信区间**（2,000 次患儿层面重抽样，固定种子）。超声：粗效应 **+20.2 pp（+1.8 到 +38.8）**，调整后 **+10.3 pp（−10.3 到 +30.1）**。这一步很重要：调整后区间跨过 0，所以文中措辞从「减半后不显著」改成了**「该分析给出年代贡献的上界，而不是把它消掉」**——比原来的写法保守，也更站得住。
+
+#N **② 配对亚组的效应量与区间**（原来只有 McNemar 的 P）。造影比 CT 高 **28.8 个百分点（+13.6 到 +44.1）**，比超声高 **23.7（+8.5 到 +39.0）**；**CT 与超声无差异**（−5.1，−18.6 到 +10.2）。
+
+#N **③ Firth 罚似然处理完全分离**（见上第 5 条）。我自己实现的 Firth 在**无分离的模拟数据上与普通 MLE 的系数最大差 0.007**，验证通过后才用。
+
+#N **④ 年代 × 检查内容的交互检验**：超声 OR 0.90（0.16–4.92），p=0.90；CT 1.94（0.32–11.58），p=0.47。均不显著，说明表 4 用的可加模型没有明显误设——这一条原来完全没检验过。
+
+#N 另外还改了：附录配对表里同样有一行「漩涡征 30/59」被放在检出率表内（与上一轮从表 2、图 2 删掉的是同一类错误），已删；Methods 补上「所有分析变量完整、无缺失」（我核过确实无缺失）；Declarations 补上模型代码可索取。
+
+#N 正文 **2,994 词**。
+
+#H1 十二、Firth 结果的独立复核（本次，查出一处实质性错误）
+
+#N 你要求用 R 的 `logistf` 复核。**本环境的网络策略屏蔽了 CRAN**（网关对 cloud.r-project.org 返回 403），R 装上了但 `logistf` 装不上。改用 PyPI 上的 **`firthlogist`**——一个独立实现，其文档即以 `logistf` 为基准做过对照，且默认给出与 `logistf` 相同的**罚似然剖面区间**与罚似然比 P 值。
+
+#N **点估计完全一致，但区间原来是错的。**
+
+#N • 系数 β = 2.8654，两种实现相差 **0.000004**，OR **17.56** 一致——我的实现本身没写错。
+#N • 但我原来报的是 **Wald 区间 0.77–401，跨过 1**，据此在附录里写了「六个孩子什么也支撑不了」。
+#N • `firthlogist` 给出的**剖面罚似然区间是 2.00–2310，不跨过 1**，罚似然比 **p = 0.006**。
+
+#N 这是完全分离情形下的已知现象：**Wald 区间不可靠，剖面似然区间才是正确的**，`logistf` 默认报的也正是后者。所以原来的结论方向反了——不是「什么都说明不了」，而是**方向得到统计支持**（有扭转时超声阳性的几率显著更高），只是**幅度完全无法精确估计**（区间上界 2310 没有实际意义）。
+
+#N 已做的修正：
+#N • `firth.py` 重写，加入剖面罚似然区间与罚似然比检验，自检时同时验证「无分离时逼近 MLE」和「分离时剖面与 Wald 区间不一致」两点；重写后的实现**逐位复现了 firthlogist 的 2.00–2310 与 p=0.006**。
+#N • 附录表 S13 改为 **OR 17.6（2.00–2310，剖面罚似然），p=0.006**。
+#N • 附录叙述改写：说明为何必须用剖面区间、两种区间在此不一致、方向可支持而幅度不可估，并注明经独立实现复核。
+#N • 正文第「选择性亚组」段补一句：6 例无扭转者**无一阳性**，Firth 模型支持该对比的方向但不支持其幅度（指向附录）。
+
+#N **这一条实际上加强了论文**：它是「超声在实践中是一个扭转检查」这一核心论点唯一的正式统计支持。但必须按现在的写法呈现——建立在 6 个孩子上的罚似然推断，方向可用，幅度不可用。
+
+#N 正文 **2,998 词**。
+
+#H1 十三、四部分之间的逻辑一致性核查（本次）
+
+#N 逐段核对了引言—结果—讨论—结论的逻辑链条。**讨论里的每一个数字都回查到了结果段，没有出现"讨论中冒出结果未报告的数据"这一类问题。** 查出并改掉 13 处：
+
+#N **两处硬性内部不一致（必改）**
+#N • 结果段写"The three show what the audit detects"，但压缩字数时把 2024 年那一例删掉了，只剩两例——已补回。
+#N • 55 例无索引检查者的年龄与扭转率标的是"(Fig. 1)"，实际这两个数在**表 1 最右列**，图 1 没有——已改为 (Table 1, Fig. 1)，并把该句重写以避免同句两个 none。
+
+#N **三处相关写成因果**
+#N • "Awareness alone **moved** detection from 41% to 61%" → 改为"检出率在科室自述认知提升的同一时期由 41% 升至 61%"，去掉因果动词。
+#N • 表 4 标题 "variables **that account for** it" → "variables **associated with** it"。
+#N • 结论 "technique and reporting content **decide whether** published performance is achievable locally" → 改为"是审计能够测量的东西，也是假定本院能复现文献效能之前第一件该核对的事"。
+
+#N **两处把"无统计学差异"写成"相同"**
+#N • "interaction was not significant, **so the effect did not change** between eras" → "giving **no evidence that** the effect changed…, though these subgroups are small"。
+#N • "**while CT and ultrasound did not differ**" → "while the CT–ultrasound difference was **compatible with zero**, −5.1 (−18.6 to +10.2)"，把附录里已算好的区间填进正文。
+
+#N **三处超出设计**
+#N • Critical relevance 里的"a negative ultrasound did not exclude malrotation"——在全部确诊队列里这是同义反复，而且用了全文明令禁止的准确性语言；改为"45% 的超声检查在确诊患儿中没有写出诊断"。
+#N • Key Point 2 原来单列了一个部分定义性的结论（漩涡征本身就是阳性判据），改为非循环的那一半："确诊扭转的患儿中只有一半记录了漩涡征"。
+#N • Key Point 3 与摘要的"halved"，比调整后区间（含 0）所能支持的更强，改为如实给出 +20.2 → +10.3 并注明区间含 0。
+
+#N **一处目的与分析不对齐**
+#N 引言把问题完全立在"超声报告内容"上，结果却以三模态检出比较开场（表 2、图 2、讨论第四段），读者不知道为什么比较三种检查。已在引言末尾加一句：报告造影与 CT 不是为了排序（本设计做不到），而是为了显示超声在这条路径上的位置。
+
+#N **一处绝对化**：讨论"ours **did not**"（指本院未评估 D3）与自己的结果矛盾（有 3 例做了），改为"ours **almost never** did"。
+
+#N **两处局限性遗漏**：①时代/中介分析属事后决定，检查类型这个变量是看过数据之后才确定的，应作为假设生成看待——已写入局限性；②"未校正多重比较"此前只在方法里出现，已加回局限性。
+
+#N 字数：上述修改净增约 90 词，删的仍是表、图、附录已承载的重复叙述。正文 **2,999 词**。
+
+#H1 十四、引文—参考文献对应关系核查（本次）
+
+#N 用脚本把正文每一处引用标记与文献表逐条比对。**没有遗漏引用、没有未被引用的条目、没有跳号、没有重复**。查出并处理了四类问题。
+
+#N **1. 编号顺序（22 条中 16 条需改号）。** 原文献表既不是按正文首次出现顺序排列，也不是按作者字母顺序——两种标准方案都不符合。已按首次出现顺序重排。改号后引用标记也更紧凑（原 `[5, 6, 13]` 变成 `[5–7]`，原 `[7–9, 12]` 变成 `[11–13]`），正文因此省下 10 词。重排由 `renumber.py` 完成，脚本可重复运行且第二次运行为空操作（已验证）。
+
+#N **2. 一处明确错配：Shimanuki 1996 被用来支撑效能数据。** 原文「series report sensitivities of 93–97%… a systematic review of 17 studies and 2,257 children…」引了 `[7–9, 12]`，但 `[7]` 是 1996 年彩色多普勒漩涡征的**原始描述**，既不是效能研究也不是系统评价。已从该处删除，改引至方法学部分「the whirlpool sign is a sign of volvulus, not of malrotation」——那一句原来**没有任何引用**，而这正是该论断的经典出处。一处删除同时补上了一处缺引。
+
+#N **3. 讨论中的引用簇过宽。** 原文「against sensitivities of 93–97% in children investigated for suspicion `[8, 9, 12, 19]`」把一个区间归给了四篇文献，但 93–97% 的真正出处只有 2025 年那篇多中心研究（原始报告 93%、盲法复阅 97%），系统评价报的是 94%。已拆分为「against 93–97% in the 2025 multicentre series [13] and a pooled 94% in meta-analysis [11]」，各归各的出处。
+
+#N **4. 补了一处必须补的引用：Firth 罚似然。** 正文点名使用了 Firth 方法却没有出处。已新增两条：Firth 1993（方法本身）与 Heinze & Schemper 2002（专门讨论完全分离，正是本文的使用场景）。文献表由 22 条增至 24 条。
+
+#N **⚠️ 这两条新增文献的著录信息需要你核对。** 本环境的网络策略屏蔽了 doi.org、PubMed、Crossref、ScienceDirect 等全部可用于核对的站点（403），我无法验证卷、页、DOI。这两条是我根据既有知识写的，投稿前请用能联网的机器核一遍：
+#N • Firth D (1993) Bias reduction of maximum likelihood estimates. **Biometrika 80:27–38**, doi 10.1093/biomet/80.1.27
+#N • Heinze G, Schemper M (2002) A solution to the problem of separation in logistic regression. **Stat Med 21:2409–2419**, doi 10.1002/sim.1047
+
+#N **未处理、需你核原文的 5 处**（同样因为网络受限）：`[2]` IMPOWER 注册研究是否支撑「数小时内进展」；`[3]` Yang 2024 是否涉及大龄／延迟诊断；`[9]` Taylor 2011 是否支撑 CT 漩涡征「检出率不高」；`[15–17]` 是否支撑「readers alert to the diagnosis」这一归因；以及全部文献的作者、年份、卷页与 DOI 是否与原文一致。核对报告已在对话中给出。
+
+#N 正文 **2,998 词**。
+
+#H1 十五、参考文献著录信息的外部核对（已完成）
+
+#N 你把 24 条 DOI 导入 Zotero、由 Crossref 抓回权威著录后导出，我逐字段比对（脚本 `refcheck.py`）。
+
+#N **结果：年份、卷、页码、第一作者 —— 24 条中 23 条完全一致；作者人数与 et al 截断规则 24 条全部正确（≤4 位全列，≥5 位列 3 位＋et al）。稿件无需修改。**
+
+#N **上一轮我新加的两条、当时标注「未经核对」的，均确认无误**：Firth 1993 Biometrika 80:27–38；Heinze & Schemper 2002 Stat Med 21:2409–2419。
+
+#N **一条无法确认：[22] Zeger & Liang 1986 Biometrics 42.** Crossref 走的是 JSTOR 记录，只存了起始页 121，没有终止页。稿件写 121–130，起始页一致，终止页无从比对——这是 Crossref 记录不全，不是稿件有错。投稿前请用 PubMed 或 Biometrics 该期目录确认一次终止页。
+
+#N **一条 Crossref 记录本身是错的，不要照它改：[5] Mattioli.** Crossref 把该文全部作者的 given/family 存反了，Zotero 因此显示为「Girolamo, Mattioli, Gallo Emanuela, Wong Michela Cing Yu」。实际是 Girolamo Mattioli、Emanuela Gallo、Michela Cing Yu Wong，**稿件写的 `Mattioli G, Gallo E, Wong MCY` 是对的**。若用 EndNote 套格式输出整段文献表，这一条会被写成「Girolamo M」，需手工改回。
+
+#N **两处此前的疑虑已排除**：[8] 姓氏确为 `Smitthimedhin`（我先前从截图 OCR 提出的拼写疑问是误报）；[19] `von Elm` 小写 v 正确，Zotero 显示的 `Von Elm` 是 Chicago 体例的句首大写，不是数据差异。
+
+#N **期刊缩写**：24 条全部采用 NLM/Index Medicus 标准缩写形式且内部一致（Semin Ultrasound CT MR、Abdom Radiol (NY)、AJR Am J Roentgenol 等）。
+
+#N 至此文献表的机械核对与外部核对都已完成，仅剩 [22] 终止页一处待确认。
+
+#H1 十六、英文润色（覆盖原文，已完成）
+
+#N 在不改变研究事实、数据、医学含义与结论强度的前提下，对全文（摘要、正文、图表题注、附加材料引导句）逐句润色，并**直接覆盖了原稿**（`p1.md`/`p2.md`/`p3.md`，旧版留在 `.bak`）。
+
+#N **为保证「只改语言、不动内容」，先写了一个校验脚本 `polish_check.py`**，在润色前后各抽取一次三类记号做逐一比对：① 全部数字记号（含百分号、小数）；② 全部文献引用标记 `[n]`；③ 一份限定语词表（no evidence、compatible with zero、not estimable、lower bound、not randomised、cannot be separated、not pre-specified、hypothesis-generating、not adjusted for multiplicity、not missing at random、informative missingness、consistent with、associated with 等 19 个）。终检结果：**数字与引用标记完全一致，限定语全部保留**。也就是说没有任何一个数字被改动、没有任何一处引用被增删、没有任何一句谨慎表述被润色成肯定语气。
+
+#N **实际做的修改**（均为语言层面）：
+
+#N • **去掉全部破折号**。原稿大量使用 em dash 制造停顿，这是最典型的机器写作痕迹。全文现有 **0 个破折号**，改为分号、冒号或拆句。
+
+#N • **删掉修辞性开场白**。如 “This frames our most-cited number”、“What they did contain was”、“The informative half is the converse”、“Two cautions apply”、“The three show what the audit detects”、“The central finding is” 等，一律改为直接陈述结论。
+
+#N • **拆掉「不是 X，而是 Y」的对照句式**，这类排比在原稿中反复出现，属于风格性重复而非论证需要。
+
+#N • **消除句子片段**，全部改为完整主谓结构；统一 “towards” 拼写。
+
+#N • **三个结果小标题与一个方法小标题改为描述性写法**：`Report-level detection and certainty of wording` → `Detection and certainty of wording`；`What the ultrasound examinations contained` → `Documented content of ultrasound examinations`；`The selected subgroup, and populations this cohort omits` → `Selected subgroup and populations not represented`；`Design, terminology and what this study can and cannot estimate` → `Design, terminology and estimable quantities`。
+
+#N • **删除重复表述与口语化措辞**，改用规范简洁的医学英语。
+
+#N **字数**：润色一度使正文膨胀到 3,158 词，分三轮压回 **2,998 词**，正文声明的字数行已同步更新。
+
+#N **文献顺序未受影响**：重跑 `renumber.py` 报 `renumbered 24 references, 0 changed position`，仍为首次引用顺序，24 条全部被引用。docx 与全文纯文本已按润色稿重新生成。
+
+#H1 十七、投稿信润色，以及三处必须先纠正的事实错误
+
+#N 按与正文相同的标准润色了 cover letter。**但在动笔前把信里的每个数字与现稿逐一比对，发现三处错误——都是正文后来改过、投稿信没跟着改留下的旧数据，属于投稿前必须纠正的硬伤，不是语言问题。**
+
+#N **1. 投稿信引用的标题是旧标题（465 与 410 之误）。** 信里写的是 “…a report-level audit of **740 preoperative examinations in 465 surgically confirmed children**”，而正文标题在「修正索引单位缺陷」那一轮就已改为 “…an audit of **740 preoperative index examinations in 410 surgically confirmed children**”。**465 是全队列人数，其中只有 410 人做过至少一项索引检查、共 740 次**，用 465 去配 740 次检查是错的。更麻烦的是这个旧标题当时只改了正文，**标题页、三份 Online Resource 的 “Supplement to:” 行、投稿操作单全都还是旧版**——投稿系统里标题页与正文标题不一致会直接被编辑退回。已全部改齐（标题页 docx 直接改写、or1/or2/opsheet 源文件同步、三份附件与操作单重新生成）。
+
+#N **2. 时代模型的两个比值是旧值。** 信里写 “era effect fell to a non-significant odds ratio of **1.56**, while the coding indicator carried an odds ratio of **3.46**”。现稿 Table 4 的实际值是**校正后时代 OR 1.57（0.68–3.66）**、**大血管检查指示变量 OR 3.35（1.51–7.44）**，3.46 这个数在全稿任何位置都不存在。同时正文早已把这一段的主口径改到**风险差尺度**（+20.2 → +10.3 个百分点，区间含 0），投稿信仍停留在 OR 口径。已按现稿改写为风险差为主、OR 3.35 为辅。
+
+#N **3. 「detection with such a study was about 70% in both eras」这句在稿中无出处。** 表 2 只有大血管检查的**合计**检出 46/67（69%），并没有按时代拆分过；「两个时代都约 70%」是无法从现有表格核实的说法。已删去，不以任何新数字替代。
+
+#N **另有一处措辞被收紧**：原信 “that improvement **was not a property of calendar time**” 和 “**which is why** detection rose while duodenal documentation did not” 的语气都强于正文所能支持的程度——正文的结论是校正后区间含 0，因此只能说**限定**了时代效应的贡献范围，而非排除了它，且department 的说法只是 “consistent with”。已改为 “bounds the era contribution rather than removing it”，并把因果性的 which is why 改为 so that。
+
+#N **语言层面的润色**（与正文同一标准）：破折号由 6 个减至 **0 个**；删掉 “The central finding is”、“A second finding makes the first actionable”、“The practical message runs the other way”、“Those figures describe what ultrasound achieves… What clinicians act on is…” 等修辞性开场与排比；补全 “— and an incomplete one”、“— measurable by audit, and correctable” 两处破折号后的句子片段；toward 统一为 towards；删去 “replicated at other institutions… inexpensive to repeat” 的语义重复。信长 770 词。
+
+#N **未改动的部分**：收发信人信息、日期（5 September 2026）、投稿声明段、伦理与利益冲突声明、署名，以及**前次审稿披露段**的存留与否——这一段是否保留仍由你决定。
+
+#N **三份 Online Resource 的正文尚未做去 AI 味儿处理**（OR1 有 7 处散文破折号，OR2、OR3 各 1 处），本轮只按你的要求润色了投稿信。需要的话可以照同样标准过一遍。
+
+#H1 十八、三份 Online Resource 的英文润色（已完成）
+
+#N 按与正文、投稿信相同的标准润色了三份附加材料。附件里有大量**中文原文词表、正则表达式和脚本名**，这些是数据不是文字，动一个字符规则就变了，因此单写了一个校验脚本 `polish_check_or.py`，比正文那一版多查两类记号：
+
+#N • **全部 CJK 字符串**（词典条目、否定线索、正则里的中文）逐串比对；
+#N • **全部反引号代码片段**（`classifier.py`、`Online_Resource_1_classifier.py` 等）逐个比对；
+#N 外加数字与 23 个限定语（uninterpretable、does not converge、cannot be estimated、not sensitivities、no directional conclusion、exploratory、conservative、not confirmatory 等）。
+
+#N 终检结果：**数字、中文原文、代码片段与限定语完全一致**。词表、正则、脚本名一个字符都没动。
+
+#N **散文破折号：OR1 由 9 处、OR2 由 2 处、OR3 由 2 处，全部降为 0。** 表格里还剩 2 个破折号，都在正则 `十二指肠[-—与和]?空肠交界` 的字符类内部，是数据，必须保留。另有 2 处原本用 `  —  ` 分隔「正则 — 说明」的表格注解，与正则内的破折号混在一列容易误读，已改为分号（`analysis/or_h.json`）。
+
+#N **删掉的 AI 味儿写法**：
+
+#N • **OR1**「**This asymmetry is the point rather than an artefact.**」——典型的修辞性断言开场，已删，直接陈述残余漏判的成因与方向。
+#N • **OR1** 小标题「G. Validation, **and the errors we found**」改为「G. Validation and adjudication」。
+#N • **OR1**「so that they can be inspected, criticised and **taken on trust**」的说教口吻，压缩为「inspected and re-applied」。
+#N • **OR1**「the sensitivity analysis in Table 2 **exists because of it**」口语化，改为「is the reason for the sensitivity analysis in Table 2」。
+#N • **OR1** 三处 `Definite — no qualifier` 式的定义破折号改为冒号；失败模式举例里包夹中文原文的一对破折号改为括号；「compared with the final labels — that is, … —」改为括号。
+#N • **OR2** 小标题「S2.5 Robustness of the three analytic choices **a reader is most likely to question**」这种对读者喊话的写法，改为「S2.5 Sensitivity to the three principal analytic choices」。
+#N • **OR2** Firth 那段包夹结论的一对破折号改为逗号从句，「must be a profile interval, **not a Wald one**」改为「rather than a Wald one, because…」。
+#N • **OR3**「a report describing a mesenteric whirl is, **unsurprisingly**, a report likely to conclude…」删去 unsurprisingly 并消除 a report…a report 的重复；「the value of the tabulation is in showing how often each element was documented **at all**」改为规范表述；「**Two observations are worth noting**」改为「Two features of these reports bear on the ultrasound findings」，并把包夹 the duodenojejunal junction 的一对破折号改为同位语。
+
+#N 三份附件已重新生成。至此正文、投稿信、三份附加材料的语言标准一致。
+
+#H1 十九、投稿信删去前次评审披露段（已完成）
+
+#N 按你的决定，投稿信中「An earlier version of this work… was reviewed elsewhere and not accepted…」整段已删除。投稿信现在不再提及前次投稿、前次评审意见，也不再主动提出可以提供前次审稿意见与逐条回复。信长由 770 词降至 **674 词**。
+
+#N 一并同步了投稿操作单：第一节原写「上传前先决定那段可选的『前次评审披露』是留是删」，已改为日期提示；第五节「投稿信的前次评审披露段：保留」已改为「已删除」。
+
+#N **提醒一点**：Editorial Manager 的投稿流程里有时会有「本文是否曾投稿其他期刊／是否曾被拒」一类的必答问项。删掉投稿信里的披露段，不等于可以在那种问项里否认——**如果系统问到，据实回答即可**，只是不必在投稿信正文中主动展开。正文自始至终未提及前次投稿，无需改动。
+
+#N 已核实：IiI 上传清单中的六类文件均不含前次投稿的回复信（`Response_to_Editor_and_Reviewers.docx` 属于上一轮 Pediatric Radiology 的材料，不在本次上传范围内）。
+
+#H1 二十、投稿前终检（发现并修正 7 处）
+
+#N 这一轮不是重读，而是把稿件里的每个数字重新算了一遍：从原始 Excel 重跑队列流、内容审计、时代模型，把正文、表、摘要三处的每个比例和 Wilson 区间用脚本重算，并逐条核对交叉引用、文献编号、缩略语、盲审泄露与投稿包各文件的一致性。**发现 7 处需要改的地方，其中 2 处是我上一轮润色造成的。**
+
+#N **1.（润色造成的事实丢失）第 55 例那句被我改坏了。** 润色前是「The remaining 55 (11.8%) had none of the three, yet all were imaged before operation: the five with no in-hospital study each had imaging before transfer」，我改成了「…but were all imaged before operation, the five without an in-hospital study before transfer」——后半句变成了没有谓语的残句，「这五例在转院前做过影像」这个事实实际上被删掉了。这条恰是回应上一轮审稿人「55 例没做检查」质疑的直接证据。已改回完整句。
+
+#N **2.（润色造成的立场丢失）「a pathway feature, not a test property」被我删掉了。** 原句是「higher detection in that position (80.4% vs 70.5%) — a pathway feature, not a test property」，我在去破折号时把破折号后的限定一并删了，于是 Results 里出现了一个没有任何保护语的模态间检出率比较——而本文全篇的立论恰恰是不做模态排序。已恢复为「a feature of the pathway rather than of the test」。
+
+#N **3.（真错误）通路位置那两个百分比的分母写错了。** 正文写「the UGI series was the last preoperative test in 75.1% of children who underwent it against 19.2% for CT」。重跑 `order.py` 后确认：75.1% 是 184/245、19.2% 是 48/250，**分母是「做过一项以上索引检查的患儿」，不是做过该项检查的全部 301 / 320 例**。按正文原来的措辞应为 61.1% 和 15.0%。这是审稿人一算就会发现的硬伤。正文与 Discussion 两处均已改为「Among children who underwent more than one index test…」。
+
+#N **4.（一致性）STROBE 清单整体过期。** 它的标题栏还是旧标题（465 例那版），而且「Reported in」列里有 **7 处指向已被我重命名的小标题**（Design, terminology and what this study can and cannot estimate；Report-level detection…；What the ultrasound reports contained；Detection changed over time…；The selected subgroup… 等）。清单是编辑部技术检查时按图索骥用的，指错了很难看。已全部更新，`strobe.json` 与 docx 同步。
+
+#N **5.（一致性）标题页与正文字数不一致**：标题页写 2,997，正文写 2,998。现统一为 **3,000**。
+
+#N **6.（完整性）缩略语表缺 CT。** 表里列了 CI、IQR、OR 这些更常见的缩写却漏了 CT。已补 “CT: Computed tomography”。
+
+#N **7.（字数）修正 3、6 使正文涨到 3,028 词，超过 3,000 上限。** 削回 3,000，删的全是表格已经承载的重复：Table 4 已列出 CT 与 UGI 两个时代的检出率，正文不再复述；Methods 里「The audit is a lower bound on what was performed」与表 3 注脚逐字重复，删正文保注脚；Discussion 第三次复述 41%→61% 改为不带数字的一句；引言里「Over the past decade the field has moved towards ultrasound」这句纯过渡并入下一句。**限定语一句未删**（「not adjusted for multiplicity」我一度削掉，随即恢复）。
+
+#N **核过但没问题的**：队列流（812 份合格报告 → 774 检查次 → 740 索引检查次含 778 份报告，34 份更早报告未纳入；301/320/119/410/465）从原始数据完整重现；表 1 全部百分比、表 2 全部 Wilson 区间、表 3 全部 15 行、表 4 全部比值与边际效应逐一重算一致；正文与表、摘要之间无矛盾；24 条文献全部被引、全部列出、首次引用顺序正确；Table 1–4／Fig. 1–3／Online Resource 1–3 引用与实体一一对应；附加材料表号 S1–S13 连续无重复无遗漏；三张正图重跑后与数据字节一致，均为 300 dpi；正文无任何作者、单位、伦理批件号泄露；Declarations 六项齐全（Funding 与 Author contributions 按盲审要求留在标题页）；破折号仍为 0。
+
+#H1 二十一、两件我无法核实、需要你在投稿系统里确认的格式项
+
+#N **1. 摘要长度。** 结构化摘要现为 **325 词**。之前记录过「官网当前只要求四段式结构、未单列字数上限」，但 ESR 系期刊通常把摘要限在 250 词左右。**期刊页面被本会话网络策略挡着，我无法核实当前要求。** 请你在投稿页面确认；若确有 250 词上限，告诉我一声，我可以把 Methods 段压缩、Results 段只保留超声与漩涡两组数字，十分钟内改到 250 以内。
+
+#N **2. Critical relevance statement 长度。** 现为 **51 词、两句**。ESR 系期刊对这一栏通常要求**一句、不超过 30 词**。同样无法核实。若确有此限，可用这句替换（29 词）：*"Departments adopting ultrasound-first pathways for malrotation should audit whether their own reports document the duodenal landmarks that produced the published sensitivities; in this department they almost never did."*
+
+#N 另外仍未了结的两项文献核对（需联网）：**[22] Zeger & Liang 1986 的终止页**，以及 **5 处引文内容相符性**（[2] IMPOWER「数小时内」、[3] Yang 2024 大龄／延迟、[9] Taylor 2011 CT 漩涡征检出不高、[15–17] readers alert to the diagnosis 的归因）。
+
+#H1 二十二、摘要压缩至 250 词以内，Critical relevance statement 换为 28 词单句（已完成）
+
+#N **摘要由 353 词压到 248 词**（按空格分词计，即投稿系统与 Word 的计法；此前记的 325 是只数纯字母词的口径，偏低，容易误判）。**Critical relevance statement 由 51 词两句换成 28 词一句。**
+
+#N **所有研究事实与限定语一句未动**：「specificity, predictive values and comparative accuracy are not estimable」原样保留；时代效应仍写明「an interval including zero」；漩涡征那组对比的两个非循环数字（7/61 与 58/113）全部保留。
+
+#N **压缩的做法**（按删得多少排序）：
+
+#N • **Objectives 54→33 词。** 删掉「assessing the third portion of the duodenum (D3) and the mesenteric vessels」这段技术要素罗列——它在 Results 里原样重复了一遍。D3 的定义相应移到 Results 首次出现处。
+
+#N • **Methods 88→62 词。** 删掉索引单位的定义细节（「with reports issued on the same day pooled」等，正文 Methods 有完整叙述）；「Because the cohort was assembled on surgically confirmed disease」缩为「The cohort being surgically confirmed」。
+
+#N • **Results 162→115 词。** 删掉「(740 examinations from 778 reports)」与「median age at operation 13 days」（均见表 1、图 1）；删掉时代边界稳健性那句「the examination-type term remained between 3.1 and 3.9 at every era boundary tested」（见 Results 正文与 Online Resource 2 表 S8）。
+
+#N • **Conclusions 49→41 词**，仅措辞收紧。
+
+#N **⚠️ 一处需要你确认的内容取舍：摘要不再报 UGI 与 CT 的检出率。** 原摘要写「Detection was 78.7% (237/301) for the UGI series, 53.4% (171/320) for CT and 54.6% (65/119) for ultrasound, on non-comparable denominators」。压到 250 词做不到既保留三个模态又保留全部超声发现，我保留了超声（现写作「Ultrasound reported malrotation in 65 of 119 examinations (54.6%)」并与漩涡征那句合并），把 UGI 与 CT 的数字留给表 2、图 2 和 Results 正文。
+
+#N 理由是这一稿的论点本就是超声报告的内容，而且明说三个分母不可比、不构成排序——上一轮被拒的直接原因正是把它写成了模态间比较。**但这是内容取舍不是单纯删字，如果你希望摘要里保留三个模态的数字，告诉我，我从 Results 别处再削 20 词换回来。**
+
+#N **同时修好的两处副本不一致**：
+
+#N • `abstract.txt`（供投稿系统单独粘贴摘要用）**停留在更早的版本**（还写着 on the strength of、which documented findings accompany a positive report），已改为直接从 `p1.md` 重新生成，不再手工维护。
+
+#N • **投稿操作单里的 Key Points 三条与正文不是同一套文字**：操作单写的是「A recorded whirlpool sign separated positive from negative ultrasound reports」「Detection improved when the examination changed, not as time passed」，正文写的是另外两句。你若照操作单往 Editorial Manager 里填，提交的 Key Points 会与稿件对不上。已按正文逐字同步，Critical relevance statement 与字数核对项一并更新。
+
+#N 复核：摘要 248 词、CRS 28 词、正文仍 3,000 词、标题页与正文字数一致；全文比例与 Wilson 区间 0 处不符；24 条文献全引全列顺序正确；破折号 0；无盲审泄露；STROBE 清单无失效指向；正文、`abstract.txt`、投稿操作单三处的摘要、Key Points、CRS、Keywords 逐字一致。
+
+#H1 二十三、投稿文件清单核实（附一处刚修好的问题）
+
+#N 逐个打开核实了要上传的 12 个文件，全部存在且为最新。另外发现并修好一处：
+
+#N **文档属性没清干净。** 投稿操作单第七节写着「全部 docx 的文档属性（作者、上次保存者、备注）已清空，无需再在 Word 里手动检查」——这句在当时是对的，但此后每次重新生成 docx，python-docx 都会重新写入 `author: python-docx` 和 `comments: generated by python-docx`。刚才检查时 7 个 docx 里有 **5 个**带着这两条属性。它不泄露作者身份，但会明白告诉打开属性面板的人这些文件是脚本生成的，而且操作单里那句承诺已经是假的。
+
+#N 已在三个构建脚本（`build_iii.py`、`build_or.py`、`build_docs.py`）里加了 `_blank_props()`，保存前清空 author、last_modified_by、title、subject、comments、category、keywords 等字段，**以后每次重建都会自动清干净，不会再退化**。全部 8 个 docx 复查已清空。
+
+#N **另外重跑了要一并投出去的 `Online_Resource_1_classifier.py`**：对全部 740 份索引报告运行，与最终标签一致 **723/740（97.7%）**，分模态 UGI 98.0%、CT 98.1%、超声 95.8% —— 与 Online Resource 1 里写的数字完全一致，附件所声称的可复现性成立。
+
+#N 操作单里正文字数由 2,998 更新为 3,000。
+
+#H1 二十四、作者信息更新为 10 位（已完成）
+
+#N 作者由 3 位扩为 10 位，第一作者 Jun Shu，通讯作者 Jun Yang，单位由 1 个变为 2 个。
+
+#N **标题页**（`诊断效能_TitlePage_InsightsIntoImaging.docx`）：作者行按你给的顺序排列，上标标注单位归属 —— **单位 ① 九位、单位 ② 一位（Zhengliang Meng，超声影像科）**，通讯作者标 `*`。Affiliations 行改为两个编号单位。通讯作者信息补全了 Tongji Medical College 与 Hubei Province 两处此前省略的层级，与你给的写法逐字一致。全部单位名称统一为你提供的 **`Science & Technology`**（此前写作 `Science and Technology`）。
+
+#N **投稿信落款**：`On behalf of all authors (...)` 由 3 位改为 10 位全名。
+
+#N **投稿操作单**：新增作者录入表，10 位按顺序编号、逐位标出单位归属，两个单位全称各列一次，可直接对着往 Editorial Manager 里填。
+
+#N **盲审文件未受影响**：正文、三份 Online Resource、STROBE 清单经检索**均不含任何一位作者的姓名**。参考文献 [3] 是 Yang X, Wang W, Wang K，与 Jun Yang、Haibin Wang 名字不同、非自引，不构成身份线索。全部 docx 文档属性复查仍为空。
+
+#H1 二十五、两处需要你确认的作者相关内容
+
+#N **1. 作者贡献（Author contributions）是我按单位归属推断的，必须由你核对后定稿。** ICMJE 要求逐人写明贡献，我不能凭空编造，现在写的是一个不与正文冲突的通用版本：
+
+#N *JS and JY conceived and designed the study. JS, GZ, FP, KZ, HG, HL and HW acquired the clinical and operative data. ZM contributed radiological expertise on ultrasound practice and reporting at the study institution. JS and HB analysed and interpreted the data. JS drafted the manuscript. HB and JY critically revised it for important intellectual content, and JY supervised the work. All authors read and approved the final version and agree to be accountable for all aspects of the work.*
+
+#N 请按实际情况改。十位作者的缩写无重复（JS/GZ/FP/KZ/HG/HL/HW/ZM/HB/JY），可直接替换。
+
+#N **2. 盲审复阅者的身份没有写进贡献声明。** 正文 Methods 写的是「A **paediatric surgeon** blinded to the operative findings adjudicated 32 reports」——是外科医生而非放射科医生。所以我**没有**把这项归给超声科的 ZM（那会与正文矛盾）。若你希望在贡献声明里点名这位复阅者，告诉我是谁，我加一句 `XX performed the blinded adjudication of report labels`。
+
+#N **另外提醒**：其余八位作者的 ORCID 我没有，标题页只列了 Jun Shu 与 Jun Yang 两个。IiI 只强制要求通讯作者的 ORCID，其余非必填，但在 Editorial Manager 里逐位补填对作者本人有好处。
+
+#H1 二十六、盲审复阅者已确认为 Jun Yang（已完成）
+
+#N 作者贡献声明中已加入一句：**`JY performed the blinded adjudication of the report labels.`** 位置在数据采集与数据分析之间。其余贡献分配按你的意见保持不变。
+
+#N 与正文一致性已核：正文 Methods 写「A **paediatric surgeon** blinded to the operative findings adjudicated 32 reports」，JY 为普外科医师，与此相符，不矛盾。
+
+#N **⚠️ 有一点你要心里有数，审稿人可能会问。** 现在贡献声明写明：JY 既**设计了研究**、又**做了盲法复阅**、还**指导了全文**。正文声称的盲法是「对**手术所见**设盲」——这一点技术上成立（复阅时只看报告文本、不看手术记录），但复阅者同时是提出研究假设的资深作者，且来自实施手术的同一科室，如果 JY 本人参与过其中部分患儿的手术，对个别病例可能存在回忆偏倚。
+
+#N 正文 Methods 已有「With a single adjudicator, interobserver agreement could not be estimated」这句限制。**如果你希望把这一层也写明，我可以在 Limitations 里加一句**（约 20 词，需从别处等量削减以守住 3,000 词）：
+
+#N *"The adjudicator was a study author from the operating department, blinded to operative findings but not independent of the study."*
+
+#N 加不加由你定。不加也说得过去——盲法的对象（手术所见）已在 Methods 写明，单一复阅者的局限也已声明。
+
+#H1 二十七、扭转角度敏感性分析：审稿意见成立，已改（A01）
+
+#N **结论：这条意见完全正确，指出的是一处真错误。** 我从原始数据重跑核实了三条，逐条如下。
+
+#N **1.「308+19=327」—— 正确，正文这句没错。** 数据：403 例扭转中 327 例记录了角度，其中 **308 例 ≥360°、19 例 90–270°**；另有 **76 例只有扭转陈述、没写角度**。
+
+#N **2.「384 不能与前段的 308 同时代表『记录≥360°』」—— 正确，这是错误所在。** 我核到代码层面，Table S10 第二行的实现是：
+
+#N `strict = volvulus & ~(rot_deg.notna() & (rot_deg < 360))`
+
+#N 它做的是**「剔除明确记录 <360° 的 19 例」**，把 76 例未记录角度者**保留**在扭转组内，因此得 403−19 = **384（82.6%）**。而标签写的是 “Restricted to a documented rotation of 360° **or more**”，其字面含义（必须有记录且 ≥360°）应为 **308/465 = 66.2%**。**标签与实现不符，标签是错的。**
+
+#N **3.「超声列 104/119 无法从文本确认是何种定义」—— 正确。** 104 = 113 − 9（超声亚组中 9 例明确 <360°），即定义 A；字面定义应为 **89/119 = 74.8%**。
+
+#N **审稿人「不要直接把 384 改成 308 就宣告解决」也是对的**，我按其要求把超声亚组与漩涡征分子分母一并重算了。
+
+#N **改法：不改实现，改标签，并把两种收紧方式一起报出来。** 理由是这两个定义测的不是一回事：
+
+#N • 定义 A（剔除明确 <360°）只针对**扭转程度**；
+#N • 定义 B（必须有记录且 ≥360°）额外剔除了 76 例未记录角度者——这些人很可能确实是完全扭转，只是手术记录没写角度。**B 把「记录不全」当成了「扭转不足」，混淆了两件事**，因此它并不是单纯地「更严格」。
+
+#N 只报其中一个都会引来同样的质疑，所以 Table S10 现在三行并列，并新增一列漩涡征：
+
+#N • primary（任何扭转陈述或任何角度）：**403/465（86.7%）** ｜ 超声 **113/119（95.0%）** ｜ 漩涡征 **58/113（51.3%）**
+#N • 剔除明确 <360°：**384/465（82.6%）** ｜ 超声 **104/119（87.4%）** ｜ 漩涡征 **54/104（51.9%）**
+#N • 须有记录且 ≥360°：**308/465（66.2%）** ｜ 超声 **89/119（74.8%）** ｜ 漩涡征 **50/89（56.2%）**
+
+#N 表题改为 “Prevalence of midgut volvulus, and the whirlpool sign among those children, under three definitions of volvulus”。
+
+#N **「所有结论不变」这句也重新核过，并且现在有数字撑着**：漩涡征在三种定义下分别是 51.3%、51.9%、56.2%，都是「约一半」——**「术中确诊扭转的患儿中只有约一半记录了漩涡征」这个核心发现不依赖于定义画在哪里**。OR2 正文已把这三个数字写出来，不再只是断言。
+
+#N **正文 Limitations 同一处标签错误一并改掉**：原「Restricting the volvulus definition to a documented rotation of 360° or more changes prevalence from 86.7% to 82.6%」——同样是拿字面定义配 A 的数字。已改为「**Excluding children whose operative record states a rotation below 360°** changes prevalence from 86.7% to 82.6%」。正文字数 3,000 → **2,998**。
+
+#N 分析脚本 `or_sens.py` 已同步进仓库，表格由脚本重新生成而非手改，可复跑。
+
+#H1 二十八、已发布分类脚本与 OR1 规则不符：意见成立，已改（A02）
+
+#N **七条测试句我逐条跑过，输出与意见给出的完全一致，一条不差。** 这条意见是对的。
+
+#N **先说一件重要的事，它决定了这个问题的严重程度：分析用的阳性/阴性标签并不来自这个脚本。** 标签来自人工裁定矩阵 `诊断效能_逐患者矩阵_当前版v3.xlsx`（`core.py` 第 7 行读入），确定性分级来自 `cert.py` 的独立正则。全部分析脚本中**没有任何一个引用 `classifier.py`**。所以脚本的规则缺陷**不会**传导到表 2、图 2、GEE 模型或确定性分级。审稿人「构造句证明代码存在规则缺陷，并不证明这些缺陷已造成同样数量的真实病例误判」这句判断是准确的。
+
+#N 但问题依然要修：**OR1 声称脚本实现了它写的规则，而实际不符**，审稿人一运行就发现了。按其要求「使主文、OR1、实际运行代码三者一致」，我做了如下处理。
+
+#N **发现 OR1 自身有两处内部矛盾，是 OR1 错、不是脚本错：**
+
+#N • **E1 把「排除」列为否定词，E2 却说「建议…排除肠旋转不良」是提出诊断。** 我把语料里全部含阳性词又含 排除/除外 的分句调出来看了——**24 处全部是「建议／请／必要时…排除（除外）肠旋转不良」这类要求排查的句式，没有一处是「已排除」的意思**。所以 E1 列「排除」是错的，已从 E1 移除并在 E2 中说明。
+
+#N • **F 节写「先否定、后 hedged exclusion、first match winning」，而 E2 的实质要求恰恰相反。** 脚本按 E2 执行是对的，F 节的顺序是错的。F 节已改为：组织排除 → 阳性词典 → E2 → E1 → 确定性分级，并写明「E2 先于 E1，因为要求排查诊断是提出而非否定」。
+
+#N **发现 OR1 C 多列了两条正文 Methods 没有的阳性词条——这是审稿人「主文与附录不一致」那条的实质：**
+
+#N 正文冻结的阳性判据是：*超声——漩涡征或明确的系膜血管换位；造影——弹簧/螺旋征或十二指肠空肠曲位置异常；CT——系膜漩涡或十二指肠位置异常*。而 OR1 C 还列了 **`空肠位于右腹/右中腹`（UGI）** 和 **`肠系膜血管走行异常`（CT）**。
+
+#N 我按 OR1 把这两条实现进脚本后重跑，结果**多判了 2 例**（"空肠位于右中腹，回盲部位置显示不清，未见明显梗阻征象" 与 "空肠位置异常（上组空肠位于右中下腹）"，两例的最终标签都是阴性）——**证明 OR1 C 才是错的一方，冻结的定义在正文**。已从 OR1 C 与脚本中删去这两条，并加一句说明：空肠位置与系膜血管走行是作为**记录内容**审计的（H 节），不是阳性判据，因为报告医师可以描述这些征象而不下旋转不良的结论。`静脉位于动脉左侧` 保留——它属于正文所说的「明确的系膜血管换位」。（这两条在语料中各出现 0 次，删留不影响任何数字。）
+
+#N **脚本的实际修改（五处）：**
+
+#N 1. **分句符加入顿号 `、`**——OR1 B 本来就写了。我先查了语料：41 条结论含顿号，全部是「1、」「2、」编号或并列所见，**没有一处顿号落在阳性词条内部**，拆分安全。
+#N 2. **否定改为「管辖」判定**——OR1 E1 原文就写着 negation cue 须 "governed the diagnostic term"，旧脚本却只查分句内是否出现。现改为**只读诊断词前 12 个字符**（与报告内容审计的漩涡征否定窗口一致）。这修好了两个真实病例：`中肠旋转不良术后：未见明显梗阻征象` 和 `2.中肠旋转不良，十二指肠未见明显梗阻征象`——否定管的是梗阻不是旋转，旧脚本判成阴性，是真漏判。
+#N 3. **hedged exclusion 也加了作用域**（诊断词前 12 字符内，或其后至下一个标点）。这修好了 `（本次探查中未探及明显"肠旋转不良"征象，建议进一步检查！）`——旧脚本因为句末的「建议进一步」而把它判成阳性，实际是明确否定。
+#N 4. **`无` 加负向后视 `(?<!有)`**，避免把「排除有无肠旋转不良」的「有无」当否定。
+#N 5. **UGI 补 `螺旋状|盘曲`**（OR1 C 本就列了，脚本只有 `螺旋征`）。
+
+#N **重跑 740 条索引单元的结果：**
+
+#N • 与最终标签一致率 **723/740（97.7%）→ 726/740（98.1%）**；分模态 UGI 98.0→**98.7%**、CT 98.1→**98.1%**、超声 95.8→**96.6%**。
+#N • 新旧判定不同的只有 **3 条，全部改对，0 条改坏**。
+#N • 剩余 14 处不一致**全部是漏判、0 处多判**（原为 16 漏判＋1 多判）。OR1 那句「误差方向一致地偏向漏检、因此报告的检出率是保守的」现在成立得更干净。
+
+#N **验证分析结果确实未变**：重跑 `tables_final.py`、`temporal2.py`、`usaudit4.py`、`or_tables.py`、`or_sens.py`、`addstats.py`，六个输出 JSON 与仓库中已有版本逐字节比对——五个完全一致，`addstats.json` 唯一的差异在第 13 位小数（bootstrap 浮点噪声，17.556701030677555 vs …544），**所有报告值不变**。表 2、图 2、GEE、Firth、边际效应、确定性分级全部不动。
+
+#N **同步更新的数字**：OR1 J 节 723/740（97.7%）→ **726/740（98.1%）**，分模态三个数，「十七处不一致中十六处漏判、一处多判」→「**十四处全部为漏判，无多判**」；正文 Supplementary Information 段「reproduces 97.7% of the final labels」→ **98.1%**。正文仍 2,998 词。
+
+#N `analysis/classifier.py` 与投稿用的 `Online_Resource_1_classifier.py` 保持完全一致。
+
+#H1 二十九、A03／A04／A05 三条意见全部成立，已改
+
+#N **A03 结论判定与人工上调没有统一——成立。** OR1 B 写「阳性/阴性标签由结论部分决定，所见部分仅用于内容编码和抽取定向复阅样本」，而 G 节 Sample 2 明写有 **5 份报告因为「所见里出现旋转不良征象、结论里没写」而被上调为阳性**。两者直接冲突：如果标签只看结论，这 5 份就不算错判。已改 OR1 B，写明**算法标签只看结论，最终标签是算法标签经盲法裁定后的结果，而裁定读的是整份报告**，并点明这 5 份是二者相异之处；正文 Methods 也加了一句「Because adjudication read the whole report, the final label is the algorithmic label after review, not the conclusion alone」。
+
+#N **A04 7 例人工更正与代码漏判不能画等号——成立。** G 节是 7 例（24 例随机中 2 例＋8 例定向中 5 例），J 节是参考实现与最终标签的差异（现为 14 例）。我原来写「These are the reports that adjudication corrected upward」，把 14 说成了那 7，是错的。已改为明确两者是不同的比较对象，并说明**重叠部分无法重建**——`诊断效能_逐患者矩阵_当前版v3.xlsx` 只有最终标签，没有「哪 32 份被复阅」「复阅前标签是什么」的逐条记录。审稿人要的脱敏逐例对照表，以现有数据做不出来。
+
+#N **A05 不能据此认定检出率必然保守——成立，这是三条里最该改的。** 原句「All discordances were machine under-calls, so detection rates are conservative」确实超出证据：随机样本只有 24 例，定向样本是**按疑似漏判挑出来的**，结构上不可能产出多判。已按审稿人的意思改写，正文与 OR1 G 节都不再声称保守，改为「这些样本无法确定未复阅的 708 份中残余误判的方向」。
+
+#N 正文因这三处增补涨到 3,032 词，削回 **2,991 词**，删的仍是表格或附件已承载的重复（非塌缩性解释在表 4 注脚已有、分离问题在 Results 与 OR2 已有、技术要素计数规则与表 3 注脚逐字重复）。
+
+#H1 三十、⚠️ 核 A03 时发现一处数据错误，需要你定夺
+
+#N 查「7 例无漩涡征而阳性」时逐条看了原文，其中**两例的索引检查次在所见和结论全文中都没有任何旋转不良术语或征象**，却被判为阳性。追下去：
+
+#N • **患儿 35792266**：术前两次超声。索引次（术前 1.59 天，腹部大血管彩超）无阳性内容；**更早一次（术前 2.37 天）记录了漩涡征**。属于索引单位与结局不同步，OR1 H 节已披露过这一例，不必改。
+
+#N • **患儿 10140565：这一例是矩阵数据错误。** 该患儿术前只有两份超声报告，同一天（2022-10-23），分别是「床旁彩超＋肝脾＋左肾静脉胡桃夹＋幽门＋颅脑」和「心脏彩超＋床旁彩超」，**全文无任何旋转不良术语或征象**，结论是「肝脏、脾脏未见明显异常。左肾静脉未见明显受压。幽门未显示。左侧室管膜下囊肿。」。而同次住院的**造影**报出了「中肠旋转不良并中肠扭转考虑」，`UGI_detected=1` 正确。矩阵里 `US_detected=1.0`（且 `US_whirlpool=0.0`）——**超声并没有报出这个诊断，这个 1 应该是 0**。
+
+#N 因为报告名称含「幽门彩超」，它按既定规则确实算一次索引超声，纳入没错；**错的是标签**。
+
+#N **若更正，影响如下：**
+
+#N • 超声检出 **65/119（54.6%，45.7–63.3）→ 64/119（53.8%，44.8–62.5）**
+#N • 无漩涡征而阳性 **7/61（11.5%）→ 6/61（9.8%）**
+#N • 2019–2026 超声检出 **49/80（61.3%）→ 48/80（60.0%）**（2012–2018 的 16/39 不变）
+#N • 有漩涡征而阳性仍为 58/58
+#N • 摘要、Key Points、表 2、表 3、表 4、图 2、图 3、GEE、时代模型、边际效应、配对亚组等全部要重算
+
+#N **这是你的裁定数据，我没有替你改。** 请你核一下该患儿的原始超声报告与手术记录：如果确认超声当时没有报出旋转不良，告诉我，我把矩阵那一格改为 0，重跑全部分析并同步所有数字与图表；如果这个 1 另有依据（例如口头会诊、或有一份不在导出数据里的报告），也告诉我，我在 OR1 里如实说明这一例的判定依据。
+
+#H1 第十九轮：九例待核标签裁定回收，三例更正并全量重算
+
+#N 你在 `待核标签清单_9例.xlsx` 里给出了裁定：**三例确为错标，改为阴性**；其余六例保持原判（含一例「导出数据漏了报告」）。已按此更正并把全链路重跑了一遍。
+
+#N **更正的三例**
+
+#N • **4331826（CT）**：术前三份 CT 全部只涉及肝方叶血管瘤、肝稍大、肠间隙不清 → `CT_detected` 1→0
+#N • **35807877（CT）**：结论为结肠扩张积气、阑尾粪石、直肠壁增厚 → `CT_detected` 1→0
+#N • **10140565（超声）**：术前唯一一次超声为床旁肝脾／左肾静脉／幽门，诊断由造影报出 → `US_detected` 1→0
+
+#N **怎么改的。** 没有动原始导出文件。三条更正连同理由写进 `analysis/label_corrections.csv`，由 `core.py` 在读入矩阵之后立即套用，并且**逐条断言原值仍等于表里写的 old 值**——将来矩阵若被改动，脚本会直接报错而不是默默算错。这样更正是可见的、可复现的、可撤销的，审稿人问起也拿得出依据。
+
+#N **核心数字变化**
+
+#N • CT 检出 **171/320（53.4%，48.0–58.8）→ 169/320（52.8%，47.3–58.2）**
+#N • 超声检出 **65/119（54.6%）→ 64/119（53.8%，44.8–62.5）**；造影 237/301（78.7%）不变
+#N • 无漩涡征而阳性 **7/61（11.5%）→ 6/61（9.8%，4.6–19.8）**；有漩涡征仍 58/58
+#N • 增强 CT **44/52（84.6%）→ 42/52（80.8%，68.1–89.2）**
+#N • GEE 未校正 OR：CT 0.31→**0.30（0.22–0.42）**，超声 0.33→**0.32（0.21–0.48）**
+#N • Cochran Q **p=0.001→p<0.001**；造影 vs CT 配对差 +28.8→**+30.5 个百分点**
+#N • Firth 罚似然 OR 17.6（2.00–2310）→ **16.9（1.93–2229）**，p 仍 0.006，独立实现仍吻合到小数点后六位
+
+#N **有一处需要你知道的口径变化。** 超声的时代效应从 OR 2.27（1.04–4.96，p=0.039）变成 **2.16（0.99–4.70，p=0.053）**——跨过了 0.05。同时自助法的边际效应仍勉强排除零（**+19.0 个百分点，+0.6 到 +37.6**）。两者都在临界，正文和 OR2 现在都按「临界」如实写，不再有任何一处声称超声的时代上升「显著」。这不影响论文的主张：正文的论点一直是「时代差异被检查类型解释掉大半」，而这一点更强了（+19.0→+8.2，从「减半」变成「减半以上」）。
+
+#N **方法学部分改口径了。** 原文写「七处不一致全部为漏判」，这轮查出的却是三处**多判**，必须改。Methods 现在写成：七处均为漏判之后，对全部 740 个索引单位做了**双向筛查**——阳性标签而文本匹配不到任何诊断词或征象模式的九例，阴性标签而文本点名诊断的零例；回原始报告核对后确认三例为多判，改为阴性。OR1 G 节新增「样本 3」完整交代九例的去向，包括保留的六例各自为什么保留（四例是形态学描述而未点名、一例结论只是交叉引用一份不在导出数据里的报告、一例索引次为阴性而术前 2.4 天那次记录了漩涡征），以及一句如实的边界说明：双向筛查覆盖全部单位但只靠文本模式，残余错分是**被约束而非被排除**。
+
+#N **顺手修掉的四个陷阱**
+
+#N • `build_iii.py` / `build_or.py` 从临时目录 `scratchpad/an/` 取 JSON，那个目录随容器回收就没了，构建不可复现——已改指向仓库内 `analysis/`
+#N • README 的运行顺序把 `tables_final.py` 排在 `tables.py` 之前，而前者要读后者的输出。第一次重建出来的表 2 就是旧数，是这个顺序造成的。已修正顺序，并在 README 里写明依赖
+#N • `tables2.py` 生成出 `p=<0.001`、`or_sens.py` 生成出 `p=0.000`，都是 p 值跨阈值后格式化函数没兜住。已修
+#N • `firth.py` 把分离示例的 65/113 写死在代码里，`or_add.json` 是手工拼的。已改为由数据驱动：新增 `or_add.py` 重新生成，Firth 的 profile 区间也改由 `addstats.py` 从数据算出
+
+#N **参考实现一致率重算了，而且换了口径。** 原先 OR1 J 节写「726/740（98.1%）」，我这次试了四种口径都复现不出这个数（最接近的是「取最近单份报告的结论」，给 725/740）。所以改成由新脚本 `classifier_agreement.py` 计算，口径与正文的索引单位一致——**按合并后的索引检查次、取结论文本**：**732/740（98.9%）**，造影 298/301（99.0%）、CT 316/320（98.8%）、超声 118/119（99.2%），八处不一致全部是参考实现漏判、无多判。J 节现在写明了这个口径，脚本随附件一起可跑。
+
+#N **正文 2,999 词**（限 3,000）。为放下方法学新增的那段，删掉了三处与别处重复的表述：引言里「not to rank them, which this design cannot do」的后半（正文已说过四次）、讨论里重复 Methods 的「设备/人员/流程无变化」、以及讨论里重复结果段的「75%」。摘要正文 248 词、CRS 28 词，均未动。
+
+#N **重建并核过的文件**：正文、三份 Online Resource、Cover Letter、Title Page（词数 3,000→2,999）、投稿操作单、纯文本全文、Fig 1–3 与 Fig S1。全部 docx 文档属性仍为空。另写了一个退役数值扫描，把 50 多个旧数值（171/320、54.6、+20.2、3.35、2.00 to 2310、726 of 740……）在全部成稿里回扫一遍，**零命中**。
+
+#H1 A12：539 例研究被误写成多中心 —— 意见成立，已改
+
+#N 引言把 Binu 等 2021（引用 [14]）写成 "a multicentre study of 539 children"。**是错的，已改为 "a single-centre study of 539 children"。**
+
+#N **核实经过。** PubMed 与 ScienceDirect 都被本环境的网络策略挡住，读不到原文摘要，所以是靠两条旁证定的：一是两次独立检索都只指向一家机构——Department of Paediatric Surgery, Women's and Children's Hospital, North Adelaide, South Australia；二是本稿引用的 [17]（Hennessey, John, Gent, Goh 2014，同一家机构、同一批作者）标题里就明写 "a single-center retrospective audit"，而 2021 年这篇正是那份 139 例研究的扩大随访。两条对得上。539 这个数字没问题，未动本稿任何研究人数。
+
+#N **顺带核了另外两处"多中心"，都没错**：引用 [13]（Nguyen 2025 AJR）原题即 "a multiinstitutional retrospective review"，正文称其为 2025 multicentre series 属实；引用 [3]（Yang 2024）标题自带 multicenter，是原文题名。
+
+#N 正文仍 2,999 词（multicentre 与 single-centre 都是一个词）。
+
+#H1 投稿前最终全面复查
+
+#N 因为这一轮改动很大（三例更正 + 全量重算 + A12），我从头到尾重查了一遍，不只看改动处。**重新从数据算了 124 个正文数字，逐条比对，零不符。** 但另外查出四处问题，都已修。
+
+#N **一、Online Resource 1 表 S1「All three」行算错了。** 三个模态的确定/多考虑/可疑三列分别是 78+33+15=126、76+74+17=167、83+62+32=177，合计 470；那一行却写着 128/168/177，合计 473——正是更正前的旧总数。原因在 `or_tables.py` 第 14 行把这三个数**写死**了，所以三例更正没传导过去。已改为由上面三行求和得出，并加断言：三档之和必须等于阳性总数，不等就直接报错。同一文件里还留着一份早已废弃的 S2b 硬编码值（131/268、59/113、116/281），目前靠加载顺序被 `volsign2.py` 覆盖才没出事——已删除。
+
+#N **二、参考文献 [11] 有一半没有依据。** 讨论里写「The 2021 systematic review reported better performance where the **mesenteric vessels and enteric fluid** were used」。两次独立检索该综述的亚组分析与 meta 回归，列出的调节因素只有三项：**无扭转的旋转不良、新生儿、检查前给肠腔液体**，没有肠系膜血管。ADC 与 PubMed 在本环境都被网络策略挡住，读不到全文，所以按可核实的范围收窄为「better performance where enteric fluid was given before the examination」。这一改反而更有力：该综述自己认定的技术调节因素，我们 119 次检查里只记录到 2 次。
+
+#N **三、Key Points 超了期刊的建议长度。** IiI 要求每条 Key Point 理想上不超过 12 词，原来第二、三条是 13 和 14 词。已改写为 12 和 11 词，且都不是摘要或正文的原句：
+
+#N • Only half the children with confirmed volvulus had a whirlpool sign recorded.（12）
+#N • Detection rose as much with examination type as with calendar era.（11）
+
+#N **四、Methods 里那句双向筛查有歧义。** 原文用冒号引出，读起来像是在定义「两个方向」，实际引出的是筛查结果。改为 "…screened in both directions, returning nine positives whose text matched no diagnostic term or sign pattern and no negative naming the diagnosis."
+
+#N **正文降到 2,994 词**（此前 2,999 卡得太死）。删的是 Limitations 里「Comparisons were not adjusted for multiplicity」——这句 Methods 已写过一次，重复无增益。Title Page 与操作单的词数已同步。
+
+#N **参考文献 [22] 核对完毕。** Zeger SL, Liang KY (1986) Biometrics **42:121–130** 确认无误，这条待办可以关掉。
+
+#H1 补做：Graphical Abstract
+
+#N 复查期刊要求时发现一份**我从没做过的文件**。检索到的两处说法不一致——一处称「所有投稿必交 graphical abstract」，一处称「可选，按期刊模板」；springeropen、journals.myesr.org、i3-journal.org 三个官方页面在本环境全部被网络策略挡住，我无法定论。**但两者都确认 IiI 有这个槽位，已发表的 Original Article 也都带这张图。** 所以不管哪种说法成立，备好都不吃亏。
+
+#N `Graphical_Abstract.tif`（备份 `.png`）：单幅 300 dpi、RGB、LZW 压缩，4052 × 1813 px。matplotlib 默认写出的是 RGBA，带 alpha 通道的 TIFF 常被投稿系统拒收，已在脚本里合成白底转为 RGB。
+
+#N 左栏是「报告记录了什么」，右栏是「诊断有没有被报出来」，两栏合起来就是全文论点：记录下来的是漩涡征，撑起已发表准确度的那几项几乎没有；而检出几乎完全跟着漩涡征走。配色沿用正文 Fig 2–3 的蓝（#2C7FB8）与红（#B22222），两色经色盲安全性校验全部通过（deutan ΔE 21.1、正常视觉 ΔE 29.3、对比度均 ≥3:1），灰色是去强调底色。
+
+#N **图上特意加了一行斜体限定**：Case-only design: every child had surgically confirmed malrotation, so these are report-level detection rates, not sensitivities. Graphical abstract 会脱离正文单独传播，而图里有一个「100%」——不加这句，单独看到的人极可能读成敏感度，那正好推翻全文最核心的告诫。
+
+#N 生成脚本 `analysis/graphabs.py` 已进仓库，数字全部从 `us_audit4.csv` 现算，不写死。
+
+#N **上传前请在 Editorial Manager 里确认这一项是必交还是可选**，以及是否要求套用期刊自己的模板；若要求套模板，把这张图的内容填进去即可。
+
+#H1 表格改为三线表
+
+#N 你问得对。检查了一下，正文四张表、三份 Online Resource 里的全部表格、STROBE 清单，用的都是 Word 内置样式 `Light Grid Accent 1`——**全表格网格加彩色底纹的"商务报告"样式**，不是期刊排版。国际医学期刊（NEJM、JAMA、Radiology、Springer 旗下包括 Insights into Imaging）通行的都是三线表：顶线、表头线、底线，无竖线、行间无横线——和中文学术规范的三线表是同一件事。这个不是投稿系统会退回的硬性错误，但排版明显不像期刊来稿，也是我之前全面复查时该查出来却没查的一处。
+
+#N **怎么改的。** 新写了 `analysis/manuscript_source_iii/threeline.py`，直接用 OXML 逐个单元格设置边框——表头行顶线加粗、表头行底线细线、末行底线加粗，其余全部清零，不依赖 Word 任何内置表格样式（内置样式即使被单元格级设置覆盖也不完全可靠）。`build_iii.py`、`build_or.py` 两处生成表格的代码都改用这个函数。
+
+#N **顺带发现并补上了一个缺口：STROBE_checklist.docx 在仓库里没有生成脚本**——之前某一轮是在临时目录里跑的脚本，产物提交了，脚本本身没进仓库，导致这份文件游离在可复现的构建流程之外。现在从文档内容和 `strobe.json` 反推，写了 `build_strobe.py` 补齐，内容逐字对照原文件核对过，只多了一处必要的空行（表格与 Note 之间的间距）。
+
+#N **校验方式。** 这个沙箱里 LibreOffice 连 docx 都渲染不了（和之前 xlsx 是同一个环境限制，不止 xlsx），没法截图肉眼看。改用直接读生成出来的 OOXML 逐单元格核对边框标签：18 张表（正文 4、OR1 2、OR2 10、OR3 1、STROBE 1）**全部**顶线在、表头线在、末行底线在、中间行边框归零。再逐字核对了正文与 OR1 的文字内容和数字（包括你要求核对的 126/167/177 那处），与三线表改动前完全一致，七份 docx 文档属性仍为空。
+
+#N 生成脚本已进仓库：`threeline.py`（共用）、`build_strobe.py`（新增）。README 已更新构建顺序和这条约定。
+

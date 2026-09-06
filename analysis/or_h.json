@@ -1,0 +1,119 @@
+{
+ "H": [
+  [
+   "Element",
+   "Modality",
+   "Regular expression (source text)"
+  ],
+  [
+   "Third portion of duodenum (D3)",
+   "Ultrasound",
+   "十二指肠水平部|十二指肠水平段|十二指肠横部|十二指肠第三段|(?<![弓])横部|水平部"
+  ],
+  [
+   "Duodenojejunal junction",
+   "Ultrasound",
+   "十二指肠空肠曲|屈氏|Treitz|十二指肠悬韧带|十二指肠[-—与和]?空肠交界"
+  ],
+  [
+   "Duodenum mentioned in any form",
+   "Ultrasound",
+   "十二指肠"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "Ultrasound / CT",
+   "肠系膜上动、?静脉|肠系膜上动静脉|肠系膜上动脉|肠系膜上静脉|肠系膜血管|系膜血管|SMA|SMV; excluding matches whose only context is 左肾静脉 / 胡桃夹 / 肾静脉受压 with no whirlpool term"
+  ],
+  [
+   "Explicit vessel inversion",
+   "Ultrasound",
+   "(?:静脉|动脉)[^。；\\n]{0,10}(?:换位|反位|倒置|关系异常|异常关系)|静脉位于[^。；\\n]{0,8}左|动脉位于[^。；\\n]{0,8}右"
+  ],
+  [
+   "Whirlpool / swirl / spiral appearance",
+   "All",
+   "漩涡|旋涡|涡流|螺旋; counted only where no negation (未见|未探及|未显示|未发现|无明显|不明显|未闻) occurs in the 12 characters preceding the match within the same clause"
+  ],
+  [
+   "Enteric fluid administered",
+   "Ultrasound",
+   "饮水|口服[^。；\\n]{0,6}(?:水|液|造影剂)|注水|注入|胃内注|温开水|经胃管"
+  ],
+  [
+   "Dynamic (real-time) assessment",
+   "Ultrasound",
+   "动态|实时观察|连续观察"
+  ],
+  [
+   "Graded compression",
+   "Ultrasound",
+   "加压|探头压|压迫探查"
+  ],
+  [
+   "Colour Doppler used",
+   "Ultrasound",
+   "CDFI|彩色多普勒|多普勒"
+  ],
+  [
+   "Bowel gas explicitly limiting the study",
+   "Ultrasound",
+   "clause containing both (肠气|积气|气体干扰|气体遮挡|气体遮盖|气体较多|气强反射|充满气体) and (干扰|遮挡|遮盖|显示不清|显示欠清|探及?不满意|不满意)"
+  ],
+  [
+   "Caecal position",
+   "Ultrasound / UGI",
+   "回盲"
+  ],
+  [
+   "Bedside examination",
+   "Ultrasound",
+   "床旁 (in the examination name)"
+  ],
+  [
+   "Examination type: great-vessel study",
+   "Ultrasound",
+   "腹部大血管 (in the examination name)"
+  ],
+  [
+   "Examination type: gastrointestinal ultrasound",
+   "Ultrasound",
+   "胃肠道 (in the examination name)"
+  ],
+  [
+   "Contrast enhancement",
+   "CT",
+   "增强 (in the examination name)"
+  ],
+  [
+   "Three-dimensional reconstruction",
+   "CT",
+   "三维重建 (in the examination name)"
+  ],
+  [
+   "Duodenojejunal junction",
+   "UGI",
+   "空肠曲|屈氏|Treitz|悬韧带|十二指肠[-—与和]?空肠交界"
+  ],
+  [
+   "Corkscrew / spring appearance",
+   "UGI",
+   "弹簧|螺旋|绞索|盘曲"
+  ],
+  [
+   "Jejunal position",
+   "UGI",
+   "空肠.{0,10}(位于|居|偏)"
+  ],
+  [
+   "Whole-gastrointestinal study",
+   "UGI",
+   "全消化道 (in the examination name)"
+  ],
+  [
+   "Barium contrast",
+   "UGI",
+   "钡 (in the examination name)"
+  ]
+ ]
+}
