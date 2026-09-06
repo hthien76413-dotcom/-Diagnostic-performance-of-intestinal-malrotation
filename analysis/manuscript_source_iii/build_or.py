@@ -31,7 +31,7 @@ TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S3':('Table S7','Documented content of the CT and upper gastrointestinal series index examinations',D['S3']),
      'S4':('Table S8','Ultrasound temporal model with the era boundary placed at 2019, 2020, 2021 and 2022',D['S4']),
      'S5':('Table S9','Ultrasound content audit taking the earliest rather than the closest preoperative examination episode as the index unit',D['S5']),
-     'S6':('Table S10','Prevalence of midgut volvulus under the primary and the restricted definition',D['S6']),
+     'S6':('Table S10','Prevalence of midgut volvulus, and the whirlpool sign among those children, under three definitions of volvulus',D['S6']),
      'S11':('Table S11','Average marginal effect of later era, with bootstrap confidence intervals',D['S11']),
      'S12':('Table S12','Paired differences in detection in the subgroup receiving all three examinations',D['S12']),
      'S13':('Table S13','Interaction terms, and the separated volvulus contrast under penalised likelihood',D['S13'])}

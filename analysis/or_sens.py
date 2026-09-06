@@ -46,16 +46,40 @@ S5=[['Documented content','Closest preoperative episode (primary)','Earliest pre
 for lab in A:
     S5.append([lab,f'{A[lab]}/119 ({100*A[lab]/119:.1f}%)',f'{B[lab]}/119 ({100*B[lab]/119:.1f}%)'])
 
-strict=pat['volvulus'] & ~(pat['rot_deg'].notna() & (pat['rot_deg']<360))
-us_ids=set(u['科研患者编号']); pu=pat[pat['科研患者编号'].isin(us_ids)]
-pus=strict[pat['科研患者编号'].isin(us_ids)]
-S6=[['Definition of midgut volvulus','Whole cohort (n=465)','Children who underwent ultrasound (n=119)'],
-    ['Explicit operative statement of torsion, or any documented degree of rotation (primary)',
-     f"{int(pat['volvulus'].sum())} ({100*pat['volvulus'].mean():.1f}%)",
-     f"{int(pu['volvulus'].sum())} ({100*pu['volvulus'].mean():.1f}%)"],
-    ['Restricted to a documented rotation of 360° or more',
-     f"{int(strict.sum())} ({100*strict.mean():.1f}%)",
-     f"{int(pus.sum())} ({100*pus.mean():.1f}%)"]]
+# Table S10. Two ways of tightening the volvulus definition.
+#   A: drop only children whose operative record states a rotation below 360 degrees.
+#   B: additionally require a stated degree, so children with a torsion statement but
+#      no recorded angle are dropped too. B therefore mixes severity with completeness
+#      of operative documentation; both are shown rather than one being called "strict".
+rot = pat['rot_deg']
+defA = pat['volvulus'] & ~(rot.notna() & (rot < 360))
+defB = pat['volvulus'] &  (rot.notna() & (rot >= 360))
+
+us_ids = set(u['科研患者编号'])
+inus   = pat['科研患者编号'].isin(us_ids)
+pu     = pat[inus]
+
+# whirlpool among children with volvulus under each definition, harmonised rule
+wp = u.set_index('科研患者编号')['whirl_pos']
+def whirl(mask):
+    ids = pat.loc[mask & inus, '科研患者编号']
+    w = wp.reindex(ids).fillna(False).astype(bool)
+    return f'{int(w.sum())}/{len(w)} ({100*w.mean():.1f}%)'
+
+def row(label, mask):
+    mu = mask[inus]
+    return [label,
+            f"{int(mask.sum())}/465 ({100*mask.mean():.1f}%)",
+            f"{int(mu.sum())}/119 ({100*mu.mean():.1f}%)",
+            whirl(mask)]
+
+S6=[['Definition of midgut volvulus','Whole cohort','Children who underwent ultrasound',
+     'Whirlpool reported among those with volvulus'],
+    row('Explicit operative statement of torsion, or any documented degree of rotation (primary)',
+        pat['volvulus']),
+    row('Excluding children whose record states a rotation below 360°', defA),
+    row('Requiring a documented rotation of 360° or more', defB)]
+
 json.dump({'S4':S4,'S5':S5,'S6':S6},open('or_sens.json','w'),ensure_ascii=False,indent=1)
 for k,T in [('S4',S4),('S5',S5),('S6',S6)]:
     print('===',k)

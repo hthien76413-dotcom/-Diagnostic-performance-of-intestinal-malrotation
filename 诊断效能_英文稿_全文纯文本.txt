@@ -2,7 +2,7 @@
 
 [Author names, affiliations, and corresponding-author details have been removed for double-blind peer review and are provided on the separate title page.]
 
-Word count: 3,000 (main text, excluding abstract, key points, figure and table legends, references and declarations); Tables: 4; Figures: 3; Supplementary: 3 Online Resources
+Word count: 2,998 (main text, excluding abstract, key points, figure and table legends, references and declarations); Tables: 4; Figures: 3; Supplementary: 3 Online Resources
 
 
 ## Abstract
@@ -242,7 +242,7 @@ Departments adopting an ultrasound-first pathway on the basis of sensitivities o
 
 ### Limitations
 
-This is not a diagnostic accuracy study: detection among surgically confirmed children who underwent a test does not transfer to children investigated for suspicion [11, 13, 14]. The cohort contains only children who reached an operation, is weighted towards severe neonatal disease, and provides little information on older children with intermittent symptoms, incidental or non-volvulus malrotation, or stable outpatients. The 55 children without an index test were excluded from the denominators, an informative missingness. Restricting the volvulus definition to a documented rotation of 360° or more changes prevalence from 86.7% to 82.6% without altering any conclusion (Online Resource 2).
+This is not a diagnostic accuracy study: detection among surgically confirmed children who underwent a test does not transfer to children investigated for suspicion [11, 13, 14]. The cohort contains only children who reached an operation, is weighted towards severe neonatal disease, and provides little information on older children with intermittent symptoms, incidental or non-volvulus malrotation, or stable outpatients. The 55 children without an index test were excluded from the denominators, an informative missingness. Excluding children whose operative record states a rotation below 360° changes prevalence from 86.7% to 82.6% without altering any conclusion (Online Resource 2).
 
 Index tests were classified from report text rather than blinded image review, so the study measures reported detection rather than achievable image-based accuracy; a finding seen but not recorded and an inadequate examination reported as normal cannot be distinguished. This bounds the question rather than the answer, since the report is what clinicians act on. The certainty tiers were derived from the same text and, unlike the positive–negative label, were not separately adjudicated. The temporal analysis was not pre-specified, the examination-type variable having been identified after inspection of the data, and is best regarded as hypothesis-generating. Comparisons were not adjusted for multiplicity, radiation dose could not be captured, and whether the deficit at this centre generalises is unknown.
 

@@ -48,11 +48,11 @@
 
 #TABS5
 
-#N **The definition of midgut volvulus.** The primary definition accepts an explicit operative statement of torsion or any documented degree of midgut or mesenteric rotation, with no minimum. Of the 327 children with a stated degree, 308 had a rotation of at least 360° and 19 had 90–270°. Table S10 shows the effect of restricting volvulus to the former.
+#N **The definition of midgut volvulus.** The primary definition accepts an explicit operative statement of torsion or any documented degree of midgut or mesenteric rotation, with no minimum. Of the 403 children with volvulus, 327 had a stated degree (308 of at least 360° and 19 of 90–270°) and 76 had a torsion statement with no angle recorded. Table S10 tightens the definition in two ways: excluding only the 19 children whose record states a rotation below 360°, and additionally requiring a stated degree, which also excludes the 76 with no angle recorded. The second is not simply stricter, since it removes children for incomplete operative documentation rather than for a lesser degree of torsion; both are therefore shown.
 
 #TABS6
 
-#N Restricting the definition lowers volvulus prevalence from 86.7% to 82.6% in the cohort and from 95.0% to 87.4% among the children who underwent ultrasound. It does not change the manuscript's claims: the whirlpool sign remains documented in about half of the children with confirmed volvulus under either definition, and the group with malrotation but no volvulus remains too small for any conclusion about ultrasound in uncomplicated malrotation.
+#N Excluding the 19 children with a rotation below 360° lowers volvulus prevalence from 86.7% to 82.6% in the cohort and from 95.0% to 87.4% among the children who underwent ultrasound; additionally requiring a stated degree lowers it to 66.2% and 74.8%. Neither changes the manuscript's claims. The whirlpool sign remains documented in about half of the children with confirmed volvulus under all three definitions (51.3%, 51.9% and 56.2%), so the finding that ultrasound recorded a whirlpool in only about half of the children whose operation confirmed volvulus does not depend on where the definition is drawn. The group with malrotation but no volvulus remains too small under any definition for a conclusion about ultrasound in uncomplicated malrotation.
 
 #H1 S2.6 Analyses added in response to statistical review
 

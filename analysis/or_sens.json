@@ -76,18 +76,27 @@
  "S6": [
   [
    "Definition of midgut volvulus",
-   "Whole cohort (n=465)",
-   "Children who underwent ultrasound (n=119)"
+   "Whole cohort",
+   "Children who underwent ultrasound",
+   "Whirlpool reported among those with volvulus"
   ],
   [
    "Explicit operative statement of torsion, or any documented degree of rotation (primary)",
-   "403 (86.7%)",
-   "113 (95.0%)"
+   "403/465 (86.7%)",
+   "113/119 (95.0%)",
+   "58/113 (51.3%)"
   ],
   [
-   "Restricted to a documented rotation of 360° or more",
-   "384 (82.6%)",
-   "104 (87.4%)"
+   "Excluding children whose record states a rotation below 360°",
+   "384/465 (82.6%)",
+   "104/119 (87.4%)",
+   "54/104 (51.9%)"
+  ],
+  [
+   "Requiring a documented rotation of 360° or more",
+   "308/465 (66.2%)",
+   "89/119 (74.8%)",
+   "50/89 (56.2%)"
   ]
  ]
 }
