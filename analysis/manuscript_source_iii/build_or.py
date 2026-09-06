@@ -1,6 +1,7 @@
 import docx, json, re, os
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from threeline import make_three_line_table
 
 def _blank_props(doc):
     """Strip python-docx's default authorship before saving.
@@ -51,12 +52,7 @@ def make(src,outfile,figs=None):
     def table(key):
         tag,title,data=TAB[key]
         p=para(f'{tag}. {title}'); p.runs[0].bold=True
-        t=doc.add_table(rows=len(data),cols=len(data[0])); t.style='Light Grid Accent 1'
-        for i,row in enumerate(data):
-            for j,c in enumerate(row):
-                cell=t.cell(i,j); cell.text=''
-                r=cell.paragraphs[0].add_run(str(c)); r.font.size=Pt(8.5); r.font.name='Times New Roman'
-                if i==0: r.bold=True
+        make_three_line_table(doc,data)
         para('')
     for ln in open(src).read().split('\n'):
         ln=ln.strip()

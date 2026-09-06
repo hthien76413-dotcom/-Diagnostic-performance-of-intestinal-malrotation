@@ -47,11 +47,21 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     cd manuscript_source_iii
     python3 build_iii.py    # manuscript from p1-3.md + tables*.json + figures
     python3 build_or.py     # the three Online Resources
+    python3 build_strobe.py # STROBE_checklist.docx from strobe.json
     python3 build_docs.py   # cover letter, submission sheet, Chinese notes
     python3 wc.py           # main-text word count against the 3,000-word limit
 
 `manuscript_source/` holds the earlier Pediatric Radiology revision sources;
 `or1.md` there is still the source of Online Resource 1.
+
+All tables in the manuscript, the three Online Resources and the STROBE
+checklist are built by `threeline.py` as open (three-line) tables — a rule
+above the header, a rule under the header, a rule at the foot, no vertical
+rules and no rules between data rows, which is the convention scientific
+journals expect (equivalent to the Chinese academic 三线表) and is not what
+Word's built-in "Light Grid Accent 1" style draws. Every table calls
+`make_three_line_table()`; do not add a table via `doc.add_table()` with a
+named style instead.
 
 ## The index unit, and the report-content audit patterns
 
