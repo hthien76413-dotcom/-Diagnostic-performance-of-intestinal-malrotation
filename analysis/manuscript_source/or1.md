@@ -20,9 +20,11 @@
 
 #N **Ultrasound-specific signs:** 漩涡征 / 旋涡征 / 涡流 (whirlpool sign); 螺旋 (spiral); 肠系膜上动脉与肠系膜上静脉换位 / 反位 / 倒置 / 关系异常 (inversion or abnormal relationship of the superior mesenteric artery and vein); 静脉位于动脉左侧 (vein to the left of the artery).
 
-#N **UGI-series-specific signs:** 十二指肠空肠曲位置异常 / 位置偏低 / 位于中线 (abnormally positioned duodenojejunal junction); 弹簧征 (spring or corkscrew sign); 螺旋状 / 盘曲 (corkscrew or coiled course of proximal small bowel); 空肠位于右腹 / 右中腹 (jejunum lying on the right).
+#N **UGI-series-specific signs:** 十二指肠空肠曲位置异常 / 位置偏低 / 位于中线 (abnormally positioned duodenojejunal junction); 弹簧征 (spring or corkscrew sign); 螺旋状 / 盘曲 (corkscrew or coiled course of proximal small bowel).
 
-#N **CT-specific signs:** 漩涡征 / 旋涡样改变 (mesenteric whirl); 十二指肠位置异常 (abnormal duodenal position); 肠系膜血管走行异常 (abnormal mesenteric-vessel course).
+#N **CT-specific signs:** 漩涡征 / 旋涡样改变 (mesenteric whirl); 十二指肠位置异常 (abnormal duodenal position).
+
+#N This dictionary is exactly the positivity definition given in the Methods. Jejunal position on the right and the course of the mesenteric vessels are audited as documented content (Section H) but are not positivity criteria, because the reporting radiologist may describe either without concluding that malrotation is present.
 
 #H1 D. Certainty qualifiers
 
@@ -36,7 +38,7 @@
 
 #H1 E. Negation, scope and exclusion rules
 
-#N **E1 Negation.** A candidate positive was cancelled if a negation cue appeared in the same clause and governed the diagnostic term: 未见 (not seen), 无 (absent), 未 (not), 排除 (excluded), 正常 (normal), 阴性 (negative), 未见明显异常 (no significant abnormality). Negation scope was the clause, not the sentence or report, so 未见明显梗阻征象。中肠旋转不良考虑。 ("no obstruction seen. Midgut malrotation considered.") remains positive.
+#N **E1 Negation.** A candidate positive was cancelled when a negation cue governed the diagnostic term: 未见 / 未探及 / 未显示 / 未发现 (not seen), 无 / 无明显 (absent), 不考虑 (not considered), 正常 (normal), 阴性 (negative). A cue governs the term only when it stands in the twelve characters preceding it, so 未见明显梗阻征象。中肠旋转不良考虑。 remains positive, and so does 中肠旋转不良术后：未见明显梗阻征象, where the negation governs the obstruction rather than the rotation. 无 is not read as a cue inside 有无 ("whether or not"), which raises the question rather than answering it. 排除 and 除外 are not negation cues in this corpus: every occurrence with the diagnosis is a request to exclude it, which rule E2 treats as raising it.
 
 #N **E2 Distinction between negation and hedged exclusion.** 建议进一步检查除外肠旋转不良 ("recommend further study to exclude malrotation") is not a negation: it raises the diagnosis. Such clauses were labelled positive at possible-tier certainty. This rule was applied consistently. It is the most consequential interpretive decision in the algorithm, and it is the reason for the sensitivity analysis in Table 2.
 
@@ -46,7 +48,7 @@
 
 #H1 F. Priority order
 
-#N Rules were applied in this order, first match winning: (1) organ exclusions (E3); (2) clause-level negation (E1); (3) hedged-exclusion recognition (E2); (4) positive-evidence dictionary (C); (5) certainty tagging (D). Reports with no matching clause were labelled negative. Technically non-diagnostic studies were not coded separately as indeterminate and were labelled by their stated conclusion.
+#N Rules were applied in this order: (1) organ exclusions (E3); (2) positive-evidence dictionary (C); (3) hedged-exclusion recognition (E2); (4) negation (E1); (5) certainty tagging (D). E2 is read before E1 because a request to exclude the diagnosis raises it and must not be cancelled as a negation; a hedged cue is read in the twelve characters before the term or, up to the next punctuation, after it. Reports with no matching clause were labelled negative. Technically non-diagnostic studies were not coded separately as indeterminate and were labelled by their stated conclusion.
 
 #H1 G. Validation and adjudication
 
@@ -66,7 +68,7 @@
 
 #N The rules in Sections C–F are provided as a runnable Python script (`classifier.py`, deposited with this Online Resource) so that they can be inspected and re-applied. The script takes a report conclusion and a modality and returns a binary label and a certainty tier, implementing clause segmentation (B), the positive-evidence dictionary (C), certainty tiering (D), negation, hedged-exclusion and organ-exclusion handling (E), and the priority order (F).
 
-#N Applied to all 740 preoperative index reports and compared with the final labels used in the analysis (the algorithmic labels after blinded surgeon adjudication), the reference implementation agreed on 723 of 740 (97.7%): 98.0% for the UGI series, 98.1% for CT and 95.8% for ultrasound. Sixteen of the seventeen disagreements were reference-implementation under-calls and one was an over-call.
+#N Applied to all 740 preoperative index reports and compared with the final labels used in the analysis (the algorithmic labels after blinded surgeon adjudication), the reference implementation agreed on 726 of 740 (98.1%): 98.7% for the UGI series, 98.1% for CT and 96.6% for ultrasound. All fourteen disagreements were reference-implementation under-calls; there was no over-call.
 
 #N The residual under-calls are dominated by the failure modes listed in Section G: the diagnosis stated in the findings section but not carried into the conclusion; a conclusion consisting only of a cross-reference to another report; and a diagnostic sign described morphologically without the diagnosis being named. These are the reports that adjudication corrected upward, so the direction of error is consistent with a rule set of this kind under-detecting rather than over-detecting, and the detection rates reported in the manuscript are conservative.
 
