@@ -35,4 +35,4 @@
 
 #N Jun Yang, MD
 
-#N On behalf of all authors (Jun Shu, Hongqiang Bian, Jun Yang)
+#N On behalf of all authors (Jun Shu, Guanghua Zhang, Fei Peng, Kai Zheng, Hongxi Guo, Haiyan Lei, Haibin Wang, Zhengliang Meng, Hongqiang Bian, Jun Yang)

@@ -435,3 +435,27 @@
 #N **另外重跑了要一并投出去的 `Online_Resource_1_classifier.py`**：对全部 740 份索引报告运行，与最终标签一致 **723/740（97.7%）**，分模态 UGI 98.0%、CT 98.1%、超声 95.8% —— 与 Online Resource 1 里写的数字完全一致，附件所声称的可复现性成立。
 
 #N 操作单里正文字数由 2,998 更新为 3,000。
+
+#H1 二十四、作者信息更新为 10 位（已完成）
+
+#N 作者由 3 位扩为 10 位，第一作者 Jun Shu，通讯作者 Jun Yang，单位由 1 个变为 2 个。
+
+#N **标题页**（`诊断效能_TitlePage_InsightsIntoImaging.docx`）：作者行按你给的顺序排列，上标标注单位归属 —— **单位 ① 九位、单位 ② 一位（Zhengliang Meng，超声影像科）**，通讯作者标 `*`。Affiliations 行改为两个编号单位。通讯作者信息补全了 Tongji Medical College 与 Hubei Province 两处此前省略的层级，与你给的写法逐字一致。全部单位名称统一为你提供的 **`Science & Technology`**（此前写作 `Science and Technology`）。
+
+#N **投稿信落款**：`On behalf of all authors (...)` 由 3 位改为 10 位全名。
+
+#N **投稿操作单**：新增作者录入表，10 位按顺序编号、逐位标出单位归属，两个单位全称各列一次，可直接对着往 Editorial Manager 里填。
+
+#N **盲审文件未受影响**：正文、三份 Online Resource、STROBE 清单经检索**均不含任何一位作者的姓名**。参考文献 [3] 是 Yang X, Wang W, Wang K，与 Jun Yang、Haibin Wang 名字不同、非自引，不构成身份线索。全部 docx 文档属性复查仍为空。
+
+#H1 二十五、两处需要你确认的作者相关内容
+
+#N **1. 作者贡献（Author contributions）是我按单位归属推断的，必须由你核对后定稿。** ICMJE 要求逐人写明贡献，我不能凭空编造，现在写的是一个不与正文冲突的通用版本：
+
+#N *JS and JY conceived and designed the study. JS, GZ, FP, KZ, HG, HL and HW acquired the clinical and operative data. ZM contributed radiological expertise on ultrasound practice and reporting at the study institution. JS and HB analysed and interpreted the data. JS drafted the manuscript. HB and JY critically revised it for important intellectual content, and JY supervised the work. All authors read and approved the final version and agree to be accountable for all aspects of the work.*
+
+#N 请按实际情况改。十位作者的缩写无重复（JS/GZ/FP/KZ/HG/HL/HW/ZM/HB/JY），可直接替换。
+
+#N **2. 盲审复阅者的身份没有写进贡献声明。** 正文 Methods 写的是「A **paediatric surgeon** blinded to the operative findings adjudicated 32 reports」——是外科医生而非放射科医生。所以我**没有**把这项归给超声科的 ZM（那会与正文矛盾）。若你希望在贡献声明里点名这位复阅者，告诉我是谁，我加一句 `XX performed the blinded adjudication of report labels`。
+
+#N **另外提醒**：其余八位作者的 ORCID 我没有，标题页只列了 Jun Shu 与 Jun Yang 两个。IiI 只强制要求通讯作者的 ORCID，其余非必填，但在 Editorial Manager 里逐位补填对作者本人有好处。

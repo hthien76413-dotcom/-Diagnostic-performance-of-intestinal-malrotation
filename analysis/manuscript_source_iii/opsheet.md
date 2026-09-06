@@ -50,6 +50,24 @@
 #N **Critical relevance statement**（若系统单列此栏）：
 #N Departments adopting ultrasound-first pathways for malrotation should audit whether their own reports document the duodenal landmarks that produced the published sensitivities; in this department they almost never did.
 
+#N **Authors**（按顺序录入，共 10 位；第一作者 Jun Shu，通讯作者 Jun Yang）：
+#N 1. Jun Shu — 单位 ①（第一作者）
+#N 2. Guanghua Zhang — 单位 ①
+#N 3. Fei Peng — 单位 ①
+#N 4. Kai Zheng — 单位 ①
+#N 5. Hongxi Guo — 单位 ①
+#N 6. Haiyan Lei — 单位 ①
+#N 7. Haibin Wang — 单位 ①
+#N 8. Zhengliang Meng — 单位 ②
+#N 9. Hongqiang Bian — 单位 ①
+#N 10. Jun Yang — 单位 ①（通讯作者）
+
+#N **单位 ①**：Department of General Surgery, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science & Technology, Wuhan 430016, Hubei Province, China
+
+#N **单位 ②**：Department of Ultrasound Imaging, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science & Technology, Wuhan 430016, Hubei Province, China
+
+#N **ORCID**：仅 Jun Shu（0009-0001-3003-1452）与 Jun Yang（0009-0006-0669-4340）已知；其余八位若有 ORCID，在系统里各自补填，非必填。
+
 #N **Corresponding author**：Jun Yang，yjun201602@163.com，+86 186 2713 9911，ORCID 0009-0006-0669-4340
 
 #N **Ethics / Consent / Competing interests / Funding / Data availability**：与 Title Page 中的 Declarations 逐条一致，直接照抄，切勿另写一版（前后不一致是编辑部退回的常见原因）。
