@@ -459,3 +459,17 @@
 #N **2. 盲审复阅者的身份没有写进贡献声明。** 正文 Methods 写的是「A **paediatric surgeon** blinded to the operative findings adjudicated 32 reports」——是外科医生而非放射科医生。所以我**没有**把这项归给超声科的 ZM（那会与正文矛盾）。若你希望在贡献声明里点名这位复阅者，告诉我是谁，我加一句 `XX performed the blinded adjudication of report labels`。
 
 #N **另外提醒**：其余八位作者的 ORCID 我没有，标题页只列了 Jun Shu 与 Jun Yang 两个。IiI 只强制要求通讯作者的 ORCID，其余非必填，但在 Editorial Manager 里逐位补填对作者本人有好处。
+
+#H1 二十六、盲审复阅者已确认为 Jun Yang（已完成）
+
+#N 作者贡献声明中已加入一句：**`JY performed the blinded adjudication of the report labels.`** 位置在数据采集与数据分析之间。其余贡献分配按你的意见保持不变。
+
+#N 与正文一致性已核：正文 Methods 写「A **paediatric surgeon** blinded to the operative findings adjudicated 32 reports」，JY 为普外科医师，与此相符，不矛盾。
+
+#N **⚠️ 有一点你要心里有数，审稿人可能会问。** 现在贡献声明写明：JY 既**设计了研究**、又**做了盲法复阅**、还**指导了全文**。正文声称的盲法是「对**手术所见**设盲」——这一点技术上成立（复阅时只看报告文本、不看手术记录），但复阅者同时是提出研究假设的资深作者，且来自实施手术的同一科室，如果 JY 本人参与过其中部分患儿的手术，对个别病例可能存在回忆偏倚。
+
+#N 正文 Methods 已有「With a single adjudicator, interobserver agreement could not be estimated」这句限制。**如果你希望把这一层也写明，我可以在 Limitations 里加一句**（约 20 词，需从别处等量削减以守住 3,000 词）：
+
+#N *"The adjudicator was a study author from the operating department, blinded to operative findings but not independent of the study."*
+
+#N 加不加由你定。不加也说得过去——盲法的对象（手术所见）已在 Methods 写明，单一复阅者的局限也已声明。
