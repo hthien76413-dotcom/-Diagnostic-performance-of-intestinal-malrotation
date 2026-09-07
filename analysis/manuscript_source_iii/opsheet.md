@@ -44,7 +44,7 @@
 
 #N **Keywords**：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report; Quality improvement
 
-#N **Abstract**：从正文 Abstract 节整段复制，保持 Objectives / Methods / Results / Conclusion 四段结构不要合并。
+#N **Abstract**：只粘贴 Objectives / Methods / Results / Conclusions 四段（含这四个段名本身），245 词，系统显示的 Word Count 上限 250 会包含这四个段名。**不要把 Critical relevance statement 和 Keywords 也粘进这个框**——那两项在 Editorial Manager 里是各自独立的字段（CRS 对应 Additional Information 里的 Key Point 3，见前面 Key Points 一节；Keywords 是下面单独一行）。四段务必保持 Objectives / Methods / Results / Conclusions 结构，不要合并。
 
 #N **Key Points**（Editorial Manager 在「Additional Information」步骤的 Questionnaire 里问，不是简单三个空框，三条各有固定要求，字数按空格分词计，系统会实时显示字符数）：
 
@@ -107,7 +107,7 @@
 #N 以下各项均已核对完毕，上传时确认一遍即可：
 
 #N 1. 盲审正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者、备注）已清空，无需再在 Word 里手动检查。
-#N 2. 正文 2,994 词，摘要 248 词，Critical relevance statement 28 词。
+#N 2. 正文 2,994 词，摘要四段（含段名）245 词，Critical relevance statement 28 词。
 #N 3. 摘要为 Objectives / Methods / Results / Conclusion 四段式。
 #N 4. Key Points 三条按 Question（23 词）/ Findings（23 词）/ Critical Relevance Statement（28 词，与摘要 CRS 逐字相同，按设计如此）分别填入 Additional Information 问卷，且已逐字写进正文 Key Points 节。
 #N 5. 图题 ≤15 词、图注 ≤300 词，且都在正文里而非图片文件内。

@@ -673,3 +673,21 @@
 
 #N 生成脚本已进仓库：`threeline.py`（共用）、`build_strobe.py`（新增）。README 已更新构建顺序和这条约定。
 
+#H1 投稿系统摘要框超字数（265/250），顺带发现摘要框里贴错了内容
+
+#N 两个问题叠在一起。
+
+#N **一，框里粘的文字和正文摘要不是同一版本。** 截图里 Objectives 段写的是"as a first-line examination... based on high sensitivity in dedicated diagnostic studies"，正文摘要原文是"as first-line... on the basis of sensitivities of 93–97% obtained under dedicated protocols"——不是同一句话，是被改写过的版本，说明这框里贴的不是正文摘要原文。这个必须先处理：无论最终填多少词，摘要框和正文里的 Abstract 节必须逐字一致，两处不一致本身就是技术核查会被打回的理由。
+
+#N **二，就算贴对了正文原文，也会超限。** 精确算了一遍：Objectives / Methods / Results / Conclusions 四段（含四个段名本身，因为截图里"Objectives"是和正文一起打在框里的普通文字，系统的计数器没法区分"这是标题"还是"这是内容"，会照单全收）合计 **252 词**，而系统限制 250 词——哪怕贴对了原文也会超 2 词。之前我报给你的"摘要 248 词"，是不算这四个段名本身的净正文字数，这次是我表述不够精确，导致你看到系统报错时对不上账。
+
+#N **已在源头改了两处，不动任何数字：**
+#N • Objectives："on the basis of sensitivities of 93–97% obtained under dedicated protocols" → "based on sensitivities of 93–97% under dedicated protocols"（34→31 词）
+#N • Conclusions："Whether supplying the missing elements would close the gap to published performance cannot be tested here, but it coincides with a measurable documentation deficit." → "Whether the missing elements would close the gap to published performance cannot be tested here, but the deficit is measurable."（42→38 词）
+
+#N 四段现在合计 **245 词**，留了 5 词余量，避免系统的分词方式（连字符、百分号、长破折号的处理未必和 Python 一致）在边缘再把你绊一次。所有数字——93–97%、465、86.7%、410、119、2.5%、12/10.1%、2/1.7%、48.7%、64/119、53.8%、58/58、6/61、58/113、41.0%、60.0%、+19.0、+8.2——逐一核对过，一个没动。
+
+#N **摘要框只贴这四段，不要把 Critical relevance statement 和 Keywords 也粘进去。** 那两项在系统里是各自独立的字段：CRS 对应上次说的 Additional Information 问卷里的 Key Point 3，Keywords 是表单里单独一行。这也是我怀疑 265 这个数字怎么来的：四段单独贴是 252，四段 + CRS 是 280，四段 + CRS + Keywords 是 294——265 都对不上，大概率是有人把摘要整段（可能还带了改写）贴过去又删了几句，不是从正文摘要节干净复制的。**保险做法是这次直接从下面重新整段复制**，不要在已经贴过的旧内容上改。
+
+#N 操作单第 47 行、第二项核对清单都已同步这个 245 词的数字和"只贴四段"的提醒。
+
