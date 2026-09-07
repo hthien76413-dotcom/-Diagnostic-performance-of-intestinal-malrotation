@@ -1,0 +1,132 @@
+{
+ "T3": [
+  [
+   "Documented content of the ultrasound examination",
+   "n (%) of 119",
+   "2012–2018 (n=39)",
+   "2019–2026 (n=80)",
+   "Detection when documented",
+   "Detection when not documented"
+  ],
+  [
+   "Third portion of duodenum or duodenojejunal junction",
+   "3 (2.5)",
+   "1",
+   "2",
+   "2/3",
+   "62/116 (53%)"
+  ],
+  [
+   "Duodenum mentioned in any form",
+   "7 (5.9)",
+   "3",
+   "4",
+   "3/7",
+   "61/112 (54%)"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "12 (10.1)",
+   "3",
+   "9",
+   "10/12 (83%)",
+   "54/107 (50%)"
+  ],
+  [
+   "Explicit statement of vessel inversion",
+   "1 (0.8)",
+   "0",
+   "1",
+   "1/1",
+   "63/118 (53%)"
+  ],
+  [
+   "Enteric fluid administration recorded",
+   "2 (1.7)",
+   "1",
+   "1",
+   "1/2",
+   "63/117 (54%)"
+  ],
+  [
+   "Dynamic (real-time) assessment",
+   "3 (2.5)",
+   "0",
+   "3",
+   "1/3",
+   "63/116 (54%)"
+  ],
+  [
+   "Graded compression",
+   "1 (0.8)",
+   "1",
+   "0",
+   "1/1",
+   "63/118 (53%)"
+  ],
+  [
+   "Caecal position",
+   "5 (4.2)",
+   "1",
+   "4",
+   "4/5",
+   "60/114 (53%)"
+  ],
+  [
+   "Colour Doppler used",
+   "116 (97.5)",
+   "38",
+   "78",
+   "63/116 (54%)",
+   "1/3"
+  ],
+  [
+   "Whirlpool, swirl or spiral appearance reported",
+   "58 (48.7)",
+   "16",
+   "42",
+   "58/58 (100%)",
+   "6/61 (10%)"
+  ],
+  [
+   "Bowel gas explicitly limiting the study",
+   "30 (25.2)",
+   "11",
+   "19",
+   "12/30 (40%)",
+   "52/89 (58%)"
+  ],
+  [
+   "Booked as abdominal great-vessel study",
+   "67 (56.3)",
+   "13",
+   "54",
+   "46/67 (69%)",
+   "18/52 (35%)"
+  ],
+  [
+   "Booked as gastrointestinal ultrasound",
+   "75 (63.0)",
+   "29",
+   "46",
+   "37/75 (49%)",
+   "27/44 (61%)"
+  ],
+  [
+   "Booked as pyloric ultrasound",
+   "12 (10.1)",
+   "4",
+   "8",
+   "7/12 (58%)",
+   "57/107 (53%)"
+  ],
+  [
+   "Performed at the bedside",
+   "9 (7.6)",
+   "0",
+   "9",
+   "1/9",
+   "63/110 (57%)"
+  ]
+ ]
+}

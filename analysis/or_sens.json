@@ -1,0 +1,102 @@
+{
+ "S4": [
+  [
+   "Era boundary",
+   "Examinations before / after",
+   "Detection before / after",
+   "Era odds ratio",
+   "Era odds ratio adjusted for examination type",
+   "Examination-type odds ratio",
+   "Average marginal effect of later era (crude → adjusted)"
+  ],
+  [
+   "2019",
+   "39 / 80",
+   "16/39 (41.0%) / 48/80 (60.0%)",
+   "2.16 (0.99–4.70), p=0.053",
+   "1.44 (0.62–3.37), p=0.399",
+   "3.73 (1.67–8.33), p=0.001",
+   "+19.0 → +8.2 pp"
+  ],
+  [
+   "2020",
+   "44 / 75",
+   "17/44 (38.6%) / 47/75 (62.7%)",
+   "2.67 (1.24–5.74), p=0.012",
+   "1.74 (0.75–4.04), p=0.193",
+   "3.44 (1.52–7.77), p=0.003",
+   "+24.0 → +12.6 pp"
+  ],
+  [
+   "2021",
+   "62 / 57",
+   "29/62 (46.8%) / 35/57 (61.4%)",
+   "1.81 (0.87–3.76), p=0.111",
+   "1.18 (0.53–2.65), p=0.686",
+   "3.92 (1.74–8.82), p<0.001",
+   "+14.6 → +3.7 pp"
+  ],
+  [
+   "2022",
+   "76 / 43",
+   "40/76 (52.6%) / 24/43 (55.8%)",
+   "1.14 (0.54–2.41), p=0.738",
+   "0.83 (0.36–1.88), p=0.648",
+   "4.31 (1.95–9.52), p<0.001",
+   "+3.2 → -4.2 pp"
+  ]
+ ],
+ "S5": [
+  [
+   "Documented content",
+   "Closest preoperative episode (primary)",
+   "Earliest preoperative episode"
+  ],
+  [
+   "D3 or duodenojejunal junction",
+   "3/119 (2.5%)",
+   "3/119 (2.5%)"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "12/119 (10.1%)",
+   "12/119 (10.1%)"
+  ],
+  [
+   "Enteric fluid administration",
+   "2/119 (1.7%)",
+   "1/119 (0.8%)"
+  ],
+  [
+   "Whirlpool, swirl or spiral appearance reported",
+   "58/119 (48.7%)",
+   "56/119 (47.1%)"
+  ]
+ ],
+ "S6": [
+  [
+   "Definition of midgut volvulus",
+   "Whole cohort",
+   "Children who underwent ultrasound",
+   "Whirlpool reported among those with volvulus"
+  ],
+  [
+   "Explicit operative statement of torsion, or any documented degree of rotation (primary)",
+   "403/465 (86.7%)",
+   "113/119 (95.0%)",
+   "58/113 (51.3%)"
+  ],
+  [
+   "Excluding children whose record states a rotation below 360°",
+   "384/465 (82.6%)",
+   "104/119 (87.4%)",
+   "54/104 (51.9%)"
+  ],
+  [
+   "Requiring a documented rotation of 360° or more",
+   "308/465 (66.2%)",
+   "89/119 (74.8%)",
+   "50/89 (56.2%)"
+  ]
+ ]
+}
