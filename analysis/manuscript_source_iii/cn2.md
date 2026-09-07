@@ -691,3 +691,11 @@
 
 #N 操作单第 47 行、第二项核对清单都已同步这个 245 词的数字和"只贴四段"的提醒。
 
+#H1 关键词超限（6/5），删了 Quality improvement
+
+#N 系统限 5 个，正文原有 6 个：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report; Quality improvement。这处上限我之前设置时没有查证具体数字，是我的疏漏。
+
+#N **删的是 Quality improvement，其余五个都保留。** 理由：Intestinal malrotation / Intestinal volvulus / Ultrasonography 是核心主题词，删了等于让人搜不到这篇论文；Infant, Newborn 对应全文近三分之二病例是新生儿这个关键人群特征；Radiology report 是这篇论文区别于一般诊断准确性研究的核心角度——审计的是报告内容而非影像本身。Quality improvement 是六个里最通用、最可被其他词覆盖的一个：它想表达的"这是一篇质量审计文章"，Radiology report 已经在语境里隐含了，删掉它损失的检索价值最小。
+
+#N 正文 Keywords 行、操作单里对应的表单字段已同步改成五个，两处逐字一致。检索过全仓库，Quality improvement 这个词没有在别处被引用，删得干净。
+

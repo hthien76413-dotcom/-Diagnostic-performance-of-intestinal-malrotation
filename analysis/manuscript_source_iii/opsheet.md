@@ -42,7 +42,7 @@
 
 #N **Running title**：Duodenal landmarks in routine malrotation ultrasound reports
 
-#N **Keywords**：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report; Quality improvement
+#N **Keywords**（系统限 5 个，用分号分隔逐个填，"Infant, Newborn" 中间是逗号不是分号，算一个词）：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report
 
 #N **Abstract**：只粘贴 Objectives / Methods / Results / Conclusions 四段（含这四个段名本身），245 词，系统显示的 Word Count 上限 250 会包含这四个段名。**不要把 Critical relevance statement 和 Keywords 也粘进这个框**——那两项在 Editorial Manager 里是各自独立的字段（CRS 对应 Additional Information 里的 Key Point 3，见前面 Key Points 一节；Keywords 是下面单独一行）。四段务必保持 Objectives / Methods / Results / Conclusions 结构，不要合并。
 
