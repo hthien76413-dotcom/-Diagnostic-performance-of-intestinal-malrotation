@@ -46,13 +46,23 @@
 
 #N **Abstract**：从正文 Abstract 节整段复制，保持 Objectives / Methods / Results / Conclusion 四段结构不要合并。
 
-#N **Key Points**（系统通常单独设框，三条分别填）：
-#N Duodenal landmarks appeared in three of 119 routine ultrasound examinations.
-#N A whirlpool sign was recorded in only half the children with confirmed volvulus.
-#N Detection rose with a change in examination type as much as with calendar era.
+#N **Key Points**（Editorial Manager 在「Additional Information」步骤的 Questionnaire 里问，不是简单三个空框，三条各有固定要求，字数按空格分词计，系统会实时显示字符数）：
 
-#N **Critical relevance statement**（若系统单列此栏）：
+#N Key Point 1 – Question（说明研究要解决的临床未满足需求，20–25 词，限 300 字符）：
+#N Intestinal malrotation with volvulus is a surgical emergency; ultrasound is advocated as first-line imaging based on sensitivities from dedicated protocols, not routine reporting.
+#N （23 词，179 字符）
+
+#N Key Point 2 – Findings（客观总结主要结果，20–25 词，限 300 字符）：
+#N Among 410 surgically confirmed children, routine ultrasound reports documented duodenal landmarks in only 2.5% of examinations; detection tracked the whirlpool sign almost exclusively.
+#N （23 词，184 字符）
+
+#N Key Point 3 – Critical Relevance Statement（说明本文如何批判性评估一个问题、如何推动临床放射学实践，≤40 词，限 450 字符）：
 #N Departments adopting ultrasound-first pathways for malrotation should audit whether their own reports document the duodenal landmarks that produced the published sensitivities; in this department they almost never did.
+#N （28 词，218 字符）
+
+#N Key Point 3 与摘要里的 Critical relevance statement 是同一句话，逐字一致——系统这样设计就是要求两者对应，不用另外改写。
+
+#N **系统原话提醒**："Please also add the same key points into the main text file."——上面三句已经逐字写进正文 Key Points 节（正文 `诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx`），两边一致，不需要再手动同步。
 
 #N **Authors**（按顺序录入，共 10 位；第一作者 Jun Shu，通讯作者 Jun Yang）：
 #N 1. Jun Shu — 单位 ①（第一作者）
@@ -99,7 +109,7 @@
 #N 1. 盲审正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者、备注）已清空，无需再在 Word 里手动检查。
 #N 2. 正文 2,994 词，摘要 248 词，Critical relevance statement 28 词。
 #N 3. 摘要为 Objectives / Methods / Results / Conclusion 四段式。
-#N 4. Key Points 三条，每条 9–14 词，未复用摘要或正文原句；与正文 Key Points 节逐字一致。
+#N 4. Key Points 三条按 Question（23 词）/ Findings（23 词）/ Critical Relevance Statement（28 词，与摘要 CRS 逐字相同，按设计如此）分别填入 Additional Information 问卷，且已逐字写进正文 Key Points 节。
 #N 5. 图题 ≤15 词、图注 ≤300 词，且都在正文里而非图片文件内。
 #N 6. 图片文件名与图号一致，按名字对号入座即可。
 #N 7. Title Page 与系统表单里的 Declarations 完全一致。
