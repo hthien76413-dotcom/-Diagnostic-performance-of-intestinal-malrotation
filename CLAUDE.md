@@ -15,4 +15,5 @@
 - JACR 作者须知以用户提供的 `analysis/manuscript_source_jacr/JACR_Guide_for_Authors_2026-10-08.pdf` 为准（图片版 PDF，需逐页看图读取）。要点：初投时图和表放在正文里；Title Page 必须有 Data Statement 固定句、领导职务、按 ICMJE 分项的贡献；利益冲突声明单独上传，不写在 Title Page 上。
 - 生成式 AI 声明：用户决定如实声明（Claude 协助起草、语言润色和分析代码），按 JACR 模板写在参考文献之前。不要把声明改窄。
 - 改稿后必须重新构建，并运行 `python3 analysis/manuscript_source_jacr/jacr_check.py`。它会核对 JACR 的各项上限、盲审隐去信息、美式拼写和参考文献格式。
-- 渲染 docx/pptx 需要 LibreOffice 的 writer/impress 组件。新环境里只有 core，需要先 `apt-get install libreoffice-writer libreoffice-impress poppler-utils`。
+- 渲染 docx/pptx 需要 LibreOffice 的 writer/impress 组件。新环境里只有 core，需要先 `apt-get install libreoffice-writer libreoffice-impress libreoffice-calc poppler-utils`（xlsx 公式重算需要 calc）。
+- 审稿自查（2026-10-08）发现 S1 参考标准、S2 术前时间、S3 超声内容未人工验证三项严重问题；核对表 `审稿核对表_S1-S3.xlsx`、`S3超声报告阅读_阅读者乙.xlsx` 由 `analysis/build_review_checklists.py` 生成，等用户填回后据此剔除病例并重算全部结果。
