@@ -22,6 +22,7 @@ for line in io.open(SRC, encoding='utf-8'):
 assert len(rows) == 24, f'parsed {len(rows)} references, expected 24'
 
 def ris_authors(s):
+    s = s.split(';')[0]  # drop a trailing group author such as '; STROBE Initiative'
     s = s.replace(', et al', '').replace(' et al', '')
     for a in [x.strip() for x in s.split(',') if x.strip()]:
         parts = a.split()
