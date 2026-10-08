@@ -37,7 +37,7 @@ check(len(title) <= 129 and not title.rstrip().endswith('?'), f'title {len(title
 i = ms.index('Abstract')
 abstract = ms[i + 1:i + 5]
 words = sum(len(p.split()) for p in abstract)
-check([p.split(':')[0] for p in abstract] == ['Objective', 'Methods', 'Results', 'Conclusion'], 'abstract headings Objective/Methods/Results/Conclusion')
+check([p.split(':')[0] for p in abstract] == ['Objective', 'Methods', 'Results', 'Discussion'], 'abstract headings Objective/Methods/Results/Discussion (JACR guide)')
 check(words <= 250, f'abstract {words} words incl. headings (limit 250)')
 check(not any(re.search(r'\[\d', p) for p in abstract), 'no citations in the abstract')
 kw = [p for p in ms if p.startswith('Keywords:')][0]
@@ -63,6 +63,20 @@ check(3 <= len(th) <= 6, f'{len(th)} take-home points (3-6)')
 summary = th[0].lstrip('• ').strip()
 check(len(summary.split()) <= 35 and summary in ' '.join(ms), f'summary sentence {len(summary.split())} words, verbatim in manuscript')
 
+# Items the JACR Guide for Authors (ScienceDirect, printed 2026-10-08) names explicitly
+DATA_STMT = ('The authors declare that they had full access to all of the data in this study and the authors take '
+             'complete responsibility for the integrity of the data and the accuracy of the data analysis.')
+check(any(DATA_STMT in p for p in tp), 'title page carries the JACR data statement verbatim')
+check(any(p.startswith('Leadership roles:') for p in tp), 'title page lists leadership roles')
+check(any(p.startswith('Author contributions (by ICMJE activity):') for p in tp), 'contributions listed by ICMJE activity')
+check(not any(p.startswith(('Declaration of competing interest', 'Competing interests')) for p in tp),
+      'no conflict-of-interest statement on the title page (uploaded separately)')
+AI_HEAD = 'Declaration of generative AI and AI-assisted technologies in the writing process:'
+check(any(p.startswith(AI_HEAD) for p in tp), 'title page AI declaration uses the JACR heading')
+ai_at = [i for i, p in enumerate(ms) if p.startswith(AI_HEAD)]
+check(len(ai_at) == 1 and ai_at[0] < ms.index('References'), 'manuscript AI declaration uses the JACR heading, before the references')
+check(ms.index('Figure Legends') > ms.index('References'), 'figure legends follow the references')
+check(len(ms_doc.inline_shapes) == 3, f'{len(ms_doc.inline_shapes)} figures embedded in the manuscript (initial submission)')
 auth = [p for p in tp if p.startswith('Authors:')][0]
 n_auth = len(auth.split(':', 1)[1].split(','))
 check(n_auth <= 7, f'{n_auth} authors on the title page (limit 7)')

@@ -13,7 +13,7 @@ Methods: Retrospective case-only report audit at one tertiary children's hospita
 
 Results: Among 465 children (volvulus in 86.7%), 410 underwent at least one index test. Three of 119 ultrasound examinations (2.5%) documented the third portion of the duodenum or the duodenojejunal junction, 12 (10.1%) the mesenteric artery–vein relationship and 2 (1.7%) enteric fluid; a whirlpool sign was reported in 48.7%. Ultrasound reported malrotation in 64 of 119 examinations (53.8%): in 58 of 58 recording a whirlpool and 6 of 61 without one, whereas a whirlpool appeared in only 58 of 113 children with confirmed volvulus. Ultrasound detection rose from 41.0% to 60.0% between eras; adjusting for a shift toward great-vessel sessions reduced the difference from +19.0 to +8.2 percentage points, an interval including zero.
 
-Conclusion: Routine ultrasound functioned as a whirlpool-dependent test for volvulus rather than a protocolized assessment of duodenal position. Whether the missing elements would close the gap to published performance cannot be tested here, but the deficit is measurable.
+Discussion: Routine ultrasound functioned as a whirlpool-dependent test for volvulus rather than a protocolized assessment of duodenal position. Whether the missing elements would close the gap to published performance cannot be tested here, but the deficit is measurable.
 
 Keywords: Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report
 
@@ -150,7 +150,7 @@ Availability of data and materials: The de-identified analysis dataset used pseu
 
 Authors' contributions: Provided on the separate title page.
 
-Declaration of generative AI and AI-assisted technologies in the manuscript preparation process: During the preparation of this work the authors used Claude (Anthropic) to assist with drafting and language editing of the manuscript and with writing and checking the analysis code. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
+Declaration of generative AI and AI-assisted technologies in the writing process: During the preparation of this work the authors used Claude (Anthropic) in order to assist with drafting and language editing of the manuscript and with writing and checking the analysis code. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 
 
 ## References
@@ -202,6 +202,15 @@ Declaration of generative AI and AI-assisted technologies in the manuscript prep
 23. Firth D. Bias reduction of maximum likelihood estimates. Biometrika. 1993;80:27-38. doi:10.1093/biomet/80.1.27
 
 24. Heinze G, Schemper M. A solution to the problem of separation in logistic regression. Stat Med. 2002;21:2409-2419. doi:10.1002/sim.1047
+
+
+## Figure Legends
+
+Figure 1. Study flow and the imaging received by children without an index test. Retrieval of 559 operative records in 499 children, assembly of the surgically confirmed cohort, availability of each preoperative index test, and reduction of 812 eligible preoperative reports to 740 index examination episodes. Every one of the 55 children who received none of the three index examinations nonetheless had other preoperative imaging, five of them documented before transfer; the breakdown is shown at right.
+
+Figure 2. Report-level detection by modality, each estimate with its own denominator. Detection among children with a preoperative index examination (Wilson 95% confidence intervals). Each estimate is drawn from a different, indication-selected group of children, so the rates are not directly comparable between modalities and are not sensitivities for children investigated for suspected malrotation.
+
+Figure 3. Ultrasound examination content and detection conditional on that content. A, Documented content of the 119 ultrasound index examinations. B, Report-level detection conditional on that content. Three examinations documented the third portion of the duodenum or the duodenojejunal junction. Detection when a whirlpool sign was reported is partly definitional, the sign being one of the positivity criteria; the informative contrast is the 6 of 61 examinations that named the diagnosis without one.
 
 Table 1. Characteristics of the 465 children with surgically confirmed intestinal malrotation, overall and according to which preoperative index test they received
 
@@ -325,11 +334,8 @@ Gastrointestinal ultrasound  16/39 (41.0%)        48/80 (60.0%)        2.16 (0.9
 
 Modality-specific logistic models. For ultrasound the content variable is whether the examination session included an abdominal great-vessel study; this is an ordering and reporting label, not a record of technique. For CT the variable is intravenous contrast enhancement. Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation (non-collapsibility), so the marginal effect is the more interpretable measure of how much of the era difference the content variable accounts for. The content variables were not randomized and are themselves confounded by indication: a child suspected of volvulus is both more likely to be booked for a great-vessel study and more likely to have a whirlpool to find. These models are explanatory, not causal. Sensitivity analyses moving the era boundary from 2019 to 2022 are in Supplement 2.
 
+Figure 1
 
-## Figure Legends
+Figure 2
 
-Figure 1. Study flow and the imaging received by children without an index test. Retrieval of 559 operative records in 499 children, assembly of the surgically confirmed cohort, availability of each preoperative index test, and reduction of 812 eligible preoperative reports to 740 index examination episodes. Every one of the 55 children who received none of the three index examinations nonetheless had other preoperative imaging, five of them documented before transfer; the breakdown is shown at right.
-
-Figure 2. Report-level detection by modality, each estimate with its own denominator. Detection among children with a preoperative index examination (Wilson 95% confidence intervals). Each estimate is drawn from a different, indication-selected group of children, so the rates are not directly comparable between modalities and are not sensitivities for children investigated for suspected malrotation.
-
-Figure 3. Ultrasound examination content and detection conditional on that content. A, Documented content of the 119 ultrasound index examinations. B, Report-level detection conditional on that content. Three examinations documented the third portion of the duodenum or the duodenojejunal junction. Detection when a whirlpool sign was reported is partly definitional, the sign being one of the positivity criteria; the informative contrast is the 6 of 61 examinations that named the diagnosis without one.
+Figure 3

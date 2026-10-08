@@ -56,34 +56,42 @@ def add_table(k):
     make_three_line_table(doc,data)
     para(foot,italic=True,size=8.5)
 # Layout for review: text double-spaced with continuous line numbers and page
-# numbers; tables after the references, one per page, then the figure legends.
-# The figures themselves are uploaded as separate files (JACR_Figure1-3.tif), so
-# they are not embedded here and #FIG markers only fix their order of citation.
+# numbers. JACR's guide asks for figure legends after the references and for
+# tables and figures to be included in the manuscript at initial submission, so
+# the order at the end is References, Figure Legends, then each table and each
+# figure on its own page. Separate figure files (TIFF, >=300 dpi) are needed
+# only at revision.
 apply_house_style(doc)
 DOUBLE=2.0
-tables=[]
+tables=[]; figs=[]
 text=''.join(open(f).read()+'\n' for f in ['p1.md','p2.md','p3.md'])
 for ln in text.split('\n'):
     ln=ln.strip()
     if not ln: continue
     if ln.startswith('#T '): para(ln[3:],style='Title')
     elif ln == '#H1 Figure legends':
-        for k in tables: add_table(k)
         doc.add_page_break(); doc.add_heading('Figure Legends',level=1)
     elif ln.startswith('#H1 '): doc.add_heading(ln[4:],level=1)
     elif ln.startswith('#H2 '): doc.add_heading(ln[4:],level=2)
     elif ln.startswith('#N '): para(ln[3:]).paragraph_format.line_spacing=DOUBLE
     elif ln.startswith('#R '): para(ln[3:],size=10,space_after=3).paragraph_format.line_spacing=DOUBLE
     elif ln.startswith('#TAB'): tables.append(ln[4:])
-    elif ln.startswith('#FIG'): pass
+    elif ln.startswith('#FIG'): figs.append(ln[4:])
     else: para(ln)
+for k in tables: add_table(k)
+for k in figs:
+    doc.add_page_break()
+    p=para(f'Figure {k}'); p.runs[0].bold=True; p.paragraph_format.keep_with_next=True
+    path,w=FIGS[k]
+    doc.add_picture(path,width=Inches(min(w,6.5))); doc.paragraphs[-1].alignment=WD_ALIGN_PARAGRAPH.CENTER
+assert figs==['1','2','3'], figs
 assert tables==['1','2','3','4'], tables
 add_page_numbers(doc); add_line_numbers(doc)
 _blank_props(doc).save(OUT+'JACR_3_Manuscript_masked.docx'); print('saved JACR_3_Manuscript_masked.docx')
 
-# JACR takes figures as separate files; Elsevier's artwork guide lists TIFF for
-# raster images, so each figure is also written as an RGB, LZW-compressed,
-# 300 dpi TIFF flattened onto white.
+# At revision JACR takes figures as separate TIFF, JPEG or EPS files of at least
+# 300 dpi, so each figure is also written as an RGB, LZW-compressed, 300 dpi
+# TIFF flattened onto white.
 from PIL import Image
 for k,(path,_) in FIGS.items():
     im=Image.open(path)

@@ -37,7 +37,7 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 tables_final.py # Tables 2 and 4; reads tables123.json, so run it AFTER tables.py
     python3 classifier_agreement.py  # agreement of the published script with the final labels
     python3 or_add.py      # assembles or_add.json; run after addstats.py and volsign2.py
-    python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs, and vector JACR_Figure1-3.pdf
+    python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
     python3 graphabs.py    # graphical abstract for Insights into Imaging (not used by JACR)
 
 `ALL_RESULTS.txt` is the concatenated console output of the analysis scripts.
@@ -45,7 +45,7 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 ## Building the documents
 
     cd manuscript_source_jacr
-    python3 build_manuscript.py  # masked manuscript (double-spaced, line-numbered, tables after the references) and JACR_Figure1-3.tif
+    python3 build_manuscript.py  # masked manuscript (double-spaced, line-numbered; legends, tables and figures after the references) and JACR_Figure1-3.tif
     python3 build_supplements.py # Supplements 1-3 from supp1-3.md, and Supplement_1_classifier.py
     python3 build_strobe.py      # JACR_STROBE_checklist.docx from strobe.json
     python3 build_docs.py        # cover letter, title page, Chinese submission sheet

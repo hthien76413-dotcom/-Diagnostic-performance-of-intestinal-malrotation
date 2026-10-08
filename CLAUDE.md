@@ -12,5 +12,7 @@
   - *Insights into Imaging*：2026-09-30 因范围不符直接退稿，未送外审。
 - 作者 7 人：Jun Shu, Fei Peng, Kai Zheng, Haiyan Lei, Zhengliang Meng, Hongqiang Bian, Jun Yang（通讯作者）。Guanghua Zhang、Hongxi Guo、Haibin Wang 在致谢里。
 - 投稿文件在仓库根目录（`JACR_*`、`Supplement_1_classifier.py`）。文稿源文件在 `analysis/manuscript_source_jacr/`。构建命令见 `analysis/README.md`。
+- JACR 作者须知以用户提供的 `analysis/manuscript_source_jacr/JACR_Guide_for_Authors_2026-10-08.pdf` 为准（图片版 PDF，需逐页看图读取）。要点：初投时图和表放在正文里；Title Page 必须有 Data Statement 固定句、领导职务、按 ICMJE 分项的贡献；利益冲突声明单独上传，不写在 Title Page 上。
+- 生成式 AI 声明：用户决定如实声明（Claude 协助起草、语言润色和分析代码），按 JACR 模板写在参考文献之前。不要把声明改窄。
 - 改稿后必须重新构建，并运行 `python3 analysis/manuscript_source_jacr/jacr_check.py`。它会核对 JACR 的各项上限、盲审隐去信息、美式拼写和参考文献格式。
 - 渲染 docx/pptx 需要 LibreOffice 的 writer/impress 组件。新环境里只有 core，需要先 `apt-get install libreoffice-writer libreoffice-impress poppler-utils`。

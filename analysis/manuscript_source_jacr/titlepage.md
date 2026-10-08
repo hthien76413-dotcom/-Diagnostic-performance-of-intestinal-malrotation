@@ -22,18 +22,21 @@
 
 #N **Acknowledgments:** The authors thank Guanghua Zhang, Hongxi Guo and Haibin Wang (Department of General Surgery, Wuhan Children's Hospital) for their contribution to the acquisition of clinical and operative data.
 
+#N **Leadership roles:** Jun Yang is Director of the Department of General Surgery, Wuhan Children's Hospital. None of the other authors holds a leadership role at their institution or within the ACR.
+
 #N **Funding:** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
-#N **Declaration of competing interest:** The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. The corresponding author's statement generated with the Elsevier Declarations tool is uploaded separately.
 
 #N **Ethics approval and consent to participate:** Approved by the institutional review board of Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), approval number 2026R018-E01. The requirement for informed consent was waived because of the retrospective, de-identified design. All procedures were in accordance with the 1964 Declaration of Helsinki and its later amendments.
 
 #N **Consent for publication:** Not applicable. This manuscript does not contain any individual person's data, images, or other identifiable material.
 
+#N **Data statement:** The authors declare that they had full access to all of the data in this study and the authors take complete responsibility for the integrity of the data and the accuracy of the data analysis.
+
 #N **Data availability:** The de-identified analysis dataset used pseudonymized research identifiers rather than direct identifiers; it is not publicly available because of institutional and ethical restrictions on sharing patient-level clinical data and the potential for re-identification within this small, single-center disease cohort. The complete text-classification rule set, a runnable reference implementation of it, and the report-content audit patterns are provided in Supplement 1. De-identified data may be made available by the corresponding author upon reasonable request and with permission of the institutional review board.
 
-#N **Author contributions:** JS and JY conceived and designed the study. JS, FP, KZ and HL acquired the clinical and operative data. ZM contributed radiological expertise on ultrasound practice and reporting at the study institution. JY performed the blinded adjudication of the report labels. JS and HB analyzed and interpreted the data. JS drafted the manuscript. HB and JY critically revised it for important intellectual content, and JY supervised the work. All authors read and approved the final version and agree to be accountable for all aspects of the work.
+#N **Author contributions (by ICMJE activity):** Conception and design: JS, JY. Acquisition of data: JS, FP, KZ and HL (clinical and operative data); JY (blinded adjudication of the report labels). Analysis and interpretation of data: JS and HB; ZM (radiological expertise on ultrasound practice and reporting at the study institution). Drafting of the manuscript: JS. Critical revision of the manuscript for important intellectual content: all authors. Final approval of the version to be submitted: all authors. Agreement to be accountable for all aspects of the work: all authors. Supervision: JY.
 
-#N **Declaration of generative AI and AI-assisted technologies in the manuscript preparation process:** During the preparation of this work the authors used Claude (Anthropic) to assist with drafting and language editing of the manuscript and with writing and checking the analysis code. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
+#N **Declaration of generative AI and AI-assisted technologies in the writing process:** During the preparation of this work the authors used Claude (Anthropic) in order to assist with drafting and language editing of the manuscript and with writing and checking the analysis code. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 
-#N **Note to the editorial office:** The main manuscript file is masked for peer review; author names, affiliations, ORCIDs, the institution name and the ethics approval number appear only on this title page.
+#N **Note to the editorial office:** The main manuscript file is masked for peer review; author names, affiliations, ORCIDs, the institution name and the ethics approval number appear only on this title page. The conflict-of-interest statement generated with the Elsevier Declarations tool is uploaded as a separate document.
