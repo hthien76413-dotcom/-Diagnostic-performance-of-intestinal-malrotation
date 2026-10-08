@@ -91,7 +91,7 @@ for f in sorted(glob.glob(ROOT + 'JACR_*.docx')):
     for p in ps:
         if p == 'References':
             refs = True
-        if p.startswith('Figure 1.'):
+        if p.startswith('Figure 1.') or re.match(r'Table \d\. ', p):
             refs = False
         if not refs:
             text.append(p)

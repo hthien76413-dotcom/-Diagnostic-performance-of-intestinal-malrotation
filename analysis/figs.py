@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 from statsmodels.stats.proportion import proportion_confint as pci
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'axes.spines.top':False,'axes.spines.right':False})
+# vector copies for the journal embed TrueType fonts (Type 42), as Elsevier's artwork guide asks
+plt.rcParams.update({'pdf.fonttype':42})
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 C={'UGI':'#B22222','CT':'#E08214','US':'#2C7FB8','US2':'#7FC0E8','grey':'#7a7a7a'}
 
@@ -26,7 +28,7 @@ box(3,24,46,21,'Index unit = examination episode closest to operation\n812 eligi
 ax.text(50,15,'Detection rates are computed among children with surgically confirmed malrotation who received the test.\nThe cohort contains no test-negative children, so specificity and predictive values are not estimable.',
         ha='center',va='center',fontsize=9.8,style='italic',color='#444',
         bbox=dict(boxstyle='round,pad=0.6',fc='#fff8e1',ec='#d9b34a'))
-plt.tight_layout(); plt.savefig(OUT+'Fig1_study_flow.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'Fig1_study_flow.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.savefig(OUT+'JACR_Figure1.pdf',bbox_inches='tight',facecolor='white'); plt.close()
 
 # ---------- Figure 3: detection with prominent denominators ----------
 ixf=pd.read_csv('ix_full.csv'); u=pd.read_csv('us_audit.csv')
@@ -46,5 +48,5 @@ ax.set_xlim(0,126); ax.set_xticks(range(0,101,20)); ax.set_xlabel('Report-level 
 ax.grid(axis='x',color='#dddddd'); ax.set_axisbelow(True)
 ax.set_title('Each bar has a DIFFERENT denominator drawn from a DIFFERENT, indication-selected group of children.\nThese are not sensitivities and must not be compared with one another as if they were.',
              fontsize=10.5,color='#8a1c1c',pad=14,fontweight='bold')
-plt.tight_layout(); plt.savefig(OUT+'Fig2_detection_by_modality.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'Fig2_detection_by_modality.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.savefig(OUT+'JACR_Figure2.pdf',bbox_inches='tight',facecolor='white'); plt.close()
 print('fig1, fig3 done')

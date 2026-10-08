@@ -3,6 +3,7 @@ from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from threeline import make_three_line_table
 from usspell import us, us_table
+from docstyle import apply_house_style, add_page_numbers
 import shutil
 
 def _blank_props(doc):
@@ -38,7 +39,7 @@ TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S12':('Table S12','Paired differences in detection in the subgroup receiving all three examinations',D['S12']),
      'S13':('Table S13','Interaction terms, and the separated volvulus contrast under penalized likelihood',D['S13'])}
 def make(src,outfile,figs=None):
-    doc=docx.Document()
+    doc=docx.Document(); apply_house_style(doc); add_page_numbers(doc)
     st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font.size=Pt(11)
     for s in doc.sections: s.left_margin=s.right_margin=Inches(1.0)
     def para(t,style=None,size=None,italic=False):

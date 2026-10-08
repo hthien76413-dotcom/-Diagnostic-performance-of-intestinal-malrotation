@@ -3,6 +3,7 @@
 import docx, json, os
 from docx.shared import Pt, Inches
 from threeline import make_three_line_table
+from docstyle import apply_house_style, add_page_numbers
 
 D = os.path.dirname(os.path.abspath(__file__))
 OUT = '/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
@@ -19,7 +20,7 @@ def _blank_props(doc):
 
 rows = json.load(open(os.path.join(D, 'strobe.json')))['STROBE']
 
-doc = docx.Document()
+doc = docx.Document(); apply_house_style(doc); add_page_numbers(doc)
 st = doc.styles['Normal']; st.font.name = 'Times New Roman'; st.font.size = Pt(10)
 for s in doc.sections: s.left_margin = s.right_margin = Inches(0.7)
 

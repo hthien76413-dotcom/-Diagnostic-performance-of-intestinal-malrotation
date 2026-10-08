@@ -3,6 +3,7 @@ from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from threeline import make_three_line_table
 from usspell import us, us_table
+from docstyle import apply_house_style, add_page_numbers, add_line_numbers
 
 def _blank_props(doc):
     """Strip python-docx's default authorship before saving.
@@ -50,24 +51,34 @@ def para(text,style=None,size=None,italic=False,space_after=8):
     p.paragraph_format.space_after=Pt(space_after); return p
 def add_table(k):
     tag,title,foot=TITLES[k]; data=T[k]
-    p=para(f'{tag}. {title}'); p.runs[0].bold=True
+    doc.add_page_break()
+    p=para(f'{tag}. {title}'); p.runs[0].bold=True; p.paragraph_format.keep_with_next=True
     make_three_line_table(doc,data)
     para(foot,italic=True,size=8.5)
-def add_fig(k):
-    path,w=FIGS[k]
-    doc.add_picture(path,width=Inches(w)); doc.paragraphs[-1].alignment=WD_ALIGN_PARAGRAPH.CENTER
+# Layout for review: text double-spaced with continuous line numbers and page
+# numbers; tables after the references, one per page, then the figure legends.
+# The figures themselves are uploaded as separate files (JACR_Figure1-3.tif), so
+# they are not embedded here and #FIG markers only fix their order of citation.
+apply_house_style(doc)
+DOUBLE=2.0
+tables=[]
 text=''.join(open(f).read()+'\n' for f in ['p1.md','p2.md','p3.md'])
 for ln in text.split('\n'):
     ln=ln.strip()
     if not ln: continue
     if ln.startswith('#T '): para(ln[3:],style='Title')
+    elif ln == '#H1 Figure legends':
+        for k in tables: add_table(k)
+        doc.add_page_break(); doc.add_heading('Figure Legends',level=1)
     elif ln.startswith('#H1 '): doc.add_heading(ln[4:],level=1)
     elif ln.startswith('#H2 '): doc.add_heading(ln[4:],level=2)
-    elif ln.startswith('#N '): para(ln[3:])
-    elif ln.startswith('#R '): para(ln[3:],size=10,space_after=3)
-    elif ln.startswith('#TAB'): add_table(ln[4:])
-    elif ln.startswith('#FIG'): add_fig(ln[4:])
+    elif ln.startswith('#N '): para(ln[3:]).paragraph_format.line_spacing=DOUBLE
+    elif ln.startswith('#R '): para(ln[3:],size=10,space_after=3).paragraph_format.line_spacing=DOUBLE
+    elif ln.startswith('#TAB'): tables.append(ln[4:])
+    elif ln.startswith('#FIG'): pass
     else: para(ln)
+assert tables==['1','2','3','4'], tables
+add_page_numbers(doc); add_line_numbers(doc)
 _blank_props(doc).save(OUT+'JACR_3_Manuscript_masked.docx'); print('saved JACR_3_Manuscript_masked.docx')
 
 # JACR takes figures as separate files; Elsevier's artwork guide lists TIFF for

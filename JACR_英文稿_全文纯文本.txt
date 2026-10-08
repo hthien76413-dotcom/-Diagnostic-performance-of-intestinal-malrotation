@@ -67,74 +67,12 @@ Detection rates are presented with Wilson 95% confidence intervals (CIs), with d
 
 Of 465 children with surgically confirmed malrotation, 302 (64.9%) were neonates and 403 (86.7%) had midgut volvulus (Table 1). An index examination was available in 301 children for the UGI series, 320 for CT and 119 for ultrasound; 410 underwent at least one and 59 all three. The remaining 55 (11.8%) underwent none of the three, but all had other preoperative imaging; in five it was documented before transfer (Table 1, Figure 1).
 
-Table 1. Characteristics of the 465 children with surgically confirmed intestinal malrotation, overall and according to which preoperative index test they received
-
-```
-
-Characteristic                          All children  Received UGI series  Received CT  Received ultrasound  Received none of the three
-
---------------------------------------  ------------  -------------------  -----------  -------------------  --------------------------
-
-Children, n                             465           301                  320          119                  55
-
-Age at operation, median (IQR), days    13 (7–85)     12 (8–35)            11 (6–47)    10 (5–27)            63 (4–932)
-
-Neonate ≤28 days, n (%)                 302 (64.9)    216 (71.8)           222 (69.4)   90 (75.6)            23 (41.8)
-
-Age >1 year, n (%)                      93 (20.0)     45 (15.0)            54 (16.9)    15 (12.6)            16 (29.1)
-
-Male, n (%)                             352 (75.7)    226 (75.1)           250 (78.1)   94 (79.0)            39 (70.9)
-
-Operated 2019–2026, n (%)               166 (35.7)    96 (31.9)            105 (32.8)   80 (67.2)            19 (34.5)
-
-Midgut volvulus at operation, n (%)     403 (86.7)    268 (89.0)           281 (87.8)   113 (95.0)           42 (76.4)
-
-Vomiting documented, n (%)              441 (94.8)    288 (95.7)           308 (96.2)   113 (95.0)           50 (90.9)
-
-Bilious vomiting documented, n (%)      219 (47.1)    166 (55.1)           165 (51.6)   58 (48.7)            12 (21.8)
-
-Abdominal distension, n (%)             183 (39.4)    119 (39.5)           137 (42.8)   57 (47.9)            24 (43.6)
-
-Blood in stool, n (%)                   113 (24.3)    64 (21.3)            88 (27.5)    32 (26.9)            11 (20.0)
-
-Abdominal pain, n (%)                   72 (15.5)     33 (11.0)            46 (14.4)    10 (8.4)             13 (23.6)
-
-Recurrent/intermittent symptoms, n (%)  221 (47.5)    152 (50.5)           148 (46.2)   53 (44.5)            21 (38.2)
-
-Shock or poor perfusion, n (%)          11 (2.4)      3 (1.0)              6 (1.9)      3 (2.5)              4 (7.3)
-
-```
-
-Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. The rightmost column shows the 55 children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). IQR interquartile range, UGI upper gastrointestinal.
-
 The modality groups were not interchangeable (Table 1). Ultrasound was performed more often in children with volvulus, its use rising from 13% to 48% of operated children between eras. Among children who underwent more than one index test, the UGI series was the last preoperative test in 75.1% of those who received it against 19.2% for CT, and detection was higher in that position (80.4% vs 70.5% for the UGI series), a feature of the pathway rather than of the test.
 
 
 ### Detection and certainty of wording
 
 Detection was 237/301 (78.7%, 95% CI 73.8–83.0) for the UGI series, 169/320 (52.8%, 47.3–58.2) for CT and 64/119 (53.8%, 44.8–62.5) for ultrasound (Table 2, Figure 2). These denominators are indication-selected and overlapping, and are not a ranking. CT and ultrasound had lower odds of a positive report than the UGI series (adjusted odds ratio 0.29 and 0.26), and the same model showed higher detection above 1 year of age (3.02, 1.64–5.54) and in the later era (1.75, 1.18–2.62); these coefficients absorb indication, pathway position and examination content (Supplement 2). Reclassifying possible-tier conclusions as negative reduced detection to 51.2%, 33.4% and 26.9% (Table 2).
-
-Table 2. Report-level detection of intestinal malrotation among surgically confirmed children, with the certainty of the wording used in positive conclusions
-
-```
-
-Index test                   Positive/total  Detection rate, % (95% CI)  Definite wording, n (%)  Probable wording, n (%)  Possible wording, n (%)  Detection excluding possible wording, %
-
----------------------------  --------------  --------------------------  -----------------------  -----------------------  -----------------------  ---------------------------------------
-
-UGI contrast series          237/301         78.7 (73.8–83.0)            78 (32.9)                76 (32.1)                83 (35.0)                51.2
-
-Abdominal CT (all)           169/320         52.8 (47.3–58.2)            33 (19.5)                74 (43.8)                62 (36.7)                33.4
-
-Gastrointestinal ultrasound  64/119          53.8 (44.8–62.5)            15 (23.4)                17 (26.6)                32 (50.0)                26.9
-
-CT, contrast-enhanced        42/52           80.8 (68.1–89.2)            –                        –                        –                        –
-
-CT, unenhanced               127/268         47.4 (41.5–53.4)            –                        –                        –                        –
-
-```
-
-Wilson 95% confidence intervals. Denominators differ between modalities and are drawn from overlapping but non-identical, indication-selected groups of children; the rates are not directly comparable between modalities and are not sensitivities. Certainty tiers were assigned from the conclusion text: definite (unqualified statement), probable ("most likely", "first consideration"), possible ("suspected", "cannot be excluded", "?"). The final column repeats the detection rate after reclassifying all possible-tier conclusions as negative. Percentages for certainty tiers are of positive reports; detection rates are of all index reports of that modality. Contrast-enhanced and unenhanced CT were performed for different indications and in children of different ages, so their comparison is confounded and is presented as an exploratory subgroup only.
 
 
 ### Documented content of ultrasound examinations
@@ -145,70 +83,10 @@ In 2018 the horizontal duodenum was described passing anterior to the superior m
 
 Detection followed this content closely. Malrotation was reported in 58 of the 58 examinations recording a whirlpool and in 6 of the 61 without one (9.8%, 95% CI 4.6–19.8). This contrast is partly definitional, as a whirlpool is itself a positivity criterion, and all 58 of those conclusions named malrotation or volvulus explicitly. The converse is more informative: a whirlpool was recorded in only 58 of the 113 children (51.3%) in whom operation confirmed midgut volvulus.
 
-Table 3. Documented content of the 119 routine gastrointestinal ultrasound index examinations, and report-level detection conditional on that content
-
-```
-
-Documented content of the ultrasound examination      n (%) of 119  2012–2018 (n=39)  2019–2026 (n=80)  Detection when documented  Detection when not documented
-
-----------------------------------------------------  ------------  ----------------  ----------------  -------------------------  -----------------------------
-
-Third portion of duodenum or duodenojejunal junction  3 (2.5)       1                 2                 2/3                        62/116 (53%)
-
-Duodenum mentioned in any form                        7 (5.9)       3                 4                 3/7                        61/112 (54%)
-
-Superior mesenteric artery–vein relationship          12 (10.1)     3                 9                 10/12 (83%)                54/107 (50%)
-
-Explicit statement of vessel inversion                1 (0.8)       0                 1                 1/1                        63/118 (53%)
-
-Enteric fluid administration recorded                 2 (1.7)       1                 1                 1/2                        63/117 (54%)
-
-Dynamic (real-time) assessment                        3 (2.5)       0                 3                 1/3                        63/116 (54%)
-
-Graded compression                                    1 (0.8)       1                 0                 1/1                        63/118 (53%)
-
-Cecal position                                        5 (4.2)       1                 4                 4/5                        60/114 (53%)
-
-Color Doppler used                                    116 (97.5)    38                78                63/116 (54%)               1/3
-
-Whirlpool, swirl or spiral appearance reported        58 (48.7)     16                42                58/58 (100%)               6/61 (10%)
-
-Bowel gas explicitly limiting the study               30 (25.2)     11                19                12/30 (40%)                52/89 (58%)
-
-Booked as abdominal great-vessel study                67 (56.3)     13                54                46/67 (69%)                18/52 (35%)
-
-Booked as gastrointestinal ultrasound                 75 (63.0)     29                46                37/75 (49%)                27/44 (61%)
-
-Booked as pyloric ultrasound                          12 (10.1)     4                 8                 7/12 (58%)                 57/107 (53%)
-
-Performed at the bedside                              9 (7.6)       0                 9                 1/9                        63/110 (57%)
-
-```
-
-The index unit is the examination episode closest to operation, pooling all reports of that modality issued that day. Content was coded from the findings and conclusion text by pre-specified patterns (Supplement 1). This is an audit of what was recorded and is a lower bound on what was performed: an element assessed but not documented cannot be distinguished from one never assessed. Technique elements count as documented whether the finding was normal or abnormal; the whirlpool sign counts only where it is not negated, and agrees with the separately adjudicated whirlpool variable in 118 of 119 examinations. Enteric fluid administration counts only examinations stating that fluid was given (oral contrast or nasogastric instillation); observed luminal fluid without a stated route was not counted. Booking categories are not mutually exclusive: 28 sessions were booked as both a gastrointestinal and a great-vessel study. Denominators of fewer than 10 are shown without a percentage.
-
 
 ### Change in detection over time
 
 Ultrasound detection was 41.0% (16/39) in 2012–2018 and 60.0% (48/80) in 2019–2026, and rose for CT but not the UGI series (Table 4). For ultrasound the change tracked how the examination was booked. Sessions including a great-vessel study rose from 33.3% to 67.5%, and adding this indicator reduced the era effect from +19.0 (95% CI +0.6 to +37.6) to +8.2 (−11.6 to +27.8) percentage points, the indicator carrying an odds ratio of 3.73 (1.67–8.33). Moving the era boundary from 2019 to 2022 left the examination-type odds ratio between 3.44 and 4.31, while the era odds ratio ranged from 2.67 to 1.14 (Supplement 2). The era-by-booking interaction was not significant, giving no evidence that the effect of examination type itself changed between eras, although these subgroups are small. The change in booking tracked whirlpool reporting but not duodenal assessment. CT showed a comparable change that contrast enhancement explained only in part, and the UGI series showed none (Table 4).
-
-Table 4. Change in report-level detection between eras, and the examination-content variables associated with it
-
-```
-
-Modality                     Detection 2012–2018  Detection 2019–2026  Era odds ratio (95% CI)    Era odds ratio after adjustment for examination content  Examination-content variable, odds ratio (95% CI)                Average marginal effect of later era, percentage points (crude → adjusted)
-
----------------------------  -------------------  -------------------  -------------------------  -------------------------------------------------------  ---------------------------------------------------------------  --------------------------------------------------------------------------
-
-UGI contrast series          158/205 (77.1%)      79/96 (82.3%)        1.38 (0.75–2.56), p=0.304  Not applicable (technique unchanged)                     –                                                                +5.2
-
-Abdominal CT                 100/215 (46.5%)      69/105 (65.7%)       2.20 (1.36–3.58), p=0.001  1.95 (1.19–3.22), p=0.009                                Intravenous contrast enhancement 4.21 (2.01–8.81), p<0.001       +19.2 → +15.5
-
-Gastrointestinal ultrasound  16/39 (41.0%)        48/80 (60.0%)        2.16 (0.99–4.70), p=0.053  1.44 (0.62–3.37), p=0.399                                Session included a great-vessel study 3.73 (1.67–8.33), p=0.001  +19.0 → +8.2
-
-```
-
-Modality-specific logistic models. For ultrasound the content variable is whether the examination session included an abdominal great-vessel study; this is an ordering and reporting label, not a record of technique. For CT the variable is intravenous contrast enhancement. Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation (non-collapsibility), so the marginal effect is the more interpretable measure of how much of the era difference the content variable accounts for. The content variables were not randomized and are themselves confounded by indication: a child suspected of volvulus is both more likely to be booked for a great-vessel study and more likely to have a whirlpool to find. These models are explanatory, not causal. Sensitivity analyses moving the era boundary from 2019 to 2022 are in Supplement 2.
 
 
 ### Selected subgroup and populations not represented
@@ -325,8 +203,130 @@ Declaration of generative AI and AI-assisted technologies in the manuscript prep
 
 24. Heinze G, Schemper M. A solution to the problem of separation in logistic regression. Stat Med. 2002;21:2409-2419. doi:10.1002/sim.1047
 
+Table 1. Characteristics of the 465 children with surgically confirmed intestinal malrotation, overall and according to which preoperative index test they received
 
-## Figure legends
+```
+
+Characteristic                          All children  Received UGI series  Received CT  Received ultrasound  Received none of the three
+
+--------------------------------------  ------------  -------------------  -----------  -------------------  --------------------------
+
+Children, n                             465           301                  320          119                  55
+
+Age at operation, median (IQR), days    13 (7–85)     12 (8–35)            11 (6–47)    10 (5–27)            63 (4–932)
+
+Neonate ≤28 days, n (%)                 302 (64.9)    216 (71.8)           222 (69.4)   90 (75.6)            23 (41.8)
+
+Age >1 year, n (%)                      93 (20.0)     45 (15.0)            54 (16.9)    15 (12.6)            16 (29.1)
+
+Male, n (%)                             352 (75.7)    226 (75.1)           250 (78.1)   94 (79.0)            39 (70.9)
+
+Operated 2019–2026, n (%)               166 (35.7)    96 (31.9)            105 (32.8)   80 (67.2)            19 (34.5)
+
+Midgut volvulus at operation, n (%)     403 (86.7)    268 (89.0)           281 (87.8)   113 (95.0)           42 (76.4)
+
+Vomiting documented, n (%)              441 (94.8)    288 (95.7)           308 (96.2)   113 (95.0)           50 (90.9)
+
+Bilious vomiting documented, n (%)      219 (47.1)    166 (55.1)           165 (51.6)   58 (48.7)            12 (21.8)
+
+Abdominal distension, n (%)             183 (39.4)    119 (39.5)           137 (42.8)   57 (47.9)            24 (43.6)
+
+Blood in stool, n (%)                   113 (24.3)    64 (21.3)            88 (27.5)    32 (26.9)            11 (20.0)
+
+Abdominal pain, n (%)                   72 (15.5)     33 (11.0)            46 (14.4)    10 (8.4)             13 (23.6)
+
+Recurrent/intermittent symptoms, n (%)  221 (47.5)    152 (50.5)           148 (46.2)   53 (44.5)            21 (38.2)
+
+Shock or poor perfusion, n (%)          11 (2.4)      3 (1.0)              6 (1.9)      3 (2.5)              4 (7.3)
+
+```
+
+Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. The rightmost column shows the 55 children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). IQR interquartile range, UGI upper gastrointestinal.
+
+Table 2. Report-level detection of intestinal malrotation among surgically confirmed children, with the certainty of the wording used in positive conclusions
+
+```
+
+Index test                   Positive/total  Detection rate, % (95% CI)  Definite wording, n (%)  Probable wording, n (%)  Possible wording, n (%)  Detection excluding possible wording, %
+
+---------------------------  --------------  --------------------------  -----------------------  -----------------------  -----------------------  ---------------------------------------
+
+UGI contrast series          237/301         78.7 (73.8–83.0)            78 (32.9)                76 (32.1)                83 (35.0)                51.2
+
+Abdominal CT (all)           169/320         52.8 (47.3–58.2)            33 (19.5)                74 (43.8)                62 (36.7)                33.4
+
+Gastrointestinal ultrasound  64/119          53.8 (44.8–62.5)            15 (23.4)                17 (26.6)                32 (50.0)                26.9
+
+CT, contrast-enhanced        42/52           80.8 (68.1–89.2)            –                        –                        –                        –
+
+CT, unenhanced               127/268         47.4 (41.5–53.4)            –                        –                        –                        –
+
+```
+
+Wilson 95% confidence intervals. Denominators differ between modalities and are drawn from overlapping but non-identical, indication-selected groups of children; the rates are not directly comparable between modalities and are not sensitivities. Certainty tiers were assigned from the conclusion text: definite (unqualified statement), probable ("most likely", "first consideration"), possible ("suspected", "cannot be excluded", "?"). The final column repeats the detection rate after reclassifying all possible-tier conclusions as negative. Percentages for certainty tiers are of positive reports; detection rates are of all index reports of that modality. Contrast-enhanced and unenhanced CT were performed for different indications and in children of different ages, so their comparison is confounded and is presented as an exploratory subgroup only.
+
+Table 3. Documented content of the 119 routine gastrointestinal ultrasound index examinations, and report-level detection conditional on that content
+
+```
+
+Documented content of the ultrasound examination      n (%) of 119  2012–2018 (n=39)  2019–2026 (n=80)  Detection when documented  Detection when not documented
+
+----------------------------------------------------  ------------  ----------------  ----------------  -------------------------  -----------------------------
+
+Third portion of duodenum or duodenojejunal junction  3 (2.5)       1                 2                 2/3                        62/116 (53%)
+
+Duodenum mentioned in any form                        7 (5.9)       3                 4                 3/7                        61/112 (54%)
+
+Superior mesenteric artery–vein relationship          12 (10.1)     3                 9                 10/12 (83%)                54/107 (50%)
+
+Explicit statement of vessel inversion                1 (0.8)       0                 1                 1/1                        63/118 (53%)
+
+Enteric fluid administration recorded                 2 (1.7)       1                 1                 1/2                        63/117 (54%)
+
+Dynamic (real-time) assessment                        3 (2.5)       0                 3                 1/3                        63/116 (54%)
+
+Graded compression                                    1 (0.8)       1                 0                 1/1                        63/118 (53%)
+
+Cecal position                                        5 (4.2)       1                 4                 4/5                        60/114 (53%)
+
+Color Doppler used                                    116 (97.5)    38                78                63/116 (54%)               1/3
+
+Whirlpool, swirl or spiral appearance reported        58 (48.7)     16                42                58/58 (100%)               6/61 (10%)
+
+Bowel gas explicitly limiting the study               30 (25.2)     11                19                12/30 (40%)                52/89 (58%)
+
+Booked as abdominal great-vessel study                67 (56.3)     13                54                46/67 (69%)                18/52 (35%)
+
+Booked as gastrointestinal ultrasound                 75 (63.0)     29                46                37/75 (49%)                27/44 (61%)
+
+Booked as pyloric ultrasound                          12 (10.1)     4                 8                 7/12 (58%)                 57/107 (53%)
+
+Performed at the bedside                              9 (7.6)       0                 9                 1/9                        63/110 (57%)
+
+```
+
+The index unit is the examination episode closest to operation, pooling all reports of that modality issued that day. Content was coded from the findings and conclusion text by pre-specified patterns (Supplement 1). This is an audit of what was recorded and is a lower bound on what was performed: an element assessed but not documented cannot be distinguished from one never assessed. Technique elements count as documented whether the finding was normal or abnormal; the whirlpool sign counts only where it is not negated, and agrees with the separately adjudicated whirlpool variable in 118 of 119 examinations. Enteric fluid administration counts only examinations stating that fluid was given (oral contrast or nasogastric instillation); observed luminal fluid without a stated route was not counted. Booking categories are not mutually exclusive: 28 sessions were booked as both a gastrointestinal and a great-vessel study. Denominators of fewer than 10 are shown without a percentage.
+
+Table 4. Change in report-level detection between eras, and the examination-content variables associated with it
+
+```
+
+Modality                     Detection 2012–2018  Detection 2019–2026  Era odds ratio (95% CI)    Era odds ratio after adjustment for examination content  Examination-content variable, odds ratio (95% CI)                Average marginal effect of later era, percentage points (crude → adjusted)
+
+---------------------------  -------------------  -------------------  -------------------------  -------------------------------------------------------  ---------------------------------------------------------------  --------------------------------------------------------------------------
+
+UGI contrast series          158/205 (77.1%)      79/96 (82.3%)        1.38 (0.75–2.56), p=0.304  Not applicable (technique unchanged)                     –                                                                +5.2
+
+Abdominal CT                 100/215 (46.5%)      69/105 (65.7%)       2.20 (1.36–3.58), p=0.001  1.95 (1.19–3.22), p=0.009                                Intravenous contrast enhancement 4.21 (2.01–8.81), p<0.001       +19.2 → +15.5
+
+Gastrointestinal ultrasound  16/39 (41.0%)        48/80 (60.0%)        2.16 (0.99–4.70), p=0.053  1.44 (0.62–3.37), p=0.399                                Session included a great-vessel study 3.73 (1.67–8.33), p=0.001  +19.0 → +8.2
+
+```
+
+Modality-specific logistic models. For ultrasound the content variable is whether the examination session included an abdominal great-vessel study; this is an ordering and reporting label, not a record of technique. For CT the variable is intravenous contrast enhancement. Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation (non-collapsibility), so the marginal effect is the more interpretable measure of how much of the era difference the content variable accounts for. The content variables were not randomized and are themselves confounded by indication: a child suspected of volvulus is both more likely to be booked for a great-vessel study and more likely to have a whirlpool to find. These models are explanatory, not causal. Sensitivity analyses moving the era boundary from 2019 to 2022 are in Supplement 2.
+
+
+## Figure Legends
 
 Figure 1. Study flow and the imaging received by children without an index test. Retrieval of 559 operative records in 499 children, assembly of the surgically confirmed cohort, availability of each preoperative index test, and reduction of 812 eligible preoperative reports to 740 index examination episodes. Every one of the 55 children who received none of the three index examinations nonetheless had other preoperative imaging, five of them documented before transfer; the breakdown is shown at right.
 

@@ -3,6 +3,8 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from statsmodels.stats.proportion import proportion_confint as pci
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'axes.spines.top':False,'axes.spines.right':False})
+# vector copies for the journal embed TrueType fonts (Type 42), as Elsevier's artwork guide asks
+plt.rcParams.update({'pdf.fonttype':42})
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 C={'UGI':'#B22222','CT':'#E08214','US':'#2C7FB8','US2':'#7FC0E8'}
 # ---- Figure 2 ----
@@ -68,5 +70,5 @@ ax.set_xticks(x); ax.set_xticklabels([g[0] for g in groups],fontsize=9.0); ax.ti
 ax.set_ylim(0,118); ax.set_ylabel('Report-level detection (%)')
 ax.set_title('B  Detection conditional on documented content',fontsize=11.5,loc='left',fontweight='bold')
 ax.grid(axis='y',color='#e8e8e8'); ax.set_axisbelow(True)
-plt.tight_layout(); plt.savefig(OUT+'Fig3_ultrasound_report_audit.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'Fig3_ultrasound_report_audit.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.savefig(OUT+'JACR_Figure3.pdf',bbox_inches='tight',facecolor='white'); plt.close()
 print('Fig3 rebuilt')

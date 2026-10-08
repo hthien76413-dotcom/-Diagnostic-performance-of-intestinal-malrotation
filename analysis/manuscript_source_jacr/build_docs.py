@@ -1,4 +1,6 @@
 import docx, re, sys, io, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from docstyle import apply_house_style
 from docx.shared import Pt, Inches
 
 def _blank_props(doc):
@@ -20,7 +22,7 @@ JOBS=[('cover.md','JACR_1_CoverLetter.docx','Times New Roman',11),
       ('titlepage.md','JACR_2_TitlePage.docx','Times New Roman',11),
       ('opsheet.md','JACR_投稿操作单.docx','DengXian',10.5)]
 for src,dst,font,size in JOBS:
-    doc=docx.Document()
+    doc=docx.Document(); apply_house_style(doc, font)
     st=doc.styles['Normal']; st.font.name=font; st.font.size=Pt(size)
     for s in doc.sections: s.left_margin=s.right_margin=Inches(1.0)
     def para(text,style=None,sz=None,italic=False,space_after=8):

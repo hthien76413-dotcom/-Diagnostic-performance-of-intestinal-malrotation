@@ -21,6 +21,7 @@
 #N 10. **新增生成式 AI 使用声明**：Elsevier 要求在正文参考文献前单独声明，正文与 Title Page 都已写入（见第五节）。
 #N 11. **正文字数 2,990**（Introduction 至 Take-Home Points，上限 3,000）。表 4 张 + 图 3 张 = 7，正好达到 JACR "图表合计不超过 7" 的上限，不能再加图表。
 #N 12. **讨论第 2 段对文献 [13] 的表述更精确**：原写 "93–97%"，现写明 93% 来自原始临床报告、97% 来自盲法复读，且该研究排除了无法诊断和结果不确定的检查。这三点都已与该文摘要核对，也更有力地支撑本文的论点：差距在于检查内容，而不是"研究阅片"和"日常报告"之别。
+#N 13. **排版按投稿审阅惯例调整**：正文双倍行距，加连续行号和页码；4 张表移到参考文献之后，每表一页；标题和各级小标题改为黑色 Times New Roman（原来是 Word 默认的蓝色）；另出 3 张 PDF 矢量图。
 
 #H1 二、上传文件清单（按此顺序）
 
@@ -31,13 +32,13 @@
 #N 含 7 位作者、单位、ORCID、通讯作者邮寄地址、伦理批件号、致谢和全部声明。**这是唯一含作者身份信息的文件**，与正文分开上传。
 
 #N **3. Manuscript（masked，隐去作者信息的正文）** —— `JACR_3_Manuscript_masked.docx`
-#N 含 4 表 3 图（图内嵌，方便审稿人阅读）。文中无医院名、作者名或伦理批件号。
+#N 按投稿审阅惯例排版：双倍行距、连续行号、页码；4 张表放在参考文献之后，每表单独一页；图不内嵌，单独上传。文中无医院名、作者名或伦理批件号。
 
-#N **4. Figures（单独上传，300 dpi TIFF）**
-#N • `JACR_Figure1.tif` → Figure 1（研究流程图）
-#N • `JACR_Figure2.tif` → Figure 2（各模态检出率，分母醒目）
-#N • `JACR_Figure3.tif` → Figure 3（超声报告内容审计，核心图）
-#N 同名 PNG（`Fig1_study_flow.png` 等）是备份；系统若不收 TIFF 就传 PNG。
+#N **4. Figures（单独上传；优先传 PDF 矢量版）**
+#N • `JACR_Figure1.pdf` → Figure 1（研究流程图）
+#N • `JACR_Figure2.pdf` → Figure 2（各模态检出率，分母醒目）
+#N • `JACR_Figure3.pdf` → Figure 3（超声报告内容审计，核心图）
+#N PDF 是矢量图，任意放大都清晰，可满足 Elsevier 对线条图 1000 dpi 的要求。系统若不收 PDF，就传同名的 300 dpi TIFF（`JACR_Figure1.tif` 等）。
 
 #N **5. Supplementary material**
 #N • `JACR_Supplement_1_NLP_and_report_audit.docx` —— 算法规则、验证、内容审计正则表
@@ -104,9 +105,9 @@
 
 #H1 五、需要你决定或确认的事项
 
-#N **1. 三位移出作者的知情同意（必须做）。** Guanghua Zhang、Hongxi Guo、Haibin Wang 现在在致谢里。按 ICMJE 规定，被致谢的人需本人同意被列名；同时应当面告知他们不再是作者。投稿后再改作者名单很麻烦，期刊会要求全体作者签字。
+#N **1. 三位移出作者的知情同意（已完成）。** Guanghua Zhang、Hongxi Guo、Haibin Wang 已同意改列致谢。
 
-#N **2. 生成式 AI 使用声明（不要删）。** Elsevier 规定写作中使用了生成式 AI 必须声明，未声明属于违规，被发现可导致撤稿。本文的撰写、润色和分析代码都使用了 Claude，所以已按 Elsevier 的标准句式写入。措辞可以按你们的实际使用情况调整，但不要删掉。
+#N **2. 生成式 AI 使用声明（已确认保留）。** Elsevier 规定写作中使用了生成式 AI 必须声明，已按其标准句式写入正文和 Title Page。
 
 #N **3. 通讯作者邮寄地址（已确认）。** JACR 要求 Title Page 写通讯作者的完整邮寄地址，已填 "100 Hong Kong Road, Jiang'an District, Wuhan 430016"（香港路 100 号），经你核对无误。
 
