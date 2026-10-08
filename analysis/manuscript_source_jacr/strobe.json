@@ -13,7 +13,7 @@
   [
    "Title and abstract 1(b)",
    "Provide in the abstract an informative and balanced summary of what was done and what was found",
-   "Abstract (Objectives, Methods, Results, Conclusion); Key Points"
+   "Abstract (Objective, Methods, Results, Conclusion); Take-Home Points"
   ],
   [
    "Introduction — Background/rationale 2",
@@ -23,7 +23,7 @@
   [
    "Introduction — Objectives 3",
    "State specific objectives, including any prespecified hypotheses",
-   "Introduction, final paragraph; Abstract, Objectives"
+   "Introduction, final paragraph; Abstract, Objective"
   ],
   [
    "Methods — Study design 4",
@@ -48,12 +48,12 @@
   [
    "Methods — Variables 7",
    "Clearly define all outcomes, exposures, predictors, potential confounders, and effect modifiers. Give diagnostic criteria, if applicable",
-   "Methods, 'Design, terminology…' (report-level detection defined); 'Participants…' (volvulus definition); 'Report-content audit and classification' (positivity criteria, content items); Online Resource 1"
+   "Methods, 'Design, terminology…' (report-level detection defined); 'Participants…' (volvulus definition); 'Report-content audit and classification' (positivity criteria, content items); Supplement 1"
   ],
   [
    "Methods — Data sources/measurement 8",
    "For each variable of interest, give sources of data and details of methods of assessment. Describe comparability of assessment methods if there is more than one group",
-   "Methods, 'Report-content audit and classification'; Online Resource 1, Sections A–J"
+   "Methods, 'Report-content audit and classification'; Supplement 1, Sections A–J"
   ],
   [
    "Methods — Bias 9",
@@ -78,12 +78,12 @@
   [
    "Methods — Statistical methods 12(b)",
    "Describe any methods used to examine subgroups and interactions",
-   "Methods, 'Statistical analysis' (modality-by-volvulus interaction, non-estimable owing to complete separation; subgroup receiving all three modalities); Online Resource 2"
+   "Methods, 'Statistical analysis' (modality-by-volvulus interaction, non-estimable owing to complete separation; subgroup receiving all three modalities); Supplement 2"
   ],
   [
    "Methods — Statistical methods 12(c)",
    "Explain how missing data were addressed",
-   "Results, 'Cohort…' (the 55 children without an index test characterised, not imputed); Discussion, Limitations (informative missingness)"
+   "Results, 'Cohort…' (the 55 children without an index test characterized, not imputed); Discussion, Limitations (informative missingness)"
   ],
   [
    "Methods — Statistical methods 12(d)",
@@ -93,22 +93,22 @@
   [
    "Methods — Statistical methods 12(e)",
    "Describe any sensitivity analyses",
-   "Methods, 'Statistical analysis' and 'Report-content audit and classification' (reclassification of possible-tier conclusions; paired analysis restricted to 48 h and 24 h); Online Resource 2"
+   "Methods, 'Statistical analysis' and 'Report-content audit and classification' (reclassification of possible-tier conclusions; paired analysis restricted to 48 h and 24 h); Supplement 2"
   ],
   [
    "Results — Participants 13(a)",
    "Report numbers of individuals at each stage of study",
-   "Results, 'Cohort…'; Fig. 1"
+   "Results, 'Cohort…'; Figure 1"
   ],
   [
    "Results — Participants 13(b)",
    "Give reasons for non-participation at each stage",
-   "Results, 'Cohort…' (the 55 children without an index test, with the imaging they did receive); Fig. 1"
+   "Results, 'Cohort…' (the 55 children without an index test, with the imaging they did receive); Figure 1"
   ],
   [
    "Results — Participants 13(c)",
    "Consider use of a flow diagram",
-   "Fig. 1"
+   "Figure 1"
   ],
   [
    "Results — Descriptive data 14(a)",
@@ -122,7 +122,7 @@
   ],
   [
    "Results — Descriptive data 14(c)",
-   "Summarise follow-up time",
+   "Summarize follow-up time",
    "Not applicable"
   ],
   [
@@ -133,27 +133,27 @@
   [
    "Results — Main results 16(a)",
    "Give unadjusted estimates and, if applicable, confounder-adjusted estimates and their precision. Make clear which confounders were adjusted for and why they were included",
-   "Results, 'Detection and certainty of wording' (unadjusted and adjusted GEE odds ratios); Online Resource 2, Table S3"
+   "Results, 'Detection and certainty of wording' (unadjusted and adjusted GEE odds ratios); Supplement 2, Table S3"
   ],
   [
    "Results — Main results 16(b)",
    "Report category boundaries when continuous variables were categorized",
-   "Methods, 'Statistical analysis'; Online Resource 2, Table S5"
+   "Methods, 'Statistical analysis'; Supplement 2, Table S5"
   ],
   [
    "Results — Main results 16(c)",
    "If relevant, consider translating estimates of relative risk into absolute risk for a meaningful time period",
-   "Detection rates are reported as absolute proportions with denominators throughout (Table 2, Figs 2–3)"
+   "Detection rates are reported as absolute proportions with denominators throughout (Table 2, Figures 2–3)"
   ],
   [
    "Results — Other analyses 17",
    "Report other analyses done — eg analyses of subgroups and interactions, and sensitivity analyses",
-   "Results, 'Documented content of ultrasound examinations', 'Change in detection over time', 'Selected subgroup and populations not represented'; Online Resources 2 and 3"
+   "Results, 'Documented content of ultrasound examinations', 'Change in detection over time', 'Selected subgroup and populations not represented'; Supplements 2 and 3"
   ],
   [
    "Discussion — Key results 18",
-   "Summarise key results with reference to study objectives",
-   "Discussion, paragraphs 1–3; Conclusion"
+   "Summarize key results with reference to study objectives",
+   "Discussion, paragraphs 1–3; Take-Home Points"
   ],
   [
    "Discussion — Limitations 19",
@@ -163,12 +163,12 @@
   [
    "Discussion — Interpretation 20",
    "Give a cautious overall interpretation of results considering objectives, limitations, multiplicity of analyses, results from similar studies, and other relevant evidence",
-   "Discussion, paragraphs 2–5; Conclusion (explicit statement that no sensitivity, specificity or ranking is established)"
+   "Discussion, paragraphs 2–5; Take-Home Points (explicit statement that no sensitivity, specificity or ranking is established)"
   ],
   [
-   "Discussion — Generalisability 21",
+   "Discussion — Generalizability 21",
    "Discuss the generalisability (external validity) of the study results",
-   "Results, 'Selected subgroup and populations not represented'; Discussion, Limitations (single centre; skew toward severe neonatal disease)"
+   "Results, 'Selected subgroup and populations not represented'; Discussion, Limitations (single center; skew toward severe neonatal disease)"
   ],
   [
    "Other information — Funding 22",

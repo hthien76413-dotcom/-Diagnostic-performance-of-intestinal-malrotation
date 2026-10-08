@@ -2,6 +2,7 @@ import docx, json, re, os
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from threeline import make_three_line_table
+from usspell import us, us_table
 
 def _blank_props(doc):
     """Strip python-docx's default authorship before saving.
@@ -22,16 +23,16 @@ OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.json')))
 D.update(json.load(open(AN+'table3_final.json')))
 D.update(json.load(open(AN+'tables24_final.json')))
-T={'1':D['T1'],'2':D['T2'],'3':D['T3'],'4':D['T4']}
+T={k:us_table(D['T'+k]) for k in '1234'}
 TITLES={
  '1':('Table 1','Characteristics of the 465 children with surgically confirmed intestinal malrotation, overall and according to which preoperative index test they received',
-   'Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. The rightmost column shows the 55 children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Fig. 1). IQR interquartile range, UGI upper gastrointestinal.'),
+   'Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. The rightmost column shows the 55 children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). IQR interquartile range, UGI upper gastrointestinal.'),
  '2':('Table 2','Report-level detection of intestinal malrotation among surgically confirmed children, with the certainty of the wording used in positive conclusions',
    'Wilson 95% confidence intervals. Denominators differ between modalities and are drawn from overlapping but non-identical, indication-selected groups of children; the rates are not directly comparable between modalities and are not sensitivities. Certainty tiers were assigned from the conclusion text: definite (unqualified statement), probable ("most likely", "first consideration"), possible ("suspected", "cannot be excluded", "?"). The final column repeats the detection rate after reclassifying all possible-tier conclusions as negative. Percentages for certainty tiers are of positive reports; detection rates are of all index reports of that modality. Contrast-enhanced and unenhanced CT were performed for different indications and in children of different ages, so their comparison is confounded and is presented as an exploratory subgroup only.'),
  '3':('Table 3','Documented content of the 119 routine gastrointestinal ultrasound index examinations, and report-level detection conditional on that content',
-   'The index unit is the examination episode closest to operation, pooling all reports of that modality issued that day. Content was coded from the findings and conclusion text by pre-specified patterns (Online Resource 1). This is an audit of what was recorded and is a lower bound on what was performed: an element assessed but not documented cannot be distinguished from one never assessed. Technique elements count as documented whether the finding was normal or abnormal; the whirlpool sign counts only where it is not negated, and agrees with the separately adjudicated whirlpool variable in 118 of 119 examinations. Enteric fluid administration counts only examinations stating that fluid was given (oral contrast or nasogastric instillation); observed luminal fluid without a stated route was not counted. Booking categories are not mutually exclusive: 28 sessions were booked as both a gastrointestinal and a great-vessel study. Denominators of fewer than 10 are shown without a percentage.'),
+   'The index unit is the examination episode closest to operation, pooling all reports of that modality issued that day. Content was coded from the findings and conclusion text by pre-specified patterns (Supplement 1). This is an audit of what was recorded and is a lower bound on what was performed: an element assessed but not documented cannot be distinguished from one never assessed. Technique elements count as documented whether the finding was normal or abnormal; the whirlpool sign counts only where it is not negated, and agrees with the separately adjudicated whirlpool variable in 118 of 119 examinations. Enteric fluid administration counts only examinations stating that fluid was given (oral contrast or nasogastric instillation); observed luminal fluid without a stated route was not counted. Booking categories are not mutually exclusive: 28 sessions were booked as both a gastrointestinal and a great-vessel study. Denominators of fewer than 10 are shown without a percentage.'),
  '4':('Table 4','Change in report-level detection between eras, and the examination-content variables associated with it',
-   'Modality-specific logistic models. For ultrasound the content variable is whether the examination session included an abdominal great-vessel study; this is an ordering and reporting label, not a record of technique. For CT the variable is intravenous contrast enhancement. Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation (non-collapsibility), so the marginal effect is the more interpretable measure of how much of the era difference the content variable accounts for. The content variables were not randomised and are themselves confounded by indication: a child suspected of volvulus is both more likely to be booked for a great-vessel study and more likely to have a whirlpool to find. These models are explanatory, not causal. Sensitivity analyses moving the era boundary from 2019 to 2022 are in Online Resource 2.'),
+   'Modality-specific logistic models. For ultrasound the content variable is whether the examination session included an abdominal great-vessel study; this is an ordering and reporting label, not a record of technique. For CT the variable is intravenous contrast enhancement. Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation (non-collapsibility), so the marginal effect is the more interpretable measure of how much of the era difference the content variable accounts for. The content variables were not randomized and are themselves confounded by indication: a child suspected of volvulus is both more likely to be booked for a great-vessel study and more likely to have a whirlpool to find. These models are explanatory, not causal. Sensitivity analyses moving the era boundary from 2019 to 2022 are in Supplement 2.'),
 }
 FIGS={'1':(OUT+'Fig1_study_flow.png',6.4),'2':(OUT+'Fig2_detection_by_modality.png',6.4),'3':(OUT+'Fig3_ultrasound_report_audit.png',6.6)}
 doc=docx.Document()
@@ -67,4 +68,15 @@ for ln in text.split('\n'):
     elif ln.startswith('#TAB'): add_table(ln[4:])
     elif ln.startswith('#FIG'): add_fig(ln[4:])
     else: para(ln)
-_blank_props(doc).save(OUT+'诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx'); print('saved')
+_blank_props(doc).save(OUT+'JACR_3_Manuscript_masked.docx'); print('saved JACR_3_Manuscript_masked.docx')
+
+# JACR takes figures as separate files; Elsevier's artwork guide lists TIFF for
+# raster images, so each figure is also written as an RGB, LZW-compressed,
+# 300 dpi TIFF flattened onto white.
+from PIL import Image
+for k,(path,_) in FIGS.items():
+    im=Image.open(path)
+    if im.mode in ('RGBA','LA'):
+        bg=Image.new('RGB',im.size,'white'); bg.paste(im,mask=im.split()[-1]); im=bg
+    im.convert('RGB').save(OUT+f'JACR_Figure{k}.tif',compression='tiff_lzw',dpi=(300,300))
+    print(f'saved JACR_Figure{k}.tif')

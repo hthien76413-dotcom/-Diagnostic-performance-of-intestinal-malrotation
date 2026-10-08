@@ -37,7 +37,7 @@ plt.tight_layout(); plt.savefig(OUT+'FigS1_paired_subgroup.png',dpi=300,bbox_inc
 u=pd.read_csv('us_audit4.csv')
 items=[('Third portion of duodenum / DJ junction','d3_or_djj'),('Explicit vessel inversion','inversion'),
        ('Graded compression','compress'),('Enteric fluid administered','fluid'),
-       ('Dynamic assessment','dynamic'),('Caecal position','cecum'),
+       ('Dynamic assessment','dynamic'),('Cecal position','cecum'),
        ('Duodenum mentioned at all','duodenum'),('SMA-SMV relationship','sma_smv'),
        ('Bowel gas limiting study','gas_limit'),('Whirlpool sign reported','whirl_pos')]
 fig,axes=plt.subplots(1,2,figsize=(15.6,6.0),gridspec_kw={'width_ratios':[1.12,1]})
@@ -50,7 +50,7 @@ for yi,v,n in zip(y,vals,ns):
     ax.text(max(v,0)+1.2,yi,f'{n}/119  ({v:.1f}%)',va='center',fontsize=10)
 ax.set_yticks(y); ax.set_yticklabels([l for l,_ in items],fontsize=10.5)
 ax.set_xlim(0,72); ax.set_xlabel('Ultrasound examinations documenting the element (%)')
-ax.set_title('a  What the 119 routine ultrasound examinations documented',fontsize=11.5,loc='left',fontweight='bold')
+ax.set_title('A  What the 119 routine ultrasound examinations documented',fontsize=11.5,loc='left',fontweight='bold')
 ax.grid(axis='x',color='#e8e8e8'); ax.set_axisbelow(True)
 ax=axes[1]
 groups=[('Whirlpool\nreported','whirl_pos',True),('Whirlpool\nnot reported','whirl_pos',False),
@@ -66,7 +66,7 @@ ax.errorbar(x,vals,yerr=err,fmt='none',ecolor='#444',capsize=3,lw=1)
 for xi,v,a,eu in zip(x,vals,ann,err[1]): ax.text(xi,v+eu+3,f'{v:.0f}%\n{a}',ha='center',fontsize=9.5)
 ax.set_xticks(x); ax.set_xticklabels([g[0] for g in groups],fontsize=9.0); ax.tick_params(axis='x',pad=4)
 ax.set_ylim(0,118); ax.set_ylabel('Report-level detection (%)')
-ax.set_title('b  Detection conditional on documented content',fontsize=11.5,loc='left',fontweight='bold')
+ax.set_title('B  Detection conditional on documented content',fontsize=11.5,loc='left',fontweight='bold')
 ax.grid(axis='y',color='#e8e8e8'); ax.set_axisbelow(True)
 plt.tight_layout(); plt.savefig(OUT+'Fig3_ultrasound_report_audit.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
 print('Fig3 rebuilt')

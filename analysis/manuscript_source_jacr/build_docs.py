@@ -16,9 +16,9 @@ def _blank_props(doc):
 
 
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
-JOBS=[('cover.md','CoverLetter_InsightsIntoImaging.docx','Times New Roman',11),
-      ('opsheet.md','投稿操作单_InsightsIntoImaging.docx','DengXian',10.5),
-      ('cn2.md','投稿说明_InsightsIntoImaging_中文.docx','DengXian',10.5)]
+JOBS=[('cover.md','JACR_1_CoverLetter.docx','Times New Roman',11),
+      ('titlepage.md','JACR_2_TitlePage.docx','Times New Roman',11),
+      ('opsheet.md','JACR_投稿操作单.docx','DengXian',10.5)]
 for src,dst,font,size in JOBS:
     doc=docx.Document()
     st=doc.styles['Normal']; st.font.name=font; st.font.size=Pt(size)

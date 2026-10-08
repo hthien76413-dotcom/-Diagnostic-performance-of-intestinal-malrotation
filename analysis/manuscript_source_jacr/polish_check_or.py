@@ -9,9 +9,9 @@ byte for byte.
 import re, io, sys, collections, os
 
 ROOT  = '/home/user/-Diagnostic-performance-of-intestinal-malrotation/analysis/'
-FILES = [ROOT + 'manuscript_source/or1.md',
-         ROOT + 'manuscript_source_iii/or2_iii.md',
-         ROOT + 'manuscript_source_iii/or3_iii.md']
+FILES = [ROOT + 'manuscript_source_jacr/supp1.md',
+         ROOT + 'manuscript_source_jacr/supp2.md',
+         ROOT + 'manuscript_source_jacr/supp3.md']
 
 NUM   = re.compile(r'(?<![A-Za-z])\d[\d,]*(?:\.\d+)?%?')
 CJK   = re.compile(r'[　-鿿＀-￯]+')

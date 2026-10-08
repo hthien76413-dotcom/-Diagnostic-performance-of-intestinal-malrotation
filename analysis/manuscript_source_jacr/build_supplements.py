@@ -2,6 +2,8 @@ import docx, json, re, os
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from threeline import make_three_line_table
+from usspell import us, us_table
+import shutil
 
 def _blank_props(doc):
     """Strip python-docx's default authorship before saving.
@@ -18,14 +20,13 @@ def _blank_props(doc):
 
 
 AN='/home/user/-Diagnostic-performance-of-intestinal-malrotation/analysis/'
-MS='/home/user/-Diagnostic-performance-of-intestinal-malrotation/analysis/manuscript_source/'
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.json')))
 D.update(json.load(open(AN+'or_tables.json'))); D.update(json.load(open(AN+'or_h.json')))
 D.update(json.load(open(AN+'or3_pooled.json'))); D.update(json.load(open(AN+'or_sens.json'))); D.update(json.load(open(AN+'or_add.json')))
 TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S1':('Table S2','Distribution of algorithmic labels and certainty tiers, by modality',D['S1']),
-     'G':('Table S3','Between-modality comparison of report-level detection (generalised estimating equation)',D['T4']),
+     'G':('Table S3','Between-modality comparison of report-level detection (generalized estimating equation)',D['T4']),
      'P':('Table S4','Report-level detection in the selected subgroup receiving all three examinations, overall and restricted to examinations performed close together in time',D['T5']),
      'S2':('Table S5','Report-level detection stratified by midgut volvulus and by age category',D['S2']),
      'S2B':('Table S6','Detection of a volvulus-specific sign among children with surgically confirmed midgut volvulus',D['S2b']),
@@ -35,7 +36,7 @@ TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S6':('Table S10','Prevalence of midgut volvulus, and the whirlpool sign among those children, under three definitions of volvulus',D['S6']),
      'S11':('Table S11','Average marginal effect of later era, with bootstrap confidence intervals',D['S11']),
      'S12':('Table S12','Paired differences in detection in the subgroup receiving all three examinations',D['S12']),
-     'S13':('Table S13','Interaction terms, and the separated volvulus contrast under penalised likelihood',D['S13'])}
+     'S13':('Table S13','Interaction terms, and the separated volvulus contrast under penalized likelihood',D['S13'])}
 def make(src,outfile,figs=None):
     doc=docx.Document()
     st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font.size=Pt(11)
@@ -52,7 +53,7 @@ def make(src,outfile,figs=None):
     def table(key):
         tag,title,data=TAB[key]
         p=para(f'{tag}. {title}'); p.runs[0].bold=True
-        make_three_line_table(doc,data)
+        make_three_line_table(doc,us_table(data))
         para('')
     for ln in open(src).read().split('\n'):
         ln=ln.strip()
@@ -65,6 +66,8 @@ def make(src,outfile,figs=None):
         elif ln.startswith('#TAB'): table(ln[4:])
         else: para(ln)
     _blank_props(doc).save(OUT+outfile); print('saved',outfile)
-make(MS+'or1.md','Online_Resource_1_NLP_and_report_audit.docx')
-make('or2_iii.md','Online_Resource_2_models_and_subgroups.docx')
-make('or3_iii.md','Online_Resource_3_CT_and_UGI_content_audit.docx')
+make('supp1.md','JACR_Supplement_1_NLP_and_report_audit.docx')
+make('supp2.md','JACR_Supplement_2_models_and_subgroups.docx')
+make('supp3.md','JACR_Supplement_3_CT_and_UGI_content_audit.docx')
+# the runnable rule set deposited with Supplement 1 is the analysis copy, unchanged
+shutil.copyfile(AN+'classifier.py',OUT+'Supplement_1_classifier.py'); print('saved Supplement_1_classifier.py')

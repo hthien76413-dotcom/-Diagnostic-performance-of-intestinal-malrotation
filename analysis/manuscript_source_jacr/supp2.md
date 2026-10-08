@@ -1,8 +1,8 @@
-#T Online Resource 2. Between-modality models, the selected paired subgroup, and detection stratified by volvulus and age
+#T Supplement 2. Between-modality models, the selected paired subgroup, and detection stratified by volvulus and age
 
-#N Supplement to: "Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: an audit of 740 preoperative index examinations in 410 surgically confirmed children"
+#N Supplement to: "Routine Ultrasound Reports for Pediatric Intestinal Malrotation Rarely Document Duodenal Landmarks: A Single-Center Audit"
 
-#H1 S2.1 Between-modality comparison (generalised estimating equation)
+#H1 S2.1 Between-modality comparison (generalized estimating equation)
 
 #TABG
 
@@ -20,7 +20,7 @@
 
 #FIGP
 
-#N **Fig. S1 Detection in the selected subgroup receiving all three examinations.** Report-level detection in the 59 children who underwent all three examinations preoperatively, shown for the whole subgroup and for the subsets in which all three fell within 48 h and within 24 h. Error bars are Wilson 95% confidence intervals.
+#N **Figure S1. Detection in the selected subgroup receiving all three examinations.** Report-level detection in the 59 children who underwent all three examinations preoperatively, shown for the whole subgroup and for the subsets in which all three fell within 48 h and within 24 h. Error bars are Wilson 95% confidence intervals.
 
 #H1 S2.3 Detection stratified by midgut volvulus and by age category
 
@@ -32,7 +32,7 @@
 
 #TABS2B
 
-#N The sign is modality-specific and uses the same negation-aware rules as the main content audit: a whirlpool or spiral appearance for ultrasound and CT, a corkscrew or spring appearance for the upper gastrointestinal series. The rates are therefore identical in definition to the whirlpool figure quoted in the manuscript (58 of 113). Ultrasound and the UGI series reported such a sign at similar rates and both more often than CT, but the comparison is between different children and is not adjusted; it is reported as exploratory and no claim of a difference between modalities is made. An earlier version of this table applied one pooled sign pattern across all three modalities without negation handling, giving 59/113 for ultrasound; the harmonised rule used here is the one implemented in `Online_Resource_1_classifier.py` and in the audit script.
+#N The sign is modality-specific and uses the same negation-aware rules as the main content audit: a whirlpool or spiral appearance for ultrasound and CT, a corkscrew or spring appearance for the upper gastrointestinal series. The rates are therefore identical in definition to the whirlpool figure quoted in the manuscript (58 of 113). Ultrasound and the UGI series reported such a sign at similar rates and both more often than CT, but the comparison is between different children and is not adjusted; it is reported as exploratory and no claim of a difference between modalities is made. An earlier version of this table applied one pooled sign pattern across all three modalities without negation handling, giving 59/113 for ultrasound; the harmonized rule used here is the one implemented in `Supplement_1_classifier.py` and in the audit script.
 
 #N The finding that survives this sensitivity analysis is directional rather than comparative. Within ultrasound, the whirlpool sign was both the dominant documented finding and the near-exclusive determinant of a positive report (main manuscript, Table 3), consistent with its being a sign of volvulus rather than of malrotation.
 
@@ -64,8 +64,8 @@
 
 #TABS12
 
-#N **The separated contrast, and interaction terms.** The pre-specified modality-by-volvulus interaction cannot be estimated in the three-modality model because no ultrasound examination was positive among the six children without volvulus. Two things can be estimated and are given in Table S13. First, the same interaction restricted to the upper gastrointestinal series and CT, where no separation occurs, shows no evidence of effect modification by volvulus. Second, a Firth penalised logistic model of ultrasound detection on volvulus returns a finite estimate. Its interval must be a profile penalised-likelihood interval rather than a Wald one, because under separation the two disagree here: the Wald interval spans 0.74 to 387 and the profile interval 1.93 to 2229 (penalised likelihood-ratio p=0.006). The direction of the contrast is therefore supported, ultrasound having been far more often positive when volvulus was present, while its magnitude is not estimable to any useful precision from six children. The estimate was reproduced to six decimal places by an independent implementation. Table S13 also reports era-by-content interaction terms for ultrasound and CT; neither is significant, so the additive models used in Table 4 are not obviously misspecified.
+#N **The separated contrast, and interaction terms.** The pre-specified modality-by-volvulus interaction cannot be estimated in the three-modality model because no ultrasound examination was positive among the six children without volvulus. Two things can be estimated and are given in Table S13. First, the same interaction restricted to the upper gastrointestinal series and CT, where no separation occurs, shows no evidence of effect modification by volvulus. Second, a Firth penalized logistic model of ultrasound detection on volvulus returns a finite estimate. Its interval must be a profile penalized-likelihood interval rather than a Wald one, because under separation the two disagree here: the Wald interval spans 0.74 to 387 and the profile interval 1.93 to 2229 (penalized likelihood-ratio p=0.006). The direction of the contrast is therefore supported, ultrasound having been far more often positive when volvulus was present, while its magnitude is not estimable to any useful precision from six children. The estimate was reproduced to six decimal places by an independent implementation. Table S13 also reports era-by-content interaction terms for ultrasound and CT; neither is significant, so the additive models used in Table 4 are not obviously misspecified.
 
 #TABS13
 
-#N **What was pre-specified and what was not.** Pre-specified: the outcome definition, the modality comparison and its GEE structure, the modality-by-volvulus interaction, the era dichotomy at 2019, and the certainty-tier sensitivity analysis. Decided after inspecting the data: the content-audit patterns (fixed by enumerating the corpus vocabulary, Online Resource 1), the pooling of same-day reports into one index episode, the era boundary sensitivity analysis, the marginal-effect presentation, and every analysis in this section. The paper's claims should be read accordingly: the content rates and the era analysis are descriptive and hypothesis-generating, not confirmatory tests of pre-registered hypotheses.
+#N **What was pre-specified and what was not.** Pre-specified: the outcome definition, the modality comparison and its GEE structure, the modality-by-volvulus interaction, the era dichotomy at 2019, and the certainty-tier sensitivity analysis. Decided after inspecting the data: the content-audit patterns (fixed by enumerating the corpus vocabulary, Supplement 1), the pooling of same-day reports into one index episode, the era boundary sensitivity analysis, the marginal-effect presentation, and every analysis in this section. The paper's claims should be read accordingly: the content rates and the era analysis are descriptive and hypothesis-generating, not confirmatory tests of pre-registered hypotheses.

@@ -1,12 +1,12 @@
-#T Online Resource 1. Text-classification algorithm and report-content audit
+#T Supplement 1. Text-classification algorithm and report-content audit
 
-#N Supplement to: "Routine ultrasound reports for intestinal malrotation rarely document duodenal landmarks: an audit of 740 preoperative index examinations in 410 surgically confirmed children"
+#N Supplement to: "Routine Ultrasound Reports for Pediatric Intestinal Malrotation Rarely Document Duodenal Landmarks: A Single-Center Audit"
 
 #N Sections A–F specify the classification rules. Section J reports a reference implementation of those rules as a runnable script, together with its agreement with the final adjudicated labels, so that the specification below can be executed rather than only read.
 
 #H1 A. Purpose and scope
 
-#N Radiology reports at the study institution are free text in Chinese. Each preoperative index report was assigned a binary label (positive / negative for intestinal malrotation) by a rule-based, clause-level algorithm, and was separately coded for documented technical content. The two operations are independent: content coding never influenced the positive/negative label, and vice versa. Labels were subsequently adjudicated by a blinded paediatric surgeon (Section G); adjudicated labels superseded algorithmic labels in all analyses.
+#N Radiology reports at the study institution are free text in Chinese. Each preoperative index report was assigned a binary label (positive / negative for intestinal malrotation) by a rule-based, clause-level algorithm, and was separately coded for documented technical content. The two operations are independent: content coding never influenced the positive/negative label, and vice versa. Labels were subsequently adjudicated by a blinded pediatric surgeon (Section G); adjudicated labels superseded algorithmic labels in all analyses.
 
 #H1 B. Unit of analysis and text segmentation
 
@@ -38,9 +38,9 @@
 
 #H1 E. Negation, scope and exclusion rules
 
-#N **E1 Negation.** A candidate positive was cancelled when a negation cue governed the diagnostic term: 未见 / 未探及 / 未显示 / 未发现 (not seen), 无 / 无明显 (absent), 不考虑 (not considered), 正常 (normal), 阴性 (negative). A cue governs the term only when it stands in the twelve characters preceding it, so 未见明显梗阻征象。中肠旋转不良考虑。 remains positive, and so does 中肠旋转不良术后：未见明显梗阻征象, where the negation governs the obstruction rather than the rotation. 无 is not read as a cue inside 有无 ("whether or not"), which raises the question rather than answering it. 排除 and 除外 are not negation cues in this corpus: every occurrence with the diagnosis is a request to exclude it, which rule E2 treats as raising it.
+#N **E1 Negation.** A candidate positive was canceled when a negation cue governed the diagnostic term: 未见 / 未探及 / 未显示 / 未发现 (not seen), 无 / 无明显 (absent), 不考虑 (not considered), 正常 (normal), 阴性 (negative). A cue governs the term only when it stands in the twelve characters preceding it, so 未见明显梗阻征象。中肠旋转不良考虑。 remains positive, and so does 中肠旋转不良术后：未见明显梗阻征象, where the negation governs the obstruction rather than the rotation. 无 is not read as a cue inside 有无 ("whether or not"), which raises the question rather than answering it. 排除 and 除外 are not negation cues in this corpus: every occurrence with the diagnosis is a request to exclude it, which rule E2 treats as raising it.
 
-#N **E2 Distinction between negation and hedged exclusion.** 建议进一步检查除外肠旋转不良 ("recommend further study to exclude malrotation") is not a negation: it raises the diagnosis. Such clauses were labelled positive at possible-tier certainty. This rule was applied consistently. It is the most consequential interpretive decision in the algorithm, and it is the reason for the sensitivity analysis in Table 2.
+#N **E2 Distinction between negation and hedged exclusion.** 建议进一步检查除外肠旋转不良 ("recommend further study to exclude malrotation") is not a negation: it raises the diagnosis. Such clauses were labeled positive at possible-tier certainty. This rule was applied consistently. It is the most consequential interpretive decision in the algorithm, and it is the reason for the sensitivity analysis in Table 2.
 
 #N **E3 Organ exclusions.** 胃扭转 and 胃翻转 (gastric volvulus / organoaxial gastric rotation) are benign findings unrelated to midgut rotation and never make a report positive, even though they contain 扭转. Likewise excluded: 睾丸扭转, 卵巢扭转, 附件扭转, 精索扭转, 大网膜扭转, 阑尾扭转 (testicular, ovarian, adnexal, spermatic-cord, omental and appendiceal torsion). A report may still be positive on other grounds: 中肠旋转不良并十二指肠不全性梗阻考虑。胃翻转。 is positive on its first clause.
 
@@ -48,19 +48,19 @@
 
 #H1 F. Priority order
 
-#N Rules were applied in this order: (1) organ exclusions (E3); (2) positive-evidence dictionary (C); (3) hedged-exclusion recognition (E2); (4) negation (E1); (5) certainty tagging (D). E2 is read before E1 because a request to exclude the diagnosis raises it and must not be cancelled as a negation; a hedged cue is read in the twelve characters before the term or, up to the next punctuation, after it. Reports with no matching clause were labelled negative. Technically non-diagnostic studies were not coded separately as indeterminate and were labelled by their stated conclusion.
+#N Rules were applied in this order: (1) organ exclusions (E3); (2) positive-evidence dictionary (C); (3) hedged-exclusion recognition (E2); (4) negation (E1); (5) certainty tagging (D). E2 is read before E1 because a request to exclude the diagnosis raises it and must not be canceled as a negation; a hedged cue is read in the twelve characters before the term or, up to the next punctuation, after it. Reports with no matching clause were labeled negative. Technically non-diagnostic studies were not coded separately as indeterminate and were labeled by their stated conclusion.
 
 #H1 G. Validation and adjudication
 
-#N A paediatric surgeon blinded to the operative findings adjudicated 32 reports in two independent samples, and later re-read a further nine flagged by a screen of the whole dataset.
+#N A pediatric surgeon blinded to the operative findings adjudicated 32 reports in two independent samples, and later re-read a further nine flagged by a screen of the whole dataset.
 
-#N **Sample 1 (validation).** A stratified random sample of 24 reports with positive and negative machine labels balanced across the three modalities. Agreement 22/24 (92%); Cohen kappa 0.83; per-modality agreement 88% (UGI), 88% (CT) and 100% (ultrasound). These are the only figures used to characterise algorithm performance.
+#N **Sample 1 (validation).** A stratified random sample of 24 reports with positive and negative machine labels balanced across the three modalities. Agreement 22/24 (92%); Cohen kappa 0.83; per-modality agreement 88% (UGI), 88% (CT) and 100% (ultrasound). These are the only figures used to characterize algorithm performance.
 
 #N **Sample 2 (targeted).** The 8 reports in which a malrotation sign appeared in the findings section while the machine label was negative. Five were confirmed as machine under-calls and corrected. Because this sample was selected on suspected discordance, it is **excluded** from the agreement statistics above; including it would bias them.
 
 #N **Sample 3 (two-directional screen of all 740 index units).** Both earlier samples could only produce under-calls: one was small and the other was selected on suspected under-call. Every index unit was therefore screened in both directions — positive units whose pooled text matched no term naming malrotation or volvulus and no modality-specific sign pattern, and negative units whose text did name the diagnosis. The screen returned nine units of the first kind and none of the second. All nine were read against the source reports by the same clinician.
 
-#N Three were over-calls and were corrected to negative: two CT units whose reports concern unrelated findings (a quadrate-lobe haemangioma with mild hepatomegaly; colonic distension with an appendicolith and rectal wall thickening), and one bedside ultrasound of liver, spleen, left renal vein and pylorus in a child whose diagnosis was made by the upper gastrointestinal series. The corrections, with their reasons, are listed in `label_corrections.csv` and applied to the analysis matrix by `core.py`; the raw data export is unaltered.
+#N Three were over-calls and were corrected to negative: two CT units whose reports concern unrelated findings (a quadrate-lobe hemangioma with mild hepatomegaly; colonic distension with an appendicolith and rectal wall thickening), and one bedside ultrasound of liver, spleen, left renal vein and pylorus in a child whose diagnosis was made by the upper gastrointestinal series. The corrections, with their reasons, are listed in `label_corrections.csv` and applied to the analysis matrix by `core.py`; the raw data export is unaltered.
 
 #N The other six were confirmed as correct and illustrate why a conclusion-only pattern match is not the label. Four describe the finding morphologically without naming it: bowel encircling the mesenteric vessels in a ring-like arrangement, mesenteric vessels of disordered course wrapped by swollen mesentery, an obstructive lesion of the distal duodenum with clustered mid-abdominal bowel, and jejunum lying to the right of the midline. One is a conclusion consisting only of a cross-reference to a report that is absent from the data export, so its text could not be re-read and the label was left as it stood. In one child the index ultrasound episode is negative while an examination 2.4 days earlier recorded a whirlpool; the label reflects the earlier episode, so for this one ultrasound unit the label and the index-episode text disagree.
 
@@ -72,7 +72,7 @@
 
 #H1 J. Reference implementation and its agreement with the final labels
 
-#N The rules in Sections C–F are provided as a runnable Python script (`classifier.py`, deposited with this Online Resource) so that they can be inspected and re-applied. The script takes a report conclusion and a modality and returns a binary label and a certainty tier, implementing clause segmentation (B), the positive-evidence dictionary (C), certainty tiering (D), negation, hedged-exclusion and organ-exclusion handling (E), and the priority order (F).
+#N The rules in Sections C–F are provided as a runnable Python script (`classifier.py`, deposited with this Supplement) so that they can be inspected and re-applied. The script takes a report conclusion and a modality and returns a binary label and a certainty tier, implementing clause segmentation (B), the positive-evidence dictionary (C), certainty tiering (D), negation, hedged-exclusion and organ-exclusion handling (E), and the priority order (F).
 
 #N The comparison is made by `classifier_agreement.py`, which applies the script to the pooled conclusion of each of the 740 index examination episodes — the same index unit the analysis uses — and compares the result with the final labels (the algorithmic labels after adjudication). The reference implementation agreed on 732 of 740 (98.9%): 298 of 301 (99.0%) for the UGI series, 316 of 320 (98.8%) for CT and 118 of 119 (99.2%) for ultrasound. All eight disagreements were reference-implementation under-calls; there was no over-call.
 
@@ -88,7 +88,7 @@
 
 #H1 H. Report-content audit patterns
 
-#N Content coding was applied to the concatenated findings and conclusion text of each index unit. The index unit is the examination episode closest to operation: all reports of that modality issued on that calendar day are pooled, because the department routinely issues separate gastrointestinal and great-vessel reports for one ultrasound session. Patterns are given as regular expressions over the source text. Technique elements (duodenal segments, the mesenteric vessels, enteric fluid, dynamic and compression technique, colour Doppler, caecal position) are coded on mention, whether the finding was normal or abnormal, because an examination that states the vessel relationship is normal did assess the vessels. Findings and adequacy statements (the whirlpool sign, limiting bowel gas) are coded clause-by-clause with negation and co-occurrence handling, as noted in the table.
+#N Content coding was applied to the concatenated findings and conclusion text of each index unit. The index unit is the examination episode closest to operation: all reports of that modality issued on that calendar day are pooled, because the department routinely issues separate gastrointestinal and great-vessel reports for one ultrasound session. Patterns are given as regular expressions over the source text. Technique elements (duodenal segments, the mesenteric vessels, enteric fluid, dynamic and compression technique, color Doppler, cecal position) are coded on mention, whether the finding was normal or abnormal, because an examination that states the vessel relationship is normal did assess the vessels. Findings and adequacy statements (the whirlpool sign, limiting bowel gas) are coded clause-by-clause with negation and co-occurrence handling, as noted in the table.
 
 #TABH
 

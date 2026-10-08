@@ -36,10 +36,10 @@ def para(text, bold=None, italic=None, size=None, space_after=8):
 
 para("STROBE Statement — checklist of items that should be included in reports of cohort studies",
      bold=True, size=13)
-para('Manuscript: "Routine ultrasound reports for intestinal malrotation rarely document duodenal '
-     'landmarks: an audit of 740 preoperative index examinations in 410 surgically confirmed children"',
+para('Manuscript: "Routine Ultrasound Reports for Pediatric Intestinal Malrotation Rarely Document '
+     'Duodenal Landmarks: A Single-Center Audit"',
      size=10)
-para("The study is a retrospective, single-centre, case-only report audit and is reported according "
+para("The study is a retrospective, single-center, case-only report audit and is reported according "
      "to STROBE for cohort studies. STARD is deliberately not claimed: the cohort contains no "
      "test-negative children, so the design does not meet the definition of a diagnostic accuracy "
      "study and specificity, predictive values and any ranking of the three modalities are not "
@@ -55,5 +55,5 @@ para("Note: An Explanation and Elaboration article discusses each checklist item
      "website (https://www.strobe-statement.org).", italic=True, size=8.5, space_after=0)
 
 _blank_props(doc)
-doc.save(OUT + 'STROBE_checklist.docx')
-print('saved STROBE_checklist.docx')
+doc.save(OUT + 'JACR_STROBE_checklist.docx')
+print('saved JACR_STROBE_checklist.docx')

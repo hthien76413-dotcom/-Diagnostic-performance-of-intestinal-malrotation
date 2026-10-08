@@ -11,11 +11,14 @@ import io, re, os
 SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'p3.md')
 OUT = '/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 
-REF = re.compile(r'^#R (\d+)\.\s+(.*?)\s+\((\d{4})\)\s+(.*?)\.\s+([^0-9]+?)\s+(\d+):([^\s]+)\s+https://doi\.org/(\S+)\s*$')
+# AMA layout: Authors. Title. *Journal*. Year;Volume:Pages. doi:DOI
+REF = re.compile(r'^#R (\d+)\.\s+(.+?)\.\s+(.+?)\.\s+\*(.+?)\*\.\s+(\d{4});(\d+):([^.\s]+)\.\s+doi:(\S+)\s*$')
 rows = []
 for line in io.open(SRC, encoding='utf-8'):
     m = REF.match(line.rstrip())
-    if m: rows.append(m.groups())
+    if m:
+        n, au, ti, jo, yr, vol, pg, doi = m.groups()
+        rows.append((n, au, yr, ti, jo, vol, pg, doi))
 assert len(rows) == 24, f'parsed {len(rows)} references, expected 24'
 
 def ris_authors(s):

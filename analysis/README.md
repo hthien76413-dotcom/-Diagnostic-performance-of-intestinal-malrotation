@@ -1,7 +1,7 @@
 # Re-analysis for the revised manuscript
 
 All figures, tables and in-text numbers in
-`诊断效能_英文稿_InsightsIntoImaging投稿版_v4.docx` and the three Online Resources
+`JACR_3_Manuscript_masked.docx` and the three Supplements (Supplement 1-3)
 are produced by the scripts here
 from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 `诊断效能_手术确诊队列_465例.xlsx` and the adjudicated per-patient matrix
@@ -19,7 +19,7 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 usaudit.py     # first-pass ultrasound content audit (superseded)
     python3 usaudit4.py    # Table 3: definitive ultrasound content audit
     python3 temporal2.py   # era models and the CT / UGI audits on pooled episodes
-    python3 or_sens.py     # Online Resource 2 sensitivity analyses (S8-S10)
+    python3 or_sens.py     # Supplement 2 sensitivity analyses (S8-S10)
     python3 revcheck.py    # report-flow, index-unit and volvulus-definition checks
     python3 volsign2.py    # volvulus-specific sign, harmonised with the main audit rules
     python3 firth.py       # Firth penalised logistic, with a validation check vs the MLE
@@ -38,23 +38,35 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 classifier_agreement.py  # agreement of the published script with the final labels
     python3 or_add.py      # assembles or_add.json; run after addstats.py and volsign2.py
     python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
-    python3 graphabs.py    # the journal graphical abstract (300 dpi RGB TIFF + PNG)
+    python3 graphabs.py    # graphical abstract for Insights into Imaging (not used by JACR)
 
 `ALL_RESULTS.txt` is the concatenated console output of the analysis scripts.
 
 ## Building the documents
 
-    cd manuscript_source_iii
-    python3 build_iii.py    # manuscript from p1-3.md + tables*.json + figures
-    python3 build_or.py     # the three Online Resources
-    python3 build_strobe.py # STROBE_checklist.docx from strobe.json
-    python3 build_docs.py   # cover letter, submission sheet, Chinese notes
-    python3 wc.py           # main-text word count against the 3,000-word limit
+    cd manuscript_source_jacr
+    python3 build_manuscript.py  # masked manuscript from p1-3.md + tables*.json + figures, and JACR_Figure1-3.tif
+    python3 build_supplements.py # Supplements 1-3 from supp1-3.md, and Supplement_1_classifier.py
+    python3 build_strobe.py      # JACR_STROBE_checklist.docx from strobe.json
+    python3 build_docs.py        # cover letter, title page, Chinese submission sheet
+    python3 wc.py                # main-text word count against the 3,000-word limit
+    python3 jacr_check.py        # every JACR limit, masking, spelling and stale-term check
 
-`manuscript_source/` holds the earlier Pediatric Radiology revision sources;
-`or1.md` there is still the source of Online Resource 1.
+The manuscript is formatted for the *Journal of the American College of
+Radiology*: AMA references, American spelling, an Objective / Methods /
+Results / Conclusion abstract of at most 250 words, Take-Home Points in place
+of a Conclusion section, at most 7 tables and figures and at most 7 authors.
+`usspell.py` holds the spelling map: the Markdown sources were converted with
+it once, and the builders apply it to table text read from the analysis JSON,
+which the analysis scripts still write in British spelling. Reference titles
+are quoted as published and are never converted.
 
-All tables in the manuscript, the three Online Resources and the STROBE
+The Insights into Imaging submission (desk-rejected on scope, 30 September
+2026) is kept as built in `archive/InsightsIntoImaging_desk-rejected_2026-09-30/`;
+its sources are this folder's history before the JACR conversion.
+`manuscript_source/` holds the earlier Pediatric Radiology revision sources.
+
+All tables in the manuscript, the three Supplements and the STROBE
 checklist are built by `threeline.py` as open (three-line) tables — a rule
 above the header, a rule under the header, a rule at the foot, no vertical
 rules and no rules between data rows, which is the convention scientific
@@ -111,7 +123,7 @@ record is now linked to the admission containing that operation (verified for al
 
 ## Analyses added after statistical review
 
-`addstats.py` produces Online Resource 2 Tables S11-S13:
+`addstats.py` produces Supplement 2 Tables S11-S13:
 
 * percentile bootstrap CIs for the average marginal effect of era (2,000 resamples
   of children, seed 20260903), because the manuscript reports the era effect on the
