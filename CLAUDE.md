@@ -16,4 +16,6 @@
 - 生成式 AI 声明：用户决定如实声明（Claude 协助起草、语言润色和分析代码），按 JACR 模板写在参考文献之前。不要把声明改窄。
 - 改稿后必须重新构建，并运行 `python3 analysis/manuscript_source_jacr/jacr_check.py`。它会核对 JACR 的各项上限、盲审隐去信息、美式拼写和参考文献格式。
 - 渲染 docx/pptx 需要 LibreOffice 的 writer/impress 组件。新环境里只有 core，需要先 `apt-get install libreoffice-writer libreoffice-impress libreoffice-calc poppler-utils`（xlsx 公式重算需要 calc）。
-- 审稿自查（2026-10-08）发现 S1 参考标准、S2 术前时间、S3 超声内容未人工验证三项严重问题；核对表 `审稿核对表_S1-S3.xlsx`、`S3超声报告阅读_阅读者乙.xlsx` 由 `analysis/build_review_checklists.py` 生成，等用户填回后据此剔除病例并重算全部结果。
+- 审稿自查（2026-10-08）发现 S1 参考标准、S2 术前时间、S3 超声内容未人工验证三项严重问题。用户 2026-10-09 填回核对表（`analysis/review_returns/`），已并入分析：`analysis/review_merge.py` → `review_exclusions.csv`、`us_manual_coding.csv`，由 `core.py`、`usaudit4.py` 应用。复发再次手术 9 例主分析排除（用户决定，不做敏感性分析）；S3 的 5 格分歧按我提出的裁定（用户同意）。
+- 重算后（2026-10-09）：队列 450，影像 398，索引检查 723；UGI 230/293、CT 165/313、US 64/117；D3/DJJ 3/117，SMA–SMV 关系 3/117，漩涡征 59/117；超声时代效应粗 AME +18.7（−0.2 至 +37.7），已不显著。正文 2,989 词，摘要 249 词。
+- 待办：两位超声阅读者的姓名和资质尚未告知（正文只写"two readers"，Title Page 贡献未列）；之后按审稿自查 S4–S6 改正文（结局定义循环、技术因素表述与 [13] 的关系、时间趋势过度解读）。

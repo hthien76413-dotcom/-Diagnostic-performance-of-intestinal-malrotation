@@ -18,7 +18,7 @@ S11 = [['Modality and model',
         'Average marginal effect of later era, percentage points (95% CI)']]
 S11 += [[k, pp(v[0], v[1])] for k, v in A['AME'].items()]
 
-S12 = [['Comparison (n=59)', 'Detection', 'Difference, percentage points (95% CI)',
+S12 = [['Comparison (n=%d)' % int(mat[['US_detected', 'CT_detected', 'UGI_detected']].notna().all(axis=1).sum()), 'Detection', 'Difference, percentage points (95% CI)',
         'Discordant pairs', 'Exact McNemar p']] + A['PAIR']
 
 # modality x volvulus interaction where it is estimable (UGI vs CT only)

@@ -39,7 +39,7 @@ for sel,lab in [(c[c['enh']],'  CT, contrast-enhanced'),(c[~c['enh']],'  CT, une
     k=int(sel['det'].sum()); n=len(sel); a,b=wr(k,n); T2.append([lab,a,b,'–','–','–','–'])
 k=int(u['US_whirlpool'].sum()); n=len(u); a,b=wr(k,n); T2.append(['  Ultrasound, whirlpool sign recorded',a,b,'–','–','–','–'])
 # Table 3 US content
-T3=[['Documented content of the ultrasound report','n (%) of 119 reports','2012–2018 (n=39), %','2019–2026 (n=80), %','Detection when documented, %','Detection when not documented, %']]
+T3=[['Documented content of the ultrasound report',f'n (%) of {len(u)} reports',f"2012–2018 (n={int((~u['era_late'].astype(bool)).sum())}), %",f"2019–2026 (n={int(u['era_late'].astype(bool).sum())}), %",'Detection when documented, %','Detection when not documented, %']]
 items=[('d3','Third portion of duodenum or duodenojejunal junction'),('duodenum','Duodenum mentioned in any form'),
  ('sma_smv','Superior mesenteric artery–vein relationship'),('inversion','Explicit statement of vessel inversion'),
  ('fluid','Enteric fluid administered'),('cecum','Caecal position'),('whirl_txt','Whirlpool, swirl or spiral appearance'),

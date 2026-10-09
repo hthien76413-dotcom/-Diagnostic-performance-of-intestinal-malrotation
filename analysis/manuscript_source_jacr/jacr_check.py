@@ -95,7 +95,12 @@ for f in masked:
     cp = d.core_properties
     check(not (cp.author or cp.last_modified_by), f'{f}: document properties blank')
 
-stale = re.compile(r'Online Resource|Key Point|Critical relevance|Insights into Imaging|Graphical abstract|\bFig\. |171/320|65/119|54\.6%|0\.31 \(0\.22|0\.33 \(0\.21')
+stale = re.compile(r'Online Resource|Key Point|Critical relevance|Insights into Imaging|Graphical abstract|\bFig\. |171/320|65/119|54\.6%|0\.31 \(0\.22–0\.44|0\.33 \(0\.21–0\.50'
+                   # values retired by the S1-S3 review (cohort 465 -> 450)
+                   r'|237/301|169/320|64/119|58 of 113|58/113|\b410 children')
+# Supplement 1 Section K legitimately describes the 740 units and the 119
+# ultrasound episodes held before the review, so these apply everywhere else
+stale_post = re.compile(r'\b740 index|\b119 ultrasound|of the 119\b')
 for f in sorted(glob.glob(ROOT + 'JACR_*.docx')):
     if f.endswith('投稿操作单.docx'):
         continue
@@ -112,6 +117,8 @@ for f in sorted(glob.glob(ROOT + 'JACR_*.docx')):
     t = '\n'.join(text)
     check(not british_left(t), f'{os.path.basename(f)}: American spelling {british_left(t) or ""}')
     hits = sorted({m.group(0) for m in stale.finditer(t)})
+    if 'Supplement_1' not in f:
+        hits = sorted(set(hits) | {m.group(0) for m in stale_post.finditer(t)})
     check(not hits, f'{os.path.basename(f)}: no stale IiI terms or retired values {hits if hits else ""}')
 
 refs = [p for p in ms if re.match(r'\d+\. ', p)]

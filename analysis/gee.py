@@ -18,5 +18,9 @@ names=[k for k in m3.params.index if ':' in k]
 print('interaction terms:',names)
 R=np.zeros((len(names),len(m3.params)))
 for i,n in enumerate(names): R[i,list(m3.params.index).index(n)]=1
-w=m3.wald_test(R,scalar=True)
-print('GLOBAL Wald interaction: chi2=%.3f df=%d p=%.4f'%(w.statistic,len(names),w.pvalue))
+if m3.params.isna().any():
+    # separation (no positive ultrasound without volvulus): the model does not converge
+    print('GLOBAL Wald interaction: not estimable (separation; see gee2.py and firth.py)')
+else:
+    w=m3.wald_test(R,scalar=True)
+    print('GLOBAL Wald interaction: chi2=%.3f df=%d p=%.4f'%(w.statistic,len(names),w.pvalue))

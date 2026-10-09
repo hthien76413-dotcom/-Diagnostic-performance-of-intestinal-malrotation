@@ -37,7 +37,7 @@ def blk(d):
         out[nm]=(int(tab[1,0]),int(tab[0,1]),mcnemar(tab,exact=True).pvalue)
     return out
 def fp(x): return '<0.001' if x<0.001 else f'{x:.3f}'
-cols=[('All (n=59)',p),('All three within 48 h (n=%d)'%int((p['span']<=2).sum()),p[p['span']<=2]),('All three within 24 h (n=%d)'%int((p['span']<=1).sum()),p[p['span']<=1])]
+cols=[('All (n=%d)'%len(p),p),('All three within 48 h (n=%d)'%int((p['span']<=2).sum()),p[p['span']<=2]),('All three within 24 h (n=%d)'%int((p['span']<=1).sum()),p[p['span']<=1])]
 B=[(lab,blk(d)) for lab,d in cols]
 T5=[['Measure']+[l for l,_ in B]]
 for c,lab in [('UGI_detected','UGI contrast series, n/N (%; 95% CI)'),('US_detected','Gastrointestinal ultrasound, n/N (%; 95% CI)'),

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Agreement between the published reference implementation
-(Online_Resource_1_classifier.py) and the final labels used in the analysis.
+(Supplement_1_classifier.py) and the final labels used in the analysis.
 
-The comparison is at the level of the 740 index examination episodes: all
+The comparison is at the level of the index examination episodes: all
 reports of a modality issued on the index day are pooled, exactly as the
 analysis pools them, and the classifier is applied to the pooled conclusion.
 """
@@ -10,7 +10,7 @@ exec(open('core.py').read())
 import importlib.util, pandas as pd
 
 spec = importlib.util.spec_from_file_location(
-    'ref_classifier', BASE + 'Online_Resource_1_classifier.py')
+    'ref_classifier', BASE + 'Supplement_1_classifier.py')
 ref = importlib.util.module_from_spec(spec); spec.loader.exec_module(ref)
 
 rep['day'] = rep['检查时间'].dt.normalize()

@@ -14,7 +14,7 @@ ct=ct[[c for c in ['definite','probable','possible'] if c in ct]]
 print(ct.to_string()); print((ct.div(ct.sum(1),axis=0)*100).round(1).to_string())
 print('\ntotal positives',len(pos))
 # Would restricting to definite+probable change the ranking?
-for mod,tot in [('UGI',301),('CT',320),('US',119)]:
+for mod,tot in ix['mod'].value_counts().reindex(['UGI','CT','US']).items():
     d=pos[pos['mod']==mod]
     strict=(d['tier']!='possible').sum()
     print(f'  {mod}: all-positive {len(d)}/{tot}={len(d)/tot*100:.1f}%   excluding "possible" wording {strict}/{tot}={strict/tot*100:.1f}%')

@@ -15,7 +15,7 @@
 #N **生成式 AI（第 2 页）**：参考文献前须有固定标题和固定句式的声明。已按原文模板写入，标题为 "Declaration of generative AI and AI-assisted technologies in the writing process"。注意：须知还规定 AI 只能用于改进语言和可读性，本文的声明如实写了协助起草和编写分析代码（见第六节）。
 
 #N **Original Article（第 2 页）**：
-#N • 正文少于 3,000 词（不含参考文献）：2,990 词 ✓
+#N • 正文少于 3,000 词（不含参考文献）：2,989 词 ✓
 #N • 图表合计不超过 7 个：4 表 + 3 图 = 7 ✓
 #N • 原创研究须有正式的 Limitations 部分 ✓
 #N • 观察性研究按 STROBE 报告：附 STROBE 清单 ✓
@@ -32,7 +32,7 @@
 #N • 利益冲突声明不得写在 Title Page 上，须用 Elsevier Declarations tool 生成并单独上传 ✓（已从 Title Page 删除）
 
 #N **Main Manuscript（第 5 页）**：
-#N • 摘要不超过 250 词，按 objective / methods / results / discussion 结构：245 词，段名为 Objective / Methods / Results / Discussion ✓
+#N • 摘要不超过 250 词，按 objective / methods / results / discussion 结构：249 词，段名为 Objective / Methods / Results / Discussion ✓
 #N • 关键词 3–5 个：5 个 ✓
 #N • 摘要中不放引文；未发表结果和个人通信不进参考文献 ✓
 
@@ -54,7 +54,7 @@
 #N **科学内容一个数字都没改。** IiI 是因"不在期刊关注范围"直接退稿，没有任何针对方法或数据的意见。四张表逐格比对过，除拼写外完全一致；图重新生成后与原图逐像素相同。
 
 #N 1. **标题**改为 Title Case，121 个字符。
-#N 2. **摘要**段名改为 Objective / Methods / Results / Discussion（JACR 须知原文的四段名），共 245 词。
+#N 2. **摘要**段名改为 Objective / Methods / Results / Discussion（JACR 须知原文的四段名），共 249 词。
 #N 3. **删去 IiI 专属内容**：Key Points、Critical relevance statement、图文摘要和缩略语表。
 #N 4. **结论段换成 4 条 Take-Home Points。**
 #N 5. **全文改为美式拼写**，图 3 的 "Caecal" 改为 "Cecal" 并重新出图，面板字母改为大写 A/B。
@@ -99,17 +99,17 @@
 
 #N **Short / running title**（若问）：Duodenal Landmarks in Routine Malrotation Ultrasound Reports
 
-#N **Abstract**：从正文复制 Objective / Methods / Results / Discussion 四段（含段名），共 245 词。**Keywords 不要粘进摘要框。**
+#N **Abstract**：从正文复制 Objective / Methods / Results / Discussion 四段（含段名），共 249 词。**Keywords 不要粘进摘要框。**
 
 #N **Keywords**（3–5 个）：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report
 #N 注意 "Infant, Newborn" 中间是逗号，算一个词。
 
 #N **Summary sentence**（若系统要求；32 词、241 字符，逐字取自正文第 1 条 Take-Home Point）：
-#N Routine ultrasound reports for children with surgically confirmed malrotation documented the duodenal landmarks underpinning published accuracy in 2.5% of examinations and reported the diagnosis almost only when a whirlpool sign was present.
+#N Routine ultrasound reports for children with surgically confirmed malrotation documented the duodenal landmarks underpinning published accuracy in 2.6% of examinations and reported the diagnosis almost only when a whirlpool sign was present.
 
 #N **Take-Home Points**（若系统要求单独填；已写入正文，逐字复制即可）：
-#N • Routine ultrasound reports for children with surgically confirmed malrotation documented the duodenal landmarks underpinning published accuracy in 2.5% of examinations and reported the diagnosis almost only when a whirlpool sign was present.
-#N • In practice, routine ultrasound served as a test for volvulus rather than for malrotation: a whirlpool sign was recorded in only 58 of 113 children in whom operation confirmed volvulus.
+#N • Routine ultrasound reports for children with surgically confirmed malrotation documented the duodenal landmarks underpinning published accuracy in 2.6% of examinations and reported the diagnosis almost only when a whirlpool sign was present.
+#N • In practice, routine ultrasound served as a test for volvulus rather than for malrotation: a whirlpool sign was recorded in only 59 of 112 children in whom operation confirmed volvulus.
 #N • These are report-level detection rates among surgically confirmed children, not sensitivities; they establish no specificity, predictive value or ranking of modalities, and are no argument against ultrasound-first pathways.
 #N • Before assuming that published ultrasound performance applies locally, departments should audit whether their own reports document the duodenal landmarks; a structured report would make the gap auditable.
 
@@ -165,6 +165,6 @@
 #H1 八、投稿前最后自检
 
 #N 1. 隐去作者信息的正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者）已清空。
-#N 2. 标题 121 字符；摘要 245 词；正文 2,990 词；图表 7 个；作者 7 位。
+#N 2. 标题 121 字符；摘要 249 词；正文 2,989 词；图表 7 个；作者 7 位。
 #N 3. Title Page、投稿系统表单和正文 Declarations 三处内容一致。
 #N 4. Cover Letter 日期已改为实际投稿日。

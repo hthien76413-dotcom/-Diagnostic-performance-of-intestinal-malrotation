@@ -10,6 +10,8 @@ Two corrections over usaudit2.py:
   * Patterns are clause-aware where the element is a FINDING (whirlpool, study
     adequacy) and mention-level where it is a TECHNIQUE element (an examination
     that states the vessel relationship is normal did address the vessels).
+After the review, the twelve content items come from the two-reader manual
+coding (us_manual_coding.csv); the patterns are retained only for comparison.
 """
 exec(open('core.py').read())
 import re, json, numpy as np, pandas as pd
@@ -59,6 +61,30 @@ u['whirl_pos']= reported(WHIRL)
 u['gas_limit']= clause_both(GAS,LIMIT)
 u['cecum']    = f(r'回盲')
 u['doppler']  = f(r'CDFI|彩色多普勒|多普勒')
+# The twelve content items are taken from the manual reading (S3): two readers
+# coded every episode independently and five disagreeing cells were adjudicated
+# (review_merge.py). The patterns above are kept as *_rx for comparison only.
+ITEMS=['d3','djj','duodenum','sma_smv','inversion','fluid','dynamic','compress',
+       'cecum','doppler','whirl_pos','gas_limit','d3_or_djj']
+u=u.rename(columns={k:k+'_rx' for k in ITEMS}).merge(pd.read_csv('us_manual_coding.csv'),on='科研患者编号',how='left')
+assert u[ITEMS].notna().all().all() and len(u)==117
+u[ITEMS]=u[ITEMS].astype(bool)
+assert (u['whirl_pos']==(u['US_whirlpool']==1)).all()
+print('pattern vs manual reading, episodes coded the same (of %d):'%len(u))
+print('  '+', '.join('%s %d'%(k,int((u[k]==u[k+'_rx']).sum())) for k in ITEMS))
+# Supplement 1 Table S2: reader agreement and the patterns' agreement with the consensus
+AG=json.load(open('review_agreement.json'))['items']
+KLAB=[('d3','Third portion of the duodenum'),('djj','Duodenojejunal junction'),('duodenum','Duodenum mentioned in any form'),
+      ('sma_smv','Superior mesenteric artery–vein relationship'),('inversion','Explicit statement of vessel inversion'),
+      ('fluid','Enteric fluid administration recorded'),('dynamic','Dynamic (real-time) assessment'),('compress','Graded compression'),
+      ('cecum','Caecal position'),('doppler','Colour Doppler used'),('whirl_pos','Whirlpool, swirl or spiral appearance reported'),
+      ('gas_limit','Bowel gas explicitly limiting the study')]
+TK=[['Documented content','Reader A, n','Reader B, n',f"Agreement, n of {AG['d3']['n']}","Cohen kappa",f"Consensus, n of {AG['d3']['n']}",
+     f'Text pattern agreeing with consensus, n of {len(u)}']]
+for k,lab in KLAB:
+    a=AG[k]; TK.append([lab,str(a['reader_A']),str(a['reader_B']),str(a['agree']),
+                        '–' if a['kappa'] is None else f"{a['kappa']:.2f}",str(a['consensus']),str(int((u[k]==u[k+'_rx']).sum()))])
+json.dump({'K':TK},open('us_coding_agreement.json','w'),ensure_ascii=False,indent=1)
 u['vessel_us']= N.str.contains('腹部大血管'); u['gi_us']=N.str.contains('胃肠道')
 u['pyloric']  = N.str.contains('幽门');       u['bedside']=N.str.contains('床旁')
 u['det']=u['US_detected'].astype(int); u['late']=u['era_late'].astype(int)
@@ -99,8 +125,6 @@ NAMED=r'肠旋转不良|中肠旋转不良|旋转不良|中肠扭转|肠扭转|�
 w=u[u['whirl_pos']]
 print('whirlpool reported n=%d; conclusion names malrotation/volvulus in %d'%(
       len(w),int(w['concl'].astype(str).str.contains(NAMED,regex=True).sum())))
-print('agreement with adjudicated whirlpool variable: %d/%d'%(
-      int((u['whirl_pos']==(u['US_whirlpool']==1)).sum()),len(u)))
 v=u[u['volvulus'].astype(bool)]
 print('whirlpool reported among %d children with operative volvulus: %d (%.1f%%)'%(
       len(v),int(v['whirl_pos'].sum()),100*v['whirl_pos'].mean()))

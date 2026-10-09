@@ -10,7 +10,7 @@ p=mat[mat[['US_detected','CT_detected','UGI_detected']].notna().all(axis=1)].cop
 pid=set(p['科研患者编号'])
 tt=idx[idx['科研患者编号'].isin(pid)].pivot_table(index='科研患者编号',columns='mod',values='检查时间',aggfunc='first')
 p=p.merge(((tt.max(axis=1)-tt.min(axis=1)).dt.total_seconds()/86400).rename('span'),on='科研患者编号')
-panels=[('All 59 children',p),('All three within 48 h',p[p['span']<=2]),('All three within 24 h',p[p['span']<=1])]
+panels=[(f'All {len(p)} children',p),('All three within 48 h',p[p['span']<=2]),('All three within 24 h',p[p['span']<=1])]
 series=[('UGI contrast series','UGI_detected',C['UGI']),('Gastrointestinal ultrasound','US_detected',C['US']),
         ('Abdominal CT','CT_detected',C['CT']),('Ultrasound whirlpool sign','US_whirlpool',C['US2'])]
 fig,ax=plt.subplots(figsize=(11.5,5.8))
@@ -29,7 +29,7 @@ ax.set_xticks(xs); ax.set_xticklabels([f'{l}\n(n = {len(d)})' for l,d in panels]
 ax.set_ylim(0,116); ax.set_ylabel('Report-level detection (%), Wilson 95% CI')
 ax.legend(frameon=False,ncol=2,loc='upper center',bbox_to_anchor=(0.5,1.20),fontsize=10)
 ax.grid(axis='y',color='#e2e2e2'); ax.set_axisbelow(True)
-ax.text(0.5,-0.235,'Selected subgroup assembled by diagnostic uncertainty (97% volvulus, 83% neonates, 63% from 2019-2026).\nThis is not a population-level comparison of test accuracy.',
+ax.text(0.5,-0.235,'Selected subgroup assembled by diagnostic uncertainty (%.0f%% volvulus, %.0f%% neonates, %.0f%% from 2019-2026).\nThis is not a population-level comparison of test accuracy.'%tuple(100*pat[pat['科研患者编号'].isin(pid)][c].mean() for c in ('volvulus','neonate','era_late')),
         transform=ax.transAxes,ha='center',fontsize=9.6,style='italic',color='#8a1c1c')
 plt.tight_layout(); plt.savefig(OUT+'FigS1_paired_subgroup.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
 
@@ -47,10 +47,10 @@ y=np.arange(len(items))[::-1]
 cols=['#B22222' if v<10 else '#2C7FB8' for v in vals]
 ax.barh(y,vals,color=cols,height=0.62)
 for yi,v,n in zip(y,vals,ns):
-    ax.text(max(v,0)+1.2,yi,f'{n}/119  ({v:.1f}%)',va='center',fontsize=10)
+    ax.text(max(v,0)+1.2,yi,f'{n}/{len(u)}  ({v:.1f}%)',va='center',fontsize=10)
 ax.set_yticks(y); ax.set_yticklabels([l for l,_ in items],fontsize=10.5)
 ax.set_xlim(0,72); ax.set_xlabel('Ultrasound examinations documenting the element (%)')
-ax.set_title('A  What the 119 routine ultrasound examinations documented',fontsize=11.5,loc='left',fontweight='bold')
+ax.set_title(f'A  What the {len(u)} routine ultrasound examinations documented',fontsize=11.5,loc='left',fontweight='bold')
 ax.grid(axis='x',color='#e8e8e8'); ax.set_axisbelow(True)
 ax=axes[1]
 groups=[('Whirlpool\nreported','whirl_pos',True),('Whirlpool\nnot reported','whirl_pos',False),

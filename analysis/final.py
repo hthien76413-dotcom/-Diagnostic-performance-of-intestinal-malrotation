@@ -18,10 +18,10 @@ for mod in ['UGI','CT','US']:
 print()
 print('=== children >1 year (the "older child" group) ===')
 old=pat[pat['age_days']>365]
-print('  n=%d (%.1f%% of cohort); volvulus %d (%.0f%%); imaged %d'%(len(old),len(old)/465*100,old['volvulus'].sum(),old['volvulus'].mean()*100,ix[ix['科研患者编号'].isin(old['科研患者编号'])]['科研患者编号'].nunique()))
+print('  n=%d (%.1f%% of cohort); volvulus %d (%.0f%%); imaged %d'%(len(old),len(old)/len(pat)*100,old['volvulus'].sum(),old['volvulus'].mean()*100,ix[ix['科研患者编号'].isin(old['科研患者编号'])]['科研患者编号'].nunique()))
 print('=== children without volvulus ===')
 nv=pat[~pat['volvulus']]
-print('  n=%d (%.1f%%); median age %.0f d; neonates %d (%.0f%%)'%(len(nv),len(nv)/465*100,nv['age_days'].median(),nv['neonate'].sum(),nv['neonate'].mean()*100))
+print('  n=%d (%.1f%%); median age %.0f d; neonates %d (%.0f%%)'%(len(nv),len(nv)/len(pat)*100,nv['age_days'].median(),nv['neonate'].sum(),nv['neonate'].mean()*100))
 print()
 print('=== US sensitivity: excluding pyloric-only examinations ===')
 u=pd.read_csv('us_audit.csv')

@@ -43,10 +43,28 @@ def counts(series):
             'Superior mesenteric artery–vein relationship':int(ves.sum()),
             'Enteric fluid administration':int(S.str.contains(r'饮水|口服[^。；\n]{0,6}(?:水|液|造影剂)|注水|注入|胃内注|温开水|经胃管',regex=True).sum()),
             'Whirlpool, swirl or spiral appearance reported':int(S.map(whirl_reported).sum())}
-A=counts(u['txt']); B=counts(E['txt'])
+# The closest episode is coded from the two-reader manual reading (usaudit4.py).
+# Where the earliest episode is the same session it inherits that coding. The
+# remaining earlier episodes were not read manually; the mention-level patterns
+# (a superset of what a reader can code for these items) find no D3/DJJ, vessel
+# or enteric-fluid mention in any of them, and the two whirlpool matches were
+# checked against the text: both describe vessels encircling a mass.
+MAN={'D3 or duodenojejunal junction':'d3_or_djj','Superior mesenteric artery–vein relationship':'sma_smv',
+     'Enteric fluid administration':'fluid','Whirlpool, swirl or spiral appearance reported':'whirl_pos'}
+cl=u.set_index('科研患者编号'); ed=E.set_index('科研患者编号')
+dayC=rep[rep['mod']=='US'].sort_values('gap').groupby('科研患者编号')['day'].first()
+dayE=rep[rep['mod']=='US'].sort_values('gap',ascending=False).groupby('科研患者编号')['day'].first()
+same=(dayC==dayE).reindex(cl.index)
+diff=ed.loc[~same.values]
+B=counts(diff['txt'])
+assert len(diff)==11 and B['D3 or duodenojejunal junction']==B['Superior mesenteric artery–vein relationship']==B['Enteric fluid administration']==0
+assert B['Whirlpool, swirl or spiral appearance reported']==2
+n=len(u)
 S5=[['Documented content','Closest preoperative episode (primary)','Earliest preoperative episode']]
-for lab in A:
-    S5.append([lab,f'{A[lab]}/119 ({100*A[lab]/119:.1f}%)',f'{B[lab]}/119 ({100*B[lab]/119:.1f}%)'])
+for lab,k in MAN.items():
+    a=int(cl[k].sum()); b=int(cl.loc[same.values,k].sum())+B[lab]
+    S5.append([lab,f'{a}/{n} ({100*a/n:.1f}%)',f'{b}/{n} ({100*b/n:.1f}%)'])
+print('earliest episode differs from the closest in %d children'%len(diff))
 
 # Table S10. Two ways of tightening the volvulus definition.
 #   A: drop only children whose operative record states a rotation below 360 degrees.
@@ -71,8 +89,8 @@ def whirl(mask):
 def row(label, mask):
     mu = mask[inus]
     return [label,
-            f"{int(mask.sum())}/465 ({100*mask.mean():.1f}%)",
-            f"{int(mu.sum())}/119 ({100*mu.mean():.1f}%)",
+            f"{int(mask.sum())}/{len(mask)} ({100*mask.mean():.1f}%)",
+            f"{int(mu.sum())}/{len(mu)} ({100*mu.mean():.1f}%)",
             whirl(mask)]
 
 S6=[['Definition of midgut volvulus','Whole cohort','Children who underwent ultrasound',

@@ -38,7 +38,7 @@
   [
    "Methods — Participants 6(a)",
    "Give the eligibility criteria, and the sources and methods of selection of participants",
-   "Methods, 'Participants…' (consecutive children with an operative diagnosis of malrotation; institutional clinical and surgical records database)"
+   "Methods, 'Participants…' (consecutive children with an operative diagnosis of malrotation; institutional clinical and surgical records database; 15 excluded after review of the anchor operation); Supplement 1, Section K1"
   ],
   [
    "Methods — Participants 6(b)",
@@ -53,7 +53,7 @@
   [
    "Methods — Data sources/measurement 8",
    "For each variable of interest, give sources of data and details of methods of assessment. Describe comparability of assessment methods if there is more than one group",
-   "Methods, 'Report-content audit and classification'; Supplement 1, Sections A–J"
+   "Methods, 'Report-content audit and classification' (ultrasound content coded by two independent readers, with kappa); Supplement 1, Sections A–K"
   ],
   [
    "Methods — Bias 9",
@@ -83,7 +83,7 @@
   [
    "Methods — Statistical methods 12(c)",
    "Explain how missing data were addressed",
-   "Results, 'Cohort…' (the 55 children without an index test characterized, not imputed); Discussion, Limitations (informative missingness)"
+   "Results, 'Cohort…' (the 52 children without an index test characterized, not imputed); Discussion, Limitations (informative missingness)"
   ],
   [
    "Methods — Statistical methods 12(d)",
@@ -103,7 +103,7 @@
   [
    "Results — Participants 13(b)",
    "Give reasons for non-participation at each stage",
-   "Results, 'Cohort…' (the 55 children without an index test, with the imaging they did receive); Figure 1"
+   "Results, 'Cohort…' (the 52 children without an index test, with the imaging they did receive); Figure 1"
   ],
   [
    "Results — Participants 13(c)",
@@ -133,12 +133,12 @@
   [
    "Results — Main results 16(a)",
    "Give unadjusted estimates and, if applicable, confounder-adjusted estimates and their precision. Make clear which confounders were adjusted for and why they were included",
-   "Results, 'Detection and certainty of wording' (unadjusted and adjusted GEE odds ratios); Supplement 2, Table S3"
+   "Results, 'Detection and certainty of wording' (unadjusted and adjusted GEE odds ratios); Supplement 2, Table S4"
   ],
   [
    "Results — Main results 16(b)",
    "Report category boundaries when continuous variables were categorized",
-   "Methods, 'Statistical analysis'; Supplement 2, Table S5"
+   "Methods, 'Statistical analysis'; Supplement 2, Table S6"
   ],
   [
    "Results — Main results 16(c)",

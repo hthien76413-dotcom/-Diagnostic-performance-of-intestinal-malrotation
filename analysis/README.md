@@ -13,8 +13,9 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 
 ## Reproduction
 
+    python3 review_merge.py # S1-S3 review decisions -> review_exclusions.csv, us_manual_coding.csv
     python3 core.py        # not run directly; exec'd by the others
-    python3 a55b.py        # the 55 children without an index test
+    python3 a55b.py        # the 52 children without an index test (a55b.json feeds Figure 1)
     python3 clin.py        # Table 1: characteristics by imaging group
     python3 usaudit.py     # first-pass ultrasound content audit (superseded)
     python3 usaudit4.py    # Table 3: definitive ultrasound content audit
@@ -78,6 +79,9 @@ Word's built-in "Light Grid Accent 1" style draws. Every table calls
 named style instead.
 
 ## The index unit, and the report-content audit patterns
+
+(The counts in this and the next three sections predate the S1-S3 review; the
+current numbers are in the last section.)
 
 `usaudit4.py` is the definitive audit and supersedes `usaudit.py` and `usaudit2.py`.
 Two things changed and both matter.
@@ -177,3 +181,52 @@ just below conventional significance (odds ratio 2.16, 0.99-4.70, p=0.053) while
 its bootstrap marginal effect still excludes zero at +19.0 pp (+0.6 to +37.6);
 both are reported as borderline. `待核标签清单_9例_已裁定.xlsx` is the worksheet the
 adjudication was recorded on.
+
+## Review of the anchor operations, timing and ultrasound content (S1-S3)
+
+Three steps were checked by hand on worksheets written by
+`build_review_checklists.py`; the filled-in copies are in `review_returns/`.
+`review_merge.py` transcribes them, asserting the expected decision counts, and
+writes `review_exclusions.csv`, `us_manual_coding.csv` and
+`review_agreement.json` (all tracked, so the decisions are visible).
+
+* **S1 reference standard.** 34 anchor operations were read against all of the
+  child's operative records. 6 did not confirm malrotation and 9 were
+  reoperations after earlier malrotation surgery; `core.py` drops these 15
+  children (11 of them had an index test). Cohort 465 -> 450.
+* **S2 timing.** Operative times are dates only. Of the same-day and >7-day
+  index reports, three were postoperative and one belonged to an unrelated
+  earlier illness. `core.py` drops them before choosing the index unit and
+  asserts the consequences: 1426267 gets an earlier, negative UGI as its index
+  (label 0, unchanged), 3826010 loses its only ultrasound and moves to the
+  no-index group, and 8696516 keeps CT only. The fourth report belongs to an
+  excluded child.
+* **S3 ultrasound content.** Two readers coded the twelve content items of all
+  119 ultrasound episodes independently; 5 of 1,428 cells differed and were
+  adjudicated (the `ADJ` dictionary in `review_merge.py`). `usaudit4.py` now takes
+  the twelve items from `us_manual_coding.csv` and keeps the regex columns as
+  `*_rx` for comparison; `core.py` replaces `US_whirlpool` with the consensus
+  whirlpool. The vessel pattern had counted any mention of the mesenteric
+  vessels (12 vs 3 by manual reading).
+
+Headline numbers after the review: 450 children, 398 imaged, 723 index
+examinations from 793 eligible reports (761 in index episodes, 32 earlier),
+52 without an index test; detection UGI 230/293, CT 165/313, ultrasound 64/117.
+Ultrasound content: D3 or DJJ 3/117, artery-vein relationship 3/117, enteric
+fluid 2/117, whirlpool 59/117, limiting gas 36/117; whirlpool among the 112
+children with volvulus 59. The crude ultrasound era effect is now OR 2.13
+(0.97-4.67) with bootstrap marginal effect +18.7 pp (-0.2 to +37.7), so neither
+excludes zero. Firth OR 14.6 (profile 1.60-1938, p=0.013); with one binary
+covariate this equals the odds ratio after adding 0.5 to each cell,
+(64.5 x 5.5)/(48.5 x 0.5). `firth_check.py` could not be re-run because
+`firthlogist` is not installable in this environment.
+
+Scripts that hard-coded the old denominators (cert, final, or_sens, or_tables,
+tables, tables2, or_add, figs, figs2) now compute them, and Figure 1 is drawn
+from the data. `or_sens.py` codes the earliest-episode sensitivity analysis from
+the manual reading where the earliest episode is the index session (106
+children) and checks the other 11 by pattern: none mentions D3, the DJJ, the
+vessels or fluid, and the two whirlpool matches describe vessels encircling a
+mass. `gee.py` no longer crashes on the separated interaction model, and
+`classifier_agreement.py` reads `Supplement_1_classifier.py`.
+

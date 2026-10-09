@@ -12,7 +12,7 @@ enema=set(xr[xr['报告名称'].astype(str).str.contains('灌肠')]['科研患�
 plain=set(xr[~xr['报告名称'].astype(str).str.contains('造影|灌肠')]['科研患者编号'])&S
 otherus=set(usall['科研患者编号'])&S; otherct=set(ctall['科研患者编号'])&S
 none_=S-(enema|plain|otherus|otherct)
-print('55 breakdown (non-mutually-exclusive): plain film %d, contrast enema %d, other-region US %d, other-region CT %d, none in-hospital %d'%(len(plain),len(enema),len(otherus),len(otherct),len(none_)))
+print('no-index-test breakdown (non-mutually-exclusive): plain film %d, contrast enema %d, other-region US %d, other-region CT %d, none in-hospital %d'%(len(plain),len(enema),len(otherus),len(otherct),len(none_)))
 # hierarchy
 h_enema=enema; h_plain=plain-enema; h_us=otherus-enema-plain; h_ct=otherct-enema-plain-otherus
 print('hierarchical: enema %d | plain-only(+US/CT other) %d | US-only %d | CT-only %d | none %d'%(len(h_enema),len(h_plain),len(h_us),len(h_ct),len(none_)))
@@ -22,7 +22,7 @@ col='门诊及院外重要辅助检查'; adm[col]=adm[col].fillna('').astype(str
 adm['hist']=adm['现病史'].fillna('').astype(str)
 def outside(g):
     t=' '.join(g[col])+' '+' '.join(g['hist'])
-    return bool(re.search(r'(造影|彩超|超声|B超|CT|X线|拍片|平片)',t))
+    return bool(re.search(r'(造影|彩超|超声|B超|CT|X线|X片|拍片|平片)',t))
 def outside_mal(g):
     t=' '.join(g[col])+' '+' '.join(g['hist'])
     return bool(re.search(r'(旋转不良|肠扭转|中肠扭转|扭转)',t)) and bool(re.search(r'(造影|彩超|超声|B超|CT)',t))
@@ -32,4 +32,7 @@ print('the %d with no in-hospital preop imaging:'%len(none_), sorted(none_))
 sub=adm[adm['科研患者编号'].isin(none_)]
 for pid,g in sub.groupby('科研患者编号'):
     print(' *',pid,(' '.join(g[col])+' | '+' '.join(g['hist']))[:200].replace('\n',' '))
-# indication proxies: bilious vomiting etc among 55 vs 410
+import json
+json.dump({'n':len(S),'plain':len(plain),'enema':len(enema),'otherus':len(otherus),'otherct':len(otherct),
+           'none':len(none_),'none_outside':int(o.reindex(sorted(none_)).fillna(False).sum()),
+           'outside':int(o.sum()),'outside_mal':int(om.sum())},open('a55b.json','w'))

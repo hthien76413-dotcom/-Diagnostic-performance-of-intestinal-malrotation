@@ -12,7 +12,7 @@ for mod,lab in [('UGI','UGI contrast series'),('CT','Abdominal CT'),('US','Gastr
     S1.append([lab,str(n),f'{k} ({k/n*100:.1f}%)',f'{n-k} ({(n-k)/n*100:.1f}%)',
                str(int(t.get('definite',0))),str(int(t.get('probable',0))),str(int(t.get('possible',0)))])
 _tot={t:sum(int(r[i]) for r in S1[1:]) for i,t in ((4,'definite'),(5,'probable'),(6,'possible'))}
-S1.append(['All three','740',f"{int(ixf['det'].sum())}",f"{740-int(ixf['det'].sum())}",
+S1.append(['All three',str(len(ixf)),f"{int(ixf['det'].sum())}",f"{len(ixf)-int(ixf['det'].sum())}",
            str(_tot['definite']),str(_tot['probable']),str(_tot['possible'])])
 assert sum(_tot.values())==int(ixf['det'].sum()), 'certainty tiers do not sum to the positives'
 # OR2 stratified
@@ -44,8 +44,8 @@ g['Caecal position']=f(g,r'回盲部')
 g['Whole-gastrointestinal study']=g['报告名称'].astype(str).str.contains('全消化道')
 g['Barium used']=g['报告名称'].astype(str).str.contains('钡')
 S3=[['Modality','Documented content','n (%) of reports','Detection when documented, %','Detection when not documented, %']]
-for d,lab,keys in [(c,'Abdominal CT (n=320)',['Contrast enhancement','Mesenteric whirl','Duodenum mentioned','Mesenteric-vessel relationship','Three-dimensional reconstruction']),
-                   (g,'UGI contrast series (n=301)',['Duodenojejunal junction','Corkscrew / spring appearance','Jejunal position','Caecal position','Whole-gastrointestinal study','Barium used'])]:
+for d,lab,keys in [(c,f'Abdominal CT (n={len(c)})',['Contrast enhancement','Mesenteric whirl','Duodenum mentioned','Mesenteric-vessel relationship','Three-dimensional reconstruction']),
+                   (g,f'UGI contrast series (n={len(g)})',['Duodenojejunal junction','Corkscrew / spring appearance','Jejunal position','Caecal position','Whole-gastrointestinal study','Barium used'])]:
     for k_ in keys:
         s=d[k_].astype(bool)
         S3.append([lab,k_,f'{int(s.sum())} ({s.mean()*100:.1f})',f"{d[s]['det'].mean()*100:.1f}" if s.sum() else '–',f"{d[~s]['det'].mean()*100:.1f}" if (~s).sum() else '–'])

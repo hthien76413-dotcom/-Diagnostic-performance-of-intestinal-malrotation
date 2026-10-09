@@ -14,6 +14,15 @@ for _r in _fix.itertuples():
     assert _m.sum() == 1 and mat.loc[_m, _r.column].iloc[0] == _r.old, \
         f'label_corrections.csv no longer matches the matrix at {_r.科研患者编号}'
     mat.loc[_m, _r.column] = _r.new
+# Children removed after the review of the anchor operations (S1, review_merge.py):
+# malrotation not confirmed at the anchor operation, or the anchor operation was a
+# reoperation after earlier malrotation surgery.
+REV = pd.read_csv('review_exclusions.csv', dtype={'mod': str, '检查时间': str}).fillna('')
+_drop = set(REV.loc[REV['kind'] == 'child', '科研患者编号'])
+assert _drop <= set(coh['科研患者编号']) and len(_drop) == 15
+coh = coh[~coh['科研患者编号'].isin(_drop)].reset_index(drop=True)
+ops = ops[~ops['科研患者编号'].isin(_drop)].reset_index(drop=True)
+mat = mat[~mat['科研患者编号'].isin(_drop)].reset_index(drop=True)
 coh['op_dt']=pd.to_datetime(coh['首次手术日期及时间']); ids=set(coh['科研患者编号'])
 ops['op_dt']=pd.to_datetime(ops['手术日期及时间'])
 ops['dx']=ops['术中诊断'].fillna('').astype(str); ops['pr']=ops['手术经过'].fillna('').astype(str)
@@ -62,9 +71,43 @@ rep['txt']=(rep['检查所见'].fillna('')+'\n'+rep['检查结论'].fillna('')).
 rep['concl']=rep['检查结论'].fillna('').astype(str)
 # index test = closest preoperative exam per modality
 rep['gap']=(rep['op_dt']-rep['检查时间']).dt.total_seconds()/86400
+_idx0=rep.sort_values('gap').groupby(['科研患者编号','mod']).first().reset_index()
+# Reports removed after the timing review (S2): issued after the operation on the
+# day of surgery, or belonging to an earlier, unrelated illness.
+_rx = REV[REV['kind'] == 'report']
+_key = lambda d: list(zip(d['科研患者编号'], d['mod'], pd.to_datetime(d['检查时间'])))
+_hit = pd.Series(_key(rep), index=rep.index).isin(set(_key(_rx)))
+assert _hit.sum() == len(_rx[~_rx['科研患者编号'].isin(_drop)]) == 3
+rep = rep[~_hit].reset_index(drop=True)
 idx=rep.sort_values('gap').groupby(['科研患者编号','mod']).first().reset_index()
-# long-format detection from adjudicated matrix
+# Every child-modality whose index examination changed is accounted for: either a
+# new index examination whose label is given in review_exclusions.csv, or no
+# preoperative examination left, in which case the label is removed.
 lab={'US':'US_detected','CT':'CT_detected','UGI':'UGI_detected'}
+_old = {(p, m): t for p, m, t in _key(_idx0)}
+_new = {(p, m): t for p, m, t in _key(idx)}
+_rl = {(r.科研患者编号, r.mod): (pd.Timestamp(r.检查时间), int(r.label)) for r in REV[REV['kind'] == 'relabel'].itertuples()}
+_gone = set(_old) - set(_new)
+assert _gone == {(3826010, 'US'), (8696516, 'UGI')}, _gone
+assert {k for k in _new if _new[k] != _old[k]} == set(_rl)
+for (p, m), (t, v) in _rl.items():
+    assert _new[(p, m)] == t
+    mat.loc[mat['科研患者编号'] == p, lab[m]] = v
+for p, m in _gone:
+    mat.loc[mat['科研患者编号'] == p, lab[m]] = np.nan
+    if m == 'US': mat.loc[mat['科研患者编号'] == p, 'US_whirlpool'] = np.nan
+# a child with no index examination left moves to the no-index-test group
+mat = mat[mat[list(lab.values())].notna().any(axis=1)].reset_index(drop=True)
+# The whirlpool variable is the consensus of the two independent readers (S3).
+USM = pd.read_csv('us_manual_coding.csv')
+USM = USM[USM['科研患者编号'].isin(set(mat.loc[mat['US_detected'].notna(), '科研患者编号']))]
+assert len(USM) == mat['US_detected'].notna().sum() == 117
+mat = mat.drop(columns='US_whirlpool').merge(
+    USM[['科研患者编号', 'whirl_pos']].rename(columns={'whirl_pos': 'US_whirlpool'}).astype({'US_whirlpool': float}),
+    on='科研患者编号', how='left')
+for _m, _c in lab.items():
+    assert set(mat.loc[mat[_c].notna(), '科研患者编号']) == set(idx.loc[idx['mod'] == _m, '科研患者编号']), _m
+# long-format detection from adjudicated matrix
 long=[]
 for mod,c in lab.items():
     s=mat[mat[c].notna()][['科研患者编号',c]].rename(columns={c:'detected'}); s['mod']=mod; long.append(s)

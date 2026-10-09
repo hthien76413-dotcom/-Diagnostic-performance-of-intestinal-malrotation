@@ -1,0 +1,21 @@
+kind,科研患者编号,mod,检查时间,label,reason
+child,364713,,,,malrotation not confirmed at the anchor operation
+child,1325420,,,,malrotation not confirmed at the anchor operation
+child,1463669,,,,malrotation not confirmed at the anchor operation
+child,2080111,,,,anchor operation was a reoperation after earlier malrotation surgery
+child,4370043,,,,anchor operation was a reoperation after earlier malrotation surgery
+child,5400633,,,,anchor operation was a reoperation after earlier malrotation surgery
+child,8336031,,,,anchor operation was a reoperation after earlier malrotation surgery
+child,17337851,,,,anchor operation was a reoperation after earlier malrotation surgery
+child,18598477,,,,malrotation not confirmed at the anchor operation
+child,20002991,,,,anchor operation was a reoperation after earlier malrotation surgery
+child,28934957,,,,malrotation not confirmed at the anchor operation
+child,31645511,,,,malrotation not confirmed at the anchor operation
+child,17654124,,,,anchor operation was a reoperation after earlier malrotation surgery
+child,18815691,,,,anchor operation was a reoperation after earlier malrotation surgery
+child,36146398,,,,anchor operation was a reoperation after earlier malrotation surgery
+report,1426267,UGI,2020-05-11 10:12:51,,issued after the operation on the day of surgery
+report,3826010,US,2017-08-22 16:27:06,,issued after the operation on the day of surgery
+report,8336031,UGI,2021-12-22 08:47:06,,issued after the operation on the day of surgery
+report,8696516,UGI,2024-02-23 09:05:10,,unrelated to the illness that led to the operation
+relabel,1426267,UGI,2020-05-04 09:20:53,0,new index examination after removal of the postoperative report; conclusion names neither malrotation nor midgut volvulus
