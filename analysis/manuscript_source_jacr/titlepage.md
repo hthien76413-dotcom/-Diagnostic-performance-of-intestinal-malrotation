@@ -14,7 +14,7 @@
 
 #N **Corresponding author:** Jun Yang, Department of General Surgery, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science & Technology, 100 Hong Kong Road, Jiang'an District, Wuhan 430016, Hubei Province, China. Email: yjun201602@163.com. Telephone: +86 186 2713 9911. ORCID: https://orcid.org/0009-0006-0669-4340
 
-#N **Word count:** 2,996 (Introduction through Take-Home Points; excluding abstract, references, tables and figure legends). Abstract: 249 words.
+#N **Word count:** 2,959 (Introduction through Take-Home Points; excluding abstract, references, tables and figure legends). Abstract: 245 words.
 
 #N **Tables:** 4  |  **Figures:** 3  |  **Supplemental material:** Supplements 1–3 and one script (Supplement_1_classifier.py)
 
