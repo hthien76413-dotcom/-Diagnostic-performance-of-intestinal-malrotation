@@ -247,3 +247,14 @@ mass. `gee.py` no longer crashes on the separated interaction model, and
   that used to sit inside Figures 1, 2 and S1 has moved to the legends.
 * `export_refs.py` writes `参考文献_{N}条*` for however many references there are
   (now 25, with El-Ali et al., Pediatr Radiol 2025).
+
+## Number-by-number check (数字核对表.xlsx)
+
+`verify_facts.py` recomputes every reported number from the analysis dataset with
+separately written code (Wilson intervals, logistic regression by IRLS, Cochran Q,
+exact McNemar, Cohen kappa); GEE, bootstrap and Firth profile results are refitted
+with the original software and seed. `verify_numbers.py` compares every number in
+the abstract, text, tables, figures, legends, Supplements 1-3, cover letter and
+title page against it, checks that every numeric token in the text has a check
+row, and writes `../数字核对表.xlsx` (sheets 说明, 核对表, 问题汇总, 专项检查).
+Run it after any rebuild: `python3 verify_numbers.py`.
