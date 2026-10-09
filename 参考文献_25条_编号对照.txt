@@ -70,3 +70,6 @@
 [24]  10.1002/sim.1047
       Heinze G, Schemper M (2002) A solution to the problem of separation in logistic regression. Stat Med 21:2409-2419
 
+[25]  10.1007/s00247-024-06141-x
+      El-Ali AM, Schiess DM, Van Tassel D, et al (2025) Ultrasound for midgut volvulus and malrotation: frequency and predictors of a non-diagnostic examination in a multi-institutional cohort. Pediatr Radiol 55:925-935
+

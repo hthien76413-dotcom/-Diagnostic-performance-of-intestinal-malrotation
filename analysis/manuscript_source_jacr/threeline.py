@@ -1,3 +1,4 @@
+import re
 # -*- coding: utf-8 -*-
 """Shared three-line (open) table formatter for the manuscript and Online
 Resource builders.
@@ -56,11 +57,17 @@ def make_three_line_table(doc, data, header_rows=1, font_size=8.5,
         for j, c in enumerate(row):
             cell = t.cell(i, j)
             cell.text = ''
-            r = cell.paragraphs[0].add_run(str(c))
-            r.font.size = Pt(font_size)
-            r.font.name = font_name
-            if i < header_rows:
-                r.bold = True
+            # *P* marks an italic run (AMA P values); everything else is plain
+            for part in re.split(r'(\*[^*]+\*)', str(c)):
+                if not part:
+                    continue
+                ital = part.startswith('*') and part.endswith('*') and len(part) > 2
+                r = cell.paragraphs[0].add_run(part[1:-1] if ital else part)
+                r.italic = ital
+                r.font.size = Pt(font_size)
+                r.font.name = font_name
+                if i < header_rows:
+                    r.bold = True
             edges = {'left': NONE, 'right': NONE, 'top': NONE, 'bottom': NONE}
             if i == 0:
                 edges['top'] = THICK

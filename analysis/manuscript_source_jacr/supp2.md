@@ -54,7 +54,7 @@
 
 #N Excluding the 19 children with a rotation below 360° lowers volvulus prevalence from 88.2% to 84.0% in the cohort and from 95.7% to 88.0% among the children who underwent ultrasound; additionally requiring a stated degree lowers it to 67.3% and 75.2%. Neither changes the manuscript's claims. The whirlpool sign remains documented in about half of the children with confirmed volvulus under all three definitions (52.7%, 54.4% and 59.1%), so the finding that ultrasound recorded a whirlpool in only about half of the children whose operation confirmed volvulus does not depend on where the definition is drawn. The group with malrotation but no volvulus remains too small under any definition for a conclusion about ultrasound in uncomplicated malrotation.
 
-#H1 S2.6 Analyses added in response to statistical review
+#H1 S2.6 Marginal effects, paired differences, the separated contrast and interaction terms
 
 #N **Average marginal effects with confidence intervals.** The manuscript reports the era effect on the risk-difference scale because a conditional odds ratio attenuates when a predictive covariate is added even without mediation. Table S12 gives those marginal effects with percentile bootstrap 95% confidence intervals (2,000 resamples of children, seed fixed). For ultrasound, neither interval excludes zero: the crude effect's lower bound falls at −0.2 percentage points, so the era difference is itself imprecise, and the two intervals overlap heavily. On the point estimates, adding examination type reduces the era difference by more than half; this does not show that booking mediates the change, nor that the remainder is absent.
 

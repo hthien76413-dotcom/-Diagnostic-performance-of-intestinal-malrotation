@@ -4,37 +4,37 @@
    "Effect",
    "Unadjusted OR (95% CI)",
    "Adjusted OR (95% CI)",
-   "p (adjusted)"
+   "*P* (adjusted)"
   ],
   [
    "Abdominal CT vs UGI series",
    "0.31 (0.22–0.43)",
    "0.29 (0.20–0.41)",
-   "<0.001"
+   "<.001"
   ],
   [
-   "Gastrointestinal ultrasound vs UGI series",
+   "Ultrasound vs UGI series",
    "0.33 (0.21–0.51)",
    "0.27 (0.17–0.44)",
-   "<0.001"
+   "<.001"
   ],
   [
    "Operated 2019–2026 vs 2012–2018",
    "–",
    "1.79 (1.18–2.71)",
-   "0.006"
+   ".006"
   ],
   [
    "Age 29 days–1 year vs neonate",
    "–",
    "1.08 (0.69–1.71)",
-   "0.730"
+   ".730"
   ],
   [
    "Age >1 year vs neonate",
    "–",
    "3.52 (1.82–6.80)",
-   "<0.001"
+   "<.001"
   ]
  ],
  "T5": [
@@ -45,13 +45,13 @@
    "All three within 24 h (n=31)"
   ],
   [
-   "UGI contrast series, n/N (%; 95% CI)",
+   "UGI series, n/N (%; 95% CI)",
    "45/59 (76.3; 64.0–85.3)",
    "39/47 (83.0; 69.9–91.1)",
    "27/31 (87.1; 71.1–94.9)"
   ],
   [
-   "Gastrointestinal ultrasound, n/N (%; 95% CI)",
+   "Ultrasound, n/N (%; 95% CI)",
    "31/59 (52.5; 40.0–64.7)",
    "28/47 (59.6; 45.3–72.4)",
    "20/31 (64.5; 46.9–78.9)"
@@ -103,7 +103,7 @@
    "Content variable OR (95% CI)"
   ],
   [
-   "UGI contrast series",
+   "UGI series",
    "157/204 (77.0%)",
    "73/89 (82.0%)",
    "1.37 (0.73–2.57) (p=0.333)",
@@ -119,7 +119,7 @@
    "Contrast enhancement 3.98 (1.90–8.37) (p<0.001)"
   ],
   [
-   "Gastrointestinal ultrasound",
+   "Ultrasound",
    "16/38 (42.1%)",
    "48/79 (60.8%)",
    "2.13 (0.97–4.67) (p=0.060)",

@@ -19,7 +19,9 @@ for line in io.open(SRC, encoding='utf-8'):
     if m:
         n, au, ti, jo, yr, vol, pg, doi = m.groups()
         rows.append((n, au, yr, ti, jo, vol, pg, doi))
-assert len(rows) == 24, f'parsed {len(rows)} references, expected 24'
+N = len(rows)
+assert [int(r[0]) for r in rows] == list(range(1, N + 1)), 'references not numbered 1..N'
+assert N == sum(1 for l in io.open(SRC, encoding='utf-8') if l.startswith('#R ')), 'a reference did not parse'
 
 def ris_authors(s):
     s = s.split(';')[0]  # drop a trailing group author such as '; STROBE Initiative'
@@ -28,14 +30,14 @@ def ris_authors(s):
         parts = a.split()
         yield f'{" ".join(parts[:-1])}, {parts[-1]}' if len(parts) > 1 else a
 
-with io.open(OUT + '参考文献_24条_DOI清单.txt', 'w', encoding='utf-8') as f:
+with io.open(OUT + f'参考文献_{N}条_DOI清单.txt', 'w', encoding='utf-8') as f:
     f.write('\n'.join(r[7] for r in rows) + '\n')
 
-with io.open(OUT + '参考文献_24条_编号对照.txt', 'w', encoding='utf-8') as f:
+with io.open(OUT + f'参考文献_{N}条_编号对照.txt', 'w', encoding='utf-8') as f:
     for n, au, yr, ti, jo, vol, pg, doi in rows:
         f.write(f'[{n:>2}]  {doi}\n      {au} ({yr}) {ti}. {jo} {vol}:{pg}\n\n')
 
-with io.open(OUT + '参考文献_24条.ris', 'w', encoding='utf-8') as f:
+with io.open(OUT + f'参考文献_{N}条.ris', 'w', encoding='utf-8') as f:
     for n, au, yr, ti, jo, vol, pg, doi in rows:
         f.write('TY  - JOUR\n')
         for a in ris_authors(au): f.write(f'AU  - {a}\n')

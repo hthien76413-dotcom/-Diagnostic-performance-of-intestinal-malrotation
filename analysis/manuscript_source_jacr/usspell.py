@@ -47,9 +47,25 @@ def us(text):
     return _RX.sub(_sub, text)
 
 
+_P = re.compile(r'(?<![\w*])[pP]\s*([=<>≤≥])\s*(\d*\.\d+)')
+
+
+def ama_p(text):
+    """P values in AMA style: italic capital P (marked *P* for the writers), no
+    leading zero, spaces around the operator; P = 1.000 becomes P > .99."""
+    if not isinstance(text, str):
+        return text
+    def f(m):
+        op, v = m.group(1), m.group(2)
+        if float(v) >= 0.995 and op == '=':
+            return '*P* > .99'
+        return f'*P* {op} {v.lstrip("0")}'
+    return _P.sub(f, text)
+
+
 def us_table(data):
-    """Apply us() to every cell of a list-of-rows table."""
-    return [[us(c) for c in row] for row in data]
+    """Apply us() and AMA P-value style to every cell of a list-of-rows table."""
+    return [[ama_p(us(c)) for c in row] for row in data]
 
 
 def british_left(text):

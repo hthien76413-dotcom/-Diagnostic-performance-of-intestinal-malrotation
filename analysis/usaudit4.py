@@ -117,7 +117,10 @@ for k,lab in ROWS:
     s=u[k].astype(bool)
     T3.append([lab,f"{int(s.sum())} ({100*s.mean():.1f})",str(int(e0[k].sum())),str(int(e1[k].sum())),
                cell(u[s]),cell(u[~s])])
-json.dump({'T3':T3},open('table3_final.json','w'),ensure_ascii=False,indent=1)
+g_,v_,p_=u['gi_us'],u['vessel_us'],u['pyloric']
+assert int((g_|v_|p_).sum())==len(u) and int((g_&v_&p_).sum())==0
+OVL={'gi_vessel':int((g_&v_).sum()),'gi_pyloric':int((g_&p_).sum()),'vessel_pyloric':int((v_&p_).sum())}
+json.dump({'T3':T3,'T3_overlap':OVL},open('table3_final.json','w'),ensure_ascii=False,indent=1)
 for r in T3: print(' | '.join(r))
 
 print()

@@ -6,7 +6,7 @@ def W(k,n):
     lo,hi=pci(k,n,method='wilson'); return f'{k}/{n} = {k/n*100:.1f} ({lo*100:.1f}–{hi*100:.1f})'
 # OR1 T: label distribution
 S1=[['Modality','Index reports','Classified positive','Classified negative','Positive with definite wording','Positive with probable wording','Positive with possible wording']]
-for mod,lab in [('UGI','UGI contrast series'),('CT','Abdominal CT'),('US','Gastrointestinal ultrasound')]:
+for mod,lab in [('UGI','UGI series'),('CT','Abdominal CT'),('US','Ultrasound')]:
     d=ixf[ixf['mod']==mod]; k=int(d['det'].sum()); n=len(d)
     t=tier[tier['mod']==mod]['tier'].value_counts()
     S1.append([lab,str(n),f'{k} ({k/n*100:.1f}%)',f'{n-k} ({(n-k)/n*100:.1f}%)',
@@ -19,7 +19,7 @@ assert sum(_tot.values())==int(ixf['det'].sum()), 'certainty tiers do not sum to
 pat['agegrp']=pd.cut(pat['age_days'],[-1,28,365,1e9],labels=['≤28 days','29 days–1 year','>1 year'])
 ix2=ixf.merge(pat[['科研患者编号','agegrp']],on='科研患者编号',how='left')
 S2=[['Index test','Stratum','Detected / total','Detection rate % (95% CI)']]
-for mod,lab in [('UGI','UGI contrast series'),('CT','Abdominal CT'),('US','Gastrointestinal ultrasound')]:
+for mod,lab in [('UGI','UGI series'),('CT','Abdominal CT'),('US','Ultrasound')]:
     d=ix2[ix2['mod']==mod]
     for v,sl in [(True,'Midgut volvulus present'),(False,'Midgut volvulus absent')]:
         s=d[d['volvulus'].astype(bool)==v]; k=int(s['det'].sum()); n=len(s)
@@ -45,7 +45,7 @@ g['Whole-gastrointestinal study']=g['报告名称'].astype(str).str.contains('�
 g['Barium used']=g['报告名称'].astype(str).str.contains('钡')
 S3=[['Modality','Documented content','n (%) of reports','Detection when documented, %','Detection when not documented, %']]
 for d,lab,keys in [(c,f'Abdominal CT (n={len(c)})',['Contrast enhancement','Mesenteric whirl','Duodenum mentioned','Mesenteric-vessel relationship','Three-dimensional reconstruction']),
-                   (g,f'UGI contrast series (n={len(g)})',['Duodenojejunal junction','Corkscrew / spring appearance','Jejunal position','Caecal position','Whole-gastrointestinal study','Barium used'])]:
+                   (g,f'UGI series (n={len(g)})',['Duodenojejunal junction','Corkscrew / spring appearance','Jejunal position','Caecal position','Whole-gastrointestinal study','Barium used'])]:
     for k_ in keys:
         s=d[k_].astype(bool)
         S3.append([lab,k_,f'{int(s.sum())} ({s.mean()*100:.1f})',f"{d[s]['det'].mean()*100:.1f}" if s.sum() else '–',f"{d[~s]['det'].mean()*100:.1f}" if (~s).sum() else '–'])

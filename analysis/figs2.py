@@ -11,7 +11,7 @@ pid=set(p['科研患者编号'])
 tt=idx[idx['科研患者编号'].isin(pid)].pivot_table(index='科研患者编号',columns='mod',values='检查时间',aggfunc='first')
 p=p.merge(((tt.max(axis=1)-tt.min(axis=1)).dt.total_seconds()/86400).rename('span'),on='科研患者编号')
 panels=[(f'All {len(p)} children',p),('All three within 48 h',p[p['span']<=2]),('All three within 24 h',p[p['span']<=1])]
-series=[('UGI contrast series','UGI_detected',C['UGI']),('Gastrointestinal ultrasound','US_detected',C['US']),
+series=[('UGI series','UGI_detected',C['UGI']),('Ultrasound','US_detected',C['US']),
         ('Abdominal CT','CT_detected',C['CT']),('Ultrasound whirlpool sign','US_whirlpool',C['US2'])]
 fig,ax=plt.subplots(figsize=(11.5,5.8))
 w=0.2; xs=np.arange(len(panels))
@@ -29,13 +29,11 @@ ax.set_xticks(xs); ax.set_xticklabels([f'{l}\n(n = {len(d)})' for l,d in panels]
 ax.set_ylim(0,116); ax.set_ylabel('Report-level detection (%), Wilson 95% CI')
 ax.legend(frameon=False,ncol=2,loc='upper center',bbox_to_anchor=(0.5,1.20),fontsize=10)
 ax.grid(axis='y',color='#e2e2e2'); ax.set_axisbelow(True)
-ax.text(0.5,-0.235,'Selected subgroup assembled by diagnostic uncertainty (%.0f%% volvulus, %.0f%% neonates, %.0f%% from 2019-2026).\nThis is not a population-level comparison of test accuracy.'%tuple(100*pat[pat['科研患者编号'].isin(pid)][c].mean() for c in ('volvulus','neonate','era_late')),
-        transform=ax.transAxes,ha='center',fontsize=9.6,style='italic',color='#8a1c1c')
 plt.tight_layout(); plt.savefig(OUT+'FigS1_paired_subgroup.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
 
 # ---- Figure 3 (ultrasound report audit) ----
 u=pd.read_csv('us_audit4.csv')
-items=[('Third portion of duodenum / DJ junction','d3_or_djj'),('Explicit vessel inversion','inversion'),
+items=[('Third portion of duodenum or\nduodenojejunal junction','d3_or_djj'),('Explicit vessel inversion','inversion'),
        ('Graded compression','compress'),('Enteric fluid administered','fluid'),
        ('Dynamic assessment','dynamic'),('Cecal position','cecum'),
        ('Duodenum mentioned at all','duodenum'),('SMA-SMV relationship','sma_smv'),

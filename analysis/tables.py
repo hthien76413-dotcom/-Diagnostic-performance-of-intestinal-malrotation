@@ -20,7 +20,7 @@ row('Operated 2019–2026, n (%)',lambda d:pc(int(d['era_late'].sum()),len(d)))
 row('Midgut volvulus at operation, n (%)',lambda d:pc(int(d['volvulus'].sum()),len(d)))
 for c,lab in [('vomit','Vomiting documented, n (%)'),('bilious','Bilious vomiting documented, n (%)'),
               ('distension','Abdominal distension, n (%)'),('bloody_stool','Blood in stool, n (%)'),
-              ('abd_pain','Abdominal pain, n (%)'),('duration_chronic','Recurrent/intermittent symptoms, n (%)'),
+              ('abd_pain','Abdominal pain, n (%)'),('duration_chronic','Symptoms described as repeated, intermittent or lasting months, n (%)'),
               ('shock','Shock or poor perfusion, n (%)')]:
     row(lab,lambda d,c=c:pc(int(d[c].sum()),len(d)))
 T1=[['Characteristic','All children','Received UGI series','Received CT','Received ultrasound','Received none of the three']]+rows
@@ -29,7 +29,7 @@ def wr(k,n):
     lo,hi=pci(k,n,method='wilson'); return f'{k}/{n}',f'{k/n*100:.1f} ({lo*100:.1f}–{hi*100:.1f})'
 tier=pd.read_csv('pos_tier.csv')
 T2=[['Index test','Positive/total','Detection rate, % (95% CI)','Definite wording, n (%)','Probable wording, n (%)','Possible wording, n (%)','Detection excluding possible wording, %']]
-for mod,lab in [('UGI','UGI contrast series'),('CT','Abdominal CT (all)'),('US','Gastrointestinal ultrasound')]:
+for mod,lab in [('UGI','UGI series'),('CT','Abdominal CT (all)'),('US','Ultrasound')]:
     d=ixf[ixf['mod']==mod]; k=int(d['det'].sum()); n=len(d); a,b=wr(k,n)
     t=tier[tier['mod']==mod]['tier'].value_counts()
     de,pr,po=int(t.get('definite',0)),int(t.get('probable',0)),int(t.get('possible',0))

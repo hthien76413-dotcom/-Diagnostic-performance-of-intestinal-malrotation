@@ -2,7 +2,7 @@ import docx, json, re, os
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from threeline import make_three_line_table
-from usspell import us, us_table
+from usspell import us, us_table, ama_p
 from docstyle import apply_house_style, add_page_numbers
 import shutil
 
@@ -46,9 +46,11 @@ def make(src,outfile,figs=None):
     for s in doc.sections: s.left_margin=s.right_margin=Inches(1.0)
     def para(t,style=None,size=None,italic=False):
         p=doc.add_paragraph(style=style)
-        for pt in re.split(r'(\*\*[^*]+\*\*)',t):
+        t=ama_p(t)
+        for pt in re.split(r'(\*\*[^*]+\*\*|\*[^*\s][^*]*\*)',t):
             if not pt: continue
             if pt.startswith('**') and pt.endswith('**'): r=p.add_run(pt[2:-2]); r.bold=True
+            elif pt.startswith('*') and pt.endswith('*') and len(pt)>2: r=p.add_run(pt[1:-1]); r.italic=True
             else: r=p.add_run(pt)
             if italic: r.italic=True
             if size: r.font.size=Pt(size)

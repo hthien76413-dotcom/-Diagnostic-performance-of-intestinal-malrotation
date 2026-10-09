@@ -10,7 +10,7 @@
    "Positive with possible wording"
   ],
   [
-   "UGI contrast series",
+   "UGI series",
    "293",
    "230 (78.5%)",
    "63 (21.5%)",
@@ -28,7 +28,7 @@
    "62"
   ],
   [
-   "Gastrointestinal ultrasound",
+   "Ultrasound",
    "117",
    "64 (54.7%)",
    "53 (45.3%)",
@@ -54,31 +54,31 @@
    "Detection rate % (95% CI)"
   ],
   [
-   "UGI contrast series",
+   "UGI series",
    "Midgut volvulus present",
    "208/263",
    "79.1 (73.8–83.6)"
   ],
   [
-   "UGI contrast series",
+   "UGI series",
    "Midgut volvulus absent",
    "22/30",
    "73.3 (55.6–85.8)"
   ],
   [
-   "UGI contrast series",
+   "UGI series",
    "Age ≤28 days",
    "162/214",
    "75.7 (69.5–81.0)"
   ],
   [
-   "UGI contrast series",
+   "UGI series",
    "Age 29 days–1 year",
    "30/38",
    "78.9 (63.7–88.9)"
   ],
   [
-   "UGI contrast series",
+   "UGI series",
    "Age >1 year",
    "38/41",
    "92.7 (80.6–97.5)"
@@ -114,31 +114,31 @@
    "82.7 (70.3–90.6)"
   ],
   [
-   "Gastrointestinal ultrasound",
+   "Ultrasound",
    "Midgut volvulus present",
    "64/112",
    "57.1 (47.9–65.9)"
   ],
   [
-   "Gastrointestinal ultrasound",
+   "Ultrasound",
    "Midgut volvulus absent",
    "0/5",
    "0.0 (0.0–43.4)"
   ],
   [
-   "Gastrointestinal ultrasound",
+   "Ultrasound",
    "Age ≤28 days",
    "50/90",
    "55.6 (45.3–65.4)"
   ],
   [
-   "Gastrointestinal ultrasound",
+   "Ultrasound",
    "Age 29 days–1 year",
    "7/14",
    "50.0 (26.8–73.2)"
   ],
   [
-   "Gastrointestinal ultrasound",
+   "Ultrasound",
    "Age >1 year",
    "7/13",
    "53.8 (29.1–76.8)"
@@ -188,42 +188,42 @@
    "45.9"
   ],
   [
-   "UGI contrast series (n=293)",
+   "UGI series (n=293)",
    "Duodenojejunal junction",
    "161 (54.9)",
    "98.1",
    "54.5"
   ],
   [
-   "UGI contrast series (n=293)",
+   "UGI series (n=293)",
    "Corkscrew / spring appearance",
    "139 (47.4)",
    "100.0",
    "59.1"
   ],
   [
-   "UGI contrast series (n=293)",
+   "UGI series (n=293)",
    "Jejunal position",
    "205 (70.0)",
    "93.7",
    "43.2"
   ],
   [
-   "UGI contrast series (n=293)",
+   "UGI series (n=293)",
    "Caecal position",
    "196 (66.9)",
    "89.8",
    "55.7"
   ],
   [
-   "UGI contrast series (n=293)",
+   "UGI series (n=293)",
    "Whole-gastrointestinal study",
    "278 (94.9)",
    "78.1",
    "86.7"
   ],
   [
-   "UGI contrast series (n=293)",
+   "UGI series (n=293)",
    "Barium used",
    "17 (5.8)",
    "94.1",

@@ -15,7 +15,7 @@
 #N **生成式 AI（第 2 页）**：参考文献前须有固定标题和固定句式的声明。已按原文模板写入，标题为 "Declaration of generative AI and AI-assisted technologies in the writing process"。注意：须知还规定 AI 只能用于改进语言和可读性，本文的声明如实写了协助起草和编写分析代码（见第六节）。
 
 #N **Original Article（第 2 页）**：
-#N • 正文少于 3,000 词（不含参考文献）：2,959 词 ✓
+#N • 正文少于 3,000 词（不含参考文献）：2,979 词 ✓
 #N • 图表合计不超过 7 个：4 表 + 3 图 = 7 ✓
 #N • 原创研究须有正式的 Limitations 部分 ✓
 #N • 观察性研究按 STROBE 报告：附 STROBE 清单 ✓
@@ -32,7 +32,7 @@
 #N • 利益冲突声明不得写在 Title Page 上，须用 Elsevier Declarations tool 生成并单独上传 ✓（已从 Title Page 删除）
 
 #N **Main Manuscript（第 5 页）**：
-#N • 摘要不超过 250 词，按 objective / methods / results / discussion 结构：245 词，段名为 Objective / Methods / Results / Discussion ✓
+#N • 摘要不超过 250 词，按 objective / methods / results / discussion 结构：248 词，段名为 Objective / Methods / Results / Discussion ✓
 #N • 关键词 3–5 个：5 个 ✓
 #N • 摘要中不放引文；未发表结果和个人通信不进参考文献 ✓
 
@@ -54,7 +54,7 @@
 #N **科学内容一个数字都没改。** IiI 是因"不在期刊关注范围"直接退稿，没有任何针对方法或数据的意见。四张表逐格比对过，除拼写外完全一致；图重新生成后与原图逐像素相同。
 
 #N 1. **标题**改为 Title Case，121 个字符。
-#N 2. **摘要**段名改为 Objective / Methods / Results / Discussion（JACR 须知原文的四段名），共 245 词。
+#N 2. **摘要**段名改为 Objective / Methods / Results / Discussion（JACR 须知原文的四段名），共 248 词。
 #N 3. **删去 IiI 专属内容**：Key Points、Critical relevance statement、图文摘要和缩略语表。
 #N 4. **结论段换成 4 条 Take-Home Points。**
 #N 5. **全文改为美式拼写**，图 3 的 "Caecal" 改为 "Cecal" 并重新出图，面板字母改为大写 A/B。
@@ -99,7 +99,7 @@
 
 #N **Short / running title**（若问）：Duodenal Landmarks in Routine Malrotation Ultrasound Reports
 
-#N **Abstract**：从正文复制 Objective / Methods / Results / Discussion 四段（含段名），共 245 词。**Keywords 不要粘进摘要框。**
+#N **Abstract**：从正文复制 Objective / Methods / Results / Discussion 四段（含段名），共 248 词。**Keywords 不要粘进摘要框。**
 
 #N **Keywords**（3–5 个）：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report
 #N 注意 "Infant, Newborn" 中间是逗号，算一个词。
@@ -156,7 +156,7 @@
 
 #N **5. 通讯作者邮寄地址（已确认）。** 香港路 100 号。
 
-#N **6. 参考文献（已核对）。** 作者 6 位及以下的条目已补全全部作者；本次检索核对的 12 条（[2]–[5]、[10]–[16]、[20]）题目、期刊、年份、卷和页码均与记录一致；[19] 按 STROBE 声明公开的 6 位作者名单补全；其余条目在此前的外部核对中已确认。
+#N **6. 参考文献（已核对）。** 作者 6 位及以下的条目已补全全部作者；本次检索核对的 12 条（[2]–[5]、[10]–[16]、[20]）题目、期刊、年份、卷和页码均与记录一致；[19] 按 STROBE 声明公开的 6 位作者名单补全；其余条目在此前的外部核对中已确认。[25] El-Ali 等（Pediatr Radiol 2025;55:925-935）为 2026-10-09 新增，作者、期刊、卷页和文中引用的 25.7% 已经检索核对。
 
 #H1 七、修回时要交的（须知第 2 页，现在不用做）
 
@@ -165,6 +165,6 @@
 #H1 八、投稿前最后自检
 
 #N 1. 隐去作者信息的正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者）已清空。
-#N 2. 标题 121 字符；摘要 245 词；正文 2,959 词；图表 7 个；作者 7 位。
+#N 2. 标题 121 字符；摘要 248 词；正文 2,979 词；图表 7 个；作者 7 位。
 #N 3. Title Page、投稿系统表单和正文 Declarations 三处内容一致。
 #N 4. Cover Letter 日期已改为实际投稿日。

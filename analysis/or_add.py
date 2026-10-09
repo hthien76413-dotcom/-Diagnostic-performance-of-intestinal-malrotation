@@ -6,20 +6,20 @@ the supplement cannot drift away from the scripts that produced it.
 Run after addstats.py and volsign2.py.
 """
 exec(open('core.py').read())
-import json, statsmodels.api as sm, statsmodels.formula.api as smf
+import re, json, statsmodels.api as sm, statsmodels.formula.api as smf
 
 A = json.load(open('addstats.json'))
 V = json.load(open('volsign2.json'))
 
 def pp(v, ci):
-    return f'{v:+.1f} ({ci[0]:+.1f} to {ci[1]:+.1f})'
+    return f'{v:+.1f} ({ci[0]:+.1f} to {ci[1]:+.1f})'.replace('-', '−')
 
 S11 = [['Modality and model',
         'Average marginal effect of later era, percentage points (95% CI)']]
 S11 += [[k, pp(v[0], v[1])] for k, v in A['AME'].items()]
 
 S12 = [['Comparison (n=%d)' % int(mat[['US_detected', 'CT_detected', 'UGI_detected']].notna().all(axis=1).sum()), 'Detection', 'Difference, percentage points (95% CI)',
-        'Discordant pairs', 'Exact McNemar p']] + A['PAIR']
+        'Discordant pairs', 'Exact McNemar *P*']] + A['PAIR']
 
 # modality x volvulus interaction where it is estimable (UGI vs CT only)
 long['modality'] = pd.Categorical(long['mod'], categories=['UGI', 'CT', 'US'])
@@ -35,7 +35,7 @@ gee_int = (f'CT x volvulus odds ratio {np.exp(m.params[t]):.2f} '
 
 orv, plo, phi, pval = A['FIRTH_PROFILE']
 
-S13 = [['Analysis', 'Estimate (95% CI)', 'p'],
+S13 = [['Analysis', 'Estimate (95% CI)', '*P*'],
        ['Modality x volvulus interaction, upper gastrointestinal series vs CT '
         '(GEE; estimable)', gee_int[0], gee_int[1]],
        ['Modality x volvulus interaction including ultrasound (GEE)',
@@ -46,6 +46,16 @@ S13 = [['Analysis', 'Estimate (95% CI)', 'p'],
        ['Era x examination-content interaction, ultrasound', A['INT'][0][1], A['INT'][0][2]],
        ['Era x examination-content interaction, CT',        A['INT'][1][1], A['INT'][1][2]]]
 
+
+def _ap(v):
+    """AMA P value in a P column: no leading zero (0.481 -> .481, <0.001 -> <.001)."""
+    v = str(v)
+    return re.sub(r'(^|[<>=≤≥\s])0(\.\d)', r'\1\2', v)
+for _T in (S12, S13):
+    for _r in _T[1:]:
+        _r[-1] = _ap(_r[-1])
+for _r in S12[1:]:
+    _r[2] = _r[2].replace('-', '−')
 json.dump({'S11': S11, 'S12': S12, 'S13': S13, 'S2b': V['S2b']},
           open('or_add.json', 'w'), ensure_ascii=False, indent=1)
 for T in (S11, S12, S13):

@@ -55,6 +55,16 @@ for lab,extra in [('CT, crude',None),('CT, adjusted for contrast enhancement','e
     pt=ame(ct,extra); ci,k=boot_ame(ct,extra)
     AME[lab]=(pt,ci,k); print(f'{lab:48s} AME {pt:+.1f} pp (95% CI {ci[0]:+.1f} to {ci[1]:+.1f}; {k} resamples)')
 
+# UGI series, crude only: its own random stream, so the resamples above and below
+# (and every result already reported from them) are unchanged
+ugi=IX[IX['mod']=='UGI'].merge(mat[['科研患者编号','UGI_detected']],on='科研患者编号',how='left') \
+                        .merge(pat[['科研患者编号','era_late']],on='科研患者编号',how='left')
+ugi['det']=ugi['UGI_detected'].astype(int); ugi['late']=ugi['era_late'].astype(int)
+_main_rng=rng; rng=np.random.default_rng(20261009)
+pt=ame(ugi,None); ci,k=boot_ame(ugi,None)
+AME['UGI series, crude']=(pt,ci,k); print(f'{"UGI series, crude":48s} AME {pt:+.1f} pp (95% CI {ci[0]:+.1f} to {ci[1]:+.1f}; {k} resamples)')
+rng=_main_rng
+
 # ---------- (2) paired differences ----------
 print()
 p=mat[mat[['US_detected','CT_detected','UGI_detected']].notna().all(axis=1)].copy()

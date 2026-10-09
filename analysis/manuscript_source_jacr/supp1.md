@@ -52,9 +52,9 @@
 
 #H1 G. Validation and adjudication
 
-#N A pediatric surgeon blinded to the operative findings adjudicated 32 reports in two independent samples, and later re-read a further nine flagged by a screen of the whole dataset.
+#N A pediatric surgeon blinded to the operative findings, one of the authors, adjudicated 32 reports in two independent samples, and later re-read a further nine flagged by a screen of the whole dataset.
 
-#N **Sample 1 (validation).** A stratified random sample of 24 reports with positive and negative machine labels balanced across the three modalities. Agreement 22/24 (92%); Cohen kappa 0.83; per-modality agreement 88% (UGI), 88% (CT) and 100% (ultrasound). These are the only figures used to characterize algorithm performance.
+#N **Sample 1 (validation).** A stratified random sample of 24 reports with positive and negative machine labels balanced across the three modalities. Agreement 22/24 (92%); Cohen kappa 0.83 (95% CI 0.61–1.00, asymptotic standard error, truncated at 1); per-modality agreement 88% (UGI), 88% (CT) and 100% (ultrasound). These are the only figures used to characterize algorithm performance.
 
 #N **Sample 2 (targeted).** The 8 reports in which a malrotation sign appeared in the findings section while the machine label was negative. Five were confirmed as machine under-calls and corrected. Because this sample was selected on suspected discordance, it is **excluded** from the agreement statistics above; including it would bias them.
 
@@ -84,7 +84,7 @@
 
 #H1 G2. Cohort retrieval strings
 
-#N Children were retrieved from the institutional surgical records database by matching, case-insensitively, the operative diagnosis field (术中诊断) against `肠旋转不良` or the procedure-name field (手术名称) against `Ladd`. Applied to the 559 operative records of 499 children held for the study period, this returns 503 records in 465 children; every retrieved record was read before inclusion, and review of the anchor operation then excluded 15 children (Section K1), leaving 484 records in 450 children. The 34 children not returned had operative diagnoses unrelated to malrotation (appendicitis, hypertrophic pyloric stenosis, Hirschsprung disease, diaphragmatic and cardiac procedures among them).
+#N Children were retrieved from the institutional surgical records database by matching, case-insensitively, the operative diagnosis field (术中诊断) against `肠旋转不良` or the procedure-name field (手术名称) against `Ladd`. The institutional clinical research database held 711 children with a recorded diagnosis of intestinal malrotation for the study period, 499 of whom had 559 operative records. Applied to those records, this returns 503 records in 465 children; every retrieved record was read before inclusion, and review of the anchor operation then excluded 15 children (Section K1), leaving 484 records in 450 children. The 34 children not returned had operative diagnoses unrelated to malrotation (appendicitis, hypertrophic pyloric stenosis, Hirschsprung disease, diaphragmatic and cardiac procedures among them).
 
 #H1 H. Report-content audit patterns
 

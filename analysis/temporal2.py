@@ -47,7 +47,7 @@ for mod,lab,items in [
                         ('Duodenum mentioned','txt',r'十二指肠'),
                         ('Mesenteric-vessel relationship','txt',r'肠系膜上动、?静脉|肠系膜上动静脉|肠系膜上动脉|肠系膜上静脉|系膜血管|SMA|SMV'),
                         ('Three-dimensional reconstruction',None,r'三维重建')]),
-  ('UGI','Upper gastrointestinal series',[('Duodenojejunal junction','txt',r'空肠曲|屈氏|Treitz|悬韧带|十二指肠[-—与和]?空肠交界'),
+  ('UGI','UGI series',[('Duodenojejunal junction','txt',r'空肠曲|屈氏|Treitz|悬韧带|十二指肠[-—与和]?空肠交界'),
                         ('Corkscrew / spring appearance','txt',r'弹簧|螺旋|绞索|盘曲'),
                         ('Jejunal position','txt',r'空肠[^。；\n]{0,10}(?:位于|居|偏)'),
                         ('Caecal position','txt',r'回盲'),

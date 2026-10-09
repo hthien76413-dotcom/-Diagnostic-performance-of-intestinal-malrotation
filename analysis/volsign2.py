@@ -12,7 +12,7 @@ def reported(text,rx):
             if not re.search(NEG,c[max(0,m.start()-12):m.start()]): return True
     return False
 SIGN={'US':r'漩涡|旋涡|涡流|螺旋','CT':r'漩涡|旋涡|涡流|螺旋','UGI':r'弹簧|螺旋|绞索|盘曲'}
-LAB={'UGI':'Upper gastrointestinal series','US':'Gastrointestinal ultrasound','CT':'Abdominal CT'}
+LAB={'UGI':'UGI series','US':'Ultrasound','CT':'Abdominal CT'}
 rows=[['Index test','Volvulus-specific sign / children with confirmed midgut volvulus','Rate % (95% CI)']]
 for mod in ['UGI','US','CT']:
     d=IX[IX['mod']==mod].merge(pat[['科研患者编号','volvulus']],on='科研患者编号',how='left')

@@ -230,3 +230,20 @@ vessels or fluid, and the two whirlpool matches describe vessels encircling a
 mass. `gee.py` no longer crashes on the separated interaction model, and
 `classifier_agreement.py` reads `Supplement_1_classifier.py`.
 
+
+## Presentation changes after the self-review (general and language items)
+
+* Modality labels in every table and figure are "UGI series", "Abdominal CT"
+  and "Ultrasound" (the ultrasound sessions include great-vessel and pyloric
+  bookings, so "gastrointestinal ultrasound" was inaccurate).
+* P values follow AMA style: `usspell.ama_p()` rewrites `p=0.060` as `*P* = .060`
+  in every table cell and paragraph, and `threeline.py` and the paragraph
+  writers render `*...*` as italic. P columns carry no leading zero.
+* Table 4 shows the bootstrap intervals of the marginal effects from
+  `addstats.json`. The UGI interval uses its own random stream (seed 20261009),
+  so every interval already reported is unchanged.
+* Figure 1 starts from the 711 children in the database export and shows the 34
+  children whose operations did not meet the criterion. The explanatory text
+  that used to sit inside Figures 1, 2 and S1 has moved to the legends.
+* `export_refs.py` writes `参考文献_{N}条*` for however many references there are
+  (now 25, with El-Ali et al., Pediatr Radiol 2025).

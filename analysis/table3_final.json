@@ -128,5 +128,10 @@
    "1/9",
    "63/108 (58%)"
   ]
- ]
+ ],
+ "T3_overlap": {
+  "gi_vessel": 28,
+  "gi_pyloric": 4,
+  "vessel_pyloric": 3
+ }
 }
