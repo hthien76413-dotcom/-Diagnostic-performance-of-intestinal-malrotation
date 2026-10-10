@@ -303,6 +303,7 @@ add('讨论 第4段', 'Two features … the last preoperative test in 75.0% of c
     close('75.0', pc(po['UGI']['last'], po['UGI']['had'])), para=P, toks=('Two', '75.0'))
 P = para_of(MS + 'p3.md', '#N The low documentation may bear on')
 add('讨论 第5段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
+add('讨论 第5段', 'revisions of the 2020 ACR guidance [19]', LITACR, True, para=P, toks=('2020',))
 P = para_of(MS + 'p3.md', '#N This is not a diagnostic accuracy study')
 add('讨论 · 局限 第1段', 'The 52 children without an index test … as were 9 … from 88.2% to 84.0%',
     f'无索引检查 {F["none"]}；复发再手术 {F["s1_reop"]}；扭转 {F["VD"]["primary"][0]}/450 = {pc(F["VD"]["primary"][0],450):.2f}% → {F["VD"]["A"][0]}/450 = {pc(F["VD"]["A"][0],450):.2f}%',

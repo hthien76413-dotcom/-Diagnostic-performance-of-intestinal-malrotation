@@ -67,15 +67,18 @@
 [23]  10.1016/j.jacr.2022.06.016
       López-Úbeda P, Martín-Noguerol T, Juluru K, Luna A (2022) Natural language processing in radiology: update on clinical applications. J Am Coll Radiol 19:1271-1285
 
-[24]  10.2307/2531248
+[24]  10.1006/jbin.2001.1029
+      Chapman WW, Bridewell W, Hanbury P, Cooper GF, Buchanan BG (2001) A simple algorithm for identifying negated findings and diseases in discharge summaries. J Biomed Inform 34:301-310
+
+[25]  10.2307/2531248
       Zeger SL, Liang KY (1986) Longitudinal data analysis for discrete and continuous outcomes. Biometrics 42:121-130
 
-[25]  10.1093/biomet/80.1.27
+[26]  10.1093/biomet/80.1.27
       Firth D (1993) Bias reduction of maximum likelihood estimates. Biometrika 80:27-38
 
-[26]  10.1002/sim.1047
+[27]  10.1002/sim.1047
       Heinze G, Schemper M (2002) A solution to the problem of separation in logistic regression. Stat Med 21:2409-2419
 
-[27]  10.1007/s00247-024-06141-x
+[28]  10.1007/s00247-024-06141-x
       El-Ali AM, Schiess DM, Van Tassel D, et al (2025) Ultrasound for midgut volvulus and malrotation: frequency and predictors of a non-diagnostic examination in a multi-institutional cohort. Pediatr Radiol 55:925-935
 

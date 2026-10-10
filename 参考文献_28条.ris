@@ -352,6 +352,23 @@ N1  - Manuscript reference [23]. Metadata UNVERIFIED - confirm against Crossref.
 ER  - 
 
 TY  - JOUR
+AU  - Chapman, WW
+AU  - Bridewell, W
+AU  - Hanbury, P
+AU  - Cooper, GF
+AU  - Buchanan, BG
+PY  - 2001
+TI  - A simple algorithm for identifying negated findings and diseases in discharge summaries
+JO  - J Biomed Inform
+VL  - 34
+SP  - 301
+EP  - 310
+DO  - 10.1006/jbin.2001.1029
+UR  - https://doi.org/10.1006/jbin.2001.1029
+N1  - Manuscript reference [24]. Metadata UNVERIFIED - confirm against Crossref.
+ER  - 
+
+TY  - JOUR
 AU  - Zeger, SL
 AU  - Liang, KY
 PY  - 1986
@@ -362,7 +379,7 @@ SP  - 121
 EP  - 130
 DO  - 10.2307/2531248
 UR  - https://doi.org/10.2307/2531248
-N1  - Manuscript reference [24]. Metadata UNVERIFIED - confirm against Crossref.
+N1  - Manuscript reference [25]. Metadata UNVERIFIED - confirm against Crossref.
 ER  - 
 
 TY  - JOUR
@@ -375,7 +392,7 @@ SP  - 27
 EP  - 38
 DO  - 10.1093/biomet/80.1.27
 UR  - https://doi.org/10.1093/biomet/80.1.27
-N1  - Manuscript reference [25]. Metadata UNVERIFIED - confirm against Crossref.
+N1  - Manuscript reference [26]. Metadata UNVERIFIED - confirm against Crossref.
 ER  - 
 
 TY  - JOUR
@@ -389,7 +406,7 @@ SP  - 2409
 EP  - 2419
 DO  - 10.1002/sim.1047
 UR  - https://doi.org/10.1002/sim.1047
-N1  - Manuscript reference [26]. Metadata UNVERIFIED - confirm against Crossref.
+N1  - Manuscript reference [27]. Metadata UNVERIFIED - confirm against Crossref.
 ER  - 
 
 TY  - JOUR
@@ -404,6 +421,6 @@ SP  - 925
 EP  - 935
 DO  - 10.1007/s00247-024-06141-x
 UR  - https://doi.org/10.1007/s00247-024-06141-x
-N1  - Manuscript reference [27]. Metadata UNVERIFIED - confirm against Crossref.
+N1  - Manuscript reference [28]. Metadata UNVERIFIED - confirm against Crossref.
 ER  - 
 
