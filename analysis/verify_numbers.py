@@ -228,7 +228,7 @@ add('结果 · 超声内容 第1段', 'Reader agreement was 1,423 of 1,428 item 
     f'一致 {F["cells_agree"]}/{F["cells"]}；各项 kappa 最小 {min(v["kappa"] for v in F["KAP"].values()):.2f}、最大 {max(v["kappa"] for v in F["KAP"].values()):.2f}',
     (F['cells_agree'], F['cells']) == (1423, 1428) and close('0.80', min(v['kappa'] for v in F['KAP'].values()), 2),
     para=P, toks=('1,423', '1,428', '119', '0.80', '1.00'))
-P = para_of(MS + 'p2.md', '#N Of these three, only one, in 2022')
+P = para_of(MS + 'p2.md', '#N Of these three, only one (in 2022)')
 add('结果 · 超声内容 第2段', 'Of these three, only one, in 2022, followed D3 between the artery and the aorta and identified the duodenojejunal junction',
     f'记录 D3/DJJ 的 3 次检查年份 {F["d3_years"]}；记录十二指肠空肠曲的只有 1 次（DJJ {int(u["djj"].astype(bool).sum())}），即 2022 年那次', F['d3_years'] == [2018, 2022, 2024] and pd.to_datetime(u.loc[u['djj'].astype(bool), '检查时间']).dt.year.tolist() == [2022],
     para=P, toks=('three', 'one', '2022'))
