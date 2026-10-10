@@ -20,7 +20,7 @@ row('Operated 2019–2026, n (%)',lambda d:pc(int(d['era_late'].sum()),len(d)))
 row('Midgut volvulus at operation, n (%)',lambda d:pc(int(d['volvulus'].sum()),len(d)))
 for c,lab in [('vomit','Vomiting documented, n (%)'),('bilious','Bilious vomiting documented, n (%)'),
               ('distension','Abdominal distension, n (%)'),('bloody_stool','Blood in stool, n (%)'),
-              ('abd_pain','Abdominal pain, n (%)'),('duration_chronic','Symptoms described as repeated, intermittent or lasting months, n (%)'),
+              ('abd_pain','Abdominal pain, n (%)'),('symptoms_1m','Gastrointestinal symptoms for 1 month or longer, n (%)'),
               ('shock','Shock or poor perfusion, n (%)')]:
     row(lab,lambda d,c=c:pc(int(d[c].sum()),len(d)))
 T1=[['Characteristic','All children','Received UGI series','Received CT','Received ultrasound','Received none of the three']]+rows

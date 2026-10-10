@@ -14,6 +14,8 @@ ops0=pd.read_excel(BASE+'诊断效能_手术确诊队列_465例.xlsx', sheet_nam
 opsall=x.parse('住院病历手术记录'); n_db=x.parse('病案首页基本信息')['科研患者编号'].nunique()
 _ch=REV[REV['kind']=='child']['reason']
 n_nc=int(_ch.str.startswith('malrotation not confirmed').sum()); n_re=int(_ch.str.startswith('anchor operation was a reoperation').sum())
+_s1=pd.read_excel('review_returns/审稿核对表_S1-S3_已填.xlsx',sheet_name='S1_锚定手术判定')
+n_s1=len(_s1); n_keep=int((_s1['【填】判定']=='本次手术确认肠旋转不良（保留）').sum()); assert n_s1==n_keep+n_nc+n_re
 rep['day']=rep['检查时间'].dt.normalize()
 _f=rep.sort_values('gap').groupby(['科研患者编号','mod']).first().reset_index()[['科研患者编号','mod','day']]
 _m=rep.merge(_f,on=['科研患者编号','mod'],suffixes=('','_ix')); _in=_m['day']==_m['day_ix']
@@ -35,7 +37,7 @@ box(65,106,33,9,f'Operation did not meet the criterion\n{len(opsall)-len(ops0)} 
 box(22,93,56,9,f'Operative diagnosis named malrotation or procedure was a Ladd procedure\n{len(ops0)} records in {ops0["科研患者编号"].nunique()} children',fc='#e8eef5')
 arrow(50,93,50,80.5)
 arrow(50,86.5,64.5,86.5)
-box(65,81.5,33,10,f'Excluded after review of the anchor operation\nn = {n_nc+n_re}\n  malrotation not confirmed at that operation  {n_nc}\n  reoperation after earlier malrotation surgery  {n_re}',fc='#faf1e8',fs=9.0)
+box(65,81.5,33,10,f'Anchor operation re-read in {n_s1} children\n{n_keep} retained; {n_nc+n_re} excluded:\n  malrotation not confirmed at that operation  {n_nc}\n  reoperation after earlier malrotation surgery  {n_re}',fc='#faf1e8',fs=9.0)
 box(22,71,56,9,f'Surgically confirmed intestinal malrotation\n{len(ops)} records in n = {len(coh)} children (reference standard)',fc='#e8eef5',weight='bold')
 arrow(50,71,50,67)
 box(4,50,44,17,f'At least one preoperative index test\nn = {n_img}  ({n_ep} index examinations)\n\nUGI series {nmod["UGI"]}   Abdominal CT {nmod["CT"]}\nUltrasound {nmod["US"]}\nAll three modalities {n_three}',fc='#eef5ee',fs=10.5)

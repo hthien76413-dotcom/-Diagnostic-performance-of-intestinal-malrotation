@@ -2,7 +2,7 @@
 
 [Masked manuscript. Author names, affiliations and corresponding-author details are provided on the separate title page.]
 
-Word count: 2,984 (Introduction through Take-Home Points; excluding abstract, references, tables and figure legends); Tables: 4; Figures: 3; Supplemental material: Supplements 1–3
+Word count: 2,986 (Introduction through Take-Home Points; excluding abstract, references, tables and figure legends); Tables: 4; Figures: 3; Supplemental material: Supplements 1–3
 
 
 ## Abstract
@@ -39,7 +39,7 @@ This was a retrospective, single-center, case-only report audit approved by the 
 
 ### Participants, reference standard and index tests
 
-The institutional clinical research database supplied the records of 711 children with a recorded diagnosis of intestinal malrotation between December 2012 and June 2026, including 559 operative records in 499 children. Every operative record was read, and operations whose operative diagnosis named intestinal malrotation or whose procedure was recorded as a Ladd procedure were selected (search strings in Supplement 1): 503 records in 465 children. The anchor operation was each child's first such operation. All operative records were re-read for 34 children whose anchor operation was not named as a malrotation procedure or followed earlier malrotation surgery, and 15 were excluded: 6 in whom that operation did not confirm malrotation and 9 reoperations after earlier malrotation surgery. The remaining 450 consecutive children form the reference standard. Midgut volvulus was defined by an explicit operative statement of torsion or by a documented degree of midgut or mesenteric rotation, with no minimum degree required (see Limitations). No sample-size calculation was performed.
+The institutional clinical research database supplied the records of 711 children with a recorded diagnosis of intestinal malrotation between December 2012 and June 2026, including 559 operative records in 499 children. Every operative record was read, and operations whose operative diagnosis named intestinal malrotation or whose procedure was recorded as a Ladd procedure were selected (search strings in Supplement 1): 503 records in 465 children. The anchor operation was each child's first such operation. All operative records were re-read for 34 children whose anchor operation was not named as a malrotation procedure or followed earlier malrotation surgery: 19 were retained and 15 excluded, 6 in whom that operation did not confirm malrotation and 9 reoperations after earlier malrotation surgery. The remaining 450 consecutive children form the reference standard. Midgut volvulus was defined by an explicit operative statement of torsion or by a documented degree of midgut or mesenteric rotation, with no minimum degree required (see Limitations). No sample-size calculation was performed.
 
 Three modalities were evaluated: ultrasound (sessions booked as gastrointestinal, abdominal great-vessel or pyloric), abdominal CT and the UGI series; contrast enemas were not counted. For each child and modality, the index examination was the examination episode closest to operation, pooling every report of that modality issued that day, as the department routinely issues separate gastrointestinal and great-vessel reports for one ultrasound session. Operative times were recorded as dates only, so the 154 same-day reports and the 27 index examinations more than 7 days before operation were reviewed individually; three issued after the operation or for an unrelated earlier illness were removed. This yielded 723 index examinations from 761 reports; 32 earlier repeat examinations were not audited (Figure 1). The clinical indication on each request was not retrievable, so confounding by indication is displayed through the characteristics of each modality group (Table 1) rather than adjusted for.
 
@@ -212,47 +212,47 @@ Figure 1. Study flow and the imaging received by children without an index test.
 
 Figure 2. Report-level detection by modality, each estimate with its own denominator. Detection among children with a preoperative index examination (Wilson 95% confidence intervals). Each estimate is drawn from a different, indication-selected group of children, so the rates are not directly comparable between modalities and are not sensitivities for children investigated for suspected malrotation.
 
-Figure 3. Ultrasound examination content and detection conditional on that content. A, Documented content of the 117 ultrasound index examinations, as coded by two independent readers. B, Report-level detection conditional on that content. Three examinations documented the third portion of the duodenum or the duodenojejunal junction. Detection when a whirlpool sign was reported is partly definitional, the sign being one of the positivity criteria; the informative contrast is the 5 of 58 examinations that named the diagnosis without one.
+Figure 3. Ultrasound examination content and detection conditional on that content. A, Documented content of the 117 ultrasound index examinations, as coded by two independent readers. B, Report-level detection conditional on the two elements documented in more than seven examinations and on whether the session included a great-vessel study. Three examinations documented the third portion of the duodenum or the duodenojejunal junction. Detection when a whirlpool sign was reported is partly definitional, the sign being one of the positivity criteria; the informative contrast is the 5 of 58 examinations that named the diagnosis without one.
 
 Table 1. Characteristics of the 450 children with surgically confirmed intestinal malrotation, overall and according to which preoperative index test they received
 
 ```
 
-Characteristic                                                         All children  Received UGI series  Received CT  Received ultrasound  Received none of the three
+Characteristic                                          All children  Received UGI series  Received CT  Received ultrasound  Received none of the three
 
----------------------------------------------------------------------  ------------  -------------------  -----------  -------------------  --------------------------
+------------------------------------------------------  ------------  -------------------  -----------  -------------------  --------------------------
 
-Children, n                                                            450           293                  313          117                  52
+Children, n                                             450           293                  313          117                  52
 
-Age at operation, median (IQR), days                                   12 (6–75)     11 (7–32)            11 (6–44)    9 (5–24)             47 (3–692)
+Age at operation, median (IQR), days                    12 (6–75)     11 (7–32)            11 (6–44)    9 (5–24)             47 (3–692)
 
-Neonate ≤28 days, n (%)                                                300 (66.7)    214 (73.0)           220 (70.3)   90 (76.9)            23 (44.2)
+Neonate ≤28 days, n (%)                                 300 (66.7)    214 (73.0)           220 (70.3)   90 (76.9)            23 (44.2)
 
-Age >1 year, n (%)                                                     86 (19.1)     41 (14.0)            52 (16.6)    13 (11.1)            15 (28.8)
+Age >1 year, n (%)                                      86 (19.1)     41 (14.0)            52 (16.6)    13 (11.1)            15 (28.8)
 
-Male, n (%)                                                            342 (76.0)    220 (75.1)           247 (78.9)   92 (78.6)            37 (71.2)
+Male, n (%)                                             342 (76.0)    220 (75.1)           247 (78.9)   92 (78.6)            37 (71.2)
 
-Operated 2019–2026, n (%)                                              154 (34.2)    89 (30.4)            98 (31.3)    79 (67.5)            17 (32.7)
+Operated 2019–2026, n (%)                               154 (34.2)    89 (30.4)            98 (31.3)    79 (67.5)            17 (32.7)
 
-Midgut volvulus at operation, n (%)                                    397 (88.2)    263 (89.8)           279 (89.1)   112 (95.7)           42 (80.8)
+Midgut volvulus at operation, n (%)                     397 (88.2)    263 (89.8)           279 (89.1)   112 (95.7)           42 (80.8)
 
-Vomiting documented, n (%)                                             427 (94.9)    281 (95.9)           301 (96.2)   111 (94.9)           47 (90.4)
+Vomiting documented, n (%)                              427 (94.9)    281 (95.9)           301 (96.2)   111 (94.9)           47 (90.4)
 
-Bilious vomiting documented, n (%)                                     214 (47.6)    163 (55.6)           161 (51.4)   58 (49.6)            12 (23.1)
+Bilious vomiting documented, n (%)                      214 (47.6)    163 (55.6)           161 (51.4)   58 (49.6)            12 (23.1)
 
-Abdominal distension, n (%)                                            178 (39.6)    117 (39.9)           134 (42.8)   57 (48.7)            22 (42.3)
+Abdominal distension, n (%)                             178 (39.6)    117 (39.9)           134 (42.8)   57 (48.7)            22 (42.3)
 
-Blood in stool, n (%)                                                  110 (24.4)    61 (20.8)            86 (27.5)    31 (26.5)            12 (23.1)
+Blood in stool, n (%)                                   110 (24.4)    61 (20.8)            86 (27.5)    31 (26.5)            12 (23.1)
 
-Abdominal pain, n (%)                                                  66 (14.7)     30 (10.2)            43 (13.7)    10 (8.5)             11 (21.2)
+Abdominal pain, n (%)                                   66 (14.7)     30 (10.2)            43 (13.7)    10 (8.5)             11 (21.2)
 
-Symptoms described as repeated, intermittent or lasting months, n (%)  212 (47.1)    146 (49.8)           144 (46.0)   52 (44.4)            19 (36.5)
+Gastrointestinal symptoms for 1 month or longer, n (%)  38 (8.4)      19 (6.5)             21 (6.7)     5 (4.3)              9 (17.3)
 
-Shock or poor perfusion, n (%)                                         11 (2.4)      3 (1.0)              6 (1.9)      3 (2.6)              4 (7.7)
+Shock or poor perfusion, n (%)                          11 (2.4)      3 (1.0)              6 (1.9)      3 (2.6)              4 (7.7)
 
 ```
 
-Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences; "repeated" also captures vomiting repeated over hours or days, so that row is not a measure of chronic presentation. The rightmost column shows the 52 children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). IQR interquartile range, UGI upper gastrointestinal.
+Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. Symptom duration is the longest duration of a gastrointestinal symptom stated in the chief complaint of the operative admission; a child whose chief complaint stated none was counted as not having symptoms for 1 month or longer. The rightmost column shows the 52 children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). IQR interquartile range, UGI upper gastrointestinal.
 
 Table 2. Report-level detection of intestinal malrotation among surgically confirmed children, with the certainty of the wording used in positive conclusions
 

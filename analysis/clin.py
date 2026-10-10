@@ -18,7 +18,36 @@ feat['distension']=flag(r'腹胀')
 feat['abd_pain']=flag(r'腹痛')
 feat['poor_feed']=flag(r'拒奶|纳差|喂养困难')
 feat['shock']=flag(r'休克|循环衰竭|面色苍白|皮肤花纹')
-feat['duration_chronic']=flag(r'反复|间断|间歇|数月|年余|余月')
+# longest gastrointestinal-symptom duration stated in the chief complaint of the operative admission
+import re
+SYM=r'呕吐|吐奶|呕奶|干呕|吐|腹痛|腹胀|腹部不适|便血|血便|哭吵|哭闹|体重不增|便秘|纳差|拒奶|腹泻'
+NONSYM=r'产检|产前|孕期|胎儿|发现|提示|术后|CT|B超|彩超|检查|立位片|造影'   # clauses dating a finding, not a symptom
+DIG={'一':1,'二':2,'两':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9}
+def cn(n):
+    if re.fullmatch(r'\d+(\.\d+)?',n): return float(n)
+    if n=='半': return 0.5
+    if n=='数': return 3.0
+    if '十' in n:
+        a,_,b=n.partition('十')
+        return (DIG.get(a,1) if a else 1)*10+(DIG.get(b,0) if b else 0)
+    return float(DIG.get(n[0],1))
+DUR=r'(\d+(?:\.\d+)?|[一二两三四五六七八九十半数]+)\s*余?\s*(?:个)?\s*(小时|h|天|日|周|月|年)'
+UNIT={'小时':1/24,'h':1/24,'天':1,'日':1,'周':7,'月':30,'年':365}
+def symptom_days(text):
+    best=None
+    for cl in re.split(r'[，,；;。\s]+',str(text)):
+        if not re.search(SYM,cl) or re.search(NONSYM,cl): continue
+        for m in re.finditer(DUR,cl):
+            d=cn(m.group(1))*UNIT[m.group(2)]
+            best=d if best is None else max(best,d)
+    return best
+_cc=adm.merge(pat[['科研患者编号','科研就诊编号']],on=['科研患者编号','科研就诊编号'],how='inner')
+assert _cc['科研患者编号'].is_unique and len(_cc)==len(pat)
+_cc['sym_days']=_cc['主诉'].map(symptom_days)
+print('chief complaint with a GI-symptom duration:',_cc['sym_days'].notna().sum(),'| >=30 days:',(_cc['sym_days']>=30).sum())
+feat=feat.merge(_cc[['科研患者编号','sym_days']],on='科研患者编号',how='left')
+feat['symptoms_1m']=(feat['sym_days']>=30).values
+feat=feat.drop(columns='sym_days')
 pat2=pat.merge(feat,on='科研患者编号',how='left')
 for c in feat.columns[1:]: pat2[c]=pat2[c].fillna(False)
 pat2['has_note']=pat2['科研患者编号'].isin(g.index)
@@ -38,7 +67,7 @@ for k,s in groups.items():
       male=f"{d['male'].sum()} ({d['male'].mean()*100:.1f}%)",
       volvulus=f"{d['volvulus'].sum()} ({d['volvulus'].mean()*100:.1f}%)",
       late_era=f"{d['era_late'].sum()} ({d['era_late'].mean()*100:.1f}%)",
-      **{c:f"{d[c].sum()} ({d[c].mean()*100:.1f}%)" for c in ['vomit','bilious','bloody_stool','distension','abd_pain','shock','duration_chronic']}))
+      **{c:f"{d[c].sum()} ({d[c].mean()*100:.1f}%)" for c in ['vomit','bilious','bloody_stool','distension','abd_pain','shock','symptoms_1m']}))
 t=pd.DataFrame(rows).set_index('group').T
 print(t.to_string())
 t.to_csv('tab_bygroup.csv')

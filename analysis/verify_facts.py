@@ -127,11 +127,31 @@ for c in ['主诉', '现病史', '病史小结', '初步诊断']:
     adm[c] = adm[c].fillna('').astype(str) if c in adm else ''
 txt_adm = (adm['主诉'] + ' ' + adm['现病史'] + ' ' + adm['病史小结'] + ' ' + adm['初步诊断']).groupby(adm['科研患者编号']).apply(' '.join)
 FEAT = {'vomit': r'呕吐|吐奶|呕奶', 'bilious': r'胆汁|黄绿|绿色液|草绿', 'distension': r'腹胀',
-        'bloody_stool': r'血便|便血|果酱', 'abd_pain': r'腹痛', 'duration_chronic': r'反复|间断|间歇|数月|年余|余月',
-        'shock': r'休克|循环衰竭|面色苍白|皮肤花纹'}
+        'bloody_stool': r'血便|便血|果酱', 'abd_pain': r'腹痛', 'shock': r'休克|循环衰竭|面色苍白|皮肤花纹'}
 P1 = pat.set_index('科研患者编号').copy()
 for k, rx in FEAT.items():
     P1[k] = txt_adm.reindex(P1.index).fillna('').str.contains(rx, regex=True)
+
+
+# gastrointestinal symptoms for 1 month or longer: a threshold test on each clause of
+# the chief complaint of the operative admission (written apart from clin.py's day count)
+def long_gi(cc):
+    for cl in re.split(r'[，,；;。\s]+', cc):
+        if not re.search(r'呕|吐|腹痛|腹胀|腹部不适|便血|血便|哭吵|哭闹|体重不增|便秘|纳差|拒奶|腹泻', cl):
+            continue
+        if re.search(r'产检|产前|孕期|胎儿|发现|提示|术后|CT|B超|彩超|检查|立位片|造影', cl):
+            continue
+        if re.search(r'(\d+|[一二两三四五六七八九十数]+)\s*余?\s*个?\s*月|年', cl):
+            return True
+        if any(int(n) * (7 if u == '周' else 1) >= 30 for n, u in re.findall(r'(\d+)\s*余?\s*(天|日|周)', cl)):
+            return True
+    return False
+
+
+cc_op = adm.merge(pat[['科研患者编号', '科研就诊编号']], on=['科研患者编号', '科研就诊编号']).set_index('科研患者编号')['主诉']
+assert cc_op.index.is_unique and len(cc_op) == len(P1)
+P1['symptoms_1m'] = cc_op.reindex(P1.index).map(long_gi)
+FEAT['symptoms_1m'] = None
 P1['older'] = P1['age_days'] > 365
 GROUPS = {'All': set(P1.index), 'UGI': set(mat.loc[mat['UGI_detected'].notna(), '科研患者编号']),
           'CT': set(mat.loc[mat['CT_detected'].notna(), '科研患者编号']),

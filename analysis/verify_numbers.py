@@ -122,11 +122,10 @@ add('方法 · 研究对象', 'December 2012 and June 2026', '同摘要', para=P
 add('方法 · 研究对象', '559 operative records in 499 children', f'手术记录表 {F["ops_all_records"]} 条、{F["ops_all_children"]} 例', (F['ops_all_records'], F['ops_all_children']) == (559, 499), para=P, toks=('559', '499'))
 add('方法 · 研究对象', '503 records in 465 children', f'入选 {F["ops_sel_records"]} 条、{F["ops_sel_children"]} 例；未入选 {F["not_eligible_records"]} 条、{F["not_eligible_children"]} 例（559−503=56；499−465=34）',
     (F['ops_sel_records'], F['ops_sel_children']) == (503, 465), para=P, toks=('503', '465'))
-add('方法 · 研究对象', 're-read for 34 children … 15 were excluded: 6 … and 9',
+add('方法 · 研究对象', 're-read for 34 children … 19 were retained and 15 excluded, 6 … and 9',
     f'S1 核对表 {F["s1_reviewed"]} 例：保留 {F["s1_keep"]}、非本次确认 {F["s1_notconf"]}、复发再手术 {F["s1_reop"]}；{F["s1_keep"]}+{F["s1_notconf"]}+{F["s1_reop"]}={F["s1_keep"]+F["s1_notconf"]+F["s1_reop"]}',
-    (F['s1_reviewed'], F['excluded'], F['s1_notconf'], F['s1_reop']) == (34, 15, 6, 9),
-    issue='"34"在本段与图 1 中指两组不同的患儿（复核的 34 例 vs 不符合入选条件的 34 例），数字巧合相同，读者可能混淆。', status='一致',
-    fix='可选：本段改为 "for 34 children (19 retained)" 或在图 1 注中区分；不改也不算错误', para=P, toks=('34', '15', '6', '9'))
+    (F['s1_reviewed'], F['s1_keep'], F['excluded'], F['s1_notconf'], F['s1_reop']) == (34, 19, 15, 6, 9),
+    para=P, toks=('34', '19', '15', '6', '9'))
 add('方法 · 研究对象', 'The remaining 450 consecutive children', f'465 − 15 = {465-15}；队列 {F["cohort"]}', F['cohort'] == 450, para=P, toks=('450',))
 P = para_of(MS + 'p1.md', '#N Three modalities were evaluated')
 add('方法 · 索引检查', 'Three modalities', 'UGI、CT、超声', status='定义/描述性数字', para=P, toks=('Three',))
@@ -321,7 +320,11 @@ add('图注 · Figure 1', '711 … 503 … 465 … 793 … 723 … 52 … four',
 P = para_of(MS + 'p3.md', '#N **Figure 2.')
 add('图注 · Figure 2', 'Wilson 95% confidence intervals', '定义', status='定义/描述性数字', para=P, toks=('2', '95'))
 P = para_of(MS + 'p3.md', '#N **Figure 3.')
-add('图注 · Figure 3', '117 … two independent readers … Three examinations … 5 of 58', '117；2 位阅读者；D3/DJJ 3；5/58', True, para=P, toks=('3', '117', 'two', 'Three', 'one', '5', '58'))
+add('图注 · Figure 3', '117 … two independent readers … two elements documented in more than seven examinations … Three examinations … 5 of 58',
+    f'117；2 位阅读者；B 栏两项（漩涡征 {T3["whirl_pos"]["n"]}、肠气限制 {T3["gas_limit"]["n"]}）以外各项均 ≤ 7（十二指肠 {T3["duodenum"]["n"]}）；D3/DJJ 3；5/58',
+    max(T3[k]['n'] for k in ['d3_or_djj', 'duodenum', 'sma_smv', 'inversion', 'fluid', 'dynamic', 'compress', 'cecum']) == 7
+    and T3['duodenum']['n'] == 7 and T3['gas_limit']['n'] == 36 and T3['whirl_pos']['n'] == 59,
+    para=P, toks=('3', '117', 'two', 'seven', 'Three', 'one', '5', '58'))
 
 # =============================================================== TABLES (built manuscript)
 D = docx.Document(ROOT + 'JACR_3_Manuscript_masked.docx')
@@ -348,7 +351,7 @@ for row in t1[1:]:
     else:
         key = {'Neonate': 'neonate', 'Age >1 year': 'older', 'Male': 'male', 'Operated 2019': 'era_late', 'Midgut volvulus': 'volvulus',
                'Vomiting': 'vomit', 'Bilious': 'bilious', 'Abdominal distension': 'distension', 'Blood in stool': 'bloody_stool',
-               'Abdominal pain': 'abd_pain', 'Symptoms described': 'duration_chronic', 'Shock': 'shock'}
+               'Abdominal pain': 'abd_pain', 'Gastrointestinal symptoms': 'symptoms_1m', 'Shock': 'shock'}
         k = [v for kk, v in key.items() if lab.startswith(kk)][0]
         for gk, c in zip(gkeys, row[1:]):
             n_, p_ = cell_pct(c); n0 = T1[gk]['n']
@@ -356,9 +359,6 @@ for row in t1[1:]:
             res.append(f'{gk} {T1[gk][k]}/{n0}={pc(T1[gk][k], n0):.2f}%')
     add(f'表 1 · {lab}', ' | '.join(row[1:]), '；'.join(res), ok,
         issue='' if ok else '与独立复算不符', fix='' if ok else '按复核结果修改')
-for i, r in enumerate(ROWS):
-    if r[0].startswith('表 1 · Symptoms described'):
-        ROWS[i] = r[:3] + ('计数无误；但"反复"同时匹配"反复呕吐"，此行不代表慢性或间歇性病程（脚注已说明）', '可保留；如要反映慢性病程需另定口径重新提取') + r[5:]
 # Table 1 internal: neonate + 29d–1y + >1y = n is not shown; age groups checked via strata below
 
 # Table 2
@@ -442,8 +442,8 @@ for row in t4[1:]:
     add(f'表 4 · {row[0]}', ' | '.join(row[1:]), res + '；全部由独立 logistic 回归复算', ok)
 
 # =============================================================== FIGURES
-add('图 1 · 各框', '711；559/499；56/34；503/465；15 (6+9)；484/450；398 (723)；293/313/117；59；52 (11.6%)；44/11/22/7/4；33；17；793→723；32；3',
-    f'{F["db_children"]}；{F["ops_all_records"]}/{F["ops_all_children"]}；{F["not_eligible_records"]}/{F["not_eligible_children"]}；{F["ops_sel_records"]}/{F["ops_sel_children"]}；{F["excluded"]}；'
+add('图 1 · 各框', '711；559/499；56/34；503/465；34 = 19 + 15 (6+9)；484/450；398 (723)；293/313/117；59；52 (11.6%)；44/11/22/7/4；33；17；793→723；32；3',
+    f'{F["db_children"]}；{F["ops_all_records"]}/{F["ops_all_children"]}；{F["not_eligible_records"]}/{F["not_eligible_children"]}；{F["ops_sel_records"]}/{F["ops_sel_children"]}；{F["s1_reviewed"]} = {F["s1_keep"]} + {F["excluded"]} ({F["s1_notconf"]}+{F["s1_reop"]})；'
     f'{F["cohort_records"]}/{F["cohort"]}；{F["imaged"]} ({F["index_exams"]})；{F["n_UGI"]}/{F["n_CT"]}/{F["n_US"]}；{F["all_three"]}；{F["none"]} ({pc(F["none"],450):.1f}%)；'
     f'{F["a55_plain"]}/{F["a55_enema"]}/{F["a55_otherus"]}/{F["a55_otherct"]}/{F["a55_none"]}；{F["a55_outside"]}；{F["a55_outside_mal"]}；{F["eligible_reports"]}→{F["index_exams"]}；{F["earlier_reports"]}；{F["reports_removed_in_cohort"]}。'
     f'流程守恒：559−56=503，465−15=450，398+52=450',
@@ -452,10 +452,11 @@ add('图 2 · 三个点估计与区间', '78.5% 230 of 293；52.7% 165 of 313；
     '与表 2 一致（同一数据）；Wilson 区间同表 2', True)
 add('图 3A · 各条', '3/117 (2.6%)；1/117 (0.9%)；1/117 (0.9%)；2/117 (1.7%)；4/117 (3.4%)；5/117 (4.3%)；7/117 (6.0%)；3/117 (2.6%)；36/117 (30.8%)；59/117 (50.4%)',
     '与表 3 第 1 列逐项一致', all(close(p_, pc(n_, 117)) for n_, p_ in [(3, '2.6'), (1, '0.9'), (2, '1.7'), (4, '3.4'), (5, '4.3'), (7, '6.0'), (36, '30.8'), (59, '50.4')]))
-add('图 3B · 各柱', '100% 59/59；9% 5/58；33% 1/3；55% 63/114；69% 46/67；36% 18/50',
-    f'漩涡征 {T3["whirl_pos"]["det_yes"]}/{T3["whirl_pos"]["det_no"]}；动静脉关系 {T3["sma_smv"]["det_yes"]}/{T3["sma_smv"]["det_no"]}；大血管 {T3["vessel_us"]["det_yes"]}/{T3["vessel_us"]["det_no"]}',
-    T3['sma_smv']['det_yes'] == (1, 3) and T3['vessel_us']['det_yes'] == (46, 67) and T3['vessel_us']['det_no'] == (18, 50),
-    issue='"Vessels addressed" 只有 3 例，柱子与区间几乎无信息量', fix='可选：删去这一对柱子或在图注说明 n=3')
+add('图 3B · 各柱', '100% 59/59；9% 5/58；42% 15/36；60% 49/81；69% 46/67；36% 18/50',
+    '；'.join(f'{lab} 记录 {T3[k]["det_yes"][0]}/{T3[k]["det_yes"][1]} = {pc(*T3[k]["det_yes"]):.0f}%，未记录 {T3[k]["det_no"][0]}/{T3[k]["det_no"][1]} = {pc(*T3[k]["det_no"]):.0f}%'
+             for lab, k in [('漩涡征', 'whirl_pos'), ('肠气限制', 'gas_limit'), ('大血管检查', 'vessel_us')]) + '（与表 3 同一数据）',
+    T3['whirl_pos']['det_yes'] == (59, 59) and T3['whirl_pos']['det_no'] == (5, 58) and T3['gas_limit']['det_yes'] == (15, 36)
+    and T3['gas_limit']['det_no'] == (49, 81) and T3['vessel_us']['det_yes'] == (46, 67) and T3['vessel_us']['det_no'] == (18, 50))
 
 # =============================================================== SUPPLEMENT 1 (text)
 S1F = MS + 'supp1.md'
@@ -949,7 +950,7 @@ foc = [
     ('1. 摘要、正文、表格和图片是否一致',
      '一致。原有一处例外——确定性分级（表 2、补充表 S3）及摘要、正文"排除可能级"的数字取自单份最近报告——已于 2026-10-10 更正（见更正记录）。跨处出现的数字（如 230/293、64/117、3/117、59/112、398、52、723）在摘要、正文、表、图、图注、补充材料和 Cover Letter 中全部相同。'),
     ('2. 分组人数之和是否等于总样本量',
-     '是。398 + 52 = 450；559 − 56 = 503、499 − 34 = 465、465 − 15 = 450；表 4 各时期 204+89、215+98、38+79 等于各检查总数；补充表 S6 各分层分子分母相加等于表 2；表 3 每行"记录/未记录"分母之和 = 117、检出之和 = 64；预约类别 73+67+12−28−4−3 = 117；三组检查人数 293/313/117 有重叠，不应相加（表 1 脚注已说明）。'),
+     '是。398 + 52 = 450；559 − 56 = 503、499 − 34 = 465、465 − 15 = 450；锚定手术复核 34 = 19 保留 + 15 排除（6 + 9）；表 4 各时期 204+89、215+98、38+79 等于各检查总数；补充表 S6 各分层分子分母相加等于表 2；表 3 每行"记录/未记录"分母之和 = 117、检出之和 = 64；预约类别 73+67+12−28−4−3 = 117；三组检查人数 293/313/117 有重叠，不应相加（表 1 脚注已说明）。'),
     ('3. 百分比能否根据分子和分母复算',
      '全部可以复算，且与原文一致（确定性分级相关百分比已更正）。"80.0% vs 70.0%"已补分子分母 [144/180] vs [42/60]；"13% to 51%"复算为 38/296 vs 79/154，正文未列分子分母，属可选补充。'),
     ('4. 表内合计是否正确',
@@ -980,6 +981,9 @@ CORR = [
     ('补充1 · G2', 'institutional surgical records database', 'institutional clinical research database', '与正文一致'),
     ('补充2 · 表 S5', '"<0.001 | <0.001 | 0.002"；表头 "Cochran\'s Q, p"', '"<.001 | <.001 | .002"；表头 "Cochran Q, P"', 'AMA 格式'),
     ('补充2 · 表 S9', '+3.8 → -3.6 pp', '+3.8 → −3.6 pp', '用减号'),
+    ('方法 · 研究对象；图 1', '34 children … and 15 were excluded；图框 "Excluded after review of the anchor operation n = 15"', '34 children …: 19 were retained and 15 excluded；图框 "Anchor operation re-read in 34 children: 19 retained, 15 excluded"', '原文只给出 34 中的 15，且与图 1 中"不符合入选条件的 34 例"同数，易混；补出保留的 19 例（S1 核对表）'),
+    ('表 1 · 第 13 行及脚注', 'Symptoms described as repeated, intermittent or lasting months：212 (47.1) | 146 (49.8) | 144 (46.0) | 52 (44.4) | 19 (36.5)', 'Gastrointestinal symptoms for 1 month or longer：38 (8.4) | 19 (6.5) | 21 (6.7) | 5 (4.3) | 9 (17.3)', '原口径"反复"也匹配数小时内的反复呕吐，不代表慢性病程；改为手术住院入院主诉中消化道症状持续 ≥ 1 个月（脚注写明口径）'),
+    ('图 3B；图 3 图注', '"Vessels addressed / not addressed" 33% 1/3、55% 63/114', '"Bowel gas limiting / No bowel gas limitation" 42% 15/36、60% 49/81；图注写明 B 栏所选项目', '原柱只有 3 例，几乎无信息量；换为记录 36 次的肠气限制（与表 3 同一数据）'),
     ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),
 ]
 wsc = wb.create_sheet('更正记录')

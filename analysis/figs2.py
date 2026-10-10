@@ -52,7 +52,7 @@ ax.set_title(f'A  What the {len(u)} routine ultrasound examinations documented',
 ax.grid(axis='x',color='#e8e8e8'); ax.set_axisbelow(True)
 ax=axes[1]
 groups=[('Whirlpool\nreported','whirl_pos',True),('Whirlpool\nnot reported','whirl_pos',False),
-        ('Vessels\naddressed','sma_smv',True),('Vessels\nnot addressed','sma_smv',False),
+        ('Bowel gas\nlimiting','gas_limit',True),('No bowel gas\nlimitation','gas_limit',False),
         ('Great-vessel\nsession','vessel_us',True),('No great-\nvessel session','vessel_us',False)]
 vals=[];ann=[];err=[[],[]]
 for lab,k,v in groups:
