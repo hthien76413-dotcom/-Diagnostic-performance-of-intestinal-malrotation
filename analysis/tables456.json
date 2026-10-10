@@ -69,28 +69,28 @@
    "20/31 (64.5; 46.9–78.9)"
   ],
   [
-   "Cochran's Q, p",
-   "<0.001",
-   "<0.001",
-   "0.002"
+   "Cochran Q, *P*",
+   "<.001",
+   "<.001",
+   ".002"
   ],
   [
-   "Exact McNemar UGI vs CT: discordant pairs, p",
-   "24/6, p=0.001",
-   "20/4, p=0.002",
-   "12/1, p=0.003"
+   "Exact McNemar UGI vs CT: discordant pairs, *P*",
+   "24/6, *P* = .001",
+   "20/4, *P* = .002",
+   "12/1, *P* = .003"
   ],
   [
-   "Exact McNemar UGI vs US: discordant pairs, p",
-   "20/6, p=0.009",
-   "14/3, p=0.013",
-   "8/1, p=0.039"
+   "Exact McNemar UGI vs US: discordant pairs, *P*",
+   "20/6, *P* = .009",
+   "14/3, *P* = .013",
+   "8/1, *P* = .039"
   ],
   [
-   "Exact McNemar CT vs US: discordant pairs, p",
-   "7/11, p=0.481",
-   "4/9, p=0.267",
-   "2/6, p=0.289"
+   "Exact McNemar CT vs US: discordant pairs, *P*",
+   "7/11, *P* = .481",
+   "4/9, *P* = .267",
+   "2/6, *P* = .289"
   ]
  ],
  "T6": [

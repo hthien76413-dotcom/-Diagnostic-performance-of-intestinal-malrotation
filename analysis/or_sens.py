@@ -21,7 +21,7 @@ for cut in [2019,2020,2021,2022]:
     m1,e1=fit(d); m2,e2=fit(d,'ves')
     S4.append([str(cut),f'{len(a)} / {len(b)}',
                f"{int(a['det'].sum())}/{len(a)} ({100*a['det'].mean():.1f}%) / {int(b['det'].sum())}/{len(b)} ({100*b['det'].mean():.1f}%)",
-               f(m1,'late'),f(m2,'late'),f(m2,'ves'),f'{e1:+.1f} → {e2:+.1f} pp'])
+               f(m1,'late'),f(m2,'late'),f(m2,'ves'),f'{e1:+.1f} → {e2:+.1f} pp'.replace('-', '−')])
 
 # earliest vs closest index unit
 rep['day']=rep['检查时间'].dt.normalize()

@@ -107,18 +107,18 @@ op_year
 tier  definite  probable  possible
 mod                               
 CT          30        73        62
-UGI         75        73        82
-US          15        17        32
+UGI         74        73        83
+US          12        18        34
 tier  definite  probable  possible
 mod                               
 CT        18.2      44.2      37.6
-UGI       32.6      31.7      35.7
-US        23.4      26.6      50.0
+UGI       32.2      31.7      36.1
+US        18.8      28.1      53.1
 
 total positives 459
-  UGI: all-positive 230/293=78.5%   excluding "possible" wording 148/293=50.5%
+  UGI: all-positive 230/293=78.5%   excluding "possible" wording 147/293=50.2%
   CT: all-positive 165/313=52.7%   excluding "possible" wording 103/313=32.9%
-  US: all-positive 64/117=54.7%   excluding "possible" wording 32/117=27.4%
+  US: all-positive 64/117=54.7%   excluding "possible" wording 30/117=25.6%
 ########## paired
 paired n=59 ; span median 0.92 d, IQR 0.62-1.62 ; within2d 47 (80%), >2d 12
 

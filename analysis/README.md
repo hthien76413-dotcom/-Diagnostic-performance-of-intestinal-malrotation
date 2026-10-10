@@ -258,3 +258,9 @@ the abstract, text, tables, figures, legends, Supplements 1-3, cover letter and
 title page against it, checks that every numeric token in the text has a check
 row, and writes `../数字核对表.xlsx` (sheets 说明, 核对表, 问题汇总, 专项检查).
 Run it after any rebuild: `python3 verify_numbers.py`.
+
+The first run of the check found that `cert.py` read the certainty tier from the
+single closest report rather than the pooled episode, which mis-tiered four
+positive episodes; `cert.py` now tiers the pooled conclusion. After that and the
+text corrections listed on the workbook's 更正记录 sheet, every row is consistent
+except one statement that only the department can confirm.

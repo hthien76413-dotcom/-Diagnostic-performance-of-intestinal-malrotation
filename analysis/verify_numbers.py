@@ -63,11 +63,13 @@ def para_of(path, startswith):
 
 
 T1, T2, T3, T4 = F['T1'], F['T2'], F['T3'], F['T4']
+LIT13 = '文献 [13]（Nguyen 等，AJR 2025，PMID 40499019）摘要：旋转不良敏感度原始报告 93%、盲法复读 97%；D3 位置为最准确单一征象（98%）。2026-10-10 检索核对'
+LIT11 = '文献 [11]（Nguyen 等，Arch Dis Child 2021）：17 项研究、2,257 例、合并敏感度 94%（95% CI 89–97）。2026-10-10 检索核对'
+LIT14 = '文献 [14]（Binu 等，J Pediatr Surg 2021，单中心 Adelaide）：539 例因临床怀疑行超声。2026-10-10 检索核对'
 
 # =============================================================== ABSTRACT
 P = para_of(MS + 'p1.md', '#N **Objective:**')
-add('摘要 · Objective', '93–97%', '文献数值（[11]、[13]），不能用本研究数据复核', status='需核对原始文献', para=P, toks=('93', '97'),
-    issue='文献数字', fix='投稿前对照 [13] 原文核对（93% 原始报告、97% 盲法复读）')
+add('摘要 · Objective', '93–97%', LIT13, True, para=P, toks=('93', '97'))
 P = para_of(MS + 'p1.md', '#N **Methods:**')
 add('摘要 · Methods', 'December 2012–June 2026', f'队列首次手术日期 {coh.op_dt.min():%Y-%m-%d} 至 {coh.op_dt.max():%Y-%m-%d}，均在研究期内', para=P, toks=('2012', '2026'))
 add('摘要 · Methods', 'Wilson 95% CIs', '方法描述；全文检出率区间均按 Wilson 法复算（见下）', status='定义/描述性数字', para=P, toks=('95',))
@@ -96,24 +98,20 @@ add('摘要 · Results', 'whirlpool … in 59 of 112 children with operatively c
 ok, r = rate(T2['US']['named'], 117, '53.8')
 add('摘要 · Results', 'Detection was 53.8% counting only conclusions naming malrotation', f'{T2["US"]["named"]}/117；{r}', ok, para=P, toks=('53.8',))
 us_ex = T2['US']['k'] - T2['US']['poss']
-ok, r = rate(us_ex, 117, '27.4')
-add('摘要 · Results', '27.4% excluding tentative wording',
-    f'按合并同日报告（索引单位）的结论复算："可能"级 {T2["US"]["poss"]} 份，(64−{T2["US"]["poss"]})/117 = {us_ex}/117 = {pc(us_ex,117):.1f}%。'
-    f'原值 27.4% = 32/117，来自 cert.py 只读"距手术最近的单份报告"结论',
-    ok, issue='确定性分级程序取的是单份报告结论而非合并后的检查次结论：4 个阳性检查次（407824 UGI、2352323、4310607、5574297 超声）中最近一份是阴性的配套报告或空白，被默认为"definite"。',
-    fix=f'改为 {pc(us_ex,117):.1f}%；同时修正 cert.py 使用合并后的检查次结论，重算表 2 与补充表 S3', para=P, toks=('27.4',))
+ok, r = rate(us_ex, 117, '25.6')
+add('摘要 · Results', '25.6% excluding tentative wording',
+    f'按合并同日报告（索引单位）的结论复算："可能"级 {T2["US"]["poss"]} 份，(64−{T2["US"]["poss"]})/117 = {us_ex}/117 = {pc(us_ex,117):.1f}%（2026-10-10 已由 27.4% 更正）',
+    ok, para=P, toks=('25.6',))
 
 # =============================================================== INTRODUCTION
 P = para_of(MS + 'p1.md', '#N The upper gastrointestinal (UGI) contrast series')
 add('引言 第2段', '93–97%；17 studies and 2,257 children；pooled sensitivity of 94%；539 children',
-    '文献数值（[11]–[14]），非本研究数据', status='需核对原始文献', para=P, toks=('93', '97', '17', '2,257', '94', '539'),
-    issue='文献数字', fix='对照 [11]（17 项研究、2,257 例、合并敏感度 94%）、[13]、[14]（539 例）原文核对')
+    LIT13 + '；' + LIT11 + '；' + LIT14, True, para=P, toks=('93', '97', '17', '2,257', '94', '539'))
 P = para_of(MS + 'p1.md', '#N The 2025 multicenter series')
 add('引言 第3段', '2025 multicenter series', '文献 [13] 发表年份 2025（参考文献列表一致）', status='定义/描述性数字', para=P, toks=('2025',))
 P = para_of(MS + 'p1.md', '#N We therefore audited')
-add('引言 第4段', '13.5 years', f'2012 年 12 月至 2026 年 6 月共 {F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年',
-    False, issue='按月计为 13.6 年；"13.5 years"略小（若按首例手术 2012-12-29 至末例 2026-06-02 计为 13.4 年）。',
-    fix='改为 "13.6 years" 或 "the 13 years and 7 months from December 2012 to June 2026"；讨论第1段、Cover Letter 同改', para=P, toks=('13.5',))
+add('引言 第4段', '13.6 years', f'2012 年 12 月至 2026 年 6 月共 {F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年（2026-10-10 由 13.5 更正）',
+    close('13.6', F['study_months'] / 12), para=P, toks=('13.6',))
 
 # =============================================================== METHODS
 P = para_of(MS + 'p1.md', '#N This was a retrospective')
@@ -165,9 +163,9 @@ add('方法 · 统计', 'Wilson 95% … era (2012–2018 vs 2019–2026)', '分�
 add('方法 · 统计', 'no ultrasound examination was positive among the five children without volvulus',
     f'超声且无扭转 {F["ST"][("US","novolv")][1]} 例，检出 {F["ST"][("US","novolv")][0]} 例', F['ST'][('US', 'novolv')] == (0, 5), para=P, toks=('five',))
 add('方法 · 统计', 'the era boundary was varied from 2019 to 2022', '补充表 S9 含 2019/2020/2021/2022 四个边界', status='定义/描述性数字', para=P, toks=('2019', '2022'))
-add('方法 · 统计', 'Python 3.12 (statsmodels 0.15, SciPy 1.17)',
-    f'本次重算环境：Python {F["software"]["python"]}，statsmodels {F["software"]["statsmodels"]}，SciPy {F["software"]["scipy"]}', False,
-    issue='Python 版本写错（实际 3.11）', fix=f'改为 "Python 3.11 (statsmodels 0.15, SciPy 1.17)"', para=P, toks=('3.12', '0.15', '1.17'))
+add('方法 · 统计', 'Python 3.11 (statsmodels 0.15, SciPy 1.17)',
+    f'运行环境：Python {F["software"]["python"]}，statsmodels {F["software"]["statsmodels"]}，SciPy {F["software"]["scipy"]}（2026-10-10 由 3.12 更正）',
+    F['software']['python'].startswith('3.11') and F['software']['statsmodels'].startswith('0.15') and F['software']['scipy'].startswith('1.17'), para=P, toks=('3.11', '0.15', '1.17'))
 
 # =============================================================== RESULTS
 P = para_of(MS + 'p2.md', '#N Of 450 children')
@@ -190,10 +188,10 @@ add('结果 · 队列 第2段', 'Ultrasound was performed more often in children
     f'扭转患儿做超声 {F["us_given_volv"][0]}/{F["us_given_volv"][1]} = {pc(*F["us_given_volv"]):.1f}%；无扭转 {F["us_given_novolv"][0]}/{F["us_given_novolv"][1]} = {pc(*F["us_given_novolv"]):.1f}%（未做检验，描述性）',
     True, para=P, toks=())
 po = F['POS']
-add('结果 · 队列 第2段', 'UGI last in 75.0% … against 19.2% for CT … 80.0% vs 70.0%',
+add('结果 · 队列 第2段', 'UGI last in 75.0% … against 19.2% for CT … 80.0% [144/180] vs 70.0% [42/60]',
     f'≥2 项索引检查者中：UGI 为最后一项 {po["UGI"]["last"]}/{po["UGI"]["had"]} = {pc(po["UGI"]["last"],po["UGI"]["had"]):.1f}%；CT {po["CT"]["last"]}/{po["CT"]["had"]} = {pc(po["CT"]["last"],po["CT"]["had"]):.1f}%；UGI 检出 最后 {po["UGI"]["det_last"]:.1f}% vs 较早 {po["UGI"]["det_earlier"]:.1f}%',
     close('75.0', pc(po['UGI']['last'], po['UGI']['had'])) and close('19.2', pc(po['CT']['last'], po['CT']['had'])) and close('80.0', po['UGI']['det_last']) and close('70.0', po['UGI']['det_earlier']),
-    issue='80.0% vs 70.0% 未给分子分母和区间', fix='可选：补 "(144/180 vs 42/60)" 以便复算', para=P, toks=('75.0', '19.2', '80.0', '70.0'))
+    para=P, toks=('75.0', '19.2', '80.0', '144', '180', '70.0', '42', '60'))
 P = para_of(MS + 'p2.md', '#N Detection was 230/293')
 for m, s, k_, n_, pct_, lo_, hi_ in [('UGI', 'UGI series', 230, 293, '78.5', '73.4', '82.8'), ('CT', 'CT', 165, 313, '52.7', '47.2', '58.2'), ('US', 'ultrasound', 64, 117, '54.7', '45.7', '63.4')]:
     ok1, r1 = rate(T2[m]['k'], T2[m]['n'], pct_); ok2, r2 = wil(T2[m]['k'], T2[m]['n'], lo_, hi_)
@@ -204,12 +202,10 @@ add('结果 · 检出率 段', 'In a GEE model adjusted for era and age group, C
     f'GEE 调整 OR：CT {g["ct_a"][0]:.2f} ({g["ct_a"][1]:.2f}–{g["ct_a"][2]:.2f}) P={g["ct_a"][3]:.2g}；超声 {g["us_a"][0]:.2f} ({g["us_a"][1]:.2f}–{g["us_a"][2]:.2f}) P={g["us_a"][3]:.2g}；文字与 P 值一致（同一软件重拟合）',
     g['ct_a'][2] < 1 and g['us_a'][2] < 1, para=P, toks=())
 ugi_ex = T2['UGI']['k'] - T2['UGI']['poss']; ct_ex = T2['CT']['k'] - T2['CT']['poss']
-add('结果 · 检出率 段', 'Reclassifying possible-tier conclusions … 50.5%, 32.9% and 27.4%',
+add('结果 · 检出率 段', 'Reclassifying possible-tier conclusions … 50.2%, 32.9% and 25.6%',
     f'按合并检查次结论复算："可能"级 UGI {T2["UGI"]["poss"]}、CT {T2["CT"]["poss"]}、超声 {T2["US"]["poss"]}；'
     f'{ugi_ex}/293 = {pc(ugi_ex,293):.1f}%，{ct_ex}/313 = {pc(ct_ex,313):.1f}%，{us_ex}/117 = {pc(us_ex,117):.1f}%',
-    close('50.5', pc(ugi_ex, 293)) and close('27.4', pc(us_ex, 117)),
-    issue='同摘要：分级取自单份最近报告；UGI 与超声各有阳性检查次被误判为 definite（UGI 1 次、超声 3 次）。CT 不受影响。',
-    fix=f'改为 "{pc(ugi_ex,293):.1f}%, {pc(ct_ex,313):.1f}% and {pc(us_ex,117):.1f}%"', para=P, toks=('50.5', '32.9', '27.4'))
+    close('50.2', pc(ugi_ex, 293)) and close('32.9', pc(ct_ex, 313)) and close('25.6', pc(us_ex, 117)), para=P, toks=('50.2', '32.9', '25.6'))
 add('结果 · 检出率 段', 'counting only conclusions that named malrotation gave 77.8%, 48.6% and 53.8%',
     f'{T2["UGI"]["named"]}/293 = {pc(T2["UGI"]["named"],293):.1f}%；{T2["CT"]["named"]}/313 = {pc(T2["CT"]["named"],313):.1f}%；{T2["US"]["named"]}/117 = {pc(T2["US"]["named"],117):.1f}%',
     close('77.8', pc(T2['UGI']['named'], 293)) and close('48.6', pc(T2['CT']['named'], 313)) and close('53.8', pc(T2['US']['named'], 117)), para=P, toks=('77.8', '48.6', '53.8'))
@@ -225,10 +221,10 @@ add('结果 · 超声内容 第1段', 'Enteric fluid twice, graded compression o
     f'给液 {T3["fluid"]["n"]}；加压 {T3["compress"]["n"]}；漩涡征 {T3["whirl_pos"]["n"]} ({pc(59,117):.2f}%)；肠气 {T3["gas_limit"]["n"]} ({pc(36,117):.2f}%)',
     (T3['fluid']['n'], T3['compress']['n'], T3['whirl_pos']['n'], T3['gas_limit']['n']) == (2, 1, 59, 36) and close('30.8', pc(36, 117)),
     para=P, toks=('twice', 'once', '59', '50.4', '36', '30.8'))
-add('结果 · 超声内容 第1段', 'Reader agreement was 1,423 of 1,428 item codes (kappa 0.80–1.00)',
+add('结果 · 超声内容 第1段', 'Reader agreement was 1,423 of 1,428 item codes in the 119 episodes read (kappa 0.80–1.00)',
     f'一致 {F["cells_agree"]}/{F["cells"]}；各项 kappa 最小 {min(v["kappa"] for v in F["KAP"].values()):.2f}、最大 {max(v["kappa"] for v in F["KAP"].values()):.2f}',
     (F['cells_agree'], F['cells']) == (1423, 1428) and close('0.80', min(v['kappa'] for v in F['KAP'].values()), 2),
-    issue='一致性是在 119 份上计算的（含后来排除的 2 份），正文未说明分母', fix='可选：改为 "1,423 of 1,428 item codes in the 119 episodes read"', para=P, toks=('1,423', '1,428', '0.80', '1.00'))
+    para=P, toks=('1,423', '1,428', '119', '0.80', '1.00'))
 P = para_of(MS + 'p2.md', '#N In 2018 the horizontal duodenum')
 add('结果 · 超声内容 第2段', 'In 2018 … in 2022 … in 2024', f'记录 D3/DJJ 的 3 次检查年份 {F["d3_years"]}', F['d3_years'] == [2018, 2022, 2024], para=P, toks=('2018', '2022', '2024'))
 P = para_of(MS + 'p2.md', '#N The diagnosis was named in all 59')
@@ -286,14 +282,13 @@ add('结果 · 亚组', 'Only 5 of the 53 children … no volvulus underwent ult
     para=P, toks=('5', '53'))
 
 # =============================================================== DISCUSSION
-P = para_of(MS + 'p3.md', '#N Over 13.5 years')
-add('讨论 第1段', 'Over 13.5 years', f'{F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年', False, issue='同引言', fix='改为 13.6 years 或写明起止月份', para=P, toks=('13.5',))
+P = para_of(MS + 'p3.md', '#N Over 13.6 years')
+add('讨论 第1段', 'Over 13.6 years', f'{F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年', close('13.6', F['study_months'] / 12), para=P, toks=('13.6',))
 add('讨论 第1段', 'three of 117 examinations, enteric fluid in two', 'D3/DJJ 3；给液 2', True, para=P, toks=('three', '117', 'two'))
 add('讨论 第1段', 'about half of all examinations and of the children in whom operation confirmed volvulus', '59/117 = 50.4%；59/112 = 52.7%', True, para=P, toks=('half',))
 P = para_of(MS + 'p3.md', '#N Malrotation or volvulus was named in 54.7%')
 add('讨论 第2段', '54.7%', '64/117 = 54.70%', close('54.7', pc(64, 117)), para=P, toks=('54.7',))
-add('讨论 第2段', '93% … 97% … 2025 multicenter series [13]; pooled 94% [11]', '文献数值', status='需核对原始文献', para=P, toks=('93', '97', '2025', '94', '2025'),
-    issue='文献数字', fix='对照 [13]、[11] 原文')
+add('讨论 第2段', '93% … 97% … 2025 multicenter series [13]; pooled 94% [11]', LIT13 + '；' + LIT11, True, para=P, toks=('93', '97', '2025', '94', '2025'))
 add('讨论 第2段', '25.7% of examinations for malrotation were non-diagnostic [25]', '文献 [25]：80/311 = 25.7%（原始报告；盲法复读 37.6%），2026-10-09 已检索 Springer/PubMed 摘要核对',
     close('25.7', pc(80, 311)), para=P, toks=('25.7',))
 P = para_of(MS + 'p3.md', '#N The temporal analysis is exploratory')
@@ -304,7 +299,7 @@ add('讨论 第4段', 'Three features … the last preoperative test in 75.0% of
     f'{po["UGI"]["last"]}/{po["UGI"]["had"]} = {pc(po["UGI"]["last"],po["UGI"]["had"]):.2f}%；"三个特征"为描述性计数（参考标准不独立、路径位置、人群不同）',
     close('75.0', pc(po['UGI']['last'], po['UGI']['had'])), para=P, toks=('Three', '75.0'))
 P = para_of(MS + 'p3.md', '#N Departments adopting')
-add('讨论 第5段', '93–97%', '文献数值', status='需核对原始文献', para=P, toks=('93', '97'), issue='文献数字', fix='同摘要')
+add('讨论 第5段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
 P = para_of(MS + 'p3.md', '#N This is not a diagnostic accuracy study')
 add('讨论 · 局限 第1段', 'The 52 children without an index test … as were 9 … from 88.2% to 84.0%',
     f'无索引检查 {F["none"]}；复发再手术 {F["s1_reop"]}；扭转 {F["VD"]["primary"][0]}/450 = {pc(F["VD"]["primary"][0],450):.2f}% → {F["VD"]["A"][0]}/450 = {pc(F["VD"]["A"][0],450):.2f}%',
@@ -467,10 +462,9 @@ S1F = MS + 'supp1.md'
 P = para_of(S1F, '#N Radiology reports at the study institution')
 add('补充1 · A', 'two operations … two readers', '描述性', status='定义/描述性数字', para=P, toks=('two', 'two'))
 P = para_of(S1F, '#N Each report was split into a findings section')
-add('补充1 · B', 'five reports were changed to positive because a malrotation sign appeared in the findings section without being carried into the conclusion … differ in those five reports',
-    '靶向样本（潜在漏判）中 5 份改判阳性的报告，结论本身就提出了诊断（多为"建议进一步检查除外先天性肠旋转不良""请临床除外肠旋转不良""不除外肠旋转不良所致"等规避性措辞，属规则 E2），所见中并无未带入结论的征象；最终标签与"结论点名诊断"不一致的，是 G 节第 3 样本中确认无误的 6 例（形态描述 4、交叉引用 1、标签来自更早检查 1）',
-    False, issue='"5"这个数字本身对，但对这 5 份报告原因的描述与原始核对表不符',
-    fix='改为 "five reports were changed to positive because their conclusion raised the diagnosis in hedged-exclusion wording (rule E2) that the machine label had missed"；"differ in those five reports" 改为指 Section G 中确认的 6 个单元', para=P, toks=('five', 'two', 'five'))
+add('补充1 · B', 'the two differ in the seven index units listed in Section J',
+    f'参考实现与最终标签不一致 {sum(v_[2]+v_[3] for v_ in F["CLS"].values())} 个单元（第 J 节）；原"五份报告因所见中的征象改判"的说法已于 2026-10-10 更正', sum(v_[2] + v_[3] for v_ in F['CLS'].values()) == 7,
+    para=P, toks=('two', 'two', 'seven'))
 P = para_of(S1F, '#N **E1 Negation.**')
 add('补充1 · E1', 'twelve characters', '规则参数（classifier.py 中窗口为 12 字）', status='定义/描述性数字', para=P, toks=('twelve',))
 P = para_of(S1F, '#N Rules were applied in this order')
@@ -484,20 +478,18 @@ add('补充1 · G 样本1', '24 … three modalities … 22/24 (92%); kappa 0.83
     close('88', pc(*bm['造影']), 0) and close('88', pc(*bm['CT']), 0) and bm['超声'][0] == bm['超声'][1], para=P,
     toks=('24', 'three', '22', '24', '92', '0.83', '95', '0.61', '1.00', '1', '88', '88', '100'))
 P = para_of(S1F, '#N **Sample 2 (targeted).**')
-add('补充1 · G 样本2', 'The 8 reports in which a malrotation sign appeared in the findings section while the machine label was negative. Five were confirmed …',
-    f'潜在漏判表 {F["targeted"]["rows"]} 行 = {F["targeted"]["unique"]} 份报告（4921963 重复 1 行）；判阳 {F["targeted"]["undercalls"]}。核对表的筛选条件是"结论或所见出现旋转不良/漩涡/扭转等词"，8 份的结论都含相关词语',
-    False, issue='数字正确，但样本 2 的筛选条件写成了"所见中出现征象"，与核对表说明不符',
-    fix='改为 "The 8 reports whose conclusion or findings contained a malrotation, whirlpool or volvulus term while the machine label was negative. Five were confirmed as under-calls (hedged-exclusion wording, rule E2) and corrected."', para=P, toks=('8', 'Five'))
+add('补充1 · G 样本2', 'The 8 reports whose conclusion or findings contained a malrotation, whirlpool or volvulus term … Five … all five named malrotation in the conclusion',
+    f'潜在漏判表 {F["targeted"]["rows"]} 行 = {F["targeted"]["unique"]} 份报告（4921963 重复 1 行）；判阳 {F["targeted"]["undercalls"]}，5 份结论均含"旋转不良"（不除外/建议除外/请临床除外/可以考虑）', (F['targeted']['unique'], F['targeted']['undercalls']) == (8, 5),
+    para=P, toks=('8', 'Five', 'five'))
 P = para_of(S1F, '#N **Sample 3 (two-directional screen')
 add('补充1 · G 样本3', 'two … one … nine units … the 740 index units held before the review … none of the nine',
     f'待核清单 {F["nine"]} 例；复核前索引单位 740（复核后 723）；9 例均不在被剔除的患儿或报告中', True, para=P, toks=('two', 'one', 'nine', 'nine', '740', 'nine'))
 P = para_of(S1F, '#N Three were over-calls')
 add('补充1 · G 样本3', 'Three were over-calls … two CT units … one bedside ultrasound', 'label_corrections.csv：4331826 CT、35807877 CT、10140565 US', True, para=P, toks=('Three', 'two', 'one'))
 P = para_of(S1F, '#N The other six were confirmed')
-add('补充1 · G 样本3', 'The other six … Four describe … One is a conclusion consisting only of a cross-reference … In one child … an examination 2.4 days earlier recorded a whirlpool',
-    '待核清单：裁定正确 5 例 + 导出缺报告 1 例 = 6 例（4 形态描述 + 1 交叉引用 5001066 + 1 标签来自更早检查 35792266）。35792266：有漩涡征的检查在 2024-11-18 15:03，索引检查次 2024-11-19 09:49（相隔 0.8 天），手术 2024-11-21（距 2.4 天）',
-    False, issue='"2.4 days earlier"指的是距手术 2.4 天，而文中读起来像是比索引检查早 2.4 天；实际比索引检查早 0.8 天',
-    fix='改为 "an examination 0.8 days earlier (2.4 days before operation) recorded a whirlpool"', para=P, toks=('six', 'Four', 'One', 'one', '2.4', 'one'))
+add('补充1 · G 样本3', 'The other six … Four … One … In one child … an examination 0.8 days earlier (2.4 days before operation) recorded a whirlpool',
+    '待核清单：裁定正确 5 + 导出缺报告 1 = 6（4 形态描述 + 1 交叉引用 5001066 + 1 标签来自更早检查 35792266）。35792266：漩涡征检查 2024-11-18 15:03，索引检查次 2024-11-19 09:49（相隔 0.8 天），手术 2024-11-21（2.4 天）',
+    True, para=P, toks=('six', 'Four', 'One', 'one', '0.8', '2.4', 'one'))
 P = para_of(S1F, '#N **Direction of error.**')
 add('补充1 · G 误差方向', 'All 7 discordances … two … 3 over-calls … Ten corrections … 7 in one direction and 3 in the other',
     f'样本1 不一致 {v["n"]-v["agree"]}（均为机判阴、医师判阳）+ 样本2 {F["targeted"]["undercalls"]} = 7；+ 3 = 10', v['n'] - v['agree'] + F['targeted']['undercalls'] == 7,
@@ -513,15 +505,15 @@ add('补充1 · J', '723 … 716 of 723 (99.0%): 291 of 293 (99.3%), 309 of 313 
 P = para_of(S1F, '#N These 7 disagreements are not the same set')
 add('补充1 · J', '7 … 10 … two … 723', '同上', True, para=P, toks=('7', '10', 'two', '10', '7', '723', '7', '2'))
 P = para_of(S1F, '#N The 7 share the failure modes')
-add('补充1 · J', 'The 7 share the failure modes listed in Section G',
-    '7 个不一致单元：442644 CT、3824467 CT、8294385 CT、8325283 UGI（形态描述）、955038 UGI、5001066 CT（交叉引用）、35792266 超声（索引检查次阴性、标签来自更早的检查）',
-    False, issue='35792266 属于"标签取自更早检查"，不在所列三种失败方式中', fix='句末补 "and one unit whose label reflects an earlier examination (Section G)"', para=P, toks=('7', '7'))
+add('补充1 · J', 'The 7 share the failure modes … in one ultrasound unit the label reflects an earlier examination',
+    '7 个不一致单元：955038 UGI（征象只在所见）、442644/3824467/8294385 CT 与 8325283 UGI（形态描述）、5001066 CT（交叉引用）、35792266 超声（标签来自更早检查）',
+    True, para=P, toks=('7', 'one', '7'))
 P = para_of(S1F, '#N This exercise has two limitations')
 add('补充1 · J', 'two limitations … two sets … seven units', '描述性；7 与上文一致', True, para=P, toks=('two', 'two', 'seven'))
-P = para_of(S1F, '#N Children were retrieved from the institutional surgical records')
+P = para_of(S1F, '#N Children were retrieved from the institutional clinical research')
 add('补充1 · G2', '711 … 499 … 559 … 503 records in 465 … 15 … 484 records in 450 … 34 children not returned',
     f'{F["db_children"]}；{F["ops_all_children"]}/{F["ops_all_records"]}；{F["ops_sel_records"]}/{F["ops_sel_children"]}；{F["excluded"]}；{F["cohort_records"]}/{F["cohort"]}；{F["not_eligible_children"]}',
-    True, issue='数字一致；但本段仍写 "institutional surgical records database"，正文已改为 "institutional clinical research database"', fix='改为 "institutional clinical research database"，与正文一致', para=P,
+    True, para=P,
     toks=('711', '499', '559', '503', '465', '15', '484', '450', '34'))
 P = para_of(S1F, '#N Content coding was applied to the concatenated')
 add('补充1 · H', 'two … one', '描述性', status='定义/描述性数字', para=P, toks=('two', 'one'))
@@ -655,10 +647,10 @@ for row in t[1:-1]:
         f'{x["n"]}；阳性 {x["k"]} ({pc(x["k"],x["n"]):.2f}%)、阴性 {x["n"]-x["k"]} ({pc(x["n"]-x["k"],x["n"]):.2f}%)；分级（合并检查次）{x["def"]}/{x["prob"]}/{x["poss"]}',
         ok_counts and ok_tiers, issue='' if ok_tiers else '分级取自单份最近报告（同表 2）', fix='' if ok_tiers else f'分级改为 {x["def"]} | {x["prob"]} | {x["poss"]}')
 sums = [sum(T2[m][k] for m in ['UGI', 'CT', 'US']) for k in ('def', 'prob', 'poss')]
-add('补充1 · 表 S3 · All three', ' | '.join(tot_row[1:]),
+ok_lab = tot_row[0] == 'Total'
+add(f'补充1 · 表 S3 · {tot_row[0]}', ' | '.join(tot_row[1:]),
     f'合计 723 = 293+313+117；阳性 459 = 230+165+64；阴性 264；分级合计（合并检查次）{sums[0]}/{sums[1]}/{sums[2]}',
-    [int(x) for x in tot_row[1:4]] == [723, 459, 264] and [int(x) for x in tot_row[4:7]] == sums,
-    issue='分级合计随上两行一起需改；另外行名"All three"易被误读为"三项都做的亚组"', fix=f'分级合计改为 {sums[0]} | {sums[1]} | {sums[2]}；行名改为 "Total"')
+    [int(x) for x in tot_row[1:4]] == [723, 459, 264] and [int(x) for x in tot_row[4:7]] == sums and ok_lab)
 # S4 (GEE)
 t = SUP2[0]
 for row, key in zip(t[1:], [('ct_u', 'ct_a'), ('us_u', 'us_a'), (None, 'era'), (None, 'inf'), (None, 'old')]):
@@ -686,14 +678,14 @@ for row in t[1:]:
             issue='超声检出与漩涡征三列完全相同' if k == 'WH' else '', fix='' if k != 'WH' else '无需修改（59 例中所有阳性均有漩涡征、所有漩涡征均阳性，属实）', status='一致' if ok else None)
     elif lab.startswith("Cochran"):
         qs = [F['PS'][s_]['Q'][1] for s_ in ('all', '48h', '24h')]
-        ok = qs[0] < .001 and qs[1] < .001 and close(row[3].replace('<', ''), qs[2], 3)
-        add(f'补充2 · 表 S5 · {lab}', ' | '.join(row[1:]), f'自算 Cochran Q P：{", ".join(f"{q:.4f}" for q in qs)}', ok,
-            issue='P 值格式未按 AMA（"<0.001""0.002"保留了前导零，表头仍为小写 p）；数值无误', fix='改为 "<.001 | <.001 | .002"，表头 "Cochran Q, P"', status='一致')
+        ok = qs[0] < .001 and qs[1] < .001 and close('0' + row[3].replace('<', ''), qs[2], 3)
+        fmt_ok = row[1:] == ['<.001', '<.001', '.002'] and 'Cochran Q' in lab
+        add(f'补充2 · 表 S5 · {lab}', ' | '.join(row[1:]), f'自算 Cochran Q P：{", ".join(f"{q:.4f}" for q in qs)}；AMA 格式', ok and fmt_ok)
     else:
         pair = {'UGI vs CT': 'ugi_ct', 'UGI vs US': 'ugi_us', 'CT vs US': 'ct_us'}
         k = [vv for kk, vv in pair.items() if kk in lab][0]; ok = True; res = []
         for col, s_ in zip(row[1:], ['all', '48h', '24h']):
-            b_, c_, p_ = F['PS'][s_][k]; a_ = re.match(r'(\d+)/(\d+), P = \.(\d+)', col)
+            b_, c_, p_ = F['PS'][s_][k]; a_ = re.match(r'(\d+)/(\d+), P [=<] \.(\d+)', col)
             ok &= (int(a_.group(1)), int(a_.group(2))) == (b_, c_) and close('0.' + a_.group(3), p_, 3)
             res.append(f'{b_}/{c_} P {p_:.4f}')
         add(f'补充2 · 表 S5 · {lab}', ' | '.join(row[1:]), '自算精确 McNemar：' + '；'.join(res), ok)
@@ -798,9 +790,9 @@ for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:',
     P = para_of(CF, start); add('Cover Letter · 抬头', txt, '联系信息/日期，不属研究数据', status='定义/描述性数字', para=P,
                                 toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 8, 2026': ('8', '2026')}[start])
 P = para_of(CF, '#N Ultrasound-first pathways')
-add('Cover Letter 第2段', '93–97%', '文献数值', status='需核对原始文献', para=P, toks=('93', '97'), issue='文献数字', fix='同摘要')
-P = para_of(CF, '#N We audited 13.5 years')
-add('Cover Letter 第3段', '13.5 years', '163 个月', False, issue='同引言', fix='改为 13.6 years', para=P, toks=('13.5',))
+add('Cover Letter 第2段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
+P = para_of(CF, '#N We audited 13.6 years')
+add('Cover Letter 第3段', '13.6 years', f'{F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年', close('13.6', F['study_months'] / 12), para=P, toks=('13.6',))
 add('Cover Letter 第3段', '723 … 398 … three of 117 (2.6%) … stated in three … twice … 50.4% … 5 of the 58 … 59 of the 112', '与正文一致', True, para=P,
     toks=('723', '398', 'three', '117', '2.6', 'three', 'twice', '50.4', '5', '58', '59', '112'))
 P = para_of(CF, '#N The manuscript is original')
@@ -809,9 +801,9 @@ for start in ['#N Department of General Surgery', '#N Jun Yang, MD', '#N On beha
     COVER.setdefault(para_of(CF, start), [])
 TF = MS + 'titlepage.md'
 wc = int(__import__('subprocess').run(['python3', 'wc.py'], cwd=MS, capture_output=True, text=True).stdout.strip())
-add('Title Page · Word count', '2,977 … Abstract: 248 words', f'wc.py 计数 {wc}；jacr_check 摘要 248 词', wc == 2977, para=para_of(TF, '#N **Word count:**'), toks=('2,977', '248'))
+add('Title Page · Word count', f'{wc:,} … Abstract: 248 words', f'wc.py 计数 {wc}；jacr_check 摘要 248 词', wc == int(re.search(r'Word count:\*\* ([\d,]+)', io.open(TF, encoding='utf-8').read()).group(1).replace(',', '')), para=para_of(TF, '#N **Word count:**'), toks=(f'{wc:,}', '248'))
 add('Title Page · Tables/Figures', 'Tables: 4 | Figures: 3 | Supplements 1–3', '正文 4 表 3 图；补充材料 3 份', True, para=para_of(TF, '#N **Tables:**'), toks=('4', '3', '1', '3', '1'))
-add('正文首页 · Word count 行', 'Word count: 2,977 … Tables: 4; Figures: 3; Supplements 1–3', f'同上 {wc}', wc == 2977, para=para_of(MS + 'p1.md', '#N Word count:'), toks=('2,977', '4', '3', '1', '3'))
+add('正文首页 · Word count 行', f'Word count: {wc:,} … Tables: 4; Figures: 3; Supplements 1–3', f'同上 {wc}', wc == int(re.search(r'Word count:\*\* ([\d,]+)', io.open(TF, encoding='utf-8').read()).group(1).replace(',', '')), para=para_of(MS + 'p1.md', '#N Word count:'), toks=(f'{wc:,}', '4', '3', '1', '3'))
 
 # =============================================================== COVERAGE CHECK
 WORDS = r'fifty-nine|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|twenty|thirty|forty|fifty|twice|once|half|halved'
@@ -913,7 +905,7 @@ def sheet(ws, header, rows, widths, fills=None):
 wb = Workbook()
 info = wb.active; info.title = '说明'
 lines = [
-    ('数字核对表 · JACR 稿件（2026-10-09 版本）', True),
+    ('数字核对表 · JACR 稿件（2026-10-10 更正后版本）', True),
     ('', False),
     ('核对范围', True),
     ('摘要、正文、表 1–4、图 1–3 与图注、Take-Home Points、补充材料 1–3（正文与表 S1–S14、图 S1）、Cover Letter 与 Title Page 中的全部数字。', False),
@@ -955,21 +947,43 @@ sheet(ws2, ['优先级', '原文位置', '原数值', '复核结果', '问题', 
 ws3 = wb.create_sheet('专项检查')
 foc = [
     ('1. 摘要、正文、表格和图片是否一致',
-     '一致，有一处例外：确定性分级（表 2、补充表 S3）与摘要、正文"排除可能级"的数字来自同一个有误的中间结果，彼此一致，但都与按索引检查次重算的结果不符（见问题汇总）。其余跨处出现的数字（如 230/293、64/117、3/117、59/112、398、52、723）在摘要、正文、表、图、图注、补充材料和 Cover Letter 中全部相同。'),
+     '一致。原有一处例外——确定性分级（表 2、补充表 S3）及摘要、正文"排除可能级"的数字取自单份最近报告——已于 2026-10-10 更正（见更正记录）。跨处出现的数字（如 230/293、64/117、3/117、59/112、398、52、723）在摘要、正文、表、图、图注、补充材料和 Cover Letter 中全部相同。'),
     ('2. 分组人数之和是否等于总样本量',
      '是。398 + 52 = 450；559 − 56 = 503、499 − 34 = 465、465 − 15 = 450；表 4 各时期 204+89、215+98、38+79 等于各检查总数；补充表 S6 各分层分子分母相加等于表 2；表 3 每行"记录/未记录"分母之和 = 117、检出之和 = 64；预约类别 73+67+12−28−4−3 = 117；三组检查人数 293/313/117 有重叠，不应相加（表 1 脚注已说明）。'),
     ('3. 百分比能否根据分子和分母复算',
-     '全部可以复算，且与原文一致，唯一例外是确定性分级相关的百分比（分子有误）。另有两处正文未给出分子分母（"80.0% vs 70.0%"、"13% to 51%"），已复算为 144/180 vs 42/60、38/296 vs 79/154，建议补上。'),
+     '全部可以复算，且与原文一致（确定性分级相关百分比已更正）。"80.0% vs 70.0%"已补分子分母 [144/180] vs [42/60]；"13% to 51%"复算为 38/296 vs 79/154，正文未列分子分母，属可选补充。'),
     ('4. 表内合计是否正确',
-     '正确。表 2 各分级之和 = 阳性数；补充表 S3 合计行 723/459/264 正确，但分级合计需随分级一起改为 116/164/179；补充表 S8 各行分母之和 = 313 或 293、检出之和 = 165 或 230。'),
+     '正确。表 2 各分级之和 = 阳性数；补充表 S3 合计行 723/459/264 正确，分级合计已改为 116/164/179，行名改为 Total；补充表 S8 各行分母之和 = 313 或 293、检出之和 = 165 或 230。'),
     ('5. P 值与文字描述是否矛盾',
      '未发现矛盾。超声粗时代效应 P = .060、AME 区间含 0，正文写"includes zero"；CT P = .001 写"rose"，UGI P = .333 写"did not"；配对亚组 Cochran Q P < .001，CT 与超声 P = .481 写"compatible with zero"；交互项 P = .957、.732 写"neither is significant"；边界敏感性分析中只有 2020 年 P < .05，与补充材料 2 的文字一致。'),
     ('6. 不同结局是否误用相同分母',
-     '未发现误用。漩涡征"50.4%"以 117 次超声为分母，"52.7%"以 112 名扭转患儿为分母，正文分别写明；表 2 分级百分比以阳性数为分母（脚注已说明）；"13% to 51%"以该期全部手术患儿为分母，与表 1 "Operated 2019–2026"（以做超声的患儿为分母）不同，两处各自写明。阅读一致性 1,423/1,428 以 119 份为分母（含后来排除的 2 份），正文未写明，建议补充。'),
+     '未发现误用。漩涡征"50.4%"以 117 次超声为分母，"52.7%"以 112 名扭转患儿为分母，正文分别写明；表 2 分级百分比以阳性数为分母（脚注已说明）；"13% to 51%"以该期全部手术患儿为分母，与表 1 "Operated 2019–2026"（以做超声的患儿为分母）不同，两处各自写明。阅读一致性 1,423/1,428 以 119 份为分母（含后来排除的 2 份），正文已写明。'),
     ('附：均值、标准差、随访时间', '本文无此类数字。'),
 ]
 sheet(ws3, ['检查项', '结论'], foc, [34, 130])
 
+CORR = [
+    ('cert.py（分析程序）', '确定性分级读"距手术最近的单份报告"结论', '改读合并同日报告后的检查次结论，与全文索引单位一致', '4 个阳性检查次（407824 UGI；2352323、4310607、5574297 超声）最近一份为阴性配套报告或空白，被默认为 definite'),
+    ('摘要 · Results', '27.4% excluding tentative wording', '25.6%', '超声"可能"级 34 份：(64−34)/117 = 30/117'),
+    ('结果 · 检出率 段', '50.5%, 32.9% and 27.4%', '50.2%, 32.9% and 25.6%', 'UGI (230−83)/293；CT 不变；超声同上'),
+    ('表 2 · UGI series', '75 (32.6) | 73 (31.7) | 82 (35.7) | 50.5', '74 (32.2) | 73 (31.7) | 83 (36.1) | 50.2', '同上'),
+    ('表 2 · Ultrasound', '15 (23.4) | 17 (26.6) | 32 (50.0) | 27.4', '12 (18.8) | 18 (28.1) | 34 (53.1) | 25.6', '同上'),
+    ('补充1 · 表 S3', 'UGI 75/73/82；超声 15/17/32；合计 120/163/176；行名 All three', 'UGI 74/73/83；超声 12/18/34；合计 116/164/179；行名 Total', '同上；行名避免与"三项都做的亚组"混淆'),
+    ('方法 · 统计', 'Python 3.12', 'Python 3.11', '实际运行环境 Python 3.11.15'),
+    ('引言 第4段；讨论 第1段；Cover Letter', '13.5 years', '13.6 years', '2012 年 12 月至 2026 年 6 月共 163 个月'),
+    ('结果 · 队列 第2段', '80.0% vs 70.0%', '80.0% [144/180] vs 70.0% [42/60]', '补分子分母，便于复算'),
+    ('结果 · 超声内容 第1段', '1,423 of 1,428 item codes', '1,423 of 1,428 item codes in the 119 episodes read', '写明一致性的分母（含后来排除的 2 份）'),
+    ('补充1 · B', '5 份报告因"所见中的征象未写入结论"改判', '最终标签与"结论点名诊断"在第 J 节所列 7 个单元不同', '5 份改判报告的结论均已点名旋转不良（规避性措辞）'),
+    ('补充1 · G 样本2', '筛选条件写作"所见中出现征象"', '"结论或所见出现旋转不良、漩涡或扭转等词"，并说明 5 份为规避性措辞', '按核对表说明更正'),
+    ('补充1 · G 样本3', 'an examination 2.4 days earlier', 'an examination 0.8 days earlier (2.4 days before operation)', '35792266：检查 2024-11-18，索引检查次 2024-11-19，手术 2024-11-21'),
+    ('补充1 · J', '7 例均属所列三种失败方式', '补"one ultrasound unit whose label reflects an earlier examination"', '35792266'),
+    ('补充1 · G2', 'institutional surgical records database', 'institutional clinical research database', '与正文一致'),
+    ('补充2 · 表 S5', '"<0.001 | <0.001 | 0.002"；表头 "Cochran\'s Q, p"', '"<.001 | <.001 | .002"；表头 "Cochran Q, P"', 'AMA 格式'),
+    ('补充2 · 表 S9', '+3.8 → -3.6 pp', '+3.8 → −3.6 pp', '用减号'),
+    ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),
+]
+wsc = wb.create_sheet('更正记录')
+sheet(wsc, ['原文位置', '原值', '更正后', '依据'], CORR, [30, 46, 46, 56])
 ws = wb.create_sheet('核对表', 1)
 sheet(ws, ['原文位置', '原数值', '复核结果', '问题', '建议修改'], [r[:5] for r in FIX], [26, 46, 70, 44, 44], [FILL.get(r[5]) for r in FIX])
 wb.save(OUT_XLSX)

@@ -36,16 +36,16 @@ def blk(d):
         tab=pd.crosstab(d[a],d[b]).reindex(index=[0.0,1.0],columns=[0.0,1.0],fill_value=0).values
         out[nm]=(int(tab[1,0]),int(tab[0,1]),mcnemar(tab,exact=True).pvalue)
     return out
-def fp(x): return '<0.001' if x<0.001 else f'{x:.3f}'
+def fp(x): return '<.001' if x<0.001 else f'{x:.3f}'.lstrip('0')
 cols=[('All (n=%d)'%len(p),p),('All three within 48 h (n=%d)'%int((p['span']<=2).sum()),p[p['span']<=2]),('All three within 24 h (n=%d)'%int((p['span']<=1).sum()),p[p['span']<=1])]
 B=[(lab,blk(d)) for lab,d in cols]
 T5=[['Measure']+[l for l,_ in B]]
 for c,lab in [('UGI_detected','UGI series, n/N (%; 95% CI)'),('US_detected','Ultrasound, n/N (%; 95% CI)'),
               ('CT_detected','Abdominal CT, n/N (%; 95% CI)'),('US_whirlpool','Ultrasound whirlpool sign, n/N (%; 95% CI)')]:
     T5.append([lab]+[b[c] for _,b in B])
-T5.append(["Cochran's Q, p"]+[fp(b['Q']) for _,b in B])
+T5.append(["Cochran Q, *P*"]+[fp(b['Q']) for _,b in B])
 for nm in ['UGI vs CT','UGI vs US','CT vs US']:
-    T5.append([f'Exact McNemar {nm}: discordant pairs, p']+[f'{b[nm][0]}/{b[nm][1]}, p={fp(b[nm][2])}' for _,b in B])
+    T5.append([f'Exact McNemar {nm}: discordant pairs, *P*']+[f'{b[nm][0]}/{b[nm][1]}, *P* {"<" if b[nm][2]<0.001 else "="} {fp(b[nm][2]).lstrip("<")}' for _,b in B])
 # Table 6 temporal
 ixf=pd.read_csv('ix_full.csv'); u=pd.read_csv('us_audit.csv')
 def lg(f,d,k):

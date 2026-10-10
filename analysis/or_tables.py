@@ -12,7 +12,7 @@ for mod,lab in [('UGI','UGI series'),('CT','Abdominal CT'),('US','Ultrasound')]:
     S1.append([lab,str(n),f'{k} ({k/n*100:.1f}%)',f'{n-k} ({(n-k)/n*100:.1f}%)',
                str(int(t.get('definite',0))),str(int(t.get('probable',0))),str(int(t.get('possible',0)))])
 _tot={t:sum(int(r[i]) for r in S1[1:]) for i,t in ((4,'definite'),(5,'probable'),(6,'possible'))}
-S1.append(['All three',str(len(ixf)),f"{int(ixf['det'].sum())}",f"{len(ixf)-int(ixf['det'].sum())}",
+S1.append(['Total',str(len(ixf)),f"{int(ixf['det'].sum())}",f"{len(ixf)-int(ixf['det'].sum())}",
            str(_tot['definite']),str(_tot['probable']),str(_tot['possible'])])
 assert sum(_tot.values())==int(ixf['det'].sum()), 'certainty tiers do not sum to the positives'
 # OR2 stratified
