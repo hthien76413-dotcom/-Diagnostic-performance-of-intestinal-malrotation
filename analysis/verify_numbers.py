@@ -317,7 +317,7 @@ add('图注 · Figure 1', '711 … 503 … 465 … 793 … 723 … 52 … four',
 P = para_of(MS + 'p3.md', '#N **Figure 2.')
 add('图注 · Figure 2', 'Wilson 95% confidence intervals', '定义', status='定义/描述性数字', para=P, toks=('2', '95'))
 P = para_of(MS + 'p3.md', '#N **Figure 3.')
-add('图注 · Figure 3', '117 … two independent readers … two elements documented in more than seven examinations … Three examinations … 5 of 58',
+add('图注 · Figure 3', '117 … two independent readers … the two most often documented elements in panel A … Three examinations … 5 of 58',
     f'117；2 位阅读者；B 栏两项（漩涡征 {T3["whirl_pos"]["n"]}、肠气限制 {T3["gas_limit"]["n"]}）以外各项均 ≤ 7（十二指肠 {T3["duodenum"]["n"]}）；D3/DJJ 3；5/58',
     max(T3[k]['n'] for k in ['d3_or_djj', 'duodenum', 'sma_smv', 'inversion', 'fluid', 'dynamic', 'compress', 'cecum']) == 7
     and T3['duodenum']['n'] == 7 and T3['gas_limit']['n'] == 36 and T3['whirl_pos']['n'] == 59,
@@ -560,7 +560,7 @@ add('补充2 · S2.1', 'three … five children … interaction OR was 0.92 (95%
     f'超声无扭转 {F["ST"][("US","novolv")]}；UGI vs CT × 扭转交互 OR {math.exp(gi.params[kint]):.3f} ({math.exp(ci[0]):.3f}–{math.exp(ci[1]):.3f})，P = {gi.pvalues[kint]:.3f}（同一软件重拟合）',
     close('0.92', math.exp(gi.params[kint]), 2) and close('0.32', math.exp(ci[0]), 2) and close('2.66', math.exp(ci[1]), 2) and close('0.87', gi.pvalues[kint], 2),
     para=P, toks=('three', 'five', '0.92', '95', '0.32', '2.66', '0.87'))
-P = para_of(S2F, '#N This subgroup was assembled by diagnostic uncertainty')
+P = para_of(S2F, '#N This subgroup was presumably assembled by diagnostic uncertainty')
 add('补充2 · S2.2', '96.6%, 83.1%, 62.7% … 87.9%, 67.3% and 29.5% of the other 339',
     f'三项组 {pcs["three"][0]:.2f}/{pcs["three"][1]:.2f}/{pcs["three"][2]:.2f}；其余 {pcs["other"][3]} 例 {pcs["other"][0]:.2f}/{pcs["other"][1]:.2f}/{pcs["other"][2]:.2f}',
     close('62.7', pcs['three'][2]) and close('29.5', pcs['other'][2]), para=P, toks=('96.6', '83.1', '62.7', '2019', '2026', '87.9', '67.3', '29.5', '339', 'three'))
@@ -1032,6 +1032,7 @@ CORR = [
     ('引言 第2–3段；讨论 第5段；Cover Letter（S7 改稿）', '—', '新增文献 [19] ACR Appropriateness Criteria Vomiting in Infants（2020）与 [20] Keenan、Sewchuran（2023），其余文献顺延编号', '两条均于 2026-10-10 检索核对（PMID 33153561、39845859）'),
     ('方法 · 研究对象；补充1 · K1–K3；Title Page（复核分工）', 'All operative records were re-read for 34 children …；K1–K3 未写复核者', 'One author, with the imaging labels visible, re-read …；K1 补"非盲"及排除方向核查；K2、K3 写明复核者为作者；Title Page 贡献补 HL、KZ、ZM、JS 的复核分工', '用户 2026-10-10 告知：S1 Haiyan Lei、S2 Kai Zheng、超声阅读者 Zhengliang Meng（甲）与 Jun Shu（乙）。S1 核对表显示了现有检出标签，故如实写为非盲'),
     ('补充材料 4（S7 新增）', '—', '最小报告数据集，表 S15 列 12 项本研究基线', '均与两位阅读者共识及表 3 一致'),
+    ('结果 · 队列 第2段；结果 · 亚组 第1段；补充2 S2.2、S2.6；图 3 图注；表 3 列标题（通读后措辞）', '… detection was higher in that position (… vs … for the UGI series)；in whom the diagnosis remained uncertain / was assembled by diagnostic uncertainty；two elements documented in more than seven examinations；2012–2018 (n=38)', '… UGI detection was higher when it came last (… vs … when it did not)；presumably selected / assembled by diagnostic uncertainty；the two most often documented elements in panel A；2012–2018, n (of 38)', '补明对比对象；"诊断不确定"是对临床医生考虑的推测，数据未记录检查指征，加 presumably；图 3B 选取规则改为图 A 中记录最多的两项；表 3 时期列只有计数，列标题补 n'),
     ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),
 ]
 wsc = wb.create_sheet('更正记录')

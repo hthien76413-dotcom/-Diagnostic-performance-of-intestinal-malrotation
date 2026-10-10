@@ -107,7 +107,7 @@ ROWS=[('d3_or_djj','Third portion of duodenum or duodenojejunal junction'),
       ('bedside','Performed at the bedside')]
 e0=u[u['late']==0]; e1=u[u['late']==1]
 T3=[['Documented content of the ultrasound examination',f'n (%) of {len(u)}',
-     f'2012–2018 (n={len(e0)})',f'2019–2026 (n={len(e1)})',
+     f'2012–2018, n (of {len(e0)})',f'2019–2026, n (of {len(e1)})',
      'Detection when documented','Detection when not documented']]
 def cell(d):
     if len(d)==0: return '–'

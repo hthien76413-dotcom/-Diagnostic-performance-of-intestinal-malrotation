@@ -14,7 +14,7 @@
 
 #TABP
 
-#N This subgroup was assembled by diagnostic uncertainty, not by sampling: 96.6% had midgut volvulus, 83.1% were neonates and 62.7% were operated on in 2019–2026, compared with 87.9%, 67.3% and 29.5% of the other 339 imaged children. It describes which examination named the diagnosis most often among children investigated intensively enough to receive all three, and is **not** a population-level comparison of test accuracy.
+#N This subgroup was presumably assembled by diagnostic uncertainty, not by sampling: 96.6% had midgut volvulus, 83.1% were neonates and 62.7% were operated on in 2019–2026, compared with 87.9%, 67.3% and 29.5% of the other 339 imaged children. It describes which examination named the diagnosis most often among children investigated intensively enough to receive all three, and is **not** a population-level comparison of test accuracy.
 
 #N The interval is that between the first and last of the three examinations (median 0.9 days, interquartile range 0.6–1.6). Because active volvulus and its imaging signs can evolve over such an interval, the analysis is repeated in the subsets in which all three examinations fell within 48 h and within 24 h. Restricting to near-simultaneous examinations did not weaken the pattern, although no timing restriction can undo the selection that defines the subgroup. Discordant pairs are shown as first-positive/second-positive.
 
@@ -60,7 +60,7 @@
 
 #TABS11
 
-#N **Paired differences with confidence intervals.** Table S13 replaces the p-value-only presentation of the three-modality subgroup with the paired difference in detection and its bootstrap interval alongside the discordant pairs and the exact McNemar p. The UGI series exceeded both other modalities; ultrasound and CT did not differ. These are within-subgroup differences in what the report said, in 59 children selected by diagnostic uncertainty, and are not differences in accuracy.
+#N **Paired differences with confidence intervals.** Table S13 replaces the p-value-only presentation of the three-modality subgroup with the paired difference in detection and its bootstrap interval alongside the discordant pairs and the exact McNemar p. The UGI series exceeded both other modalities; ultrasound and CT did not differ. These are within-subgroup differences in what the report said, in 59 children presumably selected by diagnostic uncertainty, and are not differences in accuracy.
 
 #TABS12
 
