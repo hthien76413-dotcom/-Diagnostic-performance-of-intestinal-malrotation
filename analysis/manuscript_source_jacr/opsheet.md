@@ -157,7 +157,7 @@
 
 #N **5. 通讯作者邮寄地址（已确认）。** 香港路 100 号。
 
-#N **6. 参考文献（已核对）。** 作者 6 位及以下的条目已补全全部作者；本次检索核对的 12 条（[2]–[5]、[10]–[16]、[22]）题目、期刊、年份、卷和页码均与记录一致；[21] 按 STROBE 声明公开的 6 位作者名单补全；其余条目在此前的外部核对中已确认。[27] El-Ali 等（Pediatr Radiol 2025;55:925-935）为 2026-10-09 新增，作者、期刊、卷页和文中引用的 25.7% 已经检索核对。[19] ACR Appropriateness Criteria Vomiting in Infants（J Am Coll Radiol 2020;17(11S):S505-S515，PMID 33153561）和 [20] Keenan、Sewchuran（Surg Pract Sci 2023;14:100183，PMID 39845859）为 2026-10-10 新增，题目、卷页、DOI 已核对。**文中引用的评级（出生 2 天后胆汁性呕吐：UGI "usually appropriate"，超声 "may be appropriate"）没能对照原文确认**：多次检索中，ACR 检索页和叙述文档都是这样写，但 JACR 网页版的表格显示了不同评级（可能是排版错位）。投稿前请打开 acsearch.acr.org 的 Vomiting in Infants，核对 Variant 5；评级若不同，引言和投稿信的那一句要改。（编号为 2026-10-10 新增两条后重排的编号。）
+#N **6. 参考文献（已核对）。** 作者 6 位及以下的条目已补全全部作者；本次检索核对的 12 条（[2]–[5]、[10]–[16]、[22]）题目、期刊、年份、卷和页码均与记录一致；[21] 按 STROBE 声明公开的 6 位作者名单补全；其余条目在此前的外部核对中已确认。[27] El-Ali 等（Pediatr Radiol 2025;55:925-935）为 2026-10-09 新增，作者、期刊、卷页和文中引用的 25.7% 已经检索核对。[19] ACR Appropriateness Criteria Vomiting in Infants（J Am Coll Radiol 2020;17(11S):S505-S515，PMID 33153561）和 [20] Keenan、Sewchuran（Surg Pract Sci 2023;14:100183，PMID 39845859）为 2026-10-10 新增，题目、卷页、DOI 已核对。**文中引用的评级（Variant 5，出生 2 天后胆汁性呕吐、疑似旋转不良、初始影像：UGI "usually appropriate"，超声 "may be appropriate"）已通过检索核对**：7 次检索中 5 次一致给出该评级；2 条出入的摘要，一条给出的评级恰为 Variant 2（经典双泡征）的，另一条是检索工具的转述，与同批其他来源不符。**原文 PDF 因网络限制没能直接打开**，所以不是逐字对照；若想百分之百确认，可在 acsearch.acr.org 打开 Vomiting in Infants 的 Variant 5 表，30 秒即可。（编号为 2026-10-10 新增两条后重排的编号。）
 
 #H1 七、修回时要交的（须知第 2 页，现在不用做）
 
