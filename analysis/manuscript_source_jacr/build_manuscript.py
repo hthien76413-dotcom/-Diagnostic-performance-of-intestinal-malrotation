@@ -29,7 +29,7 @@ N_COH=D['T1'][1][1]; N_NONE=D['T1'][1][5]; N_US=re.search(r'\d+',D['T3'][0][1]).
 AG=json.load(open(AN+'review_agreement.json')); OV=D['T3_overlap']
 TITLES={
  '1':('Table 1',f'Characteristics of the {N_COH} children with surgically confirmed intestinal malrotation, overall and according to which preoperative index test they received',
-   f'Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. Symptom duration is the longest duration of a gastrointestinal symptom stated in the chief complaint of the operative admission; a child whose chief complaint stated none was counted as not having symptoms for 1 month or longer. The rightmost column shows the {N_NONE} children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). IQR interquartile range, UGI upper gastrointestinal.'),
+   f'Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. Symptom duration is the longest duration of a gastrointestinal symptom stated in the chief complaint of the operative admission; a child whose chief complaint stated none was counted as not having symptoms for 1 month or longer. The rightmost column shows the {N_NONE} children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). IQR, interquartile range; UGI, upper gastrointestinal.'),
  '2':('Table 2','Report-level detection of intestinal malrotation among surgically confirmed children, with the certainty of the wording used in positive conclusions',
    'Wilson 95% confidence intervals. Denominators differ between modalities and are drawn from overlapping but non-identical, indication-selected groups of children; the rates are not directly comparable between modalities and are not sensitivities. Certainty tiers were assigned from the conclusion text: definite (unqualified statement), probable ("most likely", "first consideration"), possible ("suspected", "cannot be excluded", "?"). The penultimate column repeats the detection rate after reclassifying all possible-tier conclusions as negative; the last counts as detected only positive examinations whose conclusion named malrotation, so that a conclusion naming volvulus alone or describing a sign alone does not count. Percentages for certainty tiers are of positive reports; detection rates are of all index reports of that modality. Contrast-enhanced and unenhanced CT were performed for different indications and in children of different ages, so their comparison is confounded and is presented as an exploratory subgroup only. UGI, upper gastrointestinal.'),
  '3':('Table 3',f'Documented content of the {N_US} routine ultrasound index examinations, and report-level detection conditional on that content',
@@ -44,10 +44,11 @@ for s in doc.sections: s.left_margin=s.right_margin=Inches(1.0)
 def para(text,style=None,size=None,italic=False,space_after=8):
     p=doc.add_paragraph(style=style)
     text=ama_p(text)
-    for pt in re.split(r'(\*\*[^*]+\*\*|\*[^*]+\*)',text):
+    for pt in re.split(r'(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)',text):
         if not pt: continue
         if pt.startswith('**') and pt.endswith('**'): r=p.add_run(pt[2:-2]); r.bold=True
         elif pt.startswith('*') and pt.endswith('*') and len(pt)>2: r=p.add_run(pt[1:-1]); r.italic=True
+        elif pt.startswith('`') and pt.endswith('`') and len(pt)>2: r=p.add_run(pt[1:-1]); r.font.name='Courier New'
         else: r=p.add_run(pt)
         if italic: r.italic=True
         if size: r.font.size=Pt(size)

@@ -38,9 +38,9 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 tables_final.py # Tables 2 and 4; reads tables123.json, so run it AFTER tables.py
     python3 classifier_agreement.py  # agreement of the published script with the final labels
     python3 or_add.py      # assembles or_add.json; run after addstats.py and volsign2.py
-    python3 mrd.py         # Supplement 4, Table S15: minimum reporting dataset with this audit's baseline (after usaudit4.py)
+    python3 mrd.py         # Supplement 4, Table S19: minimum reporting dataset with this audit's baseline (after usaudit4.py)
     python3 hp_sens.py     # Supplement 2, S2.7-S2.10: outcome definitions, standardized detection, index unit and timing, content by booking category (about 12 min: cluster bootstrap in four processes; pass a number to change the 2000 resamples)
-    python3 hp_tables.py   # Tables S16-S19 of Supplement 2, from hp_sens.json
+    python3 hp_tables.py   # Tables S14-S17 of Supplement 2 (JSON keys S16-S19), from hp_sens.json
     python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
     python3 graphabs.py    # graphical abstract for Insights into Imaging (not used by JACR)
 
@@ -132,7 +132,7 @@ record is now linked to the admission containing that operation (verified for al
 
 ## Analyses added after statistical review
 
-`addstats.py` produces Supplement 2 Tables S11-S13:
+`addstats.py` produces Supplement 2 Tables S10-S12 (JSON keys S11-S13):
 
 * percentile bootstrap CIs for the average marginal effect of era (2,000 resamples
   of children, seed 20260903), because the manuscript reports the era effect on the
@@ -271,7 +271,15 @@ except one statement that only the department can confirm.
 Review item S7 (journal positioning) added no data. The Introduction now places the
 question against the 2020 ACR Appropriateness Criteria and a published audit of UGI
 series reports; the Discussion and Limitations present the study as one audit cycle
-at one center; and Supplement 4 (`supp4.md`, Table S15 from `mrd.py`) turns the
+at one center; and Supplement 4 (`supp4.md`, Table S19 from `mrd.py`) turns the
 twelve audited ultrasound elements into a minimum reporting dataset with this
 audit's documentation rates as the baseline for re-audit. Two references were
 added and the list renumbered in order of first citation (`renumber.py`).
+
+### Supplementary table numbering
+
+The tables of Supplements 1-4 are numbered S1-S19 in the order in which they appear in the documents
+(Supplement 1: S1-S3; Supplement 2: S4-S17; Supplement 3: S18; Supplement 4: S19). The JSON keys and the
+dictionary keys in `build_supplements.py` and `verify_numbers.py` keep the numbers the tables had before
+the renumbering of 2026-10-10: key S8 is Table S18, S9 is S8, S10 is S9, S11 is S10, S12 is S11, S13 is S12,
+S14 is S13, S15 is S19, S16 is S14, S17 is S15, S18 is S16 and S19 is S17.

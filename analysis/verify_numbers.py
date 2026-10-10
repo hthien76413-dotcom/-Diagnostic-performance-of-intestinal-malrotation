@@ -164,7 +164,7 @@ P = para_of(MS + 'p1.md', '#N Detection rates are presented')
 add('方法 · 统计', 'Wilson 95% … era (2012–2018 vs 2019–2026)', '分期边界 2019 年（op_year ≥ 2019 为后期）', status='定义/描述性数字', para=P, toks=('95', '2012', '2018', '2019', '2026'))
 add('方法 · 统计', 'no ultrasound examination was positive among the five children without volvulus',
     f'超声且无扭转 {F["ST"][("US","novolv")][1]} 例，检出 {F["ST"][("US","novolv")][0]} 例', F['ST'][('US', 'novolv')] == (0, 5), para=P, toks=('five',))
-add('方法 · 统计', 'the era boundary was varied from 2019 to 2022', '补充表 S9 含 2019/2020/2021/2022 四个边界', status='定义/描述性数字', para=P, toks=('2019', '2022'))
+add('方法 · 统计', 'the era boundary was varied from 2019 to 2022', '补充表 S8 含 2019/2020/2021/2022 四个边界', status='定义/描述性数字', para=P, toks=('2019', '2022'))
 add('方法 · 统计', 'Python 3.11 (statsmodels 0.15, SciPy 1.17)',
     f'运行环境：Python {F["software"]["python"]}，statsmodels {F["software"]["statsmodels"]}，SciPy {F["software"]["scipy"]}（2026-10-10 由 3.12 更正）',
     F['software']['python'].startswith('3.11') and F['software']['statsmodels'].startswith('0.15') and F['software']['scipy'].startswith('1.17'), para=P, toks=('3.11', '0.15', '1.17'))
@@ -597,7 +597,7 @@ add('补充2 · S2.5', 'reduces the era difference by about half at 2019 and 202
     para=P, toks=('half', '2019', '2020', '2021', '2022'))
 P = para_of(S2F, '#N **The index unit.**')
 add('补充2 · S2.5 索引单位', 'three of 117 … 106 children … 11 earlier episodes … two describe vessels encircling a mass',
-    f'最早检查次与最近相同 117−11 = 106；表 S10：{F["S5"][1][1]} / {F["S5"][1][2]}', F['S5'][1][1].startswith('3/117') and F['S5'][1][2].startswith('3/117'),
+    f'最早检查次与最近相同 117−11 = 106；表 S9：{F["S5"][1][1]} / {F["S5"][1][2]}', F['S5'][1][1].startswith('3/117') and F['S5'][1][2].startswith('3/117'),
     para=P, toks=('three', '117', '106', 'two', '11', 'two'))
 P = para_of(S2F, '#N **The definition of midgut volvulus.**')
 rt = F['rot']
@@ -636,9 +636,9 @@ def s8n(lab):
 add('补充3 · 正文', 'duodenojejunal junction … (51.9%) … jejunal position in 70.3% … mesenteric whirl 36.7% … contrast enhancement 16.0%',
     f'{s8n("Duodenojejunal junction")} = {pc(*s8n("Duodenojejunal junction")):.2f}%；{s8n("Jejunal position")} = {pc(*s8n("Jejunal position")):.2f}%；{s8n("Mesenteric whirl")} = {pc(*s8n("Mesenteric whirl")):.2f}%；{s8n("Contrast enhancement")} = {pc(*s8n("Contrast enhancement")):.2f}%（计数为文本模式编码，原程序复算）',
     close('51.9', pc(*s8n('Duodenojejunal junction'))) and close('70.3', pc(*s8n('Jejunal position'))) and close('36.7', pc(*s8n('Mesenteric whirl'))) and close('16.0', pc(*s8n('Contrast enhancement'))),
-    para=P, toks=('Two', 'half', '51.9', '70.3', '36.7', '16.0'))
+    para=P, toks=('Two', 'half', '51.9', '70.3', '36.7', '16.0', 'one', 'three'))
 
-# =============================================================== SUPPLEMENT 4 (text and Table S15)
+# =============================================================== SUPPLEMENT 4 (text and Table S19)
 S4F = MS + 'supp4.md'
 P = para_of(S4F, '#N The dataset lists the statements')
 add('补充4 · A', 'Menten 2012; Hennessey 2014; Nguyen 2021, 2022 and 2025; McCurdie 2024; Shimanuki 1996; El-Ali 2025',
@@ -667,7 +667,7 @@ for row in MRD[1:]:
     ok = n_ == n0 and close(p_, pc(n0, 117))
     if k in T3:
         ok &= T3[k]['n'] == n0
-    add(f'补充4 · 表 S15 · {row[0]}', row[3], f'两位阅读者共识 {n0}/117 = {pc(n0, 117):.2f}%' + ('；与表 3 同一计数' if k in T3 else '；表 3 合并为"D3 或十二指肠空肠曲"3 例'), ok)
+    add(f'补充4 · 表 S19 · {row[0]}', row[3], f'两位阅读者共识 {n0}/117 = {pc(n0, 117):.2f}%' + ('；与表 3 同一计数' if k in T3 else '；表 3 合并为"D3 或十二指肠空肠曲"3 例'), ok)
 
 # =============================================================== SUPPLEMENT TABLES (built documents)
 def doc_tables(f):
@@ -765,7 +765,7 @@ for row in t[1:]:
     tot_k = T2['CT']['k'] if N_ == 313 else T2['UGI']['k']
     ok = close(p_, pc(n_, N_)) and dy[1] == n_ and dy[1] + dn[1] == N_ and dy[0] + dn[0] == tot_k
     ok &= close(re.search(r'\((\d+)%\)', row[3]).group(1), pc(*dy), 0) and close(re.search(r'\((\d+)%\)', row[4]).group(1), pc(*dn), 0)
-    add(f'补充3 · 表 S8 · {row[1]}', ' | '.join(row[2:]), f'{n_}/{N_} = {pc(n_,N_):.2f}%；分母 {dy[1]}+{dn[1]} = {N_}；检出 {dy[0]}+{dn[0]} = {tot_k}（= 表 2）', ok)
+    add(f'补充3 · 表 S18 · {row[1]}', ' | '.join(row[2:]), f'{n_}/{N_} = {pc(n_,N_):.2f}%；分母 {dy[1]}+{dn[1]} = {N_}；检出 {dy[0]}+{dn[0]} = {tot_k}（= 表 2）', ok)
 # S9 era boundary
 t = SUP2[4]
 for row in t[1:]:
@@ -775,7 +775,7 @@ for row in t[1:]:
         ok &= close(a_.group(1), o[0], 2) and close(a_.group(2), o[1], 2) and close(a_.group(3), o[2], 2) and ((a_.group(4) == '<' and o[3] < .001) or close('0.' + a_.group(5), o[3], 3))
     am = re.findall(r'[+\-−]?[\d.]+', row[6]); ok &= close(am[0], b['ame'][0]) and close(am[1], b['ame'][1])
     hy = '-' in row[6]
-    add(f'补充2 · 表 S9 · 边界 {c}', ' | '.join(row[1:]), f'{b["n"]}；{b["k"]}；粗 OR {b["or_crude"][0]:.3f}；调整 {b["or_adj"][0]:.3f}；检查类型 {b["or_ves"][0]:.3f}；AME {b["ame"][0]:+.2f} → {b["ame"][1]:+.2f}（自写 IRLS）', ok,
+    add(f'补充2 · 表 S8 · 边界 {c}', ' | '.join(row[1:]), f'{b["n"]}；{b["k"]}；粗 OR {b["or_crude"][0]:.3f}；调整 {b["or_adj"][0]:.3f}；检查类型 {b["or_ves"][0]:.3f}；AME {b["ame"][0]:+.2f} → {b["ame"][1]:+.2f}（自写 IRLS）', ok,
         issue='数值无误；"−3.6"用的是连字符而非减号' if hy else '', fix='改用减号 "−3.6"' if hy else '', status='一致')
 # S10 earliest
 t = SUP2[5]
@@ -783,14 +783,14 @@ for row in t[1:]:
     k = {'D3 or duodenojejunal junction': 'd3_or_djj', 'Superior mesenteric artery–vein relationship': 'sma_smv', 'Enteric fluid administration': 'fluid',
          'Whirlpool, swirl or spiral appearance reported': 'whirl_pos'}[row[0]]
     ok = row[1].startswith(f'{T3[k]["n"]}/117') and close(re.search(r'\(([\d.]+)%\)', row[1]).group(1), pc(T3[k]['n'], 117)) and close(re.search(r'\(([\d.]+)%\)', row[2]).group(1), pc(int(row[2].split('/')[0]), 117))
-    add(f'补充2 · 表 S10 · {row[0]}', ' | '.join(row[1:]), f'最近检查次 = 表 3 的 {T3[k]["n"]}/117；最早检查次由 106 例共识编码 + 11 例文本核查得出（原程序 or_sens.py），百分比复算无误', ok)
+    add(f'补充2 · 表 S9 · {row[0]}', ' | '.join(row[1:]), f'最近检查次 = 表 3 的 {T3[k]["n"]}/117；最早检查次由 106 例共识编码 + 11 例文本核查得出（原程序 or_sens.py），百分比复算无误', ok)
 # S11 definitions
 t = SUP2[6]
 for row, key in zip(t[1:], ['primary', 'A', 'B']):
     a, b, c = F['VD'][key]
     ok = row[1].startswith(f'{a}/450') and row[2].startswith(f'{b}/117') and row[3].startswith(f'{c}/{b}')
     ok &= close(re.search(r'\(([\d.]+)%\)', row[1]).group(1), pc(a, 450)) and close(re.search(r'\(([\d.]+)%\)', row[2]).group(1), pc(b, 117)) and close(re.search(r'\(([\d.]+)%\)', row[3]).group(1), pc(c, b))
-    add(f'补充2 · 表 S11 · {row[0][:40]}', ' | '.join(row[1:]), f'{a}/450 = {pc(a,450):.2f}%；{b}/117 = {pc(b,117):.2f}%；{c}/{b} = {pc(c,b):.2f}%（漩涡征分母为该定义下做超声的扭转患儿）', ok)
+    add(f'补充2 · 表 S10 · {row[0][:40]}', ' | '.join(row[1:]), f'{a}/450 = {pc(a,450):.2f}%；{b}/117 = {pc(b,117):.2f}%；{c}/{b} = {pc(c,b):.2f}%（漩涡征分母为该定义下做超声的扭转患儿）', ok)
 # S12 AME
 t = SUP2[7]
 for row in t[1:]:
@@ -798,7 +798,7 @@ for row in t[1:]:
     mod_ = {'Ultrasound': 'US', 'CT': 'CT', 'UGI series': 'UGI'}[row[0].split(',')[0]]
     pt = T4[mod_]['ame_adj'] if 'adjusted' in row[0] else T4[mod_]['ame_crude']
     ok = close(a_[0], pt) and close(a_[1], bb[1][0]) and close(a_[2], bb[1][1])
-    add(f'补充2 · 表 S12 · {row[0]}', row[1], f'点估计（自写 IRLS）{pt:+.2f}；bootstrap {bb[1][0]:+.2f} 至 {bb[1][1]:+.2f}（原程序，种子固定，{bb[2]} 次有效重抽样）', ok)
+    add(f'补充2 · 表 S11 · {row[0]}', row[1], f'点估计（自写 IRLS）{pt:+.2f}；bootstrap {bb[1][0]:+.2f} 至 {bb[1][1]:+.2f}（原程序，种子固定，{bb[2]} 次有效重抽样）', ok)
 # S13 paired differences
 t = SUP2[8]
 for row, k in zip(t[1:], ['ugi_ct', 'ugi_us', 'ct_us']):
@@ -806,7 +806,7 @@ for row, k in zip(t[1:], ['ugi_ct', 'ugi_us', 'ct_us']):
     diff = pc(F['PS']['all'][a_] - F['PS']['all'][bcol], 59)
     m_ = re.findall(r'[+\-−][\d.]+', row[2])
     ok = row[3] == f'{b_}/{c_}' and close('0' + row[4], p_, 3) and close(m_[0], diff)
-    add(f'补充2 · 表 S13 · {row[0]}', ' | '.join(row[1:]), f'差值 {diff:+.2f}；不一致对 {b_}/{c_}；精确 McNemar P {p_:.4f}；区间为 bootstrap（原程序）', ok)
+    add(f'补充2 · 表 S12 · {row[0]}', ' | '.join(row[1:]), f'差值 {diff:+.2f}；不一致对 {b_}/{c_}；精确 McNemar P {p_:.4f}；区间为 bootstrap（原程序）', ok)
 # S14 interactions
 t = SUP2[9]
 def inter(mod_, cv):
@@ -820,16 +820,16 @@ for row in t[1:]:
     lab = row[0]
     if 'upper gastrointestinal series vs CT' in lab:
         ok = close(re.search(r'([\d.]+) \(', row[1]).group(1), math.exp(gi.params[kint]), 2) and close('0' + row[2], gi.pvalues[kint], 3)
-        add('补充2 · 表 S14 · UGI vs CT × 扭转', ' | '.join(row[1:]), f'OR {math.exp(gi.params[kint]):.3f}，P {gi.pvalues[kint]:.3f}（GEE 重拟合）', ok)
+        add('补充2 · 表 S13 · UGI vs CT × 扭转', ' | '.join(row[1:]), f'OR {math.exp(gi.params[kint]):.3f}，P {gi.pvalues[kint]:.3f}（GEE 重拟合）', ok)
     elif 'including ultrasound' in lab:
-        add('补充2 · 表 S14 · 含超声的交互', ' | '.join(row[1:]), '超声无扭转 0/5，完全分离，模型不收敛（gee.py 输出 NaN）', F['ST'][('US', 'novolv')][0] == 0)
+        add('补充2 · 表 S13 · 含超声的交互', ' | '.join(row[1:]), '超声无扭转 0/5，完全分离，模型不收敛（gee.py 输出 NaN）', F['ST'][('US', 'novolv')][0] == 0)
     elif 'Firth' in lab:
         ok = close(re.search(r'Odds ratio ([\d.]+)', row[1]).group(1), F['firth_or'])
-        add('补充2 · 表 S14 · Firth', ' | '.join(row[1:]), f'闭式解 {F["firth_or"]:.3f}；区间与 P 为原程序 profile 似然结果', ok)
+        add('补充2 · 表 S13 · Firth', ' | '.join(row[1:]), f'闭式解 {F["firth_or"]:.3f}；区间与 P 为原程序 profile 似然结果', ok)
     else:
         o = ius if 'ultrasound' in lab else ict; a_ = re.match(r'([\d.]+) \(([\d.]+)–([\d.]+)\)', row[1])
         ok = close(a_.group(1), o[0], 2) and close(a_.group(2), o[1], 2) and close(a_.group(3), o[2], 2) and close('0' + row[2], o[3], 3)
-        add(f'补充2 · 表 S14 · {"超声" if "ultrasound" in lab else "CT"} 时代 × 内容', ' | '.join(row[1:]), f'自写 IRLS 交互项 OR {o[0]:.3f} ({o[1]:.3f}–{o[2]:.3f})，P {o[3]:.3f}；与"均不显著"的文字一致', ok)
+        add(f'补充2 · 表 S13 · {"超声" if "ultrasound" in lab else "CT"} 时代 × 内容', ' | '.join(row[1:]), f'自写 IRLS 交互项 OR {o[0]:.3f} ({o[1]:.3f}–{o[2]:.3f})，P {o[3]:.3f}；与"均不显著"的文字一致', ok)
 add('补充2 · 图 S1', '45/59、31/59、27/59、31/59；48 h 与 24 h 子集', '与表 S5 同一数据，逐项一致', True)
 
 # S16 to S19: sensitivity analyses added after the statistical review (hp_sens.py; independent recomputation in verify_hp.py)
@@ -850,7 +850,7 @@ for row in t[1:]:
         a_ = re.match(r'([\d.]+) \(([\d.]+)–([\d.]+)\)', cell); o = HPF['ors'][key][c]
         ok &= close(a_.group(1), o[0], 2) and close(a_.group(2), o[1], 2) and close(a_.group(3), o[2], 2)
         res.append(f'{c} {o[0]:.3f} ({o[1]:.3f}–{o[2]:.3f})')
-    add(f'补充2 · 表 S16 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '（手工设计矩阵的 GEE 重拟合，与 hp_sens.py 独立）', ok)
+    add(f'补充2 · 表 S14 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '（手工设计矩阵的 GEE 重拟合，与 hp_sens.py 独立）', ok)
 t = find_tab(SUP2, 'Outcome definition', 'UGI series, % (95% CI)')
 for row in t[1:]:
     key = KEYMAP[row[0]]; ok = True; res = []; st_ = HPF['std'][key]
@@ -869,7 +869,7 @@ for row in t[1:]:
         res.append(f'{c} {pt:+.2f}')
     note = ('区间：独立重跑 bootstrap（另一种子、300 次）与 hp_sens.py 的 2000 次结果相差 ≤ 2 个百分点'
             if key == 'primary' else '区间为原程序 cluster bootstrap（固定种子、2000 次）；点估计已独立复算')
-    add(f'补充2 · 表 S17 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '；' + note, ok)
+    add(f'补充2 · 表 S15 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '；' + note, ok)
 t = find_tab(SUP2, 'Measure', 'UGI series')
 iv, un = HPF['interval'], HPF['units']; ok_all = True
 def cellnn(c):
@@ -904,7 +904,7 @@ for row in t[1:]:
                 ok &= close(a_.group(1), o[0], 2) and close(a_.group(2), o[1], 2) and close(a_.group(3), o[2], 2)
         else:
             ok = False
-    add(f'补充2 · 表 S18 · {lab}', ' | '.join(row[1:]), '手工按日历日重算（最近=间隔最小，最早=间隔最大）；分类器标签为 Supplement_1_classifier.py 对合并结论的判定', ok)
+    add(f'补充2 · 表 S16 · {lab}', ' | '.join(row[1:]), '手工按日历日重算（最近=间隔最小，最早=间隔最大）；分类器标签为 Supplement_1_classifier.py 对合并结论的判定', ok)
 t = find_tab(SUP2, 'Denominator', 'Examinations')
 for row in t[1:]:
     c = HPF['content'][row[0]]; ok = int(row[1]) == c['n']; res = [f'n {c["n"]}']
@@ -912,13 +912,13 @@ for row in t[1:]:
         a_ = re.match(r'(\d+) \(([\d.]+); ([\d.]+)–([\d.]+)\)', cell); lo, hi = wilson(c[k], c['n'])
         ok &= int(a_.group(1)) == c[k] and close(a_.group(2), pc(c[k], c['n'])) and close(a_.group(3), lo) and close(a_.group(4), hi)
         res.append(f'{k} {c[k]}')
-    add(f'补充2 · 表 S19 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '（Wilson 区间自写公式）', ok)
+    add(f'补充2 · 表 S17 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '（Wilson 区间自写公式）', ok)
 
 # =============================================================== COVER LETTER AND TITLE PAGE
 CF = MS + 'cover.md'
-for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:', '电话、ORCID'), ('#N October 8, 2026', '信件日期')]:
+for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:', '电话、ORCID'), ('#N October 10, 2026', '信件日期')]:
     P = para_of(CF, start); add('Cover Letter · 抬头', txt, '联系信息/日期，不属研究数据', status='定义/描述性数字', para=P,
-                                toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 8, 2026': ('8', '2026')}[start])
+                                toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 10, 2026': ('10', '2026')}[start])
 P = para_of(CF, '#N Ultrasound-first pathways')
 add('Cover Letter 第2段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
 add('Cover Letter 第2段', 'the 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days', LITACR, True, para=P, toks=('2020', '2'))
@@ -1145,7 +1145,7 @@ lines = [
     ('数字核对表 · JACR 稿件（2026-10-10 更正后版本）', True),
     ('', False),
     ('核对范围', True),
-    ('摘要、正文、表 1–4、图 1–3 与图注、Take-Home Points、补充材料 1–4（正文与表 S1–S15、图 S1）、Cover Letter 与 Title Page 中的全部数字。', False),
+    ('摘要、正文、表 1–4、图 1–3 与图注、Take-Home Points、补充材料 1–4（正文与表 S1–S19、图 S1）、Cover Letter 与 Title Page 中的全部数字。', False),
     ('本文为横断面的报告审计，没有均值 ± 标准差，也没有随访时间；年龄以中位数（四分位数）报告。', False),
     ('', False),
     ('核对方法', True),
@@ -1190,7 +1190,7 @@ foc = [
     ('3. 百分比能否根据分子和分母复算',
      '全部可以复算，且与原文一致（确定性分级相关百分比已更正）。"80.0% vs 70.0%"已补分子分母 [144/180] vs [42/60]；"13% to 51%"复算为 38/296 vs 79/154，正文未列分子分母，属可选补充。'),
     ('4. 表内合计是否正确',
-     '正确。表 2 各分级之和 = 阳性数；补充表 S3 合计行 723/459/264 正确，分级合计已改为 116/164/179，行名改为 Total；补充表 S8 各行分母之和 = 313 或 293、检出之和 = 165 或 230。'),
+     '正确。表 2 各分级之和 = 阳性数；补充表 S3 合计行 723/459/264 正确，分级合计已改为 116/164/179，行名改为 Total；补充表 S18 各行分母之和 = 313 或 293、检出之和 = 165 或 230。'),
     ('5. P 值与文字描述是否矛盾',
      '未发现矛盾。超声粗时代效应 P = .060、AME 区间含 0，正文写"includes zero"；CT P = .001 写"rose"，UGI P = .333 写"did not"；配对亚组 Cochran Q P < .001，CT 与超声 P = .481 写"compatible with zero"；交互项 P = .957、.732 写"neither is significant"；边界敏感性分析中只有 2020 年 P < .05，与补充材料 2 的文字一致。'),
     ('6. 不同结局是否误用相同分母',
@@ -1216,20 +1216,20 @@ CORR = [
     ('补充1 · J', '7 例均属所列三种失败方式', '补"one ultrasound unit whose label reflects an earlier examination"', '35792266'),
     ('补充1 · G2', 'institutional surgical records database', 'institutional clinical research database', '与正文一致'),
     ('补充2 · 表 S5', '"<0.001 | <0.001 | 0.002"；表头 "Cochran\'s Q, p"', '"<.001 | <.001 | .002"；表头 "Cochran Q, P"', 'AMA 格式'),
-    ('补充2 · 表 S9', '+3.8 → -3.6 pp', '+3.8 → −3.6 pp', '用减号'),
+    ('补充2 · 表 S8', '+3.8 → -3.6 pp', '+3.8 → −3.6 pp', '用减号'),
     ('方法 · 研究对象；图 1', '34 children … and 15 were excluded；图框 "Excluded after review of the anchor operation n = 15"', '34 children …: 19 were retained and 15 excluded；图框 "Anchor operation re-read in 34 children: 19 retained, 15 excluded"', '原文只给出 34 中的 15，且与图 1 中"不符合入选条件的 34 例"同数，易混；补出保留的 19 例（S1 核对表）'),
     ('表 1 · 第 13 行及脚注', 'Symptoms described as repeated, intermittent or lasting months：212 (47.1) | 146 (49.8) | 144 (46.0) | 52 (44.4) | 19 (36.5)', 'Gastrointestinal symptoms for 1 month or longer：38 (8.4) | 19 (6.5) | 21 (6.7) | 5 (4.3) | 9 (17.3)', '原口径"反复"也匹配数小时内的反复呕吐，不代表慢性病程；改为手术住院入院主诉中消化道症状持续 ≥ 1 个月（脚注写明口径）'),
     ('图 3B；图 3 图注', '"Vessels addressed / not addressed" 33% 1/3、55% 63/114', '"Bowel gas limiting / No bowel gas limitation" 42% 15/36、60% 49/81；图注写明 B 栏所选项目', '原柱只有 3 例，几乎无信息量；换为记录 36 次的肠气限制（与表 3 同一数据）'),
     ('方法 · 报告者（S7 改稿）', '…and attributes the change in practice from about 2021 to growing awareness of the diagnosis; this account was given retrospectively…', '删去', '为新增内容腾出篇幅；讨论早已不再引用科室说法。原为全表唯一"需原始数据确认"项'),
-    ('结果 · 时间趋势（S7 改稿）', 'its odds ratio of 3.51 (1.56–7.87) lay between 3.21 and 4.04 at every era boundary from 2019 to 2022', '删去，改为指向补充材料 2', '这些数字仍在表 4 与表 S9，已逐项核对'),
+    ('结果 · 时间趋势（S7 改稿）', 'its odds ratio of 3.51 (1.56–7.87) lay between 3.21 and 4.04 at every era boundary from 2019 to 2022', '删去，改为指向补充材料 2', '这些数字仍在表 4 与表 S8，已逐项核对'),
     ('结果 · 超声内容 第2段（S7 改稿）', 'In 2018 … in 2022 … in 2024 …（3 次检查逐一描述）', 'Of these three, only one, in 2022, followed D3 … and identified the duodenojejunal junction', '压缩篇幅；年份与十二指肠空肠曲计数已核对'),
     ('讨论 第3段（S7 改稿）', 'the earlier era contributed only 38 examinations；roughly halved the estimated rise', '删去', '压缩篇幅；探索性定位不变'),
     ('引言 第2–3段；讨论 第5段；Cover Letter（S7 改稿）', '—', '新增文献 [19] ACR Appropriateness Criteria Vomiting in Infants（2020）与 [20] Keenan、Sewchuran（2023），其余文献顺延编号', '两条均于 2026-10-10 检索核对（PMID 33153561、39845859）'),
     ('方法 · 研究对象；补充1 · K1–K3；Title Page（复核分工）', 'All operative records were re-read for 34 children …；K1–K3 未写复核者', 'One author, with the imaging labels visible, re-read …；K1 补"非盲"及排除方向核查；K2、K3 写明复核者为作者；Title Page 贡献补 HL、KZ、ZM、JS 的复核分工', '用户 2026-10-10 告知：S1 Haiyan Lei、S2 Kai Zheng、超声阅读者 Zhengliang Meng（甲）与 Jun Shu（乙）。S1 核对表显示了现有检出标签，故如实写为非盲'),
-    ('补充材料 4（S7 新增）', '—', '最小报告数据集，表 S15 列 12 项本研究基线', '均与两位阅读者共识及表 3 一致'),
+    ('补充材料 4（S7 新增）', '—', '最小报告数据集，表 S19 列 12 项本研究基线', '均与两位阅读者共识及表 3 一致'),
     ('结果 · 队列 第2段；结果 · 亚组 第1段；补充2 S2.2、S2.6；图 3 图注；表 3 列标题（通读后措辞）', '… detection was higher in that position (… vs … for the UGI series)；in whom the diagnosis remained uncertain / was assembled by diagnostic uncertainty；two elements documented in more than seven examinations；2012–2018 (n=38)', '… UGI detection was higher when it came last (… vs … when it did not)；presumably selected / assembled by diagnostic uncertainty；the two most often documented elements in panel A；2012–2018, n (of 38)', '补明对比对象；"诊断不确定"是对临床医生考虑的推测，数据未记录检查指征，加 presumably；图 3B 选取规则改为图 A 中记录最多的两项；表 3 时期列只有计数，列标题补 n'),
     ('方法 · 内容编码；表 3 注；补充1 · K3（阅读者与报告）', 'both authors', 'both authors who had reported none of the examinations', '用户 2026-10-10 确认两位超声阅读者均未出具被审计的超声报告；为腾字数删去引言末段 "that other departments can apply"'),
-    ('结果 · 检出率 段；方法 · 统计；补充2 · S2.7–S2.10 与表 S16–S19（统计学审稿后补做）', '… CT and ultrasound remained less often positive than the UGI series; the coefficients … are given in Supplement 2', '… odds ratios 0.29 (0.20–0.41) and 0.27 (0.17–0.44); standardized differences −25.5 and −26.4 percentage points …；ultrasound against CT 0.96 → 0.62 when possible-tier conclusions count negative', '补效应量；四项敏感性分析由 hp_sens.py 运行、verify_hp.py 独立复算；主文因字数删去引言 "The 2025 multicenter series …" 一句（讨论里已有）、"Attenuation was not interpreted as mediation"、"All analysis variables were complete" 和讨论里两处与局限性重复的句子'),
+    ('结果 · 检出率 段；方法 · 统计；补充2 · S2.7–S2.9 与表 S14–S17（统计学审稿后补做）', '… CT and ultrasound remained less often positive than the UGI series; the coefficients … are given in Supplement 2', '… odds ratios 0.29 (0.20–0.41) and 0.27 (0.17–0.44); standardized differences −25.5 and −26.4 percentage points …；ultrasound against CT 0.96 → 0.62 when possible-tier conclusions count negative', '补效应量；四项敏感性分析由 hp_sens.py 运行、verify_hp.py 独立复算；主文因字数删去引言 "The 2025 multicenter series …" 一句（讨论里已有）、"Attenuation was not interpreted as mediation"、"All analysis variables were complete" 和讨论里两处与局限性重复的句子'),
     ('讨论 第3段；Cover Letter', 'duodenal landmarks were documented no more often in the later era', 'whirlpool reporting rose while the duodenal landmarks stayed rare', '1/38 对 2/79 不足以推断"没有更多"，改为描述性'),
     ('摘要、结果、讨论、要点（引言—结果—讨论—结论逻辑核查后的必改项）', '… rested almost entirely on the whirlpool sign …；the audit shows its size and its consequence；CT detection rose and UGI detection did not；a feature of the pathway rather than of the test；Three features；published performance applies only …；recorded in only 59 of 112 children', '… almost always described a whirlpool (59 of 64)；Such low documentation …；CT 2.27 (1.38–3.72) 而 UGI 估计 +5.1 (−4.7 至 +15.0)；may reflect the pathway；Two features；may not apply …；59 of the 112 ultrasound-examined children', '因果措辞改为共现；P 值推出的"没升"改为估计值和区间；补超声在检查顺序中的位置 36.8%（39/106，引言承诺而结果漏报）；"Three features"实为两个，更正；无依据的断言加 presumably/may；要点补人群（96% 扭转）与分母'),
     ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),

@@ -15,7 +15,7 @@
 #N **生成式 AI（第 2 页）**：参考文献前须有固定标题和固定句式的声明。已按原文模板写入，标题为 "Declaration of generative AI and AI-assisted technologies in the writing process"。注意：须知还规定 AI 只能用于改进语言和可读性，本文的声明如实写了协助起草和编写分析代码（见第六节）。
 
 #N **Original Article（第 2 页）**：
-#N • 正文少于 3,000 词（不含参考文献）：2,976 词 ✓
+#N • 正文少于 3,000 词（不含参考文献）：2,978 词 ✓
 #N • 图表合计不超过 7 个：4 表 + 3 图 = 7 ✓
 #N • 原创研究须有正式的 Limitations 部分 ✓
 #N • 观察性研究按 STROBE 报告：附 STROBE 清单 ✓
@@ -41,7 +41,7 @@
 #N • 初投时图和表都要放在正文文件里 ✓（放在正文末尾，每图、每表一页）
 #N • 修回时再单独上传图片文件（TIFF、JPEG 或 EPS，至少 300 dpi）和可编辑表格：已备好 300 dpi TIFF ✓
 
-#N **Summary Sentence（第 5 页）**：最能代表目的或主要结论，逐字取自正文，不超过 35 词或 250 字符：33 词、240 字符 ✓
+#N **Summary Sentence（第 5 页）**：最能代表目的或主要结论，逐字取自正文，不超过 35 词或 250 字符：28 词、206 字符 ✓
 
 #N **Take Home Points（第 5 页）**：3–6 条要点，代替讨论末尾的结论段：4 条 ✓
 
@@ -61,7 +61,7 @@
 #N 6. **参考文献改为 AMA 格式**，作者 6 位及以下的条目已补全全部作者。
 #N 7. **"Online Resource" 统一改名为 "Supplement 1–3"**，脚本改名为 `Supplement_1_classifier.py`。
 #N 8. **作者减到 7 位**，Guanghua Zhang、Hongxi Guo、Haibin Wang 移到致谢（本人已同意）。
-#N 9. **讨论第 2 段对文献 [13] 的表述更精确**：写明 93% 来自原始临床报告、97% 来自盲法复读，且该研究排除了无法诊断和结果不确定的检查。
+#N 9. **讨论第 2 段对文献 [13] 的表述更精确**：写明 93–97% 是旋转不良、97% 是扭转的敏感度，且该研究排除了无法诊断和结果不确定的检查。
 #N 10. **排版**：正文双倍行距，加连续行号和页码；标题改为黑色 Times New Roman；参考文献后依次为图注、4 张表、3 张图，各占一页。
 #N 11. **Title Page 按须知补齐**：Data Statement、领导职务、按 ICMJE 分项的作者贡献；利益冲突声明改为单独上传。
 #N 12. **投稿信点明本文属于 JACR 的 "clinical practice management" 领域**，避免再次因范围问题被退稿。
@@ -79,14 +79,14 @@
 #N 4 张表和 3 张图都在文件末尾。文中无医院名、作者名或伦理批件号。
 
 #N **4. Cover Letter** —— `JACR_1_CoverLetter.docx`
-#N 须知写的是"需要时提供"，建议提供。日期填的是 2026 年 10 月 8 日，若实际投稿日不同，改成投稿当天。
+#N 须知写的是"需要时提供"，建议提供。日期填的是 2026 年 10 月 10 日，若实际投稿日不同，改成投稿当天。
 
 #N **5. Supplementary material**
 #N • `JACR_Supplement_1_NLP_and_report_audit.docx` —— 算法规则、验证、内容审计正则表
 #N • `Supplement_1_classifier.py` —— 规则集的可运行实现，正文按这个文件名引用，**不要改名**；若系统不收 .py，压成 zip 上传
-#N • `JACR_Supplement_2_models_and_subgroups.docx` —— GEE 模型、配对亚组、分层与敏感性分析（内含 Figure S1；S2.7–S2.10 为后补的四项敏感性分析，表 S16–S19）
+#N • `JACR_Supplement_2_models_and_subgroups.docx` —— GEE 模型、配对亚组、分层与敏感性分析（内含 Figure S1；S2.7–S2.9 为后补的四项敏感性分析，表 S14–S17）
 #N • `JACR_Supplement_3_CT_and_UGI_content_audit.docx` —— CT 与造影报告内容审计
-#N • `JACR_Supplement_4_minimum_reporting_dataset.docx` —— 超声最小报告数据集（表 S15，附本研究基线）与再审计方法
+#N • `JACR_Supplement_4_minimum_reporting_dataset.docx` —— 超声最小报告数据集（表 S19，附本研究基线）与再审计方法
 
 #N **6. Reporting checklist** —— `JACR_STROBE_checklist.docx`
 
@@ -110,8 +110,8 @@
 
 #N **Take-Home Points**（若系统要求单独填；已写入正文，逐字复制即可）：
 #N • At one center, routine ultrasound reports for children with surgically confirmed malrotation (96% with volvulus) documented the duodenal landmarks emphasized by published series in 2.6% of 117 examinations.
-#N • Positive ultrasound reports almost always described a whirlpool (59 of 64), a sign of volvulus, which was recorded in 59 of the 112 ultrasound-examined children with volvulus.
-#N • These are report-level detection rates among surgically confirmed children, not sensitivities; they establish no specificity, predictive value or ranking of modalities, and are no argument against ultrasound-first pathways.
+#N • Positive ultrasound reports almost always described a whirlpool (59 of 64), a sign of volvulus. It was recorded in 59 of the 112 ultrasound-examined children with volvulus.
+#N • These are report-level detection rates among surgically confirmed children, not sensitivities; they do not establish specificity, predictive value or ranking of modalities, and do not argue against ultrasound-first pathways.
 #N • Documentation, unlike accuracy, can be audited without a reference standard; the audit criteria are provided as a minimum reporting dataset, with this audit as the baseline for re-audit.
 
 #N **Authors**（按此顺序录入，共 7 位；第一作者 Jun Shu，通讯作者 Jun Yang）：
@@ -157,7 +157,7 @@
 
 #N **5. 通讯作者邮寄地址（已确认）。** 香港路 100 号。
 
-#N **5a. 统计学审稿后补做的四项分析（2026-10-10）。** 程序 `analysis/hp_sens.py`（约 12 分钟，cluster bootstrap 2000 次），结果在补充材料 2 的 S2.7–S2.10 与表 S16–S19，主文只加了效应量和一句话。四项：(1) GEE 比值比加标准化检出率及其差值的 95% 区间；(2) 四种阳性定义（主定义、只计点名旋转不良、排除"可能"级、公开分类器标签）；(3) 检查到手术的间隔、最早/最近/任一次术前检查作索引、2 天内的检查；(4) 超声内容记录率按预约类别和另两个分母重算。结果没有改变主要结论；唯一值得一提的是 CT 与超声的相对位置随阳性定义而变（比值比 0.96 → 0.62，0.38–1.01）。为腾字数删去了引言一句、方法和讨论里几处重复。
+#N **5a. 统计学审稿后补做的四项分析（2026-10-10）。** 程序 `analysis/hp_sens.py`（约 12 分钟，cluster bootstrap 2000 次），结果在补充材料 2 的 S2.7–S2.9 与表 S14–S17，主文只加了效应量和一句话。四项：(1) GEE 比值比加标准化检出率及其差值的 95% 区间；(2) 四种阳性定义（主定义、只计点名旋转不良、排除"可能"级、公开分类器标签）；(3) 检查到手术的间隔、最早/最近/任一次术前检查作索引、2 天内的检查；(4) 超声内容记录率按预约类别和另两个分母重算。结果没有改变主要结论；唯一值得一提的是 CT 与超声的相对位置随阳性定义而变（比值比 0.96 → 0.62，0.38–1.01）。为腾字数删去了引言一句、方法和讨论里几处重复。
 
 #N **5c. 引言—结果—讨论—结论的逻辑核查（2026-10-10）。** 只做了"必改档"：因果措辞改为共现（"rested almost entirely on"→"almost always described a whirlpool (59 of 64)"），P 值推出的"UGI 没升"改为估计值和区间，补出超声在检查顺序中的位置（36.8%），"Three features"更正为"Two"，无依据的断言加 presumably / may，要点补人群（96% 扭转）与 112 的分母。未做的：引言补次要目的、讨论补"可能"级措辞和 59 例亚组、局限性补充、补充材料 2 的"did not differ"、投稿信"wherever reports are stored"。
 
@@ -172,6 +172,6 @@
 #H1 八、投稿前最后自检
 
 #N 1. 隐去作者信息的正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者）已清空。
-#N 2. 标题 121 字符；摘要 248 词；正文 2,976 词；图表 7 个；作者 7 位。
+#N 2. 标题 121 字符；摘要 248 词；正文 2,978 词；图表 7 个；作者 7 位。
 #N 3. Title Page、投稿系统表单和正文 Declarations 三处内容一致。
 #N 4. Cover Letter 日期已改为实际投稿日。

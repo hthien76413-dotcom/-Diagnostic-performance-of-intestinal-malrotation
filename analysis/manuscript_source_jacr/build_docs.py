@@ -27,10 +27,11 @@ for src,dst,font,size in JOBS:
     for s in doc.sections: s.left_margin=s.right_margin=Inches(1.0)
     def para(text,style=None,sz=None,italic=False,space_after=8):
         p=doc.add_paragraph(style=style)
-        for pt in re.split(r'(\*\*[^*]+\*\*|\*[^*]+\*)',text):
+        for pt in re.split(r'(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)',text):
             if not pt: continue
             if pt.startswith('**') and pt.endswith('**'): r=p.add_run(pt[2:-2]); r.bold=True
             elif pt.startswith('*') and pt.endswith('*') and len(pt)>2: r=p.add_run(pt[1:-1]); r.italic=True
+            elif pt.startswith('`') and pt.endswith('`') and len(pt)>2: r=p.add_run(pt[1:-1]); r.font.name='Courier New'
             else: r=p.add_run(pt)
             if italic: r.italic=True
             if sz: r.font.size=Pt(sz)

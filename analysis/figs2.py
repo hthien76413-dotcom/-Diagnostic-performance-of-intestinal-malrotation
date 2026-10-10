@@ -36,7 +36,7 @@ u=pd.read_csv('us_audit4.csv')
 items=[('Third portion of duodenum or\nduodenojejunal junction','d3_or_djj'),('Explicit vessel inversion','inversion'),
        ('Graded compression','compress'),('Enteric fluid administered','fluid'),
        ('Dynamic assessment','dynamic'),('Cecal position','cecum'),
-       ('Duodenum mentioned at all','duodenum'),('SMA-SMV relationship','sma_smv'),
+       ('Duodenum mentioned in any form','duodenum'),('Superior mesenteric\nartery\u2013vein relationship','sma_smv'),
        ('Bowel gas limiting study','gas_limit'),('Whirlpool sign reported','whirl_pos')]
 fig,axes=plt.subplots(1,2,figsize=(15.6,6.0),gridspec_kw={'width_ratios':[1.12,1]})
 ax=axes[0]

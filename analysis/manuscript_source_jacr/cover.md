@@ -8,7 +8,7 @@
 
 #N Email: yjun201602@163.com  |  Telephone: +86 186 2713 9911  |  ORCID: 0009-0006-0669-4340
 
-#N October 8, 2026
+#N October 10, 2026
 
 #N The Editor-in-Chief
 #N *Journal of the American College of Radiology*

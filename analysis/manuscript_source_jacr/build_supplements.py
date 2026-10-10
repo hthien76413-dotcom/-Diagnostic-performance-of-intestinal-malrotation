@@ -28,23 +28,23 @@ D.update(json.load(open(AN+'or3_pooled.json'))); D.update(json.load(open(AN+'or_
 D.update(json.load(open(AN+'us_coding_agreement.json'))); D.update(json.load(open(AN+'mrd.json'))); D.update(json.load(open(AN+'hp_tables.json')))
 TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'K':('Table S2','Agreement of the two independent readers on the twelve ultrasound content items, and agreement of the text patterns with their consensus',D['K']),
-     'S1':('Table S3','Distribution of algorithmic labels and certainty tiers, by modality',D['S1']),
+     'S1':('Table S3','Distribution of final labels and certainty tiers, by modality',D['S1']),
      'G':('Table S4','Between-modality comparison of report-level detection (generalized estimating equation)',D['T4']),
      'P':('Table S5','Report-level detection in the selected subgroup receiving all three examinations, overall and restricted to examinations performed close together in time',D['T5']),
      'S2':('Table S6','Report-level detection stratified by midgut volvulus and by age category',D['S2']),
      'S2B':('Table S7','Detection of a volvulus-specific sign among children with surgically confirmed midgut volvulus',D['S2b']),
-     'S3':('Table S8','Documented content of the CT and upper gastrointestinal series index examinations',D['S3']),
-     'S4':('Table S9','Ultrasound temporal model with the era boundary placed at 2019, 2020, 2021 and 2022',D['S4']),
-     'S5':('Table S10','Ultrasound content audit taking the earliest rather than the closest preoperative examination episode as the index unit',D['S5']),
-     'S6':('Table S11','Prevalence of midgut volvulus, and the whirlpool sign among those children, under three definitions of volvulus',D['S6']),
-     'S11':('Table S12','Average marginal effect of later era, with bootstrap confidence intervals',D['S11']),
-     'S12':('Table S13','Paired differences in detection in the subgroup receiving all three examinations',D['S12']),
-     'S13':('Table S14','Interaction terms, and the separated volvulus contrast under penalized likelihood',D['S13']),
-     'HP16':('Table S16','Between-modality comparison under four definitions of a positive report',D['S16']),
-     'HP17':('Table S17','Standardized detection and differences between modalities under four definitions of a positive report',D['S17']),
-     'HP18':('Table S18','Interval from the index examination to operation, choice of index examination, and detection within 2 days of operation',D['S18']),
-     'HP19':('Table S19','Ultrasound content documentation by booking category and in alternative denominators',D['S19']),
-     'MRD':('Table S15','Minimum reporting dataset for ultrasound in suspected intestinal malrotation, with the documentation rate in this audit as the baseline for re-audit',D['MRD'])}
+     'S3':('Table S18','Documented content of the CT and upper gastrointestinal series index examinations',D['S3']),
+     'S4':('Table S8','Ultrasound temporal model with the era boundary placed at 2019, 2020, 2021 and 2022',D['S4']),
+     'S5':('Table S9','Ultrasound content audit taking the earliest rather than the closest preoperative examination episode as the index unit',D['S5']),
+     'S6':('Table S10','Prevalence of midgut volvulus, and the whirlpool sign among those children, under three definitions of volvulus',D['S6']),
+     'S11':('Table S11','Average marginal effect of later era, with bootstrap confidence intervals',D['S11']),
+     'S12':('Table S12','Paired differences in detection in the subgroup receiving all three examinations',D['S12']),
+     'S13':('Table S13','Interaction terms, and the separated volvulus contrast under penalized likelihood',D['S13']),
+     'HP16':('Table S14','Between-modality comparison under four definitions of a positive report',D['S16']),
+     'HP17':('Table S15','Standardized detection and differences between modalities under four definitions of a positive report',D['S17']),
+     'HP18':('Table S16','Interval from the index examination to operation, choice of index examination, and detection within 2 days of operation',D['S18']),
+     'HP19':('Table S17','Ultrasound content documentation by booking category and in alternative denominators',D['S19']),
+     'MRD':('Table S19','Minimum reporting dataset for ultrasound in suspected intestinal malrotation, with the documentation rate in this audit as the baseline for re-audit',D['MRD'])}
 def make(src,outfile,figs=None):
     doc=docx.Document(); apply_house_style(doc); add_page_numbers(doc)
     st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font.size=Pt(11)
@@ -52,10 +52,11 @@ def make(src,outfile,figs=None):
     def para(t,style=None,size=None,italic=False):
         p=doc.add_paragraph(style=style)
         t=ama_p(t)
-        for pt in re.split(r'(\*\*[^*]+\*\*|\*[^*\s][^*]*\*)',t):
+        for pt in re.split(r'(\*\*[^*]+\*\*|\*[^*\s][^*]*\*|`[^`]+`)',t):
             if not pt: continue
             if pt.startswith('**') and pt.endswith('**'): r=p.add_run(pt[2:-2]); r.bold=True
             elif pt.startswith('*') and pt.endswith('*') and len(pt)>2: r=p.add_run(pt[1:-1]); r.italic=True
+            elif pt.startswith('`') and pt.endswith('`') and len(pt)>2: r=p.add_run(pt[1:-1]); r.font.name='Courier New'
             else: r=p.add_run(pt)
             if italic: r.italic=True
             if size: r.font.size=Pt(size)

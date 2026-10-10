@@ -30,7 +30,7 @@ def box(x,y,w,h,txt,fc='#f4f6f8',ec='#333',fs=10.5,weight='normal'):
     ax.text(x+w/2,y+h/2,txt,ha='center',va='center',fontsize=fs,fontweight=weight,linespacing=1.45)
 def arrow(x1,y1,x2,y2):
     ax.annotate('',xy=(x2,y2),xytext=(x1,y1),arrowprops=dict(arrowstyle='-|>',lw=1.2,color='#333'))
-box(20,119,60,10,f'Clinical research database, 1 Dec 2012 - 30 Jun 2026:\n{n_db} children with a recorded diagnosis of intestinal malrotation;\n{len(opsall)} operative records in {opsall["科研患者编号"].nunique()} operated children, all read',fc='#e8eef5',weight='bold')
+box(20,119,60,10,f'Clinical research database, December 1, 2012\u2013June 30, 2026:\n{n_db} children with a recorded diagnosis of intestinal malrotation;\n{len(opsall)} operative records in {opsall["科研患者编号"].nunique()} operated children, all read',fc='#e8eef5',weight='bold')
 arrow(50,119,50,102.5)
 arrow(50,110.5,64.5,110.5)
 box(65,106,33,9,f'Operation did not meet the criterion\n{len(opsall)-len(ops0)} records in {opsall["科研患者编号"].nunique()-ops0["科研患者编号"].nunique()} children\n(operative diagnosis unrelated to malrotation)',fc='#faf1e8',fs=9.0)
@@ -42,7 +42,7 @@ box(22,71,56,9,f'Surgically confirmed intestinal malrotation\n{len(ops)} records
 arrow(50,71,50,67)
 box(4,50,44,17,f'At least one preoperative index test\nn = {n_img}  ({n_ep} index examinations)\n\nUGI series {nmod["UGI"]}   Abdominal CT {nmod["CT"]}\nUltrasound {nmod["US"]}\nAll three modalities {n_three}',fc='#eef5ee',fs=10.5)
 arrow(48,58.5,54,58.5)
-box(54,36,44,31,f'None of the three index tests\nn = {n_none} ({100*n_none/len(coh):.1f}%)\n\nbut every one had other preoperative imaging:\n  abdominal / chest radiograph            {A55["plain"]}\n  contrast enema of the colon             {A55["enema"]}\n  ultrasound of another region            {A55["otherus"]}\n  CT of another region                      {A55["otherct"]}\n  no in-hospital study                       {A55["none"]}\n     (all {A55["none"]} with documented outside imaging)\n\nOutside or outpatient imaging documented in {A55["outside"]};\nalready reporting malrotation or volvulus in {A55["outside_mal"]}',fc='#faf1e8',fs=9.3)
+box(54,36,44,31,f'None of the three index tests\nn = {n_none} ({100*n_none/len(coh):.1f}%)\n\nbut every one had other preoperative imaging\n(categories overlap):\n  abdominal / chest radiograph            {A55["plain"]}\n  contrast enema of the colon             {A55["enema"]}\n  ultrasound of another region            {A55["otherus"]}\n  CT of another region                      {A55["otherct"]}\n  no in-hospital study                       {A55["none"]}\n     (all {A55["none"]} with documented outside imaging)\n\nOutside or outpatient imaging documented in {A55["outside"]};\nalready reporting malrotation or volvulus in {A55["outside_mal"]}',fc='#faf1e8',fs=9.3)
 assert A55['none_outside']==A55['none']
 arrow(26,50,26,45.5)
 box(3,22,46,23,f'Index examination = examination episode closest to operation\n{n_rep} eligible preoperative reports  \u2192  {n_ep} episodes\n(same-day reports of one modality pooled; {n_early} earlier\nrepeat examinations not audited; {n_rm} reports issued after\nthe operation or for an unrelated illness removed)\n\nEach episode classified as positive or negative by\nrule-based algorithm + surgeon adjudication, and\nseparately audited for documented technical content',fc='#eef5ee',fs=9.3)

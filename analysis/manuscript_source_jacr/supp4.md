@@ -1,6 +1,6 @@
 #T Supplement 4. A minimum reporting dataset for ultrasound in suspected intestinal malrotation, and how to re-audit against it
 
-#N Supplement to the same manuscript.
+#N Supplement to: "Routine Ultrasound Reports for Pediatric Intestinal Malrotation Rarely Document Duodenal Landmarks: A Single-Center Audit"
 
 #H1 A. What the dataset is
 
