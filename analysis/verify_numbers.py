@@ -67,7 +67,7 @@ LIT13 = '文献 [13]（Nguyen 等，AJR 2025，PMID 40499019）摘要：旋转�
 LIT11 = '文献 [11]（Nguyen 等，Arch Dis Child 2021）：17 项研究、2,257 例、合并敏感度 94%（95% CI 89–97）。2026-10-10 检索核对'
 LITACR = ('文献 [19]（ACR Appropriateness Criteria Vomiting in Infants，J Am Coll Radiol 2020;17(11S):S505-S515，PMID 33153561）：'
           '出生 2 天后的胆汁性呕吐（疑似旋转不良）一项，UGI 造影 "usually appropriate"、超声 "may be appropriate"（文中称超声在此人群中有争议）；'
-          '"predate most of this evidence"：[11] 2021、[12] 2022、[13] 2025、[14] 2021 均晚于 2020 年 11 月。2026-10-10 检索核对')
+          '"predate most of this evidence"：[11] 2021、[12] 2022、[13] 2025、[14] 2021 均晚于 2020 年 11 月。题录（题目、卷页、DOI、PMID）2026-10-10 检索核对；评级未能对照原文')
 LIT14 = '文献 [14]（Binu 等，J Pediatr Surg 2021，单中心 Adelaide）：539 例因临床怀疑行超声。2026-10-10 检索核对'
 
 # =============================================================== ABSTRACT
@@ -110,7 +110,8 @@ add('摘要 · Results', '25.6% excluding tentative wording',
 P = para_of(MS + 'p1.md', '#N The upper gastrointestinal (UGI) contrast series')
 add('引言 第2段', '93–97%；17 studies and 2,257 children；pooled sensitivity of 94%；539 children',
     LIT13 + '；' + LIT11 + '；' + LIT14, True, para=P, toks=('93', '97', '17', '2,257', '94', '539'))
-add('引言 第2段', 'The 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days [19]', LITACR, True, para=P, toks=('2020', '2'))
+add('引言 第2段', 'The 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days [19]', LITACR, status='需核对原始文献', para=P, toks=('2020', '2'),
+    issue='未能打开原文；检索摘录之间有出入（JACR 网页版表格与 ACR 检索页不一致）', fix='投稿前打开 acsearch.acr.org 的 Vomiting in Infants，核对 Variant 5 的评级；若不同，改引言与投稿信各一句')
 P = para_of(MS + 'p1.md', '#N The 2025 multicenter series')
 add('引言 第3段', '2025 multicenter series', '文献 [13] 发表年份 2025（参考文献列表一致）', status='定义/描述性数字', para=P, toks=('2025',))
 P = para_of(MS + 'p1.md', '#N We therefore audited')
@@ -827,7 +828,8 @@ for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:',
                                 toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 8, 2026': ('8', '2026')}[start])
 P = para_of(CF, '#N Ultrasound-first pathways')
 add('Cover Letter 第2段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
-add('Cover Letter 第2段', 'the 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days', LITACR, True, para=P, toks=('2020', '2'))
+add('Cover Letter 第2段', 'the 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days', LITACR, status='需核对原始文献', para=P, toks=('2020', '2'),
+    issue='同引言：评级未能对照原文', fix='同引言')
 P = para_of(CF, '#N We audited 13.6 years')
 add('Cover Letter 第3段', '13.6 years', f'{F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年', close('13.6', F['study_months'] / 12), para=P, toks=('13.6',))
 add('Cover Letter 第3段', '723 … 398 … three of 117 (2.6%) … stated in three … twice … 50.4% … 5 of the 58 … 59 of the 112', '与正文一致', True, para=P,

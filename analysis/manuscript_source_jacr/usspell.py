@@ -25,6 +25,10 @@ _MAP = {
     'haemangioma': 'hemangioma', 'towards': 'toward',
     'analysed': 'analyzed', 'analyse': 'analyze',
     'acknowledgement': 'acknowledgment', 'acknowledgements': 'acknowledgments',
+    'calibre': 'caliber', 'colours': 'colors', 'programme': 'program', 'programmes': 'programs',
+    'behaviour': 'behavior', 'oedema': 'edema', 'tumour': 'tumor', 'tumours': 'tumors',
+    'organise': 'organize', 'organised': 'organized', 'minimise': 'minimize', 'optimise': 'optimize',
+    'judgement': 'judgment', 'whilst': 'while', 'amongst': 'among', 'fibre': 'fiber',
 }
 _RX = re.compile(r'\b(' + '|'.join(sorted(_MAP, key=len, reverse=True)) + r')\b',
                  re.IGNORECASE)

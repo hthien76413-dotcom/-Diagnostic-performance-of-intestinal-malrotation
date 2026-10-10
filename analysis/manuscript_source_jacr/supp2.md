@@ -38,7 +38,7 @@
 
 #H1 S2.5 Sensitivity to the three principal analytic choices
 
-#N **The era boundary.** The primary analysis splits the study period at 2019, but the department attributes the change in practice to growing awareness from about 2021. Table S9 repeats the ultrasound model with the boundary at 2019, 2020, 2021 and 2022. The crude era effect is unstable across boundaries, reaching conventional significance only with the boundary at 2020 and falling short of it at 2019, 2021 and 2022; the examination-type effect is stable throughout (odds ratio 3.21–4.04, all p≤0.005) and the adjusted era term is non-significant at every boundary. The association of examination type with detection therefore does not depend on where the boundary is placed, whereas the crude era difference does, and it does not survive a boundary chosen to match the department's own account. This is why the manuscript treats the temporal analysis as exploratory.
+#N **The era boundary.** The primary analysis splits the study period at 2019. Table S9 repeats the ultrasound model with the boundary at 2019, 2020, 2021 and 2022. The crude era effect is unstable across boundaries, reaching conventional significance only with the boundary at 2020 and falling short of it at 2019, 2021 and 2022; the examination-type effect is stable throughout (odds ratio 3.21–4.04, all p≤0.005) and the adjusted era term is non-significant at every boundary. The association of examination type with detection therefore does not depend on where the boundary is placed, whereas the crude era difference does. This is why the manuscript treats the temporal analysis as exploratory.
 
 #TABS4
 

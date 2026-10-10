@@ -31,3 +31,4 @@
   - 为腾字数删去：方法里科室关于"about 2021"的回顾说法（原唯一"需原始数据确认"项）、结果里 OR 3.51 跨边界一句、D3 三例逐年描述、讨论里"38 例""roughly halved"。
   - 正文 2,989 词，摘要 249 词；数字核对表 307 项，0 项不一致、0 项需原始数据确认（补复核分工后为 2,995 词、311 项）。
   - "整改后再审计"本身需要科室实施结构化报告后再收集数据，目前仍未做；做不做由用户决定。
+- 投稿前状态（2026-10-10）：用户确认 7 位作者已看过并同意当前版本；删去"科室称约 2021 年起做法改变"一句（正文方法与补充材料 2 S2.5 均已删）。已做完整通读（正文、补充材料 1–4、投稿信、Title Page、STROBE、操作单），改了 calibre→caliber、Title Page 的 Data availability 与正文对齐、操作单过时说法。**待用户核对**：引言和投稿信引用的 ACR Appropriateness Criteria（Vomiting in Infants，2020）Variant 5 评级（UGI "usually appropriate"、超声 "may be appropriate"）没能对照原文，JACR 网页版表格与 ACR 检索页不一致；核对表中这两行标为"需核对原始文献"。投稿当天还要：改投稿信日期、读 JACR 须知第 2 页统计错误链接、用 Elsevier Declarations tool 生成利益冲突声明。正文 2,995 词（余量 5 词）。
