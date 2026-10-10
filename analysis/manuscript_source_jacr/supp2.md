@@ -8,7 +8,7 @@
 
 #N GEE logistic model with exchangeable working correlation and patient-level clustering (cluster-robust standard errors); 398 children, 723 preoperative index examinations. An odds ratio (OR) below 1 indicates lower report-level detection than the UGI series. These estimates describe indication-driven detection under routine test selection and are **not** estimates of comparative diagnostic accuracy: the modality coefficients absorb the indication for the test, its position in the diagnostic pathway and the content of the examination, which cannot be separated in these data.
 
-#N The pre-specified modality-by-volvulus interaction could not be estimated across all three modalities. No ultrasound examination was positive among the five children without volvulus, so the model exhibits complete separation and does not converge; any p value from such a fit is uninterpretable and none is reported. For the estimable UGI-versus-CT comparison the interaction OR was 0.92 (95% CI 0.32–2.66, p=0.87), that is, the CT-versus-UGI difference did not vary with volvulus.
+#N The pre-specified modality-by-volvulus interaction could not be estimated across all three modalities. No ultrasound examination was positive among the five children without volvulus, so the model shows complete separation and does not converge; any p value from such a fit is uninterpretable and none is reported. For the estimable UGI-versus-CT comparison the interaction OR was 0.92 (95% CI 0.32–2.66, p=0.87), that is, the CT-versus-UGI difference did not vary with volvulus.
 
 #H1 S2.2 The selected subgroup receiving all three examinations
 
@@ -16,7 +16,7 @@
 
 #N This subgroup was presumably assembled by diagnostic uncertainty, not by sampling: 96.6% had midgut volvulus, 83.1% were neonates and 62.7% were operated on in 2019–2026, compared with 87.9%, 67.3% and 29.5% of the other 339 imaged children. It describes which examination named the diagnosis most often among children investigated intensively enough to receive all three, and is **not** a population-level comparison of test accuracy.
 
-#N The interval is that between the first and last of the three examinations (median 0.9 days, interquartile range 0.6–1.6). Because active volvulus and its imaging signs can evolve over such an interval, the analysis is repeated in the subsets in which all three examinations fell within 48 h and within 24 h. Restricting to near-simultaneous examinations did not weaken the pattern, although no timing restriction can undo the selection that defines the subgroup. Discordant pairs are shown as first-positive/second-positive.
+#N The interval is that between the first and last of the three examinations (median 0.9 days, interquartile range 0.6–1.6). Because active volvulus and its imaging signs can evolve over such an interval, the analysis is repeated in the subsets in which all three examinations fell within 48 h and within 24 h. Restricting to near-simultaneous examinations did not weaken the pattern, although no timing restriction can remove the selection that defines the subgroup. Discordant pairs are shown as first-positive/second-positive.
 
 #FIGP
 
@@ -26,7 +26,7 @@
 
 #TABS2
 
-#N Wilson 95% confidence intervals. All strata are computed among children with surgically confirmed malrotation who received that index test, and are not sensitivities. Note the ultrasound / volvulus-absent cell (0 of 5): ultrasound was performed in only 5 of the 53 children in the cohort who had malrotation without volvulus, and the corresponding interaction model does not converge because of this complete separation. No directional conclusion about ultrasound in uncomplicated malrotation can be drawn from these data.
+#N Wilson 95% confidence intervals. All strata are computed among children with surgically confirmed malrotation who received that index test, and are not sensitivities. In the ultrasound / volvulus-absent cell (0 of 5), ultrasound was performed in only 5 of the 53 children in the cohort who had malrotation without volvulus, and the corresponding interaction model does not converge because of this complete separation. No directional conclusion about ultrasound in uncomplicated malrotation can be drawn from these data.
 
 #H1 S2.4 Detection of a volvulus-specific sign among children with confirmed midgut volvulus
 
@@ -34,7 +34,7 @@
 
 #N The sign is modality-specific. For ultrasound it is the whirlpool as coded by the two independent readers (Supplement 1, Section K), so the rate is identical to the whirlpool figure quoted in the manuscript (59 of 112). For CT it is a whirlpool or spiral appearance and for the upper gastrointestinal series a corkscrew or spring appearance, coded by the negation-aware patterns of the content audit (Supplement 1, Section H). Ultrasound and the UGI series reported such a sign at similar rates and both more often than CT, but the comparison is between different children, uses different coding methods and is not adjusted; it is reported as exploratory and no claim of a difference between modalities is made.
 
-#N The finding that survives this sensitivity analysis is directional rather than comparative. Within ultrasound, the whirlpool sign was both the dominant documented finding and the near-exclusive determinant of a positive report (main manuscript, Table 3), consistent with its being a sign of volvulus rather than of malrotation.
+#N The finding that survives this sensitivity analysis is directional rather than comparative. Within ultrasound, the whirlpool sign was both the most often documented finding and the finding described in almost all positive reports (main manuscript, Table 3), consistent with its being a sign of volvulus rather than of malrotation.
 
 #H1 S2.5 Sensitivity to the three principal analytic choices
 
