@@ -4,7 +4,7 @@
 
 #H1 A. What the dataset is
 
-#N The dataset lists the statements an ultrasound report would need to contain for a reader to tell whether the examination resembled those on which published performance rests. Its technique elements are those to which the literature cited in the manuscript attributes that performance (Menten 2012; Hennessey 2014; Nguyen 2021, 2022 and 2025; McCurdie 2024); the whirlpool sign is from Shimanuki 1996, and study adequacy from El-Ali 2025, in which 25.7% of examinations were non-diagnostic on the original report. Each element is stated whether the finding is normal, abnormal or not obtained, so that an omitted step can be told from a normal one.
+#N The dataset lists the statements an ultrasound report would need to contain for a reader to tell whether the examination resembled those on which published performance rests. Its technique elements are those to which the literature cited in the manuscript attributes that performance (Menten 2012; Hennessey 2014; Nguyen 2021, 2022 and 2025; McCurdie 2024); the whirlpool sign is from Shimanuki 1996, and study adequacy from El-Ali 2025, in which 25.7% of examinations for malrotation and 13.5% for volvulus were non-diagnostic on the original report. Each element is stated whether the finding is normal, abnormal or not obtained, so that an omitted step can be told from a normal one.
 
 #N The dataset is a proposal derived from this audit. It has not been validated, its effect on documentation or on detection has not been tested, and it prescribes no technique beyond what the cited literature describes. It records what was done; it does not make an examination adequate.
 

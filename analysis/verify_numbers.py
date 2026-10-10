@@ -63,7 +63,8 @@ def para_of(path, startswith):
 
 
 T1, T2, T3, T4 = F['T1'], F['T2'], F['T3'], F['T4']
-LIT13 = '文献 [13]（Nguyen 等，AJR 2025，PMID 40499019）摘要：旋转不良敏感度原始报告 93%、盲法复读 97%；D3 位置为最准确单一征象（98%）。2026-10-10 检索核对'
+LIT13 = ('文献 [13]（Nguyen 等，AJR 2025，PMID 40499019）摘要：旋转不良敏感度/特异度 原始报告 93%/96%、盲法复读 97%/99%；扭转敏感度/特异度 原始报告 97%/98%、盲法复读 97%/99%；'
+         '最准确的单一征象：D3 腹膜内位置对旋转不良（准确度 98%）、漩涡征对扭转（99%）；排除非诊断性与不确定检查。2026-10-10 多次检索一致（含二手综述）；AJR/PubMed 原页因网络策略未能直接打开')
 LIT11 = '文献 [11]（Nguyen 等，Arch Dis Child 2021）：17 项研究、2,257 例、合并敏感度 94%（95% CI 89–97）。2026-10-10 检索核对'
 LITACR = ('文献 [19]（ACR Appropriateness Criteria Vomiting in Infants，J Am Coll Radiol 2020;17(11S):S505-S515，PMID 33153561）：'
           'Variant 5（出生 2 天后胆汁性呕吐、疑似旋转不良、初始影像）：UGI 造影 "Usually Appropriate"，超声 "May Be Appropriate"，腹部平片 "May Be Appropriate (Disagreement)"，造影灌肠 "Usually Not Appropriate"。'
@@ -294,7 +295,7 @@ add('讨论 第1段', 'Positive reports almost always described a whirlpool (59 
     T2['US']['k'] == 64 and T3['whirl_pos']['n'] == 59 and T3['whirl_pos']['det_yes'] == (59, 59), para=P, toks=('59', '64'))
 P = para_of(MS + 'p3.md', '#N Malrotation or volvulus was named in 54.7%')
 add('讨论 第2段', '54.7%', '64/117 = 54.70%', close('54.7', pc(64, 117)), para=P, toks=('54.7',))
-add('讨论 第2段', '93% … 97% … 2025 multicenter series [13]; pooled 94% [11]', LIT13 + '；' + LIT11, True, para=P, toks=('93', '97', '2025', '94', '2025'))
+add('讨论 第2段', '93–97% for malrotation and 97% for volvulus … 2025 multicenter series [13]; pooled 94% [11]', LIT13 + '；' + LIT11, True, para=P, toks=('93', '97', '97', '2025', '94', '2025'))
 add('讨论 第2段', '25.7% of examinations for malrotation were non-diagnostic [27]', '文献 [27]：80/311 = 25.7%（原始报告；盲法复读 37.6%），2026-10-09 已检索 Springer/PubMed 摘要核对',
     close('25.7', pc(80, 311)), para=P, toks=('25.7',))
 P = para_of(MS + 'p3.md', '#N Two features of the design')
@@ -643,8 +644,8 @@ P = para_of(S4F, '#N The dataset lists the statements')
 add('补充4 · A', 'Menten 2012; Hennessey 2014; Nguyen 2021, 2022 and 2025; McCurdie 2024; Shimanuki 1996; El-Ali 2025',
     '与参考文献 [16] [17] [11] [12] [13] [15] [22] [27] 的年份一致', status='定义/描述性数字', para=P,
     toks=('2012', '2014', '2021', '2022', '2025', '2024', '1996', '2025'))
-add('补充4 · A', 'El-Ali 2025, in which 25.7% of examinations were non-diagnostic on the original report', '文献 [27]：80/311 = 25.7%，与正文讨论第 2 段一致',
-    close('25.7', pc(80, 311)), para=P, toks=('25.7',))
+add('补充4 · A', 'El-Ali 2025, in which 25.7% of examinations for malrotation and 13.5% for volvulus were non-diagnostic on the original report', '文献 [28]：malrotation 80/311 = 25.7%，volvulus 86/637 = 13.5%（原始报告；盲法复读 37.6%、17.3%），与正文讨论第 2 段一致；2026-10-10 检索核对摘要',
+    close('25.7', pc(80, 311)) and close('13.5', pc(86, 637)), para=P, toks=('25.7', '13.5'))
 P = para_of(S4F, '#N The last column is the baseline')
 add('补充4 · A 表注', 'the 117 ultrasound index examinations by the two readers', f'超声索引检查 {len(u)} 次；两位阅读者', len(u) == 117, para=P, toks=('117', 'two'))
 P = para_of(S4F, '#N **Coding.**')
