@@ -113,8 +113,6 @@ P = para_of(MS + 'p1.md', '#N The upper gastrointestinal (UGI) contrast series')
 add('引言 第2段', '93–97%；17 studies and 2,257 children；pooled sensitivity of 94%；539 children',
     LIT13 + '；' + LIT11 + '；' + LIT14, True, para=P, toks=('93', '97', '17', '2,257', '94', '539'))
 add('引言 第2段', 'The 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days [19]', LITACR, True, para=P, toks=('2020', '2'))
-P = para_of(MS + 'p1.md', '#N The 2025 multicenter series')
-add('引言 第3段', '2025 multicenter series', '文献 [13] 发表年份 2025（参考文献列表一致）', status='定义/描述性数字', para=P, toks=('2025',))
 P = para_of(MS + 'p1.md', '#N We therefore audited')
 add('引言 第4段', '13.6 years', f'2012 年 12 月至 2026 年 6 月共 {F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年（2026-10-10 由 13.5 更正）',
     close('13.6', F['study_months'] / 12), para=P, toks=('13.6',))
@@ -822,6 +820,88 @@ for row in t[1:]:
         add(f'补充2 · 表 S14 · {"超声" if "ultrasound" in lab else "CT"} 时代 × 内容', ' | '.join(row[1:]), f'自写 IRLS 交互项 OR {o[0]:.3f} ({o[1]:.3f}–{o[2]:.3f})，P {o[3]:.3f}；与"均不显著"的文字一致', ok)
 add('补充2 · 图 S1', '45/59、31/59、27/59、31/59；48 h 与 24 h 子集', '与表 S5 同一数据，逐项一致', True)
 
+# S16 to S19: sensitivity analyses added after the statistical review (hp_sens.py; independent recomputation in verify_hp.py)
+HPF = F['HP']; HPJ = json.load(open('hp_sens.json'))
+KEYMAP = {'Primary: final label': 'primary', 'Conclusion names malrotation': 'named',
+          'Possible-tier conclusions counted negative': 'strict', 'Conclusion-only classifier (Supplement_1_classifier.py)': 'ref'}
+SGN = r'([+−\-]?[\d.]+)'
+def find_tab(sup, c0, c1):
+    return next(t_ for t_ in sup if t_[0][0] == c0 and t_[0][1].startswith(c1))
+t = find_tab(SUP2, 'Outcome definition', 'UGI series, n/N')
+for row in t[1:]:
+    key = KEYMAP[row[0]]; ok = True; res = []
+    for m_, cell in zip(['UGI', 'CT', 'US'], row[1:4]):
+        k_, n_, p_ = re.match(r'(\d+)/(\d+) \(([\d.]+)\)', cell).groups()
+        ok &= (int(k_), int(n_)) == HPF['rates'][key][m_] and close(p_, pc(int(k_), int(n_)))
+        res.append(f'{m_} {k_}/{n_}')
+    for cell, c in zip(row[4:7], ['CT vs UGI', 'US vs UGI', 'US vs CT']):
+        a_ = re.match(r'([\d.]+) \(([\d.]+)–([\d.]+)\)', cell); o = HPF['ors'][key][c]
+        ok &= close(a_.group(1), o[0], 2) and close(a_.group(2), o[1], 2) and close(a_.group(3), o[2], 2)
+        res.append(f'{c} {o[0]:.3f} ({o[1]:.3f}–{o[2]:.3f})')
+    add(f'补充2 · 表 S16 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '（手工设计矩阵的 GEE 重拟合，与 hp_sens.py 独立）', ok)
+t = find_tab(SUP2, 'Outcome definition', 'UGI series, % (95% CI)')
+for row in t[1:]:
+    key = KEYMAP[row[0]]; ok = True; res = []; st_ = HPF['std'][key]
+    for m_, cell in zip(['UGI', 'CT', 'US'], row[1:4]):
+        a_ = re.match(r'([\d.]+) \(([\d.]+)–([\d.]+)\)', cell)
+        ok &= close(a_.group(1), st_[m_], 1)
+        if key == 'primary':
+            bc = HPF['boot_check'][m_]; ok &= abs(num(a_.group(2)) - bc[0]) <= 2.0 and abs(num(a_.group(3)) - bc[1]) <= 2.0
+        res.append(f'{m_} {st_[m_]:.2f}')
+    for cell, c, pt in zip(row[4:7], ['CT−UGI', 'US−UGI', 'US−CT'],
+                           [st_['CT'] - st_['UGI'], st_['US'] - st_['UGI'], st_['US'] - st_['CT']]):
+        a_ = re.match(SGN + r' \(' + SGN + r' to ' + SGN + r'\)', cell)
+        ok &= close(a_.group(1), pt, 1)
+        if key == 'primary':
+            bc = HPF['boot_check'][c]; ok &= abs(num(a_.group(2)) - bc[0]) <= 2.0 and abs(num(a_.group(3)) - bc[1]) <= 2.0
+        res.append(f'{c} {pt:+.2f}')
+    note = ('区间：独立重跑 bootstrap（另一种子、300 次）与 hp_sens.py 的 2000 次结果相差 ≤ 2 个百分点'
+            if key == 'primary' else '区间为原程序 cluster bootstrap（固定种子、2000 次）；点估计已独立复算')
+    add(f'补充2 · 表 S17 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '；' + note, ok)
+t = find_tab(SUP2, 'Measure', 'UGI series')
+iv, un = HPF['interval'], HPF['units']; ok_all = True
+def cellnn(c):
+    a_ = re.match(r'(\d+)/(\d+) \(([\d.]+)\)', c); return int(a_.group(1)), int(a_.group(2)), a_.group(3)
+for row in t[1:]:
+    lab = row[0]; ok = True; res = ''
+    for m_, cell in zip(['UGI', 'CT', 'US'], row[1:4]):
+        if lab == 'Index examinations, n': ok &= int(cell) == iv[m_]['n']
+        elif lab.startswith('Calendar days'):
+            a_ = re.match(r'(\d+) \((\d+)–(\d+)\)', cell); ok &= (int(a_.group(1)), int(a_.group(2)), int(a_.group(3))) == (iv[m_]['median'], iv[m_]['q1'], iv[m_]['q3'])
+        elif lab.startswith(('Same day', '1 day', '2–7', 'More than 7')):
+            key_ = {'Same day': 'd0', '1 day': 'd1', '2–7': 'd2_7', 'More than 7': 'd8'}[[k for k in ('Same day', '1 day', '2–7', 'More than 7') if lab.startswith(k)][0]]
+            a_ = re.match(r'(\d+) \(([\d.]+)\)', cell); ok &= int(a_.group(1)) == iv[m_][key_] and close(a_.group(2), pc(iv[m_][key_], iv[m_]['n']))
+        elif lab.startswith('Detection, final label, closest'):
+            k_, n_, p_ = cellnn(cell); ok &= (k_, n_) == (un[m_]['final'], un[m_]['n']) and close(p_, pc(k_, n_))
+        elif lab.startswith('Detection, conclusion-only classifier, closest'):
+            k_, n_, p_ = cellnn(cell); ok &= (k_, n_) == (un[m_]['closest'], un[m_]['n']) and close(p_, pc(k_, n_))
+        elif lab.startswith('Detection, conclusion-only classifier, earliest'):
+            k_, n_, p_ = cellnn(cell); ok &= (k_, n_) == (un[m_]['earliest'], un[m_]['n']) and close(p_, pc(k_, n_))
+        elif lab.startswith('Detection, conclusion-only classifier, any'):
+            k_, n_, p_ = cellnn(cell); ok &= (k_, n_) == (un[m_]['anypos'], un[m_]['n']) and close(p_, pc(k_, n_))
+        elif lab.startswith('Children with more than one'): ok &= int(cell) == un[m_]['n_multi']
+        elif lab.startswith('Detection, final label, examinations within 2 days'):
+            k_, n_, p_ = cellnn(cell); ok &= (k_, n_) == HPF['restricted'][2][m_] and close(p_, pc(k_, n_))
+        elif lab.startswith('Adjusted OR vs UGI'):
+            if m_ != 'UGI':
+                a_ = re.match(r'([\d.]+) \(([\d.]+)–([\d.]+)\)', cell); o = HPF['restricted_or']['CT vs UGI' if m_ == 'CT' else 'US vs UGI']
+                ok &= close(a_.group(1), o[0], 2) and close(a_.group(2), o[1], 2) and close(a_.group(3), o[2], 2)
+        elif lab.startswith('Adjusted OR vs CT'):
+            if m_ == 'US':
+                a_ = re.match(r'([\d.]+) \(([\d.]+)–([\d.]+)\)', cell); o = HPF['restricted_or']['US vs CT']
+                ok &= close(a_.group(1), o[0], 2) and close(a_.group(2), o[1], 2) and close(a_.group(3), o[2], 2)
+        else:
+            ok = False
+    add(f'补充2 · 表 S18 · {lab}', ' | '.join(row[1:]), '手工按日历日重算（最近=间隔最小，最早=间隔最大）；分类器标签为 Supplement_1_classifier.py 对合并结论的判定', ok)
+t = find_tab(SUP2, 'Denominator', 'Examinations')
+for row in t[1:]:
+    c = HPF['content'][row[0]]; ok = int(row[1]) == c['n']; res = [f'n {c["n"]}']
+    for cell, k in zip(row[2:7], ['d3', 'sma', 'fluid', 'whirl', 'det']):
+        a_ = re.match(r'(\d+) \(([\d.]+); ([\d.]+)–([\d.]+)\)', cell); lo, hi = wilson(c[k], c['n'])
+        ok &= int(a_.group(1)) == c[k] and close(a_.group(2), pc(c[k], c['n'])) and close(a_.group(3), lo) and close(a_.group(4), hi)
+        res.append(f'{k} {c[k]}')
+    add(f'补充2 · 表 S19 · {row[0]}', ' | '.join(row[1:]), '；'.join(res) + '（Wilson 区间自写公式）', ok)
+
 # =============================================================== COVER LETTER AND TITLE PAGE
 CF = MS + 'cover.md'
 for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:', '电话、ORCID'), ('#N October 8, 2026', '信件日期')]:
@@ -856,6 +936,104 @@ def tokens(t):
     t = re.sub(r'\bS\d+(\.\d+)?\b|\bK\d\b|\bG2\b|\bD3\b|\bE\d\b|\(\d\)|\b[A-K]\b', ' ', t)
     t = re.sub(r'[一-鿿]+[^\s]*', ' ', t)
     return [o.rstrip(',') for o in re.findall(r'(?<![\w.])\d[\d,]*(?:\.\d+)?|(?<![\w])(?:' + WORDS + r')(?![\w])', t, flags=re.I)]
+# ---- sentences added with the sensitivity analyses: every number is rebuilt from the data and must appear in the text as printed
+def line_of(path, start):
+    for l_ in io.open(path, encoding='utf-8').read().split('\n'):
+        if l_.startswith(start): return re.sub(r'\*+', '', l_[3:])
+    raise KeyError(start)
+def check_text(loc, path, start, expected, note, extra_ok=True, extra_note=''):
+    P_ = para_of(path, start); line_ = line_of(path, start)
+    missing = [e_ for e_ in expected if e_ not in line_]
+    toks_ = [t_ for e_ in expected for t_ in tokens(e_)] if not missing else []
+    add(loc, ' ｜ '.join(expected)[:400], note + (f'；{extra_note}' if extra_note else '') + (('；文中缺少：' + '、'.join(missing)) if missing else ''),
+        ok=(not missing) and extra_ok, para=P_, toks=toks_)
+MN = '−'
+def sg_(v, nd=1, plus=False):
+    r_ = f'{abs(v):.{nd}f}'
+    return (MN + r_) if (v < 0 and float(r_) != 0) else (('+' if plus else '') + r_)
+def o2_(t_): return f'{t_[0]:.2f}', f'{t_[1]:.2f}', f'{t_[2]:.2f}'
+AB_ = HPJ['AB']; STD_ = HPF['std']
+def ciJ(key, name): return AB_[key]['ci'][name]
+def dpt(key, name):
+    st_ = STD_[key]; return {'CT−UGI': st_['CT'] - st_['UGI'], 'US−UGI': st_['US'] - st_['UGI'], 'US−CT': st_['US'] - st_['CT']}[name]
+# Methods: age categories
+check_text('方法 · 统计', MS + 'p1.md', '#N Detection rates are presented', ['(≤28 days, 29 days–1 year, >1 year)'],
+           '年龄分组与分析一致：neonate = 年龄 ≤28 天，29–365 天，>365 天（表 S4 的分组）',
+           extra_ok=bool(((pat['age_days'] <= 28) == pat['neonate']).all() and ((pat['age_days'] <= 365) == pat['infant']).all()))
+# Results: effect sizes, outcome definition, timing
+g_ct, g_us = o2_(F['GEE']['ct_a']), o2_(F['GEE']['us_a'])
+d_ct, d_us = dpt('primary', 'CT−UGI'), dpt('primary', 'US−UGI')
+c_ct, c_us = ciJ('primary', 'CT−UGI'), ciJ('primary', 'US−UGI')
+sr = HPF['ors']['strict']['US vs CT']; pr_ = HPF['ors']['primary']['US vs CT']
+ev = HPF['units']; ro = HPF['restricted_or']; po_ = F['GEE']
+mxd = max(abs(ev[m_]['closest'] - ev[m_][k_]) for m_ in ev for k_ in ('earliest', 'anypos'))
+ok_little = mxd <= 3 and all(0.8 <= ro[c_][0] / HPF['ors']['primary'][c_][0] <= 1.25 for c_ in ro)
+check_text('结果 · 检出率 段', MS + 'p2.md', '#N Detection was 230/293',
+           [f'odds ratios {g_ct[0]}, 95% CI {g_ct[1]}–{g_ct[2]}, and {g_us[0]}, {g_us[1]}–{g_us[2]}',
+            f'standardized differences {sg_(d_ct)}, {sg_(c_ct[0])} to {sg_(c_ct[1])}, and {sg_(d_us)}, {sg_(c_us[0])} to {sg_(c_us[1])} percentage points',
+            f'adjusted odds ratio for ultrasound against CT fell from {pr_[0]:.2f} ({pr_[1]:.2f}–{pr_[2]:.2f}) to {sr[0]:.2f} ({sr[1]:.2f}–{sr[2]:.2f})',
+            'within 2 days of operation'],
+           'GEE 比值比取自 statsmodels 重拟合（与表 S4 相同）；标准化差值点估计为手工由回归系数算出，区间为 hp_sens.py 的 cluster bootstrap（2000 次；主定义的区间已由独立重跑核对）；'
+           '"changed these results little"：2 天内 OR 与主模型之比在 0.8–1.25 之间，最早/任一次术前检查使检出数最多相差 %d 次' % mxd,
+           extra_ok=ok_little)
+ct_c = HPF['content']['Booked as gastrointestinal or great-vessel']
+check_text('结果 · 超声内容 第1段', MS + 'p2.md', '#N Of the 117 ultrasound index examinations',
+           ['all three among the 112 booked as gastrointestinal or great-vessel studies'],
+           f'预约为胃肠或大血管的检查 {ct_c["n"]} 次，其中 D3/十二指肠空肠曲 {ct_c["d3"]} 次 = 全部 {HPF["content"]["All ultrasound examinations (primary denominator)"]["d3"]} 次',
+           extra_ok=ct_c['n'] == 112 and ct_c['d3'] == HPF['content']['All ultrasound examinations (primary denominator)']['d3'] == 3)
+# Supplement 2, S2.7
+n_kids = int(long['科研患者编号'].nunique()); seed_ = int(re.search(r'SEED = (\d+)', io.open('hp_sens.py', encoding='utf-8').read()).group(1))
+check_text('补充2 · S2.7 第1段', MS + 'supp2.md', '#N Table S4 is repeated',
+           [f'{HPF["ref_agree"][0]} of {HPF["ref_agree"][1]} index examinations', f'the {n_kids} children who underwent at least one index test',
+            f'{AB_["primary"]["nboot"]:,} resamples of children (seed {seed_})'],
+           '分类器标签与终标签一致数由独立程序算出；398 = 至少有一项索引检查的儿童；bootstrap 次数与种子读自 hp_sens.json / hp_sens.py',
+           extra_ok=HPF['ref_agree'] == (716, 723) and n_kids == 398 and all(AB_[k_]['nboot'] == 2000 for k_ in AB_))
+tier_ = {m_: F['T2'][m_]['poss'] / F['T2'][m_]['k'] * 100 for m_ in ('UGI', 'CT', 'US')}
+dd = lambda k_, n_: dpt(k_, n_)
+ok_all4 = all(ciJ(k_, n_)[1] < 0 for k_ in AB_ for n_ in ('CT−UGI', 'US−UGI'))
+us_ct_s = ciJ('strict', 'US−CT'); us_ct_p = ciJ('primary', 'US−CT')
+check_text('补充2 · S2.7 第2段', MS + 'supp2.md', '#N Adjusted for era and age, detection',
+           [f'{abs(d_ct):.1f} percentage points lower for CT than for the UGI series (95% CI {sg_(c_ct[0])} to {sg_(c_ct[1])})',
+            f'{abs(d_us):.1f} lower for ultrasound ({sg_(c_us[0])} to {sg_(c_us[1])})',
+            f'CT and ultrasound did not differ ({sg_(dd("primary", "US−CT"))}, {sg_(us_ct_p[0])} to {sg_(us_ct_p[1], plus=True)})',
+            f'ultrasound was {abs(dd("strict", "US−CT")):.1f} percentage points lower than CT ({sg_(us_ct_s[0])} to {sg_(us_ct_s[1])}; adjusted odds ratio {sr[0]:.2f}, {sr[1]:.2f}–{sr[2]:.2f})',
+            f'the odds ratios were {pr_[0]:.2f}, {HPF["ors"]["named"]["US vs CT"][0]:.2f} and {HPF["ors"]["ref"]["US vs CT"][0]:.2f}',
+            f'({tier_["US"]:.1f}%) than among positive CT reports ({tier_["CT"]:.1f}%) or UGI reports ({tier_["UGI"]:.1f}%; Table 2)'],
+           '点估计手工算出，区间为 hp_sens.py 的 cluster bootstrap；"present under all four definitions"：四种定义下 CT−UGI 与超声−UGI 的区间上限均 <0；确定性分级比例来自表 2 的分级计数',
+           extra_ok=ok_all4)
+# Supplement 2, S2.8
+iv_ = HPF['interval']; re2 = HPF['restricted'][2]; ro_ = HPF['restricted_or']; un_ = HPF['units']
+pct_ = lambda m_, k_: f'{100 * iv_[m_][k_] / iv_[m_]["n"]:.1f}'
+check_text('补充2 · S2.8', MS + 'supp2.md', '#N Operative times are recorded as dates only',
+           [f'a median of {iv_["UGI"]["median"]:.0f} days before operation for the UGI series and CT and {iv_["US"]["median"]:.0f} day for ultrasound',
+            f'{pct_("UGI", "d8")}%, {pct_("CT", "d8")}% and {pct_("US", "d8")}% were more than 7 days before',
+            f'within 2 calendar days of operation ({re2["UGI"][1]}, {re2["CT"][1]} and {re2["US"][1]} examinations) was '
+            f'{100 * re2["UGI"][0] / re2["UGI"][1]:.1f}%, {100 * re2["CT"][0] / re2["CT"][1]:.1f}% and {100 * re2["US"][0] / re2["US"][1]:.1f}%',
+            f'(CT {ro_["CT vs UGI"][0]:.2f}, 95% CI {ro_["CT vs UGI"][1]:.2f}–{ro_["CT vs UGI"][2]:.2f}; ultrasound {ro_["US vs UGI"][0]:.2f}, {ro_["US vs UGI"][1]:.2f}–{ro_["US vs UGI"][2]:.2f}; '
+            f'ultrasound against CT {ro_["US vs CT"][0]:.2f}, {ro_["US vs CT"][1]:.2f}–{ro_["US vs CT"][2]:.2f})',
+            f'Only {sum(un_[m_]["n_multi"] for m_ in un_)} child-modality combinations had more than one preoperative episode (UGI series {un_["UGI"]["n_multi"]}, CT {un_["CT"]["n_multi"]}, ultrasound {un_["US"]["n_multi"]})',
+            f'detection with the closest episode was {un_["UGI"]["closest"]}, {un_["CT"]["closest"]} and {un_["US"]["closest"]}',
+            f'with the earliest {un_["UGI"]["earliest"]}, {un_["CT"]["earliest"]} and {un_["US"]["earliest"]}',
+            f'{un_["UGI"]["anypos"]}, {un_["CT"]["anypos"]} and {un_["US"]["anypos"]}.'],
+           '日历日数、比例、2 天内检出率与比值比、多次检查的儿童数、三种索引定义下的检出数均由手工独立程序算出',
+           extra_ok=True)
+# Supplement 2, S2.9 and the closing paragraph
+cn_ = HPF['content']; cg = cn_['Booked as gastrointestinal or great-vessel']; cnn = cn_['Child aged 28 days or younger']; cpy = cn_['Booked as pyloric only']
+wl_, wh_ = wilson(cg['d3'], cg['n']); wl2_, wh2_ = wilson(cnn['d3'], cnn['n'])
+check_text('补充2 · S2.9', MS + 'supp2.md', '#N The booking category is the only indicator',
+           [f'the {cg["n"]} booked as gastrointestinal or great-vessel studies ({100 * cg["d3"] / cg["n"]:.1f}%, 95% CI {wl_:.1f}–{wh_:.1f})',
+            f'The {["zero", "one", "two", "three", "four", "five"][cpy["n"]]} booked only as pyloric studies documented none of the elements',
+            f'Among the {cnn["n"]} children aged 28 days or younger', f'documented in {cnn["d3"]} ({100 * cnn["d3"] / cnn["n"]:.1f}%, {wl2_:.1f}–{wh2_:.1f})',
+            'children aged 28 days or younger'],
+           'Wilson 区间自写公式；仅幽门预约的检查 5 次，四项内容均为 0',
+           extra_ok=cpy['n'] == 5 and all(cpy[k_] == 0 for k_ in ('d3', 'sma', 'fluid', 'whirl')))
+rates_ = [100 * cn_[k_]['d3'] / cn_[k_]['n'] for k_ in ('All ultrasound examinations (primary denominator)', 'Booked as gastrointestinal', 'Booked as abdominal great-vessel',
+                                                          'Booked as gastrointestinal or great-vessel', 'Child aged 28 days or younger')]
+dif_ = [abs(dpt(k_, n_)) for k_ in AB_ for n_ in ('CT−UGI', 'US−UGI')]
+check_text('补充2 · S2.10', MS + 'supp2.md', '#N These four analyses were decided',
+           [f'between {min(rates_):.1f}% and {max(rates_):.1f}% of ultrasound examinations', f'by {min(dif_):.1f} to {max(dif_):.1f} percentage points under every definition'],
+           'D3 或十二指肠空肠曲记录率的范围取全部、胃肠预约、大血管预约、胃肠或大血管、新生儿五个分母；CT、超声与 UGI 的标准化差值绝对值范围取四种定义', extra_ok=True)
+
 UNCOVERED = []
 for f in ['p1.md', 'p2.md', 'p3.md', 'supp1.md', 'supp2.md', 'supp3.md', 'supp4.md', 'cover.md', 'titlepage.md']:
     stop = False
@@ -883,13 +1061,18 @@ from collections import defaultdict
 LEFT = defaultdict(list)
 for key, tk, ctx in UNCOVERED:
     LEFT[key].append(tk)
-DEF_OK = {'one', 'two', 'three', 'zero'}
+DEF_OK = {'one', 'two', 'three', 'zero', 'four', 'once'}
 for key, tks in LEFT.items():
     if all(t.lower() in DEF_OK for t in tks):
         line = io.open(MS + key.split(':')[0], encoding='utf-8').read().split('\n')[int(key.split(':')[1]) - 1]
         ctx = '；'.join(sorted({m.group(0) for m in re.finditer(r'(?:at least|all|of the|in|one of the|includes|by|with)?\s?\b(?:one|two|three|zero)\b\s?\w*', line[3:], flags=re.I)}))[:200]
         add(f'{key} 计数词', ctx, '描述性计数词（如 at least one、all three modalities、two readers、includes zero），上下文核对无误', status='定义/描述性数字')
         UNCOVERED = [x for x in UNCOVERED if x[0] != key]
+# every numeric token of the text must have a check row; anything left is reported as an inconsistency
+for key, tks in sorted({k_: [t_ for kk, t_, _ in UNCOVERED if kk == k_] for k_, _, _ in UNCOVERED}.items()):
+    ctx = next(c_ for kk, _, c_ in UNCOVERED if kk == key)
+    add(f'{key} 未核对的数字', ctx, '以下数字没有对应的核对行：' + '、'.join(tks), ok=False,
+        issue='数字没有对应的核对行', fix='为这些数字补核对行')
 
 # =============================================================== WRITE THE WORKBOOK
 from openpyxl import Workbook
@@ -1034,6 +1217,8 @@ CORR = [
     ('补充材料 4（S7 新增）', '—', '最小报告数据集，表 S15 列 12 项本研究基线', '均与两位阅读者共识及表 3 一致'),
     ('结果 · 队列 第2段；结果 · 亚组 第1段；补充2 S2.2、S2.6；图 3 图注；表 3 列标题（通读后措辞）', '… detection was higher in that position (… vs … for the UGI series)；in whom the diagnosis remained uncertain / was assembled by diagnostic uncertainty；two elements documented in more than seven examinations；2012–2018 (n=38)', '… UGI detection was higher when it came last (… vs … when it did not)；presumably selected / assembled by diagnostic uncertainty；the two most often documented elements in panel A；2012–2018, n (of 38)', '补明对比对象；"诊断不确定"是对临床医生考虑的推测，数据未记录检查指征，加 presumably；图 3B 选取规则改为图 A 中记录最多的两项；表 3 时期列只有计数，列标题补 n'),
     ('方法 · 内容编码；表 3 注；补充1 · K3（阅读者与报告）', 'both authors', 'both authors who had reported none of the examinations', '用户 2026-10-10 确认两位超声阅读者均未出具被审计的超声报告；为腾字数删去引言末段 "that other departments can apply"'),
+    ('结果 · 检出率 段；方法 · 统计；补充2 · S2.7–S2.10 与表 S16–S19（统计学审稿后补做）', '… CT and ultrasound remained less often positive than the UGI series; the coefficients … are given in Supplement 2', '… odds ratios 0.29 (0.20–0.41) and 0.27 (0.17–0.44); standardized differences −25.5 and −26.4 percentage points …；ultrasound against CT 0.96 → 0.62 when possible-tier conclusions count negative', '补效应量；四项敏感性分析由 hp_sens.py 运行、verify_hp.py 独立复算；主文因字数删去引言 "The 2025 multicenter series …" 一句（讨论里已有）、"Attenuation was not interpreted as mediation"、"All analysis variables were complete" 和讨论里两处与局限性重复的句子'),
+    ('讨论 第3段；Cover Letter', 'duodenal landmarks were documented no more often in the later era', 'whirlpool reporting rose while the duodenal landmarks stayed rare', '1/38 对 2/79 不足以推断"没有更多"，改为描述性'),
     ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),
 ]
 wsc = wb.create_sheet('更正记录')

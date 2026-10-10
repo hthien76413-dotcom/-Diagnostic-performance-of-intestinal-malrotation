@@ -39,6 +39,8 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 classifier_agreement.py  # agreement of the published script with the final labels
     python3 or_add.py      # assembles or_add.json; run after addstats.py and volsign2.py
     python3 mrd.py         # Supplement 4, Table S15: minimum reporting dataset with this audit's baseline (after usaudit4.py)
+    python3 hp_sens.py     # Supplement 2, S2.7-S2.10: outcome definitions, standardized detection, index unit and timing, content by booking category (about 12 min: cluster bootstrap in four processes; pass a number to change the 2000 resamples)
+    python3 hp_tables.py   # Tables S16-S19 of Supplement 2, from hp_sens.json
     python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
     python3 graphabs.py    # graphical abstract for Insights into Imaging (not used by JACR)
 

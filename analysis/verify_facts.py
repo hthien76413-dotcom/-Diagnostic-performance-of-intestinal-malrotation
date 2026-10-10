@@ -364,6 +364,9 @@ F['GEE'] = {'ct_u': gor(g1, 'C(modality)[T.CT]'), 'us_u': gor(g1, 'C(modality)[T
             'inf': gor(g2, 'C(agegrp, Treatment(reference="neonate"))[T.29d-1y]'),
             'old': gor(g2, 'C(agegrp, Treatment(reference="neonate"))[T.>1y]')}
 
+# ---------------------------------------------------------------- sensitivity analyses (hp_sens.py), recomputed apart from it
+exec(open('verify_hp.py').read())
+
 # ---------------------------------------------------------------- Firth closed form
 k1 = ST[('US', 'volv')]; k0 = ST[('US', 'novolv')]
 F['firth_or'] = ((k1[0] + .5) * (k0[1] - k0[0] + .5)) / ((k1[1] - k1[0] + .5) * (k0[0] + .5))

@@ -308,3 +308,42 @@ ultrasound was the FIRST index test in 45/117 (38%) of children who had one
   US: 64/117 = 54.7% (45.7-63.4)
   CT enhanced: 40/50 = 80.0% (67.0-88.8) ; unenhanced: 125/263 = 47.5% (41.6-53.6)
   Fisher OR 4.42 p=2.16e-05
+
+########## hp_sens
+UGI: primary 230/293, named 228, strict 147, ref 228
+CT: primary 165/313, named 152, strict 103, ref 161
+US: primary 64/117, named 63, strict 30, ref 63
+[primary] Primary: final label: ORs CT vs UGI 0.29 (0.20–0.41); US vs UGI 0.27 (0.17–0.44); US vs CT 0.96 (0.64–1.45) | std 79.3/53.8/52.9 | boot 2000
+     CT−UGI: -25.5 pp (-32.2 to -18.8)
+     US−UGI: -26.4 pp (-35.9 to -16.8)
+     US−CT: -0.9 pp (-10.5 to +8.7)
+[named] Conclusion names malrotation: ORs CT vs UGI 0.26 (0.18–0.36); US vs UGI 0.27 (0.17–0.43); US vs CT 1.05 (0.70–1.59) | std 78.4/49.5/50.7 | boot 2000
+     CT−UGI: -28.9 pp (-35.8 to -22.2)
+     US−UGI: -27.7 pp (-37.4 to -17.7)
+     US−CT: +1.3 pp (-8.2 to +11.7)
+[strict] Possible-tier conclusions counted negative: ORs CT vs UGI 0.45 (0.33–0.63); US vs UGI 0.28 (0.18–0.45); US vs CT 0.62 (0.38–1.01) | std 51.5/34.3/25.6 | boot 2000
+     CT−UGI: -17.1 pp (-24.0 to -9.9)
+     US−UGI: -25.9 pp (-34.1 to -17.7)
+     US−CT: -8.7 pp (-16.9 to -0.5)
+[ref] Conclusion-only classifier (Supplement_1_classifier.py): ORs CT vs UGI 0.29 (0.20–0.40); US vs UGI 0.28 (0.17–0.44); US vs CT 0.97 (0.64–1.46) | std 78.5/52.4/51.7 | boot 2000
+     CT−UGI: -26.0 pp (-32.4 to -19.1)
+     US−UGI: -26.8 pp (-36.8 to -17.4)
+     US−CT: -0.8 pp (-10.7 to +8.8)
+bootstrap done in 674s
+UGI {'n': 293, 'median': 2.0, 'q1': 1.0, 'q3': 3.0, 'd0': 48, 'd1': 86, 'd2_7': 147, 'd8': 12, 'max': 17}
+CT {'n': 313, 'median': 2.0, 'q1': 1.0, 'q3': 3.0, 'd0': 61, 'd1': 73, 'd2_7': 170, 'd8': 9, 'max': 16}
+US {'n': 117, 'median': 1.0, 'q1': 0.0, 'q3': 2.0, 'd0': 32, 'd1': 33, 'd2_7': 47, 'd8': 5, 'max': 15}
+UGI {'n': 293, 'final': 230, 'closest': 228, 'earliest': 225, 'anypos': 228, 'n_multi': 6, 'n_diff': 6}
+CT {'n': 313, 'final': 165, 'closest': 161, 'earliest': 158, 'anypos': 161, 'n_multi': 11, 'n_diff': 11}
+US {'n': 117, 'final': 64, 'closest': 63, 'earliest': 60, 'anypos': 64, 'n_multi': 11, 'n_diff': 11}
+interval <= 0 {'UGI': (40, 48), 'CT': (36, 61), 'US': (14, 32)} {}
+interval <= 1 {'UGI': (108, 134), 'CT': (77, 134), 'US': (36, 65)} {}
+interval <= 2 {'UGI': (148, 186), 'CT': (111, 196), 'US': (51, 89)} {'CT vs UGI': (0.32512013787676103, 0.20865364680540419, 0.5065960057318604, 6.864850617193352e-07), 'US vs UGI': (0.281572883426507, 0.16494131110066798, 0.4806757515873549, 3.4058735444969475e-06), 'US vs CT': (0.8660579601908238, 0.5454421276484926, 1.3751346887038776, 0.5421298404694126)}
+{'label': 'All ultrasound examinations (primary denominator)', 'n': 117, 'd3': 3, 'sma': 3, 'fluid': 2, 'whirl': 59, 'det': 64}
+{'label': 'Booked as gastrointestinal', 'n': 73, 'd3': 2, 'sma': 1, 'fluid': 2, 'whirl': 33, 'det': 37}
+{'label': 'Booked as abdominal great-vessel', 'n': 67, 'd3': 2, 'sma': 2, 'fluid': 0, 'whirl': 43, 'det': 46}
+{'label': 'Booked as gastrointestinal or great-vessel', 'n': 112, 'd3': 3, 'sma': 3, 'fluid': 2, 'whirl': 59, 'det': 64}
+{'label': 'Booked as pyloric only', 'n': 5, 'd3': 0, 'sma': 0, 'fluid': 0, 'whirl': 0, 'det': 0}
+{'label': 'Performed at the bedside', 'n': 9, 'd3': 0, 'sma': 0, 'fluid': 1, 'whirl': 1, 'det': 1}
+{'label': 'Child aged 28 days or younger', 'n': 90, 'd3': 2, 'sma': 2, 'fluid': 1, 'whirl': 48, 'det': 50}
+done 674s

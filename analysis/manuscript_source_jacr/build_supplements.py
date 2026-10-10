@@ -25,7 +25,7 @@ OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.json')))
 D.update(json.load(open(AN+'or_tables.json'))); D.update(json.load(open(AN+'or_h.json')))
 D.update(json.load(open(AN+'or3_pooled.json'))); D.update(json.load(open(AN+'or_sens.json'))); D.update(json.load(open(AN+'or_add.json')))
-D.update(json.load(open(AN+'us_coding_agreement.json'))); D.update(json.load(open(AN+'mrd.json')))
+D.update(json.load(open(AN+'us_coding_agreement.json'))); D.update(json.load(open(AN+'mrd.json'))); D.update(json.load(open(AN+'hp_tables.json')))
 TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'K':('Table S2','Agreement of the two independent readers on the twelve ultrasound content items, and agreement of the text patterns with their consensus',D['K']),
      'S1':('Table S3','Distribution of algorithmic labels and certainty tiers, by modality',D['S1']),
@@ -40,6 +40,10 @@ TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S11':('Table S12','Average marginal effect of later era, with bootstrap confidence intervals',D['S11']),
      'S12':('Table S13','Paired differences in detection in the subgroup receiving all three examinations',D['S12']),
      'S13':('Table S14','Interaction terms, and the separated volvulus contrast under penalized likelihood',D['S13']),
+     'HP16':('Table S16','Between-modality comparison under four definitions of a positive report',D['S16']),
+     'HP17':('Table S17','Standardized detection and differences between modalities under four definitions of a positive report',D['S17']),
+     'HP18':('Table S18','Interval from the index examination to operation, choice of index examination, and detection within 2 days of operation',D['S18']),
+     'HP19':('Table S19','Ultrasound content documentation by booking category and in alternative denominators',D['S19']),
      'MRD':('Table S15','Minimum reporting dataset for ultrasound in suspected intestinal malrotation, with the documentation rate in this audit as the baseline for re-audit',D['MRD'])}
 def make(src,outfile,figs=None):
     doc=docx.Document(); apply_house_style(doc); add_page_numbers(doc)

@@ -1,0 +1,262 @@
+{
+ "S16": [
+  [
+   "Outcome definition",
+   "UGI series, n/N (%)",
+   "CT, n/N (%)",
+   "Ultrasound, n/N (%)",
+   "CT vs UGI series, adjusted OR (95% CI)",
+   "Ultrasound vs UGI series, adjusted OR (95% CI)",
+   "Ultrasound vs CT, adjusted OR (95% CI)"
+  ],
+  [
+   "Primary: final label",
+   "230/293 (78.5)",
+   "165/313 (52.7)",
+   "64/117 (54.7)",
+   "0.29 (0.20–0.41)",
+   "0.27 (0.17–0.44)",
+   "0.96 (0.64–1.45)"
+  ],
+  [
+   "Conclusion names malrotation",
+   "228/293 (77.8)",
+   "152/313 (48.6)",
+   "63/117 (53.8)",
+   "0.26 (0.18–0.36)",
+   "0.27 (0.17–0.43)",
+   "1.05 (0.70–1.59)"
+  ],
+  [
+   "Possible-tier conclusions counted negative",
+   "147/293 (50.2)",
+   "103/313 (32.9)",
+   "30/117 (25.6)",
+   "0.45 (0.33–0.63)",
+   "0.28 (0.18–0.45)",
+   "0.62 (0.38–1.01)"
+  ],
+  [
+   "Conclusion-only classifier (Supplement_1_classifier.py)",
+   "228/293 (77.8)",
+   "161/313 (51.4)",
+   "63/117 (53.8)",
+   "0.29 (0.20–0.40)",
+   "0.28 (0.17–0.44)",
+   "0.97 (0.64–1.46)"
+  ]
+ ],
+ "S17": [
+  [
+   "Outcome definition",
+   "UGI series, % (95% CI)",
+   "CT, % (95% CI)",
+   "Ultrasound, % (95% CI)",
+   "CT minus UGI series, percentage points (95% CI)",
+   "Ultrasound minus UGI series, percentage points (95% CI)",
+   "Ultrasound minus CT, percentage points (95% CI)"
+  ],
+  [
+   "Primary: final label",
+   "79.3 (74.6–83.5)",
+   "53.8 (48.2–59.3)",
+   "52.9 (44.3–61.8)",
+   "−25.5 (−32.2 to −18.8)",
+   "−26.4 (−35.9 to −16.8)",
+   "−0.9 (−10.5 to +8.7)"
+  ],
+  [
+   "Conclusion names malrotation",
+   "78.4 (73.6–82.9)",
+   "49.5 (43.9–54.8)",
+   "50.7 (41.8–60.3)",
+   "−28.9 (−35.8 to −22.2)",
+   "−27.7 (−37.4 to −17.7)",
+   "+1.3 (−8.2 to +11.7)"
+  ],
+  [
+   "Possible-tier conclusions counted negative",
+   "51.5 (45.8–57.0)",
+   "34.3 (29.1–39.9)",
+   "25.6 (18.5–32.7)",
+   "−17.1 (−24.0 to −9.9)",
+   "−25.9 (−34.1 to −17.7)",
+   "−8.7 (−16.9 to −0.5)"
+  ],
+  [
+   "Conclusion-only classifier (Supplement_1_classifier.py)",
+   "78.5 (73.8–83.1)",
+   "52.4 (47.1–57.9)",
+   "51.7 (42.6–60.9)",
+   "−26.0 (−32.4 to −19.1)",
+   "−26.8 (−36.8 to −17.4)",
+   "−0.8 (−10.7 to +8.8)"
+  ]
+ ],
+ "S18": [
+  [
+   "Measure",
+   "UGI series",
+   "CT",
+   "Ultrasound"
+  ],
+  [
+   "Index examinations, n",
+   "293",
+   "313",
+   "117"
+  ],
+  [
+   "Calendar days from index examination to operation, median (IQR)",
+   "2 (1–3)",
+   "2 (1–3)",
+   "1 (0–2)"
+  ],
+  [
+   "Same day, n (%)",
+   "48 (16.4)",
+   "61 (19.5)",
+   "32 (27.4)"
+  ],
+  [
+   "1 day before, n (%)",
+   "86 (29.4)",
+   "73 (23.3)",
+   "33 (28.2)"
+  ],
+  [
+   "2–7 days before, n (%)",
+   "147 (50.2)",
+   "170 (54.3)",
+   "47 (40.2)"
+  ],
+  [
+   "More than 7 days before, n (%)",
+   "12 (4.1)",
+   "9 (2.9)",
+   "5 (4.3)"
+  ],
+  [
+   "Detection, final label, closest episode (primary), n/N (%)",
+   "230/293 (78.5)",
+   "165/313 (52.7)",
+   "64/117 (54.7)"
+  ],
+  [
+   "Detection, conclusion-only classifier, closest episode, n/N (%)",
+   "228/293 (77.8)",
+   "161/313 (51.4)",
+   "63/117 (53.8)"
+  ],
+  [
+   "Detection, conclusion-only classifier, earliest episode, n/N (%)",
+   "225/293 (76.8)",
+   "158/313 (50.5)",
+   "60/117 (51.3)"
+  ],
+  [
+   "Detection, conclusion-only classifier, any preoperative episode positive, n/N (%)",
+   "228/293 (77.8)",
+   "161/313 (51.4)",
+   "64/117 (54.7)"
+  ],
+  [
+   "Children with more than one preoperative episode, n",
+   "6",
+   "11",
+   "11"
+  ],
+  [
+   "Detection, final label, examinations within 2 days of operation, n/N (%)",
+   "148/186 (79.6)",
+   "111/196 (56.6)",
+   "51/89 (57.3)"
+  ],
+  [
+   "Adjusted OR vs UGI series, examinations within 2 days (95% CI)",
+   "–",
+   "0.33 (0.21–0.51)",
+   "0.28 (0.16–0.48)"
+  ],
+  [
+   "Adjusted OR vs CT, examinations within 2 days (95% CI)",
+   "–",
+   "–",
+   "0.87 (0.55–1.38)"
+  ]
+ ],
+ "S19": [
+  [
+   "Denominator",
+   "Examinations, n",
+   "D3 or duodenojejunal junction, n (%; 95% CI)",
+   "Artery–vein relationship, n (%; 95% CI)",
+   "Enteric fluid, n (%; 95% CI)",
+   "Whirlpool reported, n (%; 95% CI)",
+   "Positive report, n (%; 95% CI)"
+  ],
+  [
+   "All ultrasound examinations (primary denominator)",
+   "117",
+   "3 (2.6; 0.9–7.3)",
+   "3 (2.6; 0.9–7.3)",
+   "2 (1.7; 0.5–6.0)",
+   "59 (50.4; 41.5–59.3)",
+   "64 (54.7; 45.7–63.4)"
+  ],
+  [
+   "Booked as gastrointestinal",
+   "73",
+   "2 (2.7; 0.8–9.5)",
+   "1 (1.4; 0.2–7.4)",
+   "2 (2.7; 0.8–9.5)",
+   "33 (45.2; 34.3–56.6)",
+   "37 (50.7; 39.5–61.8)"
+  ],
+  [
+   "Booked as abdominal great-vessel",
+   "67",
+   "2 (3.0; 0.8–10.2)",
+   "2 (3.0; 0.8–10.2)",
+   "0 (0.0; 0.0–5.4)",
+   "43 (64.2; 52.2–74.6)",
+   "46 (68.7; 56.8–78.5)"
+  ],
+  [
+   "Booked as gastrointestinal or great-vessel",
+   "112",
+   "3 (2.7; 0.9–7.6)",
+   "3 (2.7; 0.9–7.6)",
+   "2 (1.8; 0.5–6.3)",
+   "59 (52.7; 43.5–61.7)",
+   "64 (57.1; 47.9–65.9)"
+  ],
+  [
+   "Booked as pyloric only",
+   "5",
+   "0 (0.0; 0.0–43.4)",
+   "0 (0.0; 0.0–43.4)",
+   "0 (0.0; 0.0–43.4)",
+   "0 (0.0; 0.0–43.4)",
+   "0 (0.0; 0.0–43.4)"
+  ],
+  [
+   "Performed at the bedside",
+   "9",
+   "0 (0.0; 0.0–29.9)",
+   "0 (0.0; 0.0–29.9)",
+   "1 (11.1; 2.0–43.5)",
+   "1 (11.1; 2.0–43.5)",
+   "1 (11.1; 2.0–43.5)"
+  ],
+  [
+   "Child aged 28 days or younger",
+   "90",
+   "2 (2.2; 0.6–7.7)",
+   "2 (2.2; 0.6–7.7)",
+   "1 (1.1; 0.2–6.0)",
+   "48 (53.3; 43.1–63.3)",
+   "50 (55.6; 45.3–65.4)"
+  ]
+ ]
+}
