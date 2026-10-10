@@ -1,0 +1,233 @@
+{
+ "S1": [
+  [
+   "Modality",
+   "Index reports",
+   "Classified positive",
+   "Classified negative",
+   "Positive with definite wording",
+   "Positive with probable wording",
+   "Positive with possible wording"
+  ],
+  [
+   "UGI series",
+   "293",
+   "230 (78.5%)",
+   "63 (21.5%)",
+   "74",
+   "73",
+   "83"
+  ],
+  [
+   "Abdominal CT",
+   "313",
+   "165 (52.7%)",
+   "148 (47.3%)",
+   "30",
+   "73",
+   "62"
+  ],
+  [
+   "Ultrasound",
+   "117",
+   "64 (54.7%)",
+   "53 (45.3%)",
+   "12",
+   "18",
+   "34"
+  ],
+  [
+   "Total",
+   "723",
+   "459",
+   "264",
+   "116",
+   "164",
+   "179"
+  ]
+ ],
+ "S2": [
+  [
+   "Index test",
+   "Stratum",
+   "Detected / total",
+   "Detection rate % (95% CI)"
+  ],
+  [
+   "UGI series",
+   "Midgut volvulus present",
+   "208/263",
+   "79.1 (73.8–83.6)"
+  ],
+  [
+   "UGI series",
+   "Midgut volvulus absent",
+   "22/30",
+   "73.3 (55.6–85.8)"
+  ],
+  [
+   "UGI series",
+   "Age ≤28 days",
+   "162/214",
+   "75.7 (69.5–81.0)"
+  ],
+  [
+   "UGI series",
+   "Age 29 days–1 year",
+   "30/38",
+   "78.9 (63.7–88.9)"
+  ],
+  [
+   "UGI series",
+   "Age >1 year",
+   "38/41",
+   "92.7 (80.6–97.5)"
+  ],
+  [
+   "Abdominal CT",
+   "Midgut volvulus present",
+   "147/279",
+   "52.7 (46.8–58.5)"
+  ],
+  [
+   "Abdominal CT",
+   "Midgut volvulus absent",
+   "18/34",
+   "52.9 (36.7–68.5)"
+  ],
+  [
+   "Abdominal CT",
+   "Age ≤28 days",
+   "102/220",
+   "46.4 (39.9–53.0)"
+  ],
+  [
+   "Abdominal CT",
+   "Age 29 days–1 year",
+   "20/41",
+   "48.8 (34.3–63.5)"
+  ],
+  [
+   "Abdominal CT",
+   "Age >1 year",
+   "43/52",
+   "82.7 (70.3–90.6)"
+  ],
+  [
+   "Ultrasound",
+   "Midgut volvulus present",
+   "64/112",
+   "57.1 (47.9–65.9)"
+  ],
+  [
+   "Ultrasound",
+   "Midgut volvulus absent",
+   "0/5",
+   "0.0 (0.0–43.4)"
+  ],
+  [
+   "Ultrasound",
+   "Age ≤28 days",
+   "50/90",
+   "55.6 (45.3–65.4)"
+  ],
+  [
+   "Ultrasound",
+   "Age 29 days–1 year",
+   "7/14",
+   "50.0 (26.8–73.2)"
+  ],
+  [
+   "Ultrasound",
+   "Age >1 year",
+   "7/13",
+   "53.8 (29.1–76.8)"
+  ]
+ ],
+ "S3": [
+  [
+   "Modality",
+   "Documented content",
+   "n (%) of reports",
+   "Detection when documented, %",
+   "Detection when not documented, %"
+  ],
+  [
+   "Abdominal CT (n=313)",
+   "Contrast enhancement",
+   "50 (16.0)",
+   "80.0",
+   "47.5"
+  ],
+  [
+   "Abdominal CT (n=313)",
+   "Mesenteric whirl",
+   "115 (36.7)",
+   "98.3",
+   "26.3"
+  ],
+  [
+   "Abdominal CT (n=313)",
+   "Duodenum mentioned",
+   "72 (23.0)",
+   "59.7",
+   "50.6"
+  ],
+  [
+   "Abdominal CT (n=313)",
+   "Mesenteric-vessel relationship",
+   "40 (12.8)",
+   "80.0",
+   "48.7"
+  ],
+  [
+   "Abdominal CT (n=313)",
+   "Three-dimensional reconstruction",
+   "119 (38.0)",
+   "63.9",
+   "45.9"
+  ],
+  [
+   "UGI series (n=293)",
+   "Duodenojejunal junction",
+   "161 (54.9)",
+   "98.1",
+   "54.5"
+  ],
+  [
+   "UGI series (n=293)",
+   "Corkscrew / spring appearance",
+   "139 (47.4)",
+   "100.0",
+   "59.1"
+  ],
+  [
+   "UGI series (n=293)",
+   "Jejunal position",
+   "205 (70.0)",
+   "93.7",
+   "43.2"
+  ],
+  [
+   "UGI series (n=293)",
+   "Caecal position",
+   "196 (66.9)",
+   "89.8",
+   "55.7"
+  ],
+  [
+   "UGI series (n=293)",
+   "Whole-gastrointestinal study",
+   "278 (94.9)",
+   "78.1",
+   "86.7"
+  ],
+  [
+   "UGI series (n=293)",
+   "Barium used",
+   "17 (5.8)",
+   "94.1",
+   "77.5"
+  ]
+ ]
+}

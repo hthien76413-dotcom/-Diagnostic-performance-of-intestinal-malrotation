@@ -1,0 +1,137 @@
+{
+ "T3": [
+  [
+   "Documented content of the ultrasound examination",
+   "n (%) of 117",
+   "2012–2018, n (of 38)",
+   "2019–2026, n (of 79)",
+   "Detection when documented",
+   "Detection when not documented"
+  ],
+  [
+   "Third portion of duodenum or duodenojejunal junction",
+   "3 (2.6)",
+   "1",
+   "2",
+   "2/3",
+   "62/114 (54%)"
+  ],
+  [
+   "Duodenum mentioned in any form",
+   "7 (6.0)",
+   "3",
+   "4",
+   "3/7",
+   "61/110 (55%)"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "3 (2.6)",
+   "1",
+   "2",
+   "1/3",
+   "63/114 (55%)"
+  ],
+  [
+   "Explicit statement of vessel inversion",
+   "1 (0.9)",
+   "0",
+   "1",
+   "1/1",
+   "63/116 (54%)"
+  ],
+  [
+   "Enteric fluid administration recorded",
+   "2 (1.7)",
+   "1",
+   "1",
+   "1/2",
+   "63/115 (55%)"
+  ],
+  [
+   "Dynamic (real-time) assessment",
+   "4 (3.4)",
+   "1",
+   "3",
+   "1/4",
+   "63/113 (56%)"
+  ],
+  [
+   "Graded compression",
+   "1 (0.9)",
+   "1",
+   "0",
+   "1/1",
+   "63/116 (54%)"
+  ],
+  [
+   "Caecal position",
+   "5 (4.3)",
+   "1",
+   "4",
+   "4/5",
+   "60/112 (54%)"
+  ],
+  [
+   "Colour Doppler used",
+   "114 (97.4)",
+   "37",
+   "77",
+   "63/114 (55%)",
+   "1/3"
+  ],
+  [
+   "Whirlpool, swirl or spiral appearance reported",
+   "59 (50.4)",
+   "15",
+   "44",
+   "59/59 (100%)",
+   "5/58 (9%)"
+  ],
+  [
+   "Bowel gas explicitly limiting the study",
+   "36 (30.8)",
+   "12",
+   "24",
+   "15/36 (42%)",
+   "49/81 (60%)"
+  ],
+  [
+   "Booked as abdominal great-vessel study",
+   "67 (57.3)",
+   "13",
+   "54",
+   "46/67 (69%)",
+   "18/50 (36%)"
+  ],
+  [
+   "Booked as gastrointestinal ultrasound",
+   "73 (62.4)",
+   "28",
+   "45",
+   "37/73 (51%)",
+   "27/44 (61%)"
+  ],
+  [
+   "Booked as pyloric ultrasound",
+   "12 (10.3)",
+   "4",
+   "8",
+   "7/12 (58%)",
+   "57/105 (54%)"
+  ],
+  [
+   "Performed at the bedside",
+   "9 (7.7)",
+   "0",
+   "9",
+   "1/9",
+   "63/108 (58%)"
+  ]
+ ],
+ "T3_overlap": {
+  "gi_vessel": 28,
+  "gi_pyloric": 4,
+  "vessel_pyloric": 3
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "S11": [
+  [
+   "Modality and model",
+   "Average marginal effect of later era, percentage points (95% CI)"
+  ],
+  [
+   "Ultrasound, crude",
+   "+18.7 (−0.2 to +37.7)"
+  ],
+  [
+   "Ultrasound, adjusted for great-vessel session",
+   "+8.4 (−10.6 to +29.2)"
+  ],
+  [
+   "CT, crude",
+   "+19.8 (+8.3 to +31.0)"
+  ],
+  [
+   "CT, adjusted for contrast enhancement",
+   "+16.4 (+4.3 to +27.3)"
+  ],
+  [
+   "UGI series, crude",
+   "+5.1 (−4.7 to +15.0)"
+  ]
+ ],
+ "S12": [
+  [
+   "Comparison (n=59)",
+   "Detection",
+   "Difference, percentage points (95% CI)",
+   "Discordant pairs",
+   "Exact McNemar *P*"
+  ],
+  [
+   "UGI series vs CT",
+   "76.3% vs 45.8%",
+   "+30.5 (+13.6 to +47.5)",
+   "24/6",
+   ".001"
+  ],
+  [
+   "UGI series vs ultrasound",
+   "76.3% vs 52.5%",
+   "+23.7 (+8.5 to +39.0)",
+   "20/6",
+   ".009"
+  ],
+  [
+   "CT vs ultrasound",
+   "45.8% vs 52.5%",
+   "−6.8 (−20.3 to +8.5)",
+   "7/11",
+   ".481"
+  ]
+ ],
+ "S13": [
+  [
+   "Analysis",
+   "Estimate (95% CI)",
+   "*P*"
+  ],
+  [
+   "Modality x volvulus interaction, upper gastrointestinal series vs CT (GEE; estimable)",
+   "CT x volvulus odds ratio 0.92 (0.32–2.66)",
+   ".873"
+  ],
+  [
+   "Modality x volvulus interaction including ultrasound (GEE)",
+   "Not estimable (complete separation)",
+   "–"
+  ],
+  [
+   "Ultrasound detection given midgut volvulus, Firth penalised logistic",
+   "Odds ratio 14.6 (1.60–1938, profile penalised likelihood)",
+   ".013"
+  ],
+  [
+   "Era x examination-content interaction, ultrasound",
+   "1.05 (0.19–5.81)",
+   ".957"
+  ],
+  [
+   "Era x examination-content interaction, CT",
+   "1.32 (0.27–6.44)",
+   ".732"
+  ]
+ ],
+ "S2b": [
+  [
+   "Index test",
+   "Volvulus-specific sign / children with confirmed midgut volvulus",
+   "Rate % (95% CI)"
+  ],
+  [
+   "UGI series",
+   "128/263",
+   "48.7 (42.7–54.7)"
+  ],
+  [
+   "Ultrasound",
+   "59/112",
+   "52.7 (43.5–61.7)"
+  ],
+  [
+   "Abdominal CT",
+   "103/279",
+   "36.9 (31.5–42.7)"
+  ]
+ ]
+}
