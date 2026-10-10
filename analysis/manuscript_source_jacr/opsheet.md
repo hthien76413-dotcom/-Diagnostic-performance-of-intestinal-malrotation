@@ -15,7 +15,7 @@
 #N **生成式 AI（第 2 页）**：参考文献前须有固定标题和固定句式的声明。已按原文模板写入，标题为 "Declaration of generative AI and AI-assisted technologies in the writing process"。注意：须知还规定 AI 只能用于改进语言和可读性，本文的声明如实写了协助起草和编写分析代码（见第六节）。
 
 #N **Original Article（第 2 页）**：
-#N • 正文少于 3,000 词（不含参考文献）：2,996 词 ✓
+#N • 正文少于 3,000 词（不含参考文献）：2,998 词 ✓
 #N • 图表合计不超过 7 个：4 表 + 3 图 = 7 ✓
 #N • 原创研究须有正式的 Limitations 部分 ✓
 #N • 观察性研究按 STROBE 报告：附 STROBE 清单 ✓
@@ -157,6 +157,8 @@
 
 #N **5. 通讯作者邮寄地址（已确认）。** 香港路 100 号。
 
+#N **5b. 阅读者与被审计报告的关系（2026-10-10 用户确认）。** 两位超声阅读者（Zhengliang Meng、Jun Shu）均未出具被审计的超声报告；已写入方法、表 3 注和补充材料 1 K3（"both authors who had reported none of the examinations"）。
+
 #N **6. 参考文献（已核对）。** 作者 6 位及以下的条目已补全全部作者；本次检索核对的 12 条（[2]–[5]、[10]–[16]、[22]）题目、期刊、年份、卷和页码均与记录一致；[21] 按 STROBE 声明公开的 6 位作者名单补全；其余条目在此前的外部核对中已确认。[27] El-Ali 等（Pediatr Radiol 2025;55:925-935）为 2026-10-09 新增，作者、期刊、卷页和文中引用的 25.7% 已经检索核对。[19] ACR Appropriateness Criteria Vomiting in Infants（J Am Coll Radiol 2020;17(11S):S505-S515，PMID 33153561）和 [20] Keenan、Sewchuran（Surg Pract Sci 2023;14:100183，PMID 39845859）为 2026-10-10 新增，题目、卷页、DOI 已核对。**文中引用的评级（Variant 5，出生 2 天后胆汁性呕吐、疑似旋转不良、初始影像：UGI "usually appropriate"，超声 "may be appropriate"）已通过检索核对**：7 次检索中 5 次一致给出该评级；2 条出入的摘要，一条给出的评级恰为 Variant 2（经典双泡征）的，另一条是检索工具的转述，与同批其他来源不符。**原文 PDF 因网络限制没能直接打开**，所以不是逐字对照；若想百分之百确认，可在 acsearch.acr.org 打开 Vomiting in Infants 的 Variant 5 表，30 秒即可。（编号为 2026-10-10 新增两条后重排的编号。）
 
 #H1 七、修回时要交的（须知第 2 页，现在不用做）
@@ -166,6 +168,6 @@
 #H1 八、投稿前最后自检
 
 #N 1. 隐去作者信息的正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者）已清空。
-#N 2. 标题 121 字符；摘要 249 词；正文 2,996 词；图表 7 个；作者 7 位。
+#N 2. 标题 121 字符；摘要 249 词；正文 2,998 词；图表 7 个；作者 7 位。
 #N 3. Title Page、投稿系统表单和正文 Declarations 三处内容一致。
 #N 4. Cover Letter 日期已改为实际投稿日。

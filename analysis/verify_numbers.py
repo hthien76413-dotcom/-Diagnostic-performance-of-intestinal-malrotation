@@ -1033,6 +1033,7 @@ CORR = [
     ('方法 · 研究对象；补充1 · K1–K3；Title Page（复核分工）', 'All operative records were re-read for 34 children …；K1–K3 未写复核者', 'One author, with the imaging labels visible, re-read …；K1 补"非盲"及排除方向核查；K2、K3 写明复核者为作者；Title Page 贡献补 HL、KZ、ZM、JS 的复核分工', '用户 2026-10-10 告知：S1 Haiyan Lei、S2 Kai Zheng、超声阅读者 Zhengliang Meng（甲）与 Jun Shu（乙）。S1 核对表显示了现有检出标签，故如实写为非盲'),
     ('补充材料 4（S7 新增）', '—', '最小报告数据集，表 S15 列 12 项本研究基线', '均与两位阅读者共识及表 3 一致'),
     ('结果 · 队列 第2段；结果 · 亚组 第1段；补充2 S2.2、S2.6；图 3 图注；表 3 列标题（通读后措辞）', '… detection was higher in that position (… vs … for the UGI series)；in whom the diagnosis remained uncertain / was assembled by diagnostic uncertainty；two elements documented in more than seven examinations；2012–2018 (n=38)', '… UGI detection was higher when it came last (… vs … when it did not)；presumably selected / assembled by diagnostic uncertainty；the two most often documented elements in panel A；2012–2018, n (of 38)', '补明对比对象；"诊断不确定"是对临床医生考虑的推测，数据未记录检查指征，加 presumably；图 3B 选取规则改为图 A 中记录最多的两项；表 3 时期列只有计数，列标题补 n'),
+    ('方法 · 内容编码；表 3 注；补充1 · K3（阅读者与报告）', 'both authors', 'both authors who had reported none of the examinations', '用户 2026-10-10 确认两位超声阅读者均未出具被审计的超声报告；为腾字数删去引言末段 "that other departments can apply"'),
     ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),
 ]
 wsc = wb.create_sheet('更正记录')
