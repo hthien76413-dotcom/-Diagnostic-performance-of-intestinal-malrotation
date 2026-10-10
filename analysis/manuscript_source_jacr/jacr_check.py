@@ -125,6 +125,6 @@ refs = [p for p in ms if re.match(r'\d+\. ', p)]
 cited = {int(n) for p in ms[:ms.index('References')] for grp in re.findall(r'\[([\d,\s–-]+)\]', p)
          for part in grp.split(',') for n in (range(int(part.split('–')[0]), int(part.split('–')[-1]) + 1) if '–' in part else [part.strip()])}
 check(cited == set(range(1, len(refs) + 1)), f'{len(refs)} references, every one cited')
-check(all(re.search(r'\. \d{4};\d+:[\w-]+\. doi:10\.', r) for r in refs), 'references in AMA layout')
+check(all(re.search(r'\. \d{4};\d+(\([^)]*\))?:[\w-]+\. doi:10\.', r) for r in refs), 'references in AMA layout')
 print('\n%d check(s) failed' % fails if fails else '\nall checks passed')
 sys.exit(1 if fails else 0)

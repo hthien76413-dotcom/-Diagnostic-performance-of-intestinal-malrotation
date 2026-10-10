@@ -65,6 +65,9 @@ def para_of(path, startswith):
 T1, T2, T3, T4 = F['T1'], F['T2'], F['T3'], F['T4']
 LIT13 = '文献 [13]（Nguyen 等，AJR 2025，PMID 40499019）摘要：旋转不良敏感度原始报告 93%、盲法复读 97%；D3 位置为最准确单一征象（98%）。2026-10-10 检索核对'
 LIT11 = '文献 [11]（Nguyen 等，Arch Dis Child 2021）：17 项研究、2,257 例、合并敏感度 94%（95% CI 89–97）。2026-10-10 检索核对'
+LITACR = ('文献 [19]（ACR Appropriateness Criteria Vomiting in Infants，J Am Coll Radiol 2020;17(11S):S505-S515，PMID 33153561）：'
+          '出生 2 天后的胆汁性呕吐（疑似旋转不良）一项，UGI 造影 "usually appropriate"、超声 "may be appropriate"（文中称超声在此人群中有争议）；'
+          '"predate most of this evidence"：[11] 2021、[12] 2022、[13] 2025、[14] 2021 均晚于 2020 年 11 月。2026-10-10 检索核对')
 LIT14 = '文献 [14]（Binu 等，J Pediatr Surg 2021，单中心 Adelaide）：539 例因临床怀疑行超声。2026-10-10 检索核对'
 
 # =============================================================== ABSTRACT
@@ -107,6 +110,7 @@ add('摘要 · Results', '25.6% excluding tentative wording',
 P = para_of(MS + 'p1.md', '#N The upper gastrointestinal (UGI) contrast series')
 add('引言 第2段', '93–97%；17 studies and 2,257 children；pooled sensitivity of 94%；539 children',
     LIT13 + '；' + LIT11 + '；' + LIT14, True, para=P, toks=('93', '97', '17', '2,257', '94', '539'))
+add('引言 第2段', 'The 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days [19]', LITACR, True, para=P, toks=('2020', '2'))
 P = para_of(MS + 'p1.md', '#N The 2025 multicenter series')
 add('引言 第3段', '2025 multicenter series', '文献 [13] 发表年份 2025（参考文献列表一致）', status='定义/描述性数字', para=P, toks=('2025',))
 P = para_of(MS + 'p1.md', '#N We therefore audited')
@@ -115,7 +119,7 @@ add('引言 第4段', '13.6 years', f'2012 年 12 月至 2026 年 6 月共 {F["s
 
 # =============================================================== METHODS
 P = para_of(MS + 'p1.md', '#N This was a retrospective')
-add('方法 · 设计', 'STROBE [19]', '引文编号，非数据', status='定义/描述性数字', para=P, toks=())
+add('方法 · 设计', 'STROBE [21]', '引文编号，非数据', status='定义/描述性数字', para=P, toks=())
 P = para_of(MS + 'p1.md', '#N The institutional clinical research database')
 add('方法 · 研究对象', '711 children', f'原始导出"病案首页基本信息"唯一患者 {F["db_children"]} 例；按诊断导出（用户 2026-10-09 确认）', F['db_children'] == 711, para=P, toks=('711',))
 add('方法 · 研究对象', 'December 2012 and June 2026', '同摘要', para=P, toks=('2012', '2026'))
@@ -139,8 +143,6 @@ add('方法 · 索引检查', '723 index examinations from 761 reports; 32 earli
     f'索引检查次 {F["index_exams"]} = 293+313+117；纳入索引检查次的报告 {F["reports_in_index"]}；更早的重复报告 {F["earlier_reports"]}；761+32 = {F["eligible_reports"]}（图 1 的 793）',
     (F['index_exams'], F['reports_in_index'], F['earlier_reports']) == (723, 761, 32), para=P, toks=('723', '761', '32'))
 P = para_of(MS + 'p1.md', '#N Ultrasound was reported by ultrasound physicians')
-add('方法 · 报告者', 'from about 2021', '科室的回顾性说法，数据中无法核实', status='需原始数据确认', para=P, toks=('2021',),
-    issue='来自科室口述', fix='保留原文"retrospectively"的限定即可')
 P = para_of(MS + 'p1.md', '#N Each ultrasound index examination was coded by two readers')
 add('方法 · 内容编码', 'two readers … twelve elements', f'阅读表 12 个条目；两位阅读者（超声科医师、小儿外科医师，用户确认）', len(items) == 12, para=P, toks=('two', 'twelve'))
 P = para_of(MS + 'p1.md', '#N An examination was classified as positive')
@@ -224,8 +226,10 @@ add('结果 · 超声内容 第1段', 'Reader agreement was 1,423 of 1,428 item 
     f'一致 {F["cells_agree"]}/{F["cells"]}；各项 kappa 最小 {min(v["kappa"] for v in F["KAP"].values()):.2f}、最大 {max(v["kappa"] for v in F["KAP"].values()):.2f}',
     (F['cells_agree'], F['cells']) == (1423, 1428) and close('0.80', min(v['kappa'] for v in F['KAP'].values()), 2),
     para=P, toks=('1,423', '1,428', '119', '0.80', '1.00'))
-P = para_of(MS + 'p2.md', '#N In 2018 the horizontal duodenum')
-add('结果 · 超声内容 第2段', 'In 2018 … in 2022 … in 2024', f'记录 D3/DJJ 的 3 次检查年份 {F["d3_years"]}', F['d3_years'] == [2018, 2022, 2024], para=P, toks=('2018', '2022', '2024'))
+P = para_of(MS + 'p2.md', '#N Of these three, only one, in 2022')
+add('结果 · 超声内容 第2段', 'Of these three, only one, in 2022, followed D3 between the artery and the aorta and identified the duodenojejunal junction',
+    f'记录 D3/DJJ 的 3 次检查年份 {F["d3_years"]}；记录十二指肠空肠曲的只有 1 次（DJJ {int(u["djj"].astype(bool).sum())}），即 2022 年那次', F['d3_years'] == [2018, 2022, 2024] and pd.to_datetime(u.loc[u['djj'].astype(bool), '检查时间']).dt.year.tolist() == [2022],
+    para=P, toks=('three', 'one', '2022'))
 P = para_of(MS + 'p2.md', '#N The diagnosis was named in all 59')
 ok2, r2 = wil(5, 58, '3.7', '18.6')
 add('结果 · 超声内容 第3段', 'all 59 … 5 of the 58 without one (8.6%, 95% CI 3.7–18.6); all 59 conclusions also named malrotation',
@@ -249,11 +253,6 @@ add('结果 · 时间趋势', 'reduced the ultrasound difference to +8.4 (−10.
     f'调整后平均边际效应 {u4["ame_adj"]:+.2f}；bootstrap {bu["Ultrasound, adjusted for great-vessel session"][1][0]:+.2f} 至 {bu["Ultrasound, adjusted for great-vessel session"][1][1]:+.2f}',
     close('8.4', u4['ame_adj']) and close('-10.6', bu['Ultrasound, adjusted for great-vessel session'][1][0]) and close('29.2', bu['Ultrasound, adjusted for great-vessel session'][1][1]),
     para=P, toks=('8.4', '10.6', '29.2'))
-orv = [F['BND'][c]['or_ves'][0] for c in (2019, 2020, 2021, 2022)]
-add('结果 · 时间趋势', 'odds ratio of 3.51 (1.56–7.87) lay between 3.21 and 4.04 at every era boundary from 2019 to 2022',
-    f'2019 边界 OR {u4["or_cov"][0]:.2f} ({u4["or_cov"][1]:.2f}–{u4["or_cov"][2]:.2f})；四个边界 {", ".join(f"{x:.2f}" for x in orv)}',
-    close('3.51', u4['or_cov'][0], 2) and close('1.56', u4['or_cov'][1], 2) and close('7.87', u4['or_cov'][2], 2) and close('3.21', min(orv), 2) and close('4.04', max(orv), 2),
-    para=P, toks=('3.51', '1.56', '7.87', '3.21', '4.04', '2019', '2022'))
 wh = T3['whirl_pos']; dj = T3['d3_or_djj']
 add('结果 · 时间趋势', 'Whirlpool reporting rose from 39.5% to 55.7%, whereas D3/DJJ … one and two examinations',
     f'漩涡征 前期 {wh["early"]}/38 = {pc(wh["early"],38):.2f}%，后期 {wh["late"]}/79 = {pc(wh["late"],79):.2f}%；D3/DJJ {dj["early"]} 与 {dj["late"]}',
@@ -288,16 +287,13 @@ add('讨论 第1段', 'about half of all examinations and of the children in who
 P = para_of(MS + 'p3.md', '#N Malrotation or volvulus was named in 54.7%')
 add('讨论 第2段', '54.7%', '64/117 = 54.70%', close('54.7', pc(64, 117)), para=P, toks=('54.7',))
 add('讨论 第2段', '93% … 97% … 2025 multicenter series [13]; pooled 94% [11]', LIT13 + '；' + LIT11, True, para=P, toks=('93', '97', '2025', '94', '2025'))
-add('讨论 第2段', '25.7% of examinations for malrotation were non-diagnostic [25]', '文献 [25]：80/311 = 25.7%（原始报告；盲法复读 37.6%），2026-10-09 已检索 Springer/PubMed 摘要核对',
+add('讨论 第2段', '25.7% of examinations for malrotation were non-diagnostic [27]', '文献 [27]：80/311 = 25.7%（原始报告；盲法复读 37.6%），2026-10-09 已检索 Springer/PubMed 摘要核对',
     close('25.7', pc(80, 311)), para=P, toks=('25.7',))
-P = para_of(MS + 'p3.md', '#N The temporal analysis is exploratory')
-add('讨论 第3段', 'the earlier era contributed only 38 examinations', '超声前期 38 次', F['n_US_early'] == 38, para=P, toks=('38',))
-add('讨论 第3段', 'roughly halved the estimated rise', f'+{u4["ame_crude"]:.1f} → +{u4["ame_adj"]:.1f}（降低 {100*(1-u4["ame_adj"]/u4["ame_crude"]):.0f}%）', True, para=P, toks=('halved',))
 P = para_of(MS + 'p3.md', '#N Three features of the design')
 add('讨论 第4段', 'Three features … the last preoperative test in 75.0% of children who had it with another index test',
     f'{po["UGI"]["last"]}/{po["UGI"]["had"]} = {pc(po["UGI"]["last"],po["UGI"]["had"]):.2f}%；"三个特征"为描述性计数（参考标准不独立、路径位置、人群不同）',
     close('75.0', pc(po['UGI']['last'], po['UGI']['had'])), para=P, toks=('Three', '75.0'))
-P = para_of(MS + 'p3.md', '#N Departments adopting')
+P = para_of(MS + 'p3.md', '#N The documentation gap bears on')
 add('讨论 第5段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
 P = para_of(MS + 'p3.md', '#N This is not a diagnostic accuracy study')
 add('讨论 · 局限 第1段', 'The 52 children without an index test … as were 9 … from 88.2% to 84.0%',
@@ -622,6 +618,37 @@ add('补充3 · 正文', 'duodenojejunal junction … (51.9%) … jejunal positi
     close('51.9', pc(*s8n('Duodenojejunal junction'))) and close('70.3', pc(*s8n('Jejunal position'))) and close('36.7', pc(*s8n('Mesenteric whirl'))) and close('16.0', pc(*s8n('Contrast enhancement'))),
     para=P, toks=('Two', 'half', '51.9', '70.3', '36.7', '16.0'))
 
+# =============================================================== SUPPLEMENT 4 (text and Table S15)
+S4F = MS + 'supp4.md'
+P = para_of(S4F, '#N The dataset lists the statements')
+add('补充4 · A', 'Menten 2012; Hennessey 2014; Nguyen 2021, 2022 and 2025; McCurdie 2024; Shimanuki 1996; El-Ali 2025',
+    '与参考文献 [16] [17] [11] [12] [13] [15] [22] [27] 的年份一致', status='定义/描述性数字', para=P,
+    toks=('2012', '2014', '2021', '2022', '2025', '2024', '1996', '2025'))
+add('补充4 · A', 'El-Ali 2025, in which 25.7% of examinations were non-diagnostic on the original report', '文献 [27]：80/311 = 25.7%，与正文讨论第 2 段一致',
+    close('25.7', pc(80, 311)), para=P, toks=('25.7',))
+P = para_of(S4F, '#N The last column is the baseline')
+add('补充4 · A 表注', 'the 117 ultrasound index examinations by the two readers', f'超声索引检查 {len(u)} 次；两位阅读者', len(u) == 117, para=P, toks=('117', 'two'))
+P = para_of(S4F, '#N **Coding.**')
+add('补充4 · B 编码', 'the pattern for the artery–vein relationship disagreed with the readers\' consensus in 9 of 117 examinations',
+    f'动静脉关系：模式与共识一致 {pat_agree["sma_smv"]}/117，不一致 {117 - pat_agree["sma_smv"]}（与表 S2 末列 108 一致）',
+    117 - pat_agree['sma_smv'] == 9, para=P, toks=('Two', 'one', '9', '117'))
+P = para_of(S4F, '#N **Measures.**')
+add('补充4 · B 指标', 'Wilson 95% confidence intervals', '定义', status='定义/描述性数字', para=P, toks=('95',))
+MRD = json.load(open('mrd.json'))['MRD']
+MRDK = {'Third portion of the duodenum (D3)': 'd3', 'Duodenojejunal junction': 'djj', 'Superior mesenteric artery–vein relationship': 'sma_smv',
+        'Enteric fluid': 'fluid', 'Dynamic assessment': 'dynamic', 'Graded compression': 'compress', 'Color Doppler of the mesenteric vessels': 'doppler',
+        'Whirlpool sign': 'whirl_pos', 'Study adequacy': 'gas_limit', 'Duodenum mentioned in any form': 'duodenum',
+        'Explicit statement of vessel inversion': 'inversion', 'Cecal position': 'cecum'}
+for row in MRD[1:]:
+    k = MRDK.get(row[0])
+    if k is None:
+        continue
+    n_, p_ = cell_pct(row[3]); n0 = int(u[k].astype(bool).sum())
+    ok = n_ == n0 and close(p_, pc(n0, 117))
+    if k in T3:
+        ok &= T3[k]['n'] == n0
+    add(f'补充4 · 表 S15 · {row[0]}', row[3], f'两位阅读者共识 {n0}/117 = {pc(n0, 117):.2f}%' + ('；与表 3 同一计数' if k in T3 else '；表 3 合并为"D3 或十二指肠空肠曲"3 例'), ok)
+
 # =============================================================== SUPPLEMENT TABLES (built documents)
 def doc_tables(f):
     return [[[c.text for c in r.cells] for r in t.rows] for t in docx.Document(ROOT + f).tables]
@@ -792,6 +819,7 @@ for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:',
                                 toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 8, 2026': ('8', '2026')}[start])
 P = para_of(CF, '#N Ultrasound-first pathways')
 add('Cover Letter 第2段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
+add('Cover Letter 第2段', 'the 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days', LITACR, True, para=P, toks=('2020', '2'))
 P = para_of(CF, '#N We audited 13.6 years')
 add('Cover Letter 第3段', '13.6 years', f'{F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年', close('13.6', F['study_months'] / 12), para=P, toks=('13.6',))
 add('Cover Letter 第3段', '723 … 398 … three of 117 (2.6%) … stated in three … twice … 50.4% … 5 of the 58 … 59 of the 112', '与正文一致', True, para=P,
@@ -802,9 +830,12 @@ for start in ['#N Department of General Surgery', '#N Jun Yang, MD', '#N On beha
     COVER.setdefault(para_of(CF, start), [])
 TF = MS + 'titlepage.md'
 wc = int(__import__('subprocess').run(['python3', 'wc.py'], cwd=MS, capture_output=True, text=True).stdout.strip())
-add('Title Page · Word count', f'{wc:,} … Abstract: 248 words', f'wc.py 计数 {wc}；jacr_check 摘要 248 词', wc == int(re.search(r'Word count:\*\* ([\d,]+)', io.open(TF, encoding='utf-8').read()).group(1).replace(',', '')), para=para_of(TF, '#N **Word count:**'), toks=(f'{wc:,}', '248'))
-add('Title Page · Tables/Figures', 'Tables: 4 | Figures: 3 | Supplements 1–3', '正文 4 表 3 图；补充材料 3 份', True, para=para_of(TF, '#N **Tables:**'), toks=('4', '3', '1', '3', '1'))
-add('正文首页 · Word count 行', f'Word count: {wc:,} … Tables: 4; Figures: 3; Supplements 1–3', f'同上 {wc}', wc == int(re.search(r'Word count:\*\* ([\d,]+)', io.open(TF, encoding='utf-8').read()).group(1).replace(',', '')), para=para_of(MS + 'p1.md', '#N Word count:'), toks=(f'{wc:,}', '4', '3', '1', '3'))
+_abs = [re.sub(r'\*+', '', l[3:]) for l in io.open(MS + 'p1.md', encoding='utf-8').read().split('\n') if re.match(r'#N \*\*(Objective|Methods|Results|Discussion):', l)]
+n_abs = sum(len(t.split()) for t in _abs)
+add('Title Page · Word count', f'{wc:,} … Abstract: {n_abs} words', f'wc.py 计数 {wc}；摘要（含段名）{n_abs} 词', wc == int(re.search(r'Word count:\*\* ([\d,]+)', io.open(TF, encoding='utf-8').read()).group(1).replace(',', ''))
+    and f'Abstract: {n_abs} words' in io.open(TF, encoding='utf-8').read(), para=para_of(TF, '#N **Word count:**'), toks=(f'{wc:,}', str(n_abs)))
+add('Title Page · Tables/Figures', 'Tables: 4 | Figures: 3 | Supplements 1–4', '正文 4 表 3 图；补充材料 4 份', True, para=para_of(TF, '#N **Tables:**'), toks=('4', '3', '1', '3', '1'))
+add('正文首页 · Word count 行', f'Word count: {wc:,} … Tables: 4; Figures: 3; Supplements 1–4', f'同上 {wc}', wc == int(re.search(r'Word count:\*\* ([\d,]+)', io.open(TF, encoding='utf-8').read()).group(1).replace(',', '')), para=para_of(MS + 'p1.md', '#N Word count:'), toks=(f'{wc:,}', '4', '3', '1', '3'))
 
 # =============================================================== COVERAGE CHECK
 WORDS = r'fifty-nine|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|twenty|thirty|forty|fifty|twice|once|half|halved'
@@ -816,7 +847,7 @@ def tokens(t):
     t = re.sub(r'[一-鿿]+[^\s]*', ' ', t)
     return [o.rstrip(',') for o in re.findall(r'(?<![\w.])\d[\d,]*(?:\.\d+)?|(?<![\w])(?:' + WORDS + r')(?![\w])', t, flags=re.I)]
 UNCOVERED = []
-for f in ['p1.md', 'p2.md', 'p3.md', 'supp1.md', 'supp2.md', 'supp3.md', 'cover.md', 'titlepage.md']:
+for f in ['p1.md', 'p2.md', 'p3.md', 'supp1.md', 'supp2.md', 'supp3.md', 'supp4.md', 'cover.md', 'titlepage.md']:
     stop = False
     for i, l in enumerate(io.open(MS + f, encoding='utf-8').read().split('\n'), 1):
         if l.startswith('#H1 Declarations') or l.startswith('#H1 References'):
@@ -909,7 +940,7 @@ lines = [
     ('数字核对表 · JACR 稿件（2026-10-10 更正后版本）', True),
     ('', False),
     ('核对范围', True),
-    ('摘要、正文、表 1–4、图 1–3 与图注、Take-Home Points、补充材料 1–3（正文与表 S1–S14、图 S1）、Cover Letter 与 Title Page 中的全部数字。', False),
+    ('摘要、正文、表 1–4、图 1–3 与图注、Take-Home Points、补充材料 1–4（正文与表 S1–S15、图 S1）、Cover Letter 与 Title Page 中的全部数字。', False),
     ('本文为横断面的报告审计，没有均值 ± 标准差，也没有随访时间；年龄以中位数（四分位数）报告。', False),
     ('', False),
     ('核对方法', True),
@@ -984,6 +1015,12 @@ CORR = [
     ('方法 · 研究对象；图 1', '34 children … and 15 were excluded；图框 "Excluded after review of the anchor operation n = 15"', '34 children …: 19 were retained and 15 excluded；图框 "Anchor operation re-read in 34 children: 19 retained, 15 excluded"', '原文只给出 34 中的 15，且与图 1 中"不符合入选条件的 34 例"同数，易混；补出保留的 19 例（S1 核对表）'),
     ('表 1 · 第 13 行及脚注', 'Symptoms described as repeated, intermittent or lasting months：212 (47.1) | 146 (49.8) | 144 (46.0) | 52 (44.4) | 19 (36.5)', 'Gastrointestinal symptoms for 1 month or longer：38 (8.4) | 19 (6.5) | 21 (6.7) | 5 (4.3) | 9 (17.3)', '原口径"反复"也匹配数小时内的反复呕吐，不代表慢性病程；改为手术住院入院主诉中消化道症状持续 ≥ 1 个月（脚注写明口径）'),
     ('图 3B；图 3 图注', '"Vessels addressed / not addressed" 33% 1/3、55% 63/114', '"Bowel gas limiting / No bowel gas limitation" 42% 15/36、60% 49/81；图注写明 B 栏所选项目', '原柱只有 3 例，几乎无信息量；换为记录 36 次的肠气限制（与表 3 同一数据）'),
+    ('方法 · 报告者（S7 改稿）', '…and attributes the change in practice from about 2021 to growing awareness of the diagnosis; this account was given retrospectively…', '删去', '为新增内容腾出篇幅；讨论早已不再引用科室说法。原为全表唯一"需原始数据确认"项'),
+    ('结果 · 时间趋势（S7 改稿）', 'its odds ratio of 3.51 (1.56–7.87) lay between 3.21 and 4.04 at every era boundary from 2019 to 2022', '删去，改为指向补充材料 2', '这些数字仍在表 4 与表 S9，已逐项核对'),
+    ('结果 · 超声内容 第2段（S7 改稿）', 'In 2018 … in 2022 … in 2024 …（3 次检查逐一描述）', 'Of these three, only one, in 2022, followed D3 … and identified the duodenojejunal junction', '压缩篇幅；年份与十二指肠空肠曲计数已核对'),
+    ('讨论 第3段（S7 改稿）', 'the earlier era contributed only 38 examinations；roughly halved the estimated rise', '删去', '压缩篇幅；探索性定位不变'),
+    ('引言 第2–3段；讨论 第5段；Cover Letter（S7 改稿）', '—', '新增文献 [19] ACR Appropriateness Criteria Vomiting in Infants（2020）与 [20] Keenan、Sewchuran（2023），其余文献顺延编号', '两条均于 2026-10-10 检索核对（PMID 33153561、39845859）'),
+    ('补充材料 4（S7 新增）', '—', '最小报告数据集，表 S15 列 12 项本研究基线', '均与两位阅读者共识及表 3 一致'),
     ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),
 ]
 wsc = wb.create_sheet('更正记录')

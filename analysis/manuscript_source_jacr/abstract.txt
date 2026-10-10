@@ -6,6 +6,6 @@ Methods: Retrospective case-only report audit at one tertiary children's hospita
 
 Results: Among 450 children (volvulus in 88.2%), 398 underwent at least one index test. Three of 117 ultrasound examinations (2.6%, 95% CI 0.9–7.3) documented the third portion of the duodenum or the duodenojejunal junction, 3 (2.6%) the mesenteric artery–vein relationship and 2 (1.7%) enteric fluid; a whirlpool sign was reported in 50.4%. Ultrasound named malrotation or volvulus in 64 of 117 examinations (54.7%, 45.7–63.4): in all 59 recording a whirlpool, itself a positivity criterion, and in 5 of 58 without one. A whirlpool was recorded in 59 of 112 children with operatively confirmed volvulus. Detection was 53.8% counting only conclusions naming malrotation, 25.6% excluding tentative wording.
 
-Discussion: Positive routine ultrasound reports rested almost entirely on the whirlpool sign, and the duodenal landmarks to which published performance is attributed were rarely documented. Whether documenting them would close the gap cannot be tested from reports, but their absence can be audited.
+Discussion: Positive routine ultrasound reports rested almost entirely on the whirlpool sign, and the duodenal landmarks to which published performance is attributed were rarely documented. Documentation, unlike accuracy, can be audited without a reference standard; we provide the criteria as a minimum reporting dataset.
 
 Keywords: Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report

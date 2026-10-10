@@ -8,14 +8,14 @@
 
 #N 依据：你提供的 JACR Guide for Authors（ScienceDirect 页面，2026 年 10 月 8 日打印版，共 6 页）。
 
-#N **期刊范围（第 1 页）**：JACR 收五个领域的稿件。本文属于 "clinical practice management"（常规影像报告的内容与质量），投稿信已明确写出这一点。JACR 不收临床综述、书评和病例报告，本文三者都不是。✓
+#N **期刊范围（第 1 页）**：JACR 收五个领域的稿件。本文属于 "clinical practice management"（常规影像报告的内容与质量），兼及 "data science"（自由文本报告的规则分类）。投稿信已明确写出这一点，并以 2020 版 ACR Appropriateness Criteria（JACR 自己发表的指南）对超声的评级作为切入点；可复用的审计工具放在补充材料 4。JACR 不收临床综述、书评和病例报告，本文三者都不是。✓
 
 #N **初投文件（第 1 页 Initial Submission Checklist）**：Title Page、Declaration Statement、Manuscript 三项。正文须隐去作者和单位信息。✓
 
 #N **生成式 AI（第 2 页）**：参考文献前须有固定标题和固定句式的声明。已按原文模板写入，标题为 "Declaration of generative AI and AI-assisted technologies in the writing process"。注意：须知还规定 AI 只能用于改进语言和可读性，本文的声明如实写了协助起草和编写分析代码（见第六节）。
 
 #N **Original Article（第 2 页）**：
-#N • 正文少于 3,000 词（不含参考文献）：2,986 词 ✓
+#N • 正文少于 3,000 词（不含参考文献）：2,989 词 ✓
 #N • 图表合计不超过 7 个：4 表 + 3 图 = 7 ✓
 #N • 原创研究须有正式的 Limitations 部分 ✓
 #N • 观察性研究按 STROBE 报告：附 STROBE 清单 ✓
@@ -32,7 +32,7 @@
 #N • 利益冲突声明不得写在 Title Page 上，须用 Elsevier Declarations tool 生成并单独上传 ✓（已从 Title Page 删除）
 
 #N **Main Manuscript（第 5 页）**：
-#N • 摘要不超过 250 词，按 objective / methods / results / discussion 结构：248 词，段名为 Objective / Methods / Results / Discussion ✓
+#N • 摘要不超过 250 词，按 objective / methods / results / discussion 结构：249 词，段名为 Objective / Methods / Results / Discussion ✓
 #N • 关键词 3–5 个：5 个 ✓
 #N • 摘要中不放引文；未发表结果和个人通信不进参考文献 ✓
 
@@ -86,6 +86,7 @@
 #N • `Supplement_1_classifier.py` —— 规则集的可运行实现，正文按这个文件名引用，**不要改名**；若系统不收 .py，压成 zip 上传
 #N • `JACR_Supplement_2_models_and_subgroups.docx` —— GEE 模型、配对亚组、分层与敏感性分析（内含 Figure S1）
 #N • `JACR_Supplement_3_CT_and_UGI_content_audit.docx` —— CT 与造影报告内容审计
+#N • `JACR_Supplement_4_minimum_reporting_dataset.docx` —— 超声最小报告数据集（表 S15，附本研究基线）与再审计方法
 
 #N **6. Reporting checklist** —— `JACR_STROBE_checklist.docx`
 
@@ -99,7 +100,7 @@
 
 #N **Short / running title**（若问）：Duodenal Landmarks in Routine Malrotation Ultrasound Reports
 
-#N **Abstract**：从正文复制 Objective / Methods / Results / Discussion 四段（含段名），共 248 词。**Keywords 不要粘进摘要框。**
+#N **Abstract**：从正文复制 Objective / Methods / Results / Discussion 四段（含段名），共 249 词。**Keywords 不要粘进摘要框。**
 
 #N **Keywords**（3–5 个）：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report
 #N 注意 "Infant, Newborn" 中间是逗号，算一个词。
@@ -111,7 +112,7 @@
 #N • Routine ultrasound reports for children with surgically confirmed malrotation documented the duodenal landmarks emphasized by published series in 2.6% of examinations and reported the diagnosis almost only when a whirlpool sign was present.
 #N • A positive routine ultrasound report rested almost entirely on the whirlpool sign, a sign of volvulus, which was recorded in only 59 of 112 children with operatively confirmed volvulus.
 #N • These are report-level detection rates among surgically confirmed children, not sensitivities; they establish no specificity, predictive value or ranking of modalities, and are no argument against ultrasound-first pathways.
-#N • Before assuming that published ultrasound performance applies locally, departments should audit whether their own reports document the duodenal landmarks; a structured report would make the gap auditable.
+#N • Documentation, unlike accuracy, can be audited without a reference standard; the audit criteria are provided as a minimum reporting dataset, with this audit as the baseline for re-audit.
 
 #N **Authors**（按此顺序录入，共 7 位；第一作者 Jun Shu，通讯作者 Jun Yang）：
 #N 1. Jun Shu —— 单位 ①（第一作者）
@@ -156,7 +157,7 @@
 
 #N **5. 通讯作者邮寄地址（已确认）。** 香港路 100 号。
 
-#N **6. 参考文献（已核对）。** 作者 6 位及以下的条目已补全全部作者；本次检索核对的 12 条（[2]–[5]、[10]–[16]、[20]）题目、期刊、年份、卷和页码均与记录一致；[19] 按 STROBE 声明公开的 6 位作者名单补全；其余条目在此前的外部核对中已确认。[25] El-Ali 等（Pediatr Radiol 2025;55:925-935）为 2026-10-09 新增，作者、期刊、卷页和文中引用的 25.7% 已经检索核对。
+#N **6. 参考文献（已核对）。** 作者 6 位及以下的条目已补全全部作者；本次检索核对的 12 条（[2]–[5]、[10]–[16]、[22]）题目、期刊、年份、卷和页码均与记录一致；[21] 按 STROBE 声明公开的 6 位作者名单补全；其余条目在此前的外部核对中已确认。[27] El-Ali 等（Pediatr Radiol 2025;55:925-935）为 2026-10-09 新增，作者、期刊、卷页和文中引用的 25.7% 已经检索核对。[19] ACR Appropriateness Criteria Vomiting in Infants（J Am Coll Radiol 2020;17(11S):S505-S515，PMID 33153561）和 [20] Keenan、Sewchuran（Surg Pract Sci 2023;14:100183，PMID 39845859）为 2026-10-10 新增，题目、卷页、DOI 和文中引用的评级（出生 2 天后胆汁性呕吐：UGI "usually appropriate"，超声 "may be appropriate"）已经检索核对。（编号为 2026-10-10 新增两条后重排的编号。）
 
 #H1 七、修回时要交的（须知第 2 页，现在不用做）
 
@@ -165,6 +166,6 @@
 #H1 八、投稿前最后自检
 
 #N 1. 隐去作者信息的正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者）已清空。
-#N 2. 标题 121 字符；摘要 248 词；正文 2,986 词；图表 7 个；作者 7 位。
+#N 2. 标题 121 字符；摘要 249 词；正文 2,989 词；图表 7 个；作者 7 位。
 #N 3. Title Page、投稿系统表单和正文 Declarations 三处内容一致。
 #N 4. Cover Letter 日期已改为实际投稿日。

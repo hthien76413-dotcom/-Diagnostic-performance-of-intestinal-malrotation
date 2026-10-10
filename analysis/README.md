@@ -1,7 +1,7 @@
 # Re-analysis for the revised manuscript
 
 All figures, tables and in-text numbers in
-`JACR_3_Manuscript_masked.docx` and the three Supplements (Supplement 1-3)
+`JACR_3_Manuscript_masked.docx` and the four Supplements (Supplement 1-4)
 are produced by the scripts here
 from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 `诊断效能_手术确诊队列_465例.xlsx` and the adjudicated per-patient matrix
@@ -38,6 +38,7 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 tables_final.py # Tables 2 and 4; reads tables123.json, so run it AFTER tables.py
     python3 classifier_agreement.py  # agreement of the published script with the final labels
     python3 or_add.py      # assembles or_add.json; run after addstats.py and volsign2.py
+    python3 mrd.py         # Supplement 4, Table S15: minimum reporting dataset with this audit's baseline (after usaudit4.py)
     python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
     python3 graphabs.py    # graphical abstract for Insights into Imaging (not used by JACR)
 
@@ -47,7 +48,7 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 
     cd manuscript_source_jacr
     python3 build_manuscript.py  # masked manuscript (double-spaced, line-numbered; legends, tables and figures after the references) and JACR_Figure1-3.tif
-    python3 build_supplements.py # Supplements 1-3 from supp1-3.md, and Supplement_1_classifier.py
+    python3 build_supplements.py # Supplements 1-4 from supp1-4.md, and Supplement_1_classifier.py
     python3 build_strobe.py      # JACR_STROBE_checklist.docx from strobe.json
     python3 build_docs.py        # cover letter, title page, Chinese submission sheet
     python3 wc.py                # main-text word count against the 3,000-word limit
@@ -69,7 +70,7 @@ The Insights into Imaging submission (desk-rejected on scope, 30 September
 its sources are this folder's history before the JACR conversion.
 `manuscript_source/` holds the earlier Pediatric Radiology revision sources.
 
-All tables in the manuscript, the three Supplements and the STROBE
+All tables in the manuscript, the four Supplements and the STROBE
 checklist are built by `threeline.py` as open (three-line) tables — a rule
 above the header, a rule under the header, a rule at the foot, no vertical
 rules and no rules between data rows, which is the convention scientific
@@ -254,7 +255,7 @@ mass. `gee.py` no longer crashes on the separated interaction model, and
 separately written code (Wilson intervals, logistic regression by IRLS, Cochran Q,
 exact McNemar, Cohen kappa); GEE, bootstrap and Firth profile results are refitted
 with the original software and seed. `verify_numbers.py` compares every number in
-the abstract, text, tables, figures, legends, Supplements 1-3, cover letter and
+the abstract, text, tables, figures, legends, Supplements 1-4, cover letter and
 title page against it, checks that every numeric token in the text has a check
 row, and writes `../数字核对表.xlsx` (sheets 说明, 核对表, 问题汇总, 专项检查).
 Run it after any rebuild: `python3 verify_numbers.py`.
@@ -264,3 +265,11 @@ single closest report rather than the pooled episode, which mis-tiered four
 positive episodes; `cert.py` now tiers the pooled conclusion. After that and the
 text corrections listed on the workbook's 更正记录 sheet, every row is consistent
 except one statement that only the department can confirm.
+
+Review item S7 (journal positioning) added no data. The Introduction now places the
+question against the 2020 ACR Appropriateness Criteria and a published audit of UGI
+series reports; the Discussion and Limitations present the study as one audit cycle
+at one center; and Supplement 4 (`supp4.md`, Table S15 from `mrd.py`) turns the
+twelve audited ultrasound elements into a minimum reporting dataset with this
+audit's documentation rates as the baseline for re-audit. Two references were
+added and the list renumbered in order of first citation (`renumber.py`).

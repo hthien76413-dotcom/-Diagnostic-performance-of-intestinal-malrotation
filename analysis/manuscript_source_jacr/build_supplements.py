@@ -25,7 +25,7 @@ OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.json')))
 D.update(json.load(open(AN+'or_tables.json'))); D.update(json.load(open(AN+'or_h.json')))
 D.update(json.load(open(AN+'or3_pooled.json'))); D.update(json.load(open(AN+'or_sens.json'))); D.update(json.load(open(AN+'or_add.json')))
-D.update(json.load(open(AN+'us_coding_agreement.json')))
+D.update(json.load(open(AN+'us_coding_agreement.json'))); D.update(json.load(open(AN+'mrd.json')))
 TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'K':('Table S2','Agreement of the two independent readers on the twelve ultrasound content items, and agreement of the text patterns with their consensus',D['K']),
      'S1':('Table S3','Distribution of algorithmic labels and certainty tiers, by modality',D['S1']),
@@ -39,7 +39,8 @@ TAB={'H':('Table S1','Report-content audit patterns',D['H']),
      'S6':('Table S11','Prevalence of midgut volvulus, and the whirlpool sign among those children, under three definitions of volvulus',D['S6']),
      'S11':('Table S12','Average marginal effect of later era, with bootstrap confidence intervals',D['S11']),
      'S12':('Table S13','Paired differences in detection in the subgroup receiving all three examinations',D['S12']),
-     'S13':('Table S14','Interaction terms, and the separated volvulus contrast under penalized likelihood',D['S13'])}
+     'S13':('Table S14','Interaction terms, and the separated volvulus contrast under penalized likelihood',D['S13']),
+     'MRD':('Table S15','Minimum reporting dataset for ultrasound in suspected intestinal malrotation, with the documentation rate in this audit as the baseline for re-audit',D['MRD'])}
 def make(src,outfile,figs=None):
     doc=docx.Document(); apply_house_style(doc); add_page_numbers(doc)
     st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font.size=Pt(11)
@@ -74,5 +75,6 @@ def make(src,outfile,figs=None):
 make('supp1.md','JACR_Supplement_1_NLP_and_report_audit.docx')
 make('supp2.md','JACR_Supplement_2_models_and_subgroups.docx')
 make('supp3.md','JACR_Supplement_3_CT_and_UGI_content_audit.docx')
+make('supp4.md','JACR_Supplement_4_minimum_reporting_dataset.docx')
 # the runnable rule set deposited with Supplement 1 is the analysis copy, unchanged
 shutil.copyfile(AN+'classifier.py',OUT+'Supplement_1_classifier.py'); print('saved Supplement_1_classifier.py')

@@ -12,7 +12,7 @@ SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'p3.md')
 OUT = '/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 
 # AMA layout: Authors. Title. *Journal*. Year;Volume:Pages. doi:DOI
-REF = re.compile(r'^#R (\d+)\.\s+(.+?)\.\s+(.+?)\.\s+\*(.+?)\*\.\s+(\d{4});(\d+):([^.\s]+)\.\s+doi:(\S+)\s*$')
+REF = re.compile(r'^#R (\d+)\.\s+(.+?)\.\s+(.+?)\.\s+\*(.+?)\*\.\s+(\d{4});(\d+(?:\([^)]*\))?):([^.\s]+)\.\s+doi:(\S+)\s*$')
 rows = []
 for line in io.open(SRC, encoding='utf-8'):
     m = REF.match(line.rstrip())
@@ -24,6 +24,9 @@ assert [int(r[0]) for r in rows] == list(range(1, N + 1)), 'references not numbe
 assert N == sum(1 for l in io.open(SRC, encoding='utf-8') if l.startswith('#R ')), 'a reference did not parse'
 
 def ris_authors(s):
+    if ';' in s and ',' not in s.split(';')[0]:   # leading group author, e.g. 'Expert Panel on Pediatric Imaging; Alazraki AL, ...'
+        g, s = s.split(';', 1)
+        yield g.strip()
     s = s.split(';')[0]  # drop a trailing group author such as '; STROBE Initiative'
     s = s.replace(', et al', '').replace(' et al', '')
     for a in [x.strip() for x in s.split(',') if x.strip()]:
