@@ -123,9 +123,9 @@
 #N 6. Hongqiang Bian —— 单位 ①
 #N 7. Jun Yang —— 单位 ①（通讯作者）
 
-#N **单位 ①**：Department of General Surgery, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science & Technology, Wuhan 430016, Hubei Province, China
+#N **单位 ①**：Department of General Surgery, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science and Technology, Wuhan 430016, Hubei Province, China
 
-#N **单位 ②**：Department of Ultrasound Imaging, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science & Technology, Wuhan 430016, Hubei Province, China
+#N **单位 ②**：Department of Ultrasound Imaging, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science and Technology, Wuhan 430016, Hubei Province, China
 
 #N **Corresponding author**：Jun Yang，100 Hong Kong Road, Jiang'an District, Wuhan 430016，yjun201602@163.com，+86 186 2713 9911，ORCID 0009-0006-0669-4340
 
