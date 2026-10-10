@@ -526,6 +526,14 @@ P = para_of(S1F, '#N **K1 Reference standard.**')
 add('补充1 · K1', '34 children: 30 … and 4 … It was in 19. In 6 … and in 9 … These 15 … 11 of them had an index test',
     f'{F["s1_reviewed"]} = {F["s1_no_term"]} + {F["s1_prior_ladd"]}；保留 {F["s1_keep"]}、非本次确认 {F["s1_notconf"]}、复发 {F["s1_reop"]}；排除者在原矩阵中有索引检查 {F["excluded_with_index"]}',
     (F['s1_no_term'], F['s1_prior_ladd'], F['excluded_with_index']) == (30, 4, 11), para=P, toks=('34', '30', '4', 'one', '19', '6', '9', '15', '11'))
+_ex = s1[s1['【填】判定'] != '本次手术确认肠旋转不良（保留）']
+_lab = [x.split('=') for t in _ex['现有检出标签'].astype(str) if '不在' not in t for x in t.split('；')]
+_mk = {m: (sum(1 for mm, v in _lab if mm == m and v == '检出'), sum(1 for mm, v in _lab if mm == m)) for m in ('UGI', 'CT', 'US')}
+add('补充1 · K1', 'not blinded … the 15 index examinations of the excluded children included 10 labeled positive (UGI series 6 of 7, CT 4 of 7, ultrasound 0 of 1) … 64 of 118 (54.2%) rather than 64 of 117 (54.7%)',
+    f'S1 核对表"现有检出标签"列：排除者索引检查 {len(_lab)} 次，阳性 {sum(1 for _, v in _lab if v == "检出")}；UGI {_mk["UGI"][0]}/{_mk["UGI"][1]}、CT {_mk["CT"][0]}/{_mk["CT"][1]}、超声 {_mk["US"][0]}/{_mk["US"][1]}；'
+    f'64/118 = {pc(64, 118):.2f}%，64/117 = {pc(64, 117):.2f}%',
+    len(_lab) == 15 and sum(1 for _, v in _lab if v == '检出') == 10 and _mk == {'UGI': (6, 7), 'CT': (4, 7), 'US': (0, 1)} and close('54.2', pc(64, 118)) and close('54.7', pc(64, 117)),
+    para=P, toks=('15', '10', '6', '7', '4', '7', '0', '1', '64', '118', '54.2', '64', '117', '54.7'))
 P = para_of(S1F, '#N **K2 Examination timing.**')
 add('补充1 · K2', '154 … 27 … 7 days … Three … one … 374 days … One … three … one … one … one',
     f'当日 {F["s2_same_day"]}；>7 天 {F["s2_over7"]}；术后 {F["s2_postop"]}（其一属已排除患儿 8336031）；无关 {F["s2_unrelated"]}（{F["s2_max_gap"]} 天）；无法判断 {F["s2_undetermined"]}；队列内删除 {F["reports_removed_in_cohort"]}',
@@ -1020,6 +1028,7 @@ CORR = [
     ('结果 · 超声内容 第2段（S7 改稿）', 'In 2018 … in 2022 … in 2024 …（3 次检查逐一描述）', 'Of these three, only one, in 2022, followed D3 … and identified the duodenojejunal junction', '压缩篇幅；年份与十二指肠空肠曲计数已核对'),
     ('讨论 第3段（S7 改稿）', 'the earlier era contributed only 38 examinations；roughly halved the estimated rise', '删去', '压缩篇幅；探索性定位不变'),
     ('引言 第2–3段；讨论 第5段；Cover Letter（S7 改稿）', '—', '新增文献 [19] ACR Appropriateness Criteria Vomiting in Infants（2020）与 [20] Keenan、Sewchuran（2023），其余文献顺延编号', '两条均于 2026-10-10 检索核对（PMID 33153561、39845859）'),
+    ('方法 · 研究对象；补充1 · K1–K3；Title Page（复核分工）', 'All operative records were re-read for 34 children …；K1–K3 未写复核者', 'One author, with the imaging labels visible, re-read …；K1 补"非盲"及排除方向核查；K2、K3 写明复核者为作者；Title Page 贡献补 HL、KZ、ZM、JS 的复核分工', '用户 2026-10-10 告知：S1 Haiyan Lei、S2 Kai Zheng、超声阅读者 Zhengliang Meng（甲）与 Jun Shu（乙）。S1 核对表显示了现有检出标签，故如实写为非盲'),
     ('补充材料 4（S7 新增）', '—', '最小报告数据集，表 S15 列 12 项本研究基线', '均与两位阅读者共识及表 3 一致'),
     ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),
 ]
