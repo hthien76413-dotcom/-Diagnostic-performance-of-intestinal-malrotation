@@ -189,10 +189,11 @@ add('结果 · 队列 第2段', 'Ultrasound was performed more often in children
     f'扭转患儿做超声 {F["us_given_volv"][0]}/{F["us_given_volv"][1]} = {pc(*F["us_given_volv"]):.1f}%；无扭转 {F["us_given_novolv"][0]}/{F["us_given_novolv"][1]} = {pc(*F["us_given_novolv"]):.1f}%（未做检验，描述性）',
     True, para=P, toks=())
 po = F['POS']
-add('结果 · 队列 第2段', 'UGI last in 75.0% … against 19.2% for CT … 80.0% [144/180] vs 70.0% [42/60]',
+add('结果 · 队列 第2段', 'last preoperative test was the UGI series in 75.0% … ultrasound in 36.8% (39/106) and CT in 19.2% … 80.0% [144/180] vs 70.0% [42/60]',
     f'≥2 项索引检查者中：UGI 为最后一项 {po["UGI"]["last"]}/{po["UGI"]["had"]} = {pc(po["UGI"]["last"],po["UGI"]["had"]):.1f}%；CT {po["CT"]["last"]}/{po["CT"]["had"]} = {pc(po["CT"]["last"],po["CT"]["had"]):.1f}%；UGI 检出 最后 {po["UGI"]["det_last"]:.1f}% vs 较早 {po["UGI"]["det_earlier"]:.1f}%',
-    close('75.0', pc(po['UGI']['last'], po['UGI']['had'])) and close('19.2', pc(po['CT']['last'], po['CT']['had'])) and close('80.0', po['UGI']['det_last']) and close('70.0', po['UGI']['det_earlier']),
-    para=P, toks=('75.0', '19.2', '80.0', '144', '180', '70.0', '42', '60'))
+    close('75.0', pc(po['UGI']['last'], po['UGI']['had'])) and close('19.2', pc(po['CT']['last'], po['CT']['had'])) and close('80.0', po['UGI']['det_last']) and close('70.0', po['UGI']['det_earlier'])
+    and (po['US']['last'], po['US']['had']) == (39, 106) and close('36.8', pc(39, 106)),
+    para=P, toks=('75.0', '19.2', '80.0', '144', '180', '70.0', '42', '60', '36.8', '39', '106'))
 P = para_of(MS + 'p2.md', '#N Detection was 230/293')
 for m, s, k_, n_, pct_, lo_, hi_ in [('UGI', 'UGI series', 230, 293, '78.5', '73.4', '82.8'), ('CT', 'CT', 165, 313, '52.7', '47.2', '58.2'), ('US', 'ultrasound', 64, 117, '54.7', '45.7', '63.4')]:
     ok1, r1 = rate(T2[m]['k'], T2[m]['n'], pct_); ok2, r2 = wil(T2[m]['k'], T2[m]['n'], lo_, hi_)
@@ -235,7 +236,7 @@ ok2, r2 = wil(5, 58, '3.7', '18.6')
 add('结果 · 超声内容 第3段', 'all 59 … 5 of the 58 without one (8.6%, 95% CI 3.7–18.6); all 59 conclusions also named malrotation',
     f'{T3["whirl_pos"]["det_yes"]}、{T3["whirl_pos"]["det_no"]}；5/58 = {pc(5,58):.2f}%；{r2}；记录漩涡征且结论点名旋转不良 {F["whirl_named_mal"]}/59',
     ok2 and close('8.6', pc(5, 58)) and F['whirl_named_mal'] == 59, para=P, toks=('59', '5', '58', '8.6', '95', '3.7', '18.6', '59'))
-add('结果 · 超声内容 第3段', 'whirlpool … in only 59 of the 112 children (52.7%)', f'{F["whirl_in_volv"]}；{pc(59,112):.2f}%', close('52.7', pc(59, 112)), para=P, toks=('59', '112', '52.7'))
+add('结果 · 超声内容 第3段', 'whirlpool … in 59 of the 112 children (52.7%) who underwent ultrasound and in whom operation confirmed midgut volvulus', f'{F["whirl_in_volv"]}；{pc(59,112):.2f}%', close('52.7', pc(59, 112)), para=P, toks=('59', '112', '52.7'))
 P = para_of(MS + 'p2.md', '#N In this exploratory analysis')
 u4 = T4['US']; bu = F['AME_boot']
 add('结果 · 时间趋势', 'ultrasound 42.1% (16/38) in 2012–2018 and 60.8% (48/79) in 2019–2026',
@@ -244,8 +245,13 @@ add('结果 · 时间趋势', 'ultrasound 42.1% (16/38) in 2012–2018 and 60.8%
 add('结果 · 时间趋势', '+18.7 percentage points whose 95% CI (−0.2 to +37.7) includes zero',
     f'自写 logistic 的平均边际效应 {u4["ame_crude"]:+.2f}；bootstrap 区间 {bu["Ultrasound, crude"][1][0]:+.2f} 至 {bu["Ultrasound, crude"][1][1]:+.2f}（原程序固定种子，2,000 次）；"includes zero"与区间一致；粗 OR P = {u4["or_crude"][3]:.3f}，亦不显著',
     close('18.7', u4['ame_crude']) and close('-0.2', bu['Ultrasound, crude'][1][0]), para=P, toks=('18.7', '95', '0.2', '37.7'))
-add('结果 · 时间趋势', 'CT detection rose and UGI detection did not',
-    f'CT 粗 OR {T4["CT"]["or_crude"][0]:.2f}，P = {T4["CT"]["or_crude"][3]:.3f}；UGI 粗 OR {T4["UGI"]["or_crude"][0]:.2f}，P = {T4["UGI"]["or_crude"][3]:.3f}；文字与 P 值一致', True, para=P, toks=())
+_bu = bu['UGI series, crude'][1]
+add('结果 · 时间趋势', 'CT detection rose (odds ratio 2.27, 1.38–3.72), whereas the UGI estimate was imprecise (+5.1 percentage points, −4.7 to +15.0; Table 4)',
+    f'CT 粗 OR {T4["CT"]["or_crude"][0]:.3f} ({T4["CT"]["or_crude"][1]:.3f}–{T4["CT"]["or_crude"][2]:.3f})，P = {T4["CT"]["or_crude"][3]:.3f}；UGI 粗平均边际效应 {T4["UGI"]["ame_crude"]:+.2f}，bootstrap 区间 {_bu[0]:+.2f} 至 {_bu[1]:+.2f}，'
+    f'UGI 粗 OR {T4["UGI"]["or_crude"][0]:.2f}，P = {T4["UGI"]["or_crude"][3]:.3f}；原文"UGI did not"由 P 值推出，已改为给出估计值和区间',
+    close('2.27', T4['CT']['or_crude'][0], 2) and close('1.38', T4['CT']['or_crude'][1], 2) and close('3.72', T4['CT']['or_crude'][2], 2)
+    and close('5.1', T4['UGI']['ame_crude']) and close('-4.7', _bu[0]) and close('15.0', _bu[1]),
+    para=P, toks=('2.27', '1.38', '3.72', '5.1', '4.7', '15.0'))
 vs = F['ves_share']
 add('结果 · 时间趋势', 'great-vessel study rose from 34.2% to 68.4%', f'{vs[0][0]}/{vs[0][1]} = {pc(*vs[0]):.2f}%；{vs[1][0]}/{vs[1][1]} = {pc(*vs[1]):.2f}%',
     close('34.2', pc(*vs[0])) and close('68.4', pc(*vs[1])), para=P, toks=('34.2', '68.4'))
@@ -254,9 +260,9 @@ add('结果 · 时间趋势', 'reduced the ultrasound difference to +8.4 (−10.
     close('8.4', u4['ame_adj']) and close('-10.6', bu['Ultrasound, adjusted for great-vessel session'][1][0]) and close('29.2', bu['Ultrasound, adjusted for great-vessel session'][1][1]),
     para=P, toks=('8.4', '10.6', '29.2'))
 wh = T3['whirl_pos']; dj = T3['d3_or_djj']
-add('结果 · 时间趋势', 'Whirlpool reporting rose from 39.5% to 55.7%, whereas D3/DJJ … one and two examinations',
+add('结果 · 时间趋势', 'Whirlpool reporting rose from 39.5% to 55.7%; D3/DJJ … one of 38 and two of 79 examinations',
     f'漩涡征 前期 {wh["early"]}/38 = {pc(wh["early"],38):.2f}%，后期 {wh["late"]}/79 = {pc(wh["late"],79):.2f}%；D3/DJJ {dj["early"]} 与 {dj["late"]}',
-    close('39.5', pc(wh['early'], 38)) and close('55.7', pc(wh['late'], 79)) and (dj['early'], dj['late']) == (1, 2), para=P, toks=('39.5', '55.7', 'one', 'two'))
+    close('39.5', pc(wh['early'], 38)) and close('55.7', pc(wh['late'], 79)) and (dj['early'], dj['late']) == (1, 2) and (F['n_US_early'], F['n_US_late']) == (38, 79), para=P, toks=('39.5', '55.7', 'one', '38', 'two', '79'))
 P = para_of(MS + 'p2.md', '#N Fifty-nine children underwent all three')
 pcs = F['paired_chars']
 add('结果 · 亚组', 'Fifty-nine … other 339 imaged children (volvulus 96.6% vs 87.9%; neonates 83.1% vs 67.3%)',
@@ -272,9 +278,9 @@ add('结果 · 亚组', 'UGI minus CT +30.5 (95% CI +13.6 to +47.5); CT minus ul
     f'差值 {pc(ps["UGI"]-ps["CT"],59):+.2f}、{pc(ps["CT"]-ps["US"],59):+.2f}；bootstrap 区间 {pb[0][2]}；{pb[2][2]}（原程序固定种子）',
     close('30.5', pc(ps['UGI'] - ps['CT'], 59)) and close('-6.8', pc(ps['CT'] - ps['US'], 59)), para=P, toks=('30.5', '95', '13.6', '47.5', '6.8', '20.3', '8.5'))
 p48 = F['PS']['48h']
-add('结果 · 亚组', 'a pattern unchanged when all three examinations fell within 48 h',
-    f'48 h 内 {p48["n"]} 例：UGI {p48["UGI"]}、超声 {p48["US"]}、CT {p48["CT"]}；Cochran Q P = {p48["Q"][1]:.4f}；UGI vs CT P = {p48["ugi_ct"][2]:.3f}，CT vs 超声 P = {p48["ct_us"][2]:.3f}；模式相同',
-    p48['Q'][1] < .05 and p48['ct_us'][2] > .05, para=P, toks=('48',))
+add('结果 · 亚组', 'with the same ordering when all three examinations fell within 48 h',
+    f'48 h 内 {p48["n"]} 例：UGI {p48["UGI"]}、超声 {p48["US"]}、CT {p48["CT"]}；Cochran Q P = {p48["Q"][1]:.4f}；UGI vs CT P = {p48["ugi_ct"][2]:.3f}，CT vs 超声 P = {p48["ct_us"][2]:.3f}；顺序相同（UGI > 超声 > CT 在全部 59 例与 48 h 内 47 例中一致）',
+    p48['Q'][1] < .05 and p48['ct_us'][2] > .05 and F['PS']['all']['UGI'] > F['PS']['all']['US'] > F['PS']['all']['CT'] and p48['UGI'] > p48['US'] > p48['CT'], para=P, toks=('48',))
 add('结果 · 亚组', 'Only 5 of the 53 children … no volvulus underwent ultrasound, and none had a positive report',
     f'无扭转 {F["no_volvulus"]} 例（450−397）；其中做超声 {F["us_given_novolv"][0]}，检出 {F["ST"][("US","novolv")][0]}', F['us_given_novolv'] == (5, 53) and F['ST'][('US', 'novolv')][0] == 0,
     para=P, toks=('5', '53'))
@@ -284,25 +290,29 @@ P = para_of(MS + 'p3.md', '#N Over 13.6 years')
 add('讨论 第1段', 'Over 13.6 years', f'{F["study_months"]} 个月 = {F["study_months"]/12:.2f} 年', close('13.6', F['study_months'] / 12), para=P, toks=('13.6',))
 add('讨论 第1段', 'three of 117 examinations, enteric fluid in two', 'D3/DJJ 3；给液 2', True, para=P, toks=('three', '117', 'two'))
 add('讨论 第1段', 'about half of all examinations and of the children in whom operation confirmed volvulus', '59/117 = 50.4%；59/112 = 52.7%', True, para=P, toks=('half',))
+add('讨论 第1段', 'Positive reports almost always described a whirlpool (59 of 64)', f'阳性超声 {T2["US"]["k"]}；其中记录漩涡征 {T3["whirl_pos"]["n"]}，且记录漩涡征的 59 次全部为阳性 {T3["whirl_pos"]["det_yes"]}',
+    T2['US']['k'] == 64 and T3['whirl_pos']['n'] == 59 and T3['whirl_pos']['det_yes'] == (59, 59), para=P, toks=('59', '64'))
 P = para_of(MS + 'p3.md', '#N Malrotation or volvulus was named in 54.7%')
 add('讨论 第2段', '54.7%', '64/117 = 54.70%', close('54.7', pc(64, 117)), para=P, toks=('54.7',))
 add('讨论 第2段', '93% … 97% … 2025 multicenter series [13]; pooled 94% [11]', LIT13 + '；' + LIT11, True, para=P, toks=('93', '97', '2025', '94', '2025'))
 add('讨论 第2段', '25.7% of examinations for malrotation were non-diagnostic [27]', '文献 [27]：80/311 = 25.7%（原始报告；盲法复读 37.6%），2026-10-09 已检索 Springer/PubMed 摘要核对',
     close('25.7', pc(80, 311)), para=P, toks=('25.7',))
-P = para_of(MS + 'p3.md', '#N Three features of the design')
-add('讨论 第4段', 'Three features … the last preoperative test in 75.0% of children who had it with another index test',
-    f'{po["UGI"]["last"]}/{po["UGI"]["had"]} = {pc(po["UGI"]["last"],po["UGI"]["had"]):.2f}%；"三个特征"为描述性计数（参考标准不独立、路径位置、人群不同）',
-    close('75.0', pc(po['UGI']['last'], po['UGI']['had'])), para=P, toks=('Three', '75.0'))
-P = para_of(MS + 'p3.md', '#N The documentation gap bears on')
+P = para_of(MS + 'p3.md', '#N Two features of the design')
+add('讨论 第4段', 'Two features … the last preoperative test in 75.0% of children who had it with another index test',
+    f'{po["UGI"]["last"]}/{po["UGI"]["had"]} = {pc(po["UGI"]["last"],po["UGI"]["had"]):.2f}%；"两个特征"为描述性计数（参考标准不独立［含 UGI 常为最后一项检查］、各检查用于不同人群；2026-10-10 由 "Three" 更正，因路径位置一句早已并入第一项）',
+    close('75.0', pc(po['UGI']['last'], po['UGI']['had'])), para=P, toks=('Two', '75.0'))
+P = para_of(MS + 'p3.md', '#N The low documentation may bear on')
 add('讨论 第5段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
 P = para_of(MS + 'p3.md', '#N This is not a diagnostic accuracy study')
 add('讨论 · 局限 第1段', 'The 52 children without an index test … as were 9 … from 88.2% to 84.0%',
     f'无索引检查 {F["none"]}；复发再手术 {F["s1_reop"]}；扭转 {F["VD"]["primary"][0]}/450 = {pc(F["VD"]["primary"][0],450):.2f}% → {F["VD"]["A"][0]}/450 = {pc(F["VD"]["A"][0],450):.2f}%',
     F['none'] == 52 and F['s1_reop'] == 9 and close('84.0', pc(F['VD']['A'][0], 450)), para=P, toks=('52', '9', '360', '88.2', '84.0'))
-P = para_of(MS + 'p3.md', '#N • Routine ultrasound reports')
-add('Take-Home 第1条', '2.6% of examinations', '3/117 = 2.56%', True, para=P, toks=('2.6',))
-P = para_of(MS + 'p3.md', '#N • A positive routine ultrasound report')
-add('Take-Home 第2条', '59 of 112 children', '同结果', True, para=P, toks=('59', '112'))
+P = para_of(MS + 'p3.md', '#N • At one center')
+add('Take-Home 第1条', '(96% with volvulus) … 2.6% of 117 examinations', f'超声组扭转 {F["us_given_volv"][0]}/117 = {pc(F["us_given_volv"][0], 117):.1f}%；D3/DJJ 3/117 = 2.56%',
+    close('96', pc(F['us_given_volv'][0], 117), 0) and close('2.6', pc(3, 117)), para=P, toks=('96', '2.6', '117'))
+P = para_of(MS + 'p3.md', '#N • Positive ultrasound reports almost always')
+add('Take-Home 第2条', '(59 of 64) … 59 of the 112 ultrasound-examined children', '同讨论第1段与结果：阳性 64，其中漩涡征 59；做超声且术中扭转 112，其中漩涡征 59',
+    T2['US']['k'] == 64 and F['whirl_in_volv'] == (59, 112), para=P, toks=('59', '64', '59', '112'))
 P = para_of(MS + 'p3.md', '#N **Supplement 1.**')
 add('补充材料说明 · Supplement 1', 'reproduces 99.0% … the 92% above', f'参考实现与最终标签一致 {sum(v[0] for v in F["CLS"].values())}/{sum(v[1] for v in F["CLS"].values())} = {pc(sum(v[0] for v in F["CLS"].values()), sum(v[1] for v in F["CLS"].values())):.2f}%；92% 见方法',
     close('99.0', pc(sum(v[0] for v in F['CLS'].values()), sum(v[1] for v in F['CLS'].values()))), para=P, toks=('1', '99.0', '92'))
@@ -1219,6 +1229,7 @@ CORR = [
     ('方法 · 内容编码；表 3 注；补充1 · K3（阅读者与报告）', 'both authors', 'both authors who had reported none of the examinations', '用户 2026-10-10 确认两位超声阅读者均未出具被审计的超声报告；为腾字数删去引言末段 "that other departments can apply"'),
     ('结果 · 检出率 段；方法 · 统计；补充2 · S2.7–S2.10 与表 S16–S19（统计学审稿后补做）', '… CT and ultrasound remained less often positive than the UGI series; the coefficients … are given in Supplement 2', '… odds ratios 0.29 (0.20–0.41) and 0.27 (0.17–0.44); standardized differences −25.5 and −26.4 percentage points …；ultrasound against CT 0.96 → 0.62 when possible-tier conclusions count negative', '补效应量；四项敏感性分析由 hp_sens.py 运行、verify_hp.py 独立复算；主文因字数删去引言 "The 2025 multicenter series …" 一句（讨论里已有）、"Attenuation was not interpreted as mediation"、"All analysis variables were complete" 和讨论里两处与局限性重复的句子'),
     ('讨论 第3段；Cover Letter', 'duodenal landmarks were documented no more often in the later era', 'whirlpool reporting rose while the duodenal landmarks stayed rare', '1/38 对 2/79 不足以推断"没有更多"，改为描述性'),
+    ('摘要、结果、讨论、要点（引言—结果—讨论—结论逻辑核查后的必改项）', '… rested almost entirely on the whirlpool sign …；the audit shows its size and its consequence；CT detection rose and UGI detection did not；a feature of the pathway rather than of the test；Three features；published performance applies only …；recorded in only 59 of 112 children', '… almost always described a whirlpool (59 of 64)；Such low documentation …；CT 2.27 (1.38–3.72) 而 UGI 估计 +5.1 (−4.7 至 +15.0)；may reflect the pathway；Two features；may not apply …；59 of the 112 ultrasound-examined children', '因果措辞改为共现；P 值推出的"没升"改为估计值和区间；补超声在检查顺序中的位置 36.8%（39/106，引言承诺而结果漏报）；"Three features"实为两个，更正；无依据的断言加 presumably/may；要点补人群（96% 扭转）与分母'),
     ('文献数字（摘要、引言、讨论、Cover Letter）', '93–97%；93%/97%；17 项研究、2,257 例、94%；539 例', '不变', '2026-10-10 检索 [11]、[13]、[14] 摘要核对一致'),
 ]
 wsc = wb.create_sheet('更正记录')

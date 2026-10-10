@@ -15,7 +15,7 @@
 #N **生成式 AI（第 2 页）**：参考文献前须有固定标题和固定句式的声明。已按原文模板写入，标题为 "Declaration of generative AI and AI-assisted technologies in the writing process"。注意：须知还规定 AI 只能用于改进语言和可读性，本文的声明如实写了协助起草和编写分析代码（见第六节）。
 
 #N **Original Article（第 2 页）**：
-#N • 正文少于 3,000 词（不含参考文献）：2,983 词 ✓
+#N • 正文少于 3,000 词（不含参考文献）：2,998 词 ✓
 #N • 图表合计不超过 7 个：4 表 + 3 图 = 7 ✓
 #N • 原创研究须有正式的 Limitations 部分 ✓
 #N • 观察性研究按 STROBE 报告：附 STROBE 清单 ✓
@@ -32,7 +32,7 @@
 #N • 利益冲突声明不得写在 Title Page 上，须用 Elsevier Declarations tool 生成并单独上传 ✓（已从 Title Page 删除）
 
 #N **Main Manuscript（第 5 页）**：
-#N • 摘要不超过 250 词，按 objective / methods / results / discussion 结构：249 词，段名为 Objective / Methods / Results / Discussion ✓
+#N • 摘要不超过 250 词，按 objective / methods / results / discussion 结构：248 词，段名为 Objective / Methods / Results / Discussion ✓
 #N • 关键词 3–5 个：5 个 ✓
 #N • 摘要中不放引文；未发表结果和个人通信不进参考文献 ✓
 
@@ -100,17 +100,17 @@
 
 #N **Short / running title**（若问）：Duodenal Landmarks in Routine Malrotation Ultrasound Reports
 
-#N **Abstract**：从正文复制 Objective / Methods / Results / Discussion 四段（含段名），共 249 词。**Keywords 不要粘进摘要框。**
+#N **Abstract**：从正文复制 Objective / Methods / Results / Discussion 四段（含段名），共 248 词。**Keywords 不要粘进摘要框。**
 
 #N **Keywords**（3–5 个）：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report
 #N 注意 "Infant, Newborn" 中间是逗号，算一个词。
 
-#N **Summary sentence**（若系统要求；33 词、240 字符，逐字取自正文第 1 条 Take-Home Point）：
-#N Routine ultrasound reports for children with surgically confirmed malrotation documented the duodenal landmarks emphasized by published series in 2.6% of examinations and reported the diagnosis almost only when a whirlpool sign was present.
+#N **Summary sentence**（若系统要求；28 词、206 字符，逐字取自正文第 1 条 Take-Home Point）：
+#N At one center, routine ultrasound reports for children with surgically confirmed malrotation (96% with volvulus) documented the duodenal landmarks emphasized by published series in 2.6% of 117 examinations.
 
 #N **Take-Home Points**（若系统要求单独填；已写入正文，逐字复制即可）：
-#N • Routine ultrasound reports for children with surgically confirmed malrotation documented the duodenal landmarks emphasized by published series in 2.6% of examinations and reported the diagnosis almost only when a whirlpool sign was present.
-#N • A positive routine ultrasound report rested almost entirely on the whirlpool sign, a sign of volvulus, which was recorded in only 59 of 112 children with operatively confirmed volvulus.
+#N • At one center, routine ultrasound reports for children with surgically confirmed malrotation (96% with volvulus) documented the duodenal landmarks emphasized by published series in 2.6% of 117 examinations.
+#N • Positive ultrasound reports almost always described a whirlpool (59 of 64), a sign of volvulus, which was recorded in 59 of the 112 ultrasound-examined children with volvulus.
 #N • These are report-level detection rates among surgically confirmed children, not sensitivities; they establish no specificity, predictive value or ranking of modalities, and are no argument against ultrasound-first pathways.
 #N • Documentation, unlike accuracy, can be audited without a reference standard; the audit criteria are provided as a minimum reporting dataset, with this audit as the baseline for re-audit.
 
@@ -159,6 +159,8 @@
 
 #N **5a. 统计学审稿后补做的四项分析（2026-10-10）。** 程序 `analysis/hp_sens.py`（约 12 分钟，cluster bootstrap 2000 次），结果在补充材料 2 的 S2.7–S2.10 与表 S16–S19，主文只加了效应量和一句话。四项：(1) GEE 比值比加标准化检出率及其差值的 95% 区间；(2) 四种阳性定义（主定义、只计点名旋转不良、排除"可能"级、公开分类器标签）；(3) 检查到手术的间隔、最早/最近/任一次术前检查作索引、2 天内的检查；(4) 超声内容记录率按预约类别和另两个分母重算。结果没有改变主要结论；唯一值得一提的是 CT 与超声的相对位置随阳性定义而变（比值比 0.96 → 0.62，0.38–1.01）。为腾字数删去了引言一句、方法和讨论里几处重复。
 
+#N **5c. 引言—结果—讨论—结论的逻辑核查（2026-10-10）。** 只做了"必改档"：因果措辞改为共现（"rested almost entirely on"→"almost always described a whirlpool (59 of 64)"），P 值推出的"UGI 没升"改为估计值和区间，补出超声在检查顺序中的位置（36.8%），"Three features"更正为"Two"，无依据的断言加 presumably / may，要点补人群（96% 扭转）与 112 的分母。未做的：引言补次要目的、讨论补"可能"级措辞和 59 例亚组、局限性补充、补充材料 2 的"did not differ"、投稿信"wherever reports are stored"。
+
 #N **5b. 阅读者与被审计报告的关系（2026-10-10 用户确认）。** 两位超声阅读者（Zhengliang Meng、Jun Shu）均未出具被审计的超声报告；已写入方法、表 3 注和补充材料 1 K3（"both authors who had reported none of the examinations"）。
 
 #N **6. 参考文献（已核对）。** 作者 6 位及以下的条目已补全全部作者；本次检索核对的 12 条（[2]–[5]、[10]–[16]、[22]）题目、期刊、年份、卷和页码均与记录一致；[21] 按 STROBE 声明公开的 6 位作者名单补全；其余条目在此前的外部核对中已确认。[27] El-Ali 等（Pediatr Radiol 2025;55:925-935）为 2026-10-09 新增，作者、期刊、卷页和文中引用的 25.7% 已经检索核对。[19] ACR Appropriateness Criteria Vomiting in Infants（J Am Coll Radiol 2020;17(11S):S505-S515，PMID 33153561）和 [20] Keenan、Sewchuran（Surg Pract Sci 2023;14:100183，PMID 39845859）为 2026-10-10 新增，题目、卷页、DOI 已核对。**文中引用的评级（Variant 5，出生 2 天后胆汁性呕吐、疑似旋转不良、初始影像：UGI "usually appropriate"，超声 "may be appropriate"）已通过检索核对**：7 次检索中 5 次一致给出该评级；2 条出入的摘要，一条给出的评级恰为 Variant 2（经典双泡征）的，另一条是检索工具的转述，与同批其他来源不符。**原文 PDF 因网络限制没能直接打开**，所以不是逐字对照；若想百分之百确认，可在 acsearch.acr.org 打开 Vomiting in Infants 的 Variant 5 表，30 秒即可。（编号为 2026-10-10 新增两条后重排的编号。）
@@ -170,6 +172,6 @@
 #H1 八、投稿前最后自检
 
 #N 1. 隐去作者信息的正文中无 "Wuhan"、"Yang"、"Shu"、"Bian" 等身份信息；全部 docx 的文档属性（作者、上次保存者）已清空。
-#N 2. 标题 121 字符；摘要 249 词；正文 2,983 词；图表 7 个；作者 7 位。
+#N 2. 标题 121 字符；摘要 248 词；正文 2,998 词；图表 7 个；作者 7 位。
 #N 3. Title Page、投稿系统表单和正文 Declarations 三处内容一致。
 #N 4. Cover Letter 日期已改为实际投稿日。
