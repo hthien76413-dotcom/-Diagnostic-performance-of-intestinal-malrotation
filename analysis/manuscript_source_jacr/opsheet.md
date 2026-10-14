@@ -79,7 +79,7 @@
 #N 4 张表和 3 张图都在文件末尾。文中无医院名、作者名或伦理批件号。
 
 #N **4. Cover Letter** —— `JACR_1_CoverLetter.docx`
-#N 须知写的是"需要时提供"，建议提供。日期填的是 2026 年 10 月 10 日，若实际投稿日不同，改成投稿当天。
+#N 须知写的是"需要时提供"，建议提供。日期填的是 2026 年 10 月 14 日，若实际投稿日不同，改成投稿当天。
 
 #N **5. Supplementary material**
 #N • `JACR_Supplement_1_NLP_and_report_audit.docx` —— 算法规则、验证、内容审计正则表

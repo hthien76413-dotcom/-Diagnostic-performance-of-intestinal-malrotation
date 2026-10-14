@@ -916,9 +916,9 @@ for row in t[1:]:
 
 # =============================================================== COVER LETTER AND TITLE PAGE
 CF = MS + 'cover.md'
-for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:', '电话、ORCID'), ('#N October 10, 2026', '信件日期')]:
+for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:', '电话、ORCID'), ('#N October 14, 2026', '信件日期')]:
     P = para_of(CF, start); add('Cover Letter · 抬头', txt, '联系信息/日期，不属研究数据', status='定义/描述性数字', para=P,
-                                toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 10, 2026': ('10', '2026')}[start])
+                                toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 14, 2026': ('14', '2026')}[start])
 P = para_of(CF, '#N Ultrasound-first pathways')
 add('Cover Letter 第2段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
 add('Cover Letter 第2段', 'the 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days', LITACR, True, para=P, toks=('2020', '2'))
