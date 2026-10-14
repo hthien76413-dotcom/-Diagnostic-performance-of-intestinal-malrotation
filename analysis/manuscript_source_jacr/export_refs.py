@@ -52,3 +52,7 @@ with io.open(OUT + f'参考文献_{N}条.ris', 'w', encoding='utf-8') as f:
         f.write(f'N1  - Manuscript reference [{n}]. Metadata UNVERIFIED - confirm against Crossref.\nER  - \n\n')
 
 print(f'{len(rows)} references written: DOI list, numbered key, RIS')
+
+# clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
+from scrub_metadata import scrub_all
+scrub_all()

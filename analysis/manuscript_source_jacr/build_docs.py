@@ -46,3 +46,7 @@ for src,dst,font,size in JOBS:
         elif ln.startswith('#R '): para(ln[3:],sz=size-1,space_after=3)
         else: para(ln)
     _blank_props(doc).save(OUT+dst); print('saved',dst)
+
+# clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
+from scrub_metadata import scrub_all
+scrub_all()

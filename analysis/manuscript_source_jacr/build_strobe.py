@@ -58,3 +58,7 @@ para("Note: An Explanation and Elaboration article discusses each checklist item
 _blank_props(doc)
 doc.save(OUT + 'JACR_STROBE_checklist.docx')
 print('saved JACR_STROBE_checklist.docx')
+
+# clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
+from scrub_metadata import scrub_all
+scrub_all()

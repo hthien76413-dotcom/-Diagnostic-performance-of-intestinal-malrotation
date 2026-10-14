@@ -103,3 +103,7 @@ for k,(path,_) in FIGS.items():
         bg=Image.new('RGB',im.size,'white'); bg.paste(im,mask=im.split()[-1]); im=bg
     im.convert('RGB').save(OUT+f'JACR_Figure{k}.tif',compression='tiff_lzw',dpi=(300,300))
     print(f'saved JACR_Figure{k}.tif')
+
+# clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
+from scrub_metadata import scrub_all
+scrub_all()

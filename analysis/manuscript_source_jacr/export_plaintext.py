@@ -35,3 +35,7 @@ for ch in d.element.body.iterchildren():
 txt = '\n\n'.join(out)
 io.open(DST, 'w', encoding='utf-8').write(txt)
 print(f'{os.path.basename(DST)}: {len(txt.split())} words, {len(txt)} chars')
+
+# clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
+from scrub_metadata import scrub_all
+scrub_all()

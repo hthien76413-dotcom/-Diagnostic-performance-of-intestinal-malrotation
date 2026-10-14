@@ -83,3 +83,7 @@ make('supp3.md','JACR_Supplement_3_CT_and_UGI_content_audit.docx')
 make('supp4.md','JACR_Supplement_4_minimum_reporting_dataset.docx')
 # the runnable rule set deposited with Supplement 1 is the analysis copy, unchanged
 shutil.copyfile(AN+'classifier.py',OUT+'Supplement_1_classifier.py'); print('saved Supplement_1_classifier.py')
+
+# clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
+from scrub_metadata import scrub_all
+scrub_all()

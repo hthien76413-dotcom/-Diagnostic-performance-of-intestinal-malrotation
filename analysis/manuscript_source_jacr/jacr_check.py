@@ -126,5 +126,19 @@ cited = {int(n) for p in ms[:ms.index('References')] for grp in re.findall(r'\[(
          for part in grp.split(',') for n in (range(int(part.split('–')[0]), int(part.split('–')[-1]) + 1) if '–' in part else [part.strip()])}
 check(cited == set(range(1, len(refs) + 1)), f'{len(refs)} references, every one cited')
 check(all(re.search(r'\. \d{4};\d+(\([^)]*\))?:[\w-]+\. doi:10\.', r) for r in refs), 'references in AMA layout')
+# file properties of every document in the package
+import io as _io, zipfile
+from PIL import Image
+for f in sorted(glob.glob(ROOT + 'JACR_*.docx')):
+    z = zipfile.ZipFile(f)
+    core = z.read('docProps/core.xml').decode('utf-8')
+    empty = all(re.search(rf'<{t}></{t}>|<{t}/>', core) for t in ('dc:creator', 'cp:lastModifiedBy', 'dc:description', 'dc:title'))
+    years = {m for m in re.findall(r'<dcterms:(?:created|modified)[^>]*>(\d{4})-', core)}
+    parts = z.namelist()
+    pngs = [n for n in parts if n.startswith('word/media/') and n.lower().endswith('.png')]
+    clean_png = all(not [k for k in Image.open(_io.BytesIO(z.read(n))).info if k != 'dpi'] for n in pngs)
+    check(empty and years and years == {str(__import__('datetime').date.today().year)} and 'docProps/thumbnail.jpeg' not in parts and clean_png,
+          f'{os.path.basename(f)}: properties empty, dated this year, no template thumbnail, figures without text chunks')
+
 print('\n%d check(s) failed' % fails if fails else '\nall checks passed')
 sys.exit(1 if fails else 0)
