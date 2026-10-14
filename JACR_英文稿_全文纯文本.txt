@@ -2,7 +2,7 @@
 
 [Masked manuscript. Author names, affiliations and corresponding-author details are provided on the separate title page.]
 
-Word count: 2,978 (Introduction through Take-Home Points; excluding abstract, references, tables and figure legends); Tables: 4; Figures: 3; Supplemental material: Supplements 1–4
+Word count: 2,977 (Introduction through Take-Home Points; excluding abstract, references, tables and figure legends); Tables: 4; Figures: 3; Supplemental material: Supplements 1–4
 
 
 ## Abstract
@@ -11,7 +11,7 @@ Objective: Ultrasound is increasingly advocated as the first-line test for suspe
 
 Methods: Retrospective case-only report audit at one tertiary children's hospital (December 2012–June 2026). The preoperative examination closest to operation was classified by a rule-based algorithm with blinded surgical adjudication, and separately audited for documented technical content (ultrasound by two independent readers). As the cohort was surgically confirmed, the outcome was report-level detection among tested children, with Wilson 95% CIs; specificity, predictive values and comparative accuracy are not estimable.
 
-Results: Among 450 children (volvulus in 88.2%), 398 underwent at least one index test. Three of 117 ultrasound examinations (2.6%, 95% CI 0.9–7.3) documented the third portion of the duodenum or the duodenojejunal junction, 3 (2.6%) the mesenteric artery–vein relationship and 2 (1.7%) enteric fluid; a whirlpool sign was reported in 50.4%. Ultrasound named malrotation or volvulus in 64 of 117 examinations (54.7%, 45.7–63.4): in all 59 recording a whirlpool, a positivity criterion, and in 5 of 58 without one. A whirlpool was recorded in 59 of the 112 ultrasound-examined children with operatively confirmed volvulus. Detection was 53.8% counting only conclusions naming malrotation, 25.6% excluding tentative wording.
+Results: Among 450 children (volvulus in 88.2%), 398 underwent at least one index test. Three of 117 ultrasound examinations (2.6%, 95% CI 0.9–7.3) documented the third portion of the duodenum or the duodenojejunal junction, 3 (2.6%) the mesenteric artery–vein relationship and 2 (1.7%) enteric fluid; a whirlpool sign was reported in 50.4%. Ultrasound named malrotation or volvulus in 64 of 117 examinations (54.7%, 45.7–63.4): in all 59 recording a whirlpool, a positivity criterion, and in 5 of 58 without one. A whirlpool was recorded in 59 of the 112 ultrasound-examined children with operatively confirmed volvulus. Detection was 53.8% counting only conclusions naming malrotation, 25.6% excluding "possible" wording.
 
 Discussion: Positive routine ultrasound reports almost always described a whirlpool, and the duodenal landmarks to which published performance is attributed were rarely documented. Documentation, unlike accuracy, can be audited without a reference standard; we provide the criteria as a minimum reporting dataset.
 
@@ -96,7 +96,7 @@ Fifty-nine children underwent all three modalities. This subgroup, presumably se
 
 ## Discussion
 
-Over 13.6 years, routine ultrasound reports for children with surgically confirmed intestinal malrotation rarely recorded the duodenal anatomy to which contemporary ultrasound accuracy is attributed: D3 or the duodenojejunal junction in three of 117 examinations, enteric fluid in two. What they did record was the whirlpool sign, present in about half of all examinations and of the children with operatively confirmed volvulus. Such low documentation might be expected with free-text reports and no structured template, as here. Positive reports almost always described a whirlpool (59 of 64).
+Over 13.6 years, routine ultrasound reports for children with surgically confirmed intestinal malrotation rarely recorded the elements to which contemporary ultrasound accuracy is attributed: D3 or the duodenojejunal junction in three of 117 examinations, enteric fluid in two. What they did record was the whirlpool sign, present in about half of all examinations and of the children with operatively confirmed volvulus. Such low documentation might be expected with free-text reports and no structured template, as here. Positive reports almost always described a whirlpool (59 of 64).
 
 Malrotation or volvulus was named in 54.7% of the surgically confirmed children who underwent ultrasound. The 2025 multicenter series, which excluded non-diagnostic and equivocal examinations, reported sensitivities of 93–97% for malrotation and 97% for volvulus [13], and a meta-analysis found a pooled sensitivity of 94% [11], both in children investigated for suspicion. In a multi-institutional cohort, 25.7% of examinations for malrotation were non-diagnostic on the original report [28]. These figures are not interchangeable: ours is conditioned on confirmed disease and on the indications that selected these children, theirs on those exclusions, so the difference combines case mix, examination quality and technique in proportions this audit cannot separate. What the audit does show is that the elements to which published performance is attributed were almost never documented here: D3 [16, 17], the most accurate sign for malrotation in the 2025 series [13]; the duodenojejunal junction [12, 15]; and enteric fluid, which was associated with better performance in the meta-analysis [11].
 

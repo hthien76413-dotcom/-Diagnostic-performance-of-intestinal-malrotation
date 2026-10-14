@@ -42,7 +42,7 @@
 
 #N **E2 Distinction between negation and hedged exclusion.** 建议进一步检查除外肠旋转不良 ("recommend further study to exclude malrotation") is not a negation: it raises the diagnosis. Such clauses were labeled positive at possible-tier certainty. This rule was applied consistently. It is the most consequential interpretive decision in the algorithm, and it is the reason for the sensitivity analysis in Table 2.
 
-#N **E3 Organ exclusions.** 胃扭转 and 胃翻转 (gastric volvulus / organoaxial gastric rotation) are benign findings unrelated to midgut rotation and never make a report positive, even though they contain 扭转. Likewise excluded: 睾丸扭转, 卵巢扭转, 附件扭转, 精索扭转, 大网膜扭转, 阑尾扭转 (testicular, ovarian, adnexal, spermatic-cord, omental and appendiceal torsion). A report may still be positive on other grounds: 中肠旋转不良并十二指肠不全性梗阻考虑。胃翻转。 is positive on its first clause.
+#N **E3 Organ exclusions.** 胃扭转 and 胃翻转 (gastric volvulus / organoaxial gastric rotation) are unrelated to midgut rotation and never make a report positive, even though they contain 扭转. Likewise excluded: 睾丸扭转, 卵巢扭转, 附件扭转, 精索扭转, 大网膜扭转, 阑尾扭转 (testicular, ovarian, adnexal, spermatic-cord, omental and appendiceal torsion). A report may still be positive on other grounds: 中肠旋转不良并十二指肠不全性梗阻考虑。胃翻转。 is positive on its first clause.
 
 #N **E4 Non-index anatomy.** Clauses concerned with other organ systems in a combined report (e.g. cranial CT findings in a report covering head and abdomen) were ignored.
 
