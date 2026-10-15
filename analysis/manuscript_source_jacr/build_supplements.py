@@ -77,10 +77,10 @@ def make(src,outfile,figs=None):
         elif ln.startswith('#TAB'): table(ln[4:])
         else: para(ln)
     _blank_props(doc).save(OUT+outfile); print('saved',outfile)
-make('supp1.md','JACR_Supplement_1_NLP_and_report_audit.docx')
-make('supp2.md','JACR_Supplement_2_models_and_subgroups.docx')
-make('supp3.md','JACR_Supplement_3_CT_and_UGI_content_audit.docx')
-make('supp4.md','JACR_Supplement_4_minimum_reporting_dataset.docx')
+make('supp1.md','JUM_Supplement_1_NLP_and_report_audit.docx')
+make('supp2.md','JUM_Supplement_2_models_and_subgroups.docx')
+make('supp3.md','JUM_Supplement_3_CT_and_UGI_content_audit.docx')
+make('supp4.md','JUM_Supplement_4_minimum_reporting_dataset.docx')
 # the runnable rule set deposited with Supplement 1 is the analysis copy, unchanged
 shutil.copyfile(AN+'classifier.py',OUT+'Supplement_1_classifier.py'); print('saved Supplement_1_classifier.py')
 

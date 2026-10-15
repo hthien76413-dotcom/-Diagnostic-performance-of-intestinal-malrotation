@@ -11,8 +11,8 @@ import io, re, os
 SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'p3.md')
 OUT = '/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 
-# AMA layout: Authors. Title. *Journal*. Year;Volume:Pages. doi:DOI
-REF = re.compile(r'^#R (\d+)\.\s+(.+?)\.\s+(.+?)\.\s+\*(.+?)\*\.\s+(\d{4});(\d+(?:\([^)]*\))?):([^.\s]+)\.\s+doi:(\S+)\s*$')
+# JUM layout: Authors. Title. *Journal* Year;Volume:Pages. doi:DOI
+REF = re.compile(r'^#R (\d+)\.\s+(.+?)\.\s+(.+?)\.\s+\*(.+?)\*\s+(\d{4});(\d+(?:\([^)]*\))?):([^.\s]+)\.\s+doi:(\S+)\s*$')
 rows = []
 for line in io.open(SRC, encoding='utf-8'):
     m = REF.match(line.rstrip())

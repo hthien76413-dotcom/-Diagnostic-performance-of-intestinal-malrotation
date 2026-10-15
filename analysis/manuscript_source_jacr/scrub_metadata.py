@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Clean the file properties of the submission documents.
 
-For every JACR_*.docx in the repository root this script
+For every JUM_*.docx in the repository root this script
   * leaves author, last modified by, comments, title, subject and keywords empty,
   * writes the current time into the created and modified fields (python-docx's
     template carries a 2013 date),
@@ -20,8 +20,8 @@ import datetime, glob, io, os, re, sys, time, zipfile
 from PIL import Image
 
 ROOT = '/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
-PACKAGE_EXTRA = ['Supplement_1_classifier.py', 'JACR_Figure1.tif', 'JACR_Figure2.tif', 'JACR_Figure3.tif',
-                 'JACR_英文稿_全文纯文本.txt', '参考文献_28条.ris', '参考文献_28条_DOI清单.txt', '参考文献_28条_编号对照.txt']
+PACKAGE_EXTRA = ['Supplement_1_classifier.py', 'JUM_Figure1.tif', 'JUM_Figure2.tif', 'JUM_Figure3.tif',
+                 'JUM_英文稿_全文纯文本.txt', '参考文献_28条.ris', '参考文献_28条_DOI清单.txt', '参考文献_28条_编号对照.txt']
 
 APP_XML = ("<?xml version='1.0' encoding='UTF-8' standalone='yes'?>\n"
            '<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" '
@@ -84,7 +84,7 @@ def scrub_docx(path, now=None):
 
 def scrub_all(now=None):
     now = now or time.time()
-    for p in sorted(glob.glob(ROOT + 'JACR_*.docx')):
+    for p in sorted(glob.glob(ROOT + 'JUM_*.docx')):
         scrub_docx(p, now)
     for n in PACKAGE_EXTRA:
         p = ROOT + n
@@ -95,4 +95,4 @@ def scrub_all(now=None):
 
 if __name__ == '__main__':
     n = scrub_all()
-    print('scrubbed', len(glob.glob(ROOT + 'JACR_*.docx')), 'documents at', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(n)))
+    print('scrubbed', len(glob.glob(ROOT + 'JUM_*.docx')), 'documents at', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(n)))

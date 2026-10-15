@@ -6,8 +6,7 @@ from docx.shared import Pt, Inches
 def _blank_props(doc):
     """Strip python-docx's default authorship before saving.
 
-    These files go out for double-blind review, so no document property may
-    name an author, a reviser or the generator.
+    No document property may name an author, a reviser or the generator.
     """
     c = doc.core_properties
     for f in ('author', 'last_modified_by', 'title', 'subject', 'comments',
@@ -18,9 +17,8 @@ def _blank_props(doc):
 
 
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
-JOBS=[('cover.md','JACR_1_CoverLetter.docx','Times New Roman',11),
-      ('titlepage.md','JACR_2_TitlePage.docx','Times New Roman',11),
-      ('opsheet.md','JACR_投稿操作单.docx','DengXian',10.5)]
+JOBS=[('cover.md','JUM_1_CoverLetter.docx','Times New Roman',11),
+      ('opsheet.md','JUM_投稿操作单.docx','DengXian',10.5)]
 for src,dst,font,size in JOBS:
     doc=docx.Document(); apply_house_style(doc, font)
     st=doc.styles['Normal']; st.font.name=font; st.font.size=Pt(size)

@@ -1,7 +1,7 @@
-"""American spelling for the JACR submission (AMA Manual of Style).
+"""American spelling for the submission (AMA Manual of Style).
 
-The manuscript was drafted in British spelling for a European journal. JACR
-follows AMA style, so every English text that reaches a submission document
+The manuscript was drafted in British spelling for a European journal. The target
+journals follow AMA style, so every English text that reaches a submission document
 passes through us(): the Markdown sources were converted once with it, and the
 builders apply it to table text read from the analysis JSON, which the analysis
 scripts still write in the original spelling. Reference titles are quoted as

@@ -9,8 +9,8 @@ from docx.table import Table
 from docx.text.paragraph import Paragraph
 
 ROOT = '/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
-SRC  = ROOT + 'JACR_3_Manuscript_masked.docx'
-DST  = ROOT + 'JACR_英文稿_全文纯文本.txt'
+SRC  = ROOT + 'JUM_2_Manuscript.docx'
+DST  = ROOT + 'JUM_英文稿_全文纯文本.txt'
 
 d = docx.Document(SRC)
 out = []

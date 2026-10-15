@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""House style shared by every JACR document builder.
+"""House style shared by every document builder.
 
 python-docx's default template draws Title and Heading styles in blue theme
 fonts (Calibri Light) and puts a rule under Title. A manuscript should not look
