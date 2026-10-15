@@ -11,27 +11,31 @@ import io, re, os
 SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'p3.md')
 OUT = '/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 
-# JUM layout: Authors. Title. *Journal* Year;Volume:Pages. doi:DOI
-REF = re.compile(r'^#R (\d+)\.\s+(.+?)\.\s+(.+?)\.\s+\*(.+?)\*\s+(\d{4});(\d+(?:\([^)]*\))?):([^.\s]+)\.\s+doi:(\S+)\s*$')
+# Elsevier numeric layout: [n] A.B. Author, A.B. Author, Title, J. Abbrev. Volume (Year) Pages. https://doi.org/DOI
+TAIL = re.compile(r'^(.*), ([^,]+?) (\d+) \((\d{4})\) (\S+(?: – \S+)?)\. https://doi\.org/(\S+)$')
+AUTHOR = re.compile(r"^(?:[A-Z]\.)+ [A-ZÀ-Ý][\w'’\- ]+$")
 rows = []
 for line in io.open(SRC, encoding='utf-8'):
-    m = REF.match(line.rstrip())
-    if m:
-        n, au, ti, jo, yr, vol, pg, doi = m.groups()
-        rows.append((n, au, yr, ti, jo, vol, pg, doi))
+    line = line.rstrip()
+    m = re.match(r'^#R \[(\d+)\] (.+)$', line)
+    if not m:
+        continue
+    n, rest = m.groups()
+    head, jo, vol, yr, pg, doi = TAIL.match(rest).groups()
+    parts = head.split(', ')
+    au = []
+    while parts and (AUTHOR.match(parts[0]) or parts[0] == 'et al.' or (not au and parts[0].startswith('Expert Panel'))):
+        au.append(parts.pop(0))
+    ti = ', '.join(parts)
+    rows.append((n, ', '.join(au), yr, ti, jo, vol, pg.replace(' – ', '–'), doi))
 N = len(rows)
 assert [int(r[0]) for r in rows] == list(range(1, N + 1)), 'references not numbered 1..N'
 assert N == sum(1 for l in io.open(SRC, encoding='utf-8') if l.startswith('#R ')), 'a reference did not parse'
 
 def ris_authors(s):
-    if ';' in s and ',' not in s.split(';')[0]:   # leading group author, e.g. 'Expert Panel on Pediatric Imaging; Alazraki AL, ...'
-        g, s = s.split(';', 1)
-        yield g.strip()
-    s = s.split(';')[0]  # drop a trailing group author such as '; STROBE Initiative'
-    s = s.replace(', et al', '').replace(' et al', '')
-    for a in [x.strip() for x in s.split(',') if x.strip()]:
-        parts = a.split()
-        yield f'{" ".join(parts[:-1])}, {parts[-1]}' if len(parts) > 1 else a
+    for a in [x.strip() for x in s.split(', ') if x.strip() and x.strip() != 'et al.']:
+        m = re.match(r'^((?:[A-Z]\.)+) (.+)$', a)
+        yield f'{m.group(2)}, {m.group(1)}' if m else a   # group authors stay as written
 
 with io.open(OUT + f'参考文献_{N}条_DOI清单.txt', 'w', encoding='utf-8') as f:
     f.write('\n'.join(r[7] for r in rows) + '\n')

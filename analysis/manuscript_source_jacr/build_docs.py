@@ -17,17 +17,22 @@ def _blank_props(doc):
 
 
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
-JOBS=[('cover.md','JUM_1_CoverLetter.docx','Times New Roman',11),
-      ('opsheet.md','JUM_投稿操作单.docx','DengXian',10.5)]
+JOBS=[('cover.md','EJR_1_CoverLetter.docx','Times New Roman',11),
+      ('titlepage.md','EJR_2_TitlePage.docx','Times New Roman',11),
+      ('highlights.md','EJR_4_Highlights.docx','Times New Roman',11),
+      ('declarations.md','EJR_5_Declarations.docx','Times New Roman',11),
+      ('credit.md','EJR_6_CreditAuthorStatement.docx','Times New Roman',11),
+      ('opsheet.md','EJR_投稿操作单.docx','DengXian',10.5)]
 for src,dst,font,size in JOBS:
     doc=docx.Document(); apply_house_style(doc, font)
     st=doc.styles['Normal']; st.font.name=font; st.font.size=Pt(size)
     for s in doc.sections: s.left_margin=s.right_margin=Inches(1.0)
     def para(text,style=None,sz=None,italic=False,space_after=8):
         p=doc.add_paragraph(style=style)
-        for pt in re.split(r'(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)',text):
+        for pt in re.split(r'(\*\*(?:\\\*|[^*])+\*\*|\*[^*]+\*|`[^`]+`|\^[^^]+\^)',text):
             if not pt: continue
-            if pt.startswith('**') and pt.endswith('**'): r=p.add_run(pt[2:-2]); r.bold=True
+            if pt.startswith('^') and pt.endswith('^') and len(pt)>2: r=p.add_run(pt[1:-1]); r.font.superscript=True
+            elif pt.startswith('**') and pt.endswith('**'): r=p.add_run(pt[2:-2].replace('\\*','*')); r.bold=True
             elif pt.startswith('*') and pt.endswith('*') and len(pt)>2: r=p.add_run(pt[1:-1]); r.italic=True
             elif pt.startswith('`') and pt.endswith('`') and len(pt)>2: r=p.add_run(pt[1:-1]); r.font.name='Courier New'
             else: r=p.add_run(pt)

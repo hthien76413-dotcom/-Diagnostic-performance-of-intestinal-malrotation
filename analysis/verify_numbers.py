@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Number-by-number check of the JACR manuscript, tables, figures, supplements
+"""Number-by-number check of the EJR manuscript, tables, figures, supplements
 and cover letter against an independent recomputation (verify_facts.py).
 
 Every numeric token in the text is either matched to a check row here or is
@@ -74,18 +74,18 @@ LITACR = ('文献 [19]（ACR Appropriateness Criteria Vomiting in Infants，J Am
 LIT14 = '文献 [14]（Binu 等，J Pediatr Surg 2021，单中心 Adelaide）：539 例因临床怀疑行超声。2026-10-10 检索核对'
 
 # =============================================================== ABSTRACT
-P = para_of(MS + 'p1.md', '#N **Objective:**')
-add('摘要 · Objective', '93–97%', LIT13, True, para=P, toks=('93', '97'))
+P = para_of(MS + 'p1.md', '#N **Objectives:**')
+add('摘要 · Objectives', '93–97%', LIT13, True, para=P, toks=('93', '97'))
 P = para_of(MS + 'p1.md', '#N **Methods:**')
 add('摘要 · Methods', 'December 2012–June 2026', f'队列首次手术日期 {coh.op_dt.min():%Y-%m-%d} 至 {coh.op_dt.max():%Y-%m-%d}，均在研究期内', para=P, toks=('2012', '2026'))
-add('摘要 · Methods', 'Wilson 95% CIs', '方法描述；全文检出率区间均按 Wilson 法复算（见下）', status='定义/描述性数字', para=P, toks=('95',))
+add('摘要 · Methods', 'Wilson 95% confidence intervals', '方法描述；全文检出率区间均按 Wilson 法复算（见下）', status='定义/描述性数字', para=P, toks=('95',))
 P = para_of(MS + 'p1.md', '#N **Results:**')
 add('摘要 · Results', '450 children', f'队列 {F["cohort"]} 例（465 例经复核排除 {F["excluded"]} 例）', F['cohort'] == 450, para=P, toks=('450',))
 ok, r = rate(F['volvulus'], F['cohort'], '88.2')
 add('摘要 · Results', 'volvulus in 88.2%', f'{r}', ok, para=P, toks=('88.2',))
 add('摘要 · Results', '398 underwent at least one index test', f'有索引检查者 {F["imaged"]} 例；{F["imaged"]} + 无索引检查 {F["none"]} = {F["imaged"] + F["none"]} = 队列', F['imaged'] == 398, para=P, toks=('398',))
 ok1, r1 = rate(T3['d3_or_djj']['n'], F['n_US'], '2.6'); ok2, r2 = wil(3, 117, '0.9', '7.3')
-add('摘要 · Results', 'Three of 117 ultrasound examinations (2.6%, 95% CI 0.9–7.3) documented D3 or DJJ',
+add('摘要 · Results', 'Three of 117 ultrasound examinations (2.6%, 95% confidence interval 0.9–7.3) documented D3 or DJJ',
     f'{r1}；{r2}；两位阅读者裁定后编码', ok1 and ok2 and T3['d3_or_djj']['n'] == 3, para=P, toks=('Three', '117', '2.6', '95', '0.9', '7.3'))
 ok, r = rate(T3['sma_smv']['n'], 117, '2.6')
 add('摘要 · Results', '3 (2.6%) the mesenteric artery–vein relationship', r, ok and T3['sma_smv']['n'] == 3, para=P, toks=('3', '2.6'))
@@ -309,12 +309,18 @@ P = para_of(MS + 'p3.md', '#N This is not a diagnostic accuracy study')
 add('讨论 · 局限 第1段', 'The 52 children without an index test … as were 9 … from 88.2% to 84.0%',
     f'无索引检查 {F["none"]}；复发再手术 {F["s1_reop"]}；扭转 {F["VD"]["primary"][0]}/450 = {pc(F["VD"]["primary"][0],450):.2f}% → {F["VD"]["A"][0]}/450 = {pc(F["VD"]["A"][0],450):.2f}%',
     F['none'] == 52 and F['s1_reop'] == 9 and close('84.0', pc(F['VD']['A'][0], 450)), para=P, toks=('52', '9', '360', '88.2', '84.0'))
-P = para_of(MS + 'p3.md', '#N • At one center')
-add('Take-Home 第1条', '(96% with volvulus) … 2.6% of 117 examinations', f'超声组扭转 {F["us_given_volv"][0]}/117 = {pc(F["us_given_volv"][0], 117):.1f}%；D3/DJJ 3/117 = 2.56%',
-    close('96', pc(F['us_given_volv'][0], 117), 0) and close('2.6', pc(3, 117)), para=P, toks=('96', '2.6', '117'))
-P = para_of(MS + 'p3.md', '#N • Positive ultrasound reports almost always')
-add('Take-Home 第2条', '(59 of 64) … 59 of the 112 ultrasound-examined children', '同讨论第1段与结果：阳性 64，其中漩涡征 59；做超声且术中扭转 112，其中漩涡征 59',
-    T2['US']['k'] == 64 and F['whirl_in_volv'] == (59, 112), para=P, toks=('59', '64', '59', '112'))
+P = para_of(MS + 'p3.md', '#N In routine ultrasound reports for children with surgically confirmed')
+add('结论段', 'the audit criteria in Supplement 4', '补充材料编号；结论段只重述摘要与讨论的结论，无新数字', status='定义/描述性数字', para=P, toks=('4',))
+HF = MS + 'highlights.md'
+P = para_of(HF, '#N • Only 3 of 117 routine ultrasound reports')
+add('Highlights 第1条', 'Only 3 of 117 … duodenal landmarks', f'D3 或十二指肠空肠曲记录 {T3["d3_or_djj"]["n"]}/{F["n_US"]}', T3['d3_or_djj']['n'] == 3 and F['n_US'] == 117, para=P, toks=('3', '117'))
+P = para_of(HF, '#N • Positive ultrasound reports almost always')
+add('Highlights 第2条', '(59 of 64)', '阳性 64，其中漩涡征 59（同结果与讨论）', T2['US']['k'] == 64 and F['whirl_in_volv'] == (59, 112), para=P, toks=('59', '64'))
+P = para_of(HF, '#N • Ultrasound named the diagnosis in 54.7%')
+ok, r = rate(64, 117, '54.7')
+add('Highlights 第3条', '54.7% of 117', r, ok and T2['US']['k'] == 64, para=P, toks=('54.7', '117'))
+for start_ in ['#N • These are report-level', '#N • Documentation can be audited']:
+    COVER.setdefault(para_of(HF, start_), [])
 P = para_of(MS + 'p3.md', '#N **Supplement 1.**')
 add('补充材料说明 · Supplement 1', 'reproduces 99.0% … the 92% above', f'参考实现与最终标签一致 {sum(v[0] for v in F["CLS"].values())}/{sum(v[1] for v in F["CLS"].values())} = {pc(sum(v[0] for v in F["CLS"].values()), sum(v[1] for v in F["CLS"].values())):.2f}%；92% 见方法',
     close('99.0', pc(sum(v[0] for v in F['CLS'].values()), sum(v[1] for v in F['CLS'].values()))), para=P, toks=('1', '99.0', '92'))
@@ -335,7 +341,7 @@ add('图注 · Figure 3', '117 … two independent readers … the two most ofte
     para=P, toks=('3', '117', 'two', 'seven', 'Three', 'one', '5', '58'))
 
 # =============================================================== TABLES (built manuscript)
-D = docx.Document(ROOT + 'JACR_3_Manuscript_masked.docx')
+D = docx.Document(ROOT + 'EJR_3_Manuscript_anonymized.docx')
 TB = [[[c.text for c in r.cells] for r in t.rows] for t in D.tables]
 
 
@@ -672,9 +678,9 @@ for row in MRD[1:]:
 # =============================================================== SUPPLEMENT TABLES (built documents)
 def doc_tables(f):
     return [[[c.text for c in r.cells] for r in t.rows] for t in docx.Document(ROOT + f).tables]
-SUP1 = doc_tables('JACR_Supplement_1_NLP_and_report_audit.docx')
-SUP2 = doc_tables('JACR_Supplement_2_models_and_subgroups.docx')
-SUP3 = doc_tables('JACR_Supplement_3_CT_and_UGI_content_audit.docx')
+SUP1 = doc_tables('EJR_Supplement_1_NLP_and_report_audit.docx')
+SUP2 = doc_tables('EJR_Supplement_2_models_and_subgroups.docx')
+SUP3 = doc_tables('EJR_Supplement_3_CT_and_UGI_content_audit.docx')
 add('补充1 · 表 S1', '正则表达式中的数字（如 {0,10}）', '为模式参数，不是数据', status='定义/描述性数字')
 LABK = dict(zip(['Third portion of the duodenum', 'Duodenojejunal junction', 'Duodenum mentioned in any form', 'Superior mesenteric artery–vein relationship',
                  'Explicit statement of vessel inversion', 'Enteric fluid administration recorded', 'Dynamic (real-time) assessment', 'Graded compression',
@@ -916,9 +922,9 @@ for row in t[1:]:
 
 # =============================================================== COVER LETTER AND TITLE PAGE
 CF = MS + 'cover.md'
-for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:', '电话、ORCID'), ('#N October 14, 2026', '信件日期')]:
+for start, txt in [('#N Tongji Medical College', '邮编 430016'), ('#N Email:', '电话、ORCID'), ('#N October 15, 2026', '信件日期')]:
     P = para_of(CF, start); add('Cover Letter · 抬头', txt, '联系信息/日期，不属研究数据', status='定义/描述性数字', para=P,
-                                toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 14, 2026': ('14', '2026')}[start])
+                                toks={'#N Tongji Medical College': ('430016',), '#N Email:': ('163', '86', '186', '2713', '9911', '0009', '0006', '0669', '4340'), '#N October 15, 2026': ('15', '2026')}[start])
 P = para_of(CF, '#N Ultrasound-first pathways')
 add('Cover Letter 第2段', '93–97%', LIT13, True, para=P, toks=('93', '97'))
 add('Cover Letter 第2段', 'the 2020 ACR Appropriateness Criteria … "may be appropriate" … "usually appropriate" … infants older than 2 days', LITACR, True, para=P, toks=('2020', '2'))
@@ -931,13 +937,7 @@ add('Cover Letter 第7段', 'all seven authors', 'Title Page 列 7 位作者', T
 for start in ['#N Department of General Surgery', '#N Jun Yang, MD', '#N On behalf of all authors']:
     COVER.setdefault(para_of(CF, start), [])
 TF = MS + 'titlepage.md'
-wc = int(__import__('subprocess').run(['python3', 'wc.py'], cwd=MS, capture_output=True, text=True).stdout.strip())
-_abs = [re.sub(r'\*+', '', l[3:]) for l in io.open(MS + 'p1.md', encoding='utf-8').read().split('\n') if re.match(r'#N \*\*(Objective|Methods|Results|Discussion):', l)]
-n_abs = sum(len(t.split()) for t in _abs)
-add('Title Page · Word count', f'{wc:,} … Abstract: {n_abs} words', f'wc.py 计数 {wc}；摘要（含段名）{n_abs} 词', wc == int(re.search(r'Word count:\*\* ([\d,]+)', io.open(TF, encoding='utf-8').read()).group(1).replace(',', ''))
-    and f'Abstract: {n_abs} words' in io.open(TF, encoding='utf-8').read(), para=para_of(TF, '#N **Word count:**'), toks=(f'{wc:,}', str(n_abs)))
 add('Title Page · Tables/Figures', 'Tables: 4 | Figures: 3 | Supplements 1–4', '正文 4 表 3 图；补充材料 4 份', True, para=para_of(TF, '#N **Tables:**'), toks=('4', '3', '1', '3', '1'))
-add('正文首页 · Word count 行', f'Word count: {wc:,} … Tables: 4; Figures: 3; Supplements 1–4', f'同上 {wc}', wc == int(re.search(r'Word count:\*\* ([\d,]+)', io.open(TF, encoding='utf-8').read()).group(1).replace(',', '')), para=para_of(MS + 'p1.md', '#N Word count:'), toks=(f'{wc:,}', '4', '3', '1', '3'))
 
 # =============================================================== COVERAGE CHECK
 WORDS = r'fifty-nine|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|twenty|thirty|forty|fifty|twice|once|half|halved'
@@ -1047,7 +1047,7 @@ check_text('补充2 · S2.10', MS + 'supp2.md', '#N These four analyses were dec
            'D3 或十二指肠空肠曲记录率的范围取全部、胃肠预约、大血管预约、胃肠或大血管、新生儿五个分母；CT、超声与 UGI 的标准化差值绝对值范围取四种定义', extra_ok=True)
 
 UNCOVERED = []
-for f in ['p1.md', 'p2.md', 'p3.md', 'supp1.md', 'supp2.md', 'supp3.md', 'supp4.md', 'cover.md', 'titlepage.md']:
+for f in ['p1.md', 'p2.md', 'p3.md', 'supp1.md', 'supp2.md', 'supp3.md', 'supp4.md', 'cover.md', 'titlepage.md', 'highlights.md']:
     stop = False
     for i, l in enumerate(io.open(MS + f, encoding='utf-8').read().split('\n'), 1):
         if l.startswith('#H1 Declarations') or l.startswith('#H1 References'):
@@ -1142,10 +1142,10 @@ def sheet(ws, header, rows, widths, fills=None):
 wb = Workbook()
 info = wb.active; info.title = '说明'
 lines = [
-    ('数字核对表 · JACR 稿件（2026-10-10 更正后版本）', True),
+    ('数字核对表 · EJR 稿件（2026-10-15 版式调整后）', True),
     ('', False),
     ('核对范围', True),
-    ('摘要、正文、表 1–4、图 1–3 与图注、Take-Home Points、补充材料 1–4（正文与表 S1–S19、图 S1）、Cover Letter 与 Title Page 中的全部数字。', False),
+    ('摘要、正文、表 1–4、图 1–3 与图注、Highlights、结论段、补充材料 1–4（正文与表 S1–S19、图 S1）、Cover Letter 与 Title Page 中的全部数字。', False),
     ('本文为横断面的报告审计，没有均值 ± 标准差，也没有随访时间；年龄以中位数（四分位数）报告。', False),
     ('', False),
     ('核对方法', True),

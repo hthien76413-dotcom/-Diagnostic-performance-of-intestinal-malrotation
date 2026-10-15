@@ -3,6 +3,8 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 from statsmodels.stats.proportion import proportion_confint as pci
+PDFMETA={'Creator':None,'Producer':None,'CreationDate':None,'Title':None,'Author':None,'Subject':None,'Keywords':None}
+plt.rcParams['pdf.fonttype']=42   # embed TrueType fonts in the vector PDFs (EJR artwork guide)
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'axes.spines.top':False,'axes.spines.right':False})
 OUT='/home/user/-Diagnostic-performance-of-intestinal-malrotation/'
 C={'UGI':'#B22222','CT':'#E08214','US':'#2C7FB8','US2':'#7FC0E8','grey':'#7a7a7a'}
@@ -46,7 +48,7 @@ box(54,36,44,31,f'None of the three index tests\nn = {n_none} ({100*n_none/len(c
 assert A55['none_outside']==A55['none']
 arrow(26,50,26,45.5)
 box(3,22,46,23,f'Index examination = examination episode closest to operation\n{n_rep} eligible preoperative reports  \u2192  {n_ep} episodes\n(same-day reports of one modality pooled; {n_early} earlier\nrepeat examinations not audited; {n_rm} reports issued after\nthe operation or for an unrelated illness removed)\n\nEach episode classified as positive or negative by\nrule-based algorithm + surgeon adjudication, and\nseparately audited for documented technical content',fc='#eef5ee',fs=9.3)
-plt.tight_layout(); plt.savefig(OUT+'Fig1_study_flow.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'Fig1_study_flow.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.savefig(OUT+'Figure_1.pdf',bbox_inches='tight',facecolor='white',metadata=PDFMETA); plt.close()
 print('figure 1: cohort %d (%d records), excluded %d+%d, imaged %d, episodes %d from %d reports (%d in index episodes, %d earlier), none %d'%(
       len(coh),len(ops),n_nc,n_re,n_img,n_ep,n_rep,n_ixrep,n_early,n_none))
 
@@ -66,5 +68,5 @@ for i,(lab,k,n,r,lo,hi,col) in enumerate(rows):
 ax.set_yticks(y); ax.set_yticklabels([f'{lab}\n' + r'$\bf{denominator\ n=%d}$'%n for lab,k,n,*_ in rows],fontsize=11)
 ax.set_xlim(0,126); ax.set_xticks(range(0,101,20)); ax.set_xlabel('Report-level detection among surgically confirmed malrotation (%), Wilson 95% CI')
 ax.grid(axis='x',color='#dddddd'); ax.set_axisbelow(True)
-plt.tight_layout(); plt.savefig(OUT+'Fig2_detection_by_modality.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig(OUT+'Fig2_detection_by_modality.png',dpi=300,bbox_inches='tight',facecolor='white'); plt.savefig(OUT+'Figure_2.pdf',bbox_inches='tight',facecolor='white',metadata=PDFMETA); plt.close()
 print('fig1, fig3 done')

@@ -28,7 +28,7 @@ N_COH=D['T1'][1][1]; N_NONE=D['T1'][1][5]; N_US=re.search(r'\d+',D['T3'][0][1]).
 AG=json.load(open(AN+'review_agreement.json')); OV=D['T3_overlap']
 TITLES={
  '1':('Table 1',f'Characteristics of the {N_COH} children with surgically confirmed intestinal malrotation, overall and according to which preoperative index test they received',
-   f'Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. Symptom duration is the longest duration of a gastrointestinal symptom stated in the chief complaint of the operative admission; a child whose chief complaint stated none was counted as not having symptoms for 1 month or longer. The rightmost column shows the {N_NONE} children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). CT, computed tomography; IQR, interquartile range; UGI, upper gastrointestinal.'),
+   f'Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Sex is as recorded in the medical record. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. Symptom duration is the longest duration of a gastrointestinal symptom stated in the chief complaint of the operative admission; a child whose chief complaint stated none was counted as not having symptoms for 1 month or longer. The rightmost column shows the {N_NONE} children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). CT, computed tomography; IQR, interquartile range; UGI, upper gastrointestinal.'),
  '2':('Table 2','Report-level detection of intestinal malrotation among surgically confirmed children, with the certainty of the wording used in positive conclusions',
    'Wilson 95% confidence intervals. Denominators differ between modalities and are drawn from overlapping but non-identical, indication-selected groups of children; the rates are not directly comparable between modalities and are not sensitivities. Certainty tiers were assigned from the conclusion text: definite (unqualified statement), probable ("most likely", "first consideration"), possible ("suspected", "cannot be excluded", "?"). The penultimate column repeats the detection rate after reclassifying all possible-tier conclusions as negative; the last counts as detected only positive examinations whose conclusion named malrotation, so that a conclusion naming volvulus alone or describing a sign alone does not count. Percentages for certainty tiers are of positive reports; detection rates are of all index reports of that modality. Contrast-enhanced and unenhanced CT were performed for different indications and in children of different ages, so their comparison is confounded and is presented as an exploratory subgroup only. CI, confidence interval; CT, computed tomography; UGI, upper gastrointestinal.'),
  '3':('Table 3',f'Documented content of the {N_US} routine ultrasound index examinations, and report-level detection conditional on that content',
@@ -58,23 +58,19 @@ def add_table(k):
     p=para(f'{tag}. {title}'); p.runs[0].bold=True; p.paragraph_format.keep_with_next=True
     make_three_line_table(doc,data)
     para(foot,italic=True,size=8.5)
-# Layout for review (JUM guide, section 2): title page, abstract, full text,
-# acknowledgments on a separate page, references, tables (each on its own page),
-# figure legends, then the figures with their legends, all in one document,
-# double-spaced and line-numbered. Separate figure files (TIFF or PNG, 300 ppi)
-# are needed only at revision.
+# Layout for review (EJR guide, double anonymized review): the anonymized
+# manuscript carries the abstract, full text, declarations, references, the
+# figure legends and the tables (each table on its own page); the title page,
+# the highlights and every figure are separate files. Double-spaced with
+# continuous line numbers.
 apply_house_style(doc)
 DOUBLE=2.0
 tables=[]; figs=[]
-text=open('titlepage.md').read()+'\n#PB\n'+''.join(open(f).read()+'\n' for f in ['p1.md','p2.md','p3.md'])
-LEG={m.group(1):m.group(2) for m in re.finditer(r'#N \*\*Figure (\d)\. (.*)',text)}
+text=''.join(open(f).read()+'\n' for f in ['p1.md','p2.md','p3.md'])
 for ln in text.split('\n'):
     ln=ln.strip()
     if not ln: continue
     if ln.startswith('#T '): para(ln[3:],style='Title')
-    elif ln == '#PB': doc.add_page_break()
-    elif ln == '#H1 Acknowledgments':
-        doc.add_page_break(); doc.add_heading(ln[4:],level=1)
     elif ln == '#H1 Figure legends':
         doc.add_page_break(); doc.add_heading('Figure Legends',level=1)
     elif ln.startswith('#H1 '): doc.add_heading(ln[4:],level=1)
@@ -85,28 +81,10 @@ for ln in text.split('\n'):
     elif ln.startswith('#FIG'): figs.append(ln[4:])
     else: para(ln)
 for k in tables: add_table(k)
-for k in figs:
-    doc.add_page_break()
-    path,w=FIGS[k]
-    doc.add_picture(path,width=Inches(min(w,6.5))); doc.paragraphs[-1].alignment=WD_ALIGN_PARAGRAPH.CENTER
-    doc.paragraphs[-1].paragraph_format.keep_with_next=True
-    para(f'**Figure {k}. {LEG[k]}',size=10)
 assert figs==['1','2','3'], figs
 assert tables==['1','2','3','4'], tables
 add_page_numbers(doc); add_line_numbers(doc)
-_blank_props(doc).save(OUT+'JUM_2_Manuscript.docx'); print('saved JUM_2_Manuscript.docx')
-
-# At revision JUM takes figures as separate TIFF or PNG files at 300 ppi (color
-# images in CMYK mode, grayscale images in grayscale mode), so each figure is
-# also written as an RGB, LZW-compressed, 300 dpi TIFF flattened onto white;
-# convert to CMYK at that stage.
-from PIL import Image
-for k,(path,_) in FIGS.items():
-    im=Image.open(path)
-    if im.mode in ('RGBA','LA'):
-        bg=Image.new('RGB',im.size,'white'); bg.paste(im,mask=im.split()[-1]); im=bg
-    im.convert('RGB').save(OUT+f'JUM_Figure{k}.tif',compression='tiff_lzw',dpi=(300,300))
-    print(f'saved JUM_Figure{k}.tif')
+_blank_props(doc).save(OUT+'EJR_3_Manuscript_anonymized.docx'); print('saved EJR_3_Manuscript_anonymized.docx')
 
 # clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
 from scrub_metadata import scrub_all

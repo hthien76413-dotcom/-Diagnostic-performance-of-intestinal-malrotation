@@ -1,19 +1,5 @@
 # Routine Ultrasound Reports for Pediatric Intestinal Malrotation Rarely Document Duodenal Landmarks: A Single-Center Audit
 
-Manuscript category: Original Article
-
-Running title: Duodenal Landmarks in Routine Malrotation Ultrasound Reports
-
-Authors: Jun Shu, [DEGREES]¹; Fei Peng, [DEGREES]¹; Kai Zheng, [DEGREES]¹; Haiyan Lei, [DEGREES]¹; Zhengliang Meng, [DEGREES]²; Hongqiang Bian, [DEGREES]¹; Jun Yang, MD¹*
-
-Affiliations: ¹ Department of General Surgery, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science and Technology, Wuhan 430016, Hubei Province, China. ² Department of Ultrasound Imaging, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science and Technology, Wuhan 430016, Hubei Province, China.
-
-ORCID: Jun Shu, https://orcid.org/0009-0001-3003-1452; Jun Yang, https://orcid.org/0009-0006-0669-4340
-
-*\Corresponding author:** Jun Yang, MD, Department of General Surgery, Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science and Technology, 100 Hong Kong Road, Jiang'an District, Wuhan 430016, Hubei Province, China. Telephone: +86 186 2713 9911. Email: yjun201602@163.com
-
-Tables: 4  |  Figures: 3  |  Supplemental material: Supplements 1–4 and one script (Supplement_1_classifier.py)
-
 
 ## Abstract
 
@@ -28,20 +14,11 @@ Conclusions: Positive routine ultrasound reports almost always described a whirl
 Keywords: Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report
 
 
-## Practitioner Points
-
-• At one center, routine ultrasound reports for children with surgically confirmed malrotation (96% with volvulus) documented the duodenal landmarks emphasized by published series in 2.6% of 117 examinations, and positive reports almost always described a whirlpool (59 of 64).
-
-• These are report-level detection rates among surgically confirmed children, not sensitivities; they do not establish specificity, predictive value or ranking of modalities, and do not argue against ultrasound-first pathways.
-
-• Documentation, unlike accuracy, can be audited without a reference standard; the audit criteria are provided as a minimum reporting dataset, with this audit as the baseline for re-audit.
-
-
 ## Introduction
 
-Intestinal malrotation predisposes to midgut volvulus, which can progress to bowel necrosis within hours [1] and lead to short-bowel syndrome or death [1, 2]. Bilious vomiting in a neonate is a surgical emergency until malrotation with volvulus has been excluded, although older children may present atypically and be diagnosed late [3, 4].
+Intestinal malrotation predisposes to midgut volvulus, which can progress to bowel necrosis within hours [1] and lead to short-bowel syndrome or death [1,2]. Bilious vomiting in a neonate is a surgical emergency until malrotation with volvulus has been excluded, although older children may present atypically and be diagnosed late [3,4].
 
-The upper gastrointestinal (UGI) contrast series has long been the reference imaging test, based on the position of the duodenojejunal junction and the course of the proximal small bowel [5–7], despite well-described mimics [8]. Abdominal computed tomography (CT) is not a dedicated test, and the mesenteric swirl it may show is neither reliably present nor specific in children [9, 10]. Practice has moved toward ultrasound: series report sensitivities of 93–97%, a systematic review of 17 studies and 2,257 children estimated a pooled sensitivity of 94% [11–13], and a single-center study of 539 children supported ultrasound as a safe first-line test [14]. This performance is attributed to specific technical elements rather than to the modality itself: the third portion of the duodenum (D3), the duodenojejunal junction, the superior mesenteric artery–vein relationship, enteric fluid and dynamic graded compression [12, 13, 15–17]. The same literature describes these elements as demanding and not universally achievable, and D3 position alone as insufficient for diagnosis [18]. The 2020 American College of Radiology Appropriateness Criteria, which predate most of this evidence, rate ultrasound as "may be appropriate" and the UGI series as "usually appropriate" for bilious vomiting in infants older than 2 days [19].
+The upper gastrointestinal (UGI) contrast series has long been the reference imaging test, based on the position of the duodenojejunal junction and the course of the proximal small bowel [5–7], despite well-described mimics [8]. Abdominal computed tomography (CT) is not a dedicated test, and the mesenteric swirl it may show is neither reliably present nor specific in children [9,10]. Practice has moved toward ultrasound: series report sensitivities of 93–97%, a systematic review of 17 studies and 2,257 children estimated a pooled sensitivity of 94% [11–13], and a single-center study of 539 children supported ultrasound as a safe first-line test [14]. This performance is attributed to specific technical elements rather than to the modality itself: the third portion of the duodenum (D3), the duodenojejunal junction, the superior mesenteric artery–vein relationship, enteric fluid and dynamic graded compression [12,13,15–17]. The same literature describes these elements as demanding and not universally achievable, and D3 position alone as insufficient for diagnosis [18]. The 2020 American College of Radiology Appropriateness Criteria, which predate most of this evidence, rate ultrasound as "may be appropriate" and the UGI series as "usually appropriate" for bilious vomiting in infants older than 2 days [19].
 
 A report audit of the UGI series for malrotation found discrepancies on blinded re-reading and proposed a structured template [20]. To our knowledge, no study has examined at scale whether routine reports from a general pediatric ultrasound service document the elements to which this performance is attributed, or how documentation relates to whether the diagnosis is reported.
 
@@ -53,7 +30,7 @@ We therefore audited 13.6 years of routine reports at a tertiary children's hosp
 
 ### Design, terminology and estimable quantities
 
-This was a retrospective, single-center, case-only report audit at Wuhan Children's Hospital. The institutional review board of the hospital approved the study (approval number 2026R018-E01) and waived informed consent because of the retrospective, de-identified design. Reporting follows the Strengthening the Reporting of Observational Studies in Epidemiology guideline [21]; the Standards for Reporting of Diagnostic Accuracy guideline was not used because this is not a diagnostic accuracy design. The cohort includes no children in whom malrotation was suspected and excluded. The outcome is the report-level detection rate among surgically confirmed children who underwent the test. We avoid the term "sensitivity" because the rate does not transfer to children investigated for suspicion. Specificity, predictive values and any accuracy-based ranking cannot be estimated. The whirlpool sign indicates volvulus rather than malrotation [22].
+This was a retrospective, single-center, case-only report audit. The institutional review board approved the study and waived informed consent because of the retrospective, de-identified design (details on the title page). Reporting follows the Strengthening the Reporting of Observational Studies in Epidemiology guideline [21]; the Standards for Reporting of Diagnostic Accuracy guideline was not used because this is not a diagnostic accuracy design. The cohort includes no children in whom malrotation was suspected and excluded. The outcome is the report-level detection rate among surgically confirmed children who underwent the test. We avoid the term "sensitivity" because the rate does not transfer to children investigated for suspicion. Specificity, predictive values and any accuracy-based ranking cannot be estimated. The whirlpool sign indicates volvulus rather than malrotation [22].
 
 
 ### Participants, reference standard and index tests
@@ -76,7 +53,7 @@ Report text was classified using a rule-based, clause-level algorithm [23] with 
 
 ### Statistical analysis
 
-Detection rates are presented with denominators and Wilson 95% CIs. Between-modality comparison used a generalized estimating equation logistic model [25] with an exchangeable working correlation, patient-level clustering and cluster-robust standard errors, unadjusted and adjusted for era (2012–2018 vs 2019–2026) and age group (≤28 days, 29 days–1 year, >1 year), with standardized detection and cluster-bootstrap CIs. Modalities a child did not undergo are unobserved outcomes, not missing at random here, so these coefficients describe reporting among children who underwent each test. A pre-specified modality-by-volvulus interaction was not estimable, no ultrasound examination being positive among the five children without volvulus; a Firth penalized estimate is given in Supplement 2 [26, 27]. In the subgroup that underwent all three modalities, detection was compared using the Cochran Q test, the exact McNemar test and paired differences with bootstrap CIs (Supplement 2). The temporal change was explored, after inspection of the data, using modality-specific logistic models of detection on era before and after adding one covariate (booking category or contrast enhancement), reported as odds ratios and average marginal effects; the era boundary was varied from 2019 to 2022 and era-by-covariate interactions fitted. Sensitivity analyses varied the outcome definition, index examination, interval to operation and ultrasound denominator (Supplement 2). P values were not adjusted for multiplicity; Supplement 2 lists which analyses were pre-specified. Analyses used Python 3.11 (statsmodels 0.15, SciPy 1.17).
+Detection rates are presented with denominators and Wilson 95% CIs. Between-modality comparison used a generalized estimating equation logistic model [25] with an exchangeable working correlation, patient-level clustering and cluster-robust standard errors, unadjusted and adjusted for era (2012–2018 vs 2019–2026) and age group (≤28 days, 29 days–1 year, >1 year), with standardized detection and cluster-bootstrap CIs. Modalities a child did not undergo are unobserved outcomes, not missing at random here, so these coefficients describe reporting among children who underwent each test. A pre-specified modality-by-volvulus interaction was not estimable, no ultrasound examination being positive among the five children without volvulus; a Firth penalized estimate is given in Supplement 2 [26,27]. In the subgroup that underwent all three modalities, detection was compared using the Cochran Q test, the exact McNemar test and paired differences with bootstrap CIs (Supplement 2). The temporal change was explored, after inspection of the data, using modality-specific logistic models of detection on era before and after adding one covariate (booking category or contrast enhancement), reported as odds ratios and average marginal effects; the era boundary was varied from 2019 to 2022 and era-by-covariate interactions fitted. Sensitivity analyses varied the outcome definition, index examination, interval to operation and ultrasound denominator (Supplement 2). P values were not adjusted for multiplicity; Supplement 2 lists which analyses were pre-specified. Analyses used Python 3.11 (statsmodels 0.15, SciPy 1.17).
 
 
 ## Results
@@ -98,7 +75,7 @@ Detection was 230/293 (78.5%, 95% CI 73.4–82.8) for the UGI series, 165/313 (5
 
 Of the 117 ultrasound index examinations, three (2.6%; 95% CI 0.9–7.3) documented D3 or the duodenojejunal junction (all three among the 112 booked as gastrointestinal or great-vessel studies) and seven (6.0%) mentioned the duodenum (Table 3, Figure 3). Three (2.6%) stated the mesenteric artery–vein relationship, and only one stated that the vessels were inverted, one of the two ultrasound positivity criteria. Enteric fluid was recorded twice and graded compression once; a whirlpool was reported in 59 examinations (50.4%) and bowel gas limited 36 (30.8%). Reader agreement was 1,423 of 1,428 item codes in the 119 episodes read (kappa 0.80–1.00; Supplement 1).
 
-Of these three, only one (in 2022) followed D3 between the artery and the aorta and identified the duodenojejunal junction, as the published technique describes [16, 17].
+Of these three, only one (in 2022) followed D3 between the artery and the aorta and identified the duodenojejunal junction, as the published technique describes [16,17].
 
 The diagnosis was named in all 59 examinations recording a whirlpool and in 5 of the 58 without one (8.6%, 95% CI 3.7–18.6). This contrast is partly definitional because a whirlpool is itself a positivity criterion, although all 59 conclusions also named malrotation explicitly. A whirlpool was recorded in 59 of the 112 children (52.7%) who underwent ultrasound and had operatively confirmed midgut volvulus.
 
@@ -117,7 +94,7 @@ Fifty-nine children underwent all three modalities. This subgroup, presumably se
 
 Over 13.6 years, routine ultrasound reports for children with surgically confirmed intestinal malrotation rarely recorded the elements to which contemporary ultrasound accuracy is attributed: D3 or the duodenojejunal junction in three of 117 examinations, enteric fluid in two. What they did record was the whirlpool sign, present in about half of all examinations and of the children with operatively confirmed volvulus. Such low documentation might be expected with free-text reports and no structured template, as here. Positive reports almost always described a whirlpool (59 of 64).
 
-Malrotation or volvulus was named in 54.7% of the surgically confirmed children who underwent ultrasound. The 2025 multicenter series, which excluded non-diagnostic and equivocal examinations, reported sensitivities of 93–97% for malrotation and 97% for volvulus [13], and a meta-analysis found a pooled sensitivity of 94% [11], both in children investigated for suspicion. In a multi-institutional cohort, 25.7% of examinations for malrotation were non-diagnostic on the original report [28]. These figures are not interchangeable: ours is conditioned on confirmed disease and on the indications that selected these children, theirs on those exclusions, so the difference combines case mix, examination quality and technique in proportions this audit cannot separate. What the audit does show is that the elements to which published performance is attributed were almost never documented here: D3 [16, 17], the most accurate sign for malrotation in the 2025 series [13]; the duodenojejunal junction [12, 15]; and enteric fluid, which was associated with better performance in the meta-analysis [11].
+Malrotation or volvulus was named in 54.7% of the surgically confirmed children who underwent ultrasound. The 2025 multicenter series, which excluded non-diagnostic and equivocal examinations, reported sensitivities of 93–97% for malrotation and 97% for volvulus [13], and a meta-analysis found a pooled sensitivity of 94% [11], both in children investigated for suspicion. In a multi-institutional cohort, 25.7% of examinations for malrotation were non-diagnostic on the original report [28]. These figures are not interchangeable: ours is conditioned on confirmed disease and on the indications that selected these children, theirs on those exclusions, so the difference combines case mix, examination quality and technique in proportions this audit cannot separate. What the audit does show is that the elements to which published performance is attributed were almost never documented here: D3 [16,17], the most accurate sign for malrotation in the 2025 series [13]; the duodenojejunal junction [12,15]; and enteric fluid, which was associated with better performance in the meta-analysis [11].
 
 The temporal analysis is exploratory: the crude rise was imprecise, the booking indicator was chosen after inspecting the data, and booking may reflect clinical suspicion, which was not recorded and may itself relate to finding a whirlpool. Descriptively, whirlpool reporting rose, whereas too few examinations documented the landmarks to show a trend.
 
@@ -128,9 +105,9 @@ The low documentation may bear on departments adopting an ultrasound-first pathw
 
 ### Limitations
 
-This is not a diagnostic accuracy study, and detection among surgically confirmed children who underwent a test does not transfer to children investigated for suspicion [11, 13, 14]. The cohort comprises only children who reached an operation, is weighted toward severe neonatal disease, and provides little information on older children with intermittent symptoms, incidental or non-volvulus malrotation, or stable outpatients. The 52 children without an index test were excluded from the denominators (informative missingness), as were 9 whose operation followed earlier malrotation surgery. Excluding children whose operative record states a rotation below 360° changes prevalence from 88.2% to 84.0% without altering any conclusion (Supplement 2).
+This is not a diagnostic accuracy study, and detection among surgically confirmed children who underwent a test does not transfer to children investigated for suspicion [11,13,14]. The cohort comprises only children who reached an operation, is weighted toward severe neonatal disease, and provides little information on older children with intermittent symptoms, incidental or non-volvulus malrotation, or stable outpatients. The 52 children without an index test were excluded from the denominators (informative missingness), as were 9 whose operation followed earlier malrotation surgery. Excluding children whose operative record states a rotation below 360° changes prevalence from 88.2% to 84.0% without altering any conclusion (Supplement 2).
 
-Index tests were classified from report text, not blinded image review, so the study measures reported detection rather than achievable image-based accuracy; a finding seen but not recorded and an inadequate examination reported as normal cannot be distinguished, although the report is what clinicians act on. The certainty tiers were derived from the same text and, unlike the positive–negative label, were not separately adjudicated. Radiation dose could not be captured. This is one audit cycle at one center, so whether the findings generalize, whether a structured report would raise documentation and whether documentation would raise detection are unknown.
+Index tests were classified from report text, not blinded image review, so the study measures reported detection rather than achievable image-based accuracy; a finding seen but not recorded and an inadequate examination reported as normal cannot be distinguished, although the report is what clinicians act on. The certainty tiers were derived from the same text and, unlike the positive–negative label, were not separately adjudicated. Sex was taken as recorded in the medical record, and sex-specific differences in documentation were not examined. Radiation dose could not be captured. This is one audit cycle at one center, so whether the findings generalize, whether a structured report would raise documentation and whether documentation would raise detection are unknown.
 
 
 ## Conclusion
@@ -149,78 +126,75 @@ Supplement 3. Content audit of the 313 CT and 293 upper gastrointestinal series 
 Supplement 4. A minimum reporting dataset for ultrasound in suspected intestinal malrotation, with the documentation rates of this audit as the baseline, and how to re-audit against it without a reference standard.
 
 
-## Acknowledgments
-
-The authors thank Guanghua Zhang, Hongxi Guo and Haibin Wang (Department of General Surgery, Wuhan Children's Hospital) for their contribution to the acquisition of clinical and operative data.
-
-Funding: This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
+## Declarations
 
 Competing interests: The authors declare that they have no competing interests.
 
-Author contributions: Conception and design: JS, JY. Acquisition of data: JS, FP, KZ and HL (clinical and operative data); HL (review of the anchor operation against all operative records); KZ (review of examination timing against the date of operation); ZM and JS (independent coding of ultrasound report content, as reader A and reader B); JY (blinded adjudication of the report labels). Analysis and interpretation of data: JS and HB; ZM (radiological expertise on ultrasound practice and reporting at the study institution). Drafting of the manuscript: JS. Critical revision of the manuscript for important intellectual content: all authors. Final approval of the version to be submitted: all authors. Agreement to be accountable for all aspects of the work: all authors. Supervision: JY.
-
 Data availability: The de-identified analysis dataset contains pseudonymized research identifiers rather than direct identifiers. It is nonetheless not publicly available because of institutional and ethical restrictions on sharing patient-level clinical data and the potential for re-identification within this small, single-center disease cohort. The complete text-classification rule set, a runnable reference implementation of it, and the report-content audit patterns are provided in Supplement 1. The scripts implementing every model, table and figure are available from the corresponding author on request. De-identified data may be made available by the corresponding author on reasonable request and with the permission of the institutional review board.
 
-Use of generative artificial intelligence: During the preparation of this work the authors used Claude (Anthropic) in order to assist with drafting and language editing of the manuscript and with writing and checking the analysis code. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication. No figure was created or altered with a generative artificial intelligence tool; the figures were produced by analysis code from the study data.
+
+## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
+
+During the preparation of this work the authors used Claude (Anthropic) to assist with drafting and language editing of the manuscript and with writing and checking the analysis code. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article. No figure was created or altered with a generative AI tool; the figures were produced by analysis code from the study data.
 
 
 ## References
 
-1. Marine MB, Karmazyn B. Imaging of malrotation in the neonate. Semin Ultrasound CT MR 2014;35:555–570. doi:10.1053/j.sult.2014.08.004
+[1] M.B. Marine, B. Karmazyn, Imaging of malrotation in the neonate, Semin. Ultrasound CT MR 35 (2014) 555 – 570. https://doi.org/10.1053/j.sult.2014.08.004
 
-2. Martinez SA, Fligor SC, Tsikis S, et al. IMPOWER: a national patient-generated registry for intestinal malrotation exploring diagnosis, treatment, and surgical outcomes. Orphanet J Rare Dis 2023;18:113. doi:10.1186/s13023-023-02722-5
+[2] S.A. Martinez, S.C. Fligor, S. Tsikis, et al., IMPOWER: a national patient-generated registry for intestinal malrotation exploring diagnosis, treatment, and surgical outcomes, Orphanet J. Rare Dis. 18 (2023) 113. https://doi.org/10.1186/s13023-023-02722-5
 
-3. Yang X, Wang W, Wang K, et al. Identification and treatment of intestinal malrotation with midgut volvulus in childhood: a multicenter retrospective study. Front Pediatr 2024;12:1390856. doi:10.3389/fped.2024.1390856
+[3] X. Yang, W. Wang, K. Wang, et al., Identification and treatment of intestinal malrotation with midgut volvulus in childhood: a multicenter retrospective study, Front. Pediatr. 12 (2024) 1390856. https://doi.org/10.3389/fped.2024.1390856
 
-4. Menghwani H, Piplani R, Yhoshu E, Jagdish B, Sree BS. Delayed presentation of malrotation: case series and literature review. J Indian Assoc Pediatr Surg 2023;28:271–277. doi:10.4103/jiaps.jiaps_2_23
+[4] H. Menghwani, R. Piplani, E. Yhoshu, B. Jagdish, B.S. Sree, Delayed presentation of malrotation: case series and literature review, J. Indian Assoc. Pediatr. Surg. 28 (2023) 271 – 277. https://doi.org/10.4103/jiaps.jiaps_2_23
 
-5. Mattioli G, Gallo E, Wong MCY, et al. Diagnostic accuracy of upper gastrointestinal series in children with suspected intestinal malrotation. Updates Surg 2024;76:201–208. doi:10.1007/s13304-023-01559-8
+[5] G. Mattioli, E. Gallo, M.C.Y. Wong, et al., Diagnostic accuracy of upper gastrointestinal series in children with suspected intestinal malrotation, Updates Surg. 76 (2024) 201 – 208. https://doi.org/10.1007/s13304-023-01559-8
 
-6. Sizemore AW, Rabbani KZ, Ladd A, Applegate KE. Diagnostic performance of the upper gastrointestinal series in the evaluation of children with clinically suspected malrotation. Pediatr Radiol 2008;38:518–528. doi:10.1007/s00247-008-0762-8
+[6] A.W. Sizemore, K.Z. Rabbani, A. Ladd, K.E. Applegate, Diagnostic performance of the upper gastrointestinal series in the evaluation of children with clinically suspected malrotation, Pediatr. Radiol. 38 (2008) 518 – 528. https://doi.org/10.1007/s00247-008-0762-8
 
-7. Applegate KE, Anderson JM, Klatte EC. Intestinal malrotation in children: a problem-solving approach to the upper gastrointestinal series. Radiographics 2006;26:1485–1500. doi:10.1148/rg.265055167
+[7] K.E. Applegate, J.M. Anderson, E.C. Klatte, Intestinal malrotation in children: a problem-solving approach to the upper gastrointestinal series, Radiographics 26 (2006) 1485 – 1500. https://doi.org/10.1148/rg.265055167
 
-8. Smitthimedhin A, Suarez A, Webb RL, Otero HJ. Mimics of malrotation on pediatric upper gastrointestinal series: a pictorial review. Abdom Radiol (NY) 2018;43:2246–2254. doi:10.1007/s00261-018-1537-9
+[8] A. Smitthimedhin, A. Suarez, R.L. Webb, H.J. Otero, Mimics of malrotation on pediatric upper gastrointestinal series: a pictorial review, Abdom. Radiol. (NY) 43 (2018) 2246 – 2254. https://doi.org/10.1007/s00261-018-1537-9
 
-9. Taylor GA. CT appearance of the duodenum and mesenteric vessels in children with normal and abnormal bowel rotation. Pediatr Radiol 2011;41:1378–1383. doi:10.1007/s00247-011-2118-z
+[9] G.A. Taylor, CT appearance of the duodenum and mesenteric vessels in children with normal and abnormal bowel rotation, Pediatr. Radiol. 41 (2011) 1378 – 1383. https://doi.org/10.1007/s00247-011-2118-z
 
-10. Sodhi KS, Bhatia A, Saxena AK, Rao KLN, Menon P, Khandelwal N. Anticlockwise swirl of mesenteric vessels: a normal CT appearance, retrospective analysis of 200 pediatric patients. Eur J Radiol 2014;83:710–714. doi:10.1016/j.ejrad.2013.12.026
+[10] K.S. Sodhi, A. Bhatia, A.K. Saxena, K.L.N. Rao, P. Menon, N. Khandelwal, Anticlockwise swirl of mesenteric vessels: a normal CT appearance, retrospective analysis of 200 pediatric patients, Eur. J. Radiol. 83 (2014) 710 – 714. https://doi.org/10.1016/j.ejrad.2013.12.026
 
-11. Nguyen HN, Kulkarni M, Jose J, et al. Ultrasound for the diagnosis of malrotation and volvulus in children and adolescents: a systematic review and meta-analysis. Arch Dis Child 2021;106:1171–1178. doi:10.1136/archdischild-2020-321082
+[11] H.N. Nguyen, M. Kulkarni, J. Jose, et al., Ultrasound for the diagnosis of malrotation and volvulus in children and adolescents: a systematic review and meta-analysis, Arch. Dis. Child. 106 (2021) 1171 – 1178. https://doi.org/10.1136/archdischild-2020-321082
 
-12. Nguyen HN, Navarro OM, Bloom DA, et al. Ultrasound for midgut malrotation and midgut volvulus: AJR expert panel narrative review. AJR Am J Roentgenol 2022;218:931–939. doi:10.2214/AJR.21.27242
+[12] H.N. Nguyen, O.M. Navarro, D.A. Bloom, et al., Ultrasound for midgut malrotation and midgut volvulus: AJR expert panel narrative review, AJR Am. J. Roentgenol. 218 (2022) 931 – 939. https://doi.org/10.2214/AJR.21.27242
 
-13. Nguyen HN, El-Ali AM, Van Tassel D, et al. Diagnostic performance of ultrasound for diagnosing midgut malrotation and volvulus in children: a multiinstitutional retrospective review. AJR Am J Roentgenol 2025;225:e2532660. doi:10.2214/AJR.25.32660
+[13] H.N. Nguyen, A.M. El-Ali, D. Van Tassel, et al., Diagnostic performance of ultrasound for diagnosing midgut malrotation and volvulus in children: a multiinstitutional retrospective review, AJR Am. J. Roentgenol. 225 (2025) e2532660. https://doi.org/10.2214/AJR.25.32660
 
-14. Binu V, Nicholson C, Cundy T, et al. Ultrasound imaging as the first line of investigation to diagnose intestinal malrotation in children: safety and efficacy. J Pediatr Surg 2021;56:2224–2228. doi:10.1016/j.jpedsurg.2021.04.009
+[14] V. Binu, C. Nicholson, T. Cundy, et al., Ultrasound imaging as the first line of investigation to diagnose intestinal malrotation in children: safety and efficacy, J. Pediatr. Surg. 56 (2021) 2224 – 2228. https://doi.org/10.1016/j.jpedsurg.2021.04.009
 
-15. McCurdie FK, Meshaka R, Leung G, Billington J, Watson TA. Ultrasound for infantile midgut malrotation: techniques, pearls, and pitfalls. Pediatr Radiol 2024;54:2099–2111. doi:10.1007/s00247-024-06067-4
+[15] F.K. McCurdie, R. Meshaka, G. Leung, J. Billington, T.A. Watson, Ultrasound for infantile midgut malrotation: techniques, pearls, and pitfalls, Pediatr. Radiol. 54 (2024) 2099 – 2111. https://doi.org/10.1007/s00247-024-06067-4
 
-16. Menten R, Reding R, Godding V, Dumitriu DI, Clapuyt P. Sonographic assessment of the retroperitoneal position of the third portion of the duodenum: an indicator of normal intestinal rotation. Pediatr Radiol 2012;42:941–945. doi:10.1007/s00247-012-2403-5
+[16] R. Menten, R. Reding, V. Godding, D.I. Dumitriu, P. Clapuyt, Sonographic assessment of the retroperitoneal position of the third portion of the duodenum: an indicator of normal intestinal rotation, Pediatr. Radiol. 42 (2012) 941 – 945. https://doi.org/10.1007/s00247-012-2403-5
 
-17. Hennessey I, John R, Gent R, Goh DW. Utility of sonographic assessment of the position of the third part of the duodenum using water instillation in intestinal malrotation: a single-center retrospective audit. Pediatr Radiol 2014;44:387–391. doi:10.1007/s00247-013-2839-2
+[17] I. Hennessey, R. John, R. Gent, D.W. Goh, Utility of sonographic assessment of the position of the third part of the duodenum using water instillation in intestinal malrotation: a single-center retrospective audit, Pediatr. Radiol. 44 (2014) 387 – 391. https://doi.org/10.1007/s00247-013-2839-2
 
-18. Karmazyn B, Cohen MD. Based on the position of the third portion of the duodenum at sonography, it is not possible to confidently diagnose malrotation. Pediatr Radiol 2015;45:138–139. doi:10.1007/s00247-014-3068-z
+[18] B. Karmazyn, M.D. Cohen, Based on the position of the third portion of the duodenum at sonography, it is not possible to confidently diagnose malrotation, Pediatr. Radiol. 45 (2015) 138 – 139. https://doi.org/10.1007/s00247-014-3068-z
 
-19. Expert Panel on Pediatric Imaging; Alazraki AL, Rigsby CK, Iyer RS, et al. ACR Appropriateness Criteria® Vomiting in Infants. J Am Coll Radiol 2020;17(11S):S505–S515. doi:10.1016/j.jacr.2020.09.002
+[19] Expert Panel on Pediatric Imaging, A.L. Alazraki, C.K. Rigsby, R.S. Iyer, et al., ACR Appropriateness Criteria® Vomiting in Infants, J. Am. Coll. Radiol. 17 (2020) S505 – S515. https://doi.org/10.1016/j.jacr.2020.09.002
 
-20. Keenan LN, Sewchuran T. Audit of upper gastrointestinal tract series examinations for diagnosing intestinal malrotation in a resource-limited radiology department in Southern Africa. Surg Pract Sci 2023;14:100183. doi:10.1016/j.sipas.2023.100183
+[20] L.N. Keenan, T. Sewchuran, Audit of upper gastrointestinal tract series examinations for diagnosing intestinal malrotation in a resource-limited radiology department in Southern Africa, Surg. Pract. Sci. 14 (2023) 100183. https://doi.org/10.1016/j.sipas.2023.100183
 
-21. von Elm E, Altman DG, Egger M, et al. The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. Ann Intern Med 2007;147:573–577. doi:10.7326/0003-4819-147-8-200710160-00010
+[21] E. von Elm, D.G. Altman, M. Egger, et al., The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies, Ann. Intern. Med. 147 (2007) 573 – 577. https://doi.org/10.7326/0003-4819-147-8-200710160-00010
 
-22. Shimanuki Y, Aihara T, Takano H, et al. Clockwise whirlpool sign at color Doppler US: an objective and definite sign of midgut volvulus. Radiology 1996;199:261–264. doi:10.1148/radiology.199.1.8633156
+[22] Y. Shimanuki, T. Aihara, H. Takano, et al., Clockwise whirlpool sign at color Doppler US: an objective and definite sign of midgut volvulus, Radiology 199 (1996) 261 – 264. https://doi.org/10.1148/radiology.199.1.8633156
 
-23. López-Úbeda P, Martín-Noguerol T, Juluru K, Luna A. Natural language processing in radiology: update on clinical applications. J Am Coll Radiol 2022;19:1271–1285. doi:10.1016/j.jacr.2022.06.016
+[23] P. López-Úbeda, T. Martín-Noguerol, K. Juluru, A. Luna, Natural language processing in radiology: update on clinical applications, J. Am. Coll. Radiol. 19 (2022) 1271 – 1285. https://doi.org/10.1016/j.jacr.2022.06.016
 
-24. Chapman WW, Bridewell W, Hanbury P, Cooper GF, Buchanan BG. A simple algorithm for identifying negated findings and diseases in discharge summaries. J Biomed Inform 2001;34:301–310. doi:10.1006/jbin.2001.1029
+[24] W.W. Chapman, W. Bridewell, P. Hanbury, G.F. Cooper, B.G. Buchanan, A simple algorithm for identifying negated findings and diseases in discharge summaries, J. Biomed. Inform. 34 (2001) 301 – 310. https://doi.org/10.1006/jbin.2001.1029
 
-25. Zeger SL, Liang KY. Longitudinal data analysis for discrete and continuous outcomes. Biometrics 1986;42:121–130. doi:10.2307/2531248
+[25] S.L. Zeger, K.Y. Liang, Longitudinal data analysis for discrete and continuous outcomes, Biometrics 42 (1986) 121 – 130. https://doi.org/10.2307/2531248
 
-26. Firth D. Bias reduction of maximum likelihood estimates. Biometrika 1993;80:27–38. doi:10.1093/biomet/80.1.27
+[26] D. Firth, Bias reduction of maximum likelihood estimates, Biometrika 80 (1993) 27 – 38. https://doi.org/10.1093/biomet/80.1.27
 
-27. Heinze G, Schemper M. A solution to the problem of separation in logistic regression. Stat Med 2002;21:2409–2419. doi:10.1002/sim.1047
+[27] G. Heinze, M. Schemper, A solution to the problem of separation in logistic regression, Stat. Med. 21 (2002) 2409 – 2419. https://doi.org/10.1002/sim.1047
 
-28. El-Ali AM, Schiess DM, Van Tassel D, et al. Ultrasound for midgut volvulus and malrotation: frequency and predictors of a non-diagnostic examination in a multi-institutional cohort. Pediatr Radiol 2025;55:925–935. doi:10.1007/s00247-024-06141-x
+[28] A.M. El-Ali, D.M. Schiess, D. Van Tassel, et al., Ultrasound for midgut volvulus and malrotation: frequency and predictors of a non-diagnostic examination in a multi-institutional cohort, Pediatr. Radiol. 55 (2025) 925 – 935. https://doi.org/10.1007/s00247-024-06141-x
 
 
 ## Figure Legends
@@ -269,7 +243,7 @@ Shock or poor perfusion, n (%)                          11 (2.4)      3 (1.0)   
 
 ```
 
-Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. Symptom duration is the longest duration of a gastrointestinal symptom stated in the chief complaint of the operative admission; a child whose chief complaint stated none was counted as not having symptoms for 1 month or longer. The rightmost column shows the 52 children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). CT, computed tomography; IQR, interquartile range; UGI, upper gastrointestinal.
+Groups overlap, because a child could receive more than one index test; columns therefore do not sum to the cohort total. Age at operation was calculated as age at admission for the operative encounter plus the interval from admission to operation. Sex is as recorded in the medical record. Presenting features were extracted from admission records by text search and are documentation rates, not verified prevalences. Symptom duration is the longest duration of a gastrointestinal symptom stated in the chief complaint of the operative admission; a child whose chief complaint stated none was counted as not having symptoms for 1 month or longer. The rightmost column shows the 52 children who received none of the three index tests; all of them nonetheless had other preoperative imaging (Figure 1). CT, computed tomography; IQR, interquartile range; UGI, upper gastrointestinal.
 
 Table 2. Report-level detection of intestinal malrotation among surgically confirmed children, with the certainty of the wording used in positive conclusions
 
@@ -352,9 +326,3 @@ Ultrasound    16/38 (42.1%)        48/79 (60.8%)        2.13 (0.97–4.67), P = 
 ```
 
 Modality-specific logistic models; exploratory, the covariates having been chosen after inspection of the data. For ultrasound the covariate is whether the examination session included an abdominal great-vessel study; this is a booking label, not a record of technique. For CT it is intravenous contrast enhancement. No covariate was fitted for the UGI series. Odds ratios and average marginal effects are both shown because a conditional odds ratio attenuates when a predictive covariate is added even in the absence of mediation (non-collapsibility), so the marginal effect is the more interpretable measure of how far the era difference changes when the covariate is added. The covariates were not randomized and are themselves confounded by indication: a child suspected of volvulus is both more likely to be booked for a great-vessel study and more likely to have a whirlpool to find. These models are descriptive, not causal. Sensitivity analyses moving the era boundary from 2019 to 2022 are in Supplement 2. Marginal-effect intervals are percentile bootstrap intervals (2,000 resamples of children). CI, confidence interval; CT, computed tomography; UGI, upper gastrointestinal.
-
-Figure 1. Study flow and the imaging received by children without an index test. Flow of 711 children in the clinical research database through selection of 503 operative records in 465 children, exclusions after review of the anchor operation, availability of each preoperative index test, and reduction of 793 eligible preoperative reports to 723 index examination episodes. All 52 children who received none of the three index examinations had other preoperative imaging (documented before transfer in four); the breakdown is shown at right. CT, computed tomography; UGI, upper gastrointestinal.
-
-Figure 2. Report-level detection by modality, each estimate with its own denominator. Detection among children with a preoperative index examination (Wilson 95% confidence intervals). Each estimate is drawn from a different, indication-selected group of children, so the rates are not directly comparable between modalities and are not sensitivities for children investigated for suspected malrotation. CI, confidence interval; CT, computed tomography; UGI, upper gastrointestinal.
-
-Figure 3. Ultrasound examination content and detection conditional on that content. A, Documented content of the 117 ultrasound index examinations, as coded by two independent readers. B, Report-level detection conditional on the two most often documented elements in panel A and on whether the session included a great-vessel study. Three examinations documented the third portion of the duodenum or the duodenojejunal junction. Detection when a whirlpool sign was reported is partly definitional, the sign being one of the positivity criteria; the informative contrast is the 5 of 58 examinations that named the diagnosis without one.

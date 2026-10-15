@@ -56,8 +56,8 @@ para("Note: An Explanation and Elaboration article discusses each checklist item
      "website (https://www.strobe-statement.org).", italic=True, size=8.5, space_after=0)
 
 _blank_props(doc)
-doc.save(OUT + 'JUM_STROBE_checklist.docx')
-print('saved JUM_STROBE_checklist.docx')
+doc.save(OUT + 'EJR_STROBE_checklist.docx')
+print('saved EJR_STROBE_checklist.docx')
 
 # clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
 from scrub_metadata import scrub_all

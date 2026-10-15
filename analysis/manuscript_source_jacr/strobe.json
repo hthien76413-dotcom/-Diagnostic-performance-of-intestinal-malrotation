@@ -13,7 +13,7 @@
   [
    "Title and abstract 1(b)",
    "Provide in the abstract an informative and balanced summary of what was done and what was found",
-   "Abstract (Objectives, Methods, Results, Conclusions); Practitioner Points"
+   "Abstract (Objectives, Methods, Results, Conclusions); Highlights file"
   ],
   [
    "Introduction — Background/rationale 2",
@@ -163,7 +163,7 @@
   [
    "Discussion — Interpretation 20",
    "Give a cautious overall interpretation of results considering objectives, limitations, multiplicity of analyses, results from similar studies, and other relevant evidence",
-   "Discussion, paragraphs 2–5; Conclusion and Practitioner Points (explicit statement that no sensitivity, specificity or ranking is established)"
+   "Discussion, paragraphs 2–5; Conclusion (explicit statement that no sensitivity, specificity or ranking is established)"
   ],
   [
    "Discussion — Generalizability 21",
@@ -173,7 +173,7 @@
   [
    "Other information — Funding 22",
    "Give the source of funding and the role of the funders for the present study and, if applicable, for the original study on which the present article is based",
-   "Acknowledgments, Funding"
+   "Title page, Funding"
   ]
  ]
 }

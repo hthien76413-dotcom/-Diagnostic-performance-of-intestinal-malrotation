@@ -1,7 +1,7 @@
 # Re-analysis for the revised manuscript
 
 All figures, tables and in-text numbers in
-`JACR_3_Manuscript_masked.docx` and the four Supplements (Supplement 1-4)
+`EJR_3_Manuscript_anonymized.docx` and the four Supplements (Supplement 1-4)
 are produced by the scripts here
 from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 `诊断效能_手术确诊队列_465例.xlsx` and the adjudicated per-patient matrix
@@ -41,7 +41,7 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
     python3 mrd.py         # Supplement 4, Table S19: minimum reporting dataset with this audit's baseline (after usaudit4.py)
     python3 hp_sens.py     # Supplement 2, S2.7-S2.10: outcome definitions, standardized detection, index unit and timing, content by booking category (about 12 min: cluster bootstrap in four processes; pass a number to change the 2000 resamples)
     python3 hp_tables.py   # Tables S14-S17 of Supplement 2 (JSON keys S16-S19), from hp_sens.json
-    python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs
+    python3 figs.py figs2.py                    # writes Fig1-3 and FigS1 PNGs, and Figure_1-3.pdf (vector, fonts embedded, no producer tags)
     python3 graphabs.py    # graphical abstract for Insights into Imaging (not used by JACR)
 
 `ALL_RESULTS.txt` is the concatenated console output of the analysis scripts.
@@ -49,17 +49,26 @@ from the raw export `全部肠旋转不良数据.xlsx`, the operative cohort
 ## Building the documents
 
     cd manuscript_source_jacr
-    python3 build_manuscript.py  # masked manuscript (double-spaced, line-numbered; legends, tables and figures after the references) and JACR_Figure1-3.tif
+    python3 build_manuscript.py  # anonymized manuscript (double-spaced, line-numbered; declarations, references, figure legends, then the tables)
     python3 build_supplements.py # Supplements 1-4 from supp1-4.md, and Supplement_1_classifier.py
-    python3 build_strobe.py      # JACR_STROBE_checklist.docx from strobe.json
-    python3 build_docs.py        # cover letter, title page, Chinese submission sheet
-    python3 wc.py                # main-text word count against the 3,000-word limit
-    python3 jacr_check.py        # every JACR limit, masking, spelling and stale-term check
+    python3 build_strobe.py      # EJR_STROBE_checklist.docx from strobe.json
+    python3 build_docs.py        # cover letter, title page, highlights, declarations, CRediT statement, Chinese submission sheet
+    python3 export_plaintext.py; python3 export_refs.py
+    python3 wc.py                # main-text word count
+    python3 ejr_check.py         # every EJR requirement, anonymization, spelling and stale-term check
 
-The manuscript is formatted for the *Journal of the American College of
-Radiology*: AMA references, American spelling, an Objective / Methods /
-Results / Conclusion abstract of at most 250 words, Take-Home Points in place
-of a Conclusion section, at most 7 tables and figures and at most 7 authors.
+The manuscript is formatted for the *European Journal of Radiology* (Guide for
+Authors printed 2026-10-15, `manuscript_source_jacr/EJR_Guide_for_Authors_2026-10-15.pdf`):
+double anonymized review (title page and anonymized manuscript are separate
+files), American spelling, an abstract of at most 250 words, five-bullet
+Highlights file (at most 85 characters each), Elsevier numeric references with
+LTWA journal abbreviations, the generative-AI declaration in its own section
+before the references, CRediT statement as a separate file, tables at the end,
+figures as separate vector PDFs. The source folder keeps the name
+`manuscript_source_jacr` for history; the JACR and JUM guides are stored beside
+the EJR guide (`JACR_Guide_...pdf`, `JUM_Guide_...pdf`). The JUM layout
+(title page inside the manuscript, Practitioner Points, acknowledgments page,
+AMA-style references) is in commit db7a9bc.
 `docstyle.py` gives every document black Times New Roman headings in place of
 python-docx's blue defaults, and the manuscript its page and line numbers.
 `usspell.py` holds the spelling map: the Markdown sources were converted with
@@ -69,7 +78,7 @@ are quoted as published and are never converted.
 
 The Insights into Imaging submission (desk-rejected on scope, 30 September
 2026) is kept as built in `archive/InsightsIntoImaging_desk-rejected_2026-09-30/`;
-its sources are this folder's history before the JACR conversion.
+its sources are this folder's history before the JACR conversion. The JACR layout (masked manuscript, Take-Home Points, Data Statement) is in the history before commit db7a9bc.
 `manuscript_source/` holds the earlier Pediatric Radiology revision sources.
 
 All tables in the manuscript, the four Supplements and the STROBE
