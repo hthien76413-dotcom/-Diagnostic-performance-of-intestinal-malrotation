@@ -147,7 +147,7 @@ for k in ('ms', 'decl', 'strobe', 's1', 's2', 's3', 's4', 'hl'):
 tp_all = ' '.join(tp)
 for name in ('Guanghua Zhang', 'Hongxi Guo', 'Haibin Wang'):
     where = [os.path.basename(F[k]) for k in F if any(name in p for p in paras(F[k])[1])]
-    check(where == ['EJR_2_TitlePage.docx'], f'{name} appears only on the title page')
+    check(not where, f'{name} (declined to be acknowledged) appears in no document {where if where else ""}')
 
 # ---------------------------------------------------------------- title page
 authors = ['Jun Shu', 'Fei Peng', 'Kai Zheng', 'Haiyan Lei', 'Zhengliang Meng', 'Hongqiang Bian', 'Jun Yang']
@@ -162,7 +162,7 @@ corr = [p for p in tp if p.startswith('*Corresponding author:')][0]
 check('yjun201602@163.com' in corr and 'Hong Kong Road' in corr and 'China' in corr, 'corresponding author: full address and email')
 ph = re.findall(r'\[[A-Z][A-Z ]{3,}\]', tp_all)
 check(not ph, f'no placeholders left on the title page {ph if ph else ""}')
-for lead in ('Acknowledgments:', 'Funding:', 'Declaration of competing interests:', 'Ethics approval and consent to participate:', 'Consent for publication:'):
+for lead in ('Funding:', 'Declaration of competing interests:', 'Ethics approval and consent to participate:', 'Consent for publication:'):
     check(any(p.startswith(lead) for p in tp), f'title page has "{lead}"')
 check(any('This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.' in p for p in tp), 'funding sentence is the journal\'s standard wording')
 check(any('2026R018-E01' in p and 'on February 9, 2026' in p for p in tp), 'ethics approval date and reference number on the title page')
