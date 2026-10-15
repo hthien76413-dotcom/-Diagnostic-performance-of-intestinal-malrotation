@@ -1,6 +1,6 @@
 #T Declarations
 
-#N **Ethics approval and consent to participate:** This retrospective study was approved by the institutional review board (the approval date and reference number are given on the title page). The requirement for informed consent was waived because of the retrospective, de-identified design. All procedures were in accordance with the 1964 Declaration of Helsinki and its later amendments.
+#N **Ethics approval and consent to participate:** This retrospective study was approved by the institutional review board (the reference number is given on the title page). The requirement for informed consent was waived because of the retrospective, de-identified design. All procedures were in accordance with the 1964 Declaration of Helsinki and its later amendments.
 
 #N **Consent for publication:** Not applicable. This manuscript does not contain any individual person's data, images, or other identifiable material.
 

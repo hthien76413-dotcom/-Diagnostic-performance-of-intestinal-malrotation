@@ -16,7 +16,7 @@
 
 #N **Declaration of competing interests:** The authors declare that they have no competing interests.
 
-#N **Ethics approval and consent to participate:** Approved by the institutional review board of Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital) on [APPROVAL DATE], reference number 2026R018-E01. The requirement for informed consent was waived because of the retrospective, de-identified design. All procedures were in accordance with the 1964 Declaration of Helsinki and its later amendments.
+#N **Ethics approval and consent to participate:** Approved by the institutional review board of Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), reference number 2026R018-E01. The requirement for informed consent was waived because of the retrospective, de-identified design. All procedures were in accordance with the 1964 Declaration of Helsinki and its later amendments.
 
 #N **Consent for publication:** Not applicable. This manuscript does not contain any individual person's data, images, or other identifiable material.
 

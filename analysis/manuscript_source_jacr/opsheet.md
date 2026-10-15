@@ -10,7 +10,7 @@
 
 #N • 文章类型：Research Paper（须知第 2 页：不超过 4,000 词，含摘要、图例，参考文献最多 40 条）。字数口径见第五节 ✓
 #N • 双匿名审稿（须知第 11 页）：标题页（含作者信息、致谢、通讯作者地址）和匿名正文分成两个文件。正文和全部补充材料没有作者姓名、单位、致谢、医院名称、伦理批准号 ✓
-#N • 标题页：题目、全体作者姓名（名在前姓在后）、用小写上标字母 a、b 对应的单位（含完整通信地址和国家）、通讯作者的完整地址和邮箱、致谢 ✓。伦理批准**日期还缺，见第五节** ✗
+#N • 标题页：题目、全体作者姓名（名在前姓在后）、用小写上标字母 a、b 对应的单位（含完整通信地址和国家）、通讯作者的完整地址和邮箱、致谢 ✓
 #N • 摘要：不超过 250 词（本稿含段名共 249 词）；说明目的、方法、主要结果和结论；缩写只用标准的；摘要里不引用参考文献 ✓
 #N • 关键词：1–7 个英文关键词（本稿 5 个）；避免含 and/of 的多词关键词 ✓
 #N • Highlights（须知第 11–12 页，投稿必需）：单独的可编辑文件，文件名含 “highlights”；3–5 条，每条不超过 85 个字符（含空格）。本稿 5 条，最长 79 个字符 ✓
@@ -20,7 +20,7 @@
 #N • 参考文献（须知第 16–17 页）：方括号数字按出现顺序，期刊名按 LTWA 缩写，格式照须知示例，带 DOI 链接，28 条（上限 40）✓。作者超过 3 位的条目仍用 “et al.”，我们没有这些条目的完整作者名单，不能凭空补全，录用后编辑部会统一格式
 #N • 生成式 AI（须知第 5–6 页）：EJR 允许用 AI 工具辅助撰写，但必须在稿件末尾、参考文献之前用固定标题 “Declaration of generative AI and AI-assisted technologies in the manuscript preparation process” 声明。已按此写在匿名正文里，也放进 Declarations 文件。声明如实写明协助起草、语言润色和分析代码，**没有缩窄** ✓
 #N • 图像政策（须知第 7、13–14 页）：不得用 AI 创建或修改原始观察数据图像；根据数据用可重复的代码生成图表是允许的。本稿的图都由分析代码生成，声明里已写明 ✓
-#N • 伦理（须知第 8–9 页）：人体研究要写明伦理批准、遵循的准则、知情同意情况，并含批准日期和编号。完整声明在标题页，匿名正文和 Declarations 文件里只写批准和豁免知情同意 ✓（日期待填）
+#N • 伦理（须知第 8–9 页）：人体研究要写明伦理批准、遵循的准则、知情同意情况，须知还写“声明应含批准日期和编号”。按你的决定，声明里只写编号 2026R018-E01、不写批准日期。完整声明在标题页，匿名正文和 Declarations 文件里只写批准和豁免知情同意 ✓
 #N • 性别报告（须知第 7 页）：表 1 有男性比例。表 1 注已写明性别取自病历记录，局限性里加了一句 ✓
 #N • 利益冲突（须知第 4–5 页）：必须用 Elsevier declarations tool 生成，选 “I have nothing to declare”，生成的 Word 文件在 “Attach Files” 步骤上传 ✗（见第三节）
 #N • 作者贡献 CRediT（须知第 15–16 页）：单独的作者声明文件，名在前，后面接 CRediT 角色 ✓（角色分配由我按原贡献说明对应，请你确认，见第五节）
@@ -46,7 +46,7 @@
 #N **必需项**
 #N 1. **Cover letter** → `EJR_1_CoverLetter.docx`（日期写的是 2026 年 10 月 15 日；实际提交日不同的话告诉我改）
 #N 2. **Declaration of competing interests** → 用 Elsevier declarations tool 生成的 Word 文件。和 JACR 时一样，选 “I have nothing to declare”。若手头还有 JACR 时生成的那份，看内容是否通用（只含作者名单和“无利益冲突”），可以重用；不确定就重新生成，两分钟的事
-#N 3. **Title page with author details** → `EJR_2_TitlePage.docx`（先把里面的 [APPROVAL DATE] 换成伦理批准日期，见第五节）
+#N 3. **Title page with author details** → `EJR_2_TitlePage.docx`
 #N 4. **Declarations** → `EJR_5_Declarations.docx`。这个类型的用途须知里没有说明，我按“声明类内容”准备，内容匿名（伦理、知情同意、资助、数据可用性、AI 声明）。选类型时若页面有说明文字不同，截图给我
 #N 5. **Manuscript** → `EJR_3_Manuscript_anonymized.docx`
 #N **在 “Select Item Type” 里再添加的类型**
@@ -81,11 +81,10 @@
 
 #H1 五、需要你做或确认的事
 
-#N **1. 伦理批准日期。** EJR 须知要求伦理声明含批准日期和编号。标题页里写的是 [APPROVAL DATE]，请把批准日期发给我，或者上传前自己在标题页里改（编号 2026R018-E01 已写）。
-#N **2. CRediT 角色分配。** 我按你们原来的贡献说明对应成 CRediT 角色：Jun Shu 与 Jun Yang 的构思和设计对应 Conceptualization、Methodology；数据采集对应 Investigation 和 Data curation；复核锚定手术、检查时间和盲法裁定对应 Validation；分析由 Jun Shu 和 Hongqiang Bian 做（Formal analysis）；起草 Jun Shu（Writing – original draft）；全体作者审稿修改（Writing – review & editing）；Jun Yang 指导（Supervision）。没有写 Software、Visualization、Project administration、Resources，因为原说明没提；若有，请告诉我。
-#N **3. 致谢里三位同事是否同意。** 标题页致谢点名了 Guanghua Zhang、Hongxi Guo、Haibin Wang，请确认他们同意被列入。
-#N **4. 字数口径。** 须知写“研究论文不超过 4,000 词，含摘要、图例，参考文献最多 40 条”。若参考文献文字也算在内，本稿是：正文 2,977 + 摘要 249 + 图例 247 = 3,473 词；加参考文献 851 词（含 DOI 链接）= 4,324 词，超出约 320 词。若只算前三项则没有超出。我不确定 EJR 怎么算，也没有为此删稿。若你想按最严口径，我可以删约 350 词，但要动正文，需要你同意。
-#N **5. 声明文件里的 AI 一句。** “No figure was created or altered with a generative AI tool; the figures were produced by analysis code from the study data.”这一句是我加的，依据是全部图都由 matplotlib 代码出图，请你们确认无误。
+#N **1. CRediT 角色分配。** 我按你们原来的贡献说明对应成 CRediT 角色：Jun Shu 与 Jun Yang 的构思和设计对应 Conceptualization、Methodology；数据采集对应 Investigation 和 Data curation；复核锚定手术、检查时间和盲法裁定对应 Validation；分析由 Jun Shu 和 Hongqiang Bian 做（Formal analysis）；起草 Jun Shu（Writing – original draft）；全体作者审稿修改（Writing – review & editing）；Jun Yang 指导（Supervision）。没有写 Software、Visualization、Project administration、Resources，因为原说明没提；若有，请告诉我。
+#N **2. 致谢里三位同事是否同意。** 标题页致谢点名了 Guanghua Zhang、Hongxi Guo、Haibin Wang，请确认他们同意被列入。
+#N **3. 字数口径。** 须知写“研究论文不超过 4,000 词，含摘要、图例，参考文献最多 40 条”。若参考文献文字也算在内，本稿是：正文 2,977 + 摘要 249 + 图例 247 = 3,473 词；加参考文献 851 词（含 DOI 链接）= 4,324 词，超出约 320 词。若只算前三项则没有超出。我不确定 EJR 怎么算，也没有为此删稿。若你想按最严口径，我可以删约 350 词，但要动正文，需要你同意。
+#N **4. 声明文件里的 AI 一句。** “No figure was created or altered with a generative AI tool; the figures were produced by analysis code from the study data.”这一句是我加的，依据是全部图都由 matplotlib 代码出图，请你们确认无误。
 
 #H1 六、之后（现在不用做）
 

@@ -160,7 +160,8 @@ aff = [p for p in tp if p.startswith('Affiliations:')][0]
 check(aff.count('China') == 2 and aff.count('Wuhan 430016') == 2 and aff.count('Hong Kong Road') == 2, 'both affiliations carry a full postal address with the country')
 corr = [p for p in tp if p.startswith('*Corresponding author:')][0]
 check('yjun201602@163.com' in corr and 'Hong Kong Road' in corr and 'China' in corr, 'corresponding author: full address and email')
-check('[APPROVAL DATE]' not in tp_all, 'ethics approval date filled in on the title page (placeholder [APPROVAL DATE] still present)' if '[APPROVAL DATE]' in tp_all else 'ethics approval date filled in on the title page')
+ph = re.findall(r'\[[A-Z][A-Z ]{3,}\]', tp_all)
+check(not ph, f'no placeholders left on the title page {ph if ph else ""}')
 for lead in ('Acknowledgments:', 'Funding:', 'Declaration of competing interests:', 'Ethics approval and consent to participate:', 'Consent for publication:'):
     check(any(p.startswith(lead) for p in tp), f'title page has "{lead}"')
 check(any('This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.' in p for p in tp), 'funding sentence is the journal\'s standard wording')
