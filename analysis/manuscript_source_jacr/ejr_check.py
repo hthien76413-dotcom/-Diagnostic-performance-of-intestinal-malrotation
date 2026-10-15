@@ -139,20 +139,22 @@ check(not any(re.search(r'\[\d+, \d+', p) for p in ms), 'citations written witho
 check(all(re.search(r'\(\d{4}\) \S+( – \S+)?\. https://doi\.org/10\.', r) for r in refs), 'references in the Elsevier numeric layout with a DOI link')
 
 # ---------------------------------------------------------------- anonymization and identity
+# author order agreed with the corresponding author (2026-10-15)
+authors = ['Jun Shu', 'Guanghua Zhang', 'Fei Peng', 'Kai Zheng', 'Hongxi Guo', 'Haiyan Lei', 'Haibin Wang', 'Zhengliang Meng', 'Hongqiang Bian', 'Jun Yang']
 IDENT = re.compile(r'Wuhan|Tongji|Huazhong|2026R018|Jun Yang|Jun Shu|Bian\b|Zhengliang|Haiyan|Kai Zheng|Fei Peng|yjun|Guanghua|Hongxi|Haibin|orcid|Hong Kong Road')
 for k in ('ms', 'decl', 'strobe', 's1', 's2', 's3', 's4', 'hl'):
     d, ps = paras(F[k])
     hits = sorted({m.group(0) for p in ps for m in IDENT.finditer(p)})
     check(not hits, f'{os.path.basename(F[k])}: no identifying text {hits if hits else ""}')
 tp_all = ' '.join(tp)
-for name in ('Guanghua Zhang', 'Hongxi Guo', 'Haibin Wang'):
-    where = [os.path.basename(F[k]) for k in F if any(name in p for p in paras(F[k])[1])]
-    check(not where, f'{name} (declined to be acknowledged) appears in no document {where if where else ""}')
+for name in authors:
+    where = sorted(os.path.basename(F[k]) for k in F if any(name in p for p in paras(F[k])[1]))
+    check(where == ['EJR_1_CoverLetter.docx', 'EJR_2_TitlePage.docx', 'EJR_6_CreditAuthorStatement.docx'], f'{name} appears only in the cover letter, title page and CRediT file {where}')
 
 # ---------------------------------------------------------------- title page
-authors = ['Jun Shu', 'Fei Peng', 'Kai Zheng', 'Haiyan Lei', 'Zhengliang Meng', 'Hongqiang Bian', 'Jun Yang']
 auth_line = [p for p in tp if p.startswith('Authors:')][0]
-check([a for a in authors if a in auth_line] == authors and auth_line.index('Jun Shu') < auth_line.index('Fei Peng') < auth_line.index('Kai Zheng') < auth_line.index('Haiyan Lei') < auth_line.index('Zhengliang Meng') < auth_line.index('Hongqiang Bian') < auth_line.index('Jun Yang'), '7 authors on the title page in the submission order, given name before family name')
+pos = [auth_line.find(a) for a in authors]
+check(all(p >= 0 for p in pos) and pos == sorted(pos), f'{len(authors)} authors on the title page in the agreed order, given name before family name')
 tp_doc = docx.Document(F['title'])
 sup = [r.text for p in tp_doc.paragraphs for r in p.runs if r.font.superscript]
 check({'a', 'b'} <= set(s.strip('*,') for s in sup[:20]) or any(s.startswith('a') for s in sup), 'affiliation marks are superscript letters')
@@ -168,7 +170,7 @@ check(any('This research did not receive any specific grant from funding agencie
 check(any('2026R018-E01' in p and 'on February 9, 2026' in p for p in tp), 'ethics approval date and reference number on the title page')
 
 # ---------------------------------------------------------------- CRediT file
-check([p.split(':')[0] for p in cr[1:]] == authors, 'CRediT file lists the 7 authors, name first')
+check([p.split(':')[0] for p in cr[1:]] == authors, f'CRediT file lists the {len(authors)} authors in the title-page order, name first')
 roles = {'Conceptualization', 'Data curation', 'Formal analysis', 'Funding acquisition', 'Investigation', 'Methodology', 'Project administration', 'Resources', 'Software', 'Supervision', 'Validation', 'Visualization', 'Writing – original draft', 'Writing – review & editing'}
 used = {r.strip().rstrip('.') for p in cr[1:] for r in p.split(':', 1)[1].split(',')}
 check(used <= roles, f'only CRediT roles are used {sorted(used - roles) if used - roles else ""}')

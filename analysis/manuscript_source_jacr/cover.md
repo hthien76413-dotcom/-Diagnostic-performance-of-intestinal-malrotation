@@ -27,7 +27,7 @@
 
 #N The design has clear limits. The cohort consists only of surgically confirmed cases, so the study estimates report-level detection, not sensitivity; specificity, predictive values and any ranking of ultrasound, CT and the upper gastrointestinal series can be neither estimated nor claimed. We therefore use the term "detection rate" throughout, follow STROBE rather than STARD (checklist enclosed), show the confounding by indication instead of adjusting it away, and state that these data do not argue against ultrasound-first pathways. This is a single-center, first audit cycle, and whether a structured report changes documentation or detection has not been tested.
 
-#N The manuscript is original, has not been published, and is not under consideration elsewhere; it reached this journal through Elsevier's Article Transfer Service after an editorial decision at another Elsevier journal that did not involve external review. All seven authors have approved the submission and agree to be accountable for the work. The study was approved by the institutional review board with waiver of informed consent. The authors declare no competing interests, and the study received no specific funding. The use of a generative artificial intelligence tool in preparing the manuscript is declared in the manuscript. In keeping with the journal's double anonymized review, the manuscript and supplementary files contain no author details; these and the ethics approval details are given on the separate title page, and the author contributions are given in a separate CRediT statement.
+#N The manuscript is original, has not been published, and is not under consideration elsewhere; it reached this journal through Elsevier's Article Transfer Service after an editorial decision at another Elsevier journal that did not involve external review. All ten authors have approved the submission and agree to be accountable for the work. The study was approved by the institutional review board with waiver of informed consent. The authors declare no competing interests, and the study received no specific funding. The use of a generative artificial intelligence tool in preparing the manuscript is declared in the manuscript. In keeping with the journal's double anonymized review, the manuscript and supplementary files contain no author details; these and the ethics approval details are given on the separate title page, and the author contributions are given in a separate CRediT statement.
 
 #N Thank you for considering our work.
 
@@ -35,4 +35,4 @@
 
 #N Jun Yang, MD
 
-#N On behalf of all authors (Jun Shu, Fei Peng, Kai Zheng, Haiyan Lei, Zhengliang Meng, Hongqiang Bian, Jun Yang)
+#N On behalf of all authors (Jun Shu, Guanghua Zhang, Fei Peng, Kai Zheng, Hongxi Guo, Haiyan Lei, Haibin Wang, Zhengliang Meng, Hongqiang Bian, Jun Yang)

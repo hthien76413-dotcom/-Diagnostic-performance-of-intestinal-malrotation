@@ -933,7 +933,7 @@ add('Cover Letter 第3段', '13.6 years', f'{F["study_months"]} 个月 = {F["stu
 add('Cover Letter 第3段', '723 … 398 … three of 117 (2.6%) … stated in three … twice … 50.4% … 5 of the 58 … 59 of the 112', '与正文一致', True, para=P,
     toks=('723', '398', 'three', '117', '2.6', 'three', 'twice', '50.4', '5', '58', '59', '112'))
 P = para_of(CF, '#N The manuscript is original')
-add('Cover Letter 第7段', 'all seven authors', 'Title Page 列 7 位作者', True, para=P, toks=('seven',))
+add('Cover Letter 第7段', 'all ten authors', 'Title Page 列 10 位作者', True, para=P, toks=('ten',))
 for start in ['#N Department of General Surgery', '#N Jun Yang, MD', '#N On behalf of all authors']:
     COVER.setdefault(para_of(CF, start), [])
 TF = MS + 'titlepage.md'

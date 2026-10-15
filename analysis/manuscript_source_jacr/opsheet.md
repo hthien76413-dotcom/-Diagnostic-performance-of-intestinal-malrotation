@@ -38,14 +38,15 @@
 #N 6. 缩写：CT、CI 首次出现时定义，GEE、ACR、STROBE、STARD 改写全称；表注和图注补全缩写。
 #N 7. 图改为单独的矢量 PDF；正文文件里不再嵌入图片。
 #N 8. 局限性加一句性别说明，表 1 注写明性别取自病历记录。
-#N 9. 投稿信改为写给 EJR 编辑，说明与期刊宗旨的关系和转投经过。文件名从 JACR_ 改为 EJR_，文件属性仍然清空。
+#N 9. 作者名单改为 10 位，顺序与标题页一致：Jun Shu、Guanghua Zhang、Fei Peng、Kai Zheng、Hongxi Guo、Haiyan Lei、Haibin Wang、Zhengliang Meng、Hongqiang Bian、Jun Yang（通讯作者）。Guanghua Zhang、Hongxi Guo、Haibin Wang 原先在致谢里，现在改列作者，标题页、投稿信（“All ten authors”和署名）、CRediT 声明都已同步。
+#N 10. 投稿信改为写给 EJR 编辑，说明与期刊宗旨的关系和转投经过。文件名从 JACR_ 改为 EJR_，文件属性仍然清空。
 
 #H1 三、“Attach Files” 页逐项上传
 
 #N 你截图里红色的必需项有 5 个。每传一个文件，先在 “Select Item Type” 里选对类型，再浏览文件，描述栏可以保留默认名称。
 #N **必需项**
 #N 1. **Cover letter** → `EJR_1_CoverLetter.docx`（日期写的是 2026 年 10 月 15 日；实际提交日不同的话告诉我改）
-#N 2. **Declaration of competing interests** → 用 Elsevier declarations tool 生成的 Word 文件。和 JACR 时一样，选 “I have nothing to declare”。若手头还有 JACR 时生成的那份，看内容是否通用（只含作者名单和“无利益冲突”），可以重用；不确定就重新生成，两分钟的事
+#N 2. **Declaration of competing interests** → 用 Elsevier declarations tool 生成的 Word 文件。和 JACR 时一样，选 “I have nothing to declare”。作者名单要写全 10 位。JACR 时生成的那份只有 7 位，**不能重用**，要重新生成
 #N 3. **Title page with author details** → `EJR_2_TitlePage.docx`
 #N 4. **Declarations** → `EJR_5_Declarations.docx`。这个类型的用途须知里没有说明，我按“声明类内容”准备，内容匿名（伦理、知情同意、资助、数据可用性、AI 声明）。选类型时若页面有说明文字不同，截图给我
 #N 5. **Manuscript** → `EJR_3_Manuscript_anonymized.docx`
@@ -72,6 +73,18 @@
 #N Conclusions: Positive routine ultrasound reports almost always described a whirlpool, and the duodenal landmarks to which published performance is attributed were rarely documented. Documentation, unlike accuracy, can be audited without a reference standard; we provide the criteria as a minimum reporting dataset.
 
 #N • **Keywords**：Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report
+#N • **Authors**（在 “Edit submission” 里逐位核对，顺序和标题页一致；转投带过来的是 7 位，要加 3 位）：
+#N     1. Jun Shu —— 单位 a
+#N     2. Guanghua Zhang —— 单位 a（新增）
+#N     3. Fei Peng —— 单位 a
+#N     4. Kai Zheng —— 单位 a
+#N     5. Hongxi Guo —— 单位 a（新增）
+#N     6. Haiyan Lei —— 单位 a
+#N     7. Haibin Wang —— 单位 a（新增）
+#N     8. Zhengliang Meng —— 单位 b
+#N     9. Hongqiang Bian —— 单位 a
+#N     10. Jun Yang —— 单位 a，通讯作者
+#N     单位 a：Department of General Surgery；单位 b：Department of Ultrasound Imaging；均为 Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital), Tongji Medical College, Huazhong University of Science and Technology, 100 Hong Kong Road, Jiang'an District, Wuhan 430016, Hubei Province, China。系统一般要每位作者的邮箱，新增三位的邮箱要先备好。
 #N • **Funding**：选 “no funding”，或照填：This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
 #N • **Data statement**：选 “data will be made available on request”（或类似选项），原因：patient-level clinical data cannot be shared because of institutional and ethical restrictions; scripts and the classification rule set are provided in Supplement 1.
 #N • **是否用了生成式 AI**：选“是”，工具 Claude（Anthropic），用途 drafting and language editing of the manuscript and writing and checking the analysis code。
@@ -81,7 +94,10 @@
 
 #H1 五、需要你做或确认的事
 
-#N **1. 字数口径。** 须知写“研究论文不超过 4,000 词，含摘要、图例，参考文献最多 40 条”。若参考文献文字也算在内，本稿是：正文 2,977 + 摘要 249 + 图例 247 = 3,473 词；加参考文献 851 词（含 DOI 链接）= 4,324 词，超出约 320 词。若只算前三项则没有超出。我不确定 EJR 怎么算，也没有为此删稿。若你想按最严口径，我可以删约 350 词，但要动正文，需要你同意。
+#N **1. 三位新增作者要符合作者标准。** 须知第 3 页要求每位作者同时做到：对研究的构思设计、数据采集或分析解释有实质性贡献；起草或修改稿件的重要内容；最终批准要投稿的版本；对工作的各方面负责。三位原先只写了“参与临床和手术数据采集”，请他们审阅稿件、同意最终版并能对内容负责，再投稿。投稿信里写的是 “All ten authors have approved the submission”，要确保这是事实。
+#N **2. 三位新增作者的 CRediT 角色。** 我只按原来的致谢内容（参与临床和手术数据采集）给了 Investigation、Data curation 和 Writing – review & editing（作者标准要求参与修改稿件），请他们确认；有别的贡献，告诉我改。
+#N **3. 作者名单现在就在 EM 里改好。** 须知第 4 页：稿件提交后再增删或调整作者，要由通讯作者填 Authorship Change Request 表，附全体作者（含新增者）的书面同意，经编辑批准，录用后一律不能改。这份稿件目前还没完成提交，所以现在改最省事。
+#N **4. 字数口径。** 须知写“研究论文不超过 4,000 词，含摘要、图例，参考文献最多 40 条”。若参考文献文字也算在内，本稿是：正文 2,977 + 摘要 249 + 图例 247 = 3,473 词；加参考文献 851 词（含 DOI 链接）= 4,324 词，超出约 320 词。若只算前三项则没有超出。我不确定 EJR 怎么算，也没有为此删稿。若你想按最严口径，我可以删约 350 词，但要动正文，需要你同意。
 
 #H1 六、之后（现在不用做）
 
