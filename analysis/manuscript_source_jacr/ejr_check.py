@@ -165,7 +165,7 @@ check(not ph, f'no placeholders left on the title page {ph if ph else ""}')
 for lead in ('Acknowledgments:', 'Funding:', 'Declaration of competing interests:', 'Ethics approval and consent to participate:', 'Consent for publication:'):
     check(any(p.startswith(lead) for p in tp), f'title page has "{lead}"')
 check(any('This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.' in p for p in tp), 'funding sentence is the journal\'s standard wording')
-check(any('2026R018-E01' in p for p in tp), 'ethics reference number on the title page')
+check(any('2026R018-E01' in p and 'on February 9, 2026' in p for p in tp), 'ethics approval date and reference number on the title page')
 
 # ---------------------------------------------------------------- CRediT file
 check([p.split(':')[0] for p in cr[1:]] == authors, 'CRediT file lists the 7 authors, name first')
