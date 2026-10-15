@@ -7,7 +7,7 @@
 ## 项目现状（2026-10-08）
 
 - 稿件：Routine Ultrasound Reports for Pediatric Intestinal Malrotation Rarely Document Duodenal Landmarks: A Single-Center Audit。病例报告审计（case-only），结局是报告层面检出率，不是敏感度。
-- 目标期刊：下一家待用户选定（2026-10-15）。投稿经过：
+- 目标期刊：*Journal of Ultrasound in Medicine*（JUM，AIUM 主办、Wiley 出版），用户 2026-10-15 选定。Wiley 和 AIUM 网站被网络策略拦截（403），作者须知待用户下载 PDF 提供；在此之前不按检索摘录改格式。投稿经过：
   - *Pediatric Radiology*：外审后退稿。
   - *Insights into Imaging*：2026-09-30 因范围不符直接退稿，未送外审。
   - *Journal of the American College of Radiology*（JACR），Original Article：2026-10-14 投稿，稿号 JACRAD-D-26-00773。2026-10-15 由副主编 Christoph Lee 代主编 Ruth Carlos 直接退稿，未送外审。退稿信只用了期刊的标准措辞（"unlikely to succeed through stringent external review" 或 "does not meet our current editorial priorities"），没有给具体理由，也没有审稿意见。退稿信寄给了 Jun Shu 的投稿账号，而 Title Page 上的通讯作者是 Jun Yang。
