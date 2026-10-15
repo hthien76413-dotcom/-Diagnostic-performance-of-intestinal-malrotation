@@ -22,6 +22,7 @@ JOBS=[('cover.md','EJR_1_CoverLetter.docx','Times New Roman',11),
       ('highlights.md','EJR_4_Highlights.docx','Times New Roman',11),
       ('declarations.md','EJR_5_Declarations.docx','Times New Roman',11),
       ('credit.md','EJR_6_CreditAuthorStatement.docx','Times New Roman',11),
+      ('coi.md','EJR_7_Declaration_of_competing_interests.docx','Times New Roman',11),
       ('opsheet.md','EJR_投稿操作单.docx','DengXian',10.5)]
 for src,dst,font,size in JOBS:
     doc=docx.Document(); apply_house_style(doc, font)

@@ -46,7 +46,7 @@
 #N 你截图里红色的必需项有 5 个。每传一个文件，先在 “Select Item Type” 里选对类型，再浏览文件，描述栏可以保留默认名称。
 #N **必需项**
 #N 1. **Cover letter** → `EJR_1_CoverLetter.docx`（日期写的是 2026 年 10 月 15 日；实际提交日不同的话告诉我改）
-#N 2. **Declaration of competing interests** → 用 Elsevier declarations tool 生成的 Word 文件。和 JACR 时一样，选 “I have nothing to declare”。作者名单要写全 10 位。JACR 时生成的那份只有 7 位，**不能重用**，要重新生成
+#N 2. **Declaration of competing interests** → 须知要求用 Elsevier declarations tool 生成 Word 文件，选 “I have nothing to declare”，作者名单写全 10 位。JACR 时生成的那份只有 7 位，**不能重用**。工具暂时用不了时，用备用文件 `EJR_7_Declaration_of_competing_interests.docx`（Elsevier 标准的“无利益冲突”句，列了 10 位作者）。这是我按标准句写的，不是工具生成的；10 位作者（含新增的 3 位）都要确认确实没有利益冲突
 #N 3. **Title page with author details** → `EJR_2_TitlePage.docx`
 #N 4. **Declarations** → 用 Elsevier 伦理声明工具（页面标题 “Confirm your ethical declaration”）生成并下载的 Word 文件。该页面写明 “you must download, review and upload your declaration in Editorial Manager”，所以这个类型大概率就是它。`EJR_5_Declarations.docx` 作为备用，工具文件可用时不上传。工具里的答案：涉及对象选 Human（不选 Animal）；“Confirm … complies with relevant laws” 打勾，Guidelines 填 Declaration of Helsinki；伦理委员会选 “Yes, and approved”，编号 2026R018-E01（若问委员会名称和日期：Institutional Review Board of Wuhan Children's Hospital (Wuhan Maternal and Child Healthcare Hospital)，2026 年 2 月 9 日）；临床试验选 No；**参与者书面知情同意选 No**（本研究豁免了知情同意），说明理由写 “The requirement for informed consent was waived by the institutional review board because of the retrospective, de-identified design; no individual participant data, images or identifiable material are published.”；隐私权那一项打勾；**人体生物材料选 No**（只用了病历和影像报告文字，没有器官、组织等材料，选 Yes 会生成关于捐献者同意的错误声明）；病例报告选 No。
 #N 5. **Manuscript** → `EJR_3_Manuscript_anonymized.docx`

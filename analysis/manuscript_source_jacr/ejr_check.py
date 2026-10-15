@@ -39,7 +39,7 @@ def paras(path):
 
 F = {k: ROOT + v for k, v in dict(
     cover='EJR_1_CoverLetter.docx', title='EJR_2_TitlePage.docx', ms='EJR_3_Manuscript_anonymized.docx',
-    hl='EJR_4_Highlights.docx', decl='EJR_5_Declarations.docx', credit='EJR_6_CreditAuthorStatement.docx',
+    hl='EJR_4_Highlights.docx', decl='EJR_5_Declarations.docx', credit='EJR_6_CreditAuthorStatement.docx', coi='EJR_7_Declaration_of_competing_interests.docx',
     strobe='EJR_STROBE_checklist.docx', s1='EJR_Supplement_1_NLP_and_report_audit.docx',
     s2='EJR_Supplement_2_models_and_subgroups.docx', s3='EJR_Supplement_3_CT_and_UGI_content_audit.docx',
     s4='EJR_Supplement_4_minimum_reporting_dataset.docx').items()}
@@ -149,7 +149,7 @@ for k in ('ms', 'decl', 'strobe', 's1', 's2', 's3', 's4', 'hl'):
 tp_all = ' '.join(tp)
 for name in authors:
     where = sorted(os.path.basename(F[k]) for k in F if any(name in p for p in paras(F[k])[1]))
-    check(where == ['EJR_1_CoverLetter.docx', 'EJR_2_TitlePage.docx', 'EJR_6_CreditAuthorStatement.docx'], f'{name} appears only in the cover letter, title page and CRediT file {where}')
+    check(where == ['EJR_1_CoverLetter.docx', 'EJR_2_TitlePage.docx', 'EJR_6_CreditAuthorStatement.docx', 'EJR_7_Declaration_of_competing_interests.docx'], f'{name} appears only in the cover letter, title page, CRediT file and competing-interests file {where}')
 
 # ---------------------------------------------------------------- title page
 auth_line = [p for p in tp if p.startswith('Authors:')][0]
