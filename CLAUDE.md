@@ -7,9 +7,10 @@
 ## 项目现状（2026-10-08）
 
 - 稿件：Routine Ultrasound Reports for Pediatric Intestinal Malrotation Rarely Document Duodenal Landmarks: A Single-Center Audit。病例报告审计（case-only），结局是报告层面检出率，不是敏感度。
-- 当前目标期刊：*Journal of the American College of Radiology*（JACR），Original Article。投稿经过：
+- 目标期刊：下一家待用户选定（2026-10-15）。投稿经过：
   - *Pediatric Radiology*：外审后退稿。
   - *Insights into Imaging*：2026-09-30 因范围不符直接退稿，未送外审。
+  - *Journal of the American College of Radiology*（JACR），Original Article：2026-10-14 投稿，稿号 JACRAD-D-26-00773。2026-10-15 由副主编 Christoph Lee 代主编 Ruth Carlos 直接退稿，未送外审。退稿信只用了期刊的标准措辞（"unlikely to succeed through stringent external review" 或 "does not meet our current editorial priorities"），没有给具体理由，也没有审稿意见。退稿信寄给了 Jun Shu 的投稿账号，而 Title Page 上的通讯作者是 Jun Yang。
 - 作者 7 人：Jun Shu, Fei Peng, Kai Zheng, Haiyan Lei, Zhengliang Meng, Hongqiang Bian, Jun Yang（通讯作者）。Guanghua Zhang、Hongxi Guo、Haibin Wang 在致谢里。
 - 投稿文件在仓库根目录（`JACR_*`、`Supplement_1_classifier.py`）。文稿源文件在 `analysis/manuscript_source_jacr/`。构建命令见 `analysis/README.md`。
 - JACR 作者须知以用户提供的 `analysis/manuscript_source_jacr/JACR_Guide_for_Authors_2026-10-08.pdf` 为准（图片版 PDF，需逐页看图读取）。要点：初投时图和表放在正文里；Title Page 必须有 Data Statement 固定句、领导职务、按 ICMJE 分项的贡献；利益冲突声明单独上传，不写在 Title Page 上。
@@ -49,3 +50,4 @@
 - 投稿进度（2026-10-14）：用户在 JACR 的 Editorial Manager 投稿，已选 Original Article，已上传投稿信、Title Page、Manuscript、补充材料 1–4；Declaration Statement 正在用 Elsevier Declarations tool 生成（资助、其他支持、知识产权均选"无"）。**待解决**：EM 里 Title Page（53.2 KB）和 Manuscript（2.1 MB）的大小与 `JACR_2_TitlePage.docx`（38.1 KB）、`JACR_3_Manuscript_masked.docx`（943 KB）不符，疑被 Word 另存过，需重传原版并确认文档属性无姓名；STROBE 清单和 `Supplement_1_classifier.py` 尚未上传；EM 登录账号是 jun shu，而 Title Page 的通讯作者是 Jun Yang，需确认系统里的通讯作者。投稿信日期已改为 October 14, 2026（`cover.md`、`opsheet.md`、`verify_numbers.py` 的锚点同步）；若实际投稿日不同，三处都要改。
 - 投稿前第二次全面通读（2026-10-14，用户要求；全部 docx 转 PDF 重读）：数据、结论、文献无新问题，只改了三处措辞：摘要 "25.6% excluding tentative wording" 改为 "25.6% excluding \"possible\" wording"（该数只排除 possible 级，不含 probable）；补充材料 1 E3 规则删去 "are benign findings"（胃扭转不一定良性）；讨论第 1 段 "rarely recorded the duodenal anatomy" 改为 "rarely recorded the elements"（肠内液体不属于十二指肠解剖）。正文 2,977 词，摘要 248 词；数字核对表 355 项 0 项不一致；`jacr_check.py` 全部通过。用户已在 EM 里删去需要重传的文件，将用新版重新上传（Title Page 38.1 KB、正文 943.1 KB、补充材料 1 49.1 KB）。仍未改的第三档小问题保持原样。
 - 文件属性清理（2026-10-14，用户要求：所有文档的作者、最后修改者、备注清空，所有时间写当天，不留 AI 痕迹）：新增 `analysis/manuscript_source_jacr/scrub_metadata.py`，所有构建脚本（`build_manuscript/supplements/strobe/docs.py`、`export_plaintext.py`、`export_refs.py`）结尾都会调用它。它对根目录每个 `JACR_*.docx`：作者、最后修改者、备注、标题、主题、关键词全部留空；创建和修改时间写当前时间（python-docx 模板自带 2013-12-23）；`docProps/app.xml` 换成不含应用名和字数的极简版（原为 "Microsoft Macintosh Word"、0 字）；删去模板的 `docProps/thumbnail.jpeg`；嵌入的 PNG 去掉 matplotlib 的 Software 文本块（像素逐点相同）；zip 条目时间和所有包内文件的修改时间统一为当前时间。TIFF 图本身没有 Software 或时间标签。`jacr_check.py` 新增逐文档检查属性。**正文内容里的生成式 AI 声明按 JACR 要求保留，没有动。** 任何重建之后都要保证最后跑过 `scrub_metadata.py`（构建脚本已自动调用）。
+- JACR 退稿后（2026-10-15）：稿件内容不需要因退稿而改，因为没有审稿意见。改投新刊时：现有 `JACR_*` 文件、`jacr_check.py`、Title Page 的 Data Statement 固定句、Take-Home Points 和 Elsevier 利益冲突声明都是按 JACR 须知做的，要按新刊须知重做，检查脚本也要换成新刊的上限。投稿前要先定通讯作者：用 Jun Yang 的账号投稿，或者经全体作者同意把 Title Page 改成 Jun Shu。生成式 AI 声明照旧如实保留，选刊时要核对该刊的 AI 政策是否接受这种披露。期刊网站被网络策略拦截，新刊须知要请用户下载 PDF 提供。
