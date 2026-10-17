@@ -1,0 +1,103 @@
+{
+ "items": {
+  "d3": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 3,
+   "reader_B": 3,
+   "consensus": 3
+  },
+  "djj": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 1,
+   "reader_B": 1,
+   "consensus": 1
+  },
+  "duodenum": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 7,
+   "reader_B": 7,
+   "consensus": 7
+  },
+  "sma_smv": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 3,
+   "reader_B": 3,
+   "consensus": 3
+  },
+  "inversion": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 1,
+   "reader_B": 1,
+   "consensus": 1
+  },
+  "fluid": {
+   "agree": 118,
+   "n": 119,
+   "kappa": 0.7958833619210991,
+   "reader_A": 3,
+   "reader_B": 2,
+   "consensus": 2
+  },
+  "dynamic": {
+   "agree": 118,
+   "n": 119,
+   "kappa": 0.8529048207663791,
+   "reader_A": 3,
+   "reader_B": 4,
+   "consensus": 4
+  },
+  "compress": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 1,
+   "reader_B": 1,
+   "consensus": 1
+  },
+  "cecum": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 5,
+   "reader_B": 5,
+   "consensus": 5
+  },
+  "doppler": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 116,
+   "reader_B": 116,
+   "consensus": 116
+  },
+  "whirl_pos": {
+   "agree": 116,
+   "n": 119,
+   "kappa": 0.9495691481847718,
+   "reader_A": 59,
+   "reader_B": 58,
+   "consensus": 59
+  },
+  "gas_limit": {
+   "agree": 119,
+   "n": 119,
+   "kappa": 1.0,
+   "reader_A": 36,
+   "reader_B": 36,
+   "consensus": 36
+  }
+ },
+ "cells": 1428,
+ "disagreeing_cells": 5,
+ "disagreeing_episodes": 4
+}

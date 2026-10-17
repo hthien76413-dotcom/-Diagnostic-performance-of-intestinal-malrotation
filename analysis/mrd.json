@@ -1,0 +1,94 @@
+{
+ "MRD": [
+  [
+   "Element",
+   "What the report states",
+   "Counted as documented in this audit when the report…",
+   "Documented in this audit, n (%) of 117"
+  ],
+  [
+   "Third portion of the duodenum (D3)",
+   "Whether D3 was seen crossing between the superior mesenteric artery and the aorta, or that it was not visualized",
+   "names the third (horizontal) portion, whether normal, abnormal or not visualized",
+   "3 (2.6)"
+  ],
+  [
+   "Duodenojejunal junction",
+   "Its position, or that it was not visualized",
+   "names the duodenojejunal junction or its position",
+   "1 (0.9)"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "The position of the vein relative to the artery, or that it was not assessed",
+   "states the position of the two vessels relative to each other",
+   "3 (2.6)"
+  ],
+  [
+   "Enteric fluid",
+   "Whether fluid was given, by which route, and whether its passage was followed",
+   "states that fluid was given by mouth or tube (fluid seen in the lumen does not count)",
+   "2 (1.7)"
+  ],
+  [
+   "Dynamic assessment",
+   "Whether passage of fluid through the pylorus and duodenum was observed in real time",
+   "states real-time observation, or describes fluid passing the pylorus or duodenum",
+   "4 (3.4)"
+  ],
+  [
+   "Graded compression",
+   "Whether graded compression was used to displace bowel gas",
+   "states that compression was used",
+   "1 (0.9)"
+  ],
+  [
+   "Color Doppler of the mesenteric vessels",
+   "That the mesenteric vessels were examined with color Doppler",
+   "states color Doppler examination",
+   "114 (97.4)"
+  ],
+  [
+   "Whirlpool sign",
+   "Present or absent, stated explicitly in either case",
+   "describes a whirlpool or swirl, or a vein, mesentery or bowel rotating around the artery (present only; a stated absence was not coded)",
+   "59 (50.4)"
+  ],
+  [
+   "Study adequacy",
+   "Whether the examination was diagnostic, and if not, what limited it (bowel gas, patient state, incomplete views)",
+   "states explicitly that bowel gas limited the study (other statements of adequacy were not coded)",
+   "36 (30.8)"
+  ],
+  [
+   "Conclusion",
+   "Malrotation and volvulus addressed separately, each as present, absent or indeterminate, with the recommended next test when indeterminate",
+   "not coded as such; the certainty tiers of positive conclusions are given in Table 2 of the manuscript",
+   "Not coded"
+  ],
+  [
+   "Also audited, not part of the dataset",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Duodenum mentioned in any form",
+   "",
+   "mentions the duodenum in any form (a lower bound on duodenal assessment)",
+   "7 (6.0)"
+  ],
+  [
+   "Explicit statement of vessel inversion",
+   "",
+   "states that the vessels are inverted (one of the two ultrasound positivity criteria)",
+   "1 (0.9)"
+  ],
+  [
+   "Cecal position",
+   "",
+   "states where the cecum lies",
+   "5 (4.3)"
+  ]
+ ]
+}

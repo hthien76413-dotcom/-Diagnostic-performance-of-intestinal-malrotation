@@ -1,0 +1,37 @@
+exec(open('core.py').read())
+u=idx[idx['mod']=='US'].copy()
+u=u.merge(mat[['科研患者编号','US_detected','US_whirlpool']],on='科研患者编号',how='left')
+u=u.merge(pat[['科研患者编号','era_late','op_year','neonate','volvulus']],on='科研患者编号',how='left')
+t=u['txt']
+def f(rx): return t.str.contains(rx,regex=True)
+u['gi_us']=u['报告名称'].astype(str).str.contains('胃肠道')
+u['vessel_us']=u['报告名称'].astype(str).str.contains('腹部大血管')
+u['pyloric_only']=u['报告名称'].astype(str).str.contains('幽门') & ~u['报告名称'].astype(str).str.contains('胃肠道|腹部大血管')
+u['bedside']=u['报告名称'].astype(str).str.contains('床旁')
+u['duodenum']=f(r'十二指肠')
+u['d3']=f(r'十二指肠水平段|水平段|十二指肠第三段|第三段')
+u['djj']=f(r'十二指肠空肠曲|屈氏韧带|Treitz|十二指肠悬韧带')
+u['sma_smv']=f(r'肠系膜上动脉|肠系膜上静脉|SMA|SMV|系膜血管')
+u['inversion']=f(r'(动静脉|静脉.{0,6}动脉|动脉.{0,6}静脉).{0,12}(换位|反位|倒置|异常关系|关系异常|左侧|右侧)|静脉位于.{0,6}左|动脉.{0,4}右侧')
+u['whirl_txt']=f(r'漩涡|旋涡|涡流|螺旋')
+u['fluid']=f(r'饮水|口服.{0,4}(水|液)|注水|胃内注|温开水|生理盐水.{0,6}(灌|注)|水充盈')
+u['gas_limit']=f(r'气体干扰|肠气干扰|气体较多|积气.{0,10}(干扰|遮挡)|显示欠清|显示不清|声窗')
+u['cecum']=f(r'回盲部')
+u['bowel_wall']=f(r'肠壁')
+cols=['gi_us','vessel_us','pyloric_only','bedside','duodenum','d3','djj','sma_smv','inversion','whirl_txt','fluid','gas_limit','cecum']
+print('=== Ultrasound index-report content audit (n=%d) ==='%len(u))
+for c in cols:
+    print(f'  {c:12s} {u[c].sum():4d} ({u[c].mean()*100:5.1f}%)   early {u[~u["era_late"]][c].mean()*100:5.1f}%  late {u[u["era_late"]][c].mean()*100:5.1f}%')
+print()
+print('detection by content:')
+for c in ['d3','djj','sma_smv','whirl_txt','fluid','gas_limit','gi_us','bedside']:
+    for v in [True,False]:
+        s=u[u[c]==v]
+        if len(s): print(f'  {c}={str(v):5s} n={len(s):3d} detected {s["US_detected"].mean()*100:5.1f}%')
+print()
+print('detection by era: early %.1f%% (n=%d), late %.1f%% (n=%d)'%(u[~u['era_late']]['US_detected'].mean()*100,(~u['era_late']).sum(),u[u['era_late']]['US_detected'].mean()*100,u['era_late'].sum()))
+print('whirlpool by era: early %.1f%%, late %.1f%%'%(u[~u['era_late']]['US_whirlpool'].mean()*100,u[u['era_late']]['US_whirlpool'].mean()*100))
+print()
+print('US exams per year:')
+print(u.groupby('op_year').agg(n=('科研患者编号','size'),det=('US_detected','mean'),gi=('gi_us','mean'),d3=('d3','mean'),smasmv=('sma_smv','mean')).round(2).to_string())
+u.to_csv('us_audit.csv',index=False)

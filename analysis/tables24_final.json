@@ -1,0 +1,102 @@
+{
+ "T2": [
+  [
+   "Index test",
+   "Positive/total",
+   "Detection rate, % (95% CI)",
+   "Definite wording, n (%)",
+   "Probable wording, n (%)",
+   "Possible wording, n (%)",
+   "Detection excluding possible wording, %",
+   "Detection counting only conclusions naming malrotation, % (95% CI)"
+  ],
+  [
+   "UGI series",
+   "230/293",
+   "78.5 (73.4–82.8)",
+   "74 (32.2)",
+   "73 (31.7)",
+   "83 (36.1)",
+   "50.2",
+   "77.8 (72.7–82.2)"
+  ],
+  [
+   "Abdominal CT (all)",
+   "165/313",
+   "52.7 (47.2–58.2)",
+   "30 (18.2)",
+   "73 (44.2)",
+   "62 (37.6)",
+   "32.9",
+   "48.6 (43.1–54.1)"
+  ],
+  [
+   "Ultrasound",
+   "64/117",
+   "54.7 (45.7–63.4)",
+   "12 (18.8)",
+   "18 (28.1)",
+   "34 (53.1)",
+   "25.6",
+   "53.8 (44.8–62.6)"
+  ],
+  [
+   "  CT, contrast-enhanced",
+   "40/50",
+   "80.0 (67.0–88.8)",
+   "–",
+   "–",
+   "–",
+   "–",
+   "–"
+  ],
+  [
+   "  CT, unenhanced",
+   "125/263",
+   "47.5 (41.6–53.6)",
+   "–",
+   "–",
+   "–",
+   "–",
+   "–"
+  ]
+ ],
+ "T4": [
+  [
+   "Modality",
+   "Detection 2012–2018",
+   "Detection 2019–2026",
+   "Era odds ratio (95% CI)",
+   "Era odds ratio adjusted for the covariate",
+   "Covariate added, odds ratio (95% CI)",
+   "Average marginal effect of later era, percentage points (95% CI), crude → adjusted"
+  ],
+  [
+   "UGI series",
+   "157/204 (77.0%)",
+   "73/89 (82.0%)",
+   "1.37 (0.73–2.57), p=0.333",
+   "–",
+   "None fitted",
+   "+5.1 (−4.7 to +15.0)"
+  ],
+  [
+   "Abdominal CT",
+   "100/215 (46.5%)",
+   "65/98 (66.3%)",
+   "2.27 (1.38–3.72), p=0.001",
+   "2.02 (1.21–3.37), p=0.007",
+   "Intravenous contrast enhancement 3.98 (1.90–8.37), p<0.001",
+   "+19.8 (+8.3 to +31.0) → +16.4 (+4.3 to +27.3)"
+  ],
+  [
+   "Ultrasound",
+   "16/38 (42.1%)",
+   "48/79 (60.8%)",
+   "2.13 (0.97–4.67), p=0.060",
+   "1.45 (0.62–3.40), p=0.397",
+   "Session included a great-vessel study 3.51 (1.56–7.87), p=0.002",
+   "+18.7 (−0.2 to +37.7) → +8.4 (−10.6 to +29.2)"
+  ]
+ ]
+}

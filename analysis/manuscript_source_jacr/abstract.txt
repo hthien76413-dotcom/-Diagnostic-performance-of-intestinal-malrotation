@@ -1,0 +1,11 @@
+Abstract
+
+Objective: Ultrasound is increasingly advocated as the first-line test for suspected intestinal malrotation, based on reported sensitivities of 93–97%. We audited what routine reports documented and whether they named the diagnosis.
+
+Methods: Retrospective case-only report audit at one tertiary children's hospital (December 2012–June 2026). The preoperative examination closest to operation was classified by a rule-based algorithm with blinded surgical adjudication, and separately audited for documented technical content (ultrasound by two independent readers). Because the cohort was surgically confirmed, the outcome is report-level detection among tested children, with Wilson 95% CIs; specificity, predictive values and comparative accuracy are not estimable.
+
+Results: Among 450 children (volvulus in 88.2%), 398 underwent at least one index test. Three of 117 ultrasound examinations (2.6%, 95% CI 0.9–7.3) documented the third portion of the duodenum or the duodenojejunal junction, 3 (2.6%) the mesenteric artery–vein relationship and 2 (1.7%) enteric fluid; a whirlpool sign was reported in 50.4%. Ultrasound named malrotation or volvulus in 64 of 117 examinations (54.7%, 45.7–63.4): in all 59 recording a whirlpool, a positivity criterion, and in 5 of 58 without one. A whirlpool was recorded in 59 of the 112 ultrasound-examined children with operatively confirmed volvulus. Detection was 53.8% counting only conclusions naming malrotation, 25.6% excluding tentative wording.
+
+Discussion: Positive routine ultrasound reports almost always described a whirlpool, and the duodenal landmarks to which published performance is attributed were rarely documented. Documentation, unlike accuracy, can be audited without a reference standard; we provide the criteria as a minimum reporting dataset.
+
+Keywords: Intestinal malrotation; Intestinal volvulus; Infant, Newborn; Ultrasonography; Radiology report

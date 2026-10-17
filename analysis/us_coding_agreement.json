@@ -1,0 +1,121 @@
+{
+ "K": [
+  [
+   "Documented content",
+   "Reader A, n",
+   "Reader B, n",
+   "Agreement, n of 119",
+   "Cohen kappa",
+   "Consensus, n of 119",
+   "Text pattern agreeing with consensus, n of 117"
+  ],
+  [
+   "Third portion of the duodenum",
+   "3",
+   "3",
+   "119",
+   "1.00",
+   "3",
+   "117"
+  ],
+  [
+   "Duodenojejunal junction",
+   "1",
+   "1",
+   "119",
+   "1.00",
+   "1",
+   "117"
+  ],
+  [
+   "Duodenum mentioned in any form",
+   "7",
+   "7",
+   "119",
+   "1.00",
+   "7",
+   "117"
+  ],
+  [
+   "Superior mesenteric artery–vein relationship",
+   "3",
+   "3",
+   "119",
+   "1.00",
+   "3",
+   "108"
+  ],
+  [
+   "Explicit statement of vessel inversion",
+   "1",
+   "1",
+   "119",
+   "1.00",
+   "1",
+   "117"
+  ],
+  [
+   "Enteric fluid administration recorded",
+   "3",
+   "2",
+   "118",
+   "0.80",
+   "2",
+   "117"
+  ],
+  [
+   "Dynamic (real-time) assessment",
+   "3",
+   "4",
+   "118",
+   "0.85",
+   "4",
+   "116"
+  ],
+  [
+   "Graded compression",
+   "1",
+   "1",
+   "119",
+   "1.00",
+   "1",
+   "117"
+  ],
+  [
+   "Caecal position",
+   "5",
+   "5",
+   "119",
+   "1.00",
+   "5",
+   "117"
+  ],
+  [
+   "Colour Doppler used",
+   "116",
+   "116",
+   "119",
+   "1.00",
+   "116",
+   "117"
+  ],
+  [
+   "Whirlpool, swirl or spiral appearance reported",
+   "59",
+   "58",
+   "116",
+   "0.95",
+   "59",
+   "114"
+  ],
+  [
+   "Bowel gas explicitly limiting the study",
+   "36",
+   "36",
+   "119",
+   "1.00",
+   "36",
+   "111"
+  ]
+ ]
+}
