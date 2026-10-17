@@ -191,6 +191,13 @@ for k in F:
     check(not hits, f'{os.path.basename(F[k])}: no stale terms or retired values {hits if hits else ""}')
 check(any('European Journal of Radiology' in p for p in cv) and any('Article Transfer Service' in p for p in cv), 'cover letter is addressed to EJR and states the transfer')
 
+# ---------------------------------------------------------------- English only (editorial office, 2026-10-17: Supplement 1 had Chinese text)
+CJK = re.compile(r'[\u3000-\u303f\u3400-\u4dbf\u4e00-\u9fff\uff00-\uffef]')
+for k in F:
+    d_, ps_ = paras(F[k])
+    n_ = sum(1 for p in ps_ if CJK.search(p))
+    check(n_ == 0, f'{os.path.basename(F[k])}: no text in another language ({n_} paragraphs or tables with Chinese characters)' if n_ else f'{os.path.basename(F[k])}: English only, no Chinese characters')
+
 # ---------------------------------------------------------------- operation sheet carries the abstract verbatim
 ops = '\n'.join(paras(ROOT + 'EJR_投稿操作单.docx')[1])
 check(all(p in ops for p in abstract), 'operation sheet abstract equals the manuscript abstract')

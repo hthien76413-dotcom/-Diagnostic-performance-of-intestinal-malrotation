@@ -99,7 +99,13 @@
 #N **3. 作者名单现在就在 EM 里改好。** 须知第 4 页：稿件提交后再增删或调整作者，要由通讯作者填 Authorship Change Request 表，附全体作者（含新增者）的书面同意，经编辑批准，录用后一律不能改。这份稿件目前还没完成提交，所以现在改最省事。
 #N **4. 字数口径。** 须知写“研究论文不超过 4,000 词，含摘要、图例，参考文献最多 40 条”。若参考文献文字也算在内，本稿是：正文 2,977 + 摘要 249 + 图例 247 = 3,473 词；加参考文献 851 词（含 DOI 链接）= 4,324 词，超出约 320 词。若只算前三项则没有超出。我不确定 EJR 怎么算，也没有为此删稿。若你想按最严口径，我可以删约 350 词，但要动正文，需要你同意。
 
-#H1 六、之后（现在不用做）
+#H1 六、编辑部退回意见（2026-10-17）
+
+#N 编辑部来信 “Send Back to Author: Request Edit Submission”：补充材料文件 “EJR_Supplement_1_NLP_and_report_audit” 里出现了其他语言（中文），要求改成英文。
+#N 处理：补充材料 1 里所有中文（规则词表、阴性词、例句、字段名、表 S1 的正则表达式）都改成英文翻译，文件里已没有中文字符；其余文件本来就是纯英文，已逐个核对。原始中文的规则和正则表达式没有丢：分类规则本来就在 `Supplement_1_classifier.py` 里，表 S1 的原始正则表达式和数据库检索字符串这次追加到了该脚本末尾（变量 `CONTENT_PATTERNS`、`OPERATIVE_SEARCH`）。脚本里的中文是代码要匹配中文报告所必需的，补充材料 1 的正文已写明这一点。
+#N 在 EM 里的操作（按来信步骤）：登录 https://www.editorialmanager.com/ejr/ → “Submissions/Revisions Sent Back to Author” → “Edit Submission/Revision” → 左侧 “Attach Files”：删掉旧的 Supplementary Material 里的 `EJR_Supplement_1_NLP_and_report_audit.docx`，上传新版同名文件；同样替换 `Supplement_1_classifier.py`（它也更新了）；然后点 “Build PDF for my Approval”，打开生成的 PDF 查看并批准。
+
+#H1 七、之后（现在不用做）
 
 #N • 转投后的稿件由 EJR 编辑独立评估，会先筛稿，通过后至少两位审稿人（须知第 2 页）。
 #N • 修回时：稿件、标题页、表必须传可编辑的 Word 文件，不能传 PDF（Attach Files 页的红字说明）；补充材料此时才能增删。

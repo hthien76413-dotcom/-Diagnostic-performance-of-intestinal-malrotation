@@ -26,7 +26,36 @@ D=json.load(open(AN+'tables123.json')); D.update(json.load(open(AN+'tables456.js
 D.update(json.load(open(AN+'or_tables.json'))); D.update(json.load(open(AN+'or_h.json')))
 D.update(json.load(open(AN+'or3_pooled.json'))); D.update(json.load(open(AN+'or_sens.json'))); D.update(json.load(open(AN+'or_add.json')))
 D.update(json.load(open(AN+'us_coding_agreement.json'))); D.update(json.load(open(AN+'mrd.json'))); D.update(json.load(open(AN+'hp_tables.json')))
-TAB={'H':('Table S1','Report-content audit patterns',D['H']),
+# Table S1 in English: the reports are Chinese, so the third column gives the English translation of the terms each
+# pattern matches; the original regular expressions are appended verbatim to Supplement_1_classifier.py (CONTENT_PATTERNS).
+H_EN = {
+ ('Third portion of duodenum (D3)', 'Ultrasound'): '"horizontal portion", "horizontal segment", "transverse portion" or "third segment" of the duodenum; or "transverse portion" or "horizontal portion" on its own, except "transverse portion" directly preceded by the character for "arch" (transverse portion of the aortic arch)',
+ ('Duodenojejunal junction', 'Ultrasound'): '"duodenojejunal flexure"; the Chinese short form of the ligament of Treitz; "Treitz"; "suspensory ligament of the duodenum"; "duodenum-jejunum junction" (with an optional hyphen, "with" or "and" between the two words)',
+ ('Duodenum mentioned in any form', 'Ultrasound'): '"duodenum" (any mention)',
+ ('Superior mesenteric artery–vein relationship', 'Ultrasound / CT'): '"superior mesenteric artery and vein" (with or without a separating enumeration comma); "superior mesenteric artery"; "superior mesenteric vein"; "mesenteric vessels"; SMA; SMV; excluding matches whose only context is the left renal vein, nutcracker phenomenon or renal-vein compression with no whirlpool term',
+ ('Explicit vessel inversion', 'Ultrasound'): '"vein" or "artery" followed within 10 characters in the same clause by "transposition", "reversed position", "inversion", "abnormal relationship" (either word order); or "vein located" followed within 8 characters in the same clause by "left"; or "artery located" followed within 8 characters in the same clause by "right"',
+ ('Whirlpool / swirl / spiral appearance', 'All'): '"whirlpool" (two written forms of the Chinese word), "eddy flow", "spiral"; counted only where none of the negation cues "not seen", "not detected", "not shown", "not found", "no obvious", "not obvious", "not heard" occurs in the 12 characters preceding the match within the same clause',
+ ('Enteric fluid administered', 'Ultrasound'): '"drinking water"; "oral" followed within 6 characters by "water", "fluid" or "contrast agent"; "water injection"; "injection"; "injection into the stomach"; "warm boiled water"; "via gastric tube"',
+ ('Dynamic (real-time) assessment', 'Ultrasound'): '"dynamic"; "real-time observation"; "continuous observation"',
+ ('Graded compression', 'Ultrasound'): '"compression"; "probe pressure"; "compression examination"',
+ ('Colour Doppler used', 'Ultrasound'): 'CDFI; "color Doppler"; "Doppler"',
+ ('Bowel gas explicitly limiting the study', 'Ultrasound'): 'clause containing both a gas term ("bowel gas", "accumulated gas", "gas interference", "gas obscuring", "gas covering", "abundant gas", "strongly reflective gas echoes", "filled with gas") and an interference term ("interference", "obscuring", "covering", "poorly displayed", "incompletely displayed", "unsatisfactory visualization", "unsatisfactory")',
+ ('Caecal position', 'Ultrasound / UGI'): '"ileocecal" (cecal region)',
+ ('Bedside examination', 'Ultrasound'): '"bedside" (in the examination name)',
+ ('Examination type: great-vessel study', 'Ultrasound'): '"abdominal great vessels" (in the examination name)',
+ ('Examination type: gastrointestinal ultrasound', 'Ultrasound'): '"gastrointestinal tract" (in the examination name)',
+ ('Contrast enhancement', 'CT'): '"enhanced" (in the examination name)',
+ ('Three-dimensional reconstruction', 'CT'): '"three-dimensional reconstruction" (in the examination name)',
+ ('Duodenojejunal junction', 'UGI'): '"jejunal flexure"; the Chinese short form of the ligament of Treitz; "Treitz"; "suspensory ligament"; "duodenum-jejunum junction" (with an optional hyphen, "with" or "and" between the two words)',
+ ('Corkscrew / spring appearance', 'UGI'): '"spring"; "spiral"; "noose-like twist"; "coiled"',
+ ('Jejunal position', 'UGI'): '"jejunum" followed within 10 characters by "located in", "situated in" or "deviated"',
+ ('Whole-gastrointestinal study', 'UGI'): '"whole gastrointestinal tract" (in the examination name)',
+ ('Barium contrast', 'UGI'): '"barium" (in the examination name)',
+}
+_H = D['H']
+assert len(_H) == len(H_EN) + 1 and all((r[0], r[1]) in H_EN for r in _H[1:]), 'Table S1 row without an English translation'
+D['H_EN'] = [[_H[0][0], _H[0][1], 'Terms matched (English translation of the Chinese-language pattern)']] + [[r[0], r[1], H_EN[(r[0], r[1])]] for r in _H[1:]]
+TAB={'H':('Table S1','Report-content audit patterns, in English translation (original regular expressions in Supplement_1_classifier.py)',D['H_EN']),
      'K':('Table S2','Agreement of the two independent readers on the twelve ultrasound content items, and agreement of the text patterns with their consensus',D['K']),
      'S1':('Table S3','Distribution of final labels and certainty tiers, by modality',D['S1']),
      'G':('Table S4','Between-modality comparison of report-level detection (generalized estimating equation)',D['T4']),
@@ -82,7 +111,16 @@ make('supp2.md','EJR_Supplement_2_models_and_subgroups.docx')
 make('supp3.md','EJR_Supplement_3_CT_and_UGI_content_audit.docx')
 make('supp4.md','EJR_Supplement_4_minimum_reporting_dataset.docx')
 # the runnable rule set deposited with Supplement 1 is the analysis copy, unchanged
-shutil.copyfile(AN+'classifier.py',OUT+'Supplement_1_classifier.py'); print('saved Supplement_1_classifier.py')
+shutil.copyfile(AN+'classifier.py',OUT+'Supplement_1_classifier.py')
+with open(OUT+'Supplement_1_classifier.py','a',encoding='utf-8') as f:
+    f.write("\n\n# " + "-"*75 + "\n# Original-language material referred to in Supplement 1. The study reports are written in Chinese,\n# so these strings are Chinese by necessity; Supplement 1 gives their English translation.\n# " + "-"*75 + "\n")
+    f.write("# Search of the institutional research database for operative records (Supplement 1, Section C): field name -> string,\n# matched case-insensitively. Field names: operative diagnosis, procedure name.\n")
+    f.write("OPERATIVE_SEARCH = {'术中诊断': '肠旋转不良', '手术名称': 'Ladd'}\n\n")
+    f.write("# Report-content audit patterns (Table S1 of Supplement 1): (element, modality, pattern as used, verbatim).\n# Where a row holds a note in English after the pattern, the note describes a further condition applied in the audit.\nCONTENT_PATTERNS = [\n")
+    for r in D['H'][1:]:
+        f.write('    (%r, %r, %r),\n' % (us(r[0]), r[1], r[2]))
+    f.write("]\n")
+print('saved Supplement_1_classifier.py (with OPERATIVE_SEARCH and CONTENT_PATTERNS)')
 
 # clean the file properties of every package document (author, times, thumbnail, embedded-image text chunks)
 from scrub_metadata import scrub_all
